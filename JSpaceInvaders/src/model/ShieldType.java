@@ -4,19 +4,15 @@ import java.util.Arrays;
 
 import utils.Sprite;
 
-public class BulletType {
+public class ShieldType {
 	
 	private Sprite[] sprites;
-	private int speed;
-	private int currentSprite;
 	private int sizeX;
 	private int sizeY;
 
-	public BulletType(Sprite[] sprites, int speed, int sizeX, int sizeY) {
+	public ShieldType(Sprite[] sprites, int sizeX, int sizeY) {
 		super();
 		this.sprites = sprites;
-		this.speed = speed;
-		this.currentSprite = 0;
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 	}
@@ -25,25 +21,12 @@ public class BulletType {
 		return sprites;
 	}
 
-	public int getSpeed() {
-		return speed;
-	}
-
-	public int getCurrentSprite() {
-		return currentSprite;
-	}
-
 	public int getSizeX() {
 		return sizeX;
 	}
-	
+
 	public int getSizeY() {
 		return sizeY;
-	}
-	
-	public void nextSprite() {
-		currentSprite++;
-		currentSprite %= sprites.length; 
 	}
 
 	@Override
@@ -52,7 +35,6 @@ public class BulletType {
 		int result = 1;
 		result = prime * result + sizeX;
 		result = prime * result + sizeY;
-		result = prime * result + speed;
 		result = prime * result + Arrays.hashCode(sprites);
 		return result;
 	}
@@ -65,12 +47,10 @@ public class BulletType {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		BulletType other = (BulletType) obj;
+		ShieldType other = (ShieldType) obj;
 		if (sizeX != other.sizeX)
 			return false;
 		if (sizeY != other.sizeY)
-			return false;
-		if (speed != other.speed)
 			return false;
 		if (!Arrays.equals(sprites, other.sprites))
 			return false;
@@ -79,8 +59,7 @@ public class BulletType {
 
 	@Override
 	public String toString() {
-		return "BulletType [sprites=" + Arrays.toString(sprites) + ", speed=" + speed + ", currentSprite="
-				+ currentSprite + ", sizeX=" + sizeX + ", sizeY=" + sizeY + "]";
+		return "ShieldType [sprites=" + Arrays.toString(sprites) + ", sizeX=" + sizeX + ", sizeY=" + sizeY + "]";
 	}
 
 }

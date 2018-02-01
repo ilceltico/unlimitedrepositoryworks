@@ -5,10 +5,10 @@ public class Spaceship {
 	private SpaceshipType type;
 	private Hitbox hitbox;
 	
-	public Spaceship(SpaceshipType type, Hitbox hitbox) {
+	public Spaceship(SpaceshipType type, int upLeftX, int upLeftY) {
 		super();
 		this.type = type;
-		this.hitbox = hitbox;
+		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
 	}
 	
 	public SpaceshipType getType() {

@@ -5,10 +5,10 @@ public class Bullet {
 	private BulletType type;
 	private Hitbox hitbox;
 	
-	public Bullet(BulletType type, Hitbox hitbox) {
+	public Bullet(BulletType type, int upLeftX, int upLeftY) {
 		super();
 		this.type = type;
-		this.hitbox = hitbox;
+		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
 	}
 
 	public BulletType getType() {
