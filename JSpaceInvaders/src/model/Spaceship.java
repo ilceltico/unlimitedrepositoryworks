@@ -21,11 +21,15 @@ public class Spaceship {
 
 	public void move(Direction direction, int speed) {
 		switch(direction) { 
-		case UP: hitbox.moveOfY(speed);
-		case DOWN: hitbox.moveOfY(speed);
-		case RIGHT: hitbox.moveOfX(speed);
-		case LEFT: hitbox.moveOfX(speed);
+		case UP: hitbox.moveY(speed);
+		case DOWN: hitbox.moveY(speed);
+		case RIGHT: hitbox.moveX(speed);
+		case LEFT: hitbox.moveX(speed);
 		}
+	}
+	
+	public Bullet shoot(BulletType type) { 
+		return new Bullet(type, hitbox.getCenterX() - type.getSizeX() / 2, hitbox.getCenterY() - type.getSizeY() / 2);
 	}
 
 	@Override

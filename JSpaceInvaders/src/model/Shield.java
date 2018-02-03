@@ -1,30 +1,22 @@
 package model;
 
-import java.util.Arrays;
-
 import utils.Sprite;
 
 public class Shield {
 	
 	private Hitbox hitbox;
-	private Sprite[] sprites;
 	private ShieldType type;
 	private int durability;
 	
-	public Shield(Sprite[] sprites, ShieldType type, int upLeftX, int upLeftY) {
+	public Shield(ShieldType type, int upLeftX, int upLeftY) {
 		super();
 		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
 		this.type = type;
-		this.sprites = sprites;
-		this.durability = sprites.length;
+		this.durability = type.getSprites().length;
 	}
 
 	public Hitbox getHitbox() {
 		return hitbox;
-	}
-
-	public Sprite[] getSprites() {
-		return sprites;
 	}
 
 	public int getDurability() {
@@ -41,7 +33,7 @@ public class Shield {
 	}
 	
 	public Sprite getCurrentSprite() {
-		return sprites[durability - 1];
+		return type.getSprites()[durability - 1];
 	}
 
 	@Override
@@ -50,7 +42,6 @@ public class Shield {
 		int result = 1;
 		result = prime * result + durability;
 		result = prime * result + ((hitbox == null) ? 0 : hitbox.hashCode());
-		result = prime * result + Arrays.hashCode(sprites);
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -71,8 +62,6 @@ public class Shield {
 				return false;
 		} else if (!hitbox.equals(other.hitbox))
 			return false;
-		if (!Arrays.equals(sprites, other.sprites))
-			return false;
 		if (type == null) {
 			if (other.type != null)
 				return false;
@@ -83,7 +72,7 @@ public class Shield {
 
 	@Override
 	public String toString() {
-		return "Shield [hitbox=" + hitbox + ", sprites=" + Arrays.toString(sprites) + ", type=" + type + ", durability="
+		return "Shield [hitbox=" + hitbox + ", type=" + type + ", durability="
 				+ durability + "]";
 	}
 	

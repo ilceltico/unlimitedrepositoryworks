@@ -21,10 +21,10 @@ public class Bullet {
 
 	public void move(Direction direction) {
 		switch(direction) { 
-		case UP: hitbox.moveOfY(type.getSpeed());
-		case DOWN: hitbox.moveOfY(-type.getSpeed());
-		case RIGHT: hitbox.moveOfX(type.getSpeed());
-		case LEFT: hitbox.moveOfX(-type.getSpeed());
+		case UP: hitbox.moveY(type.getSpeed());
+		case DOWN: hitbox.moveY(-type.getSpeed());
+		case RIGHT: hitbox.moveX(type.getSpeed());
+		case LEFT: hitbox.moveX(-type.getSpeed());
 		}
 	}
 	

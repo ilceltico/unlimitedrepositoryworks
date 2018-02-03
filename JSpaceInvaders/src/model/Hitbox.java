@@ -27,38 +27,46 @@ public class Hitbox {
 		return upLeftY;
 	}
 
-	public int getDownRightX() {
+	public int getSizeX() {
 		return sizeX;
 	}
 
-	public int getDownRightY() {
+	public int getSizeY() {
 		return sizeY;
 	}
 	
-	public void moveOf(int deltaX, int deltaY) {
+	public int getCenterX() {
+		return upLeftX + sizeX / 2;
+	}
+	
+	public int getCenterY() {
+		return upLeftY + sizeY / 2;
+	}
+	
+	public void move(int deltaX, int deltaY) {
 		this.upLeftX += deltaX;
 		this.upLeftY += deltaY;
 	}
 	
-	public void moveOfX(int deltaX) { 
-		moveOf(deltaX, 0);
+	public void moveX(int deltaX) { 
+		move(deltaX, 0);
 	}
 	
-	public void moveOfY(int deltaY) {
-		moveOf(0, deltaY);
+	public void moveY(int deltaY) {
+		move(0, deltaY);
 	}
 	
-	public void moveAt(int upLeftX, int upLeftY) {
+	public void moveTo(int upLeftX, int upLeftY) {
 		this.upLeftX = upLeftX;
 		this.upLeftY = upLeftY;
 	}
 	
-	public void moveAtX(int upLeftX) {
-		moveAt(upLeftX, 0);
+	public void moveToX(int upLeftX) {
+		moveTo(upLeftX, 0);
 	}
 	
-	public void moveAtY(int upLeftY) {
-		moveAt(0, upLeftY);
+	public void moveToY(int upLeftY) {
+		moveTo(0, upLeftY);
 	}
 	
 	public boolean contains(int x, int y) {
