@@ -4,38 +4,22 @@ import java.util.Arrays;
 
 import utils.Sprite;
 
-public class ShieldType {
-	
-	private Sprite[] sprites;
-	private int sizeX;
-	private int sizeY;
+public class ShieldType extends EntityType {
 
 	public ShieldType(Sprite[] sprites, int sizeX, int sizeY) {
 		super();
-		this.sprites = sprites;
-		this.sizeX = sizeX;
-		this.sizeY = sizeY;
-	}
-
-	public Sprite[] getSprites() {
-		return sprites;
-	}
-
-	public int getSizeX() {
-		return sizeX;
-	}
-
-	public int getSizeY() {
-		return sizeY;
+		setSprites(sprites);
+		setSizeX(sizeX);
+		setSizeY(sizeY);
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + sizeX;
-		result = prime * result + sizeY;
-		result = prime * result + Arrays.hashCode(sprites);
+		result = prime * result + getSizeX();
+		result = prime * result + getSizeY();
+		result = prime * result + Arrays.hashCode(getSprites());
 		return result;
 	}
 
@@ -48,18 +32,18 @@ public class ShieldType {
 		if (getClass() != obj.getClass())
 			return false;
 		ShieldType other = (ShieldType) obj;
-		if (sizeX != other.sizeX)
+		if (getSizeX() != other.getSizeX())
 			return false;
-		if (sizeY != other.sizeY)
+		if (getSizeY() != other.getSizeY())
 			return false;
-		if (!Arrays.equals(sprites, other.sprites))
+		if (!Arrays.equals(getSprites(), other.getSprites()))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "ShieldType [sprites=" + Arrays.toString(sprites) + ", sizeX=" + sizeX + ", sizeY=" + sizeY + "]";
+		return "ShieldType [sprites=" + Arrays.toString(getSprites()) + ", sizeX=" + getSizeX() + ", sizeY=" + getSizeY() + "]";
 	}
 
 }

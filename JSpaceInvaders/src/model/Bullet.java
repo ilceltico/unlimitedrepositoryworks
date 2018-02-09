@@ -21,10 +21,9 @@ public class Bullet {
 
 	public void move(Direction direction) {
 		switch(direction) { 
-		case UP: hitbox.moveY(type.getSpeed());
-		case DOWN: hitbox.moveY(-type.getSpeed());
-		case RIGHT: hitbox.moveX(type.getSpeed());
-		case LEFT: hitbox.moveX(-type.getSpeed());
+		case UP: hitbox.moveY(type.getSpeed()); break;
+		case DOWN: hitbox.moveY(-type.getSpeed()); break;
+		default: throw new IllegalArgumentException("Bullet can only go up or down");
 		}
 	}
 	

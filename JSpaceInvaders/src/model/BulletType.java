@@ -4,25 +4,18 @@ import java.util.Arrays;
 
 import utils.Sprite;
 
-public class BulletType {
+public class BulletType extends EntityType {
 	
-	private Sprite[] sprites;
 	private int speed;
 	private int currentSprite;
-	private int sizeX;
-	private int sizeY;
 
 	public BulletType(Sprite[] sprites, int speed, int sizeX, int sizeY) {
 		super();
-		this.sprites = sprites;
+		setSprites(sprites);
 		this.speed = speed;
 		this.currentSprite = 0;
-		this.sizeX = sizeX;
-		this.sizeY = sizeY;
-	}
-
-	public Sprite[] getSprites() {
-		return sprites;
+		setSizeX(sizeX);
+		setSizeY(sizeY);
 	}
 
 	public int getSpeed() {
@@ -32,28 +25,20 @@ public class BulletType {
 	public int getCurrentSprite() {
 		return currentSprite;
 	}
-
-	public int getSizeX() {
-		return sizeX;
-	}
-	
-	public int getSizeY() {
-		return sizeY;
-	}
 	
 	public void nextSprite() {
 		currentSprite++;
-		currentSprite %= sprites.length; 
+		currentSprite %= getSprites().length; 
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + sizeX;
-		result = prime * result + sizeY;
+		result = prime * result + getSizeX();
+		result = prime * result + getSizeY();
 		result = prime * result + speed;
-		result = prime * result + Arrays.hashCode(sprites);
+		result = prime * result + Arrays.hashCode(getSprites());
 		return result;
 	}
 
@@ -66,21 +51,21 @@ public class BulletType {
 		if (getClass() != obj.getClass())
 			return false;
 		BulletType other = (BulletType) obj;
-		if (sizeX != other.sizeX)
+		if (getSizeX() != other.getSizeX())
 			return false;
-		if (sizeY != other.sizeY)
+		if (getSizeY() != other.getSizeY())
 			return false;
 		if (speed != other.speed)
 			return false;
-		if (!Arrays.equals(sprites, other.sprites))
+		if (!Arrays.equals(getSprites(), other.getSprites()))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "BulletType [sprites=" + Arrays.toString(sprites) + ", speed=" + speed + ", currentSprite="
-				+ currentSprite + ", sizeX=" + sizeX + ", sizeY=" + sizeY + "]";
+		return "BulletType [sprites=" + Arrays.toString(getSprites()) + ", speed=" + speed + ", currentSprite="
+				+ currentSprite + ", sizeX=" + getSizeX() + ", sizeY=" + getSizeY() + "]";
 	}
 
 }
