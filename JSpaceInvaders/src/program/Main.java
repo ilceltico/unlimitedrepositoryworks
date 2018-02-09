@@ -1,11 +1,17 @@
 package program;
 
+import view.GraphicsFrame;
+
 public class Main {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("Sasso grosso");
-		
+		GraphicsFrame g = new GraphicsFrame();
+		try {
+			Thread.sleep(530);
+		} catch (Exception e) {
+			
+		}
 	}
 
 }
