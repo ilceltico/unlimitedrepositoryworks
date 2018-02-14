@@ -2,8 +2,6 @@ package model;
 
 import java.util.Arrays;
 
-import utils.Sprite;
-
 public class ShieldType extends EntityType {
 
 	public ShieldType(Sprite[] sprites, int sizeX, int sizeY) {

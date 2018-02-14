@@ -1,7 +1,5 @@
 package model;
 
-import utils.Sprite;
-
 public class Shield {
 	
 	private Hitbox hitbox;

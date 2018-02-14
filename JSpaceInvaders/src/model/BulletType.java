@@ -2,8 +2,6 @@ package model;
 
 import java.util.Arrays;
 
-import utils.Sprite;
-
 public class BulletType extends EntityType {
 	
 	private int speed;

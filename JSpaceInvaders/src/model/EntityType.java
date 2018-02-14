@@ -1,7 +1,5 @@
 package model;
 
-import utils.Sprite;
-
 public abstract class EntityType {
 	
 	private Sprite[] sprites;

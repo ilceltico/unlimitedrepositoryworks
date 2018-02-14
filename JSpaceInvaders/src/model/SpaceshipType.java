@@ -2,8 +2,6 @@ package model;
 
 import java.util.Arrays;
 
-import utils.Sprite;
-
 public class SpaceshipType extends EntityType {
 
 	private Sprite explosionSprite;
@@ -24,8 +22,8 @@ public class SpaceshipType extends EntityType {
 		return explosionSprite;
 	}
 
-	public int getCurrentSprite() {
-		return currentSprite;
+	public Sprite getCurrentSprite() {
+		return getSprites()[currentSprite];
 	}
 
 	public int getPoints() {

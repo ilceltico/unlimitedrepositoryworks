@@ -26,6 +26,14 @@ public class Hitbox {
 	public int getUpLeftY() {
 		return upLeftY;
 	}
+	
+	public int getDownRightX() {
+		return upLeftX+sizeX;
+	}
+	
+	public int getDownRightY() {
+		return upLeftY+sizeY;
+	}
 
 	public int getSizeX() {
 		return sizeX;
@@ -74,6 +82,13 @@ public class Hitbox {
 				upLeftX + sizeX >= x &&
 				upLeftY <= y &&
 				upLeftY + sizeY >= y;
+	}
+	
+	public boolean touches(Hitbox h) {
+		return this.contains(h.upLeftX, h.upLeftY) ||
+				this.contains(h.upLeftX+h.sizeX, h.upLeftY) ||
+				this.contains(h.upLeftX, h.upLeftY+h.sizeY) ||
+				this.contains(h.upLeftX+h.sizeX, h.upLeftY+h.sizeY);
 	}
 
 	@Override
