@@ -1,6 +1,8 @@
 package utils;
 
 public final class Commons {
+	public static final int GRIDWIDTH = 500;
+	public static final int GRIDHEIGHT = 500;
 	public static final int PLAYERBULLETSNUMBER = 1;
 	public static final int COLNUMBER = 11;
 	public static final int ROWNUMBER = 5;
@@ -10,6 +12,14 @@ public final class Commons {
 	public static final int ROWSPACE = 15;
 	public static final int SIDEMARGIN = 10;
 	
+	//Player
+	public static final int PLAYERWIDTH = 20;
+	public static final int PLAYERHEIGHT = 12;
+	public static final int PLAYERSTARTX = (GRIDWIDTH-PLAYERWIDTH)/2;
+	public static final int PLAYERSTARTY = GRIDHEIGHT - 4*PLAYERHEIGHT;
+	public static final int PLAYERLIVES = 1;
+	public static final int PLAYERSPEED = 5;
+	
 	//Alien points
 	public static final int ALIEN1POINTS = 20;
 	
@@ -18,8 +28,8 @@ public final class Commons {
 	//LV1
 	public static final int FIRSTALIENCELLX = 10;
 	public static final int FIRSTALIENCELLY = 30;
-	public static final int BASEALIENSPEED = 2; //Aliens will be horizontally moved by this amount of pixels
-	public static final int ALIENSPEEDINCREMENT = 1; //Increment to speed every 2 rows down
+	public static final int BASEALIENSPEED = 4; //Aliens will be horizontally moved by this amount of pixels
+	public static final int ALIENSPEEDINCREMENT = 2; //Increment to speed every 2 rows down
 
 	
 }

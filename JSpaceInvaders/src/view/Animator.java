@@ -24,9 +24,24 @@ public class Animator extends AnimationTimer {
 		if (curNanos - lastNanos >= 16666667) {
 			gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 			controller.moveAliens();
-
+			controller.movePlayer();
+			
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
+			
+			//Collision control
+			for (int i=0; i<columns.length; i++) {
+				Spaceship[] spaceships = columns[i].getSpaceships();
+				for (int j=0; j<spaceships.length; j++) {
+					if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
+						controller.gameOver();
+						this.stop();
+						return;
+					}
+				}
+			}
+			
+			//Rendering aliens
 			for (int i=0; i<columns.length; i++) {
 				Spaceship[] spaceships = columns[i].getSpaceships();
 				for (int j=0; j<spaceships.length; j++) {
@@ -37,6 +52,13 @@ public class Animator extends AnimationTimer {
 							spaceships[j].getHitbox().getSizeY());
 				}
 			}
+			
+			//Rendering player
+			gc.drawImage(controller.getPlayer().getType().getCurrentSprite(), 
+					controller.getPlayer().getHitbox().getUpLeftX(), 
+					controller.getPlayer().getHitbox().getUpLeftY(), 
+					controller.getPlayer().getHitbox().getSizeX(), 
+					controller.getPlayer().getHitbox().getSizeY());
 			
 			lastNanos = curNanos;	
 		}

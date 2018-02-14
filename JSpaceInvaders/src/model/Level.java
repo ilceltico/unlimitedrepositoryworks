@@ -41,11 +41,11 @@ public class Level {
 		int negativeOvershot = 0;
 		boolean right = curDirection==Direction.RIGHT;
 		int canvasLimit = right ? 
-				((int) canvas.getWidth() - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
+				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
 		for (Column column : columns) {
 			for (Spaceship alien : column.getSpaceships()) {
 				alien.move(curDirection, speed);
-				if (!touches && (right && alien.getHitbox().getDownRightX() > canvasLimit) 
+				if (/*!touches &&*/ (right && alien.getHitbox().getDownRightX() > canvasLimit) 
 						|| (!right && alien.getHitbox().getUpLeftX() < canvasLimit)) {
 					touches = true;
 					negativeOvershot = right ? 

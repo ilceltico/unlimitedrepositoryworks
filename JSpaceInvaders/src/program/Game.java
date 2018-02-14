@@ -2,6 +2,7 @@ package program;
 
 import model.Column;
 import model.Level;
+import model.Player;
 import model.Spaceship;
 import model.SpaceshipType;
 import model.Sprite;
@@ -13,19 +14,27 @@ public class Game {
 	private Sprite[] alien1Sprites;
 	private Sprite[] alienExplosionSprites;
 	
+	private Sprite[] playerSprites;
+	private Sprite[] playerExplosionSprites;
+	
 	//SpaceshipTypes
 	private SpaceshipType alien1Type;
 	
+	private SpaceshipType playerType;
+	
 	//Levels
 	private Level[] levels;
+	
+	//Player
+	private Player player;
 	
 	private static Game game;
 	
 	private Game() {	
 		initSprites();
 		initSpaceshipTypes();
-		initPlayer();
 		initLevels();
+		initPlayer();
 	}
 	
 	public static Game getGame() {
@@ -41,11 +50,18 @@ public class Game {
 		
 		alienExplosionSprites = new Sprite[1];
 		alienExplosionSprites[0] = new Sprite("file:images/AlienExplosion.png");
+		
+		playerSprites = new Sprite[1];
+		playerSprites[0] = new Sprite("file:images/Player.png");
+		playerExplosionSprites = new Sprite[2];
+		playerExplosionSprites[0] = new Sprite("file:images/PlayerEsplosion1.png");
+		playerExplosionSprites[1] = new Sprite("file:images/PlayerExplosion2.png");
 	}
 	
 	private void initSpaceshipTypes() {
-		
 		alien1Type = new SpaceshipType(alien1Sprites, alienExplosionSprites, Commons.ALIEN1POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
+		
+		playerType = new SpaceshipType(playerSprites, playerExplosionSprites, 0, Commons.PLAYERWIDTH, Commons.PLAYERHEIGHT);
 	}
 	
 	private void initLevels() {
@@ -54,10 +70,6 @@ public class Game {
 		for (int i=0; i<levels.length; i++) {
 			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.BASEALIENSPEED, Commons.ALIENSPEEDINCREMENT);
 		}
-	}
-	
-	private void initPlayer() {
-		
 	}
 	
 	private Column[] generateColumns(int shiftX, int shiftY) {
@@ -77,9 +89,17 @@ public class Game {
 		return columns;
 	}
 	
+	private void initPlayer() {
+		player = new Player(playerType, Commons.PLAYERSTARTX, Commons.PLAYERSTARTY, Commons.PLAYERLIVES, Commons.PLAYERSPEED);
+	}
+	
 	
 	public Level getLevel(int i) {
 		return levels[i-1];
+	}
+	
+	public Player getPlayer() {
+		return player;
 	}
 	
 	
