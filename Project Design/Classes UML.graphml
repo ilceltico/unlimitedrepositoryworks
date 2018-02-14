@@ -261,11 +261,11 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="Class" use3DEffect="true">
-            <y:AttributeLabel>- explosionSprite: Sprite
+            <y:AttributeLabel>- explosionSprites: Sprite[]
 - currentSprite: int
 - points: int</y:AttributeLabel>
-            <y:MethodLabel>+ SpaceshipType (sprite: Sprite[], explosionSprite: Sprite, points: int, sizeX: int, sizeY: int)
-+ getExplosionSprite(): Sprite
+            <y:MethodLabel>+ SpaceshipType (sprite: Sprite[], explosionSprites: Sprite[], points: int, sizeX: int, sizeY: int)
++ getExplosionSprites(): Sprite[]
 + getCurrentSprite(): Sprite
 + getPoints(): int
 + nextSprite(): void</y:MethodLabel>
@@ -731,7 +731,6 @@
     </edge>
     <edge id="e19" source="n5" target="n3">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="156.33003231341286" sy="57.194583564893435" tx="-121.78039733991977" ty="48.79029566290262"/>
@@ -768,7 +767,6 @@
     </edge>
     <edge id="e20" source="n5" target="n2">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="-15.797856049004565" tx="-32.268299004640994" ty="-24.202143950995378"/>

@@ -4,22 +4,22 @@ import java.util.Arrays;
 
 public class SpaceshipType extends EntityType {
 
-	private Sprite explosionSprite;
+	private Sprite[] explosionSprites;
 	private int currentSprite;
 	private int points;
 	
-	public SpaceshipType(Sprite[] sprites, Sprite explosionSprite, int points, int sizeX, int sizeY) {
+	public SpaceshipType(Sprite[] sprites, Sprite[] explosionSprites, int points, int sizeX, int sizeY) {
 		super();
 		setSprites(sprites);
-		this.explosionSprite = explosionSprite;
+		this.explosionSprites = explosionSprites;
 		this.points = points;
 		setSizeX(sizeX);
 		setSizeY(sizeY);
 		this.currentSprite = 0;
 	}
 
-	public Sprite getExplosionSprite() {
-		return explosionSprite;
+	public Sprite[] getExplosionSprites() {
+		return explosionSprites;
 	}
 
 	public Sprite getCurrentSprite() {
@@ -39,7 +39,7 @@ public class SpaceshipType extends EntityType {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((explosionSprite == null) ? 0 : explosionSprite.hashCode());
+		result = prime * result + ((explosionSprites == null) ? 0 : explosionSprites.hashCode());
 		result = prime * result + points;
 		result = prime * result + getSizeX();
 		result = prime * result + getSizeY();
@@ -56,10 +56,10 @@ public class SpaceshipType extends EntityType {
 		if (getClass() != obj.getClass())
 			return false;
 		SpaceshipType other = (SpaceshipType) obj;
-		if (explosionSprite == null) {
-			if (other.explosionSprite != null)
+		if (explosionSprites == null) {
+			if (other.explosionSprites != null)
 				return false;
-		} else if (!explosionSprite.equals(other.explosionSprite))
+		} else if (!explosionSprites.equals(other.explosionSprites))
 			return false;
 		if (points != other.points)
 			return false;
@@ -74,7 +74,7 @@ public class SpaceshipType extends EntityType {
 
 	@Override
 	public String toString() {
-		return "SpaceshipType [sprites=" + Arrays.toString(getSprites()) + ", explosionSprite=" + explosionSprite
+		return "SpaceshipType [sprites=" + Arrays.toString(getSprites()) + ", explosionSprite=" + explosionSprites    
 				+ ", points=" + points + ", sizeX=" + getSizeX() + ", sizeY=" + getSizeY() + "]";
 	}
 	
