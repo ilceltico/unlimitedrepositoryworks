@@ -11,7 +11,7 @@ public class Animator extends AnimationTimer {
 	
 	private GraphicsContext gc;
 	private Controller controller;
-	private long lastNanos = 17000;
+	private long lastNanos = 0;
 	
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();

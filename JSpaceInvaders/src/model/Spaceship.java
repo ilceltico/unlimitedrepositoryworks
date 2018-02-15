@@ -21,6 +21,7 @@ public class Spaceship {
 
 	public void move(Direction direction, int speed) {
 		switch(direction) { 
+		case NONE: break;
 		case UP: hitbox.moveY(-speed); break;
 		case DOWN: hitbox.moveY(speed); break;
 		case RIGHT: hitbox.moveX(speed); break;

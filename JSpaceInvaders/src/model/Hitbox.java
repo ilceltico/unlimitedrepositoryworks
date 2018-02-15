@@ -88,7 +88,11 @@ public class Hitbox {
 		return this.contains(h.upLeftX, h.upLeftY) ||
 				this.contains(h.upLeftX+h.sizeX, h.upLeftY) ||
 				this.contains(h.upLeftX, h.upLeftY+h.sizeY) ||
-				this.contains(h.upLeftX+h.sizeX, h.upLeftY+h.sizeY);
+				this.contains(h.upLeftX+h.sizeX, h.upLeftY+h.sizeY) ||
+				h.contains(this.upLeftX, this.upLeftY) ||
+				h.contains(this.upLeftX+this.sizeX, this.upLeftY) ||
+				h.contains(this.upLeftX, this.upLeftY+this.sizeY) ||
+				h.contains(this.upLeftX+this.sizeX, this.upLeftY+this.sizeY);
 	}
 
 	@Override

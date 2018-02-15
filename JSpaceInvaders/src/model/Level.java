@@ -39,18 +39,21 @@ public class Level {
 	public void moveAliens(Canvas canvas) {
 		boolean touches = false;
 		int negativeOvershot = 0;
+		int temp;
 		boolean right = curDirection==Direction.RIGHT;
 		int canvasLimit = right ? 
 				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
 		for (Column column : columns) {
 			for (Spaceship alien : column.getSpaceships()) {
 				alien.move(curDirection, speed);
-				if (/*!touches &&*/ (right && alien.getHitbox().getDownRightX() > canvasLimit) 
-						|| (!right && alien.getHitbox().getUpLeftX() < canvasLimit)) {
+				if ((right && alien.getHitbox().getDownRightX() > canvasLimit
+						|| !right && alien.getHitbox().getUpLeftX() < canvasLimit)) {
 					touches = true;
-					negativeOvershot = right ? 
+					temp = right ? 
 							(canvasLimit - alien.getHitbox().getDownRightX()) : 
 								(canvasLimit - alien.getHitbox().getUpLeftX());
+					negativeOvershot = Math.abs(temp)>Math.abs(negativeOvershot)?
+											temp:negativeOvershot;
 				}
 			}
 		}

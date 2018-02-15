@@ -102,5 +102,10 @@ public class Game {
 		return player;
 	}
 	
+	public void reinitializeGame() {
+		initLevels();
+		initPlayer();
+	}
+	
 	
 }

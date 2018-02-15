@@ -28,8 +28,8 @@ public final class Commons {
 	//LV1
 	public static final int FIRSTALIENCELLX = 10;
 	public static final int FIRSTALIENCELLY = 30;
-	public static final int BASEALIENSPEED = 4; //Aliens will be horizontally moved by this amount of pixels
-	public static final int ALIENSPEEDINCREMENT = 2; //Increment to speed every 2 rows down
+	public static final int BASEALIENSPEED = 1; //Aliens will be horizontally moved by this amount of pixels
+	public static final int ALIENSPEEDINCREMENT = 1; //Increment to speed every 2 rows down
 
 	
 }

@@ -1,5 +1,7 @@
 package model;
 
+import utils.Commons;
+
 public class Player extends Spaceship{
 
 	private int lives;
@@ -12,7 +14,20 @@ public class Player extends Spaceship{
 	}
 	
 	public void move(Direction direction) {
-		super.move(direction, speed);
+		switch (direction) {
+			case NONE: break;
+			case LEFT: break;
+			case RIGHT: break;
+			default: throw new IllegalArgumentException("Invalid direction for player");
+		}
+		if (direction != Direction.NONE) {
+			int oldUpLeftX = getHitbox().getUpLeftX();
+			int oldUpLeftY = getHitbox().getUpLeftY();
+			super.move(direction, speed);
+			if (this.getHitbox().getDownRightX() >= Commons.GRIDWIDTH-Commons.SIDEMARGIN ||
+					this.getHitbox().getUpLeftX() <= Commons.SIDEMARGIN)
+				this.getHitbox().moveTo(oldUpLeftX, oldUpLeftY);
+		}
 	}
 
 	public int getLives() {
