@@ -21,7 +21,10 @@ public final class Commons {
 	public static final int PLAYERSPEED = 5;
 	
 	//Alien points
-	public static final int ALIEN1POINTS = 20;
+	public static final int ALIEN1POINTS = 10;
+	public static final int ALIEN2POINTS = 20;
+	public static final int ALIEN3POINTS = 30;
+	public static final int ALIEN4POINTS = 1000;
 	
 	//Levels
 	public static final int LEVELNUMBER = 3;

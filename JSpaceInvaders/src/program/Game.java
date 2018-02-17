@@ -12,6 +12,8 @@ public class Game {
 	
 	//Sprites
 	private Sprite[] alien1Sprites;
+	private Sprite[] alien2Sprites;
+	private Sprite[] alien3Sprites;
 	private Sprite[] alienExplosionSprites;
 	
 	private Sprite[] playerSprites;
@@ -19,6 +21,8 @@ public class Game {
 	
 	//SpaceshipTypes
 	private SpaceshipType alien1Type;
+	private SpaceshipType alien2Type;
+	private SpaceshipType alien3Type;
 	
 	private SpaceshipType playerType;
 	
@@ -47,6 +51,12 @@ public class Game {
 		alien1Sprites = new Sprite[2];
 		alien1Sprites[0] = new Sprite("file:images/Alien1_1.png"); 
 		alien1Sprites[1] = new Sprite("file:images/Alien1_2.png");
+		alien2Sprites = new Sprite[2];
+		alien2Sprites[0] = new Sprite("file:images/Alien2_1.png");
+		alien2Sprites[1] = new Sprite("file:images/Alien2_2.png");
+		alien3Sprites = new Sprite[2];
+		alien3Sprites[0] = new Sprite("file:images/Alien3_1.png");
+		alien3Sprites[1] = new Sprite("file:images/Alien3_2.png");
 		
 		alienExplosionSprites = new Sprite[1];
 		alienExplosionSprites[0] = new Sprite("file:images/AlienExplosion.png");
@@ -60,7 +70,9 @@ public class Game {
 	
 	private void initSpaceshipTypes() {
 		alien1Type = new SpaceshipType(alien1Sprites, alienExplosionSprites, Commons.ALIEN1POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
-		
+		alien2Type = new SpaceshipType(alien2Sprites, alienExplosionSprites, Commons.ALIEN2POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
+		alien3Type = new SpaceshipType(alien3Sprites, alienExplosionSprites, Commons.ALIEN3POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
+
 		playerType = new SpaceshipType(playerSprites, playerExplosionSprites, 0, Commons.PLAYERWIDTH, Commons.PLAYERHEIGHT);
 	}
 	
@@ -78,7 +90,16 @@ public class Game {
 		int x = Commons.FIRSTALIENCELLX, y = Commons.FIRSTALIENCELLY;
 		for (int i = 0; i < columns.length; i++) {
 			spaceships = new Spaceship[Commons.ROWNUMBER];
-			for (int j = 0; j < spaceships.length; j++) {
+			if (spaceships.length < 3)
+				throw new IllegalArgumentException("Invalid ROWNUMBER parameter");
+			spaceships[0] = new Spaceship(alien3Type, x, y);
+			y += Commons.ALIENHEIGHT + Commons.ROWSPACE;
+			spaceships[1] = new Spaceship(alien2Type, x, y);
+			y += Commons.ALIENHEIGHT + Commons.ROWSPACE;
+			spaceships[2] = new Spaceship(alien2Type, x, y);
+			y += Commons.ALIENHEIGHT + Commons.ROWSPACE;
+			
+			for (int j = 3; j < spaceships.length; j++) {
 				spaceships[j] = new Spaceship(alien1Type, x, y);
 				y += Commons.ALIENHEIGHT + Commons.ROWSPACE;
 			}
