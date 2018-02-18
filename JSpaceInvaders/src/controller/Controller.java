@@ -26,7 +26,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private int currentLevel = 1; //-1 states that game is over
 	private Player player;
 	private Direction playerDirection = Direction.NONE;
-	//private Bullet[] playerBullets;
+	private Bullet playerBullet;
 	private Canvas canvas;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
@@ -34,12 +34,9 @@ public class Controller implements EventHandler<KeyEvent> {
 		this.canvas = canvas;
 		this.player = game.getPlayer();
 		this.mediaPlayer = mediaPlayer;
-//		
-//		//InitPlayerBullets
-//		playerBullets = new Bullet[Commons.PLAYERBULLETSNUMBER];
-//		for (int i=0; i<Commons.PLAYERBULLETSNUMBER; i++) {
-//			//playerBullets[i] = new Bullet();
-//		}
+		
+		//InitPlayerBullets
+		playerBullet = new Bullet(game.getPlayerBulletType(), 0, 0);
 	}
 	
 	public void startGame() {
@@ -59,6 +56,10 @@ public class Controller implements EventHandler<KeyEvent> {
 	
 	public void movePlayer() {
 		player.move(playerDirection);
+	}
+	
+	public void movePlayerBullet() {
+		playerBullet.move(Direction.UP);
 	}
 
 	@Override
@@ -83,9 +84,9 @@ public class Controller implements EventHandler<KeyEvent> {
 		return player;
 	}
 
-//	public Bullet[] getPlayerBullets() {
-//		return playerBullets;
-//	}
+	public Bullet getPlayerBullet() {
+		return playerBullet;
+	}
 	
 	public void setAnimator(Animator animator) {
 		this.animator = animator;
@@ -101,7 +102,11 @@ public class Controller implements EventHandler<KeyEvent> {
 		switch (e.getCode().toString()) {
 		case "LEFT": playerDirection = Direction.LEFT; break;
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
-		case "SPACE": break;
+		case "SPACE": if (!playerBullet.isVisible()) {
+				playerBullet.setVisible(true);
+				playerBullet.setCenterPosition(player.getHitbox().getCenterX(), player.getHitbox().getUpLeftY());;
+			}
+			break;
 		case "ENTER": if (currentLevel<0) restartGame(); break;
 		default: break;
 		}

@@ -20,8 +20,8 @@ public class BulletType extends EntityType {
 		return speed;
 	}
 
-	public int getCurrentSprite() {
-		return currentSprite;
+	public Sprite getCurrentSprite() {
+		return getSprites()[currentSprite];
 	}
 	
 	public void nextSprite() {

@@ -1,5 +1,6 @@
 package program;
 
+import model.BulletType;
 import model.Column;
 import model.Level;
 import model.Player;
@@ -19,6 +20,11 @@ public class Game {
 	private Sprite[] playerSprites;
 	private Sprite[] playerExplosionSprites;
 	
+	private Sprite[] bullet1Sprites;
+	private Sprite[] bullet2Sprites;
+	private Sprite[] bullet3Sprites;
+	private Sprite[] playerBulletSprites;
+	
 	//SpaceshipTypes
 	private SpaceshipType alien1Type;
 	private SpaceshipType alien2Type;
@@ -32,6 +38,12 @@ public class Game {
 	//Player
 	private Player player;
 	
+	//Bullets
+	private BulletType alienBullet1Type;
+	private BulletType alienBullet2Type;
+	private BulletType alienBullet3Type;
+	private BulletType playerBulletType;
+	
 	private static Game game;
 	
 	private Game() {	
@@ -39,6 +51,7 @@ public class Game {
 		initSpaceshipTypes();
 		initLevels();
 		initPlayer();
+		initBullets();
 	}
 	
 	public static Game getGame() {
@@ -48,6 +61,7 @@ public class Game {
 	}
 	
 	private void initSprites() {
+		//Aliens
 		alien1Sprites = new Sprite[2];
 		alien1Sprites[0] = new Sprite("file:images/Alien1_1.png"); 
 		alien1Sprites[1] = new Sprite("file:images/Alien1_2.png");
@@ -61,11 +75,34 @@ public class Game {
 		alienExplosionSprites = new Sprite[1];
 		alienExplosionSprites[0] = new Sprite("file:images/AlienExplosion.png");
 		
+		//Player
 		playerSprites = new Sprite[1];
 		playerSprites[0] = new Sprite("file:images/Player.png");
 		playerExplosionSprites = new Sprite[2];
 		playerExplosionSprites[0] = new Sprite("file:images/PlayerEsplosion1.png");
 		playerExplosionSprites[1] = new Sprite("file:images/PlayerExplosion2.png");
+		
+		//Bullets
+		bullet1Sprites = new Sprite[4];
+		bullet1Sprites[0] = new Sprite("file:images/AlienBullet1_1.png");
+		bullet1Sprites[1] = new Sprite("file:images/AlienBullet1_1.png");
+		bullet1Sprites[2] = new Sprite("file:images/AlienBullet1_2.png");
+		bullet1Sprites[3] = new Sprite("file:images/AlienBullet1_2.png");
+		
+		bullet2Sprites = new Sprite[4];
+		bullet2Sprites[0] = new Sprite("file:images/AlienBullet2_1.png");
+		bullet2Sprites[1] = new Sprite("file:images/AlienBullet2_1.png");
+		bullet2Sprites[2] = new Sprite("file:images/AlienBullet2_2.png");
+		bullet2Sprites[3] = new Sprite("file:images/AlienBullet2_2.png");
+		
+		bullet3Sprites = new Sprite[4];
+		bullet3Sprites[0] = new Sprite("file:images/AlienBullet3_1.png");
+		bullet3Sprites[1] = new Sprite("file:images/AlienBullet3_1.png");
+		bullet3Sprites[2] = new Sprite("file:images/AlienBullet3_2.png");
+		bullet3Sprites[3] = new Sprite("file:images/AlienBullet3_2.png");
+		
+		playerBulletSprites = new Sprite[1];
+		playerBulletSprites[0] = new Sprite("file:images/PlayerBullet.png");
 	}
 	
 	private void initSpaceshipTypes() {
@@ -80,7 +117,7 @@ public class Game {
 		levels = new Level[Commons.LEVELNUMBER];
 		
 		for (int i=0; i<levels.length; i++) {
-			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.BASEALIENSPEED, Commons.ALIENSPEEDINCREMENT);
+			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.ALIENSPEED, Commons.BASEFPS, Commons.FPSINCREASE);
 		}
 	}
 	
@@ -114,6 +151,13 @@ public class Game {
 		player = new Player(playerType, Commons.PLAYERSTARTX, Commons.PLAYERSTARTY, Commons.PLAYERLIVES, Commons.PLAYERSPEED);
 	}
 	
+	public void initBullets() {
+		alienBullet1Type = new BulletType(bullet1Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
+		alienBullet2Type = new BulletType(bullet2Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
+		alienBullet3Type = new BulletType(bullet3Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
+		playerBulletType = new BulletType(playerBulletSprites, Commons.PLAYERBULLETSPEED, Commons.PLAYERBULLETWIDTH, Commons.PLAYERBULLETHEIGHT);
+	}
+	
 	
 	public Level getLevel(int i) {
 		return levels[i-1];
@@ -123,10 +167,19 @@ public class Game {
 		return player;
 	}
 	
+	public BulletType getPlayerBulletType() {
+		return playerBulletType;
+	}
+	
 	public void reinitializeGame() {
 		initLevels();
 		initPlayer();
 	}
 	
+	public void changeAlienSprites() {
+		alien1Type.nextSprite();
+		alien2Type.nextSprite();
+		alien3Type.nextSprite();
+	}
 	
 }

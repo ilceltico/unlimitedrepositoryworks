@@ -3,6 +3,7 @@ package model;
 import java.util.Arrays;
 
 import javafx.scene.canvas.Canvas;
+import program.Game;
 import utils.Commons;
 
 public class Level {
@@ -10,18 +11,20 @@ public class Level {
 	private int startingLine;
 	private Column[] columns;
 	private Shield[] shields;
-	private int speed;
-	private int speedIncrement;
+	private int alienSpeed;
+	private int alienFps;
+	private int alienFpsIncrement;
 	private boolean increment = false;
 	private Direction curDirection = Direction.RIGHT;
 	
-	public Level(int startingLine, Column[] columns, Shield[] shields, int baseSpeed, int speedIncrement) {
+	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed, int baseAlienFps, int alienFpsIncrement) {
 		super();
 		this.startingLine = startingLine;
 		this.columns = columns;
 		this.shields = shields;
-		this.speed = baseSpeed;
-		this.speedIncrement = speedIncrement;
+		this.alienSpeed = alienSpeed;
+		this.alienFps = baseAlienFps;
+		this.alienFpsIncrement = alienFpsIncrement;
 	}
 
 	public int getStatingLine() {
@@ -36,6 +39,10 @@ public class Level {
 		return shields;
 	}
 	
+	public long getFrameNanoTime() {
+		return (long) 1000000000/(long) alienFps;
+	}
+	
 	public void moveAliens(Canvas canvas) {
 		boolean touches = false;
 		int negativeOvershot = 0;
@@ -45,7 +52,7 @@ public class Level {
 				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
 		for (Column column : columns) {
 			for (Spaceship alien : column.getSpaceships()) {
-				alien.move(curDirection, speed);
+				alien.move(curDirection, alienSpeed);
 				if ((right && alien.getHitbox().getDownRightX() > canvasLimit
 						|| !right && alien.getHitbox().getUpLeftX() < canvasLimit)) {
 					touches = true;
@@ -67,11 +74,14 @@ public class Level {
 				curDirection = Direction.LEFT;
 			else
 				curDirection = Direction.RIGHT;
-			if (increment)
-				speed += speedIncrement;
-			else
-				increment = true;
+//			if (increment)
+//				speed += speedIncrement;
+//			else
+//				increment = true;
 		}
+		
+		//Change sprite
+		Game.getGame().changeAlienSprites();
 	}
 
 	@Override

@@ -1,14 +1,18 @@
 package model;
 
+import utils.Commons;
+
 public class Bullet {
 	
 	private BulletType type;
 	private Hitbox hitbox;
+	private boolean visible;
 	
 	public Bullet(BulletType type, int upLeftX, int upLeftY) {
 		super();
 		this.type = type;
 		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
+		this.visible = false;
 	}
 
 	public BulletType getType() {
@@ -18,13 +22,28 @@ public class Bullet {
 	public Hitbox getHitbox() {
 		return hitbox;
 	}
+	
+	public void setCenterPosition(int x, int y) {
+		hitbox.moveTo(x - hitbox.getSizeX()/2, y - hitbox.getSizeY()/2);
+	}
+	
+	public boolean isVisible() {
+		return visible;
+	}
+	
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
 
 	public void move(Direction direction) {
 		switch(direction) { 
-		case UP: hitbox.moveY(type.getSpeed()); break;
-		case DOWN: hitbox.moveY(-type.getSpeed()); break;
+		case UP: hitbox.moveY(-type.getSpeed()); break;
+		case DOWN: hitbox.moveY(type.getSpeed()); break;
 		default: throw new IllegalArgumentException("Bullet can only go up or down");
 		}
+		type.nextSprite();
+		if (hitbox.getUpLeftY() < Commons.SIDEMARGIN)
+			this.visible = false;
 	}
 	
 	@Override

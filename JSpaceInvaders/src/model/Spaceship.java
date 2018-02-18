@@ -4,11 +4,13 @@ public class Spaceship {
 
 	private SpaceshipType type;
 	private Hitbox hitbox;
+	private boolean visible;
 	
 	public Spaceship(SpaceshipType type, int upLeftX, int upLeftY) {
 		super();
 		this.type = type;
 		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
+		this.visible = true;
 	}
 	
 	public SpaceshipType getType() {
@@ -17,6 +19,14 @@ public class Spaceship {
 
 	public Hitbox getHitbox() {
 		return hitbox;
+	}
+	
+	public boolean isVisible() {
+		return visible;
+	}
+	
+	public void setVisible(boolean visible) {
+		this.visible = visible;
 	}
 
 	public void move(Direction direction, int speed) {
