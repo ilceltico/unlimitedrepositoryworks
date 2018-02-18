@@ -5,12 +5,14 @@ public class Spaceship {
 	private SpaceshipType type;
 	private Hitbox hitbox;
 	private boolean visible;
+	private boolean exploding;
 	
 	public Spaceship(SpaceshipType type, int upLeftX, int upLeftY) {
 		super();
 		this.type = type;
 		this.hitbox = new Hitbox(upLeftX, upLeftY, type.getSizeX(), type.getSizeY());
 		this.visible = true;
+		this.exploding = false;
 	}
 	
 	public SpaceshipType getType() {
@@ -25,11 +27,23 @@ public class Spaceship {
 		return visible;
 	}
 	
-	public void setVisible(boolean visible) {
-		this.visible = visible;
+	public void hit() {
+		exploding = true;
+	}
+	
+	public Sprite getCurrentSprite() {
+		if (!exploding)
+			return type.getCurrentSprite();
+		else {
+			return type.getExplosionSprites()[0];
+		}
 	}
 
 	public void move(Direction direction, int speed) {
+		if (exploding) {
+			exploding = false;
+			visible = false;
+		}
 		switch(direction) { 
 		case NONE: break;
 		case UP: hitbox.moveY(-speed); break;

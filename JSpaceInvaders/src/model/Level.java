@@ -15,6 +15,7 @@ public class Level {
 	private long alienFrameNanos;
 	private long alienFrameNanosDecrement;
 	private Direction curDirection = Direction.RIGHT;
+	private boolean alienExploding = false;
 	
 	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed, long alienFrameNanos, long alienFrameNanosDecrement) {
 		super();
@@ -26,7 +27,7 @@ public class Level {
 		this.alienFrameNanosDecrement = alienFrameNanosDecrement;
 	}
 
-	public int getStatingLine() {
+	public int getStartingLine() {
 		return startingLine;
 	}
 
@@ -39,14 +40,19 @@ public class Level {
 	}
 	
 	public long getFrameNanoTime() {
-		return alienFrameNanos;
+		if (!alienExploding)
+			return alienFrameNanos;
+		else
+			return alienFrameNanos + Commons.EXPLOSIONNANOS;
 	}
 	
 	public void speedUp() {
 		alienFrameNanos-=alienFrameNanosDecrement;
 	}
 	
-	public void moveAliens(Canvas canvas) {
+	public void moveAliens() {
+		alienExploding = false;
+		
 		boolean touches = false;
 		int negativeOvershot = 0;
 		int temp;
@@ -85,6 +91,14 @@ public class Level {
 		
 		//Change sprite
 		Game.getGame().changeAlienSprites();
+	}
+	
+	public void alienExploding() {
+		alienExploding = true;
+	}
+	
+	public boolean isAlienExploding() {
+		return alienExploding;
 	}
 
 	@Override

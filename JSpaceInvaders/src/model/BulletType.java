@@ -6,12 +6,16 @@ public class BulletType extends EntityType {
 	
 	private int speed;
 	private int currentSprite;
+	private Sprite explodingSprite;
+	private long frameNanos;
 
-	public BulletType(Sprite[] sprites, int speed, int sizeX, int sizeY) {
+	public BulletType(Sprite[] sprites, Sprite explodingSprite, int speed, int sizeX, int sizeY, long frameNanos) {
 		super();
 		setSprites(sprites);
+		this.explodingSprite = explodingSprite;
 		this.speed = speed;
 		this.currentSprite = 0;
+		this.frameNanos = frameNanos;
 		setSizeX(sizeX);
 		setSizeY(sizeY);
 	}
@@ -19,9 +23,17 @@ public class BulletType extends EntityType {
 	public int getSpeed() {
 		return speed;
 	}
+	
+	public Sprite getExplodingSprite() {
+		return explodingSprite;
+	}
 
 	public Sprite getCurrentSprite() {
 		return getSprites()[currentSprite];
+	}
+	
+	public long getFrameNanos() {
+		return frameNanos;
 	}
 	
 	public void nextSprite() {

@@ -58,7 +58,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void moveAliens() {
-		getCurrentLevel().moveAliens(canvas);
+		getCurrentLevel().moveAliens();
 	}
 	
 	public void movePlayer() {
@@ -66,7 +66,8 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void movePlayerBullet() {
-		playerBullet.move(Direction.UP);
+		if (!playerBullet.isExploding())
+			playerBullet.move(Direction.UP);
 	}
 	
 	public int decreaseAlienCount() {
@@ -120,7 +121,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		case "LEFT": playerDirection = Direction.LEFT; break;
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
 		case "SPACE": if (!playerBullet.isVisible()) {
-				playerBullet.setVisible(true);
+				playerBullet.setVisible();
 				playerBullet.setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
 			}
 			break;

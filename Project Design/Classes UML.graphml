@@ -115,12 +115,14 @@
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="Class" use3DEffect="true">
             <y:AttributeLabel>- type: BulletType
 - hitbox: Hitbox
-- visible: boolean</y:AttributeLabel>
+- visible: boolean
+- exploding: boolean</y:AttributeLabel>
             <y:MethodLabel>+ Bullet (type: BulletType, upLeftX: int, upLeftY: int)
 + getType(): BulletType
 + getHitbox(): Hitbox
 + move(direction: Direction): void
-+ isVisible(): boolean</y:MethodLabel>
++ isExploding: boolean
++ hit: void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -140,10 +142,12 @@
             </y:ModelParameter>
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="Class" use3DEffect="true">
-            <y:AttributeLabel>- currentSprite: int
+            <y:AttributeLabel>- explodingSprite: Sprite
+- currentSprite: int
 - speed: int
+- frameTime: long
 </y:AttributeLabel>
-            <y:MethodLabel>+ BulletType (sprites: Sprite[], speed: int, sizeX: int, sizeY: int)
+            <y:MethodLabel>+ BulletType (sprites: Sprite[], explodingSprite: Sprite, speed: int, sizeX: int, sizeY: int, frameTime: long)
 + getCurrentSprite(): Sprite
 + getSpeed(): int
 + nextSprite(): void</y:MethodLabel>
@@ -629,7 +633,7 @@
       <data key="d8"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-254.74676535035437" sy="21.612390302765867" tx="97.4624237402638" ty="-68.60750102756003">
+          <y:Path sx="-254.74676535035437" sy="21.612390302765863" tx="97.4624237402638" ty="-68.60750102756003">
             <y:Point x="-30.52392193289151" y="438.134166973739"/>
             <y:Point x="231.4175893717001" y="438.134166973739"/>
           </y:Path>

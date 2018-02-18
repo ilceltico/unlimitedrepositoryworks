@@ -7,6 +7,7 @@ public class Bullet {
 	private BulletType type;
 	private Hitbox hitbox;
 	private boolean visible;
+	private boolean exploding;
 	
 	public Bullet(BulletType type, int upLeftX, int upLeftY) {
 		super();
@@ -31,8 +32,35 @@ public class Bullet {
 		return visible;
 	}
 	
-	public void setVisible(boolean visible) {
-		this.visible = visible;
+	public void hit() {
+		exploding = true;
+	}
+	
+	public boolean isExploding() {
+		return exploding;
+	}
+	
+	public void exploded() {
+		exploding = false;
+		visible = false;
+	}
+	
+	public void setVisible() {
+		this.visible = true;
+	}
+	
+	public Sprite getCurrentSprite() {
+		if (!exploding)
+			return type.getCurrentSprite();
+		else
+			return type.getExplodingSprite();
+	}
+	
+	public long getFrameNanos() {
+		if (!exploding)
+			return type.getFrameNanos();
+		else
+			return Commons.BULLETEXPLOSIONNANOS;
 	}
 
 	public void move(Direction direction) {
@@ -42,8 +70,6 @@ public class Bullet {
 		default: throw new IllegalArgumentException("Bullet can only go up or down");
 		}
 		type.nextSprite();
-		if (hitbox.getUpLeftY() < Commons.SIDEMARGIN)
-			this.visible = false;
 	}
 	
 	@Override

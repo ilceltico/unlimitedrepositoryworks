@@ -24,6 +24,7 @@ public class Game {
 	private Sprite[] bullet2Sprites;
 	private Sprite[] bullet3Sprites;
 	private Sprite[] playerBulletSprites;
+	private Sprite playerBulletExplosionSprite;
 	
 	//SpaceshipTypes
 	private SpaceshipType alien1Type;
@@ -103,6 +104,7 @@ public class Game {
 		
 		playerBulletSprites = new Sprite[1];
 		playerBulletSprites[0] = new Sprite("file:images/PlayerBullet.png");
+		playerBulletExplosionSprite = new Sprite("file:images/AlienExplosion.png");
 	}
 	
 	private void initSpaceshipTypes() {
@@ -152,10 +154,10 @@ public class Game {
 	}
 	
 	public void initBullets() {
-		alienBullet1Type = new BulletType(bullet1Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
-		alienBullet2Type = new BulletType(bullet2Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
-		alienBullet3Type = new BulletType(bullet3Sprites, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT);
-		playerBulletType = new BulletType(playerBulletSprites, Commons.PLAYERBULLETSPEED, Commons.PLAYERBULLETWIDTH, Commons.PLAYERBULLETHEIGHT);
+		alienBullet1Type = new BulletType(bullet1Sprites, null, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		alienBullet2Type = new BulletType(bullet2Sprites, null, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		alienBullet3Type = new BulletType(bullet3Sprites, null, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		playerBulletType = new BulletType(playerBulletSprites, playerBulletExplosionSprite, Commons.PLAYERBULLETSPEED, Commons.PLAYERBULLETWIDTH, Commons.PLAYERBULLETHEIGHT, Commons.PLAYERBULLETFRAMENANOS);
 	}
 	
 	

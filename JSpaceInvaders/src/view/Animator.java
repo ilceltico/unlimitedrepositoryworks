@@ -4,6 +4,7 @@ import controller.Controller;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import model.Column;
+import model.Direction;
 import model.Level;
 import model.Spaceship;
 import utils.Commons;
@@ -14,6 +15,8 @@ public class Animator extends AnimationTimer {
 	private Controller controller;
 	private long lastNanos = 0;
 	private long lastAlienNanos = 0;
+	private long lastPlayerBulletNanos = 0;
+	private long explosionStart = 0;
 	
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
@@ -30,9 +33,22 @@ public class Animator extends AnimationTimer {
 				controller.moveAliens();
 				lastAlienNanos = curNanos;
 			}
+			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
+				for (Column c : controller.getCurrentLevel().getColumns()) {
+					for (Spaceship s : c.getSpaceships()) {
+							s.move(Direction.NONE, 0);
+					}
+				}
+			}
+			
+			if (curNanos - lastPlayerBulletNanos >= controller.getPlayerBullet().getFrameNanos()) {
+				controller.movePlayerBullet();
+				lastPlayerBulletNanos = curNanos;
+				if (controller.getPlayerBullet().isExploding())
+					controller.getPlayerBullet().exploded();
+			}
 			
 			controller.movePlayer();
-			controller.movePlayerBullet();
 			
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
@@ -43,11 +59,15 @@ public class Animator extends AnimationTimer {
 				Spaceship[] spaceships = columns[i].getSpaceships();
 				for (int j=0; j<spaceships.length; j++) {
 					if (spaceships[j].isVisible()) {
-						if (controller.getPlayerBullet().isVisible() && spaceships[j].getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
-							spaceships[j].setVisible(false);
-							controller.getPlayerBullet().setVisible(false);
+						if (controller.getPlayerBullet().isVisible() && 
+								!controller.getPlayerBullet().isExploding() && 
+								spaceships[j].getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
+							explosionStart = curNanos;
+							spaceships[j].hit();
+							controller.getCurrentLevel().alienExploding();
+							controller.getPlayerBullet().hit();
 							if (controller.decreaseAlienCount() == 0)
-								return;							
+								return;		
 						}
 						if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
 							controller.gameOver();
@@ -56,14 +76,17 @@ public class Animator extends AnimationTimer {
 					}
 				}
 			}
-			//PlayerBullet to Aliens
+			//PlayerBullet to top margin
+			if (controller.getPlayerBullet().isVisible() &&
+					controller.getPlayerBullet().getHitbox().getUpLeftY() <= Commons.TOPMARGIN)
+				controller.getPlayerBullet().hit();
 			
 			//Rendering aliens
 			for (int i=0; i<columns.length; i++) {
 				Spaceship[] spaceships = columns[i].getSpaceships();
 				for (int j=0; j<spaceships.length; j++) {
 					if (spaceships[j].isVisible())
-						gc.drawImage(spaceships[j].getType().getCurrentSprite(), 
+						gc.drawImage(spaceships[j].getCurrentSprite(), 
 								spaceships[j].getHitbox().getUpLeftX(), 
 								spaceships[j].getHitbox().getUpLeftY(), 
 								spaceships[j].getHitbox().getSizeX(), 
@@ -72,7 +95,7 @@ public class Animator extends AnimationTimer {
 			}
 			
 			//Rendering player
-			gc.drawImage(controller.getPlayer().getType().getCurrentSprite(), 
+			gc.drawImage(controller.getPlayer().getCurrentSprite(), 
 					controller.getPlayer().getHitbox().getUpLeftX(), 
 					controller.getPlayer().getHitbox().getUpLeftY(), 
 					controller.getPlayer().getHitbox().getSizeX(), 
@@ -80,11 +103,18 @@ public class Animator extends AnimationTimer {
 			
 			//Rendering bullets
 			if (controller.getPlayerBullet().isVisible())
-				gc.drawImage(controller.getPlayerBullet().getType().getCurrentSprite(),
-						controller.getPlayerBullet().getHitbox().getUpLeftX(),
-						controller.getPlayerBullet().getHitbox().getUpLeftY(),
-						controller.getPlayerBullet().getHitbox().getSizeX(),
-						controller.getPlayerBullet().getHitbox().getSizeY());
+				if (!controller.getPlayerBullet().isExploding())
+					gc.drawImage(controller.getPlayerBullet().getCurrentSprite(),
+							controller.getPlayerBullet().getHitbox().getUpLeftX(),
+							controller.getPlayerBullet().getHitbox().getUpLeftY(),
+							controller.getPlayerBullet().getHitbox().getSizeX(),
+							controller.getPlayerBullet().getHitbox().getSizeY());
+				else
+					gc.drawImage(controller.getPlayerBullet().getCurrentSprite(),
+							controller.getPlayerBullet().getHitbox().getUpLeftX(),
+							controller.getPlayerBullet().getHitbox().getUpLeftY(),
+							Commons.BULLETEXPLOSIONWIDTH,
+							Commons.BULLETEXPLOSIONHEIGHT);
 			
 			lastNanos = curNanos;	
 		}
