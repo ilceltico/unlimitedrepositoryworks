@@ -117,7 +117,7 @@ public class Game {
 		levels = new Level[Commons.LEVELNUMBER];
 		
 		for (int i=0; i<levels.length; i++) {
-			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.ALIENSPEED, Commons.BASEFPS, Commons.FPSINCREASE);
+			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.ALIENSPEED, Commons.BASEALIENFRAMENANOS, Commons.ALIENFRAMENANOSDECREASE);
 		}
 	}
 	

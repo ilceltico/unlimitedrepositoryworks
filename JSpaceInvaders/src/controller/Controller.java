@@ -24,7 +24,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private MediaPlayer mediaPlayer;
 	
 	private int currentLevel = 1; //-1 states that game is over
-	private Player player;
+	private int alienCount;
 	private Direction playerDirection = Direction.NONE;
 	private Bullet playerBullet;
 	private Canvas canvas;
@@ -32,7 +32,6 @@ public class Controller implements EventHandler<KeyEvent> {
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
 		this.canvas = canvas;
-		this.player = game.getPlayer();
 		this.mediaPlayer = mediaPlayer;
 		
 		//InitPlayerBullets
@@ -40,13 +39,21 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void startGame() {
+		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
 		mediaPlayer.play();
 		animator.start();
 	}
 	
-	public void restartGame() {
+	public void nextlevel() {
+		currentLevel++;
+		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
 		game.reinitializeGame();
+		animator.start();
+	}
+	
+	public void restartGame() {
 		currentLevel = 1;
+		game.reinitializeGame();
 		startGame();
 	}
 	
@@ -55,11 +62,20 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void movePlayer() {
-		player.move(playerDirection);
+		getPlayer().move(playerDirection);
 	}
 	
 	public void movePlayerBullet() {
 		playerBullet.move(Direction.UP);
+	}
+	
+	public int decreaseAlienCount() {
+		alienCount--;
+		getCurrentLevel().speedUp();
+		if (alienCount == 0) {
+			gameOver();
+		}
+		return alienCount;
 	}
 
 	@Override
@@ -81,7 +97,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 
 	public Player getPlayer() {
-		return player;
+		return game.getPlayer();
 	}
 
 	public Bullet getPlayerBullet() {
@@ -94,6 +110,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	
 	public void gameOver() {
 		mediaPlayer.stop();
+		animator.stop();
 		currentLevel = -1;
 		canvas.getGraphicsContext2D().drawImage(new Image("file:images/GameOver.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
 	}
@@ -104,7 +121,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
 		case "SPACE": if (!playerBullet.isVisible()) {
 				playerBullet.setVisible(true);
-				playerBullet.setCenterPosition(player.getHitbox().getCenterX(), player.getHitbox().getUpLeftY());;
+				playerBullet.setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
 			}
 			break;
 		case "ENTER": if (currentLevel<0) restartGame(); break;

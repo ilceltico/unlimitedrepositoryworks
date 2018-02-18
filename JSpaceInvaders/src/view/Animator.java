@@ -46,10 +46,11 @@ public class Animator extends AnimationTimer {
 						if (controller.getPlayerBullet().isVisible() && spaceships[j].getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
 							spaceships[j].setVisible(false);
 							controller.getPlayerBullet().setVisible(false);
+							if (controller.decreaseAlienCount() == 0)
+								return;							
 						}
 						if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
 							controller.gameOver();
-							this.stop();
 							return;
 						}
 					}

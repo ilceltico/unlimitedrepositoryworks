@@ -12,19 +12,18 @@ public class Level {
 	private Column[] columns;
 	private Shield[] shields;
 	private int alienSpeed;
-	private int alienFps;
-	private int alienFpsIncrement;
-	private boolean increment = false;
+	private long alienFrameNanos;
+	private long alienFrameNanosDecrement;
 	private Direction curDirection = Direction.RIGHT;
 	
-	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed, int baseAlienFps, int alienFpsIncrement) {
+	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed, long alienFrameNanos, long alienFrameNanosDecrement) {
 		super();
 		this.startingLine = startingLine;
 		this.columns = columns;
 		this.shields = shields;
 		this.alienSpeed = alienSpeed;
-		this.alienFps = baseAlienFps;
-		this.alienFpsIncrement = alienFpsIncrement;
+		this.alienFrameNanos = alienFrameNanos;
+		this.alienFrameNanosDecrement = alienFrameNanosDecrement;
 	}
 
 	public int getStatingLine() {
@@ -40,7 +39,11 @@ public class Level {
 	}
 	
 	public long getFrameNanoTime() {
-		return (long) 1000000000/(long) alienFps;
+		return alienFrameNanos;
+	}
+	
+	public void speedUp() {
+		alienFrameNanos-=alienFrameNanosDecrement;
 	}
 	
 	public void moveAliens(Canvas canvas) {
@@ -53,8 +56,8 @@ public class Level {
 		for (Column column : columns) {
 			for (Spaceship alien : column.getSpaceships()) {
 				alien.move(curDirection, alienSpeed);
-				if ((right && alien.getHitbox().getDownRightX() > canvasLimit
-						|| !right && alien.getHitbox().getUpLeftX() < canvasLimit)) {
+				if ((alien.isVisible() && (right && alien.getHitbox().getDownRightX() > canvasLimit
+						|| !right && alien.getHitbox().getUpLeftX() < canvasLimit))) {
 					touches = true;
 					temp = right ? 
 							(canvasLimit - alien.getHitbox().getDownRightX()) : 
@@ -67,7 +70,7 @@ public class Level {
 		if (touches) {
 			for (Column column : columns) {
 				for (Spaceship alien : column.getSpaceships()) {
-					alien.getHitbox().move(negativeOvershot, Commons.ROWSPACE);
+					alien.getHitbox().move(negativeOvershot, Commons.ALIENDOWNSPEED);
 				}
 			}
 			if (curDirection == Direction.RIGHT)
