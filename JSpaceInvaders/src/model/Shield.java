@@ -25,6 +25,10 @@ public class Shield {
 		return type;
 	}
 	
+	public boolean isVisible() {
+		return durability>0?true:false;
+	}
+	
 	public void hit() {
 		if (durability > 0)
 			durability--;

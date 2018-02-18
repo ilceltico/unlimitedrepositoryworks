@@ -145,9 +145,9 @@
             <y:AttributeLabel>- explodingSprite: Sprite
 - currentSprite: int
 - speed: int
-- frameTime: long
+- frameNanos: long
 </y:AttributeLabel>
-            <y:MethodLabel>+ BulletType (sprites: Sprite[], explodingSprite: Sprite, speed: int, sizeX: int, sizeY: int, frameTime: long)
+            <y:MethodLabel>+ BulletType (sprites: Sprite[], explodingSprite: Sprite, speed: int, sizeX: int, sizeY: int, frameNanos: long)
 + getCurrentSprite(): Sprite
 + getSpeed(): int
 + nextSprite(): void</y:MethodLabel>
@@ -252,6 +252,7 @@
 + getHitbox(): Hitbox 
 + getDurability(): int
 + getCurrentSprite(): Sprite
++ isVisible: boolean
 + hit(): void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>

@@ -4,6 +4,8 @@ import model.BulletType;
 import model.Column;
 import model.Level;
 import model.Player;
+import model.Shield;
+import model.ShieldType;
 import model.Spaceship;
 import model.SpaceshipType;
 import model.Sprite;
@@ -26,12 +28,23 @@ public class Game {
 	private Sprite[] playerBulletSprites;
 	private Sprite playerBulletExplosionSprite;
 	
+	private Sprite[] shield1Sprites;
+	private Sprite[] shield2Sprites;
+	private Sprite[] shield3Sprites;
+	private Sprite[] shield4Sprites;
+	
 	//SpaceshipTypes
 	private SpaceshipType alien1Type;
 	private SpaceshipType alien2Type;
 	private SpaceshipType alien3Type;
 	
 	private SpaceshipType playerType;
+	
+	//ShieldTypes
+	private ShieldType[] shieldTypes;
+	
+	//Shields
+	private Shield[] shields;
 	
 	//Levels
 	private Level[] levels;
@@ -50,6 +63,8 @@ public class Game {
 	private Game() {	
 		initSprites();
 		initSpaceshipTypes();
+		initShieldTypes();
+		initShields();
 		initLevels();
 		initPlayer();
 		initBullets();
@@ -105,6 +120,29 @@ public class Game {
 		playerBulletSprites = new Sprite[1];
 		playerBulletSprites[0] = new Sprite("file:images/PlayerBullet.png");
 		playerBulletExplosionSprite = new Sprite("file:images/AlienExplosion.png");
+		
+		//Shields
+		shield1Sprites = new Sprite[4];
+		int j;
+		for (int i=0; i<shield1Sprites.length; i++) {
+			j = 3-i;
+			shield1Sprites[i] = new Sprite("file:images/Shield1_"+j+".png");
+		}
+		shield2Sprites = new Sprite[4];
+		for (int i=0; i<shield2Sprites.length; i++) {
+			j = 3-i;
+			shield2Sprites[i] = new Sprite("file:images/Shield2_"+j+".png");
+		}
+		shield3Sprites = new Sprite[4];
+		for (int i=0; i<shield3Sprites.length; i++) {
+			j = 3-i;
+			shield3Sprites[i] = new Sprite("file:images/Shield3_"+j+".png");
+		}
+		shield4Sprites = new Sprite[4];
+		for (int i=0; i<shield4Sprites.length; i++) {
+			j = 3-i;
+			shield4Sprites[i] = new Sprite("file:images/Shield4_"+j+".png");
+		}
 	}
 	
 	private void initSpaceshipTypes() {
@@ -115,11 +153,34 @@ public class Game {
 		playerType = new SpaceshipType(playerSprites, playerExplosionSprites, 0, Commons.PLAYERWIDTH, Commons.PLAYERHEIGHT);
 	}
 	
+	public void initShieldTypes() {
+		shieldTypes = new ShieldType[4];
+		shieldTypes[0] = new ShieldType(shield1Sprites, Commons.SHIELDWIDTH, Commons.SHIELDHEIGHT);
+		shieldTypes[1] = new ShieldType(shield2Sprites, Commons.SHIELDWIDTH, Commons.SHIELDHEIGHT);
+		shieldTypes[2] = new ShieldType(shield3Sprites, Commons.SHIELDWIDTH, Commons.SHIELDHEIGHT);
+		shieldTypes[3] = new ShieldType(shield4Sprites, Commons.SHIELDWIDTH, Commons.SHIELDHEIGHT);
+	}
+	
+	public void initShields() {
+		int x = Commons.SHIELDHSPACE;
+		int y = Commons.SHIELD1Y;
+		shields = new Shield[4*4];
+		for (int i=0; i<4; i++) {
+			for (int j=0; j<4; j++) {
+				shields[j+i*4] = new Shield(shieldTypes[j], x, y);
+				y = (y==Commons.SHIELD1Y)?Commons.SHIELD2Y:Commons.SHIELD1Y;
+				if (j%2 != 0)
+					x += Commons.SHIELDWIDTH - Commons.SHIELDHORIZONTALOVERLAP;
+			}
+			x += Commons.SHIELDHSPACE;
+		}
+	}
+	
 	private void initLevels() {
 		levels = new Level[Commons.LEVELNUMBER];
 		
 		for (int i=0; i<levels.length; i++) {
-			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), null, Commons.ALIENSPEED, Commons.BASEALIENFRAMENANOS, Commons.ALIENFRAMENANOSDECREASE);
+			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), shields, Commons.ALIENSPEED, Commons.BASEALIENFRAMENANOS, Commons.ALIENFRAMENANOSDECREASE);
 		}
 	}
 	
@@ -174,6 +235,7 @@ public class Game {
 	}
 	
 	public void reinitializeGame() {
+		initShields();
 		initLevels();
 		initPlayer();
 	}

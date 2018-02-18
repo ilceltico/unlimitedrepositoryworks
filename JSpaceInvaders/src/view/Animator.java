@@ -3,9 +3,11 @@ package view;
 import controller.Controller;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
+import model.Bullet;
 import model.Column;
 import model.Direction;
 import model.Level;
+import model.Shield;
 import model.Spaceship;
 import utils.Commons;
 
@@ -54,7 +56,7 @@ public class Animator extends AnimationTimer {
 			Column[] columns = level.getColumns();
 			
 			//Collision control
-			//Aliens to Player and PlayerBullet to Aliens
+			//Aliens to Player, Aliens to ground and PlayerBullet to Aliens
 			for (int i=0; i<columns.length; i++) {
 				Spaceship[] spaceships = columns[i].getSpaceships();
 				for (int j=0; j<spaceships.length; j++) {
@@ -73,11 +75,16 @@ public class Animator extends AnimationTimer {
 							controller.gameOver();
 							return;
 						}
+						if (spaceships[j].getHitbox().getDownRightY() > Commons.GRIDHEIGHT - Commons.SIDEMARGIN) {
+							controller.gameOver();
+							return;
+						}
 					}
 				}
 			}
 			//PlayerBullet to top margin
 			if (controller.getPlayerBullet().isVisible() &&
+					!controller.getPlayerBullet().isExploding() &&
 					controller.getPlayerBullet().getHitbox().getUpLeftY() <= Commons.TOPMARGIN)
 				controller.getPlayerBullet().hit();
 			
@@ -91,6 +98,25 @@ public class Animator extends AnimationTimer {
 								spaceships[j].getHitbox().getUpLeftY(), 
 								spaceships[j].getHitbox().getSizeX(), 
 								spaceships[j].getHitbox().getSizeY());
+				}
+			}
+			
+			//Rendering shields and PlayerBullet to Shields collision control
+			for (int i=0; i<controller.getCurrentLevel().getShields().length; i++) {
+				if (controller.getCurrentLevel().getShields()[i].isVisible()) {
+					if (controller.getPlayerBullet().isVisible() &&
+							!controller.getPlayerBullet().isExploding() &&
+							controller.getPlayerBullet().getHitbox().touches(controller.getCurrentLevel().getShields()[i].getHitbox())) {
+						controller.getPlayerBullet().hit();
+						controller.getCurrentLevel().getShields()[i].hit();
+					}
+				}
+				if (controller.getCurrentLevel().getShields()[i].isVisible()) {
+					gc.drawImage(controller.getCurrentLevel().getShields()[i].getCurrentSprite(),
+							controller.getCurrentLevel().getShields()[i].getHitbox().getUpLeftX(),
+							controller.getCurrentLevel().getShields()[i].getHitbox().getUpLeftY(),
+							controller.getCurrentLevel().getShields()[i].getHitbox().getSizeX(),
+							controller.getCurrentLevel().getShields()[i].getHitbox().getSizeY());
 				}
 			}
 			

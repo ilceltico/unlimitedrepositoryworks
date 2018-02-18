@@ -5,8 +5,8 @@ public final class Commons {
 	public static final int GRIDHEIGHT = 500;
 	public static final int COLNUMBER = 11;
 	public static final int ROWNUMBER = 5;
-	public static final int ALIENWIDTH = 23;
-	public static final int ALIENHEIGHT = 23;
+	public static final int ALIENWIDTH = 26;
+	public static final int ALIENHEIGHT = 26;
 	public static final int COLUMNSPACE = 8;
 	public static final int ROWSPACE = 15;
 	public static final int SIDEMARGIN = 10;
@@ -42,6 +42,15 @@ public final class Commons {
 	public static final int ALIEN2POINTS = 20;
 	public static final int ALIEN3POINTS = 30;
 	public static final int ALIEN4POINTS = 300;
+	
+	//Shields
+	public static final int SHIELDWIDTH = 33;
+	public static final int SHIELDHEIGHT = 33;
+	public static final int SHIELDHSPACE = 55;
+	public static final int SHIELDHORIZONTALOVERLAP = 7;
+	public static final int SHIELDVERTICALOVERLAP = 7;
+	public static final int SHIELD1Y = Commons.PLAYERSTARTY - Commons.SHIELDHEIGHT*2 - 20;
+	public static final int SHIELD2Y = Commons.SHIELD1Y + Commons.SHIELDHEIGHT - SHIELDVERTICALOVERLAP;
 	
 	//Levels
 	public static final int LEVELNUMBER = 3;
