@@ -56,7 +56,7 @@ public class Animator extends AnimationTimer {
 			Column[] columns = level.getColumns();
 			
 			//Collision control
-			//Aliens to Player, Aliens to ground and PlayerBullet to Aliens
+			//Aliens to Player, Aliens to ground, Aliens to Shields and PlayerBullet to Aliens
 			for (int i=0; i<columns.length; i++) {
 				Spaceship[] spaceships = columns[i].getSpaceships();
 				for (int j=0; j<spaceships.length; j++) {
@@ -78,6 +78,12 @@ public class Animator extends AnimationTimer {
 						if (spaceships[j].getHitbox().getDownRightY() > Commons.GRIDHEIGHT - Commons.SIDEMARGIN) {
 							controller.gameOver();
 							return;
+						}
+						for (int k=0; k<controller.getCurrentLevel().getShields().length; k++) {
+							if (controller.getCurrentLevel().getShields()[k].isVisible() &&
+									controller.getCurrentLevel().getShields()[k].getHitbox().touches(spaceships[j].getHitbox())) {
+								controller.getCurrentLevel().getShields()[k].hit();
+							}
 						}
 					}
 				}
@@ -101,7 +107,7 @@ public class Animator extends AnimationTimer {
 				}
 			}
 			
-			//Rendering shields and PlayerBullet to Shields collision control
+			//Rendering shields, PlayerBullet to Shields collision control
 			for (int i=0; i<controller.getCurrentLevel().getShields().length; i++) {
 				if (controller.getCurrentLevel().getShields()[i].isVisible()) {
 					if (controller.getPlayerBullet().isVisible() &&
