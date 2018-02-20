@@ -26,8 +26,10 @@ public class Controller implements EventHandler<KeyEvent> {
 	private int currentLevel = 1; //-1 states that game is over
 	private int alienCount;
 	private Direction playerDirection = Direction.NONE;
+	private Direction randAlienDirection = Direction.RIGHT;//goes first to the right then from the left, then from left to right, etc
 	private Bullet playerBullet;
 	private Canvas canvas;
+	
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -59,6 +61,10 @@ public class Controller implements EventHandler<KeyEvent> {
 	
 	public void moveAliens() {
 		getCurrentLevel().moveAliens();
+	}
+	
+	public void moveRandAlien() {
+		//how & when to move randAlien
 	}
 	
 	public void movePlayer() {
@@ -100,6 +106,10 @@ public class Controller implements EventHandler<KeyEvent> {
 	public Player getPlayer() {
 		return game.getPlayer();
 	}
+	
+	public Spaceship getRandAlien() {
+	 return game.getRandAlien();
+	}
 
 	public Bullet getPlayerBullet() {
 		return playerBullet;
@@ -139,4 +149,13 @@ public class Controller implements EventHandler<KeyEvent> {
 		}
 	}
 
+
+	public int getPointsCount(SpaceshipType type) {
+		return game.getPoints(type);
+	}
+
+	
+
 }
+
+

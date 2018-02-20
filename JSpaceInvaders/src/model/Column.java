@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Column {
 
 	private Spaceship[] spaceships;
-
+	
 	public Column(Spaceship[] spaceships) {
 		super();
 		this.spaceships = spaceships;
@@ -14,7 +14,7 @@ public class Column {
 	public Spaceship[] getSpaceships() {
 		return spaceships;
 	}
-
+	
 	public Bullet shoot(BulletType type) {
 		int first = spaceships.length - 1;
 		

@@ -1,6 +1,10 @@
 package model;
 
 import java.util.Arrays;
+//import java.util.concurrent.Executors;
+//import java.util.concurrent.ScheduledExecutorService;
+//import java.util.concurrent.ScheduledFuture;
+//import java.util.concurrent.TimeUnit;
 
 import javafx.scene.canvas.Canvas;
 import program.Game;
@@ -17,7 +21,7 @@ public class Level {
 	private Direction curDirection = Direction.RIGHT;
 	private boolean alienExploding = false;
 	
-	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed, long alienFrameNanos, long alienFrameNanosDecrement) {
+	public Level(int startingLine, Column[] columns, Shield[] shields, int alienSpeed,long alienFrameNanos, long alienFrameNanosDecrement) {
 		super();
 		this.startingLine = startingLine;
 		this.columns = columns;

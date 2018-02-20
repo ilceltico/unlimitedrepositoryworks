@@ -19,6 +19,7 @@ public class Animator extends AnimationTimer {
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
 	private long explosionStart = 0;
+	private int score=0;
 	
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
@@ -33,13 +34,14 @@ public class Animator extends AnimationTimer {
 			
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
+				//controller.moveRandAlien();// put this here in the meantime but of course it's not working
 				lastAlienNanos = curNanos;
 			}
 			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
 				for (Column c : controller.getCurrentLevel().getColumns()) {
 					for (Spaceship s : c.getSpaceships()) {
 							s.move(Direction.NONE, 0);
-					}
+					}// &randAlien?
 				}
 			}
 			
@@ -52,9 +54,11 @@ public class Animator extends AnimationTimer {
 			
 			controller.movePlayer();
 			
+			
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
-			
+			int points=0;
+						
 			//Collision control
 			//Aliens to Player, Aliens to ground, Aliens to Shields and PlayerBullet to Aliens
 			for (int i=0; i<columns.length; i++) {
@@ -68,6 +72,12 @@ public class Animator extends AnimationTimer {
 							spaceships[j].hit();
 							controller.getCurrentLevel().alienExploding();
 							controller.getPlayerBullet().hit();
+							
+							points = controller.getPointsCount(spaceships[j].getType());
+							score= score + points;
+							//System.out.println("Animator: score "+score);
+							
+							
 							if (controller.decreaseAlienCount() == 0)
 								return;		
 						}
@@ -88,6 +98,22 @@ public class Animator extends AnimationTimer {
 					}
 				}
 			}
+			//PlayerBullet to RandAlien
+			if (controller.getRandAlien().isVisible()) {
+				if (controller.getPlayerBullet().isVisible() && 
+						!controller.getPlayerBullet().isExploding() && 
+						controller.getRandAlien().getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
+					explosionStart = curNanos;
+					controller.getRandAlien().hit();
+					controller.getCurrentLevel().alienExploding(); //mi serve?
+					controller.getPlayerBullet().hit();
+					
+					points = controller.getPointsCount(controller.getRandAlien().getType());
+					score= score + points;
+					//System.out.println("Animator: score "+score);
+				}
+				
+			}
 			//PlayerBullet to top margin
 			if (controller.getPlayerBullet().isVisible() &&
 					!controller.getPlayerBullet().isExploding() &&
@@ -106,6 +132,16 @@ public class Animator extends AnimationTimer {
 								spaceships[j].getHitbox().getSizeY());
 				}
 			}
+			
+			//Rendering RandAlien
+			if(controller.getRandAlien().isVisible()) {
+			gc.drawImage(controller.getRandAlien().getCurrentSprite(), 
+					controller.getRandAlien().getHitbox().getUpLeftX(), 
+					controller.getRandAlien().getHitbox().getUpLeftY(), 
+					controller.getRandAlien().getHitbox().getSizeX(), 
+					controller.getRandAlien().getHitbox().getSizeY());
+			}
+			
 			
 			//Rendering shields, PlayerBullet to Shields collision control
 			for (int i=0; i<controller.getCurrentLevel().getShields().length; i++) {
