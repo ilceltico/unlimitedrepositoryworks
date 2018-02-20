@@ -97,7 +97,7 @@ public class Game {
 		alien3Sprites[1] = new Sprite("file:images/Alien3_2.png");
 		
 		randAlienSprite= new Sprite[1];
-		randAlienSprite[0]= new Sprite("file:images:/Alien4.png");
+		randAlienSprite[0]= new Sprite("file:images/Alien4.png");
 
 		alienExplosionSprites = new Sprite[1];
 		alienExplosionSprites[0] = new Sprite("file:images/AlienExplosion.png");
