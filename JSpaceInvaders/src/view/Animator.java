@@ -26,9 +26,10 @@ public class Animator extends AnimationTimer {
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
 	private long lastAlienBulletNanos = 0;
+	private long lastRandAlienNanos = 0;
 	private long explosionStart = 0;
 	
-	private long lastRandAlienNanos=0;
+	private long lastRandAlienGenerationNanos=0;
 	private long lastAlienBulletGenerationNanos = 0;
 		
 	public Animator(GraphicsContext gc, Controller controller) {
@@ -45,19 +46,14 @@ public class Animator extends AnimationTimer {
 			gc.setFont(Font.font("serif"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
 			
-			int randomInt= new Random().nextInt(60);
-			long randomTime = randomInt* 1000000000;
+			int randomInt = new Random().nextInt(60);
+			long randomTime = (long) randomInt * 1000000000;
 			System.out.println(randomTime);
 			
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
 				lastAlienNanos = curNanos;
 			}
-			
-			/*if(curNanos - lastRandAlienNanos >= randTime) {
-				controller.moveRandAlien();
-				lastRandAlienNanos = curNanos;
-			}*/
 		
 			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
 				for (Column c : controller.getCurrentLevel().getColumns()) {
@@ -72,6 +68,11 @@ public class Animator extends AnimationTimer {
 				lastPlayerBulletNanos = curNanos;
 				if (controller.getPlayerBullet().isExploding())
 					controller.getPlayerBullet().exploded();
+			}
+			
+			if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
+				controller.moveRandAlien();
+				lastRandAlienNanos = curNanos;
 			}
 			
 			controller.movePlayer();
@@ -151,13 +152,12 @@ public class Animator extends AnimationTimer {
 			
 			//Rendering RandAlien
 			if(controller.getRandAlien().isVisible()) {
-			gc.drawImage(controller.getRandAlien().getCurrentSprite(), 
-					controller.getRandAlien().getHitbox().getUpLeftX(), 
-					controller.getRandAlien().getHitbox().getUpLeftY(), 
-					controller.getRandAlien().getHitbox().getSizeX(), 
-					controller.getRandAlien().getHitbox().getSizeY());
+					gc.drawImage(controller.getRandAlien().getCurrentSprite(), 
+							controller.getRandAlien().getHitbox().getUpLeftX(), 
+							controller.getRandAlien().getHitbox().getUpLeftY(), 
+							controller.getRandAlien().getHitbox().getSizeX(), 
+							controller.getRandAlien().getHitbox().getSizeY());
 			}
-			
 			
 			//Rendering shields, PlayerBullet to Shields collision control
 			for (int i=0; i<controller.getCurrentLevel().getShields().length; i++) {

@@ -90,7 +90,7 @@ public class Controller {
 
 	
 	private int getRandAlienSpeed() {
-		return game.getRandAlienSpeed();
+		return Commons.RANDALIENSPEED;
 	}
 	
 	public void movePlayer() {

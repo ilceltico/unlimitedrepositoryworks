@@ -67,12 +67,13 @@ public final class Commons {
 	public static final int FIRSTRANDALIENCELLY = Commons.TOPMARGIN + 0;
 	public static final int ALIENDOWNSPEED = 20;
 	public static final int ALIENSPEED = 10; //Aliens will be horizontally moved by this amount of pixels
-	public static final int RANDALIENSPEED = 35;
-	public static final int RANDALIENLIVES = 3;
 	public static final int BASEFPS = 1; //Frames for aliens will be generated using this rate
 	public static final long BASEALIENFRAMENANOS = 1000000000 / BASEFPS;
 	public static final long ALIENFRAMENANOSDECREASE = (BASEALIENFRAMENANOS-FRAMETIMENANOS)/(COLNUMBER*ROWNUMBER-1); //Nanoseconds decrease each time an alien gets destroyed
 	public static final long BASEALIENBULLETNANOS = 1000000000; //One bullet per second
 	public static final long MAXALIENBULLETNANOS = 300000000; //More than 3 bullets per second
 	public static final long ALIENBULLETNANOSDECREASE = (BASEALIENBULLETNANOS-MAXALIENBULLETNANOS)/(COLNUMBER*ROWNUMBER-1);
+	public static final int RANDALIENSPEED = 3;
+	public static final int RANDALIENFPS = 60;
+	public static final long RANDALIENFRAMENANOS = 1000000000 / RANDALIENFPS;
 }

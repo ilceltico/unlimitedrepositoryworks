@@ -318,10 +318,5 @@ public class Game {
 		
 		
 	}
-
-	public int getRandAlienSpeed() {
-		
-		return Commons.RANDALIENSPEED;
-	}
 	
 }
