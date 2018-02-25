@@ -30,7 +30,6 @@ public class Controller implements EventHandler<KeyEvent> {
 	private int alienCount;
 	private Direction playerDirection = Direction.NONE;
 	private Direction randAlienDirection = Direction.RIGHT;
-	private Bullet playerBullet;
 	private Canvas canvas;
 	
 	private int points=0;
@@ -39,9 +38,6 @@ public class Controller implements EventHandler<KeyEvent> {
 		super();
 		this.canvas = canvas;
 		this.mediaPlayer = mediaPlayer;
-		
-		//InitPlayerBullets
-		playerBullet = new Bullet(game.getPlayerBulletType(), 0, 0);
 	}
 	
 	public void startGame() {
@@ -102,8 +98,8 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void movePlayerBullet() {
-		if (!playerBullet.isExploding())
-			playerBullet.move(Direction.UP);
+		if (!game.getPlayerBullet().isExploding())
+			game.getPlayerBullet().move(Direction.UP);
 	}
 	
 	public int decreaseAlienCount() {
@@ -137,12 +133,16 @@ public class Controller implements EventHandler<KeyEvent> {
 		return game.getPlayer();
 	}
 	
-	public Spaceship getRandAlien() {
-	 return game.getRandAlien();
-	}
-
 	public Bullet getPlayerBullet() {
-		return playerBullet;
+		return game.getPlayerBullet();
+	}
+	
+	public Bullet[] getAlienBullet() {
+		return game.getAlienBullets();
+	}
+	
+	public Spaceship getRandAlien() {
+		return game.getRandAlien();
 	}
 	
 	public void setAnimator(Animator animator) {
@@ -160,9 +160,9 @@ public class Controller implements EventHandler<KeyEvent> {
 		switch (e.getCode().toString()) {
 		case "LEFT": playerDirection = Direction.LEFT; break;
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
-		case "SPACE": if (!playerBullet.isVisible()) {
-				playerBullet.setVisible();
-				playerBullet.setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
+		case "SPACE": if (!game.getPlayerBullet().isVisible()) {
+				game.getPlayerBullet().setVisible();
+				game.getPlayerBullet().setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
 			}
 			break;
 		case "ENTER": if (currentLevel<0) restartGame(); break;

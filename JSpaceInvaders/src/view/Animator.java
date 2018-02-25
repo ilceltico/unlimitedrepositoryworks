@@ -37,8 +37,6 @@ public class Animator extends AnimationTimer {
 
 	@Override
 	public void handle(long curNanos) {
-		
-	
 		if (curNanos - lastNanos >= Commons.FRAMETIMENANOS) {
 			gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 			gc.setFill(Color.WHITE);
@@ -194,17 +192,6 @@ public class Animator extends AnimationTimer {
 			
 			lastNanos = curNanos;	
 		}
-	}
-
-
-	private int getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	private String toString(int pointsCount) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

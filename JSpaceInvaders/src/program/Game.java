@@ -1,5 +1,6 @@
 package program;
 
+import model.Bullet;
 import model.BulletType;
 import model.Column;
 import model.Level;
@@ -58,11 +59,15 @@ public class Game {
 	//RandAlien
 	private Spaceship randAlien;
 	
-	//Bullets
+	//BulletTypes
 	private BulletType alienBullet1Type;
 	private BulletType alienBullet2Type;
 	private BulletType alienBullet3Type;
 	private BulletType playerBulletType;
+	
+	//Bullets
+	private Bullet playerBullet;
+	private Bullet[] alienBullets;
 	
 	private static Game game;
 	
@@ -231,8 +236,7 @@ public class Game {
 	
 	private void initRandAlien() {
 		randAlien = new Spaceship(randAlienType, Commons.FIRSTRANDALIENCELLX, Commons.FIRSTRANDALIENCELLY);
-		randAlien.setVisible(false);
-		
+		randAlien.setVisible(false);	
 	}
 	
 	public void initBullets() {
@@ -240,6 +244,12 @@ public class Game {
 		alienBullet2Type = new BulletType(bullet2Sprites, bulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
 		alienBullet3Type = new BulletType(bullet3Sprites, bulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
 		playerBulletType = new BulletType(playerBulletSprites, playerBulletExplosionSprite, Commons.PLAYERBULLETSPEED, Commons.PLAYERBULLETWIDTH, Commons.PLAYERBULLETHEIGHT, Commons.PLAYERBULLETFRAMENANOS);
+	
+		playerBullet = new Bullet(playerBulletType, 0, 0);
+		alienBullets = new Bullet[3];
+		alienBullets[0] = new Bullet(alienBullet1Type, 0, 0);
+		alienBullets[1] = new Bullet(alienBullet2Type, 0, 0);
+		alienBullets[2] = new Bullet(alienBullet3Type, 0, 0);
 	}
 	
 	
@@ -249,6 +259,14 @@ public class Game {
 	
 	public Player getPlayer() {
 		return player;
+	}
+	
+	public Bullet getPlayerBullet() {
+		return playerBullet;
+	}
+	
+	public Bullet[] getAlienBullets() {
+		return alienBullets;
 	}
 	
 	public Spaceship getRandAlien() {
