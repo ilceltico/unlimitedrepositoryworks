@@ -1,5 +1,8 @@
 package controller;
 
+import java.sql.Time;
+import java.util.Random;
+
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
@@ -26,9 +29,11 @@ public class Controller implements EventHandler<KeyEvent> {
 	private int currentLevel = 1; //-1 states that game is over
 	private int alienCount;
 	private Direction playerDirection = Direction.NONE;
-	private Direction randAlienDirection = Direction.RIGHT;//goes first to the right then from the left, then from left to right, etc
+	private Direction randAlienDirection = Direction.RIGHT;
 	private Bullet playerBullet;
 	private Canvas canvas;
+	
+	private boolean randAlienVisible = false;
 	
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
@@ -64,7 +69,33 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void moveRandAlien() {
-		//how & when to move randAlien
+		
+		boolean touches= false;
+		boolean right = randAlienDirection == Direction.RIGHT;
+		int canvasLimit = right ? 
+				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
+					
+		randAlienVisible=true;
+		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
+		
+		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getDownRightX() > canvasLimit
+			|| !right && getRandAlien().getHitbox().getUpLeftX() < canvasLimit))) {
+				touches = true;
+				randAlienVisible=false; 
+				getRandAlien().move(Direction.NONE, 0);
+			}
+		if (touches) {
+				if (randAlienDirection == Direction.RIGHT)
+					randAlienDirection = Direction.LEFT;
+				else
+					randAlienDirection = Direction.RIGHT;
+			}
+			
+		}
+
+	
+	private int getRandAlienSpeed() {
+		return game.getRandAlienSpeed();
 	}
 	
 	public void movePlayer() {
@@ -154,7 +185,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		return game.getPoints(type);
 	}
 
-	
+
 
 }
 

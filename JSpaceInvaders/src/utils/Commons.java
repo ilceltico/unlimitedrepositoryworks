@@ -7,6 +7,8 @@ public final class Commons {
 	public static final int ROWNUMBER = 5;
 	public static final int ALIENWIDTH = 26;
 	public static final int ALIENHEIGHT = 26;
+	public static final int RANDALIENWIDTH = 46;
+	public static final int RANDALIENHEIGHT = 26;
 	public static final int COLUMNSPACE = 8;
 	public static final int ROWSPACE = 15;
 	public static final int SIDEMARGIN = 10;
@@ -60,12 +62,12 @@ public final class Commons {
 	public static final int LEVELNUMBER = 3;
 	//LV1
 	public static final int FIRSTALIENCELLX = Commons.SIDEMARGIN + 0;
-	public static final int FIRSTALIENCELLY = Commons.TOPMARGIN + 25;
+	public static final int FIRSTALIENCELLY = Commons.TOPMARGIN + RANDALIENHEIGHT + 10;
 	public static final int FIRSTRANDALIENCELLX = Commons.SIDEMARGIN+ 0;
-	public static final int FIRSTRANDALIENCELLY = Commons.TOPMARGIN + 10;
+	public static final int FIRSTRANDALIENCELLY = Commons.TOPMARGIN + 0;
 	public static final int ALIENDOWNSPEED = 20;
 	public static final int ALIENSPEED = 10; //Aliens will be horizontally moved by this amount of pixels
-	public static final int RANDALIENSPEED = 10;
+	public static final int RANDALIENSPEED = 35;
 	public static final int RANDALIENLIVES = 3;
 	public static final int BASEFPS = 1; //Frames for aliens will be generated using this rate
 	public static final long BASEALIENFRAMENANOS = 1000000000 / BASEFPS;

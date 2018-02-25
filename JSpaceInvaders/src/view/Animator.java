@@ -1,8 +1,12 @@
 package view;
 
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+
 import controller.Controller;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Paint;
 import model.Bullet;
 import model.Column;
 import model.Direction;
@@ -19,7 +23,7 @@ public class Animator extends AnimationTimer {
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
 	private long explosionStart = 0;
-	private int score=0;
+	private int score = 0;
 	
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
@@ -31,17 +35,19 @@ public class Animator extends AnimationTimer {
 	public void handle(long curNanos) {
 		if (curNanos - lastNanos >= Commons.FRAMETIMENANOS) {
 			gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
-			
+			gc.setFill(Color.WHITE);
+			gc.setFont(Font.font("serif"));
+			gc.fillText("SCORE:"+ score, 10, 20);
+						
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
-				//controller.moveRandAlien();// put this here in the meantime but of course it's not working
 				lastAlienNanos = curNanos;
 			}
 			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
 				for (Column c : controller.getCurrentLevel().getColumns()) {
 					for (Spaceship s : c.getSpaceships()) {
 							s.move(Direction.NONE, 0);
-					}// &randAlien?
+					}
 				}
 			}
 			
@@ -57,8 +63,7 @@ public class Animator extends AnimationTimer {
 			
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
-			int points=0;
-						
+			
 			//Collision control
 			//Aliens to Player, Aliens to ground, Aliens to Shields and PlayerBullet to Aliens
 			for (int i=0; i<columns.length; i++) {
@@ -73,11 +78,9 @@ public class Animator extends AnimationTimer {
 							controller.getCurrentLevel().alienExploding();
 							controller.getPlayerBullet().hit();
 							
-							points = controller.getPointsCount(spaceships[j].getType());
-							score= score + points;
-							//System.out.println("Animator: score "+score);
-							
-							
+							controller.getPointsCount(spaceships[j].getType());
+							score=score+controller.getPointsCount(spaceships[j].getType());
+													
 							if (controller.decreaseAlienCount() == 0)
 								return;		
 						}
@@ -105,14 +108,13 @@ public class Animator extends AnimationTimer {
 						controller.getRandAlien().getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
 					explosionStart = curNanos;
 					controller.getRandAlien().hit();
-					controller.getCurrentLevel().alienExploding(); //mi serve?
-					controller.getPlayerBullet().hit();
-					
-					points = controller.getPointsCount(controller.getRandAlien().getType());
-					score= score + points;
-					//System.out.println("Animator: score "+score);
+					controller.getPlayerBullet().hit(); 
+					controller.getPlayerBullet().exploded();
+										
+					controller.getPointsCount(controller.getRandAlien().getType());
+										
 				}
-				
+				 
 			}
 			//PlayerBullet to top margin
 			if (controller.getPlayerBullet().isVisible() &&
@@ -170,8 +172,9 @@ public class Animator extends AnimationTimer {
 					controller.getPlayer().getHitbox().getSizeY());
 			
 			//Rendering bullets
+			//make the bullet not visible when it touches the aliens
 			if (controller.getPlayerBullet().isVisible())
-				if (!controller.getPlayerBullet().isExploding())
+				if (!controller.getPlayerBullet().isExploding()) 
 					gc.drawImage(controller.getPlayerBullet().getCurrentSprite(),
 							controller.getPlayerBullet().getHitbox().getUpLeftX(),
 							controller.getPlayerBullet().getHitbox().getUpLeftY(),
@@ -186,6 +189,16 @@ public class Animator extends AnimationTimer {
 			
 			lastNanos = curNanos;	
 		}
+	}
+
+	private int getWidth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	private String toString(int pointsCount) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

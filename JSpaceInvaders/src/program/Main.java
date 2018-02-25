@@ -33,8 +33,8 @@ public class Main extends Application {
 		Scene primaryScene = new Scene(root);
 		primaryStage.setScene(primaryScene);
 		
-		Label pointsLabel = new Label("Points: 0");
-		root.getChildren().add(pointsLabel);
+		//Label pointsLabel = new Label("Points: 0");
+		//root.getChildren().add(pointsLabel);
 		
 		StackPane stackPane = new StackPane();
 		Canvas canvas = new Canvas(Commons.GRIDWIDTH, Commons.GRIDHEIGHT);

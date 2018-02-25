@@ -163,7 +163,7 @@ public class Game {
 		alien2Type = new SpaceshipType(alien2Sprites, alienExplosionSprites, Commons.ALIEN2POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
 		alien3Type = new SpaceshipType(alien3Sprites, alienExplosionSprites, Commons.ALIEN3POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
 		
-		randAlienType = new SpaceshipType(randAlienSprite, alienExplosionSprites,Commons.ALIEN4POINTS, Commons.ALIENWIDTH, Commons.ALIENHEIGHT);
+		randAlienType = new SpaceshipType(randAlienSprite, alienExplosionSprites,Commons.ALIEN4POINTS, Commons.RANDALIENWIDTH, Commons.RANDALIENHEIGHT);
 
 		playerType = new SpaceshipType(playerSprites, playerExplosionSprites, 0, Commons.PLAYERWIDTH, Commons.PLAYERHEIGHT);
 	}
@@ -230,7 +230,8 @@ public class Game {
 	}
 	
 	private void initRandAlien() {
-		randAlien = new Spaceship(randAlienType, Commons.FIRSTRANDALIENCELLX, Commons.FIRSTALIENCELLY);
+		randAlien = new Spaceship(randAlienType, Commons.FIRSTRANDALIENCELLX, Commons.FIRSTRANDALIENCELLY);
+		
 	}
 	
 	public void initBullets() {
@@ -276,11 +277,32 @@ public class Game {
 		if(type.equals(alien1Type)) points= Commons.ALIEN1POINTS;
 		if(type.equals(alien2Type)) points= Commons.ALIEN2POINTS;
 		if(type.equals(alien3Type)) points= Commons.ALIEN3POINTS;
-		if(type.equals(randAlienType)) points = Commons.ALIEN4POINTS;
-		//System.out.println("[Game: points]"+points+"\n");
+		if(type.equals(randAlienType)) points= Commons.ALIEN4POINTS;
+		
+		/*int randpoints=0;
+		if(type.equals(randAlienType)) {
+			switch(randpoints) {
+				case 1 : randpoints=50;
+							break;
+				case 2 : randpoints=150;
+							break;
+				case 3 : randpoints=100;
+							break;
+				case 4: randpoints=300;
+							break;
+				}
+		points=randpoints+Commons.ALIEN4POINTS;	
+			
+		};
+		//System.out.println("[Game: points]"+points+"\n");*/
 		return points;
 		
 		
+	}
+
+	public int getRandAlienSpeed() {
+		
+		return Commons.RANDALIENSPEED;
 	}
 	
 }
