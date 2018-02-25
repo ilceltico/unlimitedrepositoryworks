@@ -31,6 +31,7 @@ public class Controller {
 	private Random rand = new Random();
 	
 	private int points=0;
+	private int lives = Commons.PLAYERLIVES;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -74,21 +75,30 @@ public class Controller {
 		boolean right = randAlienDirection == Direction.RIGHT;
 		int canvasLimit = right ? 
 				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
-					
 		getRandAlien().setVisible(true);
 		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
 		
-		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getDownRightX() > canvasLimit
-			|| !right && getRandAlien().getHitbox().getUpLeftX() < canvasLimit))) {
+		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getUpLeftX() > canvasLimit
+			|| !right && getRandAlien().getHitbox().getDownRightX() < canvasLimit))) {
 				touches = true;
 				getRandAlien().setVisible(false);
 				getRandAlien().move(Direction.NONE, 0);
+<<<<<<< HEAD
 		}
+=======
+				
+			}
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 		if (touches) {
 				if (randAlienDirection == Direction.RIGHT)
 					randAlienDirection = Direction.LEFT;
 				else
 					randAlienDirection = Direction.RIGHT;
+<<<<<<< HEAD
+=======
+			}
+		
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 		}
 			
 	}
@@ -117,6 +127,13 @@ public class Controller {
 		return alienCount;
 	}
 
+<<<<<<< HEAD
+=======
+	public int decreasePlayerLives() {
+		lives--;
+		return lives;
+	}
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 	
 	public int getCurrentLevelNumber() {
 		return currentLevel;
@@ -190,6 +207,7 @@ public class Controller {
 		return points;
 	}
 
+<<<<<<< HEAD
 	public long getAlienBulletGenerationNanos() {
 		return alienBulletGenerationNanos;
 	}
@@ -220,6 +238,10 @@ public class Controller {
 			j = (j+1) % game.getAlienBullets().length;
 		}
 		return null;
+=======
+	public int getPlayerLives() {
+		return lives;
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 	}
 
 }

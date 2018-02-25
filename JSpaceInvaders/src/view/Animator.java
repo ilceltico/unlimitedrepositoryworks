@@ -45,9 +45,14 @@ public class Animator extends AnimationTimer {
 			gc.setFill(Color.WHITE);
 			gc.setFont(Font.font("serif"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
+			gc.fillText("LIVES:"+controller.getPlayerLives(), 400, 20);
 			
-			int randomInt = new Random().nextInt(60);
+			int randomInt = new Random().nextInt(600);
 			long randomTime = (long) randomInt * 1000000000;
+<<<<<<< HEAD
+=======
+			
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 			
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
@@ -70,6 +75,7 @@ public class Animator extends AnimationTimer {
 					controller.getPlayerBullet().exploded();
 			}
 			
+<<<<<<< HEAD
 			for (int i=0; i<controller.getAlienBullets().length; i++) {
 				if (curNanos - lastAlienBulletNanos[i] >= controller.getAlienBullets()[i].getFrameNanos()) {
 					controller.moveAlienBullet(i);
@@ -82,7 +88,22 @@ public class Animator extends AnimationTimer {
 			if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
 				controller.moveRandAlien();
 				lastRandAlienNanos = curNanos;
+=======
+			if(controller.getRandAlien().isVisible()){
+				if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
+					controller.moveRandAlien();
+					lastRandAlienNanos = curNanos;
+						}
+>>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 			}
+			
+			if(lastRandAlienGenerationNanos == 0) lastRandAlienGenerationNanos = curNanos;
+			else 
+				{	if(curNanos - lastRandAlienGenerationNanos>= randomTime) {
+					controller.moveRandAlien();
+					lastRandAlienGenerationNanos= curNanos;
+						}
+				}
 			
 			controller.movePlayer();
 			
@@ -140,9 +161,9 @@ public class Animator extends AnimationTimer {
 						controller.getRandAlien().getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
 					explosionStart = curNanos;
 					controller.getRandAlien().hit();
+					controller.getRandAlien().setVisible(false);
 					controller.getPlayerBullet().hit();
 					controller.getPlayerBullet().exploded();
-										
 					controller.UpdateScore(controller.getPointsCount(controller.getRandAlien().getType()));
 										
 				}
