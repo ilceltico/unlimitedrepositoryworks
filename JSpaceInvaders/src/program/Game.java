@@ -231,6 +231,7 @@ public class Game {
 	
 	private void initRandAlien() {
 		randAlien = new Spaceship(randAlienType, Commons.FIRSTRANDALIENCELLX, Commons.FIRSTRANDALIENCELLY);
+		randAlien.setVisible(false);
 		
 	}
 	

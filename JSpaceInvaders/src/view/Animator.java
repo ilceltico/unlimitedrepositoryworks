@@ -3,6 +3,8 @@ package view;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+import java.util.Random;
+
 import controller.Controller;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
@@ -13,6 +15,7 @@ import model.Direction;
 import model.Level;
 import model.Shield;
 import model.Spaceship;
+import model.SpaceshipType;
 import utils.Commons;
 
 public class Animator extends AnimationTimer {
@@ -23,8 +26,9 @@ public class Animator extends AnimationTimer {
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
 	private long explosionStart = 0;
-	private int score = 0;
 	
+	private long lastRandAlienNanos=0;
+		
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
 		this.gc = gc;
@@ -33,16 +37,20 @@ public class Animator extends AnimationTimer {
 
 	@Override
 	public void handle(long curNanos) {
+		
+	
 		if (curNanos - lastNanos >= Commons.FRAMETIMENANOS) {
 			gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 			gc.setFill(Color.WHITE);
 			gc.setFont(Font.font("serif"));
-			gc.fillText("SCORE:"+ score, 10, 20);
+			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
 						
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
 				lastAlienNanos = curNanos;
 			}
+			
+		
 			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
 				for (Column c : controller.getCurrentLevel().getColumns()) {
 					for (Spaceship s : c.getSpaceships()) {
@@ -59,8 +67,7 @@ public class Animator extends AnimationTimer {
 			}
 			
 			controller.movePlayer();
-			
-			
+						
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
 			
@@ -77,10 +84,8 @@ public class Animator extends AnimationTimer {
 							spaceships[j].hit();
 							controller.getCurrentLevel().alienExploding();
 							controller.getPlayerBullet().hit();
-							
-							controller.getPointsCount(spaceships[j].getType());
-							score=score+controller.getPointsCount(spaceships[j].getType());
-													
+							controller.UpdateScore(controller.getPointsCount(spaceships[j].getType()));
+																				
 							if (controller.decreaseAlienCount() == 0)
 								return;		
 						}
@@ -111,7 +116,7 @@ public class Animator extends AnimationTimer {
 					controller.getPlayerBullet().hit(); 
 					controller.getPlayerBullet().exploded();
 										
-					controller.getPointsCount(controller.getRandAlien().getType());
+					controller.UpdateScore(controller.getPointsCount(controller.getRandAlien().getType()));
 										
 				}
 				 
@@ -190,6 +195,7 @@ public class Animator extends AnimationTimer {
 			lastNanos = curNanos;	
 		}
 	}
+
 
 	private int getWidth() {
 		// TODO Auto-generated method stub

@@ -27,6 +27,10 @@ public class Spaceship {
 		return visible;
 	}
 	
+	public void setVisible(boolean set) {
+		this.visible= set;
+	}
+	
 	public void hit() {
 		exploding = true;
 	}

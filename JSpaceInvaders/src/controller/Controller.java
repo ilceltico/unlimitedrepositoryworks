@@ -33,8 +33,7 @@ public class Controller implements EventHandler<KeyEvent> {
 	private Bullet playerBullet;
 	private Canvas canvas;
 	
-	private boolean randAlienVisible = false;
-	
+	private int points=0;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -75,13 +74,13 @@ public class Controller implements EventHandler<KeyEvent> {
 		int canvasLimit = right ? 
 				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
 					
-		randAlienVisible=true;
+		getRandAlien().setVisible(true);
 		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
 		
 		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getDownRightX() > canvasLimit
 			|| !right && getRandAlien().getHitbox().getUpLeftX() < canvasLimit))) {
 				touches = true;
-				randAlienVisible=false; 
+				getRandAlien().setVisible(false);
 				getRandAlien().move(Direction.NONE, 0);
 			}
 		if (touches) {
@@ -183,6 +182,14 @@ public class Controller implements EventHandler<KeyEvent> {
 
 	public int getPointsCount(SpaceshipType type) {
 		return game.getPoints(type);
+	}
+	
+	public void UpdateScore(int score) {
+		points= points+score;
+	}
+	
+	public int getScore() {
+		return points;
 	}
 
 
