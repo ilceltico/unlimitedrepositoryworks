@@ -32,7 +32,7 @@ public final class Commons {
 	public static final int ALIENBULLETHEIGHT = 10;
 	public static final int PLAYERBULLETFPS = 60;
 	public static final long PLAYERBULLETFRAMENANOS = 1000000000 / PLAYERBULLETFPS;
-	public static final int PLAYERBULLETSPEED = 10;
+	public static final int PLAYERBULLETSPEED = 15;
 	public static final int PLAYERBULLETWIDTH = 3;
 	public static final int PLAYERBULLETHEIGHT = 8;
 	public static final int BULLETEXPLOSIONWIDTH = 30;
@@ -72,5 +72,7 @@ public final class Commons {
 	public static final int BASEFPS = 1; //Frames for aliens will be generated using this rate
 	public static final long BASEALIENFRAMENANOS = 1000000000 / BASEFPS;
 	public static final long ALIENFRAMENANOSDECREASE = (BASEALIENFRAMENANOS-FRAMETIMENANOS)/(COLNUMBER*ROWNUMBER-1); //Nanoseconds decrease each time an alien gets destroyed
-	
+	public static final long BASEALIENBULLETNANOS = 1000000000; //One bullet per second
+	public static final long MAXALIENBULLETNANOS = 300000000; //More than 3 bullets per second
+	public static final long ALIENBULLETNANOSDECREASE = (BASEALIENBULLETNANOS-MAXALIENBULLETNANOS)/(COLNUMBER*ROWNUMBER-1);
 }

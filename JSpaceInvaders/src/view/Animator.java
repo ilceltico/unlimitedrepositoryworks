@@ -25,9 +25,11 @@ public class Animator extends AnimationTimer {
 	private long lastNanos = 0;
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
+	private long lastAlienBulletNanos = 0;
 	private long explosionStart = 0;
 	
 	private long lastRandAlienNanos=0;
+	private long lastAlienBulletGenerationNanos = 0;
 		
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();

@@ -20,7 +20,7 @@ import program.Game;
 import utils.Commons;
 import view.Animator;
 
-public class Controller implements EventHandler<KeyEvent> {
+public class Controller {
 	
 	private Game game = Game.getGame();
 	private Animator animator;
@@ -111,15 +111,7 @@ public class Controller implements EventHandler<KeyEvent> {
 		return alienCount;
 	}
 
-	@Override
-	public void handle(KeyEvent event) {
-		if (event.getEventType() == KeyEvent.KEY_PRESSED) {
-			
-		}
-		else if (event.getEventType() == KeyEvent.KEY_RELEASED) {
-			
-		}
-	}
+	
 	
 	public int getCurrentLevelNumber() {
 		return currentLevel;
@@ -152,15 +144,15 @@ public class Controller implements EventHandler<KeyEvent> {
 	public void gameOver() {
 		mediaPlayer.stop();
 		animator.stop();
-		currentLevel = -1;
 		canvas.getGraphicsContext2D().drawImage(new Image("file:images/GameOver.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
+		currentLevel = -1;
 	}
 	
 	public void keyPressed(KeyEvent e) {
 		switch (e.getCode().toString()) {
 		case "LEFT": playerDirection = Direction.LEFT; break;
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
-		case "SPACE": if (!game.getPlayerBullet().isVisible()) {
+		case "SPACE": if (currentLevel > 0 && !game.getPlayerBullet().isVisible() && !getCurrentLevel().isAlienExploding()) {
 				game.getPlayerBullet().setVisible();
 				game.getPlayerBullet().setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
 			}
@@ -185,15 +177,11 @@ public class Controller implements EventHandler<KeyEvent> {
 	}
 	
 	public void UpdateScore(int score) {
-		points= points+score;
+		points = points+score;
 	}
 	
 	public int getScore() {
 		return points;
 	}
 
-
-
 }
-
-
