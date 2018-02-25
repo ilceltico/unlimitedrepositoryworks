@@ -31,7 +31,7 @@ public class Animator extends AnimationTimer {
 	
 	private long lastRandAlienGenerationNanos=0;
 	private long lastAlienBulletGenerationNanos = 0;
-		
+			
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
 		this.gc = gc;
@@ -46,6 +46,7 @@ public class Animator extends AnimationTimer {
 			gc.setFont(Font.font("serif"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
 			gc.fillText("LIVES:"+controller.getPlayerLives(), 400, 20);
+			
 			
 			int randomInt = new Random().nextInt(600);
 			long randomTime = (long) randomInt * 1000000000;
@@ -81,7 +82,7 @@ public class Animator extends AnimationTimer {
 			}
 			
 			
-			if(controller.getRandAlien().isVisible()){
+			if(controller.getRandAlien().isVisible() && !controller.getRandAlien().isExploding()){
 				if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
 					controller.moveRandAlien();
 					lastRandAlienNanos = curNanos;
@@ -90,7 +91,7 @@ public class Animator extends AnimationTimer {
 			
 			if(lastRandAlienGenerationNanos == 0) lastRandAlienGenerationNanos = curNanos;
 			else 
-				{	if(curNanos - lastRandAlienGenerationNanos>= randomTime) {
+				{	if(curNanos - lastRandAlienGenerationNanos>= randomTime && !controller.getRandAlien().isExploding()) {
 					controller.moveRandAlien();
 					lastRandAlienGenerationNanos= curNanos;
 						}
@@ -156,7 +157,7 @@ public class Animator extends AnimationTimer {
 					controller.getPlayerBullet().hit();
 					controller.getPlayerBullet().exploded();
 					controller.UpdateScore(controller.getPointsCount(controller.getRandAlien().getType()));
-										
+					controller.reinitializeRandAlien();
 				}
 				 
 			}
@@ -237,15 +238,20 @@ public class Animator extends AnimationTimer {
 							controller.getPlayerBullet().getHitbox().getUpLeftY()-Commons.BULLETEXPLOSIONHEIGHT/2,
 							Commons.BULLETEXPLOSIONWIDTH,
 							Commons.BULLETEXPLOSIONHEIGHT);
+			
 			//AlienBullets, AlientBullets to Player, AlienBullets to bottom margin,
 			//AlienBullets to PlayerBullet collision control
+			
 			for (int i=0; i<controller.getAlienBullets().length; i++) {
 				if (controller.getAlienBullets()[i].isVisible() &&
 						!controller.getAlienBullets()[i].isExploding() &&
 						controller.getAlienBullets()[i].getHitbox().touches(controller.getPlayer().getHitbox())) {
-					controller.gameOver();
-					return;
+					if(controller.decreasePlayerLives()>0)
+						controller.getPlayer().hit();
+					else controller.gameOver();
+					
 				}
+				
 				if (controller.getAlienBullets()[i].isVisible() &&
 						!controller.getAlienBullets()[i].isExploding() &&
 						controller.getAlienBullets()[i].getHitbox().getDownRightY() >= Commons.GRIDHEIGHT - Commons.BOTTOMMARGIN) {

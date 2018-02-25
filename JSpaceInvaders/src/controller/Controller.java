@@ -118,7 +118,7 @@ public class Controller {
 
 
 	public int decreasePlayerLives() {
-		lives--;
+		lives=lives-1;
 		return lives;
 	}
 	
@@ -228,6 +228,10 @@ public class Controller {
 	
 	public int getPlayerLives() {
 		return lives;
+	}
+
+	public void reinitializeRandAlien() {
+		game.reinitializeRandAlien();		
 	}
 
 }

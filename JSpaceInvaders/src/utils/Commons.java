@@ -22,7 +22,7 @@ public final class Commons {
 	public static final int PLAYERHEIGHT = 18;
 	public static final int PLAYERSTARTX = (GRIDWIDTH-PLAYERWIDTH)/2;
 	public static final int PLAYERSTARTY = GRIDHEIGHT - 4*PLAYERHEIGHT - BOTTOMMARGIN;
-	public static final int PLAYERLIVES = 1;
+	public static final int PLAYERLIVES = 3;
 	public static final int PLAYERSPEED = 5;
 	
 	//Bullets

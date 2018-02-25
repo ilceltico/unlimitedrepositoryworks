@@ -319,5 +319,10 @@ public class Game {
 		
 	}
 
+	public void reinitializeRandAlien() {
+		initRandAlien();
+		
+	}
+
 	
 }

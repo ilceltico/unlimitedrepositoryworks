@@ -35,6 +35,11 @@ public class Spaceship {
 		exploding = true;
 	}
 	
+	public boolean isExploding() {
+		return this.exploding;
+	}
+	
+	
 	public Sprite getCurrentSprite() {
 		if (!exploding)
 			return type.getCurrentSprite();
