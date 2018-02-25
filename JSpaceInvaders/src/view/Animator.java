@@ -49,11 +49,7 @@ public class Animator extends AnimationTimer {
 			
 			int randomInt = new Random().nextInt(600);
 			long randomTime = (long) randomInt * 1000000000;
-<<<<<<< HEAD
-=======
-			
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
-			
+
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
 				lastAlienNanos = curNanos;
@@ -75,7 +71,6 @@ public class Animator extends AnimationTimer {
 					controller.getPlayerBullet().exploded();
 			}
 			
-<<<<<<< HEAD
 			for (int i=0; i<controller.getAlienBullets().length; i++) {
 				if (curNanos - lastAlienBulletNanos[i] >= controller.getAlienBullets()[i].getFrameNanos()) {
 					controller.moveAlienBullet(i);
@@ -85,16 +80,12 @@ public class Animator extends AnimationTimer {
 				}
 			}
 			
-			if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
-				controller.moveRandAlien();
-				lastRandAlienNanos = curNanos;
-=======
+			
 			if(controller.getRandAlien().isVisible()){
 				if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
 					controller.moveRandAlien();
 					lastRandAlienNanos = curNanos;
-						}
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
+				}
 			}
 			
 			if(lastRandAlienGenerationNanos == 0) lastRandAlienGenerationNanos = curNanos;

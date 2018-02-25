@@ -83,24 +83,13 @@ public class Controller {
 				touches = true;
 				getRandAlien().setVisible(false);
 				getRandAlien().move(Direction.NONE, 0);
-<<<<<<< HEAD
 		}
-=======
-				
-			}
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 		if (touches) {
 				if (randAlienDirection == Direction.RIGHT)
 					randAlienDirection = Direction.LEFT;
 				else
 					randAlienDirection = Direction.RIGHT;
-<<<<<<< HEAD
-=======
-			}
-		
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
-		}
-			
+		}			
 	}
 
 	
@@ -127,13 +116,11 @@ public class Controller {
 		return alienCount;
 	}
 
-<<<<<<< HEAD
-=======
+
 	public int decreasePlayerLives() {
 		lives--;
 		return lives;
 	}
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 	
 	public int getCurrentLevelNumber() {
 		return currentLevel;
@@ -207,7 +194,6 @@ public class Controller {
 		return points;
 	}
 
-<<<<<<< HEAD
 	public long getAlienBulletGenerationNanos() {
 		return alienBulletGenerationNanos;
 	}
@@ -238,10 +224,10 @@ public class Controller {
 			j = (j+1) % game.getAlienBullets().length;
 		}
 		return null;
-=======
+	}
+	
 	public int getPlayerLives() {
 		return lives;
->>>>>>> a8873f33f94f22ba2bfbd9f357b0b5b19aed752f
 	}
 
 }
