@@ -16,6 +16,7 @@ public final class Commons {
 	public static final int BOTTOMMARGIN = 10;
 	public static final long FRAMETIMENANOS = 16666667;
 	public static final long EXPLOSIONNANOS = 300000000;
+	public static final long RANDALIENEXPLOSIONNANOS = 500000000L;
 	
 	//Player
 	public static final int PLAYERWIDTH = 30;
@@ -64,7 +65,7 @@ public final class Commons {
 	//LV1
 	public static final int FIRSTALIENCELLX = Commons.SIDEMARGIN + 0;
 	public static final int FIRSTALIENCELLY = Commons.TOPMARGIN + RANDALIENHEIGHT + 10;
-	public static final int FIRSTRANDALIENCELLX = Commons.SIDEMARGIN+ 0;
+	public static final int FIRSTRANDALIENCELLX = -RANDALIENWIDTH;
 	public static final int FIRSTRANDALIENCELLY = Commons.TOPMARGIN + 0;
 	public static final int ALIENDOWNSPEED = 20;
 	public static final int ALIENSPEED = 10; //Aliens will be horizontally moved by this amount of pixels

@@ -74,7 +74,7 @@ public class Controller {
 		boolean touches= false;
 		boolean right = randAlienDirection == Direction.RIGHT;
 		int canvasLimit = right ? 
-				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
+				(Commons.GRIDWIDTH) : (0);
 		getRandAlien().setVisible(true);
 		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
 		
@@ -82,7 +82,6 @@ public class Controller {
 			|| !right && getRandAlien().getHitbox().getDownRightX() < canvasLimit))) {
 				touches = true;
 				getRandAlien().setVisible(false);
-				getRandAlien().move(Direction.NONE, 0);
 		}
 		if (touches) {
 				if (randAlienDirection == Direction.RIGHT)

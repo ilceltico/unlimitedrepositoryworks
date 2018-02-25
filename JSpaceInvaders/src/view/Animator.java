@@ -28,9 +28,13 @@ public class Animator extends AnimationTimer {
 	private long[] lastAlienBulletNanos = {0, 0, 0};
 	private long lastRandAlienNanos = 0;
 	private long explosionStart = 0;
+	private long randAlienExplosionStart = 0;
 	
 	private long lastRandAlienGenerationNanos=0;
 	private long lastAlienBulletGenerationNanos = 0;
+	
+	private Random rand = new Random();
+	private long randomTime = (long) (rand.nextInt(4)+2)*1000000000L;
 			
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
@@ -46,10 +50,6 @@ public class Animator extends AnimationTimer {
 			gc.setFont(Font.font("serif"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
 			gc.fillText("LIVES:"+controller.getPlayerLives(), 400, 20);
-			
-			
-			int randomInt = new Random().nextInt(600);
-			long randomTime = (long) randomInt * 1000000000;
 
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
@@ -86,16 +86,27 @@ public class Animator extends AnimationTimer {
 				if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
 					controller.moveRandAlien();
 					lastRandAlienNanos = curNanos;
+					lastRandAlienGenerationNanos = curNanos;
 				}
 			}
 			
-			if(lastRandAlienGenerationNanos == 0) lastRandAlienGenerationNanos = curNanos;
-			else 
-				{	if(curNanos - lastRandAlienGenerationNanos>= randomTime && !controller.getRandAlien().isExploding()) {
-					controller.moveRandAlien();
-					lastRandAlienGenerationNanos= curNanos;
-						}
+			if (controller.getRandAlien().isVisible() && controller.getRandAlien().isExploding()) {
+				if (curNanos - randAlienExplosionStart >= Commons.RANDALIENEXPLOSIONNANOS) {
+					controller.reinitializeRandAlien();
+					lastRandAlienGenerationNanos = curNanos;
 				}
+			}
+			
+			if (lastRandAlienGenerationNanos == 0) 
+				lastRandAlienGenerationNanos = curNanos;
+			if (curNanos - lastRandAlienGenerationNanos >= randomTime && 
+					!controller.getRandAlien().isExploding() && 
+					!controller.getRandAlien().isVisible()) {
+				controller.moveRandAlien();
+				lastRandAlienGenerationNanos = curNanos;
+				randomTime = (long) (rand.nextInt(4)+2)*1000000000L;
+			}
+			
 			
 			controller.movePlayer();
 			
@@ -151,13 +162,11 @@ public class Animator extends AnimationTimer {
 				if (controller.getPlayerBullet().isVisible() && 
 						!controller.getPlayerBullet().isExploding() && 
 						controller.getRandAlien().getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
-					explosionStart = curNanos;
+					randAlienExplosionStart = curNanos;
 					controller.getRandAlien().hit();
-					controller.getRandAlien().setVisible(false);
 					controller.getPlayerBullet().hit();
 					controller.getPlayerBullet().exploded();
 					controller.UpdateScore(controller.getPointsCount(controller.getRandAlien().getType()));
-					controller.reinitializeRandAlien();
 				}
 				 
 			}
