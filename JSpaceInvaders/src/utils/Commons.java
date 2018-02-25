@@ -73,7 +73,7 @@ public final class Commons {
 	public static final long BASEALIENBULLETNANOS = 1000000000; //One bullet per second
 	public static final long MAXALIENBULLETNANOS = 300000000; //More than 3 bullets per second
 	public static final long ALIENBULLETNANOSDECREASE = (BASEALIENBULLETNANOS-MAXALIENBULLETNANOS)/(COLNUMBER*ROWNUMBER-1);
-	public static final int RANDALIENSPEED = 3;
-	public static final int RANDALIENFPS = 60;
+	public static final int RANDALIENSPEED = 5;
+	public static final int RANDALIENFPS = 30;
 	public static final long RANDALIENFRAMENANOS = 1000000000 / RANDALIENFPS;
 }

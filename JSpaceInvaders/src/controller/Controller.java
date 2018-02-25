@@ -33,6 +33,7 @@ public class Controller {
 	private Canvas canvas;
 	
 	private int points=0;
+	private int lives = Commons.PLAYERLIVES;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -69,15 +70,15 @@ public class Controller {
 		boolean right = randAlienDirection == Direction.RIGHT;
 		int canvasLimit = right ? 
 				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
-					
 		getRandAlien().setVisible(true);
 		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
 		
-		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getDownRightX() > canvasLimit
-			|| !right && getRandAlien().getHitbox().getUpLeftX() < canvasLimit))) {
+		if ((getRandAlien().isVisible() && (right && getRandAlien().getHitbox().getUpLeftX() > canvasLimit
+			|| !right && getRandAlien().getHitbox().getDownRightX() < canvasLimit))) {
 				touches = true;
 				getRandAlien().setVisible(false);
 				getRandAlien().move(Direction.NONE, 0);
+				
 			}
 		if (touches) {
 				if (randAlienDirection == Direction.RIGHT)
@@ -85,7 +86,7 @@ public class Controller {
 				else
 					randAlienDirection = Direction.RIGHT;
 			}
-			
+		
 		}
 
 	
@@ -111,7 +112,10 @@ public class Controller {
 		return alienCount;
 	}
 
-	
+	public int decreasePlayerLives() {
+		lives--;
+		return lives;
+	}
 	
 	public int getCurrentLevelNumber() {
 		return currentLevel;
@@ -182,6 +186,10 @@ public class Controller {
 	
 	public int getScore() {
 		return points;
+	}
+
+	public int getPlayerLives() {
+		return lives;
 	}
 
 }
