@@ -84,6 +84,7 @@ public class Animator extends AnimationTimer {
 							spaceships[j].hit();
 							controller.getCurrentLevel().alienExploding();
 							controller.getPlayerBullet().hit();
+							controller.getPlayerBullet().exploded();
 							controller.UpdateScore(controller.getPointsCount(spaceships[j].getType()));
 																				
 							if (controller.decreaseAlienCount() == 0)
@@ -113,7 +114,7 @@ public class Animator extends AnimationTimer {
 						controller.getRandAlien().getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
 					explosionStart = curNanos;
 					controller.getRandAlien().hit();
-					controller.getPlayerBullet().hit(); 
+					controller.getPlayerBullet().hit();
 					controller.getPlayerBullet().exploded();
 										
 					controller.UpdateScore(controller.getPointsCount(controller.getRandAlien().getType()));
@@ -177,7 +178,6 @@ public class Animator extends AnimationTimer {
 					controller.getPlayer().getHitbox().getSizeY());
 			
 			//Rendering bullets
-			//make the bullet not visible when it touches the aliens
 			if (controller.getPlayerBullet().isVisible())
 				if (!controller.getPlayerBullet().isExploding()) 
 					gc.drawImage(controller.getPlayerBullet().getCurrentSprite(),
@@ -187,8 +187,8 @@ public class Animator extends AnimationTimer {
 							controller.getPlayerBullet().getHitbox().getSizeY());
 				else
 					gc.drawImage(controller.getPlayerBullet().getCurrentSprite(),
-							controller.getPlayerBullet().getHitbox().getUpLeftX(),
-							controller.getPlayerBullet().getHitbox().getUpLeftY(),
+							controller.getPlayerBullet().getHitbox().getCenterX()-Commons.BULLETEXPLOSIONWIDTH/2,
+							controller.getPlayerBullet().getHitbox().getUpLeftY()-Commons.BULLETEXPLOSIONHEIGHT/2,
 							Commons.BULLETEXPLOSIONWIDTH,
 							Commons.BULLETEXPLOSIONHEIGHT);
 			

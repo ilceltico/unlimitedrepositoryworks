@@ -71,7 +71,6 @@ public final class Commons {
 	public static final int RANDALIENLIVES = 3;
 	public static final int BASEFPS = 1; //Frames for aliens will be generated using this rate
 	public static final long BASEALIENFRAMENANOS = 1000000000 / BASEFPS;
-	public static final long ALIENFRAMENANOSDECREASE = 18209876; //Nanoseconds decrease each time an alien gets destroyed
-
+	public static final long ALIENFRAMENANOSDECREASE = (BASEALIENFRAMENANOS-FRAMETIMENANOS)/(COLNUMBER*ROWNUMBER-1); //Nanoseconds decrease each time an alien gets destroyed
 	
 }
