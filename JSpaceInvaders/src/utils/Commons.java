@@ -13,6 +13,7 @@ public final class Commons {
 	public static final int ROWSPACE = 15;
 	public static final int SIDEMARGIN = 10;
 	public static final int TOPMARGIN = 50;
+	public static final int BOTTOMMARGIN = 10;
 	public static final long FRAMETIMENANOS = 16666667;
 	public static final long EXPLOSIONNANOS = 300000000;
 	
@@ -20,14 +21,14 @@ public final class Commons {
 	public static final int PLAYERWIDTH = 30;
 	public static final int PLAYERHEIGHT = 18;
 	public static final int PLAYERSTARTX = (GRIDWIDTH-PLAYERWIDTH)/2;
-	public static final int PLAYERSTARTY = GRIDHEIGHT - 4*PLAYERHEIGHT;
+	public static final int PLAYERSTARTY = GRIDHEIGHT - 4*PLAYERHEIGHT - BOTTOMMARGIN;
 	public static final int PLAYERLIVES = 1;
 	public static final int PLAYERSPEED = 5;
 	
 	//Bullets
-	public static final int ALIENBULLETFPS = 25;
+	public static final int ALIENBULLETFPS = 20;
 	public static final long ALIENBULLETFRAMENANOS = 1000000000 / ALIENBULLETFPS;
-	public static final int ALIENBULLETSPEED = 3;
+	public static final int ALIENBULLETSPEED = 5;
 	public static final int ALIENBULLETWIDTH = 3;
 	public static final int ALIENBULLETHEIGHT = 10;
 	public static final int PLAYERBULLETFPS = 60;
@@ -70,9 +71,9 @@ public final class Commons {
 	public static final int BASEFPS = 1; //Frames for aliens will be generated using this rate
 	public static final long BASEALIENFRAMENANOS = 1000000000 / BASEFPS;
 	public static final long ALIENFRAMENANOSDECREASE = (BASEALIENFRAMENANOS-FRAMETIMENANOS)/(COLNUMBER*ROWNUMBER-1); //Nanoseconds decrease each time an alien gets destroyed
-	public static final long BASEALIENBULLETNANOS = 1000000000; //One bullet per second
-	public static final long MAXALIENBULLETNANOS = 300000000; //More than 3 bullets per second
-	public static final long ALIENBULLETNANOSDECREASE = (BASEALIENBULLETNANOS-MAXALIENBULLETNANOS)/(COLNUMBER*ROWNUMBER-1);
+	public static final long BASEALIENBULLETGENERATIONNANOS = 2000000000; //One bullet per 2 seconds
+	public static final long MAXALIENBULLETGENERATIONNANOS = 300000000; //More than 3 bullets per second
+	public static final long ALIENBULLETGENERATIONNANOSDECREASE = (BASEALIENBULLETGENERATIONNANOS-MAXALIENBULLETGENERATIONNANOS)/(COLNUMBER*ROWNUMBER-1);
 	public static final int RANDALIENSPEED = 3;
 	public static final int RANDALIENFPS = 60;
 	public static final long RANDALIENFRAMENANOS = 1000000000 / RANDALIENFPS;

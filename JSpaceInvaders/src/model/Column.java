@@ -5,23 +5,38 @@ import java.util.Arrays;
 public class Column {
 
 	private Spaceship[] spaceships;
+	private int spaceshipsCount;
 	
 	public Column(Spaceship[] spaceships) {
 		super();
 		this.spaceships = spaceships;
+		this.spaceshipsCount = spaceships.length;
 	}
 
 	public Spaceship[] getSpaceships() {
 		return spaceships;
 	}
 	
-	public Bullet shoot(BulletType type) {
+	public boolean shoot(Bullet bullet) {
 		int first = spaceships.length - 1;
 		
-		while(spaceships[first] == null)
+		while(spaceships[first].isVisible() == false && first >= 0)
 			first--;
 		
-		return (first >= 0) ? spaceships[first].shoot(type) : null;
+		if (first >= 0) {
+			spaceships[first].shoot(bullet);
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	public boolean isEmpty() {
+		return spaceshipsCount==0;
+	}
+	
+	public void decreaseAlienCount() {
+		spaceshipsCount--;
 	}
 
 	@Override

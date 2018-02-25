@@ -57,8 +57,9 @@ public class Spaceship {
 		}
 	}
 	
-	public Bullet shoot(BulletType type) { 
-		return new Bullet(type, hitbox.getCenterX() - type.getSizeX() / 2, hitbox.getCenterY() - type.getSizeY() / 2);
+	public void shoot(Bullet bullet) { 
+		bullet.setVisible();
+		bullet.setCenterPosition(getHitbox().getCenterX(), getHitbox().getCenterY());;
 	}
 
 	@Override

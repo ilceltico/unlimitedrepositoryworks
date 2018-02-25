@@ -1,21 +1,17 @@
 package controller;
 
-import java.sql.Time;
 import java.util.Random;
 
-import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.MediaPlayer;
 import model.Bullet;
-import model.Column;
 import model.Direction;
 import model.Level;
 import model.Player;
 import model.Spaceship;
 import model.SpaceshipType;
-import model.Sprite;
 import program.Game;
 import utils.Commons;
 import view.Animator;
@@ -28,9 +24,11 @@ public class Controller {
 	
 	private int currentLevel = 1; //-1 states that game is over
 	private int alienCount;
+	private long alienBulletGenerationNanos = Commons.BASEALIENBULLETGENERATIONNANOS;
 	private Direction playerDirection = Direction.NONE;
 	private Direction randAlienDirection = Direction.RIGHT;
 	private Canvas canvas;
+	private Random rand = new Random();
 	
 	private int points=0;
 	
@@ -63,6 +61,13 @@ public class Controller {
 		getCurrentLevel().moveAliens();
 	}
 	
+	public void moveAlienBullet(int i) {
+		if (getAlienBullets()[i].isVisible()) {
+			if (!getAlienBullets()[i].isExploding())
+				getAlienBullets()[i].move(Direction.DOWN);
+		}
+	}
+	
 	public void moveRandAlien() {
 		
 		boolean touches= false;
@@ -78,15 +83,15 @@ public class Controller {
 				touches = true;
 				getRandAlien().setVisible(false);
 				getRandAlien().move(Direction.NONE, 0);
-			}
+		}
 		if (touches) {
 				if (randAlienDirection == Direction.RIGHT)
 					randAlienDirection = Direction.LEFT;
 				else
 					randAlienDirection = Direction.RIGHT;
-			}
-			
 		}
+			
+	}
 
 	
 	private int getRandAlienSpeed() {
@@ -105,13 +110,13 @@ public class Controller {
 	public int decreaseAlienCount() {
 		alienCount--;
 		getCurrentLevel().speedUp();
+		alienBulletGenerationNanos -= Commons.ALIENBULLETGENERATIONNANOSDECREASE;
 		if (alienCount == 0) {
 			gameOver();
 		}
 		return alienCount;
 	}
 
-	
 	
 	public int getCurrentLevelNumber() {
 		return currentLevel;
@@ -129,7 +134,7 @@ public class Controller {
 		return game.getPlayerBullet();
 	}
 	
-	public Bullet[] getAlienBullet() {
+	public Bullet[] getAlienBullets() {
 		return game.getAlienBullets();
 	}
 	
@@ -153,8 +158,9 @@ public class Controller {
 		case "LEFT": playerDirection = Direction.LEFT; break;
 		case "RIGHT": playerDirection = Direction.RIGHT; break;
 		case "SPACE": if (currentLevel > 0 && !game.getPlayerBullet().isVisible() && !getCurrentLevel().isAlienExploding()) {
-				game.getPlayerBullet().setVisible();
-				game.getPlayerBullet().setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
+				getPlayer().shoot(getPlayerBullet());
+				//game.getPlayerBullet().setVisible();
+				//game.getPlayerBullet().setCenterPosition(getPlayer().getHitbox().getCenterX(), getPlayer().getHitbox().getUpLeftY());;
 			}
 			break;
 		case "ENTER": if (currentLevel<0) restartGame(); break;
@@ -182,6 +188,38 @@ public class Controller {
 	
 	public int getScore() {
 		return points;
+	}
+
+	public long getAlienBulletGenerationNanos() {
+		return alienBulletGenerationNanos;
+	}
+	
+	public void alienShoot() {
+		Bullet bullet = alienBulletPriorityEncoder();
+		if (bullet != null) {
+			int i=rand.nextInt(Commons.COLNUMBER);
+			int j=0;
+			while (j < Commons.COLNUMBER && getCurrentLevel().getColumns()[i].isEmpty()) {
+				i = (i+1) % Commons.COLNUMBER;
+				j++;
+			}
+			if (j < Commons.COLNUMBER) {
+				getCurrentLevel().getColumns()[i].shoot(bullet);
+				maxPriorityIndex = (maxPriorityIndex+1) % game.getAlienBullets().length;
+			
+			}
+		}
+	}
+	
+	private int maxPriorityIndex = 0; //Array index with max priority, it shifts each time alienShoot succesfully shoots
+	private Bullet alienBulletPriorityEncoder() {
+		int j = maxPriorityIndex;
+		for (int i=0; i<game.getAlienBullets().length; i++) {
+			if (!game.getAlienBullets()[j].isVisible())
+				return game.getAlienBullets()[j];
+			j = (j+1) % game.getAlienBullets().length;
+		}
+		return null;
 	}
 
 }

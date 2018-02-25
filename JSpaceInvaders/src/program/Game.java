@@ -27,7 +27,7 @@ public class Game {
 	private Sprite[] bullet1Sprites;
 	private Sprite[] bullet2Sprites;
 	private Sprite[] bullet3Sprites;
-	private Sprite bulletsExplosionSprite;
+	private Sprite alienBulletsExplosionSprite;
 	private Sprite[] playerBulletSprites;
 	private Sprite playerBulletExplosionSprite;
 	
@@ -117,23 +117,23 @@ public class Game {
 		//Bullets
 		bullet1Sprites = new Sprite[4];
 		bullet1Sprites[0] = new Sprite("file:images/AlienBullet1_1.png");
-		bullet1Sprites[1] = new Sprite("file:images/AlienBullet1_1.png");
-		bullet1Sprites[2] = new Sprite("file:images/AlienBullet1_2.png");
-		bullet1Sprites[3] = new Sprite("file:images/AlienBullet1_2.png");
+		bullet1Sprites[1] = new Sprite("file:images/AlienBullet1_2.png");
+		bullet1Sprites[2] = new Sprite("file:images/AlienBullet1_3.png");
+		bullet1Sprites[3] = new Sprite("file:images/AlienBullet1_4.png");
 		
 		bullet2Sprites = new Sprite[4];
 		bullet2Sprites[0] = new Sprite("file:images/AlienBullet2_1.png");
-		bullet2Sprites[1] = new Sprite("file:images/AlienBullet2_1.png");
-		bullet2Sprites[2] = new Sprite("file:images/AlienBullet2_2.png");
-		bullet2Sprites[3] = new Sprite("file:images/AlienBullet2_2.png");
+		bullet2Sprites[1] = new Sprite("file:images/AlienBullet2_2.png");
+		bullet2Sprites[2] = new Sprite("file:images/AlienBullet2_3.png");
+		bullet2Sprites[3] = new Sprite("file:images/AlienBullet2_4.png");
 		
 		bullet3Sprites = new Sprite[4];
 		bullet3Sprites[0] = new Sprite("file:images/AlienBullet3_1.png");
-		bullet3Sprites[1] = new Sprite("file:images/AlienBullet3_1.png");
-		bullet3Sprites[2] = new Sprite("file:images/AlienBullet3_2.png");
-		bullet3Sprites[3] = new Sprite("file:images/AlienBullet3_2.png");
+		bullet3Sprites[1] = new Sprite("file:images/AlienBullet3_2.png");
+		bullet3Sprites[2] = new Sprite("file:images/AlienBullet3_3.png");
+		bullet3Sprites[3] = new Sprite("file:images/AlienBullet3_4.png");
 		
-		bulletsExplosionSprite = new Sprite("file:images/AlienBulletExplosion.png");
+		alienBulletsExplosionSprite = new Sprite("file:images/AlienBulletExplosion.png");
 		
 		playerBulletSprites = new Sprite[1];
 		playerBulletSprites[0] = new Sprite("file:images/PlayerBullet.png");
@@ -240,9 +240,9 @@ public class Game {
 	}
 	
 	public void initBullets() {
-		alienBullet1Type = new BulletType(bullet1Sprites, bulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
-		alienBullet2Type = new BulletType(bullet2Sprites, bulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
-		alienBullet3Type = new BulletType(bullet3Sprites, bulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		alienBullet1Type = new BulletType(bullet1Sprites, alienBulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		alienBullet2Type = new BulletType(bullet2Sprites, alienBulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
+		alienBullet3Type = new BulletType(bullet3Sprites, alienBulletsExplosionSprite, Commons.ALIENBULLETSPEED, Commons.ALIENBULLETWIDTH, Commons.ALIENBULLETHEIGHT, Commons.ALIENBULLETFRAMENANOS);
 		playerBulletType = new BulletType(playerBulletSprites, playerBulletExplosionSprite, Commons.PLAYERBULLETSPEED, Commons.PLAYERBULLETWIDTH, Commons.PLAYERBULLETHEIGHT, Commons.PLAYERBULLETFRAMENANOS);
 	
 		playerBullet = new Bullet(playerBulletType, 0, 0);

@@ -55,8 +55,6 @@ public class Level {
 	}
 	
 	public void moveAliens() {
-		alienExploding = false;
-		
 		boolean touches = false;
 		int negativeOvershot = 0;
 		int temp;
@@ -87,18 +85,14 @@ public class Level {
 				curDirection = Direction.LEFT;
 			else
 				curDirection = Direction.RIGHT;
-//			if (increment)
-//				speed += speedIncrement;
-//			else
-//				increment = true;
 		}
 		
 		//Change sprite
 		Game.getGame().changeAlienSprites();
 	}
 	
-	public void alienExploding() {
-		alienExploding = true;
+	public void setAlienExploding(boolean alienExploding) {
+		this.alienExploding = alienExploding;
 	}
 	
 	public boolean isAlienExploding() {

@@ -25,7 +25,7 @@ public class Animator extends AnimationTimer {
 	private long lastNanos = 0;
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
-	private long lastAlienBulletNanos = 0;
+	private long[] lastAlienBulletNanos = {0, 0, 0};
 	private long lastRandAlienNanos = 0;
 	private long explosionStart = 0;
 	
@@ -48,7 +48,6 @@ public class Animator extends AnimationTimer {
 			
 			int randomInt = new Random().nextInt(60);
 			long randomTime = (long) randomInt * 1000000000;
-			System.out.println(randomTime);
 			
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
@@ -61,6 +60,7 @@ public class Animator extends AnimationTimer {
 							s.move(Direction.NONE, 0);
 					}
 				}
+				controller.getCurrentLevel().setAlienExploding(false);
 			}
 			
 			if (curNanos - lastPlayerBulletNanos >= controller.getPlayerBullet().getFrameNanos()) {
@@ -70,12 +70,28 @@ public class Animator extends AnimationTimer {
 					controller.getPlayerBullet().exploded();
 			}
 			
+			for (int i=0; i<controller.getAlienBullets().length; i++) {
+				if (curNanos - lastAlienBulletNanos[i] >= controller.getAlienBullets()[i].getFrameNanos()) {
+					controller.moveAlienBullet(i);
+					lastAlienBulletNanos[i] = curNanos;
+					if (controller.getAlienBullets()[i].isExploding())
+						controller.getAlienBullets()[i].exploded();
+				}
+			}
+			
 			if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
 				controller.moveRandAlien();
 				lastRandAlienNanos = curNanos;
 			}
 			
 			controller.movePlayer();
+			
+			
+			//Alien Bullets generation
+			if (curNanos - lastAlienBulletGenerationNanos >= controller.getAlienBulletGenerationNanos()) {
+				controller.alienShoot();
+				lastAlienBulletGenerationNanos = curNanos;
+			}
 						
 			Level level = controller.getCurrentLevel();
 			Column[] columns = level.getColumns();
@@ -91,11 +107,12 @@ public class Animator extends AnimationTimer {
 								spaceships[j].getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
 							explosionStart = curNanos;
 							spaceships[j].hit();
-							controller.getCurrentLevel().alienExploding();
+							controller.getCurrentLevel().setAlienExploding(true);
 							controller.getPlayerBullet().hit();
 							controller.getPlayerBullet().exploded();
 							controller.UpdateScore(controller.getPointsCount(spaceships[j].getType()));
-																				
+									
+							columns[i].decreaseAlienCount();
 							if (controller.decreaseAlienCount() == 0)
 								return;		
 						}
@@ -159,7 +176,8 @@ public class Animator extends AnimationTimer {
 							controller.getRandAlien().getHitbox().getSizeY());
 			}
 			
-			//Rendering shields, PlayerBullet to Shields collision control
+			//Rendering shields, PlayerBullet to Shields collision control, 
+			//AlienBullets to Shields collision control
 			for (int i=0; i<controller.getCurrentLevel().getShields().length; i++) {
 				if (controller.getCurrentLevel().getShields()[i].isVisible()) {
 					if (controller.getPlayerBullet().isVisible() &&
@@ -167,6 +185,14 @@ public class Animator extends AnimationTimer {
 							controller.getPlayerBullet().getHitbox().touches(controller.getCurrentLevel().getShields()[i].getHitbox())) {
 						controller.getPlayerBullet().hit();
 						controller.getCurrentLevel().getShields()[i].hit();
+					}
+					for (int j=0; j<controller.getAlienBullets().length; j++) {
+						if (controller.getAlienBullets()[j].isVisible() &&
+								!controller.getAlienBullets()[j].isExploding() &&
+								controller.getAlienBullets()[j].getHitbox().touches(controller.getCurrentLevel().getShields()[i].getHitbox())) {
+							controller.getAlienBullets()[j].hit();
+							controller.getCurrentLevel().getShields()[i].hit();
+						}
 					}
 				}
 				if (controller.getCurrentLevel().getShields()[i].isVisible()) {
@@ -199,6 +225,43 @@ public class Animator extends AnimationTimer {
 							controller.getPlayerBullet().getHitbox().getUpLeftY()-Commons.BULLETEXPLOSIONHEIGHT/2,
 							Commons.BULLETEXPLOSIONWIDTH,
 							Commons.BULLETEXPLOSIONHEIGHT);
+			//AlienBullets, AlientBullets to Player, AlienBullets to bottom margin,
+			//AlienBullets to PlayerBullet collision control
+			for (int i=0; i<controller.getAlienBullets().length; i++) {
+				if (controller.getAlienBullets()[i].isVisible() &&
+						!controller.getAlienBullets()[i].isExploding() &&
+						controller.getAlienBullets()[i].getHitbox().touches(controller.getPlayer().getHitbox())) {
+					controller.gameOver();
+					return;
+				}
+				if (controller.getAlienBullets()[i].isVisible() &&
+						!controller.getAlienBullets()[i].isExploding() &&
+						controller.getAlienBullets()[i].getHitbox().getDownRightY() >= Commons.GRIDHEIGHT - Commons.BOTTOMMARGIN) {
+					controller.getAlienBullets()[i].hit();
+				}
+				if (controller.getAlienBullets()[i].isVisible() &&
+						!controller.getAlienBullets()[i].isExploding() &&
+						controller.getPlayerBullet().isVisible() &&
+						!controller.getPlayerBullet().isExploding() &&
+						controller.getAlienBullets()[i].getHitbox().touches(controller.getPlayerBullet().getHitbox())) {
+					controller.getAlienBullets()[i].hit();
+					controller.getPlayerBullet().hit();
+				}
+				if (controller.getAlienBullets()[i].isVisible()) {
+					if (!controller.getAlienBullets()[i].isExploding()) 
+						gc.drawImage(controller.getAlienBullets()[i].getCurrentSprite(),
+								controller.getAlienBullets()[i].getHitbox().getUpLeftX(),
+								controller.getAlienBullets()[i].getHitbox().getUpLeftY(),
+								controller.getAlienBullets()[i].getHitbox().getSizeX(),
+								controller.getAlienBullets()[i].getHitbox().getSizeY());
+					else
+						gc.drawImage(controller.getAlienBullets()[i].getCurrentSprite(),
+								controller.getAlienBullets()[i].getHitbox().getCenterX()-Commons.BULLETEXPLOSIONWIDTH/2,
+								controller.getAlienBullets()[i].getHitbox().getUpLeftY()-Commons.BULLETEXPLOSIONHEIGHT/2,
+								Commons.BULLETEXPLOSIONWIDTH,
+								Commons.BULLETEXPLOSIONHEIGHT);
+				}
+			}
 			
 			lastNanos = curNanos;	
 		}
