@@ -44,12 +44,20 @@ public class Animator extends AnimationTimer {
 			gc.setFill(Color.WHITE);
 			gc.setFont(Font.font("serif"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
-						
+			
+			int randomInt= new Random().nextInt(60);
+			long randomTime = randomInt* 1000000000;
+			System.out.println(randomTime);
+			
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
 				lastAlienNanos = curNanos;
 			}
 			
+			/*if(curNanos - lastRandAlienNanos >= randTime) {
+				controller.moveRandAlien();
+				lastRandAlienNanos = curNanos;
+			}*/
 		
 			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
 				for (Column c : controller.getCurrentLevel().getColumns()) {
