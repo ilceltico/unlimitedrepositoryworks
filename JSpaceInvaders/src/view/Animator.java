@@ -47,9 +47,10 @@ public class Animator extends AnimationTimer {
 		if (curNanos - lastNanos >= Commons.FRAMETIMENANOS) {
 			gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 			gc.setFill(Color.WHITE);
-			gc.setFont(Font.font("serif"));
+			gc.setFont(Font.font("PerfectLed123"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
 			gc.fillText("LIVES:"+controller.getPlayerLives(), 400, 20);
+			gc.fillText("LEVEL:"+controller.getCurrentLevelNumber(), 250, 20);
 
 			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
 				controller.moveAliens();
@@ -106,8 +107,7 @@ public class Animator extends AnimationTimer {
 				lastRandAlienGenerationNanos = curNanos;
 				randomTime = (long) (rand.nextInt(4)+2)*1000000000L;
 			}
-			
-			
+						
 			controller.movePlayer();
 			
 			
@@ -138,7 +138,10 @@ public class Animator extends AnimationTimer {
 									
 							columns[i].decreaseAlienCount();
 							if (controller.decreaseAlienCount() == 0)
-								return;		
+							//	if(controller.getCurrentLevelNumber()==3)
+								//	controller.youWin(controller.getScore());
+								//else controller.nextlevel();
+							return;
 						}
 						if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
 							controller.gameOver();

@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import java.util.Random;
 
 import javafx.scene.canvas.Canvas;
@@ -46,10 +48,16 @@ public class Controller {
 	}
 	
 	public void nextlevel() {
-		currentLevel++;
-		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+		animator.stop();
+		//canvas.getGraphicsContext2D().drawImage(new Image("file:images/NextLevel.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
+		canvas.getGraphicsContext2D().setFill(Color.WHITE);
+		canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));
+		canvas.getGraphicsContext2D().fillText(" To Level "+currentLevel, 250, 150);
 		game.reinitializeGame();
 		animator.start();
+		currentLevel++;
+		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+		
 	}
 	
 	public void restartGame() {
@@ -74,7 +82,7 @@ public class Controller {
 		boolean touches= false;
 		boolean right = randAlienDirection == Direction.RIGHT;
 		int canvasLimit = right ? 
-				(Commons.GRIDWIDTH) : (0);
+				(Commons.GRIDWIDTH - Commons.SIDEMARGIN) : (Commons.SIDEMARGIN);
 		getRandAlien().setVisible(true);
 		getRandAlien().move(randAlienDirection, getRandAlienSpeed());
 		
@@ -110,7 +118,10 @@ public class Controller {
 		getCurrentLevel().speedUp();
 		alienBulletGenerationNanos -= Commons.ALIENBULLETGENERATIONNANOSDECREASE;
 		if (alienCount == 0) {
-			gameOver();
+			if(currentLevel==Commons.LEVELNUMBER ) {
+				youWin(getScore());
+			}else nextlevel();
+				
 		}
 		return alienCount;
 	}
@@ -231,6 +242,16 @@ public class Controller {
 
 	public void reinitializeRandAlien() {
 		game.reinitializeRandAlien();		
+	}
+
+	public void youWin(int score) {
+		//mediaPlayer.stop();
+		animator.stop();
+		canvas.getGraphicsContext2D().drawImage(new Image("file:images/YouWin.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
+		canvas.getGraphicsContext2D().setFill(Color.WHITE);
+		canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));
+		canvas.getGraphicsContext2D().fillText("YOUR SCORE: " + getScore(), 180, 270);
+		
 	}
 
 }

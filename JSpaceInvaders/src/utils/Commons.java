@@ -4,7 +4,7 @@ public final class Commons {
 	public static final int GRIDWIDTH = 500;
 	public static final int GRIDHEIGHT = 500;
 	public static final int COLNUMBER = 11;
-	public static final int ROWNUMBER = 5;
+	public static final int ROWNUMBER =5;
 	public static final int ALIENWIDTH = 26;
 	public static final int ALIENHEIGHT = 26;
 	public static final int RANDALIENWIDTH = 46;
@@ -46,11 +46,7 @@ public final class Commons {
 	public static final int ALIEN2POINTS = 20;
 	public static final int ALIEN3POINTS = 30;
 	public static final int ALIEN4POINTS = 300;
-	
-	//Score
-	public static final int FIRSTSCORECELLX = Commons.SIDEMARGIN + 0;
-	public static final int FIRSTSCORECELLY = Commons.TOPMARGIN + 0;
-	
+		
 	//Shields
 	public static final int SHIELDWIDTH = 33;
 	public static final int SHIELDHEIGHT = 33;
@@ -62,6 +58,7 @@ public final class Commons {
 	
 	//Levels
 	public static final int LEVELNUMBER = 3;
+	
 	//LV1
 	public static final int FIRSTALIENCELLX = Commons.SIDEMARGIN + 0;
 	public static final int FIRSTALIENCELLY = Commons.TOPMARGIN + RANDALIENHEIGHT + 10;
@@ -81,4 +78,5 @@ public final class Commons {
 	public static final int RANDALIENSPEED = 3;
 	public static final int RANDALIENFPS = 30;
 	public static final long RANDALIENFRAMENANOS = 1000000000 / RANDALIENFPS;
+	
 }
