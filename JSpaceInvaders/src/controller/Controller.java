@@ -35,7 +35,6 @@ public class Controller {
 	private Random rand = new Random();
 	
 	private int points;
-	private int lives;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -45,7 +44,6 @@ public class Controller {
 	
 	public void startGame() {
 		points = 0;
-		lives = Commons.PLAYERLIVES;
 		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
 		mediaPlayer.stop();
 		mediaPlayer.play();
@@ -134,9 +132,8 @@ public class Controller {
 	}
 
 
-	public int decreasePlayerLives() {
-		lives=lives-1;
-		return lives;
+	public void decreasePlayerLives() {
+		getPlayer().setLives(getPlayer().getLives()-1);
 	}
 	
 	public int getCurrentLevelNumber() {
@@ -241,10 +238,6 @@ public class Controller {
 			j = (j+1) % game.getAlienBullets().length;
 		}
 		return null;
-	}
-	
-	public int getPlayerLives() {
-		return lives;
 	}
 
 	public void reinitializeRandAlien() {

@@ -22,6 +22,8 @@ public class Animator extends AnimationTimer {
 	
 	private GraphicsContext gc;
 	private Controller controller;
+	private long lastPlayerExplosionNanos = 0;
+	private int explosionSpriteCount = 0;
 	private long lastNanos = 0;
 	private long lastAlienNanos = 0;
 	private long lastPlayerBulletNanos = 0;
@@ -49,72 +51,92 @@ public class Animator extends AnimationTimer {
 			gc.setFill(Color.WHITE);
 			gc.setFont(Font.font("PerfectLed123"));
 			gc.fillText("SCORE:"+controller.getScore(), 10, 20);
-			gc.fillText("LIVES:"+controller.getPlayerLives(), 400, 20);
+			gc.fillText("LIVES:"+controller.getPlayer().getLives(), 400, 20);
 			gc.fillText("LEVEL:"+controller.getCurrentLevelNumber(), 250, 20);
 
-			if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
-				controller.moveAliens();
-				lastAlienNanos = curNanos;
-			}
-		
-			if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
-				for (Column c : controller.getCurrentLevel().getColumns()) {
-					for (Spaceship s : c.getSpaceships()) {
-							s.move(Direction.NONE, 0);
+			if (!controller.getPlayer().isExploding()) {
+				if (curNanos - lastAlienNanos >= controller.getCurrentLevel().getFrameNanoTime()) {
+					controller.moveAliens();
+					lastAlienNanos = curNanos;
+				}
+			
+				if (controller.getCurrentLevel().isAlienExploding() && curNanos - explosionStart >= Commons.EXPLOSIONNANOS) {
+					for (Column c : controller.getCurrentLevel().getColumns()) {
+						for (Spaceship s : c.getSpaceships()) {
+								s.move(Direction.NONE, 0);
+						}
+					}
+					controller.getCurrentLevel().setAlienExploding(false);
+				}
+				
+				if (curNanos - lastPlayerBulletNanos >= controller.getPlayerBullet().getFrameNanos()) {
+					controller.movePlayerBullet();
+					lastPlayerBulletNanos = curNanos;
+					if (controller.getPlayerBullet().isExploding())
+						controller.getPlayerBullet().exploded();
+				}
+				
+				for (int i=0; i<controller.getAlienBullets().length; i++) {
+					if (curNanos - lastAlienBulletNanos[i] >= controller.getAlienBullets()[i].getFrameNanos()) {
+						controller.moveAlienBullet(i);
+						lastAlienBulletNanos[i] = curNanos;
+						if (controller.getAlienBullets()[i].isExploding())
+							controller.getAlienBullets()[i].exploded();
 					}
 				}
-				controller.getCurrentLevel().setAlienExploding(false);
-			}
-			
-			if (curNanos - lastPlayerBulletNanos >= controller.getPlayerBullet().getFrameNanos()) {
-				controller.movePlayerBullet();
-				lastPlayerBulletNanos = curNanos;
-				if (controller.getPlayerBullet().isExploding())
-					controller.getPlayerBullet().exploded();
-			}
-			
-			for (int i=0; i<controller.getAlienBullets().length; i++) {
-				if (curNanos - lastAlienBulletNanos[i] >= controller.getAlienBullets()[i].getFrameNanos()) {
-					controller.moveAlienBullet(i);
-					lastAlienBulletNanos[i] = curNanos;
-					if (controller.getAlienBullets()[i].isExploding())
-						controller.getAlienBullets()[i].exploded();
+				
+				
+				if(controller.getRandAlien().isVisible() && !controller.getRandAlien().isExploding()){
+					if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
+						controller.moveRandAlien();
+						lastRandAlienNanos = curNanos;
+						lastRandAlienGenerationNanos = curNanos;
+					}
 				}
-			}
-			
-			
-			if(controller.getRandAlien().isVisible() && !controller.getRandAlien().isExploding()){
-				if (curNanos - lastRandAlienNanos >= Commons.RANDALIENFRAMENANOS) {
+				
+				if (controller.getRandAlien().isVisible() && controller.getRandAlien().isExploding()) {
+					if (curNanos - randAlienExplosionStart >= Commons.RANDALIENEXPLOSIONNANOS) {
+						controller.reinitializeRandAlien();
+						lastRandAlienGenerationNanos = curNanos;
+					}
+				}
+				
+				if (lastRandAlienGenerationNanos == 0) 
+					lastRandAlienGenerationNanos = curNanos;
+				if (curNanos - lastRandAlienGenerationNanos >= randomTime && 
+						!controller.getRandAlien().isExploding() && 
+						!controller.getRandAlien().isVisible()) {
 					controller.moveRandAlien();
-					lastRandAlienNanos = curNanos;
 					lastRandAlienGenerationNanos = curNanos;
+					randomTime = (long) (rand.nextInt(40)+20)*1000000000L;
+				}
+							
+				controller.movePlayer();
+				
+				
+				//Alien Bullets generation
+				if (curNanos - lastAlienBulletGenerationNanos >= controller.getAlienBulletGenerationNanos()) {
+					controller.alienShoot();
+					lastAlienBulletGenerationNanos = curNanos;
 				}
 			}
-			
-			if (controller.getRandAlien().isVisible() && controller.getRandAlien().isExploding()) {
-				if (curNanos - randAlienExplosionStart >= Commons.RANDALIENEXPLOSIONNANOS) {
-					controller.reinitializeRandAlien();
-					lastRandAlienGenerationNanos = curNanos;
+			//Player is Exploding
+			else {
+				if (curNanos - lastPlayerExplosionNanos >= 500000000L) {
+					controller.getPlayer().move(Direction.NONE);
+					lastPlayerExplosionNanos = curNanos;
+					explosionSpriteCount++;
+					controller.getPlayer().setVisible(true);
+					if (explosionSpriteCount < 8)
+						controller.getPlayer().hit();
+					else {
+						explosionSpriteCount = 0;
+						if (controller.getPlayer().getLives() == 0) {
+							controller.gameOver();
+							return;
+						}
+					}
 				}
-			}
-			
-			if (lastRandAlienGenerationNanos == 0) 
-				lastRandAlienGenerationNanos = curNanos;
-			if (curNanos - lastRandAlienGenerationNanos >= randomTime && 
-					!controller.getRandAlien().isExploding() && 
-					!controller.getRandAlien().isVisible()) {
-				controller.moveRandAlien();
-				lastRandAlienGenerationNanos = curNanos;
-				randomTime = (long) (rand.nextInt(40)+20)*1000000000L;
-			}
-						
-			controller.movePlayer();
-			
-			
-			//Alien Bullets generation
-			if (curNanos - lastAlienBulletGenerationNanos >= controller.getAlienBulletGenerationNanos()) {
-				controller.alienShoot();
-				lastAlienBulletGenerationNanos = curNanos;
 			}
 						
 			Level level = controller.getCurrentLevel();
@@ -143,12 +165,12 @@ public class Animator extends AnimationTimer {
 							}
 						}
 						if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
-							controller.gameOver();
-							return;
+							controller.getPlayer().setLives(0);
+							controller.getPlayer().hit();
 						}
 						if (spaceships[j].getHitbox().getDownRightY() > Commons.GRIDHEIGHT - Commons.SIDEMARGIN) {
-							controller.gameOver();
-							return;
+							controller.getPlayer().setLives(0);
+							controller.getPlayer().hit();
 						}
 						for (int k=0; k<controller.getCurrentLevel().getShields().length; k++) {
 							if (controller.getCurrentLevel().getShields()[k].isVisible() &&
@@ -258,12 +280,8 @@ public class Animator extends AnimationTimer {
 						controller.getAlienBullets()[i].getHitbox().touches(controller.getPlayer().getHitbox())) {
 					controller.getAlienBullets()[i].hit();
 					controller.getAlienBullets()[i].exploded();
-					if(controller.decreasePlayerLives()>0)
-						controller.getPlayer().hit();
-					else {
-						controller.gameOver();
-						return;
-					}
+					controller.decreasePlayerLives();
+					controller.getPlayer().hit();
 					
 				}
 				

@@ -6,6 +6,7 @@ public class Spaceship {
 	private Hitbox hitbox;
 	private boolean visible;
 	private boolean exploding;
+	protected int currentExplosionIndex = 0;
 	
 	public Spaceship(SpaceshipType type, int upLeftX, int upLeftY) {
 		super();
@@ -44,7 +45,7 @@ public class Spaceship {
 		if (!exploding)
 			return type.getCurrentSprite();
 		else {
-			return type.getExplosionSprites()[0];
+			return type.getExplosionSprites()[currentExplosionIndex];
 		}
 	}
 
