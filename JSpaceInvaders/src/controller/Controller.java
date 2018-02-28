@@ -34,7 +34,7 @@ public class Controller {
 	private Canvas canvas;
 	private Random rand = new Random();
 	
-	private int points=0;
+	private int points;
 	private int lives;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
@@ -44,6 +44,7 @@ public class Controller {
 	}
 	
 	public void startGame() {
+		points = 0;
 		lives = Commons.PLAYERLIVES;
 		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
 		mediaPlayer.stop();
