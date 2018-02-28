@@ -200,14 +200,14 @@ public class Game {
 		levels = new Level[Commons.LEVELNUMBER];
 		
 		for (int i=0; i<levels.length; i++) {
-			levels[i] = new Level(i, generateColumns(0, i*Commons.ROWSPACE), shields, Commons.ALIENSPEED, Commons.BASEALIENFRAMENANOS, Commons.ALIENFRAMENANOSDECREASE);
+			levels[i] = new Level(i, generateColumns(0, i*(Commons.ROWSPACE+Commons.ALIENHEIGHT)), shields, Commons.ALIENSPEED, Commons.BASEALIENFRAMENANOS, Commons.ALIENFRAMENANOSDECREASE);
 		}
 	}
 	
 	private Column[] generateColumns(int shiftX, int shiftY) {
 		Column[] columns = new Column[Commons.COLNUMBER];
 		Spaceship[] spaceships;
-		int x = Commons.FIRSTALIENCELLX, y = Commons.FIRSTALIENCELLY;
+		int x = Commons.FIRSTALIENCELLX + shiftX, y = Commons.FIRSTALIENCELLY + shiftY;
 		for (int i = 0; i < columns.length; i++) {
 			spaceships = new Spaceship[Commons.ROWNUMBER];
 			if (spaceships.length < 3)
@@ -223,7 +223,7 @@ public class Game {
 				spaceships[j] = new Spaceship(alien1Type, x, y);
 				y += Commons.ALIENHEIGHT + Commons.ROWSPACE;
 			}
-			y = Commons.FIRSTALIENCELLY;
+			y = Commons.FIRSTALIENCELLY + shiftY;
 			x += Commons.ALIENWIDTH + Commons.COLUMNSPACE;
 			columns[i] = new Column(spaceships);
 		}
@@ -282,6 +282,7 @@ public class Game {
 		initLevels();
 		initPlayer();
 		initRandAlien();
+		initBullets();
 	}
 	
 	public void changeAlienSprites() {

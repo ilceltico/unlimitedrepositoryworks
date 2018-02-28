@@ -3,6 +3,8 @@ package controller;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
@@ -33,7 +35,7 @@ public class Controller {
 	private Random rand = new Random();
 	
 	private int points=0;
-	private int lives = Commons.PLAYERLIVES;
+	private int lives;
 	
 	public Controller(Canvas canvas, MediaPlayer mediaPlayer) {
 		super();
@@ -42,21 +44,31 @@ public class Controller {
 	}
 	
 	public void startGame() {
+		lives = Commons.PLAYERLIVES;
 		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+		mediaPlayer.stop();
 		mediaPlayer.play();
 		animator.start();
 	}
 	
 	public void nextlevel() {
 		animator.stop();
-		//canvas.getGraphicsContext2D().drawImage(new Image("file:images/NextLevel.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
-		canvas.getGraphicsContext2D().setFill(Color.WHITE);
-		canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));
-		canvas.getGraphicsContext2D().fillText(" To Level "+currentLevel, 250, 150);
-		game.reinitializeGame();
-		animator.start();
-		currentLevel++;
-		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+		if (currentLevel < Commons.LEVELNUMBER) {
+			canvas.getGraphicsContext2D().clearRect(0, 0, Commons.GRIDWIDTH, Commons.GRIDHEIGHT);
+			canvas.getGraphicsContext2D().setFill(Color.WHITE);
+			canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));
+			canvas.getGraphicsContext2D().fillText(" To Level "+currentLevel, 250, 150);
+			game.reinitializeGame();
+			currentLevel++;
+			alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+			new Timer().schedule(new TimerTask() {
+				public void run() {
+					animator.start();
+				}
+			}, 2000);
+		}
+		else
+			gameWon();
 		
 	}
 	
@@ -117,12 +129,6 @@ public class Controller {
 		alienCount--;
 		getCurrentLevel().speedUp();
 		alienBulletGenerationNanos -= Commons.ALIENBULLETGENERATIONNANOSDECREASE;
-		if (alienCount == 0) {
-			if(currentLevel==Commons.LEVELNUMBER ) {
-				youWin(getScore());
-			}else nextlevel();
-				
-		}
 		return alienCount;
 	}
 
@@ -244,9 +250,9 @@ public class Controller {
 		game.reinitializeRandAlien();		
 	}
 
-	public void youWin(int score) {
-		//mediaPlayer.stop();
+	public void gameWon() {
 		animator.stop();
+		currentLevel = -1;
 		canvas.getGraphicsContext2D().drawImage(new Image("file:images/YouWin.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
 		canvas.getGraphicsContext2D().setFill(Color.WHITE);
 		canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));

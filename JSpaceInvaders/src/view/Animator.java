@@ -34,7 +34,7 @@ public class Animator extends AnimationTimer {
 	private long lastAlienBulletGenerationNanos = 0;
 	
 	private Random rand = new Random();
-	private long randomTime = (long) (rand.nextInt(4)+2)*1000000000L;
+	private long randomTime = (long) (rand.nextInt(40)+20)*1000000000L;
 			
 	public Animator(GraphicsContext gc, Controller controller) {
 		super();
@@ -105,7 +105,7 @@ public class Animator extends AnimationTimer {
 					!controller.getRandAlien().isVisible()) {
 				controller.moveRandAlien();
 				lastRandAlienGenerationNanos = curNanos;
-				randomTime = (long) (rand.nextInt(4)+2)*1000000000L;
+				randomTime = (long) (rand.nextInt(40)+20)*1000000000L;
 			}
 						
 			controller.movePlayer();
@@ -137,11 +137,10 @@ public class Animator extends AnimationTimer {
 							controller.UpdateScore(controller.getPointsCount(spaceships[j].getType()));
 									
 							columns[i].decreaseAlienCount();
-							if (controller.decreaseAlienCount() == 0)
-							//	if(controller.getCurrentLevelNumber()==3)
-								//	controller.youWin(controller.getScore());
-								//else controller.nextlevel();
-							return;
+							if (controller.decreaseAlienCount() == 0) {
+								controller.nextlevel();
+								return;
+							}
 						}
 						if (spaceships[j].getHitbox().touches(controller.getPlayer().getHitbox())) {
 							controller.gameOver();
@@ -253,14 +252,18 @@ public class Animator extends AnimationTimer {
 			
 			//AlienBullets, AlientBullets to Player, AlienBullets to bottom margin,
 			//AlienBullets to PlayerBullet collision control
-			
 			for (int i=0; i<controller.getAlienBullets().length; i++) {
 				if (controller.getAlienBullets()[i].isVisible() &&
 						!controller.getAlienBullets()[i].isExploding() &&
 						controller.getAlienBullets()[i].getHitbox().touches(controller.getPlayer().getHitbox())) {
+					controller.getAlienBullets()[i].hit();
+					controller.getAlienBullets()[i].exploded();
 					if(controller.decreasePlayerLives()>0)
 						controller.getPlayer().hit();
-					else controller.gameOver();
+					else {
+						controller.gameOver();
+						return;
+					}
 					
 				}
 				
