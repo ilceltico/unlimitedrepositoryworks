@@ -4,7 +4,7 @@ import utils.Commons;
 
 public class Bullet {
 	
-	private BulletType type;
+	private BulletType type; 
 	private Hitbox hitbox;
 	private boolean visible;
 	private boolean exploding;
