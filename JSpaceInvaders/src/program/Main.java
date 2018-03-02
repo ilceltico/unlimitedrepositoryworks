@@ -9,7 +9,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
@@ -32,9 +31,6 @@ public class Main extends Application {
 		Group root = new Group();
 		Scene primaryScene = new Scene(root);
 		primaryStage.setScene(primaryScene);
-		
-		//Label pointsLabel = new Label("Points: 0");
-		//root.getChildren().add(pointsLabel);
 		
 		StackPane stackPane = new StackPane();
 		Canvas canvas = new Canvas(Commons.GRIDWIDTH, Commons.GRIDHEIGHT);

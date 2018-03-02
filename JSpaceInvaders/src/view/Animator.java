@@ -8,14 +8,10 @@ import java.util.Random;
 import controller.Controller;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Paint;
-import model.Bullet;
 import model.Column;
 import model.Direction;
 import model.Level;
-import model.Shield;
 import model.Spaceship;
-import model.SpaceshipType;
 import utils.Commons;
 
 public class Animator extends AnimationTimer {
