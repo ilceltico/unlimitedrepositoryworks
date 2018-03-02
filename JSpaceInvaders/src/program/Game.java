@@ -280,9 +280,11 @@ public class Game {
 	public void reinitializeGame() {
 		initShields();
 		initLevels();
-		initPlayer();
 		initRandAlien();
 		initBullets();
+		
+		//Reset player, but not his lives
+		player = new Player(playerType, Commons.PLAYERSTARTX, Commons.PLAYERSTARTY, player.getLives(), Commons.PLAYERSPEED);
 	}
 	
 	public void changeAlienSprites() {
