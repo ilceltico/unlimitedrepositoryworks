@@ -34,7 +34,10 @@ public class Player extends Spaceship{
 	}
 
 	public int getLives() {
-		return lives;
+		if (lives >= 0)
+			return lives;
+		else
+			return 0;
 	}
 
 	public void setLives(int lives) {

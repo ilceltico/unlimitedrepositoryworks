@@ -44,9 +44,11 @@ public class Controller {
 	
 	public void startGame() {
 		points = 0;
+		alienBulletGenerationNanos = Commons.BASEALIENBULLETGENERATIONNANOS;
 		alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
 		mediaPlayer.stop();
 		mediaPlayer.play();
+		animator.resetLastRandAlienGenerationNanos();
 		animator.start();
 	}
 	
@@ -59,8 +61,10 @@ public class Controller {
 			canvas.getGraphicsContext2D().fillText(" To Level "+ ++currentLevel, 220, Commons.GRIDHEIGHT/2);
 			game.reinitializeGame();
 			alienCount = Commons.ROWNUMBER * Commons.COLNUMBER;
+			alienBulletGenerationNanos = Commons.BASEALIENBULLETGENERATIONNANOS;
 			new Timer().schedule(new TimerTask() {
 				public void run() {
+					animator.resetLastRandAlienGenerationNanos();
 					animator.start();
 				}
 			}, 2000);
@@ -249,7 +253,7 @@ public class Controller {
 		canvas.getGraphicsContext2D().drawImage(new Image("file:images/YouWin.png"), 0, 0, canvas.getWidth(), canvas.getHeight());
 		canvas.getGraphicsContext2D().setFill(Color.WHITE);
 		canvas.getGraphicsContext2D().setFont(Font.font("PerfectLed123"));
-		canvas.getGraphicsContext2D().fillText("YOUR SCORE: " + getScore(), 195, 300);
+		canvas.getGraphicsContext2D().fillText("YOUR SCORE: " + getScore(), 180, 300);
 	}
 
 }

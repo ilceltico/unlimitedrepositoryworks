@@ -39,6 +39,10 @@ public class Animator extends AnimationTimer {
 		this.gc = gc;
 		this.controller = controller;
 	}
+	
+	public void resetLastRandAlienGenerationNanos() {
+		lastRandAlienGenerationNanos = 0;
+	}
 
 	@Override
 	public void handle(long curNanos) {
@@ -127,7 +131,7 @@ public class Animator extends AnimationTimer {
 						controller.getPlayer().hit();
 					else {
 						explosionSpriteCount = 0;
-						if (controller.getPlayer().getLives() == 0) {
+						if (controller.getPlayer().getLives() <= 0) {
 							controller.gameOver();
 							return;
 						}
