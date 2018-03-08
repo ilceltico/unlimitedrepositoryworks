@@ -1,0 +1,5 @@
+|SpaceInvadersUnlimited
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+
+
