@@ -1,0 +1,5 @@
+|HardwareInvaders
+CLOCK_50 => ~NO_FANOUT~
+RESET => ~NO_FANOUT~
+
+
