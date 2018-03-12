@@ -19,8 +19,29 @@ entity View is
 end entity;
 
 architecture RTL of View is
+
+type state_type is (IDLE, WAITING, DRAWING);
+signal state        : state_type;
+
 begin
-	process()
+	DrawImage: process(CLOCK, RESET_N)
+	begin
+	
+		if(RESET_N = '0') then
+	
+		elsif(rising_edge(CLOCK)) then
+		
+			case (state) is 
+				when IDLE => 
+					-- Se riceve segnale DRAW_IMG metti in WAITING
+				when WAITING =>
+					-- Se il renderer è pronto, metti in DRAWING
+				when DRAWING =>
+					-- Metti in WAITING, effettua tutte le chiamate DRAW_RECT e metti in IDLE quando ha finito
+	
+		end if;
+	
+	end process;
 	
 end architecture;
 
