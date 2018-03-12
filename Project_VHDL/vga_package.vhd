@@ -14,8 +14,6 @@ package vga_package is
 	constant  COLOR_YELLOW	: color_type := X"FF0";
 	constant  COLOR_CYAN	: color_type := X"0FF";
 	constant  COLOR_MAGENTA	: color_type := X"F0F";
-	
-	
 
 end package;
 
