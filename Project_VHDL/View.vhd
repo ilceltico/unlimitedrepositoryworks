@@ -15,6 +15,7 @@ entity View is
 		X					: in 	xy_coord_type;
 		Y					: in 	xy_coord_type;
 		
+		FB_FLIP 			: out std_logic;
 		FB_DRAW_RECT   : out std_logic;
 		FB_COLOR       : out color_type;
 		FB_X0          : out xy_coord_type;
@@ -37,8 +38,13 @@ begin
 	begin
 	
 		if(RESET_N = '0') then
+			FB_DRAW_RECT   <= '0';
+			FB_FLIP        <= '0';
 	
 		elsif(rising_edge(CLOCK)) then
+		
+			FB_DRAW_RECT   <= '0';
+			FB_FLIP        <= '0';
 		
 			case (state) is 
 				when IDLE => 
@@ -63,18 +69,36 @@ begin
 					
 					if (s.img_pixels(row, column) = '1') then
 						FB_X0 <= X + column;
-						FB_X1 <= X + column;
+						FB_X1 <= X + column + 1;
 						FB_Y0 <= Y + row;
-						FB_Y1 <= Y + row;
+						FB_Y1 <= Y + row + 1;
 						FB_COLOR <= s.color;
 						FB_DRAW_RECT <= '1';
 					end if;
 					
+					FB_FLIP <= '1';
+					state    <= IDLE;
 					
 			end case;
 		end if;
 	
 	end process;
+	
+--	dummyrect: process(CLOCK, RESET_N)
+--	begin
+--		
+--		if rising_edge(CLOCK) then
+--			
+--			FB_X0 <= 1;
+--			FB_X1 <= 100;
+--			FB_Y0 <= 1;
+--			FB_Y1 <= 100;
+--			FB_COLOR <= COLOR_WHITE;
+--			FB_DRAW_RECT <= '1';
+--		
+--		end if;
+--		
+--	end process;
 	
 end architecture;
 

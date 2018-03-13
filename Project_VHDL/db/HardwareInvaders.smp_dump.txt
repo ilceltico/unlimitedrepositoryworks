@@ -1,0 +1,41 @@
+
+State Machine - |HardwareInvaders|View:view|state
+Name state.DRAWING state.WAITING state.IDLE 
+state.IDLE 0 0 0 
+state.WAITING 0 1 1 
+state.DRAWING 1 0 1 
+
+State Machine - |HardwareInvaders|VGA_Framebuffer:vga|substate
+Name substate.DRAWING_R2 substate.DRAWING_R1 substate.DRAWING substate.INIT 
+substate.INIT 0 0 0 0 
+substate.DRAWING 0 0 1 1 
+substate.DRAWING_R1 0 1 0 1 
+substate.DRAWING_R2 1 0 0 1 
+
+State Machine - |HardwareInvaders|VGA_Framebuffer:vga|state
+Name state.DRAWING_LINE state.FILLING_RECT state.DRAWING_RECT state.IDLE 
+state.IDLE 0 0 0 0 
+state.DRAWING_RECT 0 0 1 1 
+state.FILLING_RECT 0 1 0 1 
+state.DRAWING_LINE 1 0 0 1 
+
+State Machine - |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_state
+Name ram_state.RW_COMPLETED ram_state.WRITING ram_state.READING ram_state.IDLE 
+ram_state.IDLE 0 0 0 0 
+ram_state.READING 0 0 1 1 
+ram_state.WRITING 0 1 0 1 
+ram_state.RW_COMPLETED 1 0 0 1 
+
+State Machine - |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state
+Name v_state.DATA v_state.BACK_PORCH v_state.SYNC v_state.FRONT_PORCH 
+v_state.FRONT_PORCH 0 0 0 0 
+v_state.SYNC 0 0 1 1 
+v_state.BACK_PORCH 0 1 0 1 
+v_state.DATA 1 0 0 1 
+
+State Machine - |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state
+Name h_state.DATA h_state.BACK_PORCH h_state.SYNC h_state.FRONT_PORCH 
+h_state.FRONT_PORCH 0 0 0 0 
+h_state.SYNC 0 0 1 1 
+h_state.BACK_PORCH 0 1 0 1 
+h_state.DATA 1 0 0 1 
