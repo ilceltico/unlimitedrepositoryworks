@@ -12,6 +12,8 @@ entity Tetris_View is
 		RESET_N        : in  std_logic;
 		SPRITE 			: in 	sprite_type;
 		REDRAW         : in  std_logic;
+		X					: in  xy_coord_type;
+		Y					: in  xy_coord_type;
 		
 		FB_READY       : in  std_logic;
 		FB_CLEAR       : out std_logic;
@@ -55,14 +57,19 @@ begin
 	begin
 	
 		if(RESET_N = '0') then
-			FB_DRAW_RECT   <= '0';
 			FB_CLEAR       <= '0';
+			FB_DRAW_RECT   <= '0';
+			FB_DRAW_LINE   <= '0';
+			FB_FILL_RECT   <= '0';
 			FB_FLIP        <= '0';
+			state <= IDLE;
 	
 		elsif(rising_edge(CLOCK)) then
 		
-			FB_DRAW_RECT   <= '0';
 			FB_CLEAR       <= '0';
+			FB_DRAW_RECT   <= '0';
+			FB_DRAW_LINE   <= '0';
+			FB_FILL_RECT   <= '0';
 			FB_FLIP        <= '0';
 		
 			case (state) is 
@@ -91,11 +98,12 @@ begin
 							substate <= DRAW;
 							
 						when DRAW => 
-							FB_X0 <= 50;
-							FB_X1 <= 100;
-							FB_Y0 <= 50;
-							FB_Y1 <= 100;
 							FB_COLOR <= COLOR_WHITE;
+							FB_X0 <= 50;
+							FB_X1 <= 50;
+							FB_Y0 <= 50;
+							FB_Y1 <= 50;
+							
 							FB_DRAW_RECT <= '1';
 							substate <= FLIP;
 --							if (column >= 31) then
@@ -110,13 +118,13 @@ begin
 --					
 --							if (s.img_pixels(row, column) = '1') then
 --								FB_X0 <= X + column;
---								FB_X1 <= X + column + 1;
+--								FB_X1 <= X + column;
 --								FB_Y0 <= Y + row;
---								FB_Y1 <= Y + row + 1;
+--								FB_Y1 <= Y + row;
 --								FB_COLOR <= s.color;
 --								FB_DRAW_RECT <= '1';
 --							end if;
-							
+--							
 						when FLIP =>
 							FB_FLIP <= '1';
 							state <= IDLE;

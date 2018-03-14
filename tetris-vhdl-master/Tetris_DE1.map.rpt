@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Tetris_DE1
-Wed Mar 14 14:36:25 2018
+Wed Mar 14 15:07:22 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -227,19 +227,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
 219. Registers Removed During Synthesis
 220. Removed Registers Triggering Further Register Optimizations
 221. General Register Statistics
-222. Multiplexer Restructuring Statistics (Restructuring Performed)
-223. Source assignments for Tetris_Controller:controller
-224. Source assignments for Tetris_Datapath:datapath
-225. Parameter Settings for User Entity Instance: PLL:pll|altpll:altpll_component
-226. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga
-227. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_Timing:vga_timing
-228. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb
-229. altpll Parameter Settings by Entity Instance
-230. Port Connectivity Checks: "Tetris_View:view"
-231. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb"
-232. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_Timing:vga_timing"
-233. Elapsed Time Per Partition
-234. Analysis & Synthesis Messages
+222. Inverted Register Statistics
+223. Multiplexer Restructuring Statistics (Restructuring Performed)
+224. Source assignments for Tetris_Controller:controller
+225. Source assignments for Tetris_Datapath:datapath
+226. Parameter Settings for User Entity Instance: PLL:pll|altpll:altpll_component
+227. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga
+228. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_Timing:vga_timing
+229. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb
+230. altpll Parameter Settings by Entity Instance
+231. Port Connectivity Checks: "Tetris_View:view"
+232. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb"
+233. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_Timing:vga_timing"
+234. Elapsed Time Per Partition
+235. Analysis & Synthesis Messages
 
 
 
@@ -265,15 +266,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 14 14:36:25 2018           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 14 15:07:21 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Tetris_DE1                                      ;
 ; Top-level Entity Name              ; Tetris_DE1                                      ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 172                                             ;
-;     Total combinational functions  ; 161                                             ;
-;     Dedicated logic registers      ; 78                                              ;
-; Total registers                    ; 78                                              ;
+; Total logic elements               ; 2,608                                           ;
+;     Total combinational functions  ; 2,603                                           ;
+;     Dedicated logic registers      ; 394                                             ;
+; Total registers                    ; 394                                             ;
 ; Total pins                         ; 59                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -406,20 +407,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 172                                   ;
+; Estimated Total logic elements              ; 2,608                                 ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 161                                   ;
+; Total combinational functions               ; 2603                                  ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 73                                    ;
-;     -- 3 input functions                    ; 22                                    ;
-;     -- <=2 input functions                  ; 66                                    ;
+;     -- 4 input functions                    ; 2059                                  ;
+;     -- 3 input functions                    ; 238                                   ;
+;     -- <=2 input functions                  ; 306                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 110                                   ;
-;     -- arithmetic mode                      ; 51                                    ;
+;     -- normal mode                          ; 2445                                  ;
+;     -- arithmetic mode                      ; 158                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 78                                    ;
-;     -- Dedicated logic registers            ; 78                                    ;
+; Total registers                             ; 394                                   ;
+;     -- Dedicated logic registers            ; 394                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 59                                    ;
@@ -428,24 +429,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; PLL:pll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 76                                    ;
-; Total fan-out                               ; 818                                   ;
-; Average fan-out                             ; 2.74                                  ;
+; Maximum fan-out                             ; 392                                   ;
+; Total fan-out                               ; 10941                                 ;
+; Average fan-out                             ; 3.58                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |Tetris_DE1                     ; 161 (0)           ; 78 (2)       ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |Tetris_DE1                                           ; work         ;
-;    |PLL:pll|                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|PLL:pll                                   ; work         ;
-;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|PLL:pll|altpll:altpll_component           ; work         ;
-;    |VGA_Framebuffer:vga|        ; 161 (69)          ; 76 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga                       ; work         ;
-;       |VGA_RAMDAC:vga_fb|       ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb     ; work         ;
-;       |VGA_Timing:vga_timing|   ; 73 (73)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_Timing:vga_timing ; work         ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; |Tetris_DE1                       ; 2603 (33)         ; 394 (22)     ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |Tetris_DE1                                           ; work         ;
+;    |PLL:pll|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|PLL:pll                                   ; work         ;
+;       |altpll:altpll_component|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|PLL:pll|altpll:altpll_component           ; work         ;
+;    |Tetris_Controller:controller| ; 90 (90)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|Tetris_Controller:controller              ; work         ;
+;    |Tetris_Datapath:datapath|     ; 2161 (2161)       ; 236 (236)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|Tetris_Datapath:datapath                  ; work         ;
+;    |Tetris_View:view|             ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|Tetris_View:view                          ; work         ;
+;    |VGA_Framebuffer:vga|          ; 305 (202)         ; 85 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga                       ; work         ;
+;       |VGA_RAMDAC:vga_fb|         ; 29 (29)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb     ; work         ;
+;       |VGA_Timing:vga_timing|     ; 74 (74)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_Timing:vga_timing ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -3796,11 +3800,13 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 ; Register name                                                       ; Reason for Removal                                                       ;
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
+; Tetris_View:view|FB_DRAW_LINE                                       ; Stuck at GND due to stuck port data_in                                   ;
+; Tetris_View:view|FB_FILL_RECT                                       ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_View:view|FB_Y1[0]                                           ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_View:view|FB_X0[0,2,3,6..9]                                  ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|FB_X1[0,1,3,4,7..9]                                ; Stuck at GND due to stuck port data_in                                   ;
+; Tetris_View:view|FB_X1[0,2,3,6..9]                                  ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_View:view|FB_Y0[0,2,3,6..8]                                  ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|FB_Y1[1,3,4,7,8]                                   ; Stuck at GND due to stuck port data_in                                   ;
+; Tetris_View:view|FB_Y1[2,3,6..8]                                    ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[0].col[1..3]     ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[0].row[1..4]     ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[1].col[1..3]     ; Stuck at GND due to stuck port data_in                                   ;
@@ -3813,37 +3819,23 @@ Encoding Type:  One-Hot
 ; Tetris_Controller:controller|row_check_req                          ; Merged with Tetris_Controller:controller|MERGE                           ;
 ; Tetris_View:view|FB_COLOR[1..3,6,7,9,11]                            ; Merged with Tetris_View:view|FB_COLOR[10]                                ;
 ; Tetris_View:view|FB_X0[4,5]                                         ; Merged with Tetris_View:view|FB_X0[1]                                    ;
-; Tetris_View:view|FB_X1[2,5,6]                                       ; Merged with Tetris_View:view|FB_X0[1]                                    ;
+; Tetris_View:view|FB_X1[1,4,5]                                       ; Merged with Tetris_View:view|FB_X0[1]                                    ;
 ; Tetris_View:view|FB_Y0[1,4,5]                                       ; Merged with Tetris_View:view|FB_X0[1]                                    ;
-; Tetris_View:view|FB_Y1[2,5,6]                                       ; Merged with Tetris_View:view|FB_X0[1]                                    ;
+; Tetris_View:view|FB_Y1[1,4,5]                                       ; Merged with Tetris_View:view|FB_X0[1]                                    ;
 ; VGA_Framebuffer:vga|latched_color[1..3,6,7,9,11]                    ; Merged with VGA_Framebuffer:vga|latched_color[10]                        ;
-; VGA_Framebuffer:vga|x_start[0,2,3,6..9]                             ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|y_start[0,2,3,6..8]                             ; Stuck at GND due to stuck port data_in                                   ;
+; VGA_Framebuffer:vga|x_start[0,2,3,6..9]                             ; Merged with VGA_Framebuffer:vga|x_end[9]                                 ;
+; VGA_Framebuffer:vga|y_start[0,2,3,6..8]                             ; Merged with VGA_Framebuffer:vga|x_end[9]                                 ;
+; VGA_Framebuffer:vga|x_start[4,5]                                    ; Merged with VGA_Framebuffer:vga|x_start[1]                               ;
+; VGA_Framebuffer:vga|y_end[5]                                        ; Merged with VGA_Framebuffer:vga|x_start[1]                               ;
+; VGA_Framebuffer:vga|y_start[1,4,5]                                  ; Merged with VGA_Framebuffer:vga|x_start[1]                               ;
+; VGA_Framebuffer:vga|x_end[2,3,6..8]                                 ; Merged with VGA_Framebuffer:vga|x_end[0]                                 ;
+; VGA_Framebuffer:vga|y_end[0,2,3,6..8]                               ; Merged with VGA_Framebuffer:vga|x_end[0]                                 ;
+; VGA_Framebuffer:vga|x_end[4,5]                                      ; Merged with VGA_Framebuffer:vga|x_end[1]                                 ;
+; VGA_Framebuffer:vga|y_end[1,4]                                      ; Merged with VGA_Framebuffer:vga|x_end[1]                                 ;
 ; VGA_Framebuffer:vga|x_end[9]                                        ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|y_end[5]                                        ; Merged with VGA_Framebuffer:vga|x_start[5]                               ;
-; VGA_Framebuffer:vga|y_start[4,5]                                    ; Merged with VGA_Framebuffer:vga|x_start[5]                               ;
-; VGA_Framebuffer:vga|x_start[1]                                      ; Merged with VGA_Framebuffer:vga|x_start[5]                               ;
-; VGA_Framebuffer:vga|y_start[1]                                      ; Merged with VGA_Framebuffer:vga|x_start[5]                               ;
-; VGA_Framebuffer:vga|x_start[4]                                      ; Merged with VGA_Framebuffer:vga|x_start[5]                               ;
-; VGA_Framebuffer:vga|y_end[7]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[1]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|y_end[8]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[3]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|y_end[1]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[7]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|y_end[3,4]                                      ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[0]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|y_end[0]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[4]                                        ; Merged with VGA_Framebuffer:vga|x_end[8]                                 ;
-; VGA_Framebuffer:vga|x_end[2,5]                                      ; Merged with VGA_Framebuffer:vga|x_end[6]                                 ;
-; VGA_Framebuffer:vga|y_end[2,6]                                      ; Merged with VGA_Framebuffer:vga|x_end[6]                                 ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[2]            ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[2].row[1]        ; Merged with Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[0].row[0] ;
 ; Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[3].row[1]        ; Merged with Tetris_Controller:controller|NEW_PIECE_TYPE.blocks[0].row[0] ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[2]            ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|FB_FLIP                                            ; Lost fanout                                                              ;
-; Tetris_View:view|FB_DRAW_RECT                                       ; Lost fanout                                                              ;
-; VGA_Framebuffer:vga|flip_on_next_vs                                 ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|fb_buffer_idx                                   ; Stuck at GND due to stuck port clock_enable                              ;
 ; Tetris_Datapath:datapath|board.cells[9][19].shape.SHAPE_T           ; Lost fanout                                                              ;
 ; Tetris_Datapath:datapath|board.cells[9][19].shape.SHAPE_SQUARE      ; Lost fanout                                                              ;
 ; Tetris_Datapath:datapath|board.cells[9][19].shape.SHAPE_STICK       ; Lost fanout                                                              ;
@@ -5267,72 +5259,22 @@ Encoding Type:  One-Hot
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.FRONT_PORCH       ; Lost fanout                                                              ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.BACK_PORCH        ; Lost fanout                                                              ;
 ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_state.IDLE                ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|state.DRAWING_RECT                              ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|state.DRAWING                                      ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|FB_X0[1]                                           ; Stuck at GND due to stuck port clock_enable                              ;
-; Tetris_View:view|FB_CLEAR                                           ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|FB_COLOR[10]                                       ; Stuck at GND due to stuck port clock_enable                              ;
-; VGA_Framebuffer:vga|x_start[5]                                      ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|x_end[6,8]                                      ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|latched_color[10]                               ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|substate.DRAWING_R2                             ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|substate.DRAW                                      ; Stuck at GND due to stuck port data_in                                   ;
-; Tetris_View:view|substate.FLIP                                      ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|substate.DRAWING_R1                             ; Stuck at GND due to stuck port data_in                                   ;
-; VGA_Framebuffer:vga|state.FILLING_RECT                              ; Stuck at GND due to stuck port data_in                                   ;
+; VGA_Framebuffer:vga|state.DRAWING_LINE                              ; Stuck at GND due to stuck port data_in                                   ;
 ; Tetris_Controller:controller|time_to_next_move[0]                   ; Merged with Tetris_Controller:controller|time_to_next_fall[0]            ;
+; Tetris_Controller:controller|row_check_state.WAIT_ROW_REMOVAL       ; Lost fanout                                                              ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[9]                ; Lost fanout                                                              ;
-; Total Number of Removed Registers = 1559                            ;                                                                          ;
+; Total Number of Removed Registers = 1545                            ;                                                                          ;
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                ;
-+----------------------------------------+---------------------------+-----------------------------------------------------------------------+
-; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                                ;
-+----------------------------------------+---------------------------+-----------------------------------------------------------------------+
-; Tetris_View:view|state.DRAWING         ; Stuck at GND              ; Tetris_View:view|FB_X0[1], Tetris_View:view|FB_COLOR[10],             ;
-;                                        ; due to stuck port data_in ; VGA_Framebuffer:vga|x_start[5], VGA_Framebuffer:vga|x_end[6],         ;
-;                                        ;                           ; VGA_Framebuffer:vga|latched_color[10], Tetris_View:view|substate.FLIP ;
-; Tetris_View:view|FB_Y1[0]              ; Stuck at GND              ; Tetris_View:view|FB_DRAW_RECT                                         ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[9]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[9]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[8]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[8]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[7]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[7]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[6]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[6]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[3]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[3]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[2]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[2]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X0[0]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_start[0]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X1[9]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_end[9]                                          ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_X1[8]              ; Stuck at GND              ; VGA_Framebuffer:vga|x_end[8]                                          ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[8]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[8]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[7]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[7]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[6]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[6]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[3]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[3]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[2]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[2]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_Y0[0]              ; Stuck at GND              ; VGA_Framebuffer:vga|y_start[0]                                        ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; VGA_Framebuffer:vga|flip_on_next_vs    ; Stuck at GND              ; VGA_Framebuffer:vga|fb_buffer_idx                                     ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; VGA_Framebuffer:vga|state.DRAWING_RECT ; Stuck at GND              ; VGA_Framebuffer:vga|substate.DRAWING_R1                               ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-; Tetris_View:view|FB_CLEAR              ; Stuck at GND              ; VGA_Framebuffer:vga|state.FILLING_RECT                                ;
-;                                        ; due to stuck port data_in ;                                                                       ;
-+----------------------------------------+---------------------------+-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                        ;
++-------------------------------+---------------------------+----------------------------------------+
+; Register name                 ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------------+---------------------------+----------------------------------------+
+; Tetris_View:view|FB_DRAW_LINE ; Stuck at GND              ; VGA_Framebuffer:vga|x_end[9]           ;
+;                               ; due to stuck port data_in ;                                        ;
++-------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -5340,14 +5282,27 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
-; Number of registers using Synchronous Clear  ; 19    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 56    ;
+; Total registers                              ; 394   ;
+; Number of registers using Synchronous Clear  ; 42    ;
+; Number of registers using Synchronous Load   ; 13    ;
+; Number of registers using Asynchronous Clear ; 347   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Clock Enable       ; 139   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------+
+; Inverted Register Statistics                                      ;
++---------------------------------------------------------+---------+
+; Inverted Register                                       ; Fan out ;
++---------------------------------------------------------+---------+
+; Tetris_Datapath:datapath|falling_piece.blocks[3].row[0] ; 43      ;
+; Tetris_Datapath:datapath|falling_piece.blocks[3].col[0] ; 34      ;
+; Tetris_Datapath:datapath|falling_piece.blocks[2].row[0] ; 42      ;
+; Tetris_Datapath:datapath|falling_piece.blocks[1].col[0] ; 36      ;
+; Total number of inverted registers = 4                  ;         ;
++---------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5355,239 +5310,239 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|x_end[1]                                   ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[0].row[2]        ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].row[3]        ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].row[1]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|x_start[5]                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[0].col[1]        ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[2].col[3]        ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].col[2]        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |Tetris_DE1|Tetris_Controller:controller|row_check_counter[3]              ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|y_cursor[8]                                ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[2].row[2]        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[1].row[0]        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[0].col[2]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].col[3]        ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[1].col[1]        ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |Tetris_DE1|Tetris_Controller:controller|row_check_counter[0]              ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|y_cursor[3]                                ;
 ; 12:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|y_cursor[1]                                ;
-; 14:1               ; 7 bits    ; 63 LEs        ; 14 LEs               ; 49 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|x_cursor[8]                                ;
+; 14:1               ; 7 bits    ; 63 LEs        ; 14 LEs               ; 49 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|x_cursor[6]                                ;
 ; 14:1               ; 3 bits    ; 27 LEs        ; 6 LEs                ; 21 LEs                 ; Yes        ; |Tetris_DE1|VGA_Framebuffer:vga|x_cursor[5]                                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[2].row[0]        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].row[0]        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Tetris_DE1|Tetris_Datapath:datapath|falling_piece.blocks[3].col[0]        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_LB_N                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_UB_N                ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Controller:controller|row_check_state                   ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux16                                 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux42                                 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux60                                 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux86                                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Tetris_DE1|Tetris_Controller:controller|NEW_PIECE_TYPE.shape.SHAPE_DOG_R  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][0].shape.SHAPE_DOG_L   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][0].shape.SHAPE_L_R     ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][0].shape.SHAPE_T       ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux19                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux35                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux63                                 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux87                                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |Tetris_DE1|Tetris_Controller:controller|NEW_PIECE_TYPE.shape.SHAPE_L_L    ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][0].shape.SHAPE_L_R     ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][0].shape.SHAPE_SQUARE  ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][0].shape.SHAPE_SQUARE  ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][0].shape.SHAPE_DOG_L   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][0].shape.SHAPE_SQUARE  ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][0].shape.SHAPE_STICK   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][0].shape.SHAPE_DOG_R   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][0].shape.SHAPE_STICK   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][0].shape.SHAPE_L_L     ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][0].shape.SHAPE_SQUARE  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Tetris_DE1|Tetris_View:view|substate.DRAW                                 ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][19].shape.SHAPE_T      ;
-; 20:1               ; 9 bits    ; 117 LEs       ; 117 LEs              ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux98                                 ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][18].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][17].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][16].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][15].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][14].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][13].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][12].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][11].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][10].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][9].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][8].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][7].shape.SHAPE_DOG_L   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][0].shape.SHAPE_T       ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][0].shape.SHAPE_DOG_L   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][0].shape.SHAPE_L_L     ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][0].shape.SHAPE_L_R     ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][0].shape.SHAPE_DOG_R   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][0].shape.SHAPE_STICK   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Tetris_DE1|Tetris_View:view|substate.FLIP                                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |Tetris_DE1|Tetris_View:view|Selector15                                    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][19].shape.SHAPE_STICK  ;
+; 20:1               ; 9 bits    ; 117 LEs       ; 117 LEs              ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux96                                 ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][18].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][17].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][16].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][15].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][14].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][13].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][12].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][11].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][10].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][9].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][8].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][7].shape.SHAPE_SQUARE  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][6].shape.SHAPE_SQUARE  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][5].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][4].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][4].shape.SHAPE_DOG_L   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][3].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][2].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][1].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][2].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][1].shape.SHAPE_T       ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][19].shape.SHAPE_DOG_R  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][18].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][17].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][16].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][15].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][14].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][13].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][12].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][11].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][10].shape.SHAPE_L_R    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][17].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][16].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][15].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][14].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][13].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][12].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][11].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][10].shape.SHAPE_SQUARE ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][9].shape.SHAPE_DOG_R   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][8].shape.SHAPE_DOG_R   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][7].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][6].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][5].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][4].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][3].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][6].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][5].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][4].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][3].shape.SHAPE_DOG_R   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][2].shape.SHAPE_T       ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[8][1].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][19].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][18].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][19].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][18].shape.SHAPE_L_R    ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][17].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][16].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][15].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][14].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][13].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][12].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][11].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][10].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][16].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][15].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][14].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][13].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][12].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][11].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][10].shape.SHAPE_L_R    ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][9].shape.SHAPE_T       ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][8].shape.SHAPE_T       ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][7].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][6].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][5].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][4].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][6].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][5].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][4].shape.SHAPE_L_R     ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][3].shape.SHAPE_T       ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][2].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][1].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][19].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][18].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[7][1].shape.SHAPE_DOG_L   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][19].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][18].shape.SHAPE_L_R    ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][17].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][16].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][15].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][14].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][16].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][15].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][14].shape.SHAPE_DOG_L  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][13].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][12].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][11].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][12].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][11].shape.SHAPE_DOG_R  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][10].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][9].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][8].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][7].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][6].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][5].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][4].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][3].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][2].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][1].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][19].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][18].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][9].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][8].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][7].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][6].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][5].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][4].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][3].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][2].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[6][1].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][19].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][18].shape.SHAPE_DOG_R  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][17].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][16].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][15].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][14].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][13].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][16].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][15].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][14].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][13].shape.SHAPE_T      ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][12].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][11].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][10].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][9].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][8].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][7].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][6].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][5].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][4].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][3].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][2].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][1].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][19].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][18].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][17].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][16].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][15].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][14].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][13].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][12].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][11].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][10].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][9].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][8].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][11].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][10].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][9].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][8].shape.SHAPE_DOG_L   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][7].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][6].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][5].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][4].shape.SHAPE_DOG_L   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][3].shape.SHAPE_DOG_L   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][2].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[5][1].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][19].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][18].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][17].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][16].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][15].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][14].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][13].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][12].shape.SHAPE_L_R    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][11].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][10].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][9].shape.SHAPE_DOG_L   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][8].shape.SHAPE_STICK   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][7].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][6].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][5].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][4].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][3].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][2].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][1].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][6].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][5].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][4].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][3].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][2].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[4][1].shape.SHAPE_SQUARE  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][19].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][18].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][17].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][16].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][15].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][14].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][13].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][12].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][11].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][10].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][9].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][8].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][18].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][17].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][16].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][15].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][14].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][13].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][12].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][11].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][10].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][9].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][8].shape.SHAPE_L_L     ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][7].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][6].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][5].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][4].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][3].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][2].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][1].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][19].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][18].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][6].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][5].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][4].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][3].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][2].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[3][1].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][19].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][18].shape.SHAPE_T      ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][17].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][16].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][16].shape.SHAPE_T      ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][15].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][14].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][13].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][12].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][11].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][10].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][9].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][8].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][7].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][6].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][5].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][4].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][3].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][2].shape.SHAPE_DOG_L   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][1].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][14].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][13].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][12].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][11].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][10].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][9].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][8].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][7].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][6].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][5].shape.SHAPE_DOG_R   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][4].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][3].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][2].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[2][1].shape.SHAPE_DOG_R   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][19].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][18].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][17].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][16].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][15].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][14].shape.SHAPE_SQUARE ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][13].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][12].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][11].shape.SHAPE_STICK  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][10].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][9].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][18].shape.SHAPE_L_R    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][17].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][16].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][15].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][14].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][13].shape.SHAPE_SQUARE ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][12].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][11].shape.SHAPE_L_R    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][10].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][9].shape.SHAPE_L_R     ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][8].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][7].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][7].shape.SHAPE_STICK   ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][6].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][5].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][4].shape.SHAPE_L_L     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][3].shape.SHAPE_L_R     ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][2].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][1].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][19].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][18].shape.SHAPE_L_R    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][5].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][4].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][3].shape.SHAPE_T       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][2].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[1][1].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][19].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][18].shape.SHAPE_T      ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][17].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][16].shape.SHAPE_DOG_L  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][15].shape.SHAPE_T      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][14].shape.SHAPE_DOG_R  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][16].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][15].shape.SHAPE_STICK  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][14].shape.SHAPE_DOG_L  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][13].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][12].shape.SHAPE_L_R    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][11].shape.SHAPE_L_L    ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][10].shape.SHAPE_DOG_R  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][9].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][8].shape.SHAPE_L_R     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][12].shape.SHAPE_L_L    ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][11].shape.SHAPE_T      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][10].shape.SHAPE_DOG_L  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][9].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][8].shape.SHAPE_SQUARE  ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][7].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][6].shape.SHAPE_T       ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][5].shape.SHAPE_STICK   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][4].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][6].shape.SHAPE_L_L     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][5].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][4].shape.SHAPE_L_R     ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][3].shape.SHAPE_DOG_R   ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][2].shape.SHAPE_SQUARE  ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][1].shape.SHAPE_SQUARE  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][2].shape.SHAPE_STICK   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|board.cells[0][1].shape.SHAPE_L_L     ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state              ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Tetris_DE1|Tetris_View:view|state.WAITING                                 ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |Tetris_DE1|Tetris_Controller:controller|NEW_PIECE_TYPE.shape.SHAPE_T      ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux20                                 ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux38                                 ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux65                                 ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux82                                 ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|substate.DRAWING_R2                        ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|Selector3                                  ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |Tetris_DE1|Tetris_Controller:controller|NEW_PIECE_TYPE.shape.SHAPE_STICK  ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux21                                 ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux42                                 ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux64                                 ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux84                                 ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|substate.DRAWING                           ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |Tetris_DE1|VGA_Framebuffer:vga|Selector3                                  ;
 ; 18:1               ; 5 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux11                                 ;
 ; 18:1               ; 5 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux34                                 ;
 ; 18:1               ; 5 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |Tetris_DE1|Tetris_Datapath:datapath|Mux57                                 ;
@@ -6266,6 +6221,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; sprite.img_pixels[9][17..31] ; Input ; Info     ; Stuck at GND ;
 ; sprite.img_pixels[9][16]     ; Input ; Info     ; Stuck at VCC ;
 ; sprite.color                 ; Input ; Info     ; Stuck at VCC ;
+; x[9..4]                      ; Input ; Info     ; Stuck at GND ;
+; x[3]                         ; Input ; Info     ; Stuck at VCC ;
+; x[2]                         ; Input ; Info     ; Stuck at GND ;
+; x[1]                         ; Input ; Info     ; Stuck at VCC ;
+; x[0]                         ; Input ; Info     ; Stuck at GND ;
+; y[9..4]                      ; Input ; Info     ; Stuck at GND ;
+; y[3]                         ; Input ; Info     ; Stuck at VCC ;
+; y[2]                         ; Input ; Info     ; Stuck at GND ;
+; y[1]                         ; Input ; Info     ; Stuck at VCC ;
+; y[0]                         ; Input ; Info     ; Stuck at GND ;
 +------------------------------+-------+----------+--------------+
 
 
@@ -6294,7 +6259,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -6304,7 +6269,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Mar 14 14:36:18 2018
+    Info: Processing started: Wed Mar 14 15:07:09 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tetris_DE1 -c Tetris_DE1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vga_ramdac.vhd
@@ -6412,36 +6377,40 @@ Warning (10862): input port "RD_Y[10..9]" at VGA_RAMDAC.vhd(26) has no fan-out
 Info (12128): Elaborating entity "Tetris_Controller" for hierarchy "Tetris_Controller:controller"
 Info (12128): Elaborating entity "Tetris_Datapath" for hierarchy "Tetris_Datapath:datapath"
 Info (12128): Elaborating entity "Tetris_View" for hierarchy "Tetris_View:view"
-Warning (10541): VHDL Signal Declaration warning at Tetris_View.vhd(19): used implicit default value for signal "FB_DRAW_LINE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Tetris_View.vhd(20): used implicit default value for signal "FB_FILL_RECT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (10035): Verilog HDL or VHDL information at Tetris_View.vhd(29): object "CELL_CONTENT" declared but not used
-Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(44): object "s" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(45): object "row" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(46): object "column" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at Tetris_View.vhd(48): used implicit default value for signal "query_cell_r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (10035): Verilog HDL or VHDL information at Tetris_View.vhd(15): object "X" declared but not used
+Info (10035): Verilog HDL or VHDL information at Tetris_View.vhd(16): object "Y" declared but not used
+Info (10035): Verilog HDL or VHDL information at Tetris_View.vhd(31): object "CELL_CONTENT" declared but not used
+Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(46): object "s" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(47): object "row" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Tetris_View.vhd(48): object "column" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Tetris_View.vhd(50): used implicit default value for signal "query_cell_r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10862): input port "SPRITE" at Tetris_View.vhd(13) has no fan-out
-Warning (10862): input port "CELL_CONTENT.filled" at Tetris_View.vhd(29) has no fan-out
+Warning (10862): input port "X" at Tetris_View.vhd(15) has no fan-out
+Warning (10862): input port "Y" at Tetris_View.vhd(16) has no fan-out
+Warning (10862): input port "CELL_CONTENT.filled" at Tetris_View.vhd(31) has no fan-out
 Info (286030): Timing-Driven Synthesis is running
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SRAM_CE_N" is stuck at GND
-Info (17049): 1425 registers lost all their fanouts during netlist optimizations.
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register Tetris_Datapath:datapath|falling_piece.blocks[3].col[0] will power up to High
+    Critical Warning (18010): Register Tetris_Datapath:datapath|falling_piece.blocks[3].row[0] will power up to High
+    Critical Warning (18010): Register Tetris_Datapath:datapath|falling_piece.blocks[2].row[0] will power up to High
+    Critical Warning (18010): Register Tetris_Datapath:datapath|falling_piece.blocks[1].col[0] will power up to High
+Info (17049): 1424 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-Info (21057): Implemented 236 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2673 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 37 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 176 logic cells
+    Info (21061): Implemented 2613 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Wed Mar 14 14:36:25 2018
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 649 megabytes
+    Info: Processing ended: Wed Mar 14 15:07:22 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:13
 
 

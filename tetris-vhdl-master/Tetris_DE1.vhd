@@ -174,6 +174,8 @@ begin
 			RESET_N         => RESET_N,
 			REDRAW          => redraw,
 			SPRITE 			 => dummy_sprite,
+			X				    => 10,
+			Y				    => 10,
 			FB_READY        => fb_ready,
 			FB_CLEAR        => fb_clear,
 			FB_DRAW_RECT    => fb_draw_rect,

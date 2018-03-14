@@ -1,5 +1,5 @@
 Flow report for Tetris_DE1
-Wed Mar 14 14:36:36 2018
+Wed Mar 14 15:07:40 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 14 14:36:36 2018           ;
+; Flow Status                        ; Successful - Wed Mar 14 15:07:40 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Tetris_DE1                                      ;
 ; Top-level Entity Name              ; Tetris_DE1                                      ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 162 / 18,752 ( < 1 % )                          ;
-;     Total combinational functions  ; 161 / 18,752 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 78 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 78                                              ;
+; Total logic elements               ; 2,606 / 18,752 ( 14 % )                         ;
+;     Total combinational functions  ; 2,604 / 18,752 ( 14 % )                         ;
+;     Dedicated logic registers      ; 394 / 18,752 ( 2 % )                            ;
+; Total registers                    ; 394                                             ;
 ; Total pins                         ; 59 / 315 ( 19 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/14/2018 14:36:19 ;
+; Start date & time ; 03/14/2018 15:07:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Tetris_DE1          ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ applicable agreement for further details.
 ; Assignment Name                     ; Value                               ; Default Value      ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------------+--------------------+-------------+----------------+
 ; ALLOW_POWER_UP_DONT_CARE            ; Off                                 ; On                 ; --          ; --             ;
-; COMPILER_SIGNATURE_ID               ; 35490513764543.152103457807376      ; --                 ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 35490513764543.152103642907492      ; --                 ; --          ; --             ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE    ; Speed                               ; Balanced           ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                ; --                 ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)              ; <None>             ; --          ; --             ;
@@ -106,13 +106,13 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 643 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 763 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 474 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 467 MB              ; 00:00:01                           ;
-; Design Assistant          ; 00:00:01     ; 1.0                     ; 450 MB              ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 446 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 649 MB              ; 00:00:12                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 787 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 478 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 492 MB              ; 00:00:01                           ;
+; Design Assistant          ; 00:00:01     ; 1.0                     ; 465 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 484 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:26     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
