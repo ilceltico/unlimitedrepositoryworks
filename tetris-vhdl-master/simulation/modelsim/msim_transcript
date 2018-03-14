@@ -1,0 +1,101 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Tetris_DE1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_RAMDAC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity VGA_RAMDAC
+# -- Compiling architecture RTL of VGA_RAMDAC
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_package.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package vga_package
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/PLL.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PLL
+# -- Compiling architecture SYN of pll
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Timing.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity VGA_Timing
+# -- Compiling architecture RTL of VGA_Timing
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/tetris_package.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package vga_package
+# -- Compiling package tetris_package
+# -- Compiling package body tetris_package
+# -- Loading package tetris_package
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Framebuffer.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package vga_package
+# -- Compiling entity VGA_Framebuffer
+# -- Compiling architecture RTL of VGA_Framebuffer
+# -- Loading entity VGA_Timing
+# -- Loading entity VGA_RAMDAC
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_View.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package vga_package
+# -- Loading package tetris_package
+# -- Compiling entity Tetris_View
+# -- Compiling architecture RTL of Tetris_View
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Datapath.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package vga_package
+# -- Loading package tetris_package
+# -- Compiling entity Tetris_Datapath
+# -- Compiling architecture RTL of Tetris_Datapath
+# vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package vga_package
+# -- Loading package tetris_package
+# -- Compiling entity Tetris_Controller
+# -- Compiling architecture RTL of Tetris_Controller
+# ** Error: C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd(46): Prefix (signal "fall_speed") for attribute "high" is not a type mark.
+# ** Error: C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd(204): Prefix (signal "rnd_count_r") for attribute "high" is not a type mark.
+# ** Error: C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd(223): VHDL Compiler exiting
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./Tetris_DE1_run_msim_rtl_vhdl.do line 16
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd}"

@@ -124,6 +124,7 @@ begin
 			FB_FLIP 			=> fb_flip,
 			FB_DRAW_RECT   => fb_draw_rect,
 			FB_COLOR       => fb_color,
+			FB_CLEAR 	   => fb_clear,
 			FB_X0          => fb_x0,
 			FB_Y0          => fb_y0,
 			FB_X1          => fb_x1,

@@ -1,0 +1,320 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Luca\Desktop\tetris-vhdl-master\simulation\modelsim
+Epll
+Z1 w1493119814
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\Luca\Desktop\tetris-vhdl-master\simulation\modelsim
+Z5 8C:/Users/Luca/Desktop/tetris-vhdl-master/PLL.vhd
+Z6 FC:/Users/Luca/Desktop/tetris-vhdl-master/PLL.vhd
+l0
+L42
+Vb054BV[k`<km6GWJhSTii3
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1516203922.222000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/PLL.vhd|
+Z10 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/PLL.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 g8MmJ<O7S?_Q9`NcdjPan1
+!i10b 1
+Asyn
+R2
+R3
+DEx4 work 3 pll 0 22 b054BV[k`<km6GWJhSTii3
+l128
+L52
+ViZ_;KzdR[_bRG@F[>XQzI1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 G:lbGdGmn7G=GRP7=L2Gz3
+!i10b 1
+Etetris_controller
+R1
+Z13 DPx4 work 11 vga_package 0 22 VB3f68JVUEHlbOz7JPOP>1
+Z14 DPx4 work 14 tetris_package 0 22 J>hd@;XSEN5?47jFHBQjN1
+R3
+R2
+Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R4
+8C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd
+FC:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd
+l0
+L6
+V_4@^]QHIEhPFC]ViEO1Q`1
+!s100 MYnNT_mHK5D6;jPE662TL0
+R7
+31
+!i10b 1
+!s108 1516203923.598000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd|
+!s107 C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Controller.vhd|
+R11
+R12
+Etetris_datapath
+R1
+R13
+R14
+R3
+R2
+R15
+R4
+Z16 8C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Datapath.vhd
+Z17 FC:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Datapath.vhd
+l0
+L8
+Ve=<FmeU:0eP3JG^6=U_<>2
+R7
+31
+Z18 !s108 1516203923.320000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Datapath.vhd|
+Z20 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_Datapath.vhd|
+R11
+R12
+!s100 ??TVTWE5?nH2SEVVkSGU<1
+!i10b 1
+Artl
+R13
+R14
+R3
+R2
+R15
+DEx4 work 15 tetris_datapath 0 22 e=<FmeU:0eP3JG^6=U_<>2
+l45
+L38
+VX>Zh4MFK7KNWh52=]Q5Pf1
+R7
+31
+R18
+R19
+R20
+R11
+R12
+!s100 O<oNNPhRQ3H3Sc[YoWlc=2
+!i10b 1
+Ptetris_package
+R13
+R3
+R2
+R15
+R1
+R4
+Z21 8C:/Users/Luca/Desktop/tetris-vhdl-master/tetris_package.vhd
+Z22 FC:/Users/Luca/Desktop/tetris-vhdl-master/tetris_package.vhd
+l0
+L6
+VJ>hd@;XSEN5?47jFHBQjN1
+R7
+31
+b1
+Z23 !s108 1516203922.599000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/tetris_package.vhd|
+Z25 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/tetris_package.vhd|
+R11
+R12
+!s100 fhgJP^_@<cJfgRJjGz:?Q2
+!i10b 1
+Bbody
+R14
+R13
+R3
+R2
+R15
+l0
+L129
+Voko:C2DH>R?D8gH_Wblkg0
+R7
+31
+R23
+R24
+R25
+R11
+R12
+nbody
+!s100 SPEi^C`O<1n0khP9JPS=k1
+!i10b 1
+Etetris_view
+R1
+R13
+R14
+R3
+R2
+R15
+R4
+Z26 8C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_View.vhd
+Z27 FC:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_View.vhd
+l0
+L8
+V[cP[Kj7_XCj;h;@aBoVd32
+R7
+31
+Z28 !s108 1516203923.035000
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_View.vhd|
+Z30 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/Tetris_View.vhd|
+R11
+R12
+!s100 z517>OYa?8O0^@SVJRbfe1
+!i10b 1
+Artl
+R13
+R14
+R3
+R2
+R15
+DEx4 work 11 tetris_view 0 22 [cP[Kj7_XCj;h;@aBoVd32
+l47
+L35
+V<>YmJdC[8a28I2XIGK0i31
+R7
+31
+R28
+R29
+R30
+R11
+R12
+!s100 4nFdDzFQ_9bbnhQZk>;oI0
+!i10b 1
+Evga_framebuffer
+R1
+R13
+R15
+R2
+R3
+R4
+Z31 8C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Framebuffer.vhd
+Z32 FC:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Framebuffer.vhd
+l0
+L8
+V9hcT8h2N6kZM1CM;RXnn;0
+R7
+31
+Z33 !s108 1516203922.779000
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Framebuffer.vhd|
+Z35 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Framebuffer.vhd|
+R11
+R12
+!s100 AR@K39_[nASQ>WO;9JV7X2
+!i10b 1
+Artl
+Z36 DEx4 work 10 vga_ramdac 0 22 cA9UgK:nUW;38`hS:foTL2
+Z37 DEx4 work 10 vga_timing 0 22 [HCkW_`O396^@Oi@O4D_90
+R13
+R15
+R2
+R3
+DEx4 work 15 vga_framebuffer 0 22 9hcT8h2N6kZM1CM;RXnn;0
+l89
+L55
+ViBE9i_?CW;7IO^j8?VcLA2
+R7
+31
+R33
+R34
+R35
+R11
+R12
+!s100 8k[6@Y`RT^<K4JPVbN3oG3
+!i10b 1
+Pvga_package
+R3
+R2
+R15
+R1
+R4
+8C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_package.vhd
+FC:/Users/Luca/Desktop/tetris-vhdl-master/VGA_package.vhd
+l0
+L5
+VVB3f68JVUEHlbOz7JPOP>1
+R7
+31
+R11
+R12
+!s100 Y300TVdaPOkMMY@3W@ncO3
+!i10b 1
+!s108 1516203922.020000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_package.vhd|
+!s107 C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_package.vhd|
+Evga_ramdac
+R1
+R15
+R2
+R3
+R4
+Z38 8C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_RAMDAC.vhd
+Z39 FC:/Users/Luca/Desktop/tetris-vhdl-master/VGA_RAMDAC.vhd
+l0
+L5
+VcA9UgK:nUW;38`hS:foTL2
+R7
+31
+Z40 !s108 1516203921.763000
+Z41 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_RAMDAC.vhd|
+Z42 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_RAMDAC.vhd|
+R11
+R12
+!s100 @JThJHh^zYWIhSNPVCenA2
+!i10b 1
+Artl
+R15
+R2
+R3
+R36
+l111
+L43
+Vfhz@9E5bFgFh5h54>TdTI0
+R7
+31
+R40
+R41
+R42
+R11
+R12
+!s100 S1XUMaT7hk`Jle@TWG>FA1
+!i10b 1
+Evga_timing
+R1
+R15
+R2
+R3
+R4
+Z43 8C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Timing.vhd
+Z44 FC:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Timing.vhd
+l0
+L5
+V[HCkW_`O396^@Oi@O4D_90
+R7
+31
+Z45 !s108 1516203922.426000
+Z46 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Timing.vhd|
+Z47 !s107 C:/Users/Luca/Desktop/tetris-vhdl-master/VGA_Timing.vhd|
+R11
+R12
+!s100 KXfVCjgb@[`SUzDic[6gK2
+!i10b 1
+Artl
+R15
+R2
+R3
+R37
+l50
+L33
+VH14e^P>>FoVfG0Y6FjenW2
+R7
+31
+R45
+R46
+R47
+R11
+R12
+!s100 HX6g=DIQ6_V98?lYHjazc3
+!i10b 1
