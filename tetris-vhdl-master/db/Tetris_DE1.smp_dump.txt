@@ -1,15 +1,14 @@
 
 State Machine - |Tetris_DE1|Tetris_View:view|substate
-Name substate.FLIP_FRAMEBUFFER substate.DRAW_BOARD_BLOCKS substate.DRAW_BOARD_OUTLINE substate.CLEAR_SCENE 
-substate.CLEAR_SCENE 0 0 0 0 
-substate.DRAW_BOARD_OUTLINE 0 0 1 1 
-substate.DRAW_BOARD_BLOCKS 0 1 0 1 
-substate.FLIP_FRAMEBUFFER 1 0 0 1 
+Name substate.FLIP substate.DRAW substate.CLEAR 
+substate.CLEAR 0 0 0 
+substate.DRAW 0 1 1 
+substate.FLIP 1 0 1 
 
 State Machine - |Tetris_DE1|Tetris_View:view|state
-Name state.DRAWING state.WAIT_FOR_READY state.IDLE 
+Name state.DRAWING state.WAITING state.IDLE 
 state.IDLE 0 0 0 
-state.WAIT_FOR_READY 0 1 1 
+state.WAITING 0 1 1 
 state.DRAWING 1 0 1 
 
 State Machine - |Tetris_DE1|Tetris_Datapath:datapath|board.cells[9][19].shape

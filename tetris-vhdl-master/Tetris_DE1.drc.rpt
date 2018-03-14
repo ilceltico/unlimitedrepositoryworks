@@ -1,5 +1,5 @@
 Design Assistant report for Tetris_DE1
-Wed Mar 14 14:24:26 2018
+Wed Mar 14 14:36:35 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -9,10 +9,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   1. Legal Notice
   2. Design Assistant Summary
   3. Design Assistant Settings
-  4. High Violations
-  5. Medium Violations
-  6. Information only Violations
-  7. Design Assistant Messages
+  4. Critical Violations
+  5. High Violations
+  6. Medium Violations
+  7. Information only Violations
+  8. Design Assistant Messages
 
 
 
@@ -38,17 +39,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Design Assistant Summary                                                ;
 +-----------------------------------+-------------------------------------+
-; Design Assistant Status           ; Analyzed - Wed Mar 14 14:24:26 2018 ;
+; Design Assistant Status           ; Analyzed - Wed Mar 14 14:36:35 2018 ;
 ; Revision Name                     ; Tetris_DE1                          ;
 ; Top-level Entity Name             ; Tetris_DE1                          ;
 ; Family                            ; Cyclone II                          ;
-; Total Critical Violations         ; 0                                   ;
-; Total High Violations             ; 7                                   ;
-; - Rule D101                       ; 7                                   ;
+; Total Critical Violations         ; 1                                   ;
+; - Rule C101                       ; 1                                   ;
+; Total High Violations             ; 1                                   ;
+; - Rule D101                       ; 1                                   ;
 ; Total Medium Violations           ; 1                                   ;
 ; - Rule R105                       ; 1                                   ;
-; Total Information only Violations ; 91                                  ;
-; - Rule T101                       ; 41                                  ;
+; Total Information only Violations ; 52                                  ;
+; - Rule T101                       ; 2                                   ;
 ; - Rule T102                       ; 50                                  ;
 +-----------------------------------+-------------------------------------+
 
@@ -99,53 +101,43 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; High Violations                                                                                                                                       ;
-+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+
-; Rule name                                                                                                   ; Name                                    ;
-+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 1 ;                                         ;
-;  Source node(s) from clock "CLOCK_50"                                                                       ; RESET_N                                 ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                     ; Tetris_View:view|FB_COLOR[10]           ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                     ; Tetris_View:view|FB_X0[3]               ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.DRAWING_R2 ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 2 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                          ; VGA_Framebuffer:vga|state.IDLE          ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                     ; Tetris_View:view|state.WAIT_FOR_READY   ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                     ; Tetris_View:view|state.DRAWING          ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 3 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                          ; Tetris_View:view|FB_CLEAR               ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|flip_on_next_vs     ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_end[4]            ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_end[0]            ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_start[3]          ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.FILLING_RECT  ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.DRAWING_R1 ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.DRAWING_RECT  ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.INIT       ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.DRAWING_R2 ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.IDLE          ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 4 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                          ; Tetris_View:view|FB_DRAW_RECT           ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|flip_on_next_vs     ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_end[0]            ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.FILLING_RECT  ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.DRAWING_R1 ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.DRAWING_RECT  ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.INIT       ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|substate.DRAWING_R2 ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|state.IDLE          ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 5 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                          ; Tetris_View:view|FB_FLIP                ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|flip_on_next_vs     ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 6 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                          ; Tetris_View:view|FB_X0[3]               ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_end[4]            ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_start[3]          ;
-; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 7 ;                                         ;
-;  Source node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                          ; Tetris_View:view|FB_COLOR[10]           ;
-;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|latched_color[10]   ;
-+-------------------------------------------------------------------------------------------------------------+-----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Violations                                                                                                                             ;
++--------------------------------------------------------------------------------------+----------------------------------------------------------+
+; Rule name                                                                            ; Name                                                     ;
++--------------------------------------------------------------------------------------+----------------------------------------------------------+
+; Rule C101: Gated clock should be implemented according to the Altera standard scheme ; PLL:pll|altpll:altpll_component|_clk0                    ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[0]     ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[1] ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0] ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[0]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[4]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[1]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[2]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[3]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]   ;
+;  Gated clock destination node(s) list                                                ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[5]   ;
++--------------------------------------------------------------------------------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; High Violations                                                                                                                               ;
++-------------------------------------------------------------------------------------------------------------+---------------------------------+
+; Rule name                                                                                                   ; Name                            ;
++-------------------------------------------------------------------------------------------------------------+---------------------------------+
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 1 ;                                 ;
+;  Source node(s) from clock "CLOCK_50"                                                                       ; RESET_N                         ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[8] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[4] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|y_cursor[6] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|y_cursor[3] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|y_cursor[2] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|y_cursor[4] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[0] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[3] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[2] ;
+;  Destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                     ; VGA_Framebuffer:vga|x_cursor[7] ;
++-------------------------------------------------------------------------------------------------------------+---------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,123 +149,74 @@ applicable agreement for further details.
 ;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[0]     ;
 ;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[1] ;
 ;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0] ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA   ;
 ;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[0]   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[1]   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[3]   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[2]   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[7]   ;
 ;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[4]   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_View:view|FB_CLEAR                                ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_View:view|substate.CLEAR_SCENE                    ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Controller:controller|REDRAW                      ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[3]  ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Controller:controller|MOVE_DOWN                   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[2]  ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Controller:controller|MOVE_LEFT                   ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Datapath:datapath|falling_piece.blocks[3].col[3]  ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Controller:controller|MERGE                       ;
-;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk1"                                      ; Tetris_Controller:controller|move_piece_down             ;
+;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[1]   ;
+;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[2]   ;
+;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[3]   ;
+;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]   ;
+;  Reset signal destination node(s) from clock "PLL:pll|altpll:altpll_component|_clk0"                                      ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[5]   ;
 +---------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Information only Violations                                                                                                          ;
-+------------------------------------------------------------------+---------------------------------------------------------+---------+
-; Rule name                                                        ; Name                                                    ; Fan-Out ;
-+------------------------------------------------------------------+---------------------------------------------------------+---------+
-; Rule T101: Nodes with more than the specified number of fan-outs ; RESET_N~clkctrl                                         ; 350     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; PLL:pll|altpll:altpll_component|_clk0~clkctrl           ; 85      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA  ; 43      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA  ; 43      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; VGA_Framebuffer:vga|state.IDLE                          ; 32      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|MERGE                      ; 51      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; PLL:pll|altpll:altpll_component|_clk1~clkctrl           ; 307     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[1] ; 83      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[0] ; 35      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[0] ; 36      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[1] ; 88      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[0] ; 47      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[3] ; 118     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[2] ; 118     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|REMOVE_ROW                 ; 220     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|row_check_counter[3]       ; 61      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[1] ; 31      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[1] ; 36      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[0] ; 36      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[2] ; 113     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[4] ; 35      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[3] ; 112     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[4] ; 47      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|board~1408                     ; 190     ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[0] ; 43      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].col[0] ; 34      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[1] ; 75      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].col[1] ; 35      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[2] ; 90      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[4] ; 33      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[3] ; 99      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[0] ; 42      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].col[0] ; 34      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[2] ; 89      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[1] ; 75      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].col[1] ; 35      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[4] ; 32      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[3] ; 98      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|row_check_counter[1]       ; 52      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|row_check_counter[0]       ; 56      ;
-; Rule T101: Nodes with more than the specified number of fan-outs ; Tetris_Controller:controller|row_check_counter[2]       ; 62      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; RESET_N~clkctrl                                         ; 350     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; PLL:pll|altpll:altpll_component|_clk1~clkctrl           ; 307     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|REMOVE_ROW                 ; 220     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|board~1408                     ; 190     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[3] ; 118     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[2] ; 118     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[2] ; 113     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[3] ; 112     ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[3] ; 99      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[3] ; 98      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[2] ; 90      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[2] ; 89      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[1] ; 88      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; PLL:pll|altpll:altpll_component|_clk0~clkctrl           ; 85      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[1] ; 83      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[1] ; 75      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[1] ; 75      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|row_check_counter[2]       ; 62      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|row_check_counter[3]       ; 61      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|row_check_counter[0]       ; 56      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|row_check_counter[1]       ; 52      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|MERGE                      ; 51      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[0] ; 47      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].row[4] ; 47      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA  ; 43      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[0] ; 43      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA  ; 43      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[0] ; 42      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[1] ; 36      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[0] ; 36      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[0] ; 36      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].col[1] ; 35      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[0] ; 35      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].row[4] ; 35      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].col[1] ; 35      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].col[0] ; 34      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].col[0] ; 34      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[3].row[4] ; 33      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|state.IDLE                          ; 32      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].row[4] ; 32      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[1] ; 31      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; RESET_N                                                 ; 29      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|substate.INIT                       ; 27      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[2] ; 26      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|substate.DRAWING_R1                 ; 25      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0       ; 25      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[0].col[3] ; 23      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Controller:controller|row_check_counter[4]       ; 22      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[2].col[2] ; 21      ;
-; Rule T102: Top nodes with the highest number of fan-outs         ; Tetris_Datapath:datapath|falling_piece.blocks[1].col[2] ; 21      ;
-+------------------------------------------------------------------+---------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                                           ;
++------------------------------------------------------------------+----------------------------------------------------------+---------+
+; Rule name                                                        ; Name                                                     ; Fan-Out ;
++------------------------------------------------------------------+----------------------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs ; RESET_N                                                  ; 59      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; PLL:pll|altpll:altpll_component|_clk0~clkctrl            ; 76      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; PLL:pll|altpll:altpll_component|_clk0~clkctrl            ; 76      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; RESET_N                                                  ; 59      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA   ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA   ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0       ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0        ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line       ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[0]~11                       ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|substate.INIT                        ; 13      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|Equal1~2                             ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|Selector3~0                          ; 11      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0        ; 10      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0     ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[9]~21                       ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0     ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[0]~10                       ; 9       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[5]   ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[9]   ; 8       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]   ; 7       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal8~1       ; 6       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|state.DRAWING_LINE                   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[1]   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[5]   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[3]   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[2]   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[7]   ; 5       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[2]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[8]   ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[6]   ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[4]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[4]   ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[6]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[8]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[7]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal3~1       ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[3]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[0]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[1]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[1]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[0]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|x_cursor[5]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[4]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[2]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[3]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[6]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[5]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[7]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|y_cursor[8]                          ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0] ; 4       ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[1] ; 3       ;
++------------------------------------------------------------------+----------------------------------------------------------+---------+
 
 
 +---------------------------+
@@ -282,91 +225,57 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Design Assistant
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Mar 14 14:24:25 2018
+    Info: Processing started: Wed Mar 14 14:36:34 2018
 Info: Command: quartus_drc --read_settings_files=off --write_settings_files=off Tetris_DE1 -c Tetris_DE1
 Info (332104): Reading SDC File: 'Tetris_DE1.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {pll|altpll_component|pll|inclk[0]} -multiply_by 2 -duty_cycle 50.00 -name {PLL:pll|altpll:altpll_component|_clk0} {pll|altpll_component|pll|clk[0]}
-    Info (332110): create_generated_clock -source {pll|altpll_component|pll|inclk[0]} -duty_cycle 50.00 -name {PLL:pll|altpll:altpll_component|_clk1} {pll|altpll_component|pll|clk[1]}
-Critical Warning (308060): (High) Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains. (Value defined:2). Found 7 asynchronous clock domain interface structure(s) related to this rule.
+Critical Warning (308019): (Critical) Rule C101: Gated clock should be implemented according to the Altera standard scheme. Found 1 node(s) related to this rule.
+    Critical Warning (308012): Node  "PLL:pll|altpll:altpll_component|_clk0"
+Critical Warning (308060): (High) Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains. (Value defined:2). Found 1 asynchronous clock domain interface structure(s) related to this rule.
     Critical Warning (308012): Node  "RESET_N"
-    Critical Warning (308012): Node  "VGA_Framebuffer:vga|state.IDLE"
-    Critical Warning (308012): Node  "Tetris_View:view|FB_CLEAR"
-    Critical Warning (308012): Node  "Tetris_View:view|FB_DRAW_RECT"
-    Critical Warning (308012): Node  "Tetris_View:view|FB_FLIP"
-    Critical Warning (308012): Node  "Tetris_View:view|FB_X0[3]"
-    Critical Warning (308012): Node  "Tetris_View:view|FB_COLOR[10]"
 Warning (308027): (Medium) Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized. Found 1 node(s) related to this rule.
     Warning (308010): Node  "RESET_N"
-Info (308046): (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 41 node(s) with highest fan-out.
-    Info (308011): Node  "RESET_N~clkctrl"
+Info (308046): (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 2 node(s) with highest fan-out.
+    Info (308011): Node  "RESET_N"
     Info (308011): Node  "PLL:pll|altpll:altpll_component|_clk0~clkctrl"
-    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA"
-    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA"
-    Info (308011): Node  "VGA_Framebuffer:vga|state.IDLE"
-    Info (308011): Node  "Tetris_Controller:controller|MERGE"
-    Info (308011): Node  "PLL:pll|altpll:altpll_component|_clk1~clkctrl"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].col[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[2]"
-    Info (308011): Node  "Tetris_Controller:controller|REMOVE_ROW"
-    Info (308011): Node  "Tetris_Controller:controller|row_check_counter[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].col[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].col[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].col[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[4]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[4]"
-    Info (308011): Node  "Tetris_Datapath:datapath|board~1408"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].col[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].col[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[4]"
-    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
 Info (308044): (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
-    Info (308011): Node  "RESET_N~clkctrl"
-    Info (308011): Node  "PLL:pll|altpll:altpll_component|_clk1~clkctrl"
-    Info (308011): Node  "Tetris_Controller:controller|REMOVE_ROW"
-    Info (308011): Node  "Tetris_Datapath:datapath|board~1408"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[2].row[3]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[2].row[2]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[1]"
     Info (308011): Node  "PLL:pll|altpll:altpll_component|_clk0~clkctrl"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].row[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[2].row[1]"
-    Info (308011): Node  "Tetris_Controller:controller|row_check_counter[2]"
-    Info (308011): Node  "Tetris_Controller:controller|row_check_counter[3]"
-    Info (308011): Node  "Tetris_Controller:controller|row_check_counter[0]"
-    Info (308011): Node  "Tetris_Controller:controller|row_check_counter[1]"
-    Info (308011): Node  "Tetris_Controller:controller|MERGE"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[0].row[4]"
-    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[3].row[0]"
+    Info (308011): Node  "RESET_N"
     Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[2].row[0]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].col[1]"
-    Info (308011): Node  "Tetris_Datapath:datapath|falling_piece.blocks[1].col[0]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line"
+    Info (308011): Node  "VGA_Framebuffer:vga|x_cursor[0]~11"
+    Info (308011): Node  "VGA_Framebuffer:vga|substate.INIT"
+    Info (308011): Node  "VGA_Framebuffer:vga|Equal1~2"
+    Info (308011): Node  "VGA_Framebuffer:vga|Selector3~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|x_cursor[9]~21"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0"
+    Info (308011): Node  "VGA_Framebuffer:vga|y_cursor[0]~10"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[5]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[9]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal8~1"
+    Info (308011): Node  "VGA_Framebuffer:vga|state.DRAWING_LINE"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[1]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[5]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[3]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[2]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[7]"
+    Info (308011): Node  "VGA_Framebuffer:vga|x_cursor[2]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[8]"
+    Info (308011): Node  "VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[6]"
+    Info (308011): Node  "VGA_Framebuffer:vga|x_cursor[4]"
     Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
-Info (308007): Design Assistant information: finished post-fitting analysis of current design -- generated 91 information messages and 8 warning messages
-Info: Quartus II 64-Bit Design Assistant was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Wed Mar 14 14:24:26 2018
+Info (308007): Design Assistant information: finished post-fitting analysis of current design -- generated 52 information messages and 3 warning messages
+Info: Quartus II 64-Bit Design Assistant was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 450 megabytes
+    Info: Processing ended: Wed Mar 14 14:36:35 2018
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

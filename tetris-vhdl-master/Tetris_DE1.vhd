@@ -173,6 +173,7 @@ begin
 			CLOCK           => clock,
 			RESET_N         => RESET_N,
 			REDRAW          => redraw,
+			SPRITE 			 => dummy_sprite,
 			FB_READY        => fb_ready,
 			FB_CLEAR        => fb_clear,
 			FB_DRAW_RECT    => fb_draw_rect,

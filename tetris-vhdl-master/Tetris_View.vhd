@@ -10,7 +10,7 @@ entity Tetris_View is
 	(
 		CLOCK          : in  std_logic;
 		RESET_N        : in  std_logic;
-		
+		SPRITE 			: in 	sprite_type;
 		REDRAW         : in  std_logic;
 		
 		FB_READY       : in  std_logic;
@@ -38,9 +38,12 @@ architecture RTL of Tetris_View is
 	constant BLOCK_SIZE     : integer := 20;
 	constant BLOCK_SPACING  : integer := 1;
 	
-	type   state_type    is (IDLE, WAIT_FOR_READY, DRAWING);
-	type   substate_type is (CLEAR_SCENE, DRAW_BOARD_OUTLINE, DRAW_BOARD_BLOCKS, FLIP_FRAMEBUFFER);
+	type   state_type    is (IDLE, WAITING, DRAWING);
+	type   substate_type is (CLEAR, DRAW, FLIP);
 	signal state        : state_type;
+	signal s 			  : sprite_type;
+	signal row			  : integer;
+	signal column       : integer;
 	signal substate     : substate_type;
 	signal query_cell_r : block_pos_type;
 
@@ -51,86 +54,74 @@ begin
 	process(CLOCK, RESET_N)
 	begin
 	
-		if (RESET_N = '0') then
-			state             <= IDLE;
-			substate          <= CLEAR_SCENE;
-			FB_CLEAR          <= '0';
-			FB_DRAW_RECT      <= '0';
-			FB_DRAW_LINE      <= '0';
-			FB_FILL_RECT      <= '0';
-			FB_FLIP           <= '0';
-			query_cell_r.col  <= 0;
-			query_cell_r.row  <= 0;
-
-		elsif (rising_edge(CLOCK)) then
-		
-			FB_CLEAR       <= '0';
+		if(RESET_N = '0') then
 			FB_DRAW_RECT   <= '0';
-			FB_DRAW_LINE   <= '0';
-			FB_FILL_RECT   <= '0';
+			FB_CLEAR       <= '0';
 			FB_FLIP        <= '0';
 	
-			case (state) is
-				when IDLE =>
+		elsif(rising_edge(CLOCK)) then
+		
+			FB_DRAW_RECT   <= '0';
+			FB_CLEAR       <= '0';
+			FB_FLIP        <= '0';
+		
+			case (state) is 
+				when IDLE => 
 					if (REDRAW = '1') then
-						state    <= WAIT_FOR_READY;
-						substate <= CLEAR_SCENE;
+						state <= WAITING;
+						substate <= CLEAR;
+						s <= SPRITE;
 					end if;
 					
-				when WAIT_FOR_READY =>
+				when WAITING =>
 					if (FB_READY = '1') then
 						state <= DRAWING;
 					end if;
 				
 				when DRAWING =>
-					state <= WAIT_FOR_READY;
 				
-					case (substate) is
-						when CLEAR_SCENE =>
+					state <= WAITING;
+				
+					case (substate) is 
+						when CLEAR =>
+							row <= 0;
+							column <= 0;
 							FB_COLOR     <= COLOR_BLACK;
 							FB_CLEAR     <= '1';
-							substate     <= DRAW_BOARD_OUTLINE;
-						
-						when DRAW_BOARD_OUTLINE =>
-							FB_COLOR     <= COLOR_RED;
-							FB_X0        <= LEFT_MARGIN;
-							FB_Y0        <= TOP_MARGIN;
-							FB_X1        <= LEFT_MARGIN + (BOARD_COLUMNS * BLOCK_SIZE);
-							FB_Y1        <= TOP_MARGIN  + (BOARD_ROWS * BLOCK_SIZE);						
-							FB_DRAW_RECT <= '1';
-							-- substate     <= DRAW_BOARD_BLOCKS;		
-							substate  <= FLIP_FRAMEBUFFER;			
+							substate <= DRAW;
 							
-						when DRAW_BOARD_BLOCKS =>
---							if(CELL_CONTENT.filled = '1') then
---								FB_COLOR     <= Lookup_color(CELL_CONTENT.shape);
---								FB_X0        <= LEFT_MARGIN + (query_cell_r.col * BLOCK_SIZE) + BLOCK_SPACING;
---								FB_Y0        <= TOP_MARGIN  + (query_cell_r.row * BLOCK_SIZE) + BLOCK_SPACING;
---								FB_X1        <= LEFT_MARGIN + (query_cell_r.col * BLOCK_SIZE) + BLOCK_SIZE - BLOCK_SPACING;
---								FB_Y1        <= TOP_MARGIN  + (query_cell_r.row * BLOCK_SIZE) + BLOCK_SIZE - BLOCK_SPACING;
---								FB_FILL_RECT <= '1';
+						when DRAW => 
+							FB_X0 <= 50;
+							FB_X1 <= 100;
+							FB_Y0 <= 50;
+							FB_Y1 <= 100;
+							FB_COLOR <= COLOR_WHITE;
+							FB_DRAW_RECT <= '1';
+							substate <= FLIP;
+--							if (column >= 31) then
+--								if (row >= 31) then
+--									substate <= FLIP;
+--								else
+--									row <= row + 1;
+--								end if;
+--							else
+--								column <= column + 1;
 --							end if;
 --					
---							if (query_cell_r.col /= BOARD_COLUMNS-1) then
---								query_cell_r.col <= query_cell_r.col + 1;
---							else
---								query_cell_r .col <= 0;
---								if (query_cell_r.row /= BOARD_ROWS-1) then
---									query_cell_r.row <= query_cell_r.row + 1;
---								else
---									query_cell_r.row <= 0;
---									substate  <= FLIP_FRAMEBUFFER;
---								end if;
+--							if (s.img_pixels(row, column) = '1') then
+--								FB_X0 <= X + column;
+--								FB_X1 <= X + column + 1;
+--								FB_Y0 <= Y + row;
+--								FB_Y1 <= Y + row + 1;
+--								FB_COLOR <= s.color;
+--								FB_DRAW_RECT <= '1';
 --							end if;
-
-
-						when FLIP_FRAMEBUFFER =>
-							FB_FLIP  <= '1';
-							state    <= IDLE;						
 							
+						when FLIP =>
+							FB_FLIP <= '1';
+							state <= IDLE;
 					end case;
 			end case;
-	
 		end if;
 	end process;
 	
