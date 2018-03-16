@@ -62,6 +62,8 @@ begin
 			FB_DRAW_LINE   <= '0';
 			FB_FILL_RECT   <= '0';
 			FB_FLIP        <= '0';
+			row 				<= 0;
+			column 			<= 0;
 			state <= IDLE;
 	
 		elsif(rising_edge(CLOCK)) then
@@ -98,33 +100,27 @@ begin
 							substate <= DRAW;
 							
 						when DRAW => 
-							FB_COLOR <= COLOR_WHITE;
-							FB_X0 <= 50;
-							FB_X1 <= 50;
-							FB_Y0 <= 50;
-							FB_Y1 <= 50;
+							if (column >= 31) then
+								column <= 0;
+								if (row >= 31) then
+									row <= 0;
+									substate <= FLIP;
+								else
+									row <= row + 1;
+								end if;
+							else
+								column <= column + 1;
+							end if;
+					
+							if (s.img_pixels(row, column) = '1') then
+								FB_X0 <= X + column;
+								FB_X1 <= X + column;
+								FB_Y0 <= Y + row;
+								FB_Y1 <= Y + row;
+								FB_COLOR <= s.color;
+								FB_DRAW_RECT <= '1';
+							end if;
 							
-							FB_DRAW_RECT <= '1';
-							substate <= FLIP;
---							if (column >= 31) then
---								if (row >= 31) then
---									substate <= FLIP;
---								else
---									row <= row + 1;
---								end if;
---							else
---								column <= column + 1;
---							end if;
---					
---							if (s.img_pixels(row, column) = '1') then
---								FB_X0 <= X + column;
---								FB_X1 <= X + column;
---								FB_Y0 <= Y + row;
---								FB_Y1 <= Y + row;
---								FB_COLOR <= s.color;
---								FB_DRAW_RECT <= '1';
---							end if;
---							
 						when FLIP =>
 							FB_FLIP <= '1';
 							state <= IDLE;
