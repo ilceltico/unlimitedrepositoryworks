@@ -35,13 +35,14 @@ architecture RTL of HardwareInvaders is
 	signal fb_clear           : std_logic;
 	signal fb_flip            : std_logic;
 	signal fb_draw_rect       : std_logic;
-	signal fb_fill_rect       : std_logic;
 	signal fb_draw_line       : std_logic;
+	signal fb_fill_rect       : std_logic;
 	signal fb_x0              : xy_coord_type;
 	signal fb_y0              : xy_coord_type;
 	signal fb_x1              : xy_coord_type;
 	signal fb_y1              : xy_coord_type;
 	signal fb_color           : color_type;
+	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal time_10ms     	  : std_logic;
 
@@ -111,24 +112,26 @@ begin
 			SRAM_LB_N => SRAM_LB_N
 		);
 
-	view : entity work.View
+	sprite_renderer : entity work.sprite_renderer
 		port map (
 			CLOCK				=> clock,
 			RESET_N			=> RESET_N,
-			DRAW_IMG			=> '1',
+			DRAW_SPRITE		=> '0',
 			FB_READY			=> fb_ready,
 			SPRITE			=> dummy_sprite,
 			X					=> 50,
 			Y					=> 50,
-		
+			SHOW				=> '1',
+			
 			FB_FLIP 			=> fb_flip,
 			FB_DRAW_RECT   => fb_draw_rect,
+			FB_CLEAR 		=> fb_clear,
 			FB_COLOR       => fb_color,
-			FB_CLEAR 	   => fb_clear,
 			FB_X0          => fb_x0,
 			FB_Y0          => fb_y0,
 			FB_X1          => fb_x1,
-			FB_Y1          => fb_y1
+			FB_Y1          => fb_y1,
+			READY 			=> sr_ready
 		);		
 		
 end architecture;
