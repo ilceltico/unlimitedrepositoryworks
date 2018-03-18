@@ -168,6 +168,7 @@ begin
 			FB_DRAW_RECT   <= '0';
 			FB_FLIP        <= '0';
 			READY 			<= '1';
+			FB_COLOR 		<= COLOR_BLACK;
 			row 				<= 0;
 			column 			<= 0;
 			state <= CLEARING;
@@ -183,10 +184,12 @@ begin
 				when IDLE => 
 					
 					READY <= '1';
+					row 			<= 0;
+					column		<= 0;
 					
 					if (SHOW = '1') then
 						state <= WAITING;
-						next_state <= CLEARING;
+						next_state <= SHOWING;
 					elsif (DRAW_SPRITE = '1') then
 						READY 			<= '0';
 						state 			<= WAITING;
@@ -236,8 +239,6 @@ begin
 				
 					FB_COLOR 	<= COLOR_BLACK;
 					FB_CLEAR 	<= '1';
-					row 			<= 0;
-					column		<= 0;
 					state 		<= WAITING;
 					next_state 	<= IDLE;
 				

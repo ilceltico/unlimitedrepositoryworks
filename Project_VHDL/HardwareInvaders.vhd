@@ -10,7 +10,7 @@ entity HardwareInvaders is
 		CLOCK_50            : in  std_logic;
 		KEY                 : in  std_logic_vector(3 downto 0);
 
-		SW                  : in  std_logic_vector(9 downto 9);
+		SW                  : in  std_logic_vector(9 downto 0);
 		VGA_R               : out std_logic_vector(3 downto 0);
 		VGA_G               : out std_logic_vector(3 downto 0);
 		VGA_B               : out std_logic_vector(3 downto 0);
@@ -42,6 +42,7 @@ architecture RTL of HardwareInvaders is
 	signal fb_x1              : xy_coord_type;
 	signal fb_y1              : xy_coord_type;
 	signal fb_color           : color_type;
+	signal sprite_to_draw	  : sprite_type;
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal time_10ms     	  : std_logic;
@@ -81,6 +82,15 @@ begin
 		end if;
 	end process;
 
+	test_sprite : process(CLOCK)
+	begin
+		if (SW(6) = '1') then
+			sprite_to_draw <= dummy_sprite_1;
+		else
+			sprite_to_draw <= dummy_sprite_2;
+		end if;
+	end process;
+	
 	vga : entity work.VGA_Framebuffer
 		port map (
 			CLOCK     => clock_vga,
@@ -89,8 +99,8 @@ begin
 			COLOR     => fb_color,
 			CLEAR     => fb_clear,
 			DRAW_RECT => fb_draw_rect,
-			FILL_RECT => fb_fill_rect,
-			DRAW_LINE => fb_draw_line,
+			FILL_RECT => '0',
+			DRAW_LINE => '0',
 			FLIP      => fb_flip,	
 			X0        => fb_x0,
 			Y0        => fb_y0,
@@ -114,14 +124,14 @@ begin
 
 	sprite_renderer : entity work.sprite_renderer
 		port map (
-			CLOCK				=> clock,
+			CLOCK				=> clock_vga,
 			RESET_N			=> RESET_N,
-			DRAW_SPRITE		=> '0',
+			DRAW_SPRITE		=> SW(8),
 			FB_READY			=> fb_ready,
-			SPRITE			=> dummy_sprite,
+			SPRITE			=> sprite_to_draw,
 			X					=> 50,
 			Y					=> 50,
-			SHOW				=> '1',
+			SHOW				=> SW(7),
 			
 			FB_FLIP 			=> fb_flip,
 			FB_DRAW_RECT   => fb_draw_rect,
