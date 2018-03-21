@@ -3,23 +3,24 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.HI_package.all;
 use work.vga_package.all;
-entity View is
-	port
+
+entity View is 
+	port 
 	(
-		CLOCK          : in  std_logic;
-		RESET_N        : in  std_logic;
-		SPRITE 			: in 	sprite_type;
-		REDRAW         : in  std_logic;
-		X					: in  xy_coord_type;
-		Y					: in  xy_coord_type;
+		CLOCK				: in	std_logic;
+		RESET_N			: in 	std_logic;
+		DRAW_IMG			: in 	std_logic;
+		FB_READY			: in 	std_logic;
+		SPRITE			: in 	sprite_type;
+		X					: in 	xy_coord_type;
+		Y					: in 	xy_coord_type;
 		
-		FB_READY       : in  std_logic;
-		FB_CLEAR       : out std_logic;
+		FB_FLIP 			: out std_logic;
 		FB_DRAW_RECT   : out std_logic;
-		FB_DRAW_LINE   : out std_logic;
-		FB_FILL_RECT   : out std_logic;
-		FB_FLIP        : out std_logic;
 		FB_COLOR       : out color_type;
+		FB_CLEAR 		: out std_logic;
+		FB_DRAW_LINE 	: out std_logic;
+		FB_FILL_RECT   : out std_logic;
 		FB_X0          : out xy_coord_type;
 		FB_Y0          : out xy_coord_type;
 		FB_X1          : out xy_coord_type;
@@ -27,24 +28,18 @@ entity View is
 	);
 end entity;
 
-
 architecture RTL of View is
-	constant LEFT_MARGIN    : integer := 8;
-	constant TOP_MARGIN     : integer := 8;
-	constant BLOCK_SIZE     : integer := 20;
-	constant BLOCK_SPACING  : integer := 1;
-	
-	type   state_type    is (IDLE, WAITING, DRAWING);
-	type   substate_type is (CLEAR, DRAW, FLIP);
-	signal state        : state_type;
-	signal s 			  : sprite_type;
-	signal row			  : integer;
-	signal column       : integer;
-	signal substate     : substate_type;
-	
-begin
 
-	process(CLOCK, RESET_N)
+type state_type is (IDLE, WAITING, DRAWING);
+type substate_type is (CLEAR, DRAW, FLIP);
+signal state			: state_type;
+signal row				: integer;
+signal column			: integer;
+signal s					: sprite_type;
+signal substate 		: substate_type;
+
+begin
+	DrawImage: process(CLOCK, RESET_N)
 	begin
 	
 		if(RESET_N = '0') then
@@ -67,7 +62,7 @@ begin
 		
 			case (state) is 
 				when IDLE => 
-					if (REDRAW = '1') then
+					if (DRAW_IMG = '1') then
 						state <= WAITING;
 						substate <= CLEAR;
 						s <= SPRITE;
@@ -120,4 +115,22 @@ begin
 		end if;
 	end process;
 	
+--	dummyrect: process(CLOCK, RESET_N)
+--	begin
+--		
+--		if rising_edge(CLOCK) then
+--			
+--			FB_X0 <= 1;
+--			FB_X1 <= 100;
+--			FB_Y0 <= 1;
+--			FB_Y1 <= 100;
+--			FB_COLOR <= COLOR_WHITE;
+--			FB_DRAW_RECT <= '1';
+--		
+--		end if;
+--		
+--	end process;
+	
 end architecture;
+
+

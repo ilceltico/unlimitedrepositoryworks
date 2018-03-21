@@ -44,6 +44,7 @@ architecture RTL of HardwareInvaders is
 	signal fb_color           : color_type;
 	signal reset_sync_reg     : std_logic;
 	signal time_10ms     	  : std_logic;
+	signal vga_vs_reg 		  : std_logic;
 
 begin
 
@@ -64,7 +65,7 @@ begin
 	end process;
 	
 	timegen : process(CLOCK, RESET_N)
-		variable counter : integer range 0 to (500000-1);
+		variable counter : integer range 0 to (833333-1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
@@ -79,6 +80,8 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	VGA_VS <= vga_vs_reg;
 
 	vga : entity work.VGA_Framebuffer
 		port map (
@@ -100,7 +103,7 @@ begin
 			VGA_G     => VGA_G,
 			VGA_B     => VGA_B,
 			VGA_HS    => VGA_HS,
-			VGA_VS    => VGA_VS,
+			VGA_VS    => vga_vs_reg,
 		
 			SRAM_ADDR => SRAM_ADDR,
 			SRAM_DQ   => SRAM_DQ,			
@@ -115,7 +118,7 @@ begin
 		port map (
 			CLOCK				=> clock,
 			RESET_N			=> RESET_N,
-			DRAW_IMG			=> '1',
+			REDRAW			=> vga_vs_reg,
 			FB_READY			=> fb_ready,
 			SPRITE			=> dummy_sprite,
 			X					=> 50,
@@ -123,6 +126,8 @@ begin
 		
 			FB_FLIP 			=> fb_flip,
 			FB_DRAW_RECT   => fb_draw_rect,
+			FB_DRAW_LINE 	=> fb_draw_line,
+			FB_FILL_RECT	=> fb_fill_rect,
 			FB_COLOR       => fb_color,
 			FB_CLEAR 	   => fb_clear,
 			FB_X0          => fb_x0,
