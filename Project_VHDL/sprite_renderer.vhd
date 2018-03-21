@@ -147,7 +147,7 @@ entity sprite_renderer is
 		FB_Y1          : out xy_coord_type;
 		READY 			: out std_logic;
 		
-		TEST_SHOW		: out std_logic
+		DEBUG_OUT      : out std_logic
 	);
 end entity;
 
@@ -166,8 +166,6 @@ begin
 	process(CLOCK, RESET_N)
 	begin
 	
-		TEST_SHOW <= show_latched;
-	
 		if(RESET_N = '0') then
 			FB_CLEAR       <= '0';
 			FB_DRAW_RECT   <= '0';
@@ -178,6 +176,8 @@ begin
 			column 			<= 0;
 			show_latched   <= '0';
 			state <= CLEARING;
+			
+			DEBUG_OUT <= '0';
 	
 		elsif(rising_edge(CLOCK)) then
 		
@@ -185,6 +185,8 @@ begin
 			FB_DRAW_RECT   <= '0';
 			FB_FLIP        <= '0';
 			READY 			<= '0';
+			
+			DEBUG_OUT <= '0';
 		
 			case (state) is 
 				when IDLE => 
@@ -244,6 +246,7 @@ begin
 				when SHOWING => 
 				
 					FB_FLIP 	  	<= '1';
+					DEBUG_OUT 	<= '1'; -- DEBUG
 					state 	  	<= WAITING;
 					next_state 	<= CLEARING;
 					

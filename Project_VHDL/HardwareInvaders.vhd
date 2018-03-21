@@ -30,8 +30,8 @@ entity HardwareInvaders is
 end entity;
 
 architecture RTL of HardwareInvaders is
-	signal clock              : std_logic;
-	signal clock_vga          : std_logic;
+	signal clock_50MHz        : std_logic;
+	signal clock_100MHz       : std_logic;
 	signal RESET_N            : std_logic;
 	signal redraw				  : std_logic;
 	signal fb_ready           : std_logic;
@@ -48,15 +48,17 @@ architecture RTL of HardwareInvaders is
 	signal sprite_to_draw	  : sprite_type;
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
-	signal time_10ms     	  : std_logic;
+	
+	signal test 				  : std_logic; 
+	signal counter_latched    : std_logic;
 
 begin
 
 	pll : entity work.PLL
 		port map (
 			inclk0  => CLOCK_50,
-			c0      => clock_vga,
-			c1      => clock
+			c0      => clock_100MHz,
+			c1      => clock_50MHz
 		); 
 	
 					
@@ -68,30 +70,17 @@ begin
 		end if;
 	end process;
 	
-	timegen : process(CLOCK, RESET_N)
-		variable counter : integer range 0 to (833333-1);
-	begin
-		if (RESET_N = '0') then
-			counter := 0;
-			time_10ms <= '0';
-		elsif (rising_edge(clock)) then
-	     if(counter = counter'high) then
-				counter := 0;
-				time_10ms <= '1';
-			else
-				counter := counter+1;
-				time_10ms <= '0';			
-			end if;
-		end if;
-	end process;
+	-- 833333 = FRAME TIME 16.66667 ms
+	-- 500000 = 10 ms
+	-- 500000000 = 10 s
 	
-	draw_gen : process(CLOCK, RESET_N)
-		variable counter : integer range 0 to (388888-1);
+	draw_gen : process(clock_50MHz, RESET_N)
+		variable counter : integer range 0 to (500000 - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
 			redraw <= '0';
-		elsif (rising_edge(clock)) then
+		elsif (rising_edge(clock_50MHz)) then
 			if(counter = counter'high) then
 				counter := 0;
 				redraw <= '1';
@@ -101,8 +90,25 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	test_pulsating_led : process(clock_50MHz, RESET_N)
+		variable counter : integer range 0 to (30 - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			counter_latched <= '0';
+		elsif (rising_edge(clock_50MHz) and test = '1') then
+			LEDR(0) <= counter_latched;
+			if(counter = counter'high) then
+				counter := 0;
+				counter_latched <= not(counter_latched);
+			else
+				counter := counter+1;		
+			end if;
+		end if;
+	end process;
 
-	test_sprite : process(CLOCK)
+	test_sprite : process(clock_50MHz)
 	begin
 		if (SW(6) = '1') then
 			sprite_to_draw <= dummy_sprite_1;
@@ -113,7 +119,7 @@ begin
 	
 	vga : entity work.VGA_Framebuffer
 		port map (
-			CLOCK     => clock_vga,
+			CLOCK     => clock_100MHz,
 			RESET_N   => RESET_N,
 			READY     => fb_ready,
 			COLOR     => fb_color,
@@ -144,7 +150,7 @@ begin
 
 	sprite_renderer : entity work.sprite_renderer
 		port map (
-			CLOCK				=> clock,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			DRAW_SPRITE		=> SW(8),
 			FB_READY			=> fb_ready,
@@ -163,7 +169,7 @@ begin
 			FB_Y1          => fb_y1,
 			READY 			=> sr_ready,
 			
-			TEST_SHOW      => LEDR(3)
+			DEBUG_OUT 		=> test
 		);		
 		
 end architecture;
