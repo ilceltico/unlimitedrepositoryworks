@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/output_files/") File("HardwareInvaders.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/") File("HardwareInvaders.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
