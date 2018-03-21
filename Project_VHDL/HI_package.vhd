@@ -5,7 +5,7 @@ use work.vga_package.all;
 
 package HI_package is
 	-- Constants declarations
-	type spaceship_type is (ALIEN_1, ALIEN_2, ALIEN_3, RAND_ALIEN, PLAYER);
+	type shape_type is (ALIEN_1, ALIEN_2, ALIEN_3, RAND_ALIEN, PLAYER);
 	
 	-- Hitbox declaration
 	type hitbox_type is record 
@@ -17,12 +17,29 @@ package HI_package is
 	
 	-- Spaceship declaration 	
 	type spaceship is record
-		ship_type      	: spaceship_type;
+		ship_type      	: shape_type;
 		hitbox				: hitbox_type;
-		-- visible			: std_logic;
+		visible				: std_logic;
 		exploding			: std_logic;
 	end record;	
+	
+	-- Bullet declaration
+	type bullet is record
+		bullet_type			: shape_type;
+		hitbox				: hitbox_type;
+		visible 				: std_logic;
+		exploding			: std_logic;
+	end record;
 
+	-- Level declaration
+	type level is record
+		starting_line		: integer range 0 to (ROWS-1); -- definire ROWS
+		alienSpeed			: integer;
+		alienFrameNanos	: integer;
+		alienFrameNanosDecrement	: integer;
+		alienExploding		: std_logic;
+	end record;
+	
 	type img_pixels_type is array(0 to 31, 0 to 31) of std_logic;
 	
 	type sprite_type is record 

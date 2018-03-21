@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for HardwareInvaders
-Fri Mar 16 11:15:53 2018
+Sun Mar 18 18:30:06 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -100,7 +100,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -110,7 +110,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+--------+--------------------------+
 ; SDC File Path        ; Status ; Read at                  ;
 +----------------------+--------+--------------------------+
-; HardwareInvaders.sdc ; OK     ; Fri Mar 16 11:15:52 2018 ;
+; HardwareInvaders.sdc ; OK     ; Sun Mar 18 18:30:00 2018 ;
 +----------------------+--------+--------------------------+
 
 
@@ -1819,7 +1819,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Mar 16 11:15:51 2018
+    Info: Processing started: Sun Mar 18 18:29:56 2018
 Info: Command: quartus_sta HardwareInvaders -c HardwareInvaders
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1882,9 +1882,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 464 megabytes
-    Info: Processing ended: Fri Mar 16 11:15:53 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Sun Mar 18 18:30:06 2018
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:02
 
 
