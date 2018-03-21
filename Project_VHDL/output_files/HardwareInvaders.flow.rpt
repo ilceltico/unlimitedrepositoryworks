@@ -1,5 +1,5 @@
 Flow report for HardwareInvaders
-Wed Mar 21 14:33:27 2018
+Wed Mar 21 14:55:36 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 21 14:33:24 2018           ;
+; Flow Status                        ; Successful - Wed Mar 21 14:55:34 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 481 / 18,752 ( 3 % )                            ;
-;     Total combinational functions  ; 478 / 18,752 ( 3 % )                            ;
-;     Dedicated logic registers      ; 213 / 18,752 ( 1 % )                            ;
-; Total registers                    ; 213                                             ;
+; Total logic elements               ; 519 / 18,752 ( 3 % )                            ;
+;     Total combinational functions  ; 515 / 18,752 ( 3 % )                            ;
+;     Dedicated logic registers      ; 235 / 18,752 ( 1 % )                            ;
+; Total registers                    ; 235                                             ;
 ; Total pins                         ; 59 / 315 ( 19 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/21/2018 14:33:11 ;
+; Start date & time ; 03/21/2018 14:55:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HardwareInvaders    ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 66064160580587.152163919108632 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 35490513764543.152164052411300 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
@@ -90,11 +90,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 541 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 725 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 442 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 435 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 577 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 771 MB              ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 478 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 472 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:09     ; --                      ; --                  ; 00:00:08                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,10 +103,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-BSEC38O  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-BSEC38O  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-BSEC38O  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-BSEC38O  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-6RUSTGB  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-6RUSTGB  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-6RUSTGB  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-6RUSTGB  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

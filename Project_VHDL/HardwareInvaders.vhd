@@ -31,6 +31,7 @@ architecture RTL of HardwareInvaders is
 	signal clock              : std_logic;
 	signal clock_vga          : std_logic;
 	signal RESET_N            : std_logic;
+	signal redraw				  : std_logic;
 	signal fb_ready           : std_logic;
 	signal fb_clear           : std_logic;
 	signal fb_flip            : std_logic;
@@ -81,6 +82,23 @@ begin
 		end if;
 	end process;
 	
+	draw_gen : process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (1388888-1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			redraw <= '0';
+		elsif (rising_edge(clock)) then
+			if(counter = counter'high) then
+				counter := 0;
+				redraw <= '1';
+			else
+				counter := counter+1;
+				redraw <= '0';			
+			end if;
+		end if;
+	end process;
+	
 	VGA_VS <= vga_vs_reg;
 
 	vga : entity work.VGA_Framebuffer
@@ -118,7 +136,7 @@ begin
 		port map (
 			CLOCK				=> clock,
 			RESET_N			=> RESET_N,
-			REDRAW			=> vga_vs_reg,
+			REDRAW			=> redraw,
 			FB_READY			=> fb_ready,
 			SPRITE			=> dummy_sprite,
 			X					=> 50,
