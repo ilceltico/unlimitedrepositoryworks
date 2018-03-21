@@ -33,6 +33,7 @@ architecture RTL of HardwareInvaders is
 	signal clock              : std_logic;
 	signal clock_vga          : std_logic;
 	signal RESET_N            : std_logic;
+	signal redraw				  : std_logic;
 	signal fb_ready           : std_logic;
 	signal fb_clear           : std_logic;
 	signal fb_flip            : std_logic;
@@ -68,19 +69,35 @@ begin
 	end process;
 	
 	timegen : process(CLOCK, RESET_N)
-		variable counter : integer range 0 to (500000-1);
+		variable counter : integer range 0 to (833333-1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
 			time_10ms <= '0';
 		elsif (rising_edge(clock)) then
-		-- if(counter = counter'high) then
-			if(counter = 500000) then
+	     if(counter = counter'high) then
 				counter := 0;
 				time_10ms <= '1';
 			else
 				counter := counter+1;
 				time_10ms <= '0';			
+			end if;
+		end if;
+	end process;
+	
+	draw_gen : process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (388888-1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			redraw <= '0';
+		elsif (rising_edge(clock)) then
+			if(counter = counter'high) then
+				counter := 0;
+				redraw <= '1';
+			else
+				counter := counter+1;
+				redraw <= '0';			
 			end if;
 		end if;
 	end process;
@@ -127,14 +144,14 @@ begin
 
 	sprite_renderer : entity work.sprite_renderer
 		port map (
-			CLOCK				=> clock_vga,
+			CLOCK				=> clock,
 			RESET_N			=> RESET_N,
 			DRAW_SPRITE		=> SW(8),
 			FB_READY			=> fb_ready,
 			SPRITE			=> sprite_to_draw,
 			X					=> 50,
 			Y					=> 50,
-			SHOW				=> SW(7),
+			SHOW				=> redraw,
 			
 			FB_FLIP 			=> fb_flip,
 			FB_DRAW_RECT   => fb_draw_rect,
