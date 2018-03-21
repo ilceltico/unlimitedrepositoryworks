@@ -145,7 +145,9 @@ entity sprite_renderer is
 		FB_Y0          : out xy_coord_type;
 		FB_X1          : out xy_coord_type;
 		FB_Y1          : out xy_coord_type;
-		READY 			: out std_logic
+		READY 			: out std_logic;
+		
+		TEST_SHOW		: out std_logic
 	);
 end entity;
 
@@ -158,10 +160,13 @@ signal next_state			: state_type;
 signal row					: integer;
 signal column				: integer;
 signal sprite_to_draw	: sprite_type;
+signal show_latched		: std_logic;
 
 begin
 	process(CLOCK, RESET_N)
 	begin
+	
+		TEST_SHOW <= show_latched;
 	
 		if(RESET_N = '0') then
 			FB_CLEAR       <= '0';
@@ -171,6 +176,7 @@ begin
 			FB_COLOR 		<= COLOR_BLACK;
 			row 				<= 0;
 			column 			<= 0;
+			show_latched   <= '0';
 			state <= CLEARING;
 	
 		elsif(rising_edge(CLOCK)) then
@@ -187,14 +193,20 @@ begin
 					row 			<= 0;
 					column		<= 0;
 					
-					if (SHOW = '1') then
+					if (SHOW = '1' and show_latched = '0') then
 						state <= WAITING;
 						next_state <= SHOWING;
-					elsif (DRAW_SPRITE = '1') then
-						READY 			<= '0';
-						state 			<= WAITING;
-						next_state 		<= DRAWING;
-						sprite_to_draw <= SPRITE;
+						show_latched <= '1';
+					end if;
+					
+					if (SHOW = '0') then
+						show_latched <= '0';
+						if (DRAW_SPRITE = '1') then
+							READY 			<= '0';
+							state 			<= WAITING;
+							next_state 		<= DRAWING;
+							sprite_to_draw <= SPRITE;
+						end if;
 					end if;
 					
 				when WAITING =>
@@ -239,8 +251,7 @@ begin
 				
 					FB_COLOR 	<= COLOR_BLACK;
 					FB_CLEAR 	<= '1';
-					state 		<= WAITING;
-					next_state 	<= IDLE;
+					state 		<= IDLE;
 				
 			end case;
 		end if;

@@ -9,8 +9,8 @@ entity HardwareInvaders is
 	(
 		CLOCK_50            : in  std_logic;
 		KEY                 : in  std_logic_vector(3 downto 0);
-
 		SW                  : in  std_logic_vector(9 downto 0);
+		
 		VGA_R               : out std_logic_vector(3 downto 0);
 		VGA_G               : out std_logic_vector(3 downto 0);
 		VGA_B               : out std_logic_vector(3 downto 0);
@@ -23,7 +23,9 @@ entity HardwareInvaders is
 		SRAM_OE_N           : out   std_logic;
 		SRAM_WE_N           : out   std_logic;
 		SRAM_UB_N           : out   std_logic;
-		SRAM_LB_N           : out   std_logic
+		SRAM_LB_N           : out   std_logic;
+		
+		LEDR					  : out 	 std_logic_vector(9 downto 0)
 	);
 end entity;
 
@@ -72,7 +74,8 @@ begin
 			counter := 0;
 			time_10ms <= '0';
 		elsif (rising_edge(clock)) then
-			if(counter = counter'high) then
+		-- if(counter = counter'high) then
+			if(counter = 500000) then
 				counter := 0;
 				time_10ms <= '1';
 			else
@@ -141,7 +144,9 @@ begin
 			FB_Y0          => fb_y0,
 			FB_X1          => fb_x1,
 			FB_Y1          => fb_y1,
-			READY 			=> sr_ready
+			READY 			=> sr_ready,
+			
+			TEST_SHOW      => LEDR(3)
 		);		
 		
 end architecture;
