@@ -1,5 +1,5 @@
 Fitter report for HardwareInvaders
-Wed Mar 21 20:13:16 2018
+Thu Mar 22 16:48:56 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -66,17 +66,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Mar 21 20:13:16 2018           ;
+; Fitter Status                      ; Successful - Thu Mar 22 16:48:56 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 524 / 18,752 ( 3 % )                            ;
-;     Total combinational functions  ; 519 / 18,752 ( 3 % )                            ;
-;     Dedicated logic registers      ; 247 / 18,752 ( 1 % )                            ;
-; Total registers                    ; 247                                             ;
+; Total logic elements               ; 535 / 18,752 ( 3 % )                            ;
+;     Total combinational functions  ; 529 / 18,752 ( 3 % )                            ;
+;     Dedicated logic registers      ; 257 / 18,752 ( 1 % )                            ;
+; Total registers                    ; 257                                             ;
 ; Total pins                         ; 78 / 315 ( 25 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -361,8 +361,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 853 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 853 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 874 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 874 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -385,7 +385,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 847     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 868     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 6       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -401,23 +401,23 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 +---------------------------------------------+----------------------+
 ; Resource                                    ; Usage                ;
 +---------------------------------------------+----------------------+
-; Total logic elements                        ; 524 / 18,752 ( 3 % ) ;
-;     -- Combinational with no register       ; 277                  ;
-;     -- Register only                        ; 5                    ;
-;     -- Combinational with a register        ; 242                  ;
+; Total logic elements                        ; 535 / 18,752 ( 3 % ) ;
+;     -- Combinational with no register       ; 278                  ;
+;     -- Register only                        ; 6                    ;
+;     -- Combinational with a register        ; 251                  ;
 ;                                             ;                      ;
 ; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 143                  ;
-;     -- 3 input functions                    ; 74                   ;
-;     -- <=2 input functions                  ; 302                  ;
-;     -- Register only                        ; 5                    ;
+;     -- 4 input functions                    ; 146                  ;
+;     -- 3 input functions                    ; 84                   ;
+;     -- <=2 input functions                  ; 299                  ;
+;     -- Register only                        ; 6                    ;
 ;                                             ;                      ;
 ; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 354                  ;
-;     -- arithmetic mode                      ; 165                  ;
+;     -- normal mode                          ; 362                  ;
+;     -- arithmetic mode                      ; 167                  ;
 ;                                             ;                      ;
-; Total registers*                            ; 247 / 19,649 ( 1 % ) ;
-;     -- Dedicated logic registers            ; 247 / 18,752 ( 1 % ) ;
+; Total registers*                            ; 257 / 19,649 ( 1 % ) ;
+;     -- Dedicated logic registers            ; 257 / 18,752 ( 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )      ;
 ;                                             ;                      ;
 ; Total LABs:  partially or completely used   ; 37 / 1,172 ( 3 % )   ;
@@ -425,22 +425,22 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 ; I/O pins                                    ; 78 / 315 ( 25 % )    ;
 ;     -- Clock pins                           ; 6 / 8 ( 75 % )       ;
 ;                                             ;                      ;
-; Global signals                              ; 4                    ;
+; Global signals                              ; 5                    ;
 ; M4Ks                                        ; 0 / 52 ( 0 % )       ;
 ; Total block memory bits                     ; 0 / 239,616 ( 0 % )  ;
 ; Total block memory implementation bits      ; 0 / 239,616 ( 0 % )  ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )       ;
 ; PLLs                                        ; 1 / 4 ( 25 % )       ;
-; Global clocks                               ; 4 / 16 ( 25 % )      ;
+; Global clocks                               ; 5 / 16 ( 31 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )        ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )        ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%         ;
-; Peak interconnect usage (total/H/V)         ; 3% / 2% / 4%         ;
-; Maximum fan-out                             ; 160                  ;
-; Highest non-global fan-out                  ; 74                   ;
-; Total fan-out                               ; 2424                 ;
-; Average fan-out                             ; 2.83                 ;
+; Peak interconnect usage (total/H/V)         ; 3% / 2% / 3%         ;
+; Maximum fan-out                             ; 169                  ;
+; Highest non-global fan-out                  ; 73                   ;
+; Total fan-out                               ; 2495                 ;
+; Average fan-out                             ; 2.85                 ;
 +---------------------------------------------+----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -453,23 +453,23 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 +---------------------------------------------+---------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                 ; Low                            ;
 ;                                             ;                     ;                                ;
-; Total logic elements                        ; 524 / 18752 ( 3 % ) ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 277                 ; 0                              ;
-;     -- Register only                        ; 5                   ; 0                              ;
-;     -- Combinational with a register        ; 242                 ; 0                              ;
+; Total logic elements                        ; 535 / 18752 ( 3 % ) ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 278                 ; 0                              ;
+;     -- Register only                        ; 6                   ; 0                              ;
+;     -- Combinational with a register        ; 251                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 143                 ; 0                              ;
-;     -- 3 input functions                    ; 74                  ; 0                              ;
-;     -- <=2 input functions                  ; 302                 ; 0                              ;
-;     -- Register only                        ; 5                   ; 0                              ;
+;     -- 4 input functions                    ; 146                 ; 0                              ;
+;     -- 3 input functions                    ; 84                  ; 0                              ;
+;     -- <=2 input functions                  ; 299                 ; 0                              ;
+;     -- Register only                        ; 6                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 354                 ; 0                              ;
-;     -- arithmetic mode                      ; 165                 ; 0                              ;
+;     -- normal mode                          ; 362                 ; 0                              ;
+;     -- arithmetic mode                      ; 167                 ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total registers                             ; 247                 ; 0                              ;
-;     -- Dedicated logic registers            ; 247 / 18752 ( 1 % ) ; 0 / 18752 ( 0 % )              ;
+; Total registers                             ; 257                 ; 0                              ;
+;     -- Dedicated logic registers            ; 257 / 18752 ( 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                     ;                                ;
 ; Total LABs:  partially or completely used   ; 37 / 1172 ( 3 % )   ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                     ;                                ;
@@ -479,21 +479,21 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 ; Total memory bits                           ; 0                   ; 0                              ;
 ; Total RAM block bits                        ; 0                   ; 0                              ;
 ; PLL                                         ; 0 / 4 ( 0 % )       ; 1 / 4 ( 25 % )                 ;
-; Clock control block                         ; 2 / 20 ( 10 % )     ; 2 / 20 ( 10 % )                ;
+; Clock control block                         ; 3 / 20 ( 15 % )     ; 2 / 20 ( 10 % )                ;
 ;                                             ;                     ;                                ;
 ; Connections                                 ;                     ;                                ;
-;     -- Input Connections                    ; 245                 ; 1                              ;
-;     -- Registered Input Connections         ; 245                 ; 0                              ;
-;     -- Output Connections                   ; 1                   ; 245                            ;
+;     -- Input Connections                    ; 247                 ; 1                              ;
+;     -- Registered Input Connections         ; 247                 ; 0                              ;
+;     -- Output Connections                   ; 1                   ; 247                            ;
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 2422                ; 248                            ;
-;     -- Registered Connections               ; 1163                ; 0                              ;
+;     -- Total Connections                    ; 2493                ; 250                            ;
+;     -- Registered Connections               ; 1207                ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
-;     -- Top                                  ; 0                   ; 246                            ;
-;     -- hard_block:auto_generated_inst       ; 246                 ; 0                              ;
+;     -- Top                                  ; 0                   ; 248                            ;
+;     -- hard_block:auto_generated_inst       ; 248                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Partition Interface                         ;                     ;                                ;
 ;     -- Input Ports                          ; 15                  ; 1                              ;
@@ -532,9 +532,9 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 ; SW[3]    ; V12   ; 7        ; 26           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[4]    ; W12   ; 7        ; 26           ; 0            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[5]    ; U12   ; 8        ; 26           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[6]    ; U11   ; 8        ; 26           ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[6]    ; U11   ; 8        ; 26           ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[7]    ; M2    ; 1        ; 0            ; 13           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[8]    ; M1    ; 1        ; 0            ; 13           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[8]    ; M1    ; 1        ; 0            ; 13           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[9]    ; L2    ; 2        ; 0            ; 13           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -1212,13 +1212,14 @@ Note: User assignments will override these defaults. The user specified values a
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                         ; Library Name ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------+--------------+
-; |HardwareInvaders                    ; 524 (46)    ; 247 (29)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 78   ; 0            ; 277 (17)     ; 5 (1)             ; 242 (27)         ; |HardwareInvaders                                           ; work         ;
+; |HardwareInvaders                    ; 535 (14)    ; 257 (9)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 78   ; 0            ; 278 (5)      ; 6 (1)             ; 251 (7)          ; |HardwareInvaders                                           ; work         ;
 ;    |PLL:pll|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll                                   ; work         ;
 ;       |altpll:altpll_component|      ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll|altpll:altpll_component           ; work         ;
 ;    |VGA_Framebuffer:vga|             ; 277 (175)   ; 119 (66)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 156 (107)    ; 2 (2)             ; 119 (66)         ; |HardwareInvaders|VGA_Framebuffer:vga                       ; work         ;
 ;       |VGA_RAMDAC:vga_fb|            ; 29 (29)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 8 (8)            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb     ; work         ;
 ;       |VGA_Timing:vga_timing|        ; 73 (73)     ; 45 (45)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 45 (45)          ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing ; work         ;
-;    |sprite_renderer:sprite_renderer| ; 203 (203)   ; 99 (99)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 104 (104)    ; 2 (2)             ; 97 (97)          ; |HardwareInvaders|sprite_renderer:sprite_renderer           ; work         ;
+;    |sprite_renderer:sprite_renderer| ; 206 (206)   ; 101 (101)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (105)    ; 2 (2)             ; 99 (99)          ; |HardwareInvaders|sprite_renderer:sprite_renderer           ; work         ;
+;    |view:view|                       ; 40 (40)     ; 28 (28)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 1 (1)             ; 27 (27)          ; |HardwareInvaders|view:view                                 ; work         ;
 +--------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1254,7 +1255,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[3]         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[4]         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[5]         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; SW[6]         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[7]         ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; SW[8]         ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; VGA_R[0]      ; Output   ; --            ; --            ; --                    ; --  ;
 ; VGA_R[1]      ; Output   ; --            ; --            ; --                    ; --  ;
 ; VGA_R[2]      ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1304,8 +1307,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[9]       ; Output   ; --            ; --            ; --                    ; --  ;
 ; CLOCK_50      ; Input    ; --            ; --            ; --                    ; --  ;
 ; SW[9]         ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; SW[8]         ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; SW[6]         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 +---------------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1337,11 +1338,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[10]                                                   ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[2]~7 ; 0                 ; 6       ;
 ; SRAM_DQ[11]                                                   ;                   ;         ;
-;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[3]~3 ; 1                 ; 6       ;
+;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[3]~3 ; 0                 ; 6       ;
 ; SRAM_DQ[12]                                                   ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[4]~4 ; 0                 ; 6       ;
 ; SRAM_DQ[13]                                                   ;                   ;         ;
-;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[5]~0 ; 0                 ; 6       ;
+;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[5]~0 ; 1                 ; 6       ;
 ; SRAM_DQ[14]                                                   ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[6]~1 ; 0                 ; 6       ;
 ; SRAM_DQ[15]                                                   ;                   ;         ;
@@ -1356,46 +1357,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[3]                                                         ;                   ;         ;
 ; SW[4]                                                         ;                   ;         ;
 ; SW[5]                                                         ;                   ;         ;
+; SW[6]                                                         ;                   ;         ;
 ; SW[7]                                                         ;                   ;         ;
+; SW[8]                                                         ;                   ;         ;
 ; CLOCK_50                                                      ;                   ;         ;
 ; SW[9]                                                         ;                   ;         ;
-; SW[8]                                                         ;                   ;         ;
-; SW[6]                                                         ;                   ;         ;
 +---------------------------------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                     ;
-+-------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Name                                                  ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                              ; PIN_L1             ; 2       ; Clock         ; no     ; --                   ; --               ; --                        ;
-; CLOCK_50                                              ; PIN_L1             ; 2       ; Clock         ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk0                 ; PLL_1              ; 119     ; Clock         ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk1                 ; PLL_1              ; 126     ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; RESET_N                                               ; LCFF_X22_Y11_N19   ; 15      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; RESET_N                                               ; LCFF_X22_Y11_N19   ; 160     ; Async. clear  ; yes    ; Global Clock         ; GCLK14           ; --                        ;
-; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0     ; LCCOMB_X19_Y8_N4   ; 24      ; Output enable ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0     ; LCCOMB_X14_Y4_N22  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0    ; LCCOMB_X21_Y8_N12  ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~12  ; LCCOMB_X21_Y8_N30  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0  ; LCCOMB_X23_Y8_N12  ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line    ; LCFF_X21_Y8_N5     ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state~12  ; LCCOMB_X20_Y13_N28 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0  ; LCCOMB_X20_Y13_N8  ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|x_cursor[0]~16                    ; LCCOMB_X22_Y11_N12 ; 19      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|x_cursor[0]~37                    ; LCCOMB_X22_Y10_N14 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_cursor[0]~26                    ; LCCOMB_X22_Y12_N10 ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_end[8]~0                        ; LCCOMB_X22_Y11_N14 ; 36      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_end[8]~10                       ; LCCOMB_X21_Y13_N6  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|Add0~9                ; LCCOMB_X19_Y14_N12 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|Add1~3                ; LCCOMB_X24_Y11_N8  ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|FB_FLIP               ; LCFF_X23_Y11_N29   ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|FB_Y0[8]~7            ; LCCOMB_X24_Y11_N20 ; 19      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|Selector75~0          ; LCCOMB_X22_Y14_N26 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|next_state.CLEARING~4 ; LCCOMB_X23_Y11_N6  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; sprite_renderer:sprite_renderer|state.DRAWING         ; LCFF_X23_Y11_N19   ; 74      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-+-------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                         ;
++-----------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; Name                                                      ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                  ; PIN_L1             ; 2       ; Clock         ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                  ; PIN_L1             ; 2       ; Clock         ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk0                     ; PLL_1              ; 119     ; Clock         ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk1                     ; PLL_1              ; 128     ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; RESET_N                                                   ; LCFF_X25_Y10_N27   ; 15      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; RESET_N                                                   ; LCFF_X25_Y10_N27   ; 169     ; Async. clear  ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0         ; LCCOMB_X21_Y7_N26  ; 24      ; Output enable ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0         ; LCCOMB_X21_Y7_N8   ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0        ; LCCOMB_X23_Y7_N12  ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~12      ; LCCOMB_X23_Y7_N30  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0      ; LCCOMB_X23_Y7_N0   ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line        ; LCFF_X23_Y7_N29    ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state~12      ; LCCOMB_X23_Y5_N28  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0      ; LCCOMB_X23_Y5_N8   ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|x_cursor[0]~41                        ; LCCOMB_X24_Y13_N14 ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|x_cursor[3]~19                        ; LCCOMB_X24_Y10_N2  ; 19      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_cursor[0]~26                        ; LCCOMB_X23_Y10_N4  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_end[8]~0                            ; LCCOMB_X25_Y10_N6  ; 36      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_end[8]~10                           ; LCCOMB_X23_Y11_N6  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|Add0~11                   ; LCCOMB_X32_Y12_N14 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|Add1~3                    ; LCCOMB_X32_Y12_N26 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|FB_FLIP                   ; LCFF_X24_Y12_N19   ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|FB_Y0[8]~9                ; LCCOMB_X24_Y12_N10 ; 19      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|READY                     ; LCFF_X25_Y12_N27   ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|Selector75~1              ; LCCOMB_X24_Y12_N28 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|next_state.CLEARING~4     ; LCCOMB_X24_Y12_N30 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|sprite_to_draw.color[6]~0 ; LCCOMB_X25_Y12_N0  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; sprite_renderer:sprite_renderer|state.DRAWING             ; LCFF_X24_Y12_N17   ; 73      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; view:view|do_stuff                                        ; LCFF_X1_Y13_N9     ; 8       ; Clock         ; yes    ; Global Clock         ; GCLK1            ; --                        ;
++-----------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1405,8 +1409,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
 ; CLOCK_50                              ; PIN_L1           ; 2       ; Global Clock         ; GCLK0            ; --                        ;
 ; PLL:pll|altpll:altpll_component|_clk0 ; PLL_1            ; 119     ; Global Clock         ; GCLK3            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk1 ; PLL_1            ; 126     ; Global Clock         ; GCLK2            ; --                        ;
-; RESET_N                               ; LCFF_X22_Y11_N19 ; 160     ; Global Clock         ; GCLK14           ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk1 ; PLL_1            ; 128     ; Global Clock         ; GCLK2            ; --                        ;
+; RESET_N                               ; LCFF_X25_Y10_N27 ; 169     ; Global Clock         ; GCLK13           ; --                        ;
+; view:view|do_stuff                    ; LCFF_X1_Y13_N9   ; 8       ; Global Clock         ; GCLK1            ; --                        ;
 +---------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1415,60 +1420,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------+---------+
 ; Name                                                       ; Fan-Out ;
 +------------------------------------------------------------+---------+
-; sprite_renderer:sprite_renderer|state.DRAWING              ; 74      ;
+; sprite_renderer:sprite_renderer|state.DRAWING              ; 73      ;
 ; sprite_renderer:sprite_renderer|FB_CLEAR                   ; 45      ;
 ; VGA_Framebuffer:vga|y_end[8]~0                             ; 36      ;
 ; sprite_renderer:sprite_renderer|LessThan0~10               ; 35      ;
 ; sprite_renderer:sprite_renderer|LessThan1~10               ; 34      ;
-; sprite_renderer:sprite_renderer|Add0~9                     ; 32      ;
+; sprite_renderer:sprite_renderer|Add0~11                    ; 32      ;
 ; sprite_renderer:sprite_renderer|Add1~3                     ; 32      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA     ; 31      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA     ; 31      ;
 ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0          ; 24      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0         ; 20      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line         ; 20      ;
-; sprite_renderer:sprite_renderer|FB_Y0[8]~7                 ; 19      ;
-; VGA_Framebuffer:vga|x_cursor[0]~16                         ; 19      ;
+; sprite_renderer:sprite_renderer|FB_Y0[8]~9                 ; 19      ;
+; VGA_Framebuffer:vga|x_cursor[3]~19                         ; 19      ;
 ; VGA_Framebuffer:vga|state.IDLE                             ; 16      ;
 ; RESET_N                                                    ; 14      ;
 ; VGA_Framebuffer:vga|state.DRAWING_RECT                     ; 13      ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R1                    ; 13      ;
 ; VGA_Framebuffer:vga|substate.INIT                          ; 11      ;
 ; VGA_Framebuffer:vga|fb_buffer_idx                          ; 11      ;
-; VGA_Framebuffer:vga|x_cursor[0]~37                         ; 10      ;
-; VGA_Framebuffer:vga|x_cursor[0]~15                         ; 10      ;
+; VGA_Framebuffer:vga|x_cursor[0]~41                         ; 10      ;
+; VGA_Framebuffer:vga|x_cursor[3]~40                         ; 10      ;
 ; sprite_renderer:sprite_renderer|FB_FLIP                    ; 9       ;
 ; VGA_Framebuffer:vga|y_cursor[0]~26                         ; 9       ;
-; VGA_Framebuffer:vga|y_cursor[2]~14                         ; 9       ;
+; VGA_Framebuffer:vga|y_cursor[1]~14                         ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0       ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0       ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0          ; 9       ;
-; Equal0~5                                                   ; 8       ;
+; view:view|Equal0~5                                         ; 8       ;
+; sprite_renderer:sprite_renderer|READY                      ; 8       ;
+; sprite_renderer:sprite_renderer|state.IDLE                 ; 8       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[5]     ; 8       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[9]     ; 8       ;
-; sprite_renderer:sprite_renderer|state.IDLE                 ; 7       ;
+; view:view|SHOW                                             ; 7       ;
 ; sprite_renderer:sprite_renderer|state.WAITING              ; 7       ;
 ; sprite_renderer:sprite_renderer|FB_DRAW_RECT               ; 7       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]     ; 7       ;
 ; VGA_Framebuffer:vga|y_cursor[8]                            ; 7       ;
-; redraw                                                     ; 6       ;
+; view:view|state.SHOW_SPRITES                               ; 6       ;
+; view:view|SPRITE.color[10]                                 ; 6       ;
 ; sprite_renderer:sprite_renderer|state.CLEARING             ; 6       ;
 ; VGA_Framebuffer:vga|latched_color[10]                      ; 6       ;
 ; \test_pulsating_led:counter[4]                             ; 6       ;
 ; VGA_Framebuffer:vga|state.FILLING_RECT                     ; 6       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal8~1         ; 6       ;
-; sprite_renderer:sprite_renderer|row[1]                     ; 6       ;
-; sprite_renderer:sprite_renderer|column[3]                  ; 6       ;
 ; VGA_Framebuffer:vga|x_cursor[8]                            ; 6       ;
+; view:view|DRAW_SPRITE                                      ; 5       ;
 ; sprite_renderer:sprite_renderer|Selector64~0               ; 5       ;
+; view:view|X[1]                                             ; 5       ;
+; sprite_renderer:sprite_renderer|row[0]                     ; 5       ;
 ; sprite_renderer:sprite_renderer|state.SHOWING              ; 5       ;
-; Equal1~0                                                   ; 5       ;
+; Equal0~0                                                   ; 5       ;
 ; VGA_Framebuffer:vga|Equal0~6                               ; 5       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[5]     ; 5       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[7]     ; 5       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[3]     ; 5       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[1]     ; 5       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[2]     ; 5       ;
+; sprite_renderer:sprite_renderer|row[1]                     ; 5       ;
+; sprite_renderer:sprite_renderer|row[4]                     ; 5       ;
+; sprite_renderer:sprite_renderer|column[4]                  ; 5       ;
+; sprite_renderer:sprite_renderer|column[3]                  ; 5       ;
+; sprite_renderer:sprite_renderer|column[2]                  ; 5       ;
 ; sprite_renderer:sprite_renderer|column[1]                  ; 5       ;
 ; VGA_Framebuffer:vga|y_cursor[7]                            ; 5       ;
 ; VGA_Framebuffer:vga|y_cursor[6]                            ; 5       ;
@@ -1486,11 +1500,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|x_cursor[2]                            ; 5       ;
 ; VGA_Framebuffer:vga|x_cursor[1]                            ; 5       ;
 ; VGA_Framebuffer:vga|x_cursor[0]                            ; 5       ;
-; SW[8]                                                      ; 4       ;
 ; sprite_renderer:sprite_renderer|next_state.CLEARING~2      ; 4       ;
 ; sprite_renderer:sprite_renderer|show_latched               ; 4       ;
-; sprite_renderer:sprite_renderer|row[0]                     ; 4       ;
-; sprite_renderer:sprite_renderer|sprite_to_draw.color[10]   ; 4       ;
+; view:view|SPRITE.color[6]                                  ; 4       ;
 ; VGA_Framebuffer:vga|latched_color[6]                       ; 4       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2                    ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0]   ; 4       ;
@@ -1498,15 +1510,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[4]     ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[8]     ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[6]     ; 4       ;
-; sprite_renderer:sprite_renderer|column[2]                  ; 4       ;
-; sprite_renderer:sprite_renderer|row[4]                     ; 4       ;
 ; sprite_renderer:sprite_renderer|row[2]                     ; 4       ;
 ; sprite_renderer:sprite_renderer|row[3]                     ; 4       ;
-; sprite_renderer:sprite_renderer|column[4]                  ; 4       ;
 ; VGA_Framebuffer:vga|x_cursor[9]                            ; 4       ;
-; sprite_renderer:sprite_renderer|Mux32~3                    ; 3       ;
+; sprite_renderer:sprite_renderer|FB_Y0[8]~8                 ; 3       ;
 ; sprite_renderer:sprite_renderer|column[0]                  ; 3       ;
-; VGA_Framebuffer:vga|Selector6~2                            ; 3       ;
 ; VGA_Framebuffer:vga|flip_on_next_vs                        ; 3       ;
 ; VGA_Framebuffer:vga|Equal1~5                               ; 3       ;
 ; VGA_Framebuffer:vga|Equal1~4                               ; 3       ;
@@ -1519,6 +1527,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|Equal0~5                               ; 3       ;
 ; VGA_Framebuffer:vga|x_end[9]                               ; 3       ;
 ; VGA_Framebuffer:vga|Equal0~4                               ; 3       ;
+; VGA_Framebuffer:vga|Selector6~0                            ; 3       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[1]   ; 3       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal4~1         ; 3       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal2~0         ; 3       ;
@@ -1541,54 +1550,60 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|column[7]                  ; 3       ;
 ; sprite_renderer:sprite_renderer|column[5]                  ; 3       ;
 ; sprite_renderer:sprite_renderer|next_state.CLEARING~4      ; 2       ;
-; \draw_gen:counter[5]                                       ; 2       ;
-; \draw_gen:counter[6]                                       ; 2       ;
-; \draw_gen:counter[3]                                       ; 2       ;
-; \draw_gen:counter[4]                                       ; 2       ;
-; \draw_gen:counter[7]                                       ; 2       ;
-; \draw_gen:counter[9]                                       ; 2       ;
-; \draw_gen:counter[10]                                      ; 2       ;
-; \draw_gen:counter[8]                                       ; 2       ;
-; \draw_gen:counter[11]                                      ; 2       ;
-; \draw_gen:counter[12]                                      ; 2       ;
-; \draw_gen:counter[14]                                      ; 2       ;
-; \draw_gen:counter[13]                                      ; 2       ;
-; \draw_gen:counter[15]                                      ; 2       ;
-; \draw_gen:counter[16]                                      ; 2       ;
-; \draw_gen:counter[17]                                      ; 2       ;
-; \draw_gen:counter[18]                                      ; 2       ;
-; \draw_gen:counter[0]                                       ; 2       ;
-; \draw_gen:counter[1]                                       ; 2       ;
-; \draw_gen:counter[2]                                       ; 2       ;
+; view:view|\draw_gen:counter[5]                             ; 2       ;
+; view:view|\draw_gen:counter[6]                             ; 2       ;
+; view:view|\draw_gen:counter[3]                             ; 2       ;
+; view:view|\draw_gen:counter[4]                             ; 2       ;
+; view:view|\draw_gen:counter[7]                             ; 2       ;
+; view:view|\draw_gen:counter[9]                             ; 2       ;
+; view:view|\draw_gen:counter[10]                            ; 2       ;
+; view:view|\draw_gen:counter[8]                             ; 2       ;
+; view:view|\draw_gen:counter[11]                            ; 2       ;
+; view:view|\draw_gen:counter[12]                            ; 2       ;
+; view:view|\draw_gen:counter[14]                            ; 2       ;
+; view:view|\draw_gen:counter[13]                            ; 2       ;
+; view:view|\draw_gen:counter[15]                            ; 2       ;
+; view:view|\draw_gen:counter[16]                            ; 2       ;
+; view:view|\draw_gen:counter[17]                            ; 2       ;
+; view:view|\draw_gen:counter[18]                            ; 2       ;
+; view:view|\draw_gen:counter[0]                             ; 2       ;
+; view:view|\draw_gen:counter[1]                             ; 2       ;
+; view:view|\draw_gen:counter[2]                             ; 2       ;
 ; sprite_renderer:sprite_renderer|next_state.IDLE            ; 2       ;
-; sprite_renderer:sprite_renderer|Selector75~0               ; 2       ;
+; sprite_renderer:sprite_renderer|Selector75~1               ; 2       ;
 ; sprite_renderer:sprite_renderer|next_state.CLEARING~3      ; 2       ;
+; view:view|state.RENDER_0                                   ; 2       ;
+; view:view|state.RENDER_1                                   ; 2       ;
 ; sprite_renderer:sprite_renderer|row[31]                    ; 2       ;
+; sprite_renderer:sprite_renderer|sprite_to_draw.color[6]~0  ; 2       ;
 ; sprite_renderer:sprite_renderer|column[31]                 ; 2       ;
 ; VGA_Framebuffer:vga|y_end[8]~10                            ; 2       ;
 ; sprite_renderer:sprite_renderer|next_state.SHOWING         ; 2       ;
+; sprite_renderer:sprite_renderer|Mux32~2                    ; 2       ;
+; sprite_renderer:sprite_renderer|Mux32~1                    ; 2       ;
+; sprite_renderer:sprite_renderer|sprite_to_draw.color[6]    ; 2       ;
+; sprite_renderer:sprite_renderer|Mux32~0                    ; 2       ;
+; sprite_renderer:sprite_renderer|sprite_to_draw.color[10]   ; 2       ;
 ; \test_pulsating_led:counter[1]                             ; 2       ;
 ; \test_pulsating_led:counter[3]                             ; 2       ;
-; \test_pulsating_led:counter[0]                             ; 2       ;
 ; \test_pulsating_led:counter[2]                             ; 2       ;
-; sprite_renderer:sprite_renderer|FB_Y0[1]                   ; 2       ;
+; \test_pulsating_led:counter[0]                             ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_Y0[0]                   ; 2       ;
 ; VGA_Framebuffer:vga|READY~1                                ; 2       ;
-; sprite_renderer:sprite_renderer|FB_X0[1]                   ; 2       ;
 ; VGA_Framebuffer:vga|Selector2~0                            ; 2       ;
-; VGA_Framebuffer:vga|Selector0~8                            ; 2       ;
-; VGA_Framebuffer:vga|Selector0~7                            ; 2       ;
-; VGA_Framebuffer:vga|Selector0~6                            ; 2       ;
-; VGA_Framebuffer:vga|Selector0~4                            ; 2       ;
+; VGA_Framebuffer:vga|Selector1~6                            ; 2       ;
+; VGA_Framebuffer:vga|Selector1~5                            ; 2       ;
+; VGA_Framebuffer:vga|Selector1~4                            ; 2       ;
+; VGA_Framebuffer:vga|Selector1~2                            ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_X0[0]                   ; 2       ;
 ; counter_latched                                            ; 2       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~3                  ; 2       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~2                  ; 2       ;
 ; VGA_Framebuffer:vga|y_cursor[0]~24                         ; 2       ;
 ; VGA_Framebuffer:vga|y_end[8]                               ; 2       ;
-; VGA_Framebuffer:vga|y_cursor[2]~23                         ; 2       ;
-; VGA_Framebuffer:vga|y_cursor[2]~20                         ; 2       ;
-; VGA_Framebuffer:vga|y_cursor[2]~19                         ; 2       ;
+; VGA_Framebuffer:vga|y_cursor[1]~23                         ; 2       ;
+; VGA_Framebuffer:vga|y_cursor[1]~20                         ; 2       ;
+; VGA_Framebuffer:vga|y_cursor[1]~19                         ; 2       ;
 ; VGA_Framebuffer:vga|y_start[6]                             ; 2       ;
 ; VGA_Framebuffer:vga|y_start[7]                             ; 2       ;
 ; VGA_Framebuffer:vga|y_start[3]                             ; 2       ;
@@ -1605,7 +1620,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|x_start[7]                             ; 2       ;
 ; VGA_Framebuffer:vga|x_start[8]                             ; 2       ;
 ; VGA_Framebuffer:vga|x_end[8]                               ; 2       ;
-; VGA_Framebuffer:vga|x_cursor[0]~14                         ; 2       ;
+; VGA_Framebuffer:vga|x_cursor[3]~18                         ; 2       ;
 ; VGA_Framebuffer:vga|x_start[0]                             ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~12       ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~11       ; 2       ;
@@ -1670,6 +1685,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|FB_Y0[7]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_Y0[3]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_Y0[4]                   ; 2       ;
+; sprite_renderer:sprite_renderer|FB_Y0[1]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_Y0[2]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_X0[8]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_X0[6]                   ; 2       ;
@@ -1678,6 +1694,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|FB_X0[5]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_X0[2]                   ; 2       ;
 ; sprite_renderer:sprite_renderer|FB_X0[3]                   ; 2       ;
+; sprite_renderer:sprite_renderer|FB_X0[1]                   ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_pixel[8]       ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_pixel[7]       ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_pixel[6]       ; 2       ;
@@ -1696,7 +1713,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[2]       ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[1]       ; 2       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[0]       ; 2       ;
-; SW[6]                                                      ; 1       ;
 ; SW[9]                                                      ; 1       ;
 ; CLOCK_50                                                   ; 1       ;
 ; SRAM_DQ[15]~15                                             ; 1       ;
@@ -1715,28 +1731,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[2]~2                                               ; 1       ;
 ; SRAM_DQ[1]~1                                               ; 1       ;
 ; SRAM_DQ[0]~0                                               ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[1]~23                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[1]~24                ; 1       ;
+; view:view|state.RENDER_0~0                                 ; 1       ;
+; view:view|state.RENDER_1~0                                 ; 1       ;
+; sprite_renderer:sprite_renderer|sprite_to_draw.color[6]~1  ; 1       ;
 ; sprite_renderer:sprite_renderer|FB_CLEAR~0                 ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0]~1 ; 1       ;
-; VGA_Framebuffer:vga|Selector0~10                           ; 1       ;
+; VGA_Framebuffer:vga|Selector0~3                            ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line~2       ; 1       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~7                  ; 1       ;
 ; VGA_Framebuffer:vga|y_cursor[0]~43                         ; 1       ;
-; counter~10                                                 ; 1       ;
-; counter~9                                                  ; 1       ;
-; counter~8                                                  ; 1       ;
-; counter~7                                                  ; 1       ;
-; counter~6                                                  ; 1       ;
-; counter~5                                                  ; 1       ;
-; counter~4                                                  ; 1       ;
+; view:view|counter~6                                        ; 1       ;
+; view:view|counter~5                                        ; 1       ;
+; view:view|counter~4                                        ; 1       ;
+; view:view|counter~3                                        ; 1       ;
+; view:view|counter~2                                        ; 1       ;
+; view:view|counter~1                                        ; 1       ;
+; view:view|counter~0                                        ; 1       ;
 ; sprite_renderer:sprite_renderer|next_state.IDLE~0          ; 1       ;
 ; sprite_renderer:sprite_renderer|show_latched~0             ; 1       ;
-; Equal0~4                                                   ; 1       ;
-; Equal0~3                                                   ; 1       ;
-; Equal0~2                                                   ; 1       ;
-; Equal0~1                                                   ; 1       ;
-; Equal0~0                                                   ; 1       ;
+; view:view|Equal0~4                                         ; 1       ;
+; view:view|Equal0~3                                         ; 1       ;
+; view:view|Equal0~2                                         ; 1       ;
+; view:view|Equal0~1                                         ; 1       ;
+; view:view|Equal0~0                                         ; 1       ;
+; sprite_renderer:sprite_renderer|READY~0                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~96                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~95                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~94                    ; 1       ;
@@ -1760,6 +1778,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|Add0~76                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~75                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~74                    ; 1       ;
+; view:view|SHOW~0                                           ; 1       ;
+; view:view|X[1]~1                                           ; 1       ;
 ; sprite_renderer:sprite_renderer|next_state.DRAWING~0       ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector64~3               ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector64~2               ; 1       ;
@@ -1786,7 +1806,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|Add1~77                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~76                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~75                    ; 1       ;
-; sprite_renderer:sprite_renderer|Selector75~1               ; 1       ;
+; sprite_renderer:sprite_renderer|Selector75~2               ; 1       ;
+; sprite_renderer:sprite_renderer|Selector75~0               ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector79~0               ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector65~3               ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector65~2               ; 1       ;
@@ -1802,18 +1823,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|Add1~27                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~24                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~23                    ; 1       ;
+; view:view|Selector33~0                                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~18                    ; 1       ;
+; view:view|Selector29~0                                     ; 1       ;
+; view:view|X[1]~0                                           ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector68~0               ; 1       ;
 ; sprite_renderer:sprite_renderer|next_state.CLEARING        ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~15                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~14                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~15                    ; 1       ;
-; sprite_renderer:sprite_renderer|sprite_to_draw.color[10]~1 ; 1       ;
-; sprite_renderer:sprite_renderer|sprite_to_draw.color[10]~0 ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~14                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add0~11                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add0~13                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add0~12                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~10                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add0~8                     ; 1       ;
 ; sprite_renderer:sprite_renderer|LessThan1~9                ; 1       ;
 ; sprite_renderer:sprite_renderer|LessThan1~8                ; 1       ;
 ; sprite_renderer:sprite_renderer|LessThan1~7                ; 1       ;
@@ -1824,8 +1844,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|LessThan1~2                ; 1       ;
 ; sprite_renderer:sprite_renderer|LessThan1~1                ; 1       ;
 ; sprite_renderer:sprite_renderer|LessThan1~0                ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~13                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~10                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~15                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~12                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~9                     ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~6                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Selector66~0               ; 1       ;
 ; sprite_renderer:sprite_renderer|next_state.DRAWING         ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~2                     ; 1       ;
@@ -1846,10 +1868,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter~2                                                  ; 1       ;
 ; counter~1                                                  ; 1       ;
 ; counter~0                                                  ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[8]~8                 ; 1       ;
-; sprite_renderer:sprite_renderer|Mux32~2                    ; 1       ;
-; sprite_renderer:sprite_renderer|Mux32~1                    ; 1       ;
-; sprite_renderer:sprite_renderer|Mux32~0                    ; 1       ;
+; sprite_renderer:sprite_renderer|Mux3~0                     ; 1       ;
+; sprite_renderer:sprite_renderer|Mux16~0                    ; 1       ;
 ; counter_latched~0                                          ; 1       ;
 ; VGA_Framebuffer:vga|flip_on_next_vs~1                      ; 1       ;
 ; VGA_Framebuffer:vga|flip_on_next_vs~0                      ; 1       ;
@@ -1881,7 +1901,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~6                  ; 1       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~5                  ; 1       ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R2~4                  ; 1       ;
-; VGA_Framebuffer:vga|Selector0~9                            ; 1       ;
+; VGA_Framebuffer:vga|Selector0~2                            ; 1       ;
 ; VGA_Framebuffer:vga|Add1~29                                ; 1       ;
 ; VGA_Framebuffer:vga|x_end~9                                ; 1       ;
 ; VGA_Framebuffer:vga|x_end~8                                ; 1       ;
@@ -1895,14 +1915,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|x_end~0                                ; 1       ;
 ; VGA_Framebuffer:vga|Selector2~1                            ; 1       ;
 ; VGA_Framebuffer:vga|Selector4~0                            ; 1       ;
+; VGA_Framebuffer:vga|Selector1~7                            ; 1       ;
+; VGA_Framebuffer:vga|Selector1~3                            ; 1       ;
+; VGA_Framebuffer:vga|Selector1~1                            ; 1       ;
 ; VGA_Framebuffer:vga|Selector1~0                            ; 1       ;
-; VGA_Framebuffer:vga|Selector0~5                            ; 1       ;
-; VGA_Framebuffer:vga|Selector0~3                            ; 1       ;
-; VGA_Framebuffer:vga|Selector0~2                            ; 1       ;
 ; VGA_Framebuffer:vga|Selector6~4                            ; 1       ;
 ; VGA_Framebuffer:vga|Selector6~3                            ; 1       ;
+; VGA_Framebuffer:vga|Selector6~2                            ; 1       ;
 ; VGA_Framebuffer:vga|Selector6~1                            ; 1       ;
-; VGA_Framebuffer:vga|Selector6~0                            ; 1       ;
 ; VGA_Framebuffer:vga|x_start~0                              ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[1]~0 ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter~2      ; 1       ;
@@ -1938,12 +1958,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|Equal1~0                               ; 1       ;
 ; VGA_Framebuffer:vga|y_end[0]                               ; 1       ;
 ; VGA_Framebuffer:vga|y_end[1]                               ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~22                         ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~21                         ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~18                         ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~17                         ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~16                         ; 1       ;
-; VGA_Framebuffer:vga|y_cursor[2]~15                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~22                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~21                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~18                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~17                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~16                         ; 1       ;
+; VGA_Framebuffer:vga|y_cursor[1]~15                         ; 1       ;
 ; VGA_Framebuffer:vga|Add0~2                                 ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal9~0         ; 1       ;
 ; VGA_Framebuffer:vga|Add1~26                                ; 1       ;
@@ -1954,8 +1974,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|Add1~11                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~8                                 ; 1       ;
 ; VGA_Framebuffer:vga|Add1~5                                 ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[0]~18                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[0]~17                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[0]~21                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[0]~20                         ; 1       ;
 ; VGA_Framebuffer:vga|Equal2~5                               ; 1       ;
 ; VGA_Framebuffer:vga|Equal2~1                               ; 1       ;
 ; VGA_Framebuffer:vga|y_cursor[0]~11                         ; 1       ;
@@ -2020,43 +2040,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|VGA_R[2]~1                             ; 1       ;
 ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|latched_ram[6]       ; 1       ;
 ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|latched_ram[5]       ; 1       ;
-; Add0~36                                                    ; 1       ;
-; Add0~35                                                    ; 1       ;
-; Add0~34                                                    ; 1       ;
-; Add0~33                                                    ; 1       ;
-; Add0~32                                                    ; 1       ;
-; Add0~31                                                    ; 1       ;
-; Add0~30                                                    ; 1       ;
-; Add0~29                                                    ; 1       ;
-; Add0~28                                                    ; 1       ;
-; Add0~27                                                    ; 1       ;
-; Add0~26                                                    ; 1       ;
-; Add0~25                                                    ; 1       ;
-; Add0~24                                                    ; 1       ;
-; Add0~23                                                    ; 1       ;
-; Add0~22                                                    ; 1       ;
-; Add0~21                                                    ; 1       ;
-; Add0~20                                                    ; 1       ;
-; Add0~19                                                    ; 1       ;
-; Add0~18                                                    ; 1       ;
-; Add0~17                                                    ; 1       ;
-; Add0~16                                                    ; 1       ;
-; Add0~15                                                    ; 1       ;
-; Add0~14                                                    ; 1       ;
-; Add0~13                                                    ; 1       ;
-; Add0~12                                                    ; 1       ;
-; Add0~11                                                    ; 1       ;
-; Add0~10                                                    ; 1       ;
-; Add0~9                                                     ; 1       ;
-; Add0~8                                                     ; 1       ;
-; Add0~7                                                     ; 1       ;
-; Add0~6                                                     ; 1       ;
-; Add0~5                                                     ; 1       ;
-; Add0~4                                                     ; 1       ;
-; Add0~3                                                     ; 1       ;
-; Add0~2                                                     ; 1       ;
-; Add0~1                                                     ; 1       ;
-; Add0~0                                                     ; 1       ;
+; view:view|Add0~36                                          ; 1       ;
+; view:view|Add0~35                                          ; 1       ;
+; view:view|Add0~34                                          ; 1       ;
+; view:view|Add0~33                                          ; 1       ;
+; view:view|Add0~32                                          ; 1       ;
+; view:view|Add0~31                                          ; 1       ;
+; view:view|Add0~30                                          ; 1       ;
+; view:view|Add0~29                                          ; 1       ;
+; view:view|Add0~28                                          ; 1       ;
+; view:view|Add0~27                                          ; 1       ;
+; view:view|Add0~26                                          ; 1       ;
+; view:view|Add0~25                                          ; 1       ;
+; view:view|Add0~24                                          ; 1       ;
+; view:view|Add0~23                                          ; 1       ;
+; view:view|Add0~22                                          ; 1       ;
+; view:view|Add0~21                                          ; 1       ;
+; view:view|Add0~20                                          ; 1       ;
+; view:view|Add0~19                                          ; 1       ;
+; view:view|Add0~18                                          ; 1       ;
+; view:view|Add0~17                                          ; 1       ;
+; view:view|Add0~16                                          ; 1       ;
+; view:view|Add0~15                                          ; 1       ;
+; view:view|Add0~14                                          ; 1       ;
+; view:view|Add0~13                                          ; 1       ;
+; view:view|Add0~12                                          ; 1       ;
+; view:view|Add0~11                                          ; 1       ;
+; view:view|Add0~10                                          ; 1       ;
+; view:view|Add0~9                                           ; 1       ;
+; view:view|Add0~8                                           ; 1       ;
+; view:view|Add0~7                                           ; 1       ;
+; view:view|Add0~6                                           ; 1       ;
+; view:view|Add0~5                                           ; 1       ;
+; view:view|Add0~4                                           ; 1       ;
+; view:view|Add0~3                                           ; 1       ;
+; view:view|Add0~2                                           ; 1       ;
+; view:view|Add0~1                                           ; 1       ;
+; view:view|Add0~0                                           ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~72                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~71                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~70                    ; 1       ;
@@ -2163,8 +2183,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|Add1~19                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~17                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~16                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add0~13                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add0~12                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add0~9                     ; 1       ;
+; sprite_renderer:sprite_renderer|Add0~8                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~7                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~6                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~5                     ; 1       ;
@@ -2173,56 +2193,60 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sprite_renderer:sprite_renderer|Add0~2                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~1                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add0~0                     ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~12                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~14                    ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~13                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~11                    ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~9                     ; 1       ;
+; sprite_renderer:sprite_renderer|Add1~10                    ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~8                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~7                     ; 1       ;
-; sprite_renderer:sprite_renderer|Add1~6                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~5                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~4                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~1                     ; 1       ;
 ; sprite_renderer:sprite_renderer|Add1~0                     ; 1       ;
-; Add1~8                                                     ; 1       ;
-; Add1~7                                                     ; 1       ;
-; Add1~6                                                     ; 1       ;
-; Add1~5                                                     ; 1       ;
-; Add1~4                                                     ; 1       ;
-; Add1~3                                                     ; 1       ;
-; Add1~2                                                     ; 1       ;
-; Add1~1                                                     ; 1       ;
-; Add1~0                                                     ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[8]~21                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[7]~20                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[7]~19                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[6]~18                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[6]~17                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[5]~16                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[5]~15                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[4]~14                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[4]~13                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[3]~12                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[3]~11                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[2]~10                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_Y0[2]~9                 ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[9]~22                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[8]~21                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[8]~20                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[7]~19                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[7]~18                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[6]~17                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[6]~16                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[5]~15                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[5]~14                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[4]~13                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[4]~12                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[3]~11                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[3]~10                ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[2]~9                 ; 1       ;
-; sprite_renderer:sprite_renderer|FB_X0[2]~8                 ; 1       ;
+; Add0~8                                                     ; 1       ;
+; Add0~7                                                     ; 1       ;
+; Add0~6                                                     ; 1       ;
+; Add0~5                                                     ; 1       ;
+; Add0~4                                                     ; 1       ;
+; Add0~3                                                     ; 1       ;
+; Add0~2                                                     ; 1       ;
+; Add0~1                                                     ; 1       ;
+; Add0~0                                                     ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[8]~24                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[7]~23                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[7]~22                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[6]~21                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[6]~20                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[5]~19                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[5]~18                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[4]~17                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[4]~16                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[3]~15                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[3]~14                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[2]~13                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[2]~12                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[1]~11                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_Y0[1]~10                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[9]~25                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[8]~24                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[8]~23                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[7]~22                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[7]~21                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[6]~20                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[6]~19                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[5]~18                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[5]~17                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[4]~16                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[4]~15                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[3]~14                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[3]~13                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[2]~12                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[2]~11                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[1]~10                ; 1       ;
+; sprite_renderer:sprite_renderer|FB_X0[1]~9                 ; 1       ;
 ; sprite_renderer:sprite_renderer|FB_Y0[5]                   ; 1       ;
 ; VGA_Framebuffer:vga|Add1~27                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[9]~35                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[9]~38                         ; 1       ;
 ; sprite_renderer:sprite_renderer|FB_X0[9]                   ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Add2~18          ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Add2~17          ; 1       ;
@@ -2315,55 +2339,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_pixel[0]~9     ; 1       ;
 ; VGA_Framebuffer:vga|Add1~25                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~24                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[8]~34                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[8]~33                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[8]~37                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[8]~36                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[8]~25    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~22                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~21                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[7]~32                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[7]~31                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[7]~35                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[7]~34                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[7]~24    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[7]~23    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~19                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~18                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[6]~30                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[6]~29                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[6]~33                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[6]~32                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[6]~22    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[6]~21    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~16                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~15                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[5]~28                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[5]~27                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[5]~31                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[5]~30                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[5]~20    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[5]~19    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~13                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~12                                ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[4]~26                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[4]~25                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[4]~29                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[4]~28                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[4]~18    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[4]~17    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~10                                ; 1       ;
 ; VGA_Framebuffer:vga|Add1~9                                 ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[3]~24                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[3]~23                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[3]~27                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[3]~26                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[3]~16    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[3]~15    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~7                                 ; 1       ;
 ; VGA_Framebuffer:vga|Add1~6                                 ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[2]~22                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[2]~21                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[2]~25                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[2]~24                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[2]~14    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[2]~13    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~4                                 ; 1       ;
 ; VGA_Framebuffer:vga|Add1~3                                 ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[1]~20                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[1]~19                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[1]~23                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[1]~22                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[1]~12    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[1]~11    ; 1       ;
 ; VGA_Framebuffer:vga|Add1~1                                 ; 1       ;
 ; VGA_Framebuffer:vga|Add1~0                                 ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[0]~13                         ; 1       ;
-; VGA_Framebuffer:vga|x_cursor[0]~12                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[0]~17                         ; 1       ;
+; VGA_Framebuffer:vga|x_cursor[0]~16                         ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[0]~10    ; 1       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[0]~9     ; 1       ;
 +------------------------------------------------------------+---------+
@@ -2374,52 +2398,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 619 / 54,004 ( 1 % )   ;
-; C16 interconnects           ; 3 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 363 / 36,000 ( 1 % )   ;
-; Direct links                ; 182 / 54,004 ( < 1 % ) ;
-; Global clocks               ; 4 / 16 ( 25 % )        ;
-; Local interconnects         ; 292 / 18,752 ( 2 % )   ;
-; R24 interconnects           ; 6 / 1,900 ( < 1 % )    ;
-; R4 interconnects            ; 289 / 46,920 ( < 1 % ) ;
+; Block interconnects         ; 615 / 54,004 ( 1 % )   ;
+; C16 interconnects           ; 1 / 2,100 ( < 1 % )    ;
+; C4 interconnects            ; 354 / 36,000 ( < 1 % ) ;
+; Direct links                ; 163 / 54,004 ( < 1 % ) ;
+; Global clocks               ; 5 / 16 ( 31 % )        ;
+; Local interconnects         ; 288 / 18,752 ( 2 % )   ;
+; R24 interconnects           ; 8 / 1,900 ( < 1 % )    ;
+; R4 interconnects            ; 367 / 46,920 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.16) ; Number of LABs  (Total = 37) ;
+; Number of Logic Elements  (Average = 14.46) ; Number of LABs  (Total = 37) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 2                            ;
-; 10                                          ; 1                            ;
+; 8                                           ; 2                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 2                            ;
-; 13                                          ; 0                            ;
+; 12                                          ; 3                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 2                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 27                           ;
+; 15                                          ; 1                            ;
+; 16                                          ; 26                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.32) ; Number of LABs  (Total = 37) ;
+; LAB-wide Signals  (Average = 2.27) ; Number of LABs  (Total = 37) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 23                           ;
-; 1 Clock                            ; 30                           ;
-; 1 Clock enable                     ; 17                           ;
-; 1 Sync. clear                      ; 8                            ;
+; 1 Async. clear                     ; 22                           ;
+; 1 Clock                            ; 29                           ;
+; 1 Clock enable                     ; 19                           ;
+; 1 Sync. clear                      ; 7                            ;
 ; 1 Sync. load                       ; 2                            ;
-; 2 Clock enables                    ; 4                            ;
+; 2 Clock enables                    ; 3                            ;
 ; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
 
@@ -2427,106 +2451,105 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 20.81) ; Number of LABs  (Total = 37) ;
+; Number of Signals Sourced  (Average = 21.32) ; Number of LABs  (Total = 37) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
+; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 1                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 4                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 2                            ;
-; 25                                           ; 4                            ;
-; 26                                           ; 3                            ;
-; 27                                           ; 5                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 1                            ;
+; 16                                           ; 6                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 6                            ;
+; 26                                           ; 5                            ;
+; 27                                           ; 2                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 2                            ;
+; 30                                           ; 0                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.51) ; Number of LABs  (Total = 37) ;
+; Number of Signals Sourced Out  (Average = 9.73) ; Number of LABs  (Total = 37) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 2                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 1                            ;
 ; 4                                               ; 1                            ;
 ; 5                                               ; 3                            ;
 ; 6                                               ; 2                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 4                            ;
-; 10                                              ; 6                            ;
+; 7                                               ; 3                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 5                            ;
+; 10                                              ; 1                            ;
 ; 11                                              ; 2                            ;
 ; 12                                              ; 2                            ;
-; 13                                              ; 1                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
-; 16                                              ; 8                            ;
+; 13                                              ; 4                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 6                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 15.62) ; Number of LABs  (Total = 37) ;
+; Number of Distinct Inputs  (Average = 15.43) ; Number of LABs  (Total = 37) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
 ; 4                                            ; 2                            ;
 ; 5                                            ; 2                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 1                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 2                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 3                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 3                            ;
 ; 17                                           ; 4                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 1                            ;
+; 18                                           ; 4                            ;
+; 19                                           ; 4                            ;
 ; 20                                           ; 1                            ;
 ; 21                                           ; 2                            ;
-; 22                                           ; 0                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 1                            ;
-; 31                                           ; 1                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2583,6 +2606,7 @@ Info (332104): Reading SDC File: 'HardwareInvaders.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {pll|altpll_component|pll|inclk[0]} -multiply_by 2 -duty_cycle 50.00 -name {PLL:pll|altpll:altpll_component|_clk0} {pll|altpll_component|pll|clk[0]}
     Info (332110): create_generated_clock -source {pll|altpll_component|pll|inclk[0]} -duty_cycle 50.00 -name {PLL:pll|altpll:altpll_component|_clk1} {pll|altpll_component|pll|clk[1]}
+Warning (332060): Node: view:view|do_stuff was determined to be a clock but was found without an associated clock assignment.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
 Info (332111): Found 3 clocks
     Info (332111):   Period   Clock Name
@@ -2596,6 +2620,8 @@ Info (176353): Automatically promoted node PLL:pll|altpll:altpll_component|_clk0
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
 Info (176353): Automatically promoted node PLL:pll|altpll:altpll_component|_clk1 (placed in counter C1 of PLL_1)
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node view:view|do_stuff 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176353): Automatically promoted node RESET_N 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
@@ -2606,7 +2632,7 @@ Info (176353): Automatically promoted node RESET_N
         Info (176357): Destination node VGA_Framebuffer:vga|y_end[8]~0
         Info (176357): Destination node VGA_Framebuffer:vga|substate.DRAWING_R2~4
         Info (176357): Destination node VGA_Framebuffer:vga|substate.DRAWING_R2~6
-        Info (176357): Destination node sprite_renderer:sprite_renderer|FB_Y0[8]~7
+        Info (176357): Destination node sprite_renderer:sprite_renderer|FB_Y0[8]~9
         Info (176357): Destination node sprite_renderer:sprite_renderer|next_state.SHOWING
         Info (176357): Destination node VGA_Framebuffer:vga|y_end[8]~10
         Info (176358): Non-global destination nodes limited to 10 nodes
@@ -2896,14 +2922,14 @@ Warning (306006): Found 63 output pins without output pin load capacitance assig
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 206 warnings
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 207 warnings
     Info: Peak virtual memory: 775 megabytes
-    Info: Processing ended: Wed Mar 21 20:13:16 2018
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Thu Mar 22 16:48:56 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:05
 
 

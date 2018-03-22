@@ -15,6 +15,12 @@ state.DRAWING 0 0 1 0 1
 state.SHOWING 0 1 0 0 1 
 state.IDLE 1 0 0 0 1 
 
+State Machine - |HardwareInvaders|view:view|state
+Name state.SHOW_SPRITES state.RENDER_1 state.RENDER_0 
+state.RENDER_0 0 0 0 
+state.RENDER_1 0 1 1 
+state.SHOW_SPRITES 1 0 1 
+
 State Machine - |HardwareInvaders|VGA_Framebuffer:vga|substate
 Name substate.DRAWING_R2 substate.DRAWING_R1 substate.DRAWING substate.INIT 
 substate.INIT 0 0 0 0 
