@@ -160,6 +160,8 @@ signal next_state			: state_type;
 signal row					: integer;
 signal column				: integer;
 signal sprite_to_draw	: sprite_type;
+signal sprite_x			: xy_coord_type;
+signal sprite_y			: xy_coord_type;
 signal show_latched		: std_logic;
 
 begin
@@ -180,17 +182,15 @@ begin
 			DEBUG_OUT <= '0';
 	
 		elsif(rising_edge(CLOCK)) then
-		
-			FB_CLEAR       <= '0';
-			FB_DRAW_RECT   <= '0';
-			FB_FLIP        <= '0';
-			READY 			<= '0';
 			
 			DEBUG_OUT <= '0';
 		
 			case (state) is 
 				when IDLE => 
-					
+		
+					FB_CLEAR       <= '0';
+					FB_DRAW_RECT   <= '0';
+					FB_FLIP        <= '0';
 					READY <= '1';
 					row 			<= 0;
 					column		<= 0;
@@ -204,20 +204,30 @@ begin
 					if (SHOW = '0') then
 						show_latched <= '0';
 						if (DRAW_SPRITE = '1') then
-							READY 			<= '0';
 							state 			<= WAITING;
 							next_state 		<= DRAWING;
 							sprite_to_draw <= SPRITE;
+							sprite_x 		<= X;
+							sprite_y 		<= Y;
 						end if;
 					end if;
 					
 				when WAITING =>
+							
+					FB_CLEAR       <= '0';
+					FB_DRAW_RECT   <= '0';
+					FB_FLIP        <= '0';
+					READY <= '0';
 					
 					if (FB_READY = '1') then
 						state <= next_state;
 					end if;
 				
 				when DRAWING =>
+				
+					READY <= '0';
+					FB_CLEAR       <= '0';
+					FB_FLIP        <= '0';
 				
 					state <= WAITING;
 					next_state <= DRAWING;
@@ -235,16 +245,21 @@ begin
 					end if;
 					
 					if (sprite_to_draw.img_pixels(row, column) = '1') then
-						FB_X0 		 	<= X + column;
-						FB_X1 		 	<= X + column;
-						FB_Y0 		 	<= Y + row;
-						FB_Y1 		 	<= Y + row;
+						FB_X0 		 	<= sprite_x + column;
+						FB_X1 		 	<= sprite_x + column;
+						FB_Y0 		 	<= sprite_y + row;
+						FB_Y1 		 	<= sprite_y + row;
 						FB_COLOR 	 	<= sprite_to_draw.color;
 						FB_DRAW_RECT 	<= '1';
+					else
+						FB_DRAW_RECT   <= '0';
 					end if;
 			
 				when SHOWING => 
 				
+					READY <= '0';
+					FB_CLEAR       <= '0';
+					FB_DRAW_RECT   <= '0';
 					FB_FLIP 	  	<= '1';
 					DEBUG_OUT 	<= '1'; -- DEBUG
 					state 	  	<= WAITING;
@@ -252,6 +267,9 @@ begin
 					
 				when CLEARING =>
 				
+					READY <= '1';
+					FB_DRAW_RECT   <= '0';
+					FB_FLIP        <= '0';
 					FB_COLOR 	<= COLOR_BLACK;
 					FB_CLEAR 	<= '1';
 					state 		<= IDLE;

@@ -130,8 +130,8 @@ begin
 			
 			DRAW_SPRITE		=> draw_sprite,
 			SPRITE			=> sprite_to_render,
-			X					=> sprite_x,
-			Y					=> sprite_y,
+			SPRITE_X			=> sprite_x,
+			SPRITE_Y			=> sprite_y,
 			SHOW				=> show
 		);
 		
