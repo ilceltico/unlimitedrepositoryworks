@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "03/26/2018 12:42:46"
+-- DATE "03/26/2018 14:26:14"
 
 -- 
 -- Device: Altera EP2C20F484C7 Package FBGA484
@@ -167,166 +167,214 @@ SIGNAL \pll|altpll_component|_clk1~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNT
 SIGNAL \view|frame_time~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \RESET_N~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \pll|altpll_component|pll~CLK2\ : std_logic;
-SIGNAL \vga|Add1~3_combout\ : std_logic;
-SIGNAL \vga|Add1~6_combout\ : std_logic;
-SIGNAL \vga|Add1~9_combout\ : std_logic;
 SIGNAL \vga|Add1~12_combout\ : std_logic;
-SIGNAL \vga|Add1~15_combout\ : std_logic;
-SIGNAL \vga|Add0~3_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~12_combout\ : std_logic;
+SIGNAL \vga|Add0~0_combout\ : std_logic;
+SIGNAL \vga|Add0~12_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~8_combout\ : std_logic;
 SIGNAL \vga|vga_timing|Add4~17\ : std_logic;
 SIGNAL \vga|vga_timing|Add4~18_combout\ : std_logic;
 SIGNAL \vga|vga_timing|Add2~6_combout\ : std_logic;
 SIGNAL \vga|vga_timing|Add2~10_combout\ : std_logic;
-SIGNAL \Add0~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~12_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[5]~20_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[8]~27\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[9]~28_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[1]~15_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[7]~28\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[8]~29_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~6_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add1~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~13_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~16_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~9_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~19_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add1~28_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~19_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~30_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~32_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~40_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~56_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~42_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~61\ : std_logic;
+SIGNAL \sprite_renderer|Add0~63\ : std_logic;
 SIGNAL \sprite_renderer|Add0~62_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~65\ : std_logic;
+SIGNAL \sprite_renderer|Add0~64_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~67\ : std_logic;
+SIGNAL \sprite_renderer|Add0~66_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~69\ : std_logic;
+SIGNAL \sprite_renderer|Add0~68_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~71\ : std_logic;
 SIGNAL \sprite_renderer|Add0~70_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~72_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add1~31_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~51_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~53_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~55_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~35_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~37_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~43_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~56\ : std_logic;
+SIGNAL \sprite_renderer|Add1~58\ : std_logic;
 SIGNAL \sprite_renderer|Add1~57_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~60\ : std_logic;
 SIGNAL \sprite_renderer|Add1~59_combout\ : std_logic;
-SIGNAL \view|x[1]~9_combout\ : std_logic;
-SIGNAL \view|x[4]~15_combout\ : std_logic;
-SIGNAL \view|Add0~1\ : std_logic;
+SIGNAL \sprite_renderer|Add1~62\ : std_logic;
+SIGNAL \sprite_renderer|Add1~61_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~64\ : std_logic;
+SIGNAL \sprite_renderer|Add1~63_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~66\ : std_logic;
+SIGNAL \sprite_renderer|Add1~65_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~68\ : std_logic;
+SIGNAL \sprite_renderer|Add1~67_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~70\ : std_logic;
+SIGNAL \sprite_renderer|Add1~69_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~72\ : std_logic;
+SIGNAL \sprite_renderer|Add1~71_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~73_combout\ : std_logic;
+SIGNAL \view|Add3~2_combout\ : std_logic;
+SIGNAL \view|Add5~2_combout\ : std_logic;
+SIGNAL \view|Add5~4_combout\ : std_logic;
+SIGNAL \view|Add3~4_combout\ : std_logic;
+SIGNAL \view|Add3~6_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[2]~1_combout\ : std_logic;
+SIGNAL \view|Add3~10_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[5]~2_combout\ : std_logic;
+SIGNAL \view|Add5~9_combout\ : std_logic;
+SIGNAL \view|Add5~13_combout\ : std_logic;
+SIGNAL \view|Add3~14_combout\ : std_logic;
+SIGNAL \view|Add3~17\ : std_logic;
+SIGNAL \view|Add5~16\ : std_logic;
+SIGNAL \view|Add3~18_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[9]~4_combout\ : std_logic;
+SIGNAL \view|Add5~17_combout\ : std_logic;
+SIGNAL \view|Add4~2_combout\ : std_logic;
+SIGNAL \view|Add4~4_combout\ : std_logic;
+SIGNAL \view|Add4~8_combout\ : std_logic;
+SIGNAL \view|Add4~11\ : std_logic;
+SIGNAL \view|Add6~4_combout\ : std_logic;
+SIGNAL \view|Add6~7\ : std_logic;
+SIGNAL \view|Add4~13\ : std_logic;
+SIGNAL \view|Add4~12_combout\ : std_logic;
+SIGNAL \view|Add4~15\ : std_logic;
+SIGNAL \view|Add4~14_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y[7]~2_combout\ : std_logic;
+SIGNAL \view|Add6~10\ : std_logic;
+SIGNAL \view|Add6~9_combout\ : std_logic;
+SIGNAL \view|Add6~12\ : std_logic;
+SIGNAL \view|Add6~11_combout\ : std_logic;
+SIGNAL \view|Add6~13_combout\ : std_logic;
+SIGNAL \view|Add4~16_combout\ : std_logic;
+SIGNAL \view|x[8]~24\ : std_logic;
+SIGNAL \view|x[9]~25_combout\ : std_logic;
 SIGNAL \view|Add0~0_combout\ : std_logic;
-SIGNAL \view|Add0~3\ : std_logic;
-SIGNAL \view|Add0~2_combout\ : std_logic;
-SIGNAL \view|Add0~5\ : std_logic;
-SIGNAL \view|Add0~4_combout\ : std_logic;
-SIGNAL \view|Add0~7\ : std_logic;
-SIGNAL \view|Add0~6_combout\ : std_logic;
-SIGNAL \view|Add0~9\ : std_logic;
-SIGNAL \view|Add0~8_combout\ : std_logic;
-SIGNAL \view|Add0~11\ : std_logic;
 SIGNAL \view|Add0~10_combout\ : std_logic;
-SIGNAL \view|Add0~13\ : std_logic;
-SIGNAL \view|Add0~12_combout\ : std_logic;
-SIGNAL \view|Add0~15\ : std_logic;
-SIGNAL \view|Add0~14_combout\ : std_logic;
-SIGNAL \view|Add0~17\ : std_logic;
-SIGNAL \view|Add0~16_combout\ : std_logic;
-SIGNAL \view|Add0~19\ : std_logic;
-SIGNAL \view|Add0~18_combout\ : std_logic;
-SIGNAL \view|Add0~21\ : std_logic;
 SIGNAL \view|Add0~20_combout\ : std_logic;
-SIGNAL \view|Add0~23\ : std_logic;
-SIGNAL \view|Add0~22_combout\ : std_logic;
-SIGNAL \view|Add0~25\ : std_logic;
-SIGNAL \view|Add0~24_combout\ : std_logic;
-SIGNAL \view|Add0~27\ : std_logic;
 SIGNAL \view|Add0~26_combout\ : std_logic;
-SIGNAL \view|Add0~29\ : std_logic;
-SIGNAL \view|Add0~28_combout\ : std_logic;
-SIGNAL \view|Add0~31\ : std_logic;
 SIGNAL \view|Add0~30_combout\ : std_logic;
-SIGNAL \view|Add0~33\ : std_logic;
 SIGNAL \view|Add0~32_combout\ : std_logic;
-SIGNAL \view|Add0~35\ : std_logic;
-SIGNAL \view|Add0~34_combout\ : std_logic;
-SIGNAL \view|Add0~37\ : std_logic;
-SIGNAL \view|Add0~36_combout\ : std_logic;
-SIGNAL \view|Add0~39\ : std_logic;
-SIGNAL \view|Add0~38_combout\ : std_logic;
-SIGNAL \view|Add0~40_combout\ : std_logic;
-SIGNAL \vga|Equal0~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal2~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal2~2_combout\ : std_logic;
+SIGNAL \vga|Equal0~2_combout\ : std_logic;
 SIGNAL \vga|Equal2~4_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~17_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~20_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~16_combout\ : std_logic;
 SIGNAL \vga|Equal1~0_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~24_combout\ : std_logic;
 SIGNAL \vga|substate.DRAWING_R2~2_combout\ : std_logic;
+SIGNAL \vga|Selector8~0_combout\ : std_logic;
 SIGNAL \vga|Selector6~0_combout\ : std_logic;
-SIGNAL \vga|Selector6~1_combout\ : std_logic;
-SIGNAL \vga|Selector6~3_combout\ : std_logic;
+SIGNAL \vga|Selector0~2_combout\ : std_logic;
+SIGNAL \vga|Selector0~3_combout\ : std_logic;
+SIGNAL \vga|Selector0~4_combout\ : std_logic;
 SIGNAL \vga|Selector0~5_combout\ : std_logic;
+SIGNAL \vga|Selector0~6_combout\ : std_logic;
 SIGNAL \vga|Selector0~7_combout\ : std_logic;
-SIGNAL \vga|x_end~2_combout\ : std_logic;
+SIGNAL \vga|Selector2~0_combout\ : std_logic;
 SIGNAL \vga|x_end~3_combout\ : std_logic;
-SIGNAL \vga|x_end~7_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R2~4_combout\ : std_logic;
-SIGNAL \vga|y_start~7_combout\ : std_logic;
+SIGNAL \vga|x_end~4_combout\ : std_logic;
+SIGNAL \vga|x_end~5_combout\ : std_logic;
+SIGNAL \vga|x_end~6_combout\ : std_logic;
+SIGNAL \vga|x_end~9_combout\ : std_logic;
+SIGNAL \vga|Selector0~9_combout\ : std_logic;
+SIGNAL \vga|READY~1_combout\ : std_logic;
+SIGNAL \vga|x_start~8_combout\ : std_logic;
+SIGNAL \vga|y_start~5_combout\ : std_logic;
 SIGNAL \vga|y_end~2_combout\ : std_logic;
 SIGNAL \vga|y_end~3_combout\ : std_logic;
 SIGNAL \vga|y_end~4_combout\ : std_logic;
-SIGNAL \test_pulsating_led:counter[0]~regout\ : std_logic;
-SIGNAL \sprite_renderer|Mux16~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_COLOR~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~10_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~11_combout\ : std_logic;
 SIGNAL \clock_25MHz~regout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~5_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~6_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector64~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.CLEARING~regout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~24_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~6_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~5_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector65~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.IDLE~regout\ : std_logic;
+SIGNAL \sprite_renderer|Selector64~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector64~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~8_combout\ : std_logic;
+SIGNAL \view|SPRITE.img_pixels[3][10]~regout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~24_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~30_combout\ : std_logic;
 SIGNAL \clock_25:counter~regout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~74_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~75_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~79_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~76_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~77_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~78_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~81_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~84_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~96_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~80_combout\ : std_logic;
-SIGNAL \view|frame_time~regout\ : std_logic;
-SIGNAL \view|SPRITE_X~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~76_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~77_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~78_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~81_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~82_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~83_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~84_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~85_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~92_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~96_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector65~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector65~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.IDLE~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.IDLE~3_combout\ : std_logic;
+SIGNAL \view|Selector9~0_combout\ : std_logic;
+SIGNAL \view|SPRITE~0_combout\ : std_logic;
 SIGNAL \view|SPRITE_X~6_combout\ : std_logic;
-SIGNAL \view|draw_gen:counter[20]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[19]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[18]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[17]~regout\ : std_logic;
-SIGNAL \view|Equal0~0_combout\ : std_logic;
-SIGNAL \view|draw_gen:counter[16]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[14]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[13]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[15]~regout\ : std_logic;
-SIGNAL \view|Equal0~1_combout\ : std_logic;
-SIGNAL \view|draw_gen:counter[11]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[10]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[9]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[12]~regout\ : std_logic;
-SIGNAL \view|Equal0~2_combout\ : std_logic;
-SIGNAL \view|draw_gen:counter[6]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[5]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[8]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[7]~regout\ : std_logic;
-SIGNAL \view|Equal0~3_combout\ : std_logic;
-SIGNAL \view|Equal0~4_combout\ : std_logic;
-SIGNAL \view|draw_gen:counter[3]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[1]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[4]~regout\ : std_logic;
-SIGNAL \view|draw_gen:counter[2]~regout\ : std_logic;
-SIGNAL \view|Equal0~5_combout\ : std_logic;
+SIGNAL \view|Add5~6_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~7_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~8_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~9_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~15_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~16_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~17_combout\ : std_logic;
+SIGNAL \view|Add6~8_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~3_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~5_combout\ : std_logic;
+SIGNAL \view|Selector18~0_combout\ : std_logic;
+SIGNAL \view|Selector18~1_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~7_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~8_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~9_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~10_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~11_combout\ : std_logic;
 SIGNAL \view|draw_gen:counter[0]~regout\ : std_logic;
-SIGNAL \view|Equal0~6_combout\ : std_logic;
-SIGNAL \view|counter~0_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[16]~regout\ : std_logic;
+SIGNAL \view|draw_gen:counter[13]~regout\ : std_logic;
+SIGNAL \view|draw_gen:counter[10]~regout\ : std_logic;
+SIGNAL \view|Equal0~3_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[5]~regout\ : std_logic;
 SIGNAL \view|counter~1_combout\ : std_logic;
-SIGNAL \view|counter~2_combout\ : std_logic;
-SIGNAL \view|counter~3_combout\ : std_logic;
-SIGNAL \view|counter~4_combout\ : std_logic;
 SIGNAL \view|counter~5_combout\ : std_logic;
-SIGNAL \view|counter~6_combout\ : std_logic;
 SIGNAL \view|counter~7_combout\ : std_logic;
-SIGNAL \view|counter~8_combout\ : std_logic;
-SIGNAL \view|counter~9_combout\ : std_logic;
 SIGNAL \view|counter~10_combout\ : std_logic;
-SIGNAL \view|counter~11_combout\ : std_logic;
-SIGNAL \view|counter~12_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R2~7_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_to_draw.color[6]~2_combout\ : std_logic;
 SIGNAL \clock_25:counter~0_combout\ : std_logic;
 SIGNAL \clock_25MHz~clkctrl_outclk\ : std_logic;
 SIGNAL \CLOCK_50~clkctrl_outclk\ : std_logic;
 SIGNAL \view|frame_time~clkctrl_outclk\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[2]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[5]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[9]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_y[7]~feeder_combout\ : std_logic;
 SIGNAL \sprite_renderer|sprite_x[3]~feeder_combout\ : std_logic;
 SIGNAL \sprite_renderer|sprite_x[7]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_y[6]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_y[8]~feeder_combout\ : std_logic;
 SIGNAL \clock_25MHz~feeder_combout\ : std_logic;
 SIGNAL \SRAM_DQ[0]~0\ : std_logic;
 SIGNAL \SRAM_DQ[1]~1\ : std_logic;
@@ -344,122 +392,201 @@ SIGNAL \SRAM_DQ[12]~12\ : std_logic;
 SIGNAL \SRAM_DQ[13]~13\ : std_logic;
 SIGNAL \SRAM_DQ[14]~14\ : std_logic;
 SIGNAL \SRAM_DQ[15]~15\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~0_combout\ : std_logic;
-SIGNAL \reset_sync_reg~feeder_combout\ : std_logic;
 SIGNAL \reset_sync_reg~regout\ : std_logic;
 SIGNAL \RESET_N~regout\ : std_logic;
 SIGNAL \RESET_N~clkctrl_outclk\ : std_logic;
-SIGNAL \vga|vga_timing|clock_count[0]~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|clock_count[1]~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal0~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~1\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~3\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~4_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~5\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~7\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~8_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal2~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~13\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~14_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal1~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal3~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~15\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~16_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_counter~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~17\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~18_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_counter~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_counter~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~9\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~11\ : std_logic;
-SIGNAL \vga|vga_timing|Add2~12_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal2~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal2~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal1~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_state~11_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_state~12_combout\ : std_logic;
-SIGNAL \vga|vga_timing|h_state.DATA~regout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_counter~3_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal4~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal4~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|new_line~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|new_line~regout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~1\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_counter~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~3\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~4_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_counter~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal8~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~5\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~7\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~9\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~11\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~13\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~15\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~16_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~14_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~8_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal6~0_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal8~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~10_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_counter~4_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Add4~6_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_counter~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal6~1_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_state~11_combout\ : std_logic;
-SIGNAL \vga|vga_timing|Equal8~2_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_state~12_combout\ : std_logic;
-SIGNAL \vga|vga_timing|v_state.DATA~regout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~85_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~92_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_FLIP~regout\ : std_logic;
+SIGNAL \view|Add0~1\ : std_logic;
+SIGNAL \view|Add0~2_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[1]~regout\ : std_logic;
+SIGNAL \view|Add0~3\ : std_logic;
+SIGNAL \view|Add0~4_combout\ : std_logic;
+SIGNAL \view|counter~0_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[2]~regout\ : std_logic;
+SIGNAL \view|Add0~5\ : std_logic;
+SIGNAL \view|Add0~6_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[3]~regout\ : std_logic;
+SIGNAL \view|Equal0~0_combout\ : std_logic;
+SIGNAL \view|counter~4_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[15]~regout\ : std_logic;
+SIGNAL \view|Add0~7\ : std_logic;
+SIGNAL \view|Add0~8_combout\ : std_logic;
+SIGNAL \view|counter~11_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[4]~regout\ : std_logic;
+SIGNAL \view|Add0~9\ : std_logic;
+SIGNAL \view|Add0~11\ : std_logic;
+SIGNAL \view|Add0~13\ : std_logic;
+SIGNAL \view|Add0~14_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[7]~regout\ : std_logic;
+SIGNAL \view|Add0~15\ : std_logic;
+SIGNAL \view|Add0~16_combout\ : std_logic;
+SIGNAL \view|counter~9_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[8]~regout\ : std_logic;
+SIGNAL \view|Add0~17\ : std_logic;
+SIGNAL \view|Add0~18_combout\ : std_logic;
+SIGNAL \view|counter~8_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[9]~regout\ : std_logic;
+SIGNAL \view|Add0~19\ : std_logic;
+SIGNAL \view|Add0~21\ : std_logic;
+SIGNAL \view|Add0~22_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[11]~regout\ : std_logic;
+SIGNAL \view|Add0~23\ : std_logic;
+SIGNAL \view|Add0~24_combout\ : std_logic;
+SIGNAL \view|counter~6_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[12]~regout\ : std_logic;
+SIGNAL \view|Add0~25\ : std_logic;
+SIGNAL \view|Add0~27\ : std_logic;
+SIGNAL \view|Add0~28_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[14]~regout\ : std_logic;
+SIGNAL \view|Equal0~2_combout\ : std_logic;
+SIGNAL \view|Add0~12_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[6]~regout\ : std_logic;
+SIGNAL \view|Equal0~4_combout\ : std_logic;
+SIGNAL \view|Add0~29\ : std_logic;
+SIGNAL \view|Add0~31\ : std_logic;
+SIGNAL \view|Add0~33\ : std_logic;
+SIGNAL \view|Add0~34_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[17]~regout\ : std_logic;
+SIGNAL \view|Add0~35\ : std_logic;
+SIGNAL \view|Add0~36_combout\ : std_logic;
+SIGNAL \view|counter~3_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[18]~regout\ : std_logic;
+SIGNAL \view|Add0~37\ : std_logic;
+SIGNAL \view|Add0~38_combout\ : std_logic;
+SIGNAL \view|counter~2_combout\ : std_logic;
+SIGNAL \view|draw_gen:counter[19]~regout\ : std_logic;
+SIGNAL \view|Equal0~1_combout\ : std_logic;
+SIGNAL \view|Equal0~5_combout\ : std_logic;
+SIGNAL \view|Equal0~6_combout\ : std_logic;
+SIGNAL \view|frame_time~regout\ : std_logic;
+SIGNAL \sprite_renderer|Selector64~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|state.IDLE~regout\ : std_logic;
 SIGNAL \sprite_renderer|READY~0_combout\ : std_logic;
 SIGNAL \sprite_renderer|READY~regout\ : std_logic;
 SIGNAL \view|render_asap~0_combout\ : std_logic;
 SIGNAL \view|render_asap~regout\ : std_logic;
-SIGNAL \view|state~0_combout\ : std_logic;
-SIGNAL \view|state~regout\ : std_logic;
+SIGNAL \view|SHOW~0_combout\ : std_logic;
+SIGNAL \view|state.RENDER_0~0_combout\ : std_logic;
+SIGNAL \view|state.RENDER_0~regout\ : std_logic;
+SIGNAL \view|state.RENDER_1~0_combout\ : std_logic;
+SIGNAL \view|state.RENDER_1~regout\ : std_logic;
+SIGNAL \view|state.RENDER_2~regout\ : std_logic;
+SIGNAL \view|state.RENDER_3~regout\ : std_logic;
+SIGNAL \view|state.RENDER_4~regout\ : std_logic;
+SIGNAL \view|Selector24~0_combout\ : std_logic;
+SIGNAL \view|state.SHOW_SPRITES~regout\ : std_logic;
 SIGNAL \view|DRAW_SPRITE~0_combout\ : std_logic;
+SIGNAL \view|DRAW_SPRITE~0_wirecell_combout\ : std_logic;
 SIGNAL \view|DRAW_SPRITE~regout\ : std_logic;
 SIGNAL \sprite_renderer|Selector72~0_combout\ : std_logic;
-SIGNAL \view|SHOW~0_combout\ : std_logic;
-SIGNAL \view|SHOW~regout\ : std_logic;
 SIGNAL \sprite_renderer|Selector72~1_combout\ : std_logic;
 SIGNAL \sprite_renderer|next_state.SHOWING~regout\ : std_logic;
 SIGNAL \sprite_renderer|Selector67~0_combout\ : std_logic;
 SIGNAL \sprite_renderer|state.SHOWING~regout\ : std_logic;
-SIGNAL \sprite_renderer|FB_FLIP~regout\ : std_logic;
-SIGNAL \sprite_renderer|Selector65~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector65~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector65~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector65~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector65~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|state.WAITING~regout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.CLEARING~feeder_combout\ : std_logic;
+SIGNAL \view|SHOW~regout\ : std_logic;
+SIGNAL \sprite_renderer|Selector64~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.IDLE~4_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.CLEARING~regout\ : std_logic;
 SIGNAL \sprite_renderer|Selector68~0_combout\ : std_logic;
 SIGNAL \sprite_renderer|state.CLEARING~regout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.IDLE~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.IDLE~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.IDLE~regout\ : std_logic;
-SIGNAL \sprite_renderer|Selector64~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector64~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|Selector64~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|state.IDLE~regout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~75_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~80_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~6_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~1\ : std_logic;
+SIGNAL \sprite_renderer|Add1~5\ : std_logic;
+SIGNAL \sprite_renderer|Add1~7_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~15_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~8\ : std_logic;
+SIGNAL \sprite_renderer|Add1~10\ : std_logic;
+SIGNAL \sprite_renderer|Add1~12_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~14_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~13\ : std_logic;
+SIGNAL \sprite_renderer|Add1~17\ : std_logic;
+SIGNAL \sprite_renderer|Add1~20\ : std_logic;
+SIGNAL \sprite_renderer|Add1~21_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~23_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~22\ : std_logic;
+SIGNAL \sprite_renderer|Add1~25_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~27_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~26\ : std_logic;
+SIGNAL \sprite_renderer|Add1~29\ : std_logic;
+SIGNAL \sprite_renderer|Add1~32\ : std_logic;
+SIGNAL \sprite_renderer|Add1~33_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~79_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~34\ : std_logic;
+SIGNAL \sprite_renderer|Add1~36\ : std_logic;
+SIGNAL \sprite_renderer|Add1~38\ : std_logic;
+SIGNAL \sprite_renderer|Add1~39_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~94_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~40\ : std_logic;
+SIGNAL \sprite_renderer|Add1~42\ : std_logic;
+SIGNAL \sprite_renderer|Add1~44\ : std_logic;
+SIGNAL \sprite_renderer|Add1~46\ : std_logic;
+SIGNAL \sprite_renderer|Add1~48\ : std_logic;
+SIGNAL \sprite_renderer|Add1~49_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~89_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~50\ : std_logic;
+SIGNAL \sprite_renderer|Add1~51_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~88_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~52\ : std_logic;
+SIGNAL \sprite_renderer|Add1~53_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~87_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~54\ : std_logic;
+SIGNAL \sprite_renderer|Add1~55_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~86_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~6_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~45_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~91_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~47_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~90_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~7_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~95_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~41_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~93_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~8_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~9_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~4_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan0~10_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~1\ : std_logic;
+SIGNAL \sprite_renderer|Add0~3\ : std_logic;
+SIGNAL \sprite_renderer|Add0~5\ : std_logic;
 SIGNAL \sprite_renderer|Add0~7\ : std_logic;
-SIGNAL \sprite_renderer|Add0~9\ : std_logic;
-SIGNAL \sprite_renderer|Add0~11_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~13_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~12\ : std_logic;
+SIGNAL \sprite_renderer|Add0~15_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~9_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~14\ : std_logic;
+SIGNAL \sprite_renderer|Add0~16_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~18_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~17\ : std_logic;
+SIGNAL \sprite_renderer|Add0~19_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~24_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~20\ : std_logic;
 SIGNAL \sprite_renderer|Add0~22\ : std_logic;
+SIGNAL \sprite_renderer|Add0~25_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~27_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~26\ : std_logic;
 SIGNAL \sprite_renderer|Add0~28_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~80_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~29\ : std_logic;
+SIGNAL \sprite_renderer|Add0~30_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~79_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~4_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~21_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~23_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~4_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~10_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~11_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~3_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~31\ : std_logic;
+SIGNAL \sprite_renderer|Add0~32_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~96_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~33\ : std_logic;
 SIGNAL \sprite_renderer|Add0~34_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~95_combout\ : std_logic;
@@ -470,16 +597,15 @@ SIGNAL \sprite_renderer|Add0~37\ : std_logic;
 SIGNAL \sprite_renderer|Add0~38_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~93_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~39\ : std_logic;
+SIGNAL \sprite_renderer|Add0~40_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~92_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~41\ : std_logic;
-SIGNAL \sprite_renderer|Add0~42_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~91_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~43\ : std_logic;
 SIGNAL \sprite_renderer|Add0~44_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~90_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~45\ : std_logic;
 SIGNAL \sprite_renderer|Add0~46_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~89_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~7_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~47\ : std_logic;
 SIGNAL \sprite_renderer|Add0~48_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~88_combout\ : std_logic;
@@ -492,53 +618,96 @@ SIGNAL \sprite_renderer|Add0~86_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~53\ : std_logic;
 SIGNAL \sprite_renderer|Add0~54_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~85_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~6_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~8_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~9_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~55\ : std_logic;
+SIGNAL \sprite_renderer|Add0~56_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~84_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~57\ : std_logic;
 SIGNAL \sprite_renderer|Add0~58_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~83_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~59\ : std_logic;
 SIGNAL \sprite_renderer|Add0~60_combout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~82_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~61\ : std_logic;
-SIGNAL \sprite_renderer|Add0~63\ : std_logic;
-SIGNAL \sprite_renderer|Add0~64_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~78_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~65\ : std_logic;
-SIGNAL \sprite_renderer|Add0~67\ : std_logic;
-SIGNAL \sprite_renderer|Add0~69\ : std_logic;
-SIGNAL \sprite_renderer|Add0~71\ : std_logic;
-SIGNAL \sprite_renderer|Add0~72_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~74_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~8_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~10_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~66_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~77_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~68_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~76_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan1~3_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~5_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~8_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~91_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~7_combout\ : std_logic;
+SIGNAL \sprite_renderer|LessThan1~9_combout\ : std_logic;
 SIGNAL \sprite_renderer|LessThan1~10_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector65~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|Selector65~4_combout\ : std_logic;
+SIGNAL \sprite_renderer|state.WAITING~regout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.DRAWING~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|next_state.DRAWING~regout\ : std_logic;
+SIGNAL \sprite_renderer|Selector66~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|state.DRAWING~regout\ : std_logic;
 SIGNAL \sprite_renderer|Add0~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~1\ : std_logic;
-SIGNAL \sprite_renderer|Add0~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~15_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~5\ : std_logic;
-SIGNAL \sprite_renderer|Add0~6_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~14_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_COLOR~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_COLOR~1_wirecell_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add0~12_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~9_combout\ : std_logic;
+SIGNAL \sprite_renderer|Mux32~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~12_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~12_wirecell_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_DRAW_RECT~regout\ : std_logic;
 SIGNAL \sprite_renderer|FB_CLEAR~0_combout\ : std_logic;
 SIGNAL \sprite_renderer|FB_CLEAR~regout\ : std_logic;
+SIGNAL \vga|Selector0~10_combout\ : std_logic;
+SIGNAL \vga|state.IDLE~regout\ : std_logic;
+SIGNAL \vga|Selector2~1_combout\ : std_logic;
+SIGNAL \vga|state.FILLING_RECT~regout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~12_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[0]~13_combout\ : std_logic;
+SIGNAL \vga|y_start~0_combout\ : std_logic;
+SIGNAL \vga|y_end[8]~0_combout\ : std_logic;
+SIGNAL \vga|Selector0~8_combout\ : std_logic;
+SIGNAL \vga|Selector1~0_combout\ : std_logic;
+SIGNAL \vga|state.DRAWING_RECT~regout\ : std_logic;
+SIGNAL \vga|Selector4~0_combout\ : std_logic;
+SIGNAL \vga|substate.INIT~regout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~14_combout\ : std_logic;
+SIGNAL \vga|Add0~2_combout\ : std_logic;
+SIGNAL \vga|x_cursor[3]~16_combout\ : std_logic;
+SIGNAL \vga|x_cursor[0]~13\ : std_logic;
+SIGNAL \vga|x_cursor[1]~19_combout\ : std_logic;
+SIGNAL \vga|x_cursor[0]~12_combout\ : std_logic;
+SIGNAL \vga|Add1~0_combout\ : std_logic;
+SIGNAL \vga|x_cursor[3]~14_combout\ : std_logic;
+SIGNAL \vga|x_cursor[3]~15_combout\ : std_logic;
+SIGNAL \vga|Add1~2_combout\ : std_logic;
+SIGNAL \vga|x_cursor[4]~25_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[9]~5_combout\ : std_logic;
 SIGNAL \view|x[0]~27_combout\ : std_logic;
 SIGNAL \view|x[1]~10\ : std_logic;
 SIGNAL \view|x[2]~12\ : std_logic;
 SIGNAL \view|x[3]~13_combout\ : std_logic;
 SIGNAL \view|x[3]~14\ : std_logic;
+SIGNAL \view|x[4]~15_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~12_combout\ : std_logic;
+SIGNAL \view|x[2]~11_combout\ : std_logic;
+SIGNAL \view|Add3~1_cout\ : std_logic;
+SIGNAL \view|Add3~3\ : std_logic;
+SIGNAL \view|Add3~5\ : std_logic;
+SIGNAL \view|Add3~7\ : std_logic;
+SIGNAL \view|Add3~8_combout\ : std_logic;
+SIGNAL \view|x[1]~9_combout\ : std_logic;
+SIGNAL \view|Add5~1\ : std_logic;
+SIGNAL \view|Add5~3\ : std_logic;
+SIGNAL \view|Add5~5\ : std_logic;
+SIGNAL \view|Add5~7_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~11_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~14_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[4]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_to_draw.color[6]~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~11_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[1]~0_combout\ : std_logic;
+SIGNAL \view|Add5~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[1]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[0]~11\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[1]~13\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[2]~15\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[3]~17\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[4]~18_combout\ : std_logic;
+SIGNAL \vga|x_start~5_combout\ : std_logic;
+SIGNAL \vga|Add1~14_combout\ : std_logic;
+SIGNAL \vga|Equal2~3_combout\ : std_logic;
 SIGNAL \view|x[4]~16\ : std_logic;
 SIGNAL \view|x[5]~17_combout\ : std_logic;
 SIGNAL \view|x[5]~18\ : std_logic;
@@ -546,349 +715,287 @@ SIGNAL \view|x[6]~20\ : std_logic;
 SIGNAL \view|x[7]~21_combout\ : std_logic;
 SIGNAL \view|x[7]~22\ : std_logic;
 SIGNAL \view|x[8]~23_combout\ : std_logic;
-SIGNAL \view|x[8]~24\ : std_logic;
-SIGNAL \view|x[9]~25_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~9_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[9]~feeder_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[0]~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~30_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~21_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~23_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~21_combout\ : std_logic;
 SIGNAL \view|x[6]~19_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~7_combout\ : std_logic;
+SIGNAL \view|Add3~9\ : std_logic;
+SIGNAL \view|Add3~11\ : std_logic;
+SIGNAL \view|Add3~13\ : std_logic;
+SIGNAL \view|Add3~15\ : std_logic;
+SIGNAL \view|Add3~16_combout\ : std_logic;
+SIGNAL \view|SPRITE_X[8]~3_combout\ : std_logic;
+SIGNAL \view|Add5~8\ : std_logic;
+SIGNAL \view|Add5~10\ : std_logic;
+SIGNAL \view|Add5~12\ : std_logic;
+SIGNAL \view|Add5~14\ : std_logic;
+SIGNAL \view|Add5~15_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_x[8]~feeder_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~18_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~10_combout\ : std_logic;
+SIGNAL \view|Add3~12_combout\ : std_logic;
+SIGNAL \view|Add5~11_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~19_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~20_combout\ : std_logic;
 SIGNAL \sprite_renderer|sprite_x[6]~feeder_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[5]~feeder_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~5_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[4]~feeder_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~6_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~1\ : std_logic;
-SIGNAL \sprite_renderer|Add1~5\ : std_logic;
-SIGNAL \sprite_renderer|Add1~8\ : std_logic;
-SIGNAL \sprite_renderer|Add1~10_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~12_combout\ : std_logic;
-SIGNAL \view|x[2]~11_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[2]~feeder_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[0]~feeder_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[0]~11\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[1]~13\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[2]~15\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[3]~17\ : std_logic;
+SIGNAL \sprite_renderer|Add1~16_combout\ : std_logic;
+SIGNAL \sprite_renderer|Add1~18_combout\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[4]~19\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[5]~21\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[6]~23\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[7]~25\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[8]~27\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[9]~28_combout\ : std_logic;
-SIGNAL \vga|x_end~9_combout\ : std_logic;
-SIGNAL \vga|y_end[8]~0_combout\ : std_logic;
-SIGNAL \vga|x_cursor[0]~13\ : std_logic;
-SIGNAL \vga|x_cursor[1]~19_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[1]~12_combout\ : std_logic;
-SIGNAL \vga|x_start~4_combout\ : std_logic;
-SIGNAL \vga|x_end~8_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[5]~20_combout\ : std_logic;
-SIGNAL \vga|x_end~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[4]~18_combout\ : std_logic;
-SIGNAL \vga|x_end~5_combout\ : std_logic;
-SIGNAL \vga|Equal0~2_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[8]~26_combout\ : std_logic;
+SIGNAL \vga|x_start~1_combout\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[7]~24_combout\ : std_logic;
-SIGNAL \vga|x_end~6_combout\ : std_logic;
-SIGNAL \vga|x_cursor[6]~29_combout\ : std_logic;
-SIGNAL \vga|x_cursor[2]~21_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[2]~14_combout\ : std_logic;
-SIGNAL \vga|x_start~3_combout\ : std_logic;
-SIGNAL \vga|Add1~8_combout\ : std_logic;
-SIGNAL \vga|Selector4~0_combout\ : std_logic;
-SIGNAL \vga|substate.INIT~regout\ : std_logic;
-SIGNAL \vga|Selector0~8_combout\ : std_logic;
-SIGNAL \vga|Selector1~0_combout\ : std_logic;
-SIGNAL \vga|state.DRAWING_RECT~regout\ : std_logic;
-SIGNAL \vga|x_cursor[7]~16_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~12_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[0]~9_combout\ : std_logic;
-SIGNAL \vga|y_start~0_combout\ : std_logic;
-SIGNAL \vga|Add0~0_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~14_combout\ : std_logic;
-SIGNAL \vga|Add0~2_combout\ : std_logic;
-SIGNAL \vga|y_cursor[2]~30\ : std_logic;
-SIGNAL \vga|y_cursor[3]~32\ : std_logic;
-SIGNAL \vga|y_cursor[4]~33_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[1]~feeder_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[0]~10\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[1]~12\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[2]~14\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[3]~16\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[4]~17_combout\ : std_logic;
-SIGNAL \vga|y_start~3_combout\ : std_logic;
-SIGNAL \vga|Add0~1\ : std_logic;
-SIGNAL \vga|Add0~4\ : std_logic;
-SIGNAL \vga|Add0~7\ : std_logic;
-SIGNAL \vga|Add0~10\ : std_logic;
-SIGNAL \vga|Add0~12_combout\ : std_logic;
-SIGNAL \vga|Add0~14_combout\ : std_logic;
-SIGNAL \vga|y_cursor[4]~34\ : std_logic;
-SIGNAL \vga|y_cursor[5]~36\ : std_logic;
-SIGNAL \vga|y_cursor[6]~38\ : std_logic;
-SIGNAL \vga|y_cursor[7]~39_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~21_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~23_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~16_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~18_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[4]~18\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[5]~20\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[6]~22\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[7]~23_combout\ : std_logic;
-SIGNAL \vga|y_start~5_combout\ : std_logic;
-SIGNAL \vga|y_cursor[6]~37_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[6]~21_combout\ : std_logic;
-SIGNAL \vga|y_start~6_combout\ : std_logic;
-SIGNAL \vga|y_cursor[5]~35_combout\ : std_logic;
-SIGNAL \vga|Add0~13\ : std_logic;
-SIGNAL \vga|Add0~15_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[5]~19_combout\ : std_logic;
-SIGNAL \vga|y_end~1_combout\ : std_logic;
-SIGNAL \vga|Add0~17_combout\ : std_logic;
-SIGNAL \vga|Add0~16\ : std_logic;
-SIGNAL \vga|Add0~18_combout\ : std_logic;
-SIGNAL \vga|Add0~20_combout\ : std_logic;
-SIGNAL \vga|Add0~19\ : std_logic;
-SIGNAL \vga|Add0~21_combout\ : std_logic;
-SIGNAL \vga|Add0~23_combout\ : std_logic;
-SIGNAL \vga|y_cursor[7]~40\ : std_logic;
-SIGNAL \vga|y_cursor[8]~41_combout\ : std_logic;
-SIGNAL \vga|Add0~22\ : std_logic;
-SIGNAL \vga|Add0~24_combout\ : std_logic;
-SIGNAL \vga|Add0~26_combout\ : std_logic;
-SIGNAL \vga|Selector0~2_combout\ : std_logic;
-SIGNAL \vga|x_cursor[4]~25_combout\ : std_logic;
-SIGNAL \vga|x_start~5_combout\ : std_logic;
-SIGNAL \vga|Add1~14_combout\ : std_logic;
-SIGNAL \vga|Equal2~3_combout\ : std_logic;
-SIGNAL \vga|Selector0~3_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~18_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~15_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[2]~13_combout\ : std_logic;
-SIGNAL \vga|y_start~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[1]~11_combout\ : std_logic;
-SIGNAL \vga|y_start~2_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~16_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~19_combout\ : std_logic;
-SIGNAL \vga|Equal2~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[0]~10_combout\ : std_logic;
-SIGNAL \vga|x_start~0_combout\ : std_logic;
-SIGNAL \vga|Equal2~2_combout\ : std_logic;
-SIGNAL \vga|Selector0~4_combout\ : std_logic;
-SIGNAL \vga|Selector2~0_combout\ : std_logic;
-SIGNAL \vga|Selector2~1_combout\ : std_logic;
-SIGNAL \vga|state.FILLING_RECT~regout\ : std_logic;
-SIGNAL \vga|x_cursor[7]~14_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~24_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~25_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~11_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~43_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~26_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~13\ : std_logic;
-SIGNAL \vga|y_cursor[1]~27_combout\ : std_logic;
-SIGNAL \vga|Add0~5_combout\ : std_logic;
-SIGNAL \vga|y_cursor[1]~28\ : std_logic;
-SIGNAL \vga|y_cursor[2]~29_combout\ : std_logic;
-SIGNAL \vga|Add0~6_combout\ : std_logic;
-SIGNAL \vga|Add0~8_combout\ : std_logic;
-SIGNAL \vga|y_end~5_combout\ : std_logic;
-SIGNAL \vga|y_cursor[3]~31_combout\ : std_logic;
-SIGNAL \vga|Add0~9_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[3]~15_combout\ : std_logic;
-SIGNAL \vga|y_start~4_combout\ : std_logic;
-SIGNAL \vga|Add0~11_combout\ : std_logic;
-SIGNAL \vga|Equal1~1_combout\ : std_logic;
-SIGNAL \vga|y_end~6_combout\ : std_logic;
-SIGNAL \vga|Equal1~2_combout\ : std_logic;
-SIGNAL \vga|y_end~7_combout\ : std_logic;
-SIGNAL \vga|y_end~8_combout\ : std_logic;
-SIGNAL \vga|Equal1~3_combout\ : std_logic;
-SIGNAL \vga|Equal1~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~25_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add0~27_combout\ : std_logic;
-SIGNAL \view|SPRITE_X~8_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[8]~feeder_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[7]~24\ : std_logic;
-SIGNAL \sprite_renderer|FB_Y0[8]~25_combout\ : std_logic;
-SIGNAL \vga|y_end~9_combout\ : std_logic;
-SIGNAL \vga|Equal1~5_combout\ : std_logic;
-SIGNAL \vga|Selector6~4_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R1~regout\ : std_logic;
-SIGNAL \vga|Selector6~2_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R2~5_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R2~6_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R2~regout\ : std_logic;
-SIGNAL \vga|Equal2~5_combout\ : std_logic;
-SIGNAL \vga|x_cursor[0]~17_combout\ : std_logic;
-SIGNAL \vga|x_cursor[0]~18_combout\ : std_logic;
-SIGNAL \vga|x_cursor[0]~37_combout\ : std_logic;
-SIGNAL \vga|x_cursor[0]~12_combout\ : std_logic;
-SIGNAL \vga|Add1~0_combout\ : std_logic;
-SIGNAL \vga|Add1~2_combout\ : std_logic;
-SIGNAL \vga|Add1~1\ : std_logic;
+SIGNAL \vga|x_start~2_combout\ : std_logic;
+SIGNAL \vga|Equal2~0_combout\ : std_logic;
+SIGNAL \vga|x_cursor[8]~34\ : std_logic;
+SIGNAL \vga|x_cursor[9]~35_combout\ : std_logic;
 SIGNAL \vga|Add1~4\ : std_logic;
 SIGNAL \vga|Add1~7\ : std_logic;
 SIGNAL \vga|Add1~10\ : std_logic;
 SIGNAL \vga|Add1~13\ : std_logic;
 SIGNAL \vga|Add1~16\ : std_logic;
-SIGNAL \vga|Add1~18_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[6]~22_combout\ : std_logic;
-SIGNAL \vga|x_start~7_combout\ : std_logic;
-SIGNAL \vga|Add1~20_combout\ : std_logic;
-SIGNAL \vga|Equal0~3_combout\ : std_logic;
-SIGNAL \vga|x_end~1_combout\ : std_logic;
-SIGNAL \vga|x_end~0_combout\ : std_logic;
-SIGNAL \vga|Equal0~0_combout\ : std_logic;
-SIGNAL \vga|Equal0~4_combout\ : std_logic;
-SIGNAL \vga|Equal0~6_combout\ : std_logic;
-SIGNAL \vga|x_cursor[7]~15_combout\ : std_logic;
+SIGNAL \vga|Add1~19\ : std_logic;
+SIGNAL \vga|Add1~22\ : std_logic;
+SIGNAL \vga|Add1~25\ : std_logic;
+SIGNAL \vga|Add1~27_combout\ : std_logic;
+SIGNAL \vga|Add1~29_combout\ : std_logic;
+SIGNAL \vga|Equal0~5_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[0]~10_combout\ : std_logic;
+SIGNAL \vga|x_start~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[2]~14_combout\ : std_logic;
+SIGNAL \vga|x_start~3_combout\ : std_logic;
+SIGNAL \vga|x_cursor[2]~21_combout\ : std_logic;
+SIGNAL \vga|Add1~6_combout\ : std_logic;
+SIGNAL \vga|Add1~8_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[1]~12_combout\ : std_logic;
+SIGNAL \vga|x_start~4_combout\ : std_logic;
+SIGNAL \vga|Equal2~1_combout\ : std_logic;
+SIGNAL \vga|Equal2~2_combout\ : std_logic;
+SIGNAL \vga|Equal2~5_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R2~4_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R2~5_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R2~6_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R2~regout\ : std_logic;
+SIGNAL \vga|x_cursor[0]~17_combout\ : std_logic;
+SIGNAL \vga|x_cursor[0]~18_combout\ : std_logic;
+SIGNAL \vga|x_cursor[0]~37_combout\ : std_logic;
+SIGNAL \vga|Add1~1\ : std_logic;
+SIGNAL \vga|Add1~3_combout\ : std_logic;
 SIGNAL \vga|Add1~5_combout\ : std_logic;
 SIGNAL \vga|x_cursor[1]~20\ : std_logic;
 SIGNAL \vga|x_cursor[2]~22\ : std_logic;
 SIGNAL \vga|x_cursor[3]~23_combout\ : std_logic;
 SIGNAL \sprite_renderer|FB_X0[3]~16_combout\ : std_logic;
 SIGNAL \vga|x_start~6_combout\ : std_logic;
+SIGNAL \vga|Add1~9_combout\ : std_logic;
 SIGNAL \vga|Add1~11_combout\ : std_logic;
 SIGNAL \vga|x_cursor[3]~24\ : std_logic;
 SIGNAL \vga|x_cursor[4]~26\ : std_logic;
 SIGNAL \vga|x_cursor[5]~27_combout\ : std_logic;
-SIGNAL \vga|x_start~8_combout\ : std_logic;
+SIGNAL \vga|Add1~15_combout\ : std_logic;
 SIGNAL \vga|Add1~17_combout\ : std_logic;
 SIGNAL \vga|x_cursor[5]~28\ : std_logic;
 SIGNAL \vga|x_cursor[6]~30\ : std_logic;
 SIGNAL \vga|x_cursor[7]~31_combout\ : std_logic;
-SIGNAL \vga|x_start~2_combout\ : std_logic;
-SIGNAL \vga|Add1~19\ : std_logic;
 SIGNAL \vga|Add1~21_combout\ : std_logic;
 SIGNAL \vga|Add1~23_combout\ : std_logic;
 SIGNAL \vga|x_cursor[7]~32\ : std_logic;
 SIGNAL \vga|x_cursor[8]~33_combout\ : std_logic;
-SIGNAL \vga|Add1~22\ : std_logic;
 SIGNAL \vga|Add1~24_combout\ : std_logic;
 SIGNAL \vga|Add1~26_combout\ : std_logic;
-SIGNAL \vga|x_cursor[8]~34\ : std_logic;
-SIGNAL \vga|x_cursor[9]~35_combout\ : std_logic;
-SIGNAL \vga|Add1~25\ : std_logic;
-SIGNAL \vga|Add1~27_combout\ : std_logic;
-SIGNAL \vga|Add1~29_combout\ : std_logic;
-SIGNAL \vga|Equal0~5_combout\ : std_logic;
-SIGNAL \vga|Selector0~6_combout\ : std_logic;
-SIGNAL \vga|Selector0~9_combout\ : std_logic;
-SIGNAL \vga|Selector0~10_combout\ : std_logic;
-SIGNAL \vga|state.IDLE~regout\ : std_logic;
-SIGNAL \vga|READY~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.DRAWING~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.IDLE~4_combout\ : std_logic;
-SIGNAL \sprite_renderer|next_state.DRAWING~regout\ : std_logic;
-SIGNAL \sprite_renderer|Selector66~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|state.DRAWING~regout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~86_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~87_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~88_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~26\ : std_logic;
-SIGNAL \sprite_renderer|Add1~29\ : std_logic;
-SIGNAL \sprite_renderer|Add1~32\ : std_logic;
-SIGNAL \sprite_renderer|Add1~33_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~79_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~34\ : std_logic;
-SIGNAL \sprite_renderer|Add1~35_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~96_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~36\ : std_logic;
-SIGNAL \sprite_renderer|Add1~38\ : std_logic;
-SIGNAL \sprite_renderer|Add1~39_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~94_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~40\ : std_logic;
-SIGNAL \sprite_renderer|Add1~41_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~93_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~42\ : std_logic;
-SIGNAL \sprite_renderer|Add1~43_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~92_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~44\ : std_logic;
-SIGNAL \sprite_renderer|Add1~45_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~91_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~46\ : std_logic;
-SIGNAL \sprite_renderer|Add1~48\ : std_logic;
-SIGNAL \sprite_renderer|Add1~50\ : std_logic;
-SIGNAL \sprite_renderer|Add1~52\ : std_logic;
-SIGNAL \sprite_renderer|Add1~54\ : std_logic;
-SIGNAL \sprite_renderer|Add1~56\ : std_logic;
-SIGNAL \sprite_renderer|Add1~58\ : std_logic;
-SIGNAL \sprite_renderer|Add1~60\ : std_logic;
-SIGNAL \sprite_renderer|Add1~61_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~83_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~84_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~62\ : std_logic;
-SIGNAL \sprite_renderer|Add1~63_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~82_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~5_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~37_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~95_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~8_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~47_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~90_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~49_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~89_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~7_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~9_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~64\ : std_logic;
-SIGNAL \sprite_renderer|Add1~65_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~81_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~66\ : std_logic;
-SIGNAL \sprite_renderer|Add1~67_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~78_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~68\ : std_logic;
-SIGNAL \sprite_renderer|Add1~69_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~77_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~70\ : std_logic;
-SIGNAL \sprite_renderer|Add1~72\ : std_logic;
-SIGNAL \sprite_renderer|Add1~73_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~75_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~7_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~9_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~2_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~71_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~76_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~1_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|LessThan0~10_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~18_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~15_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~11\ : std_logic;
-SIGNAL \sprite_renderer|Add1~14\ : std_logic;
-SIGNAL \sprite_renderer|Add1~17\ : std_logic;
-SIGNAL \sprite_renderer|Add1~19_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~24_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~20\ : std_logic;
-SIGNAL \sprite_renderer|Add1~22\ : std_logic;
-SIGNAL \sprite_renderer|Add1~25_combout\ : std_logic;
-SIGNAL \sprite_renderer|Add1~27_combout\ : std_logic;
-SIGNAL \sprite_renderer|FB_X0[8]~26_combout\ : std_logic;
-SIGNAL \vga|x_start~1_combout\ : std_logic;
-SIGNAL \vga|Equal2~0_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~21_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~22_combout\ : std_logic;
-SIGNAL \vga|y_cursor[0]~23_combout\ : std_logic;
-SIGNAL \vga|Selector8~0_combout\ : std_logic;
-SIGNAL \vga|substate.DRAWING_R2~7_combout\ : std_logic;
+SIGNAL \vga|x_end~8_combout\ : std_logic;
+SIGNAL \vga|x_end~1_combout\ : std_logic;
+SIGNAL \vga|x_end~0_combout\ : std_logic;
+SIGNAL \vga|Equal0~0_combout\ : std_logic;
+SIGNAL \vga|x_end~2_combout\ : std_logic;
+SIGNAL \vga|Equal0~1_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_X0[6]~22_combout\ : std_logic;
+SIGNAL \vga|x_end~7_combout\ : std_logic;
+SIGNAL \vga|x_cursor[6]~29_combout\ : std_logic;
+SIGNAL \vga|Add1~18_combout\ : std_logic;
+SIGNAL \vga|x_start~7_combout\ : std_logic;
+SIGNAL \vga|Add1~20_combout\ : std_logic;
+SIGNAL \vga|Equal0~3_combout\ : std_logic;
+SIGNAL \vga|Equal0~4_combout\ : std_logic;
+SIGNAL \vga|Equal0~6_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~43_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~11_combout\ : std_logic;
+SIGNAL \vga|y_cursor[2]~30\ : std_logic;
+SIGNAL \vga|y_cursor[3]~32\ : std_logic;
+SIGNAL \vga|y_cursor[4]~33_combout\ : std_logic;
+SIGNAL \view|SPRITE_X~13_combout\ : std_logic;
+SIGNAL \view|Add6~1\ : std_logic;
+SIGNAL \view|Add6~2_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~4_combout\ : std_logic;
+SIGNAL \view|Add4~1_cout\ : std_logic;
+SIGNAL \view|Add4~3\ : std_logic;
+SIGNAL \view|Add4~5\ : std_logic;
+SIGNAL \view|Add4~6_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y~6_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y[2]~0_combout\ : std_logic;
+SIGNAL \view|Add6~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_y[2]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[0]~14\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[1]~16\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[2]~18\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[3]~20\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[4]~21_combout\ : std_logic;
+SIGNAL \vga|y_start~3_combout\ : std_logic;
+SIGNAL \vga|Add0~14_combout\ : std_logic;
+SIGNAL \vga|y_cursor[4]~34\ : std_logic;
+SIGNAL \vga|y_cursor[5]~35_combout\ : std_logic;
+SIGNAL \vga|y_cursor[3]~31_combout\ : std_logic;
+SIGNAL \vga|Add0~1\ : std_logic;
+SIGNAL \vga|Add0~4\ : std_logic;
+SIGNAL \vga|Add0~7\ : std_logic;
+SIGNAL \vga|Add0~9_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[3]~19_combout\ : std_logic;
+SIGNAL \vga|y_start~4_combout\ : std_logic;
+SIGNAL \vga|Add0~11_combout\ : std_logic;
+SIGNAL \vga|Add0~10\ : std_logic;
+SIGNAL \vga|Add0~13\ : std_logic;
+SIGNAL \vga|Add0~15_combout\ : std_logic;
+SIGNAL \view|Add4~7\ : std_logic;
+SIGNAL \view|Add4~9\ : std_logic;
+SIGNAL \view|Add4~10_combout\ : std_logic;
+SIGNAL \view|SPRITE_Y[5]~1_combout\ : std_logic;
+SIGNAL \view|Add6~3\ : std_logic;
+SIGNAL \view|Add6~5\ : std_logic;
+SIGNAL \view|Add6~6_combout\ : std_logic;
+SIGNAL \sprite_renderer|sprite_y[5]~feeder_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[4]~22\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~23_combout\ : std_logic;
+SIGNAL \vga|y_end~1_combout\ : std_logic;
+SIGNAL \vga|Add0~17_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~15_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~17_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[5]~24\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[6]~25_combout\ : std_logic;
+SIGNAL \vga|y_start~6_combout\ : std_logic;
+SIGNAL \vga|y_cursor[5]~36\ : std_logic;
+SIGNAL \vga|y_cursor[6]~38\ : std_logic;
+SIGNAL \vga|y_cursor[7]~39_combout\ : std_logic;
+SIGNAL \vga|Add0~16\ : std_logic;
+SIGNAL \vga|Add0~19\ : std_logic;
+SIGNAL \vga|Add0~21_combout\ : std_logic;
+SIGNAL \vga|Add0~23_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~37_combout\ : std_logic;
+SIGNAL \vga|Add0~18_combout\ : std_logic;
+SIGNAL \vga|Add0~20_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~18_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~19_combout\ : std_logic;
+SIGNAL \vga|y_cursor[7]~40\ : std_logic;
+SIGNAL \vga|y_cursor[8]~41_combout\ : std_logic;
+SIGNAL \vga|Add0~22\ : std_logic;
+SIGNAL \vga|Add0~24_combout\ : std_logic;
+SIGNAL \vga|y_start~7_combout\ : std_logic;
+SIGNAL \vga|Add0~26_combout\ : std_logic;
+SIGNAL \vga|Selector6~1_combout\ : std_logic;
+SIGNAL \vga|Selector6~2_combout\ : std_logic;
+SIGNAL \vga|Selector6~3_combout\ : std_logic;
+SIGNAL \vga|y_end~9_combout\ : std_logic;
+SIGNAL \vga|Equal1~5_combout\ : std_logic;
+SIGNAL \vga|Selector6~4_combout\ : std_logic;
+SIGNAL \vga|substate.DRAWING_R1~regout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~20_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~21_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~22_combout\ : std_logic;
+SIGNAL \vga|y_cursor[6]~23_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~25_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~26_combout\ : std_logic;
+SIGNAL \vga|y_cursor[0]~13\ : std_logic;
+SIGNAL \vga|y_cursor[1]~27_combout\ : std_logic;
+SIGNAL \vga|y_start~2_combout\ : std_logic;
+SIGNAL \vga|Add0~3_combout\ : std_logic;
+SIGNAL \vga|Add0~5_combout\ : std_logic;
+SIGNAL \vga|y_cursor[1]~28\ : std_logic;
+SIGNAL \vga|y_cursor[2]~29_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[2]~17_combout\ : std_logic;
+SIGNAL \vga|y_start~1_combout\ : std_logic;
+SIGNAL \vga|Add0~6_combout\ : std_logic;
+SIGNAL \vga|Add0~8_combout\ : std_logic;
+SIGNAL \vga|y_end~5_combout\ : std_logic;
+SIGNAL \vga|Equal1~1_combout\ : std_logic;
+SIGNAL \vga|y_end~8_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[6]~26\ : std_logic;
+SIGNAL \sprite_renderer|FB_Y0[7]~27_combout\ : std_logic;
+SIGNAL \vga|y_end~7_combout\ : std_logic;
+SIGNAL \vga|Equal1~3_combout\ : std_logic;
+SIGNAL \vga|y_end~6_combout\ : std_logic;
+SIGNAL \vga|Equal1~2_combout\ : std_logic;
+SIGNAL \vga|Equal1~4_combout\ : std_logic;
 SIGNAL \vga|substate.DRAWING_R2~3_combout\ : std_logic;
 SIGNAL \vga|Selector8~1_combout\ : std_logic;
 SIGNAL \vga|fb_wr_req~regout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|clock_count[0]~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|clock_count[1]~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal0~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~1\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~3\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~4_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~15\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~16_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~5\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~7\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~8_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal2~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal1~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal3~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_counter~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~17\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~18_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_counter~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_counter~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~9\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~11\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~13\ : std_logic;
+SIGNAL \vga|vga_timing|Add2~14_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal4~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal4~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal1~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_state~11_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_state~12_combout\ : std_logic;
+SIGNAL \vga|vga_timing|h_state.DATA~regout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_counter~3_combout\ : std_logic;
+SIGNAL \vga|vga_timing|new_line~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|new_line~regout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~1\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_counter~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~3\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~4_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_counter~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~5\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~7\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~9\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~11\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~12_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~13\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~14_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~15\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~16_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal6~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal8~0_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal8~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~10_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_counter~4_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Add4~6_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_counter~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal6~1_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_state~11_combout\ : std_logic;
+SIGNAL \vga|vga_timing|Equal8~2_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_state~12_combout\ : std_logic;
+SIGNAL \vga|vga_timing|v_state.DATA~regout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_WE_N~0_combout\ : std_logic;
 SIGNAL \CLOCK_50~combout\ : std_logic;
 SIGNAL \pll|altpll_component|_clk0\ : std_logic;
 SIGNAL \pll|altpll_component|_clk0~clkctrl_outclk\ : std_logic;
-SIGNAL \vga|latched_color[6]~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_COLOR~0_combout\ : std_logic;
+SIGNAL \vga|y_end[8]~10_combout\ : std_logic;
+SIGNAL \sprite_renderer|FB_COLOR~1_combout\ : std_logic;
 SIGNAL \vga|vga_timing|Equal6~2_combout\ : std_logic;
 SIGNAL \vga|vga_timing|v_state.SYNC~regout\ : std_logic;
 SIGNAL \vga|flip_on_next_vs~0_combout\ : std_logic;
@@ -974,52 +1081,58 @@ SIGNAL \vga|vga_fb|SRAM_UB_N~0_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_LB_N~0_combout\ : std_logic;
 SIGNAL \pll|altpll_component|_clk1\ : std_logic;
 SIGNAL \pll|altpll_component|_clk1~clkctrl_outclk\ : std_logic;
+SIGNAL \sprite_renderer|sprite_to_draw.color[6]~0_combout\ : std_logic;
+SIGNAL \sprite_renderer|DEBUG_OUT~regout\ : std_logic;
+SIGNAL \Add0~0_combout\ : std_logic;
+SIGNAL \test_pulsating_led:counter[0]~regout\ : std_logic;
 SIGNAL \Add0~1\ : std_logic;
 SIGNAL \Add0~2_combout\ : std_logic;
+SIGNAL \Equal0~0_combout\ : std_logic;
 SIGNAL \counter~3_combout\ : std_logic;
-SIGNAL \sprite_renderer|sprite_x[0]~0_combout\ : std_logic;
-SIGNAL \sprite_renderer|DEBUG_OUT~regout\ : std_logic;
 SIGNAL \test_pulsating_led:counter[1]~regout\ : std_logic;
 SIGNAL \Add0~3\ : std_logic;
 SIGNAL \Add0~4_combout\ : std_logic;
-SIGNAL \Add0~7\ : std_logic;
-SIGNAL \Add0~8_combout\ : std_logic;
-SIGNAL \counter~0_combout\ : std_logic;
-SIGNAL \test_pulsating_led:counter[4]~regout\ : std_logic;
 SIGNAL \counter~1_combout\ : std_logic;
 SIGNAL \test_pulsating_led:counter[2]~regout\ : std_logic;
 SIGNAL \Add0~5\ : std_logic;
 SIGNAL \Add0~6_combout\ : std_logic;
 SIGNAL \counter~2_combout\ : std_logic;
 SIGNAL \test_pulsating_led:counter[3]~regout\ : std_logic;
-SIGNAL \Equal0~0_combout\ : std_logic;
+SIGNAL \Add0~7\ : std_logic;
+SIGNAL \Add0~8_combout\ : std_logic;
+SIGNAL \counter~0_combout\ : std_logic;
+SIGNAL \test_pulsating_led:counter[4]~regout\ : std_logic;
 SIGNAL \counter_latched~0_combout\ : std_logic;
 SIGNAL \counter_latched~regout\ : std_logic;
 SIGNAL \LEDR[0]~0_combout\ : std_logic;
 SIGNAL \LEDR[0]~reg0_regout\ : std_logic;
+SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|v_counter\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|sprite_to_draw.color\ : std_logic_vector(11 DOWNTO 0);
+SIGNAL \vga|vga_timing|h_pixel\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|h_counter\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|row\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \view|SPRITE_Y\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|v_pixel\ : std_logic_vector(8 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_X0\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \view|SPRITE_X\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|sprite_x\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_COLOR\ : std_logic_vector(11 DOWNTO 0);
+SIGNAL \view|x\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_fb|latched_ram\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \sprite_renderer|column\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \vga|vga_timing|clock_count\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \sprite_renderer|sprite_y\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_Y0\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|y_start\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|y_end\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|y_cursor\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|x_start\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|x_end\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|x_cursor\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|latched_color\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \vga|vga_timing|clock_count\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \view|SPRITE_X\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|sprite_x\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \vga|vga_fb|latched_ram\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \sprite_renderer|row\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \vga|vga_timing|v_pixel\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \vga|vga_timing|h_pixel\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \view|x\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_X0\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_COLOR\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \sprite_renderer|column\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \vga|vga_timing|h_counter\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_Y0\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \vga|vga_timing|v_counter\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \ALT_INV_RESET_N~clkctrl_outclk\ : std_logic;
+SIGNAL \sprite_renderer|ALT_INV_READY~regout\ : std_logic;
 SIGNAL \sprite_renderer|ALT_INV_state.DRAWING~regout\ : std_logic;
 SIGNAL \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\ : std_logic;
 SIGNAL \vga|vga_timing|ALT_INV_BLANK~0_combout\ : std_logic;
@@ -1065,67 +1178,14 @@ ww_devpor <= devpor;
 
 \RESET_N~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \RESET_N~regout\);
 \ALT_INV_RESET_N~clkctrl_outclk\ <= NOT \RESET_N~clkctrl_outclk\;
+\sprite_renderer|ALT_INV_READY~regout\ <= NOT \sprite_renderer|READY~regout\;
 \sprite_renderer|ALT_INV_state.DRAWING~regout\ <= NOT \sprite_renderer|state.DRAWING~regout\;
 \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\ <= NOT \vga|vga_fb|SRAM_WE_N~0_combout\;
 \vga|vga_timing|ALT_INV_BLANK~0_combout\ <= NOT \vga|vga_timing|BLANK~0_combout\;
 \vga|vga_timing|ALT_INV_v_state.SYNC~regout\ <= NOT \vga|vga_timing|v_state.SYNC~regout\;
 \vga|vga_timing|ALT_INV_h_state.SYNC~regout\ <= NOT \vga|vga_timing|h_state.SYNC~regout\;
 
--- Location: LCCOMB_X23_Y13_N6
-\vga|Add1~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~3_combout\ = (\vga|x_cursor\(1) & (!\vga|Add1~1\)) # (!\vga|x_cursor\(1) & ((\vga|Add1~1\) # (GND)))
--- \vga|Add1~4\ = CARRY((!\vga|Add1~1\) # (!\vga|x_cursor\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(1),
-	datad => VCC,
-	cin => \vga|Add1~1\,
-	combout => \vga|Add1~3_combout\,
-	cout => \vga|Add1~4\);
-
--- Location: LCCOMB_X23_Y13_N8
-\vga|Add1~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~6_combout\ = (\vga|x_cursor\(2) & (\vga|Add1~4\ $ (GND))) # (!\vga|x_cursor\(2) & (!\vga|Add1~4\ & VCC))
--- \vga|Add1~7\ = CARRY((\vga|x_cursor\(2) & !\vga|Add1~4\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(2),
-	datad => VCC,
-	cin => \vga|Add1~4\,
-	combout => \vga|Add1~6_combout\,
-	cout => \vga|Add1~7\);
-
--- Location: LCCOMB_X23_Y13_N10
-\vga|Add1~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~9_combout\ = (\vga|x_cursor\(3) & (!\vga|Add1~7\)) # (!\vga|x_cursor\(3) & ((\vga|Add1~7\) # (GND)))
--- \vga|Add1~10\ = CARRY((!\vga|Add1~7\) # (!\vga|x_cursor\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(3),
-	datad => VCC,
-	cin => \vga|Add1~7\,
-	combout => \vga|Add1~9_combout\,
-	cout => \vga|Add1~10\);
-
--- Location: LCCOMB_X23_Y13_N12
+-- Location: LCCOMB_X16_Y11_N12
 \vga|Add1~12\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|Add1~12_combout\ = (\vga|x_cursor\(4) & (\vga|Add1~10\ $ (GND))) # (!\vga|x_cursor\(4) & (!\vga|Add1~10\ & VCC))
@@ -1133,57 +1193,38 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_cursor\(4),
+	datab => \vga|x_cursor\(4),
 	datad => VCC,
 	cin => \vga|Add1~10\,
 	combout => \vga|Add1~12_combout\,
 	cout => \vga|Add1~13\);
 
--- Location: LCCOMB_X23_Y13_N14
-\vga|Add1~15\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y9_N12
+\vga|Add0~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Add1~15_combout\ = (\vga|x_cursor\(5) & (!\vga|Add1~13\)) # (!\vga|x_cursor\(5) & ((\vga|Add1~13\) # (GND)))
--- \vga|Add1~16\ = CARRY((!\vga|Add1~13\) # (!\vga|x_cursor\(5)))
+-- \vga|Add0~0_combout\ = \vga|y_cursor\(0) $ (VCC)
+-- \vga|Add0~1\ = CARRY(\vga|y_cursor\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \vga|x_cursor\(5),
+	datab => \vga|y_cursor\(0),
 	datad => VCC,
-	cin => \vga|Add1~13\,
-	combout => \vga|Add1~15_combout\,
-	cout => \vga|Add1~16\);
+	combout => \vga|Add0~0_combout\,
+	cout => \vga|Add0~1\);
 
--- Location: LCCOMB_X22_Y12_N14
-\vga|Add0~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y9_N20
+\vga|Add0~12\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Add0~3_combout\ = (\vga|y_cursor\(1) & (!\vga|Add0~1\)) # (!\vga|y_cursor\(1) & ((\vga|Add0~1\) # (GND)))
--- \vga|Add0~4\ = CARRY((!\vga|Add0~1\) # (!\vga|y_cursor\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(1),
-	datad => VCC,
-	cin => \vga|Add0~1\,
-	combout => \vga|Add0~3_combout\,
-	cout => \vga|Add0~4\);
-
--- Location: LCCOMB_X20_Y11_N14
-\vga|vga_timing|Add4~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~12_combout\ = (\vga|vga_timing|v_counter\(6) & (\vga|vga_timing|Add4~11\ $ (GND))) # (!\vga|vga_timing|v_counter\(6) & (!\vga|vga_timing|Add4~11\ & VCC))
--- \vga|vga_timing|Add4~13\ = CARRY((\vga|vga_timing|v_counter\(6) & !\vga|vga_timing|Add4~11\))
+-- \vga|Add0~12_combout\ = (\vga|y_cursor\(4) & (\vga|Add0~10\ $ (GND))) # (!\vga|y_cursor\(4) & (!\vga|Add0~10\ & VCC))
+-- \vga|Add0~13\ = CARRY((\vga|y_cursor\(4) & !\vga|Add0~10\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1191,13 +1232,31 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(6),
+	dataa => \vga|y_cursor\(4),
 	datad => VCC,
-	cin => \vga|vga_timing|Add4~11\,
-	combout => \vga|vga_timing|Add4~12_combout\,
-	cout => \vga|vga_timing|Add4~13\);
+	cin => \vga|Add0~10\,
+	combout => \vga|Add0~12_combout\,
+	cout => \vga|Add0~13\);
 
--- Location: LCCOMB_X20_Y11_N18
+-- Location: LCCOMB_X15_Y9_N10
+\vga|vga_timing|Add4~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~8_combout\ = (\vga|vga_timing|v_counter\(4) & (\vga|vga_timing|Add4~7\ $ (GND))) # (!\vga|vga_timing|v_counter\(4) & (!\vga|vga_timing|Add4~7\ & VCC))
+-- \vga|vga_timing|Add4~9\ = CARRY((\vga|vga_timing|v_counter\(4) & !\vga|vga_timing|Add4~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(4),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~7\,
+	combout => \vga|vga_timing|Add4~8_combout\,
+	cout => \vga|vga_timing|Add4~9\);
+
+-- Location: LCCOMB_X15_Y9_N18
 \vga|vga_timing|Add4~16\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|Add4~16_combout\ = (\vga|vga_timing|v_counter\(8) & (\vga|vga_timing|Add4~15\ $ (GND))) # (!\vga|vga_timing|v_counter\(8) & (!\vga|vga_timing|Add4~15\ & VCC))
@@ -1215,7 +1274,7 @@ PORT MAP (
 	combout => \vga|vga_timing|Add4~16_combout\,
 	cout => \vga|vga_timing|Add4~17\);
 
--- Location: LCCOMB_X20_Y11_N20
+-- Location: LCCOMB_X15_Y9_N20
 \vga|vga_timing|Add4~18\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|Add4~18_combout\ = \vga|vga_timing|Add4~17\ $ (\vga|vga_timing|v_counter\(9))
@@ -1230,7 +1289,7 @@ PORT MAP (
 	cin => \vga|vga_timing|Add4~17\,
 	combout => \vga|vga_timing|Add4~18_combout\);
 
--- Location: LCCOMB_X25_Y11_N6
+-- Location: LCCOMB_X15_Y10_N6
 \vga|vga_timing|Add2~6\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|Add2~6_combout\ = (\vga|vga_timing|h_counter\(3) & (!\vga|vga_timing|Add2~5\)) # (!\vga|vga_timing|h_counter\(3) & ((\vga|vga_timing|Add2~5\) # (GND)))
@@ -1248,7 +1307,7 @@ PORT MAP (
 	combout => \vga|vga_timing|Add2~6_combout\,
 	cout => \vga|vga_timing|Add2~7\);
 
--- Location: LCCOMB_X25_Y11_N10
+-- Location: LCCOMB_X15_Y10_N10
 \vga|vga_timing|Add2~10\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|Add2~10_combout\ = (\vga|vga_timing|h_counter\(5) & (!\vga|vga_timing|Add2~9\)) # (!\vga|vga_timing|h_counter\(5) & ((\vga|vga_timing|Add2~9\) # (GND)))
@@ -1266,108 +1325,425 @@ PORT MAP (
 	combout => \vga|vga_timing|Add2~10_combout\,
 	cout => \vga|vga_timing|Add2~11\);
 
--- Location: LCFF_X32_Y14_N11
-\sprite_renderer|row[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~24_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(6));
-
--- Location: LCCOMB_X35_Y14_N20
-\Add0~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X15_Y10_N12
+\vga|vga_timing|Add2~12\ : cycloneii_lcell_comb
 -- Equation(s):
--- \Add0~0_combout\ = \test_pulsating_led:counter[0]~regout\ $ (VCC)
--- \Add0~1\ = CARRY(\test_pulsating_led:counter[0]~regout\)
+-- \vga|vga_timing|Add2~12_combout\ = (\vga|vga_timing|h_counter\(6) & (\vga|vga_timing|Add2~11\ $ (GND))) # (!\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|Add2~11\ & VCC))
+-- \vga|vga_timing|Add2~13\ = CARRY((\vga|vga_timing|h_counter\(6) & !\vga|vga_timing|Add2~11\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "datac")
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \test_pulsating_led:counter[0]~regout\,
+	dataa => \vga|vga_timing|h_counter\(6),
 	datad => VCC,
-	combout => \Add0~0_combout\,
-	cout => \Add0~1\);
+	cin => \vga|vga_timing|Add2~11\,
+	combout => \vga|vga_timing|Add2~12_combout\,
+	cout => \vga|vga_timing|Add2~13\);
 
--- Location: LCFF_X32_Y14_N15
+-- Location: LCFF_X21_Y13_N13
+\sprite_renderer|FB_X0[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[5]~20_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(5));
+
+-- Location: LCFF_X21_Y13_N21
+\sprite_renderer|FB_X0[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[9]~28_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(9));
+
+-- Location: LCFF_X20_Y13_N13
+\sprite_renderer|FB_Y0[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[1]~15_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(1));
+
+-- Location: LCFF_X20_Y13_N27
+\sprite_renderer|FB_Y0[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[8]~29_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(8));
+
+-- Location: LCFF_X24_Y15_N17
+\sprite_renderer|row[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~8_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(3));
+
+-- Location: LCCOMB_X21_Y13_N12
+\sprite_renderer|FB_X0[5]~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_X0[5]~20_combout\ = (\sprite_renderer|sprite_x\(5) & ((\sprite_renderer|column\(5) & (\sprite_renderer|FB_X0[4]~19\ & VCC)) # (!\sprite_renderer|column\(5) & (!\sprite_renderer|FB_X0[4]~19\)))) # (!\sprite_renderer|sprite_x\(5) & 
+-- ((\sprite_renderer|column\(5) & (!\sprite_renderer|FB_X0[4]~19\)) # (!\sprite_renderer|column\(5) & ((\sprite_renderer|FB_X0[4]~19\) # (GND)))))
+-- \sprite_renderer|FB_X0[5]~21\ = CARRY((\sprite_renderer|sprite_x\(5) & (!\sprite_renderer|column\(5) & !\sprite_renderer|FB_X0[4]~19\)) # (!\sprite_renderer|sprite_x\(5) & ((!\sprite_renderer|FB_X0[4]~19\) # (!\sprite_renderer|column\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_x\(5),
+	datab => \sprite_renderer|column\(5),
+	datad => VCC,
+	cin => \sprite_renderer|FB_X0[4]~19\,
+	combout => \sprite_renderer|FB_X0[5]~20_combout\,
+	cout => \sprite_renderer|FB_X0[5]~21\);
+
+-- Location: LCFF_X21_Y12_N27
+\sprite_renderer|column[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~24_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(6));
+
+-- Location: LCCOMB_X21_Y13_N18
+\sprite_renderer|FB_X0[8]~26\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_X0[8]~26_combout\ = ((\sprite_renderer|column\(8) $ (\sprite_renderer|sprite_x\(8) $ (!\sprite_renderer|FB_X0[7]~25\)))) # (GND)
+-- \sprite_renderer|FB_X0[8]~27\ = CARRY((\sprite_renderer|column\(8) & ((\sprite_renderer|sprite_x\(8)) # (!\sprite_renderer|FB_X0[7]~25\))) # (!\sprite_renderer|column\(8) & (\sprite_renderer|sprite_x\(8) & !\sprite_renderer|FB_X0[7]~25\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(8),
+	datab => \sprite_renderer|sprite_x\(8),
+	datad => VCC,
+	cin => \sprite_renderer|FB_X0[7]~25\,
+	combout => \sprite_renderer|FB_X0[8]~26_combout\,
+	cout => \sprite_renderer|FB_X0[8]~27\);
+
+-- Location: LCFF_X21_Y12_N21
+\sprite_renderer|column[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~30_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(9));
+
+-- Location: LCCOMB_X21_Y13_N20
+\sprite_renderer|FB_X0[9]~28\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_X0[9]~28_combout\ = \sprite_renderer|column\(9) $ (\sprite_renderer|FB_X0[8]~27\ $ (\sprite_renderer|sprite_x\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100111100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(9),
+	datad => \sprite_renderer|sprite_x\(9),
+	cin => \sprite_renderer|FB_X0[8]~27\,
+	combout => \sprite_renderer|FB_X0[9]~28_combout\);
+
+-- Location: LCCOMB_X20_Y13_N12
+\sprite_renderer|FB_Y0[1]~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[1]~15_combout\ = (\sprite_renderer|sprite_y\(1) & ((\sprite_renderer|row\(1) & (\sprite_renderer|FB_Y0[0]~14\ & VCC)) # (!\sprite_renderer|row\(1) & (!\sprite_renderer|FB_Y0[0]~14\)))) # (!\sprite_renderer|sprite_y\(1) & 
+-- ((\sprite_renderer|row\(1) & (!\sprite_renderer|FB_Y0[0]~14\)) # (!\sprite_renderer|row\(1) & ((\sprite_renderer|FB_Y0[0]~14\) # (GND)))))
+-- \sprite_renderer|FB_Y0[1]~16\ = CARRY((\sprite_renderer|sprite_y\(1) & (!\sprite_renderer|row\(1) & !\sprite_renderer|FB_Y0[0]~14\)) # (!\sprite_renderer|sprite_y\(1) & ((!\sprite_renderer|FB_Y0[0]~14\) # (!\sprite_renderer|row\(1)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_y\(1),
+	datab => \sprite_renderer|row\(1),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[0]~14\,
+	combout => \sprite_renderer|FB_Y0[1]~15_combout\,
+	cout => \sprite_renderer|FB_Y0[1]~16\);
+
+-- Location: LCCOMB_X20_Y13_N24
+\sprite_renderer|FB_Y0[7]~27\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[7]~27_combout\ = (\sprite_renderer|sprite_y\(7) & ((\sprite_renderer|row\(7) & (\sprite_renderer|FB_Y0[6]~26\ & VCC)) # (!\sprite_renderer|row\(7) & (!\sprite_renderer|FB_Y0[6]~26\)))) # (!\sprite_renderer|sprite_y\(7) & 
+-- ((\sprite_renderer|row\(7) & (!\sprite_renderer|FB_Y0[6]~26\)) # (!\sprite_renderer|row\(7) & ((\sprite_renderer|FB_Y0[6]~26\) # (GND)))))
+-- \sprite_renderer|FB_Y0[7]~28\ = CARRY((\sprite_renderer|sprite_y\(7) & (!\sprite_renderer|row\(7) & !\sprite_renderer|FB_Y0[6]~26\)) # (!\sprite_renderer|sprite_y\(7) & ((!\sprite_renderer|FB_Y0[6]~26\) # (!\sprite_renderer|row\(7)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_y\(7),
+	datab => \sprite_renderer|row\(7),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[6]~26\,
+	combout => \sprite_renderer|FB_Y0[7]~27_combout\,
+	cout => \sprite_renderer|FB_Y0[7]~28\);
+
+-- Location: LCCOMB_X20_Y13_N26
+\sprite_renderer|FB_Y0[8]~29\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[8]~29_combout\ = \sprite_renderer|sprite_y\(8) $ (\sprite_renderer|FB_Y0[7]~28\ $ (!\sprite_renderer|row\(8)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|sprite_y\(8),
+	datad => \sprite_renderer|row\(8),
+	cin => \sprite_renderer|FB_Y0[7]~28\,
+	combout => \sprite_renderer|FB_Y0[8]~29_combout\);
+
+-- Location: LCFF_X22_Y15_N23
 \sprite_renderer|row[30]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~75_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(30));
 
--- Location: LCFF_X32_Y15_N3
-\sprite_renderer|row[10]\ : cycloneii_lcell_ff
+-- Location: LCFF_X22_Y15_N17
+\sprite_renderer|row[29]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~79_combout\,
+	datain => \sprite_renderer|Add0~76_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(10));
+	regout => \sprite_renderer|row\(29));
 
--- Location: LCFF_X32_Y14_N9
+-- Location: LCFF_X22_Y15_N27
+\sprite_renderer|row[28]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~77_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(28));
+
+-- Location: LCFF_X22_Y15_N21
+\sprite_renderer|row[27]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~78_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(27));
+
+-- Location: LCFF_X24_Y14_N17
 \sprite_renderer|row[26]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~81_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(26));
 
--- Location: LCFF_X32_Y14_N31
-\sprite_renderer|row[23]\ : cycloneii_lcell_ff
+-- Location: LCFF_X21_Y12_N31
+\sprite_renderer|column[30]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~84_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(23));
-
--- Location: LCFF_X34_Y14_N7
-\sprite_renderer|row[11]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~96_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(11));
-
--- Location: LCFF_X30_Y14_N23
-\sprite_renderer|column[10]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~80_combout\,
+	datain => \sprite_renderer|Add1~76_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
 	ena => \sprite_renderer|Add1~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(10));
+	regout => \sprite_renderer|column\(30));
 
--- Location: LCCOMB_X29_Y15_N2
+-- Location: LCFF_X21_Y12_N17
+\sprite_renderer|column[29]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~77_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(29));
+
+-- Location: LCFF_X21_Y12_N19
+\sprite_renderer|column[28]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~78_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(28));
+
+-- Location: LCFF_X23_Y12_N9
+\sprite_renderer|column[27]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~81_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(27));
+
+-- Location: LCFF_X23_Y12_N11
+\sprite_renderer|column[26]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~82_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(26));
+
+-- Location: LCFF_X23_Y12_N29
+\sprite_renderer|column[25]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~83_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(25));
+
+-- Location: LCFF_X23_Y12_N31
+\sprite_renderer|column[24]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~84_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(24));
+
+-- Location: LCFF_X23_Y12_N25
+\sprite_renderer|column[23]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~85_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(23));
+
+-- Location: LCFF_X21_Y12_N11
+\sprite_renderer|column[16]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~92_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(16));
+
+-- Location: LCFF_X24_Y14_N7
+\sprite_renderer|column[12]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~96_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(12));
+
+-- Location: LCFF_X18_Y14_N21
+\view|SPRITE_X[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Selector9~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(0));
+
+-- Location: LCCOMB_X23_Y15_N6
+\sprite_renderer|Add0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~6_combout\ = (\sprite_renderer|row\(3) & (!\sprite_renderer|Add0~5\)) # (!\sprite_renderer|row\(3) & ((\sprite_renderer|Add0~5\) # (GND)))
+-- \sprite_renderer|Add0~7\ = CARRY((!\sprite_renderer|Add0~5\) # (!\sprite_renderer|row\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(3),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~5\,
+	combout => \sprite_renderer|Add0~6_combout\,
+	cout => \sprite_renderer|Add0~7\);
+
+-- Location: LCCOMB_X22_Y13_N2
 \sprite_renderer|Add1~4\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~4_combout\ = (\sprite_renderer|column\(1) & (!\sprite_renderer|Add1~1\)) # (!\sprite_renderer|column\(1) & ((\sprite_renderer|Add1~1\) # (GND)))
@@ -1385,43 +1761,82 @@ PORT MAP (
 	combout => \sprite_renderer|Add1~4_combout\,
 	cout => \sprite_renderer|Add1~5\);
 
--- Location: LCCOMB_X29_Y15_N8
-\sprite_renderer|Add1~13\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y13_N6
+\sprite_renderer|Add1~9\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~13_combout\ = (\sprite_renderer|column\(4) & (\sprite_renderer|Add1~11\ $ (GND))) # (!\sprite_renderer|column\(4) & (!\sprite_renderer|Add1~11\ & VCC))
--- \sprite_renderer|Add1~14\ = CARRY((\sprite_renderer|column\(4) & !\sprite_renderer|Add1~11\))
+-- \sprite_renderer|Add1~9_combout\ = (\sprite_renderer|column\(3) & (!\sprite_renderer|Add1~8\)) # (!\sprite_renderer|column\(3) & ((\sprite_renderer|Add1~8\) # (GND)))
+-- \sprite_renderer|Add1~10\ = CARRY((!\sprite_renderer|Add1~8\) # (!\sprite_renderer|column\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(4),
+	dataa => \sprite_renderer|column\(3),
 	datad => VCC,
-	cin => \sprite_renderer|Add1~11\,
-	combout => \sprite_renderer|Add1~13_combout\,
-	cout => \sprite_renderer|Add1~14\);
+	cin => \sprite_renderer|Add1~8\,
+	combout => \sprite_renderer|Add1~9_combout\,
+	cout => \sprite_renderer|Add1~10\);
 
--- Location: LCCOMB_X29_Y15_N10
-\sprite_renderer|Add1~16\ : cycloneii_lcell_comb
+-- Location: LCFF_X20_Y14_N1
+\view|SPRITE_X[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_X[2]~1_combout\,
+	sdata => \view|Add5~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|DRAW_SPRITE~0_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(2));
+
+-- Location: LCFF_X20_Y14_N3
+\view|SPRITE_X[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_X[5]~2_combout\,
+	sdata => \view|Add5~9_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|DRAW_SPRITE~0_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(5));
+
+-- Location: LCCOMB_X22_Y13_N12
+\sprite_renderer|Add1~19\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~16_combout\ = (\sprite_renderer|column\(5) & (!\sprite_renderer|Add1~14\)) # (!\sprite_renderer|column\(5) & ((\sprite_renderer|Add1~14\) # (GND)))
--- \sprite_renderer|Add1~17\ = CARRY((!\sprite_renderer|Add1~14\) # (!\sprite_renderer|column\(5)))
+-- \sprite_renderer|Add1~19_combout\ = (\sprite_renderer|column\(6) & (\sprite_renderer|Add1~17\ $ (GND))) # (!\sprite_renderer|column\(6) & (!\sprite_renderer|Add1~17\ & VCC))
+-- \sprite_renderer|Add1~20\ = CARRY((\sprite_renderer|column\(6) & !\sprite_renderer|Add1~17\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(5),
+	dataa => \sprite_renderer|column\(6),
 	datad => VCC,
-	cin => \sprite_renderer|Add1~14\,
-	combout => \sprite_renderer|Add1~16_combout\,
-	cout => \sprite_renderer|Add1~17\);
+	cin => \sprite_renderer|Add1~17\,
+	combout => \sprite_renderer|Add1~19_combout\,
+	cout => \sprite_renderer|Add1~20\);
 
--- Location: LCCOMB_X29_Y15_N18
+-- Location: LCFF_X22_Y14_N21
+\view|SPRITE_X[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_X[9]~4_combout\,
+	sdata => \view|Add5~17_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|SPRITE_X[9]~5_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(9));
+
+-- Location: LCCOMB_X22_Y13_N18
 \sprite_renderer|Add1~28\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~28_combout\ = (\sprite_renderer|column\(9) & (!\sprite_renderer|Add1~26\)) # (!\sprite_renderer|column\(9) & ((\sprite_renderer|Add1~26\) # (GND)))
@@ -1429,21 +1844,45 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(9),
+	dataa => \sprite_renderer|column\(9),
 	datad => VCC,
 	cin => \sprite_renderer|Add1~26\,
 	combout => \sprite_renderer|Add1~28_combout\,
 	cout => \sprite_renderer|Add1~29\);
 
--- Location: LCCOMB_X33_Y15_N12
-\sprite_renderer|Add0~19\ : cycloneii_lcell_comb
+-- Location: LCFF_X18_Y14_N31
+\view|SPRITE_Y[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Selector18~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(1));
+
+-- Location: LCFF_X20_Y14_N7
+\view|SPRITE_Y[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y[7]~2_combout\,
+	sdata => \view|Add6~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|DRAW_SPRITE~0_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(7));
+
+-- Location: LCCOMB_X23_Y14_N0
+\sprite_renderer|Add0~42\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~19_combout\ = (\sprite_renderer|row\(6) & (\sprite_renderer|Add0~17\ $ (GND))) # (!\sprite_renderer|row\(6) & (!\sprite_renderer|Add0~17\ & VCC))
--- \sprite_renderer|Add0~20\ = CARRY((\sprite_renderer|row\(6) & !\sprite_renderer|Add0~17\))
+-- \sprite_renderer|Add0~42_combout\ = (\sprite_renderer|row\(16) & (\sprite_renderer|Add0~41\ $ (GND))) # (!\sprite_renderer|row\(16) & (!\sprite_renderer|Add0~41\ & VCC))
+-- \sprite_renderer|Add0~43\ = CARRY((\sprite_renderer|row\(16) & !\sprite_renderer|Add0~41\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1451,35 +1890,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(6),
+	dataa => \sprite_renderer|row\(16),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~17\,
-	combout => \sprite_renderer|Add0~19_combout\,
-	cout => \sprite_renderer|Add0~20\);
+	cin => \sprite_renderer|Add0~41\,
+	combout => \sprite_renderer|Add0~42_combout\,
+	cout => \sprite_renderer|Add0~43\);
 
--- Location: LCCOMB_X33_Y15_N20
-\sprite_renderer|Add0~30\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y14_N18
+\sprite_renderer|Add0~60\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~30_combout\ = (\sprite_renderer|row\(10) & (\sprite_renderer|Add0~29\ $ (GND))) # (!\sprite_renderer|row\(10) & (!\sprite_renderer|Add0~29\ & VCC))
--- \sprite_renderer|Add0~31\ = CARRY((\sprite_renderer|row\(10) & !\sprite_renderer|Add0~29\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(10),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~29\,
-	combout => \sprite_renderer|Add0~30_combout\,
-	cout => \sprite_renderer|Add0~31\);
-
--- Location: LCCOMB_X33_Y15_N22
-\sprite_renderer|Add0~32\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~32_combout\ = (\sprite_renderer|row\(11) & (!\sprite_renderer|Add0~31\)) # (!\sprite_renderer|row\(11) & ((\sprite_renderer|Add0~31\) # (GND)))
--- \sprite_renderer|Add0~33\ = CARRY((!\sprite_renderer|Add0~31\) # (!\sprite_renderer|row\(11)))
+-- \sprite_renderer|Add0~60_combout\ = (\sprite_renderer|row\(25) & (!\sprite_renderer|Add0~59\)) # (!\sprite_renderer|row\(25) & ((\sprite_renderer|Add0~59\) # (GND)))
+-- \sprite_renderer|Add0~61\ = CARRY((!\sprite_renderer|Add0~59\) # (!\sprite_renderer|row\(25)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1487,49 +1908,13 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(11),
+	dataa => \sprite_renderer|row\(25),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~31\,
-	combout => \sprite_renderer|Add0~32_combout\,
-	cout => \sprite_renderer|Add0~33\);
+	cin => \sprite_renderer|Add0~59\,
+	combout => \sprite_renderer|Add0~60_combout\,
+	cout => \sprite_renderer|Add0~61\);
 
--- Location: LCCOMB_X33_Y15_N30
-\sprite_renderer|Add0~40\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~40_combout\ = (\sprite_renderer|row\(15) & (!\sprite_renderer|Add0~39\)) # (!\sprite_renderer|row\(15) & ((\sprite_renderer|Add0~39\) # (GND)))
--- \sprite_renderer|Add0~41\ = CARRY((!\sprite_renderer|Add0~39\) # (!\sprite_renderer|row\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(15),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~39\,
-	combout => \sprite_renderer|Add0~40_combout\,
-	cout => \sprite_renderer|Add0~41\);
-
--- Location: LCCOMB_X33_Y14_N14
-\sprite_renderer|Add0~56\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~56_combout\ = (\sprite_renderer|row\(23) & (!\sprite_renderer|Add0~55\)) # (!\sprite_renderer|row\(23) & ((\sprite_renderer|Add0~55\) # (GND)))
--- \sprite_renderer|Add0~57\ = CARRY((!\sprite_renderer|Add0~55\) # (!\sprite_renderer|row\(23)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(23),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~55\,
-	combout => \sprite_renderer|Add0~56_combout\,
-	cout => \sprite_renderer|Add0~57\);
-
--- Location: LCCOMB_X33_Y14_N20
+-- Location: LCCOMB_X23_Y14_N20
 \sprite_renderer|Add0~62\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~62_combout\ = (\sprite_renderer|row\(26) & (\sprite_renderer|Add0~61\ $ (GND))) # (!\sprite_renderer|row\(26) & (!\sprite_renderer|Add0~61\ & VCC))
@@ -1547,7 +1932,61 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~62_combout\,
 	cout => \sprite_renderer|Add0~63\);
 
--- Location: LCCOMB_X33_Y14_N28
+-- Location: LCCOMB_X23_Y14_N22
+\sprite_renderer|Add0~64\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~64_combout\ = (\sprite_renderer|row\(27) & (!\sprite_renderer|Add0~63\)) # (!\sprite_renderer|row\(27) & ((\sprite_renderer|Add0~63\) # (GND)))
+-- \sprite_renderer|Add0~65\ = CARRY((!\sprite_renderer|Add0~63\) # (!\sprite_renderer|row\(27)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(27),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~63\,
+	combout => \sprite_renderer|Add0~64_combout\,
+	cout => \sprite_renderer|Add0~65\);
+
+-- Location: LCCOMB_X23_Y14_N24
+\sprite_renderer|Add0~66\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~66_combout\ = (\sprite_renderer|row\(28) & (\sprite_renderer|Add0~65\ $ (GND))) # (!\sprite_renderer|row\(28) & (!\sprite_renderer|Add0~65\ & VCC))
+-- \sprite_renderer|Add0~67\ = CARRY((\sprite_renderer|row\(28) & !\sprite_renderer|Add0~65\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|row\(28),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~65\,
+	combout => \sprite_renderer|Add0~66_combout\,
+	cout => \sprite_renderer|Add0~67\);
+
+-- Location: LCCOMB_X23_Y14_N26
+\sprite_renderer|Add0~68\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~68_combout\ = (\sprite_renderer|row\(29) & (!\sprite_renderer|Add0~67\)) # (!\sprite_renderer|row\(29) & ((\sprite_renderer|Add0~67\) # (GND)))
+-- \sprite_renderer|Add0~69\ = CARRY((!\sprite_renderer|Add0~67\) # (!\sprite_renderer|row\(29)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(29),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~67\,
+	combout => \sprite_renderer|Add0~68_combout\,
+	cout => \sprite_renderer|Add0~69\);
+
+-- Location: LCCOMB_X23_Y14_N28
 \sprite_renderer|Add0~70\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~70_combout\ = (\sprite_renderer|row\(30) & (\sprite_renderer|Add0~69\ $ (GND))) # (!\sprite_renderer|row\(30) & (!\sprite_renderer|Add0~69\ & VCC))
@@ -1555,17 +1994,32 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(30),
+	datab => \sprite_renderer|row\(30),
 	datad => VCC,
 	cin => \sprite_renderer|Add0~69\,
 	combout => \sprite_renderer|Add0~70_combout\,
 	cout => \sprite_renderer|Add0~71\);
 
--- Location: LCCOMB_X29_Y15_N20
+-- Location: LCCOMB_X23_Y14_N30
+\sprite_renderer|Add0~72\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~72_combout\ = \sprite_renderer|row\(31) $ (\sprite_renderer|Add0~71\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(31),
+	cin => \sprite_renderer|Add0~71\,
+	combout => \sprite_renderer|Add0~72_combout\);
+
+-- Location: LCCOMB_X22_Y13_N20
 \sprite_renderer|Add1~31\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~31_combout\ = (\sprite_renderer|column\(10) & (\sprite_renderer|Add1~29\ $ (GND))) # (!\sprite_renderer|column\(10) & (!\sprite_renderer|Add1~29\ & VCC))
@@ -1573,53 +2027,71 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(10),
+	datab => \sprite_renderer|column\(10),
 	datad => VCC,
 	cin => \sprite_renderer|Add1~29\,
 	combout => \sprite_renderer|Add1~31_combout\,
 	cout => \sprite_renderer|Add1~32\);
 
--- Location: LCCOMB_X29_Y14_N8
-\sprite_renderer|Add1~51\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y13_N24
+\sprite_renderer|Add1~35\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~51_combout\ = (\sprite_renderer|column\(20) & (\sprite_renderer|Add1~50\ $ (GND))) # (!\sprite_renderer|column\(20) & (!\sprite_renderer|Add1~50\ & VCC))
--- \sprite_renderer|Add1~52\ = CARRY((\sprite_renderer|column\(20) & !\sprite_renderer|Add1~50\))
+-- \sprite_renderer|Add1~35_combout\ = (\sprite_renderer|column\(12) & (\sprite_renderer|Add1~34\ $ (GND))) # (!\sprite_renderer|column\(12) & (!\sprite_renderer|Add1~34\ & VCC))
+-- \sprite_renderer|Add1~36\ = CARRY((\sprite_renderer|column\(12) & !\sprite_renderer|Add1~34\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(20),
+	dataa => \sprite_renderer|column\(12),
 	datad => VCC,
-	cin => \sprite_renderer|Add1~50\,
-	combout => \sprite_renderer|Add1~51_combout\,
-	cout => \sprite_renderer|Add1~52\);
+	cin => \sprite_renderer|Add1~34\,
+	combout => \sprite_renderer|Add1~35_combout\,
+	cout => \sprite_renderer|Add1~36\);
 
--- Location: LCCOMB_X29_Y14_N10
-\sprite_renderer|Add1~53\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y13_N26
+\sprite_renderer|Add1~37\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~53_combout\ = (\sprite_renderer|column\(21) & (!\sprite_renderer|Add1~52\)) # (!\sprite_renderer|column\(21) & ((\sprite_renderer|Add1~52\) # (GND)))
--- \sprite_renderer|Add1~54\ = CARRY((!\sprite_renderer|Add1~52\) # (!\sprite_renderer|column\(21)))
+-- \sprite_renderer|Add1~37_combout\ = (\sprite_renderer|column\(13) & (!\sprite_renderer|Add1~36\)) # (!\sprite_renderer|column\(13) & ((\sprite_renderer|Add1~36\) # (GND)))
+-- \sprite_renderer|Add1~38\ = CARRY((!\sprite_renderer|Add1~36\) # (!\sprite_renderer|column\(13)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(21),
+	dataa => \sprite_renderer|column\(13),
 	datad => VCC,
-	cin => \sprite_renderer|Add1~52\,
-	combout => \sprite_renderer|Add1~53_combout\,
-	cout => \sprite_renderer|Add1~54\);
+	cin => \sprite_renderer|Add1~36\,
+	combout => \sprite_renderer|Add1~37_combout\,
+	cout => \sprite_renderer|Add1~38\);
 
--- Location: LCCOMB_X29_Y14_N12
+-- Location: LCCOMB_X22_Y12_N0
+\sprite_renderer|Add1~43\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~43_combout\ = (\sprite_renderer|column\(16) & (\sprite_renderer|Add1~42\ $ (GND))) # (!\sprite_renderer|column\(16) & (!\sprite_renderer|Add1~42\ & VCC))
+-- \sprite_renderer|Add1~44\ = CARRY((\sprite_renderer|column\(16) & !\sprite_renderer|Add1~42\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(16),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~42\,
+	combout => \sprite_renderer|Add1~43_combout\,
+	cout => \sprite_renderer|Add1~44\);
+
+-- Location: LCCOMB_X22_Y12_N12
 \sprite_renderer|Add1~55\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~55_combout\ = (\sprite_renderer|column\(22) & (\sprite_renderer|Add1~54\ $ (GND))) # (!\sprite_renderer|column\(22) & (!\sprite_renderer|Add1~54\ & VCC))
@@ -1627,17 +2099,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|column\(22),
+	dataa => \sprite_renderer|column\(22),
 	datad => VCC,
 	cin => \sprite_renderer|Add1~54\,
 	combout => \sprite_renderer|Add1~55_combout\,
 	cout => \sprite_renderer|Add1~56\);
 
--- Location: LCCOMB_X29_Y14_N14
+-- Location: LCCOMB_X22_Y12_N14
 \sprite_renderer|Add1~57\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~57_combout\ = (\sprite_renderer|column\(23) & (!\sprite_renderer|Add1~56\)) # (!\sprite_renderer|column\(23) & ((\sprite_renderer|Add1~56\) # (GND)))
@@ -1655,7 +2127,7 @@ PORT MAP (
 	combout => \sprite_renderer|Add1~57_combout\,
 	cout => \sprite_renderer|Add1~58\);
 
--- Location: LCCOMB_X29_Y14_N16
+-- Location: LCCOMB_X22_Y12_N16
 \sprite_renderer|Add1~59\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add1~59_combout\ = (\sprite_renderer|column\(24) & (\sprite_renderer|Add1~58\ $ (GND))) # (!\sprite_renderer|column\(24) & (!\sprite_renderer|Add1~58\ & VCC))
@@ -1663,59 +2135,356 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(24),
+	datab => \sprite_renderer|column\(24),
 	datad => VCC,
 	cin => \sprite_renderer|Add1~58\,
 	combout => \sprite_renderer|Add1~59_combout\,
 	cout => \sprite_renderer|Add1~60\);
 
--- Location: LCFF_X31_Y13_N15
-\view|x[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[1]~9_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(1));
-
--- Location: LCFF_X31_Y13_N21
-\view|x[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[4]~15_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(4));
-
--- Location: LCCOMB_X31_Y13_N14
-\view|x[1]~9\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y12_N18
+\sprite_renderer|Add1~61\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|x[1]~9_combout\ = (\view|x\(1) & (\view|x\(0) $ (VCC))) # (!\view|x\(1) & (\view|x\(0) & VCC))
--- \view|x[1]~10\ = CARRY((\view|x\(1) & \view|x\(0)))
+-- \sprite_renderer|Add1~61_combout\ = (\sprite_renderer|column\(25) & (!\sprite_renderer|Add1~60\)) # (!\sprite_renderer|column\(25) & ((\sprite_renderer|Add1~60\) # (GND)))
+-- \sprite_renderer|Add1~62\ = CARRY((!\sprite_renderer|Add1~60\) # (!\sprite_renderer|column\(25)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(25),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~60\,
+	combout => \sprite_renderer|Add1~61_combout\,
+	cout => \sprite_renderer|Add1~62\);
+
+-- Location: LCCOMB_X22_Y12_N20
+\sprite_renderer|Add1~63\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~63_combout\ = (\sprite_renderer|column\(26) & (\sprite_renderer|Add1~62\ $ (GND))) # (!\sprite_renderer|column\(26) & (!\sprite_renderer|Add1~62\ & VCC))
+-- \sprite_renderer|Add1~64\ = CARRY((\sprite_renderer|column\(26) & !\sprite_renderer|Add1~62\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(26),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~62\,
+	combout => \sprite_renderer|Add1~63_combout\,
+	cout => \sprite_renderer|Add1~64\);
+
+-- Location: LCCOMB_X22_Y12_N22
+\sprite_renderer|Add1~65\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~65_combout\ = (\sprite_renderer|column\(27) & (!\sprite_renderer|Add1~64\)) # (!\sprite_renderer|column\(27) & ((\sprite_renderer|Add1~64\) # (GND)))
+-- \sprite_renderer|Add1~66\ = CARRY((!\sprite_renderer|Add1~64\) # (!\sprite_renderer|column\(27)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(27),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~64\,
+	combout => \sprite_renderer|Add1~65_combout\,
+	cout => \sprite_renderer|Add1~66\);
+
+-- Location: LCCOMB_X22_Y12_N24
+\sprite_renderer|Add1~67\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~67_combout\ = (\sprite_renderer|column\(28) & (\sprite_renderer|Add1~66\ $ (GND))) # (!\sprite_renderer|column\(28) & (!\sprite_renderer|Add1~66\ & VCC))
+-- \sprite_renderer|Add1~68\ = CARRY((\sprite_renderer|column\(28) & !\sprite_renderer|Add1~66\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(28),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~66\,
+	combout => \sprite_renderer|Add1~67_combout\,
+	cout => \sprite_renderer|Add1~68\);
+
+-- Location: LCCOMB_X22_Y12_N26
+\sprite_renderer|Add1~69\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~69_combout\ = (\sprite_renderer|column\(29) & (!\sprite_renderer|Add1~68\)) # (!\sprite_renderer|column\(29) & ((\sprite_renderer|Add1~68\) # (GND)))
+-- \sprite_renderer|Add1~70\ = CARRY((!\sprite_renderer|Add1~68\) # (!\sprite_renderer|column\(29)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(29),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~68\,
+	combout => \sprite_renderer|Add1~69_combout\,
+	cout => \sprite_renderer|Add1~70\);
+
+-- Location: LCCOMB_X22_Y12_N28
+\sprite_renderer|Add1~71\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~71_combout\ = (\sprite_renderer|column\(30) & (\sprite_renderer|Add1~70\ $ (GND))) # (!\sprite_renderer|column\(30) & (!\sprite_renderer|Add1~70\ & VCC))
+-- \sprite_renderer|Add1~72\ = CARRY((\sprite_renderer|column\(30) & !\sprite_renderer|Add1~70\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(30),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~70\,
+	combout => \sprite_renderer|Add1~71_combout\,
+	cout => \sprite_renderer|Add1~72\);
+
+-- Location: LCCOMB_X22_Y12_N30
+\sprite_renderer|Add1~73\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~73_combout\ = \sprite_renderer|Add1~72\ $ (\sprite_renderer|column\(31))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \sprite_renderer|column\(31),
+	cin => \sprite_renderer|Add1~72\,
+	combout => \sprite_renderer|Add1~73_combout\);
+
+-- Location: LCCOMB_X21_Y14_N10
+\view|Add3~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~2_combout\ = (\view|x\(1) & (!\view|Add3~1_cout\)) # (!\view|x\(1) & (\view|Add3~1_cout\ & VCC))
+-- \view|Add3~3\ = CARRY((\view|x\(1) & !\view|Add3~1_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101000001010",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
 	dataa => \view|x\(1),
-	datab => \view|x\(0),
 	datad => VCC,
-	combout => \view|x[1]~9_combout\,
-	cout => \view|x[1]~10\);
+	cin => \view|Add3~1_cout\,
+	combout => \view|Add3~2_combout\,
+	cout => \view|Add3~3\);
 
--- Location: LCCOMB_X31_Y13_N20
-\view|x[4]~15\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y14_N4
+\view|Add5~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|x[4]~15_combout\ = (\view|x\(4) & (!\view|x[3]~14\)) # (!\view|x\(4) & ((\view|x[3]~14\) # (GND)))
--- \view|x[4]~16\ = CARRY((!\view|x[3]~14\) # (!\view|x\(4)))
+-- \view|Add5~2_combout\ = (\view|x\(2) & (!\view|Add5~1\)) # (!\view|x\(2) & ((\view|Add5~1\) # (GND)))
+-- \view|Add5~3\ = CARRY((!\view|Add5~1\) # (!\view|x\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(2),
+	datad => VCC,
+	cin => \view|Add5~1\,
+	combout => \view|Add5~2_combout\,
+	cout => \view|Add5~3\);
+
+-- Location: LCCOMB_X22_Y14_N6
+\view|Add5~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~4_combout\ = (\view|x\(3) & (\view|Add5~3\ $ (GND))) # (!\view|x\(3) & (!\view|Add5~3\ & VCC))
+-- \view|Add5~5\ = CARRY((\view|x\(3) & !\view|Add5~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(3),
+	datad => VCC,
+	cin => \view|Add5~3\,
+	combout => \view|Add5~4_combout\,
+	cout => \view|Add5~5\);
+
+-- Location: LCCOMB_X21_Y14_N12
+\view|Add3~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~4_combout\ = (\view|x\(2) & (!\view|Add3~3\ & VCC)) # (!\view|x\(2) & (\view|Add3~3\ $ (GND)))
+-- \view|Add3~5\ = CARRY((!\view|x\(2) & !\view|Add3~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(2),
+	datad => VCC,
+	cin => \view|Add3~3\,
+	combout => \view|Add3~4_combout\,
+	cout => \view|Add3~5\);
+
+-- Location: LCCOMB_X21_Y14_N14
+\view|Add3~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~6_combout\ = (\view|x\(3) & ((\view|Add3~5\) # (GND))) # (!\view|x\(3) & (!\view|Add3~5\))
+-- \view|Add3~7\ = CARRY((\view|x\(3)) # (!\view|Add3~5\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001111001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(3),
+	datad => VCC,
+	cin => \view|Add3~5\,
+	combout => \view|Add3~6_combout\,
+	cout => \view|Add3~7\);
+
+-- Location: LCCOMB_X20_Y14_N0
+\view|SPRITE_X[2]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X[2]~1_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add3~4_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|SPRITE_X~8_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~8_combout\,
+	datab => \view|Add3~4_combout\,
+	datad => \view|state.RENDER_2~regout\,
+	combout => \view|SPRITE_X[2]~1_combout\);
+
+-- Location: LCCOMB_X21_Y14_N18
+\view|Add3~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~10_combout\ = (\view|x\(5) & (!\view|Add3~9\)) # (!\view|x\(5) & (\view|Add3~9\ & VCC))
+-- \view|Add3~11\ = CARRY((\view|x\(5) & !\view|Add3~9\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(5),
+	datad => VCC,
+	cin => \view|Add3~9\,
+	combout => \view|Add3~10_combout\,
+	cout => \view|Add3~11\);
+
+-- Location: LCCOMB_X20_Y14_N2
+\view|SPRITE_X[5]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X[5]~2_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add3~10_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|SPRITE_X~9_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~9_combout\,
+	datab => \view|Add3~10_combout\,
+	datad => \view|state.RENDER_2~regout\,
+	combout => \view|SPRITE_X[5]~2_combout\);
+
+-- Location: LCCOMB_X22_Y14_N10
+\view|Add5~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~9_combout\ = (\view|x\(5) & ((GND) # (!\view|Add5~8\))) # (!\view|x\(5) & (\view|Add5~8\ $ (GND)))
+-- \view|Add5~10\ = CARRY((\view|x\(5)) # (!\view|Add5~8\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(5),
+	datad => VCC,
+	cin => \view|Add5~8\,
+	combout => \view|Add5~9_combout\,
+	cout => \view|Add5~10\);
+
+-- Location: LCCOMB_X22_Y14_N14
+\view|Add5~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~13_combout\ = (\view|x\(7) & (\view|Add5~12\ $ (GND))) # (!\view|x\(7) & (!\view|Add5~12\ & VCC))
+-- \view|Add5~14\ = CARRY((\view|x\(7) & !\view|Add5~12\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(7),
+	datad => VCC,
+	cin => \view|Add5~12\,
+	combout => \view|Add5~13_combout\,
+	cout => \view|Add5~14\);
+
+-- Location: LCCOMB_X21_Y14_N22
+\view|Add3~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~14_combout\ = (\view|x\(7) & ((\view|Add3~13\) # (GND))) # (!\view|x\(7) & (!\view|Add3~13\))
+-- \view|Add3~15\ = CARRY((\view|x\(7)) # (!\view|Add3~13\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001111001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(7),
+	datad => VCC,
+	cin => \view|Add3~13\,
+	combout => \view|Add3~14_combout\,
+	cout => \view|Add3~15\);
+
+-- Location: LCCOMB_X21_Y14_N24
+\view|Add3~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~16_combout\ = (\view|x\(8) & (!\view|Add3~15\ & VCC)) # (!\view|x\(8) & (\view|Add3~15\ $ (GND)))
+-- \view|Add3~17\ = CARRY((!\view|x\(8) & !\view|Add3~15\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(8),
+	datad => VCC,
+	cin => \view|Add3~15\,
+	combout => \view|Add3~16_combout\,
+	cout => \view|Add3~17\);
+
+-- Location: LCCOMB_X22_Y14_N16
+\view|Add5~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~15_combout\ = (\view|x\(8) & (!\view|Add5~14\)) # (!\view|x\(8) & ((\view|Add5~14\) # (GND)))
+-- \view|Add5~16\ = CARRY((!\view|Add5~14\) # (!\view|x\(8)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1723,11 +2492,326 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
+	dataa => \view|x\(8),
+	datad => VCC,
+	cin => \view|Add5~14\,
+	combout => \view|Add5~15_combout\,
+	cout => \view|Add5~16\);
+
+-- Location: LCFF_X20_Y14_N31
+\view|x[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[9]~25_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(9));
+
+-- Location: LCCOMB_X21_Y14_N26
+\view|Add3~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~18_combout\ = \view|x\(9) $ (!\view|Add3~17\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010110100101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(9),
+	cin => \view|Add3~17\,
+	combout => \view|Add3~18_combout\);
+
+-- Location: LCCOMB_X22_Y14_N20
+\view|SPRITE_X[9]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X[9]~4_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add3~18_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|x\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111000100010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(9),
+	datab => \view|state.RENDER_2~regout\,
+	datad => \view|Add3~18_combout\,
+	combout => \view|SPRITE_X[9]~4_combout\);
+
+-- Location: LCCOMB_X22_Y14_N18
+\view|Add5~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~17_combout\ = \view|x\(9) $ (!\view|Add5~16\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010110100101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(9),
+	cin => \view|Add5~16\,
+	combout => \view|Add5~17_combout\);
+
+-- Location: LCCOMB_X18_Y14_N4
+\view|Add4~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~2_combout\ = (\view|x\(1) & ((\view|Add4~1_cout\) # (GND))) # (!\view|x\(1) & (!\view|Add4~1_cout\))
+-- \view|Add4~3\ = CARRY((\view|x\(1)) # (!\view|Add4~1_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010110101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(1),
+	datad => VCC,
+	cin => \view|Add4~1_cout\,
+	combout => \view|Add4~2_combout\,
+	cout => \view|Add4~3\);
+
+-- Location: LCCOMB_X18_Y14_N6
+\view|Add4~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~4_combout\ = (\view|x\(2) & (\view|Add4~3\ $ (GND))) # (!\view|x\(2) & ((GND) # (!\view|Add4~3\)))
+-- \view|Add4~5\ = CARRY((!\view|Add4~3\) # (!\view|x\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(2),
+	datad => VCC,
+	cin => \view|Add4~3\,
+	combout => \view|Add4~4_combout\,
+	cout => \view|Add4~5\);
+
+-- Location: LCCOMB_X18_Y14_N10
+\view|Add4~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~8_combout\ = (\view|x\(4) & (!\view|Add4~7\ & VCC)) # (!\view|x\(4) & (\view|Add4~7\ $ (GND)))
+-- \view|Add4~9\ = CARRY((!\view|x\(4) & !\view|Add4~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101000000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
 	dataa => \view|x\(4),
 	datad => VCC,
-	cin => \view|x[3]~14\,
-	combout => \view|x[4]~15_combout\,
-	cout => \view|x[4]~16\);
+	cin => \view|Add4~7\,
+	combout => \view|Add4~8_combout\,
+	cout => \view|Add4~9\);
+
+-- Location: LCCOMB_X18_Y14_N12
+\view|Add4~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~10_combout\ = (\view|x\(5) & (!\view|Add4~9\)) # (!\view|x\(5) & (\view|Add4~9\ & VCC))
+-- \view|Add4~11\ = CARRY((\view|x\(5) & !\view|Add4~9\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101000001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(5),
+	datad => VCC,
+	cin => \view|Add4~9\,
+	combout => \view|Add4~10_combout\,
+	cout => \view|Add4~11\);
+
+-- Location: LCCOMB_X18_Y13_N16
+\view|Add6~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~4_combout\ = (\view|x\(4) & ((GND) # (!\view|Add6~3\))) # (!\view|x\(4) & (\view|Add6~3\ $ (GND)))
+-- \view|Add6~5\ = CARRY((\view|x\(4)) # (!\view|Add6~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(4),
+	datad => VCC,
+	cin => \view|Add6~3\,
+	combout => \view|Add6~4_combout\,
+	cout => \view|Add6~5\);
+
+-- Location: LCCOMB_X18_Y13_N18
+\view|Add6~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~6_combout\ = (\view|x\(5) & (\view|Add6~5\ & VCC)) # (!\view|x\(5) & (!\view|Add6~5\))
+-- \view|Add6~7\ = CARRY((!\view|x\(5) & !\view|Add6~5\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(5),
+	datad => VCC,
+	cin => \view|Add6~5\,
+	combout => \view|Add6~6_combout\,
+	cout => \view|Add6~7\);
+
+-- Location: LCCOMB_X18_Y14_N14
+\view|Add4~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~12_combout\ = (\view|x\(6) & (\view|Add4~11\ $ (GND))) # (!\view|x\(6) & ((GND) # (!\view|Add4~11\)))
+-- \view|Add4~13\ = CARRY((!\view|Add4~11\) # (!\view|x\(6)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010101011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(6),
+	datad => VCC,
+	cin => \view|Add4~11\,
+	combout => \view|Add4~12_combout\,
+	cout => \view|Add4~13\);
+
+-- Location: LCCOMB_X18_Y14_N16
+\view|Add4~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~14_combout\ = (\view|x\(7) & ((\view|Add4~13\) # (GND))) # (!\view|x\(7) & (!\view|Add4~13\))
+-- \view|Add4~15\ = CARRY((\view|x\(7)) # (!\view|Add4~13\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010110101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(7),
+	datad => VCC,
+	cin => \view|Add4~13\,
+	combout => \view|Add4~14_combout\,
+	cout => \view|Add4~15\);
+
+-- Location: LCCOMB_X20_Y14_N6
+\view|SPRITE_Y[7]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y[7]~2_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add4~14_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|SPRITE_Y~7_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_Y~7_combout\,
+	datab => \view|Add4~14_combout\,
+	datad => \view|state.RENDER_2~regout\,
+	combout => \view|SPRITE_Y[7]~2_combout\);
+
+-- Location: LCCOMB_X18_Y13_N20
+\view|Add6~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~9_combout\ = (\view|x\(6) & ((GND) # (!\view|Add6~7\))) # (!\view|x\(6) & (\view|Add6~7\ $ (GND)))
+-- \view|Add6~10\ = CARRY((\view|x\(6)) # (!\view|Add6~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(6),
+	datad => VCC,
+	cin => \view|Add6~7\,
+	combout => \view|Add6~9_combout\,
+	cout => \view|Add6~10\);
+
+-- Location: LCCOMB_X18_Y13_N22
+\view|Add6~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~11_combout\ = (\view|x\(7) & (\view|Add6~10\ & VCC)) # (!\view|x\(7) & (!\view|Add6~10\))
+-- \view|Add6~12\ = CARRY((!\view|x\(7) & !\view|Add6~10\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(7),
+	datad => VCC,
+	cin => \view|Add6~10\,
+	combout => \view|Add6~11_combout\,
+	cout => \view|Add6~12\);
+
+-- Location: LCCOMB_X18_Y13_N24
+\view|Add6~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~13_combout\ = \view|Add6~12\ $ (\view|x\(8))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|x\(8),
+	cin => \view|Add6~12\,
+	combout => \view|Add6~13_combout\);
+
+-- Location: LCCOMB_X18_Y14_N18
+\view|Add4~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add4~16_combout\ = \view|Add4~15\ $ (\view|x\(8))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|x\(8),
+	cin => \view|Add4~15\,
+	combout => \view|Add4~16_combout\);
+
+-- Location: LCCOMB_X20_Y14_N28
+\view|x[8]~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[8]~23_combout\ = (\view|x\(8) & (!\view|x[7]~22\)) # (!\view|x\(8) & ((\view|x[7]~22\) # (GND)))
+-- \view|x[8]~24\ = CARRY((!\view|x[7]~22\) # (!\view|x\(8)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(8),
+	datad => VCC,
+	cin => \view|x[7]~22\,
+	combout => \view|x[8]~23_combout\,
+	cout => \view|x[8]~24\);
+
+-- Location: LCCOMB_X20_Y14_N30
+\view|x[9]~25\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[9]~25_combout\ = \view|x[8]~24\ $ (!\view|x\(9))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|x\(9),
+	cin => \view|x[8]~24\,
+	combout => \view|x[9]~25_combout\);
 
 -- Location: LCCOMB_X27_Y2_N12
 \view|Add0~0\ : cycloneii_lcell_comb
@@ -1737,86 +2821,14 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001111001100",
+	lut_mask => "0101010110101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \view|draw_gen:counter[0]~regout\,
+	dataa => \view|draw_gen:counter[0]~regout\,
 	datad => VCC,
 	combout => \view|Add0~0_combout\,
 	cout => \view|Add0~1\);
-
--- Location: LCCOMB_X27_Y2_N14
-\view|Add0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~2_combout\ = (\view|draw_gen:counter[1]~regout\ & (!\view|Add0~1\)) # (!\view|draw_gen:counter[1]~regout\ & ((\view|Add0~1\) # (GND)))
--- \view|Add0~3\ = CARRY((!\view|Add0~1\) # (!\view|draw_gen:counter[1]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[1]~regout\,
-	datad => VCC,
-	cin => \view|Add0~1\,
-	combout => \view|Add0~2_combout\,
-	cout => \view|Add0~3\);
-
--- Location: LCCOMB_X27_Y2_N16
-\view|Add0~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~4_combout\ = (\view|draw_gen:counter[2]~regout\ & (\view|Add0~3\ $ (GND))) # (!\view|draw_gen:counter[2]~regout\ & (!\view|Add0~3\ & VCC))
--- \view|Add0~5\ = CARRY((\view|draw_gen:counter[2]~regout\ & !\view|Add0~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[2]~regout\,
-	datad => VCC,
-	cin => \view|Add0~3\,
-	combout => \view|Add0~4_combout\,
-	cout => \view|Add0~5\);
-
--- Location: LCCOMB_X27_Y2_N18
-\view|Add0~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~6_combout\ = (\view|draw_gen:counter[3]~regout\ & (!\view|Add0~5\)) # (!\view|draw_gen:counter[3]~regout\ & ((\view|Add0~5\) # (GND)))
--- \view|Add0~7\ = CARRY((!\view|Add0~5\) # (!\view|draw_gen:counter[3]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[3]~regout\,
-	datad => VCC,
-	cin => \view|Add0~5\,
-	combout => \view|Add0~6_combout\,
-	cout => \view|Add0~7\);
-
--- Location: LCCOMB_X27_Y2_N20
-\view|Add0~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~8_combout\ = (\view|draw_gen:counter[4]~regout\ & (\view|Add0~7\ $ (GND))) # (!\view|draw_gen:counter[4]~regout\ & (!\view|Add0~7\ & VCC))
--- \view|Add0~9\ = CARRY((\view|draw_gen:counter[4]~regout\ & !\view|Add0~7\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[4]~regout\,
-	datad => VCC,
-	cin => \view|Add0~7\,
-	combout => \view|Add0~8_combout\,
-	cout => \view|Add0~9\);
 
 -- Location: LCCOMB_X27_Y2_N22
 \view|Add0~10\ : cycloneii_lcell_comb
@@ -1836,78 +2848,6 @@ PORT MAP (
 	combout => \view|Add0~10_combout\,
 	cout => \view|Add0~11\);
 
--- Location: LCCOMB_X27_Y2_N24
-\view|Add0~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~12_combout\ = (\view|draw_gen:counter[6]~regout\ & (\view|Add0~11\ $ (GND))) # (!\view|draw_gen:counter[6]~regout\ & (!\view|Add0~11\ & VCC))
--- \view|Add0~13\ = CARRY((\view|draw_gen:counter[6]~regout\ & !\view|Add0~11\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[6]~regout\,
-	datad => VCC,
-	cin => \view|Add0~11\,
-	combout => \view|Add0~12_combout\,
-	cout => \view|Add0~13\);
-
--- Location: LCCOMB_X27_Y2_N26
-\view|Add0~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~14_combout\ = (\view|draw_gen:counter[7]~regout\ & (!\view|Add0~13\)) # (!\view|draw_gen:counter[7]~regout\ & ((\view|Add0~13\) # (GND)))
--- \view|Add0~15\ = CARRY((!\view|Add0~13\) # (!\view|draw_gen:counter[7]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[7]~regout\,
-	datad => VCC,
-	cin => \view|Add0~13\,
-	combout => \view|Add0~14_combout\,
-	cout => \view|Add0~15\);
-
--- Location: LCCOMB_X27_Y2_N28
-\view|Add0~16\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~16_combout\ = (\view|draw_gen:counter[8]~regout\ & (\view|Add0~15\ $ (GND))) # (!\view|draw_gen:counter[8]~regout\ & (!\view|Add0~15\ & VCC))
--- \view|Add0~17\ = CARRY((\view|draw_gen:counter[8]~regout\ & !\view|Add0~15\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[8]~regout\,
-	datad => VCC,
-	cin => \view|Add0~15\,
-	combout => \view|Add0~16_combout\,
-	cout => \view|Add0~17\);
-
--- Location: LCCOMB_X27_Y2_N30
-\view|Add0~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~18_combout\ = (\view|draw_gen:counter[9]~regout\ & (!\view|Add0~17\)) # (!\view|draw_gen:counter[9]~regout\ & ((\view|Add0~17\) # (GND)))
--- \view|Add0~19\ = CARRY((!\view|Add0~17\) # (!\view|draw_gen:counter[9]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[9]~regout\,
-	datad => VCC,
-	cin => \view|Add0~17\,
-	combout => \view|Add0~18_combout\,
-	cout => \view|Add0~19\);
-
 -- Location: LCCOMB_X27_Y1_N0
 \view|Add0~20\ : cycloneii_lcell_comb
 -- Equation(s):
@@ -1925,42 +2865,6 @@ PORT MAP (
 	cin => \view|Add0~19\,
 	combout => \view|Add0~20_combout\,
 	cout => \view|Add0~21\);
-
--- Location: LCCOMB_X27_Y1_N2
-\view|Add0~22\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~22_combout\ = (\view|draw_gen:counter[11]~regout\ & (!\view|Add0~21\)) # (!\view|draw_gen:counter[11]~regout\ & ((\view|Add0~21\) # (GND)))
--- \view|Add0~23\ = CARRY((!\view|Add0~21\) # (!\view|draw_gen:counter[11]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[11]~regout\,
-	datad => VCC,
-	cin => \view|Add0~21\,
-	combout => \view|Add0~22_combout\,
-	cout => \view|Add0~23\);
-
--- Location: LCCOMB_X27_Y1_N4
-\view|Add0~24\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~24_combout\ = (\view|draw_gen:counter[12]~regout\ & (\view|Add0~23\ $ (GND))) # (!\view|draw_gen:counter[12]~regout\ & (!\view|Add0~23\ & VCC))
--- \view|Add0~25\ = CARRY((\view|draw_gen:counter[12]~regout\ & !\view|Add0~23\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[12]~regout\,
-	datad => VCC,
-	cin => \view|Add0~23\,
-	combout => \view|Add0~24_combout\,
-	cout => \view|Add0~25\);
 
 -- Location: LCCOMB_X27_Y1_N6
 \view|Add0~26\ : cycloneii_lcell_comb
@@ -1980,24 +2884,6 @@ PORT MAP (
 	combout => \view|Add0~26_combout\,
 	cout => \view|Add0~27\);
 
--- Location: LCCOMB_X27_Y1_N8
-\view|Add0~28\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~28_combout\ = (\view|draw_gen:counter[14]~regout\ & (\view|Add0~27\ $ (GND))) # (!\view|draw_gen:counter[14]~regout\ & (!\view|Add0~27\ & VCC))
--- \view|Add0~29\ = CARRY((\view|draw_gen:counter[14]~regout\ & !\view|Add0~27\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[14]~regout\,
-	datad => VCC,
-	cin => \view|Add0~27\,
-	combout => \view|Add0~28_combout\,
-	cout => \view|Add0~29\);
-
 -- Location: LCCOMB_X27_Y1_N10
 \view|Add0~30\ : cycloneii_lcell_comb
 -- Equation(s):
@@ -2006,11 +2892,11 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[15]~regout\,
+	datab => \view|draw_gen:counter[15]~regout\,
 	datad => VCC,
 	cin => \view|Add0~29\,
 	combout => \view|Add0~30_combout\,
@@ -2024,97 +2910,28 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "1010010100001010",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \view|draw_gen:counter[16]~regout\,
+	dataa => \view|draw_gen:counter[16]~regout\,
 	datad => VCC,
 	cin => \view|Add0~31\,
 	combout => \view|Add0~32_combout\,
 	cout => \view|Add0~33\);
 
--- Location: LCCOMB_X27_Y1_N14
-\view|Add0~34\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~34_combout\ = (\view|draw_gen:counter[17]~regout\ & (!\view|Add0~33\)) # (!\view|draw_gen:counter[17]~regout\ & ((\view|Add0~33\) # (GND)))
--- \view|Add0~35\ = CARRY((!\view|Add0~33\) # (!\view|draw_gen:counter[17]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|draw_gen:counter[17]~regout\,
-	datad => VCC,
-	cin => \view|Add0~33\,
-	combout => \view|Add0~34_combout\,
-	cout => \view|Add0~35\);
-
--- Location: LCCOMB_X27_Y1_N16
-\view|Add0~36\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~36_combout\ = (\view|draw_gen:counter[18]~regout\ & (\view|Add0~35\ $ (GND))) # (!\view|draw_gen:counter[18]~regout\ & (!\view|Add0~35\ & VCC))
--- \view|Add0~37\ = CARRY((\view|draw_gen:counter[18]~regout\ & !\view|Add0~35\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[18]~regout\,
-	datad => VCC,
-	cin => \view|Add0~35\,
-	combout => \view|Add0~36_combout\,
-	cout => \view|Add0~37\);
-
--- Location: LCCOMB_X27_Y1_N18
-\view|Add0~38\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~38_combout\ = (\view|draw_gen:counter[19]~regout\ & (!\view|Add0~37\)) # (!\view|draw_gen:counter[19]~regout\ & ((\view|Add0~37\) # (GND)))
--- \view|Add0~39\ = CARRY((!\view|Add0~37\) # (!\view|draw_gen:counter[19]~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|draw_gen:counter[19]~regout\,
-	datad => VCC,
-	cin => \view|Add0~37\,
-	combout => \view|Add0~38_combout\,
-	cout => \view|Add0~39\);
-
--- Location: LCCOMB_X27_Y1_N20
-\view|Add0~40\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Add0~40_combout\ = \view|Add0~39\ $ (!\view|draw_gen:counter[20]~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \view|draw_gen:counter[20]~regout\,
-	cin => \view|Add0~39\,
-	combout => \view|Add0~40_combout\);
-
--- Location: LCFF_X20_Y11_N15
-\vga|vga_timing|v_counter[6]\ : cycloneii_lcell_ff
+-- Location: LCFF_X15_Y9_N11
+\vga|vga_timing|v_counter[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add4~12_combout\,
+	datain => \vga|vga_timing|Add4~8_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	ena => \vga|vga_timing|new_line~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(6));
+	regout => \vga|vga_timing|v_counter\(4));
 
--- Location: LCFF_X25_Y11_N7
+-- Location: LCFF_X15_Y10_N7
 \vga|vga_timing|h_counter[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -2125,75 +2942,150 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_counter\(3));
 
--- Location: LCFF_X26_Y13_N23
-\vga|x_end[3]\ : cycloneii_lcell_ff
+-- Location: LCFF_X15_Y10_N13
+\vga|vga_timing|h_counter[6]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~2_combout\,
-	ena => \vga|y_end[8]~0_combout\,
+	datain => \vga|vga_timing|Add2~12_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|x_end\(3));
+	regout => \vga|vga_timing|h_counter\(6));
 
--- Location: LCFF_X26_Y13_N17
+-- Location: LCCOMB_X16_Y10_N18
+\vga|vga_timing|Equal2~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal2~1_combout\ = (!\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|h_counter\(9) & (!\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|h_counter\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(6),
+	datab => \vga|vga_timing|h_counter\(9),
+	datac => \vga|vga_timing|h_counter\(4),
+	datad => \vga|vga_timing|h_counter\(8),
+	combout => \vga|vga_timing|Equal2~1_combout\);
+
+-- Location: LCCOMB_X16_Y10_N28
+\vga|vga_timing|Equal2~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal2~2_combout\ = (\vga|vga_timing|h_counter\(7) & (\vga|vga_timing|Equal2~0_combout\ & (\vga|vga_timing|h_counter\(5) & \vga|vga_timing|Equal2~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(7),
+	datab => \vga|vga_timing|Equal2~0_combout\,
+	datac => \vga|vga_timing|h_counter\(5),
+	datad => \vga|vga_timing|Equal2~1_combout\,
+	combout => \vga|vga_timing|Equal2~2_combout\);
+
+-- Location: LCFF_X21_Y11_N31
 \vga|x_end[2]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|x_end~3_combout\,
-	sload => VCC,
+	datain => \vga|x_end~3_combout\,
 	ena => \vga|y_end[8]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \vga|x_end\(2));
 
--- Location: LCCOMB_X26_Y13_N16
-\vga|Equal0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~1_combout\ = (\vga|x_cursor\(3) & (\vga|x_end\(3) & (\vga|x_cursor\(2) $ (!\vga|x_end\(2))))) # (!\vga|x_cursor\(3) & (!\vga|x_end\(3) & (\vga|x_cursor\(2) $ (!\vga|x_end\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000001001000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(3),
-	datab => \vga|x_cursor\(2),
-	datac => \vga|x_end\(2),
-	datad => \vga|x_end\(3),
-	combout => \vga|Equal0~1_combout\);
-
--- Location: LCFF_X23_Y13_N1
-\vga|x_end[6]\ : cycloneii_lcell_ff
+-- Location: LCFF_X21_Y11_N1
+\vga|x_end[5]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~7_combout\,
+	datain => \vga|x_end~4_combout\,
 	ena => \vga|y_end[8]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|x_end\(6));
+	regout => \vga|x_end\(5));
 
--- Location: LCCOMB_X26_Y13_N2
+-- Location: LCFF_X21_Y11_N11
+\vga|x_end[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|x_end~5_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(4));
+
+-- Location: LCCOMB_X21_Y11_N10
+\vga|Equal0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~2_combout\ = (\vga|x_cursor\(4) & (\vga|x_end\(4) & (\vga|x_end\(5) $ (!\vga|x_cursor\(5))))) # (!\vga|x_cursor\(4) & (!\vga|x_end\(4) & (\vga|x_end\(5) $ (!\vga|x_cursor\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(4),
+	datab => \vga|x_end\(5),
+	datac => \vga|x_end\(4),
+	datad => \vga|x_cursor\(5),
+	combout => \vga|Equal0~2_combout\);
+
+-- Location: LCFF_X21_Y9_N1
+\vga|x_end[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_end~6_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(7));
+
+-- Location: LCFF_X21_Y11_N25
+\vga|x_end[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_end~9_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(9));
+
+-- Location: LCFF_X22_Y11_N19
+\vga|x_start[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~8_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(5));
+
+-- Location: LCCOMB_X21_Y11_N16
 \vga|Equal2~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Equal2~4_combout\ = (\vga|x_start\(6) & (\vga|x_cursor\(6) & (\vga|x_cursor\(5) $ (!\vga|x_start\(5))))) # (!\vga|x_start\(6) & (!\vga|x_cursor\(6) & (\vga|x_cursor\(5) $ (!\vga|x_start\(5)))))
+-- \vga|Equal2~4_combout\ = (\vga|x_cursor\(6) & (\vga|x_start\(6) & (\vga|x_cursor\(5) $ (!\vga|x_start\(5))))) # (!\vga|x_cursor\(6) & (!\vga|x_start\(6) & (\vga|x_cursor\(5) $ (!\vga|x_start\(5)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000001001000001",
+	lut_mask => "1000010000100001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_start\(6),
+	dataa => \vga|x_cursor\(6),
 	datab => \vga|x_cursor\(5),
-	datac => \vga|x_start\(5),
-	datad => \vga|x_cursor\(6),
+	datac => \vga|x_start\(6),
+	datad => \vga|x_start\(5),
 	combout => \vga|Equal2~4_combout\);
 
--- Location: LCCOMB_X23_Y12_N20
-\vga|y_cursor[0]~17\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X19_Y9_N10
+\vga|y_cursor[6]~16\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_cursor[0]~17_combout\ = (\vga|y_cursor\(3) & (\vga|y_start\(3) & (\vga|y_start\(4) $ (!\vga|y_cursor\(4))))) # (!\vga|y_cursor\(3) & (!\vga|y_start\(3) & (\vga|y_start\(4) $ (!\vga|y_cursor\(4)))))
+-- \vga|y_cursor[6]~16_combout\ = (\vga|y_start\(1) & (\vga|y_cursor\(1) & (\vga|y_cursor\(2) $ (!\vga|y_start\(2))))) # (!\vga|y_start\(1) & (!\vga|y_cursor\(1) & (\vga|y_cursor\(2) $ (!\vga|y_start\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2201,40 +3093,23 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|y_cursor\(3),
-	datab => \vga|y_start\(4),
-	datac => \vga|y_cursor\(4),
-	datad => \vga|y_start\(3),
-	combout => \vga|y_cursor[0]~17_combout\);
+	dataa => \vga|y_start\(1),
+	datab => \vga|y_cursor\(2),
+	datac => \vga|y_start\(2),
+	datad => \vga|y_cursor\(1),
+	combout => \vga|y_cursor[6]~16_combout\);
 
--- Location: LCFF_X26_Y12_N7
-\vga|y_start[8]\ : cycloneii_lcell_ff
+-- Location: LCFF_X18_Y11_N27
+\vga|y_start[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~7_combout\,
+	datain => \vga|y_start~5_combout\,
 	ena => \vga|y_end[8]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|y_start\(8));
+	regout => \vga|y_start\(7));
 
--- Location: LCCOMB_X23_Y12_N14
-\vga|y_cursor[0]~20\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~20_combout\ = (\vga|y_cursor[0]~19_combout\ & (!\vga|substate.DRAWING_R1~regout\ & (\vga|y_start\(8) $ (!\vga|y_cursor\(8)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_start\(8),
-	datab => \vga|y_cursor[0]~19_combout\,
-	datac => \vga|substate.DRAWING_R1~regout\,
-	datad => \vga|y_cursor\(8),
-	combout => \vga|y_cursor[0]~20_combout\);
-
--- Location: LCFF_X23_Y11_N17
+-- Location: LCFF_X21_Y9_N13
 \vga|y_end[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -2244,7 +3119,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|y_end\(1));
 
--- Location: LCFF_X23_Y11_N11
+-- Location: LCFF_X21_Y9_N7
 \vga|y_end[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -2255,24 +3130,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|y_end\(0));
 
--- Location: LCCOMB_X23_Y11_N10
+-- Location: LCCOMB_X21_Y9_N6
 \vga|Equal1~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Equal1~0_combout\ = (\vga|y_end\(1) & (\vga|y_cursor\(1) & (\vga|y_end\(0) $ (!\vga|y_cursor\(0))))) # (!\vga|y_end\(1) & (!\vga|y_cursor\(1) & (\vga|y_end\(0) $ (!\vga|y_cursor\(0)))))
+-- \vga|Equal1~0_combout\ = (\vga|y_cursor\(1) & (\vga|y_end\(1) & (\vga|y_cursor\(0) $ (!\vga|y_end\(0))))) # (!\vga|y_cursor\(1) & (!\vga|y_end\(1) & (\vga|y_cursor\(0) $ (!\vga|y_end\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001000000001001",
+	lut_mask => "1000001001000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|y_end\(1),
-	datab => \vga|y_cursor\(1),
+	dataa => \vga|y_cursor\(1),
+	datab => \vga|y_cursor\(0),
 	datac => \vga|y_end\(0),
-	datad => \vga|y_cursor\(0),
+	datad => \vga|y_end\(1),
 	combout => \vga|Equal1~0_combout\);
 
--- Location: LCFF_X23_Y11_N5
+-- Location: LCFF_X21_Y9_N17
 \vga|y_end[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -2282,27 +3157,61 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|y_end\(3));
 
--- Location: LCCOMB_X26_Y12_N10
-\vga|substate.DRAWING_R2~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y9_N24
+\vga|y_cursor[0]~24\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|substate.DRAWING_R2~2_combout\ = (\vga|x_cursor\(8) & (\vga|x_end\(8) & (\vga|y_cursor\(8) $ (!\vga|y_end\(8))))) # (!\vga|x_cursor\(8) & (!\vga|x_end\(8) & (\vga|y_cursor\(8) $ (!\vga|y_end\(8)))))
+-- \vga|y_cursor[0]~24_combout\ = (\vga|x_cursor[3]~14_combout\ & ((\vga|Equal1~5_combout\) # ((\vga|vga_fb|SRAM_WE_N~0_combout\)))) # (!\vga|x_cursor[3]~14_combout\ & (\vga|Equal1~5_combout\ & ((\vga|substate.DRAWING_R1~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001000000001001",
+	lut_mask => "1110110010101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_cursor\(8),
+	dataa => \vga|x_cursor[3]~14_combout\,
+	datab => \vga|Equal1~5_combout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|y_cursor[0]~24_combout\);
+
+-- Location: LCCOMB_X18_Y11_N4
+\vga|substate.DRAWING_R2~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|substate.DRAWING_R2~2_combout\ = (\vga|y_cursor\(8) & (\vga|y_end\(8) & (\vga|x_end\(8) $ (!\vga|x_cursor\(8))))) # (!\vga|y_cursor\(8) & (!\vga|y_end\(8) & (\vga|x_end\(8) $ (!\vga|x_cursor\(8)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(8),
 	datab => \vga|x_end\(8),
-	datac => \vga|y_cursor\(8),
-	datad => \vga|y_end\(8),
+	datac => \vga|y_end\(8),
+	datad => \vga|x_cursor\(8),
 	combout => \vga|substate.DRAWING_R2~2_combout\);
 
--- Location: LCCOMB_X25_Y12_N22
+-- Location: LCCOMB_X19_Y11_N12
+\vga|Selector8~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector8~0_combout\ = (\vga|y_cursor[6]~23_combout\ & ((\vga|y_cursor[6]~20_combout\) # ((\vga|substate.DRAWING_R1~regout\ & \vga|Equal1~5_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|y_cursor[6]~20_combout\,
+	datac => \vga|Equal1~5_combout\,
+	datad => \vga|y_cursor[6]~23_combout\,
+	combout => \vga|Selector8~0_combout\);
+
+-- Location: LCCOMB_X20_Y10_N12
 \vga|Selector6~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector6~0_combout\ = (\vga|substate.DRAWING_R1~regout\ & (!\vga|state.IDLE~regout\ & (!\sprite_renderer|FB_COLOR\(6) & !\sprite_renderer|FB_CLEAR~regout\)))
+-- \vga|Selector6~0_combout\ = (\vga|substate.DRAWING_R1~regout\ & (!\sprite_renderer|FB_DRAW_RECT~regout\ & (!\vga|state.IDLE~regout\ & !\sprite_renderer|FB_CLEAR~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2311,143 +3220,66 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|state.IDLE~regout\,
-	datac => \sprite_renderer|FB_COLOR\(6),
+	datab => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datac => \vga|state.IDLE~regout\,
 	datad => \sprite_renderer|FB_CLEAR~regout\,
 	combout => \vga|Selector6~0_combout\);
 
--- Location: LCCOMB_X25_Y12_N16
-\vga|Selector6~1\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y11_N30
+\vga|Selector0~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector6~1_combout\ = (\vga|substate.DRAWING_R1~regout\ & ((\vga|state.FILLING_RECT~regout\) # ((!\vga|substate.INIT~regout\ & \vga|state.DRAWING_RECT~regout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (!\vga|substate.INIT~regout\ & 
--- (\vga|state.DRAWING_RECT~regout\)))
+-- \vga|Selector0~2_combout\ = (\vga|substate.DRAWING_R2~regout\ & (!\vga|substate.DRAWING_R1~regout\ & (\vga|y_cursor\(8) $ (!\vga|y_start\(8)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101000110000",
+	lut_mask => "0000000010000100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|substate.INIT~regout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|state.FILLING_RECT~regout\,
-	combout => \vga|Selector6~1_combout\);
+	dataa => \vga|y_cursor\(8),
+	datab => \vga|substate.DRAWING_R2~regout\,
+	datac => \vga|y_start\(8),
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|Selector0~2_combout\);
 
--- Location: LCCOMB_X25_Y12_N10
-\vga|Selector6~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X19_Y11_N30
+\vga|Selector0~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector6~3_combout\ = (\vga|Selector6~1_combout\) # ((\vga|Selector6~0_combout\) # ((\vga|Selector6~2_combout\ & \vga|vga_fb|SRAM_WE_N~0_combout\)))
+-- \vga|Selector0~3_combout\ = (\vga|state.DRAWING_RECT~regout\ & (\vga|Equal2~4_combout\ & (\vga|Selector0~2_combout\ & \vga|Equal2~3_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Selector6~1_combout\,
-	datab => \vga|Selector6~2_combout\,
-	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datad => \vga|Selector6~0_combout\,
-	combout => \vga|Selector6~3_combout\);
-
--- Location: LCCOMB_X26_Y12_N18
-\vga|Selector0~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~5_combout\ = (!\vga|state.DRAWING_RECT~regout\ & \vga|substate.DRAWING_R2~2_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|substate.DRAWING_R2~2_combout\,
-	combout => \vga|Selector0~5_combout\);
-
--- Location: LCCOMB_X27_Y13_N28
-\vga|Selector0~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~7_combout\ = (\vga|substate.INIT~regout\ & (!\vga|vga_fb|SRAM_WE_N~0_combout\ & \vga|state.IDLE~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.INIT~regout\,
-	datab => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datac => \vga|state.IDLE~regout\,
-	combout => \vga|Selector0~7_combout\);
-
--- Location: LCCOMB_X26_Y13_N22
-\vga|x_end~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~2_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(3))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(3),
-	combout => \vga|x_end~2_combout\);
-
--- Location: LCCOMB_X27_Y13_N12
-\vga|x_end~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~3_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(2))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(2),
-	combout => \vga|x_end~3_combout\);
-
--- Location: LCCOMB_X23_Y13_N0
-\vga|x_end~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~7_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(6))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101011111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(6),
-	combout => \vga|x_end~7_combout\);
-
--- Location: LCCOMB_X24_Y13_N2
-\vga|substate.DRAWING_R2~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|substate.DRAWING_R2~4_combout\ = ((\vga|substate.INIT~regout\ & ((\vga|state.DRAWING_RECT~regout\) # (\vga|state.IDLE~regout\)))) # (!\RESET_N~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100111110001111",
+	lut_mask => "1000000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|state.DRAWING_RECT~regout\,
-	datab => \vga|substate.INIT~regout\,
-	datac => \RESET_N~regout\,
-	datad => \vga|state.IDLE~regout\,
-	combout => \vga|substate.DRAWING_R2~4_combout\);
+	datab => \vga|Equal2~4_combout\,
+	datac => \vga|Selector0~2_combout\,
+	datad => \vga|Equal2~3_combout\,
+	combout => \vga|Selector0~3_combout\);
 
--- Location: LCCOMB_X26_Y12_N6
-\vga|y_start~7\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X19_Y11_N8
+\vga|Selector0~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_start~7_combout\ = (\sprite_renderer|FB_Y0\(8) & !\sprite_renderer|FB_CLEAR~regout\)
+-- \vga|Selector0~4_combout\ = (\vga|Equal2~2_combout\ & (\vga|y_cursor[6]~19_combout\ & (\vga|Equal2~0_combout\ & \vga|Selector0~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal2~2_combout\,
+	datab => \vga|y_cursor[6]~19_combout\,
+	datac => \vga|Equal2~0_combout\,
+	datad => \vga|Selector0~3_combout\,
+	combout => \vga|Selector0~4_combout\);
+
+-- Location: LCCOMB_X18_Y11_N16
+\vga|Selector0~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~5_combout\ = (\vga|substate.DRAWING_R2~2_combout\ & !\vga|state.DRAWING_RECT~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2455,14 +3287,202 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_Y0\(8),
-	datad => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|y_start~7_combout\);
+	datac => \vga|substate.DRAWING_R2~2_combout\,
+	datad => \vga|state.DRAWING_RECT~regout\,
+	combout => \vga|Selector0~5_combout\);
 
--- Location: LCCOMB_X23_Y11_N16
+-- Location: LCCOMB_X19_Y11_N2
+\vga|Selector0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~6_combout\ = (!\vga|Equal0~5_combout\ & (\vga|Selector0~5_combout\ & (\vga|Equal1~4_combout\ & \vga|Equal0~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal0~5_combout\,
+	datab => \vga|Selector0~5_combout\,
+	datac => \vga|Equal1~4_combout\,
+	datad => \vga|Equal0~4_combout\,
+	combout => \vga|Selector0~6_combout\);
+
+-- Location: LCCOMB_X19_Y11_N20
+\vga|Selector0~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~7_combout\ = (\vga|state.IDLE~regout\ & (!\vga|vga_fb|SRAM_WE_N~0_combout\ & \vga|substate.INIT~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.IDLE~regout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|Selector0~7_combout\);
+
+-- Location: LCCOMB_X19_Y11_N16
+\vga|Selector2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector2~0_combout\ = (!\vga|Selector0~8_combout\ & (((!\vga|Selector0~4_combout\ & !\vga|Selector0~6_combout\)) # (!\vga|Selector0~7_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector0~8_combout\,
+	datab => \vga|Selector0~4_combout\,
+	datac => \vga|Selector0~7_combout\,
+	datad => \vga|Selector0~6_combout\,
+	combout => \vga|Selector2~0_combout\);
+
+-- Location: LCCOMB_X21_Y11_N30
+\vga|x_end~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~3_combout\ = (\sprite_renderer|FB_X0\(2)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(2),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~3_combout\);
+
+-- Location: LCCOMB_X21_Y11_N0
+\vga|x_end~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~4_combout\ = (\sprite_renderer|FB_X0\(5)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_X0\(5),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~4_combout\);
+
+-- Location: LCCOMB_X22_Y11_N12
+\vga|x_end~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~5_combout\ = (\sprite_renderer|FB_X0\(4)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(4),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~5_combout\);
+
+-- Location: LCCOMB_X21_Y9_N0
+\vga|x_end~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~6_combout\ = (\sprite_renderer|FB_X0\(7)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_X0\(7),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~6_combout\);
+
+-- Location: LCCOMB_X21_Y11_N24
+\vga|x_end~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~9_combout\ = (\sprite_renderer|FB_X0\(9) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(9),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~9_combout\);
+
+-- Location: LCCOMB_X19_Y11_N18
+\vga|Selector0~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~9_combout\ = (\vga|state.IDLE~regout\ & (((!\vga|Selector0~6_combout\ & !\vga|Selector0~4_combout\)) # (!\vga|Selector0~7_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101011100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector0~7_combout\,
+	datab => \vga|Selector0~6_combout\,
+	datac => \vga|Selector0~4_combout\,
+	datad => \vga|state.IDLE~regout\,
+	combout => \vga|Selector0~9_combout\);
+
+-- Location: LCCOMB_X19_Y11_N28
+\vga|READY~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|READY~1_combout\ = (!\vga|state.IDLE~regout\ & (!\sprite_renderer|FB_DRAW_RECT~regout\ & !\sprite_renderer|FB_CLEAR~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.IDLE~regout\,
+	datac => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|READY~1_combout\);
+
+-- Location: LCCOMB_X22_Y11_N18
+\vga|x_start~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_start~8_combout\ = (\sprite_renderer|FB_X0\(5) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_X0\(5),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~8_combout\);
+
+-- Location: LCCOMB_X18_Y11_N26
+\vga|y_start~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~5_combout\ = (\sprite_renderer|FB_Y0\(7) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_Y0\(7),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~5_combout\);
+
+-- Location: LCCOMB_X21_Y9_N12
 \vga|y_end~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_end~2_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_Y0\(1))
+-- \vga|y_end~2_combout\ = (\sprite_renderer|FB_Y0\(1)) # (\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2470,104 +3490,196 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(1),
+	datac => \sprite_renderer|FB_Y0\(1),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
 	combout => \vga|y_end~2_combout\);
 
--- Location: LCCOMB_X23_Y11_N24
+-- Location: LCCOMB_X21_Y9_N20
 \vga|y_end~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_end~3_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_Y0\(0))
+-- \vga|y_end~3_combout\ = (\sprite_renderer|FB_Y0\(0)) # (\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111111110000",
+	lut_mask => "1111111110101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(0),
+	dataa => \sprite_renderer|FB_Y0\(0),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
 	combout => \vga|y_end~3_combout\);
 
--- Location: LCCOMB_X23_Y11_N4
+-- Location: LCCOMB_X21_Y9_N16
 \vga|y_end~4\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|y_end~4_combout\ = (\sprite_renderer|FB_Y0\(3)) # (\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101011111010",
+	lut_mask => "1111111111001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|FB_Y0\(3),
-	datac => \sprite_renderer|FB_CLEAR~regout\,
+	datab => \sprite_renderer|FB_Y0\(3),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
 	combout => \vga|y_end~4_combout\);
 
--- Location: LCFF_X35_Y14_N21
-\test_pulsating_led:counter[0]\ : cycloneii_lcell_ff
+-- Location: LCFF_X19_Y13_N9
+\sprite_renderer|sprite_x[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \Add0~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|DEBUG_OUT~regout\,
+	sdata => \view|SPRITE_X\(0),
+	sload => VCC,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \test_pulsating_led:counter[0]~regout\);
+	regout => \sprite_renderer|sprite_x\(0));
 
--- Location: LCCOMB_X30_Y15_N0
-\sprite_renderer|Mux16~0\ : cycloneii_lcell_comb
+-- Location: LCFF_X19_Y13_N3
+\sprite_renderer|sprite_to_draw.color[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_to_draw.color[6]~2_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_to_draw.color\(6));
+
+-- Location: LCCOMB_X23_Y13_N20
+\sprite_renderer|FB_Y0[5]~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Mux16~0_combout\ = (\sprite_renderer|column\(3) & (((!\sprite_renderer|column\(4))))) # (!\sprite_renderer|column\(3) & (\sprite_renderer|column\(4) & ((!\sprite_renderer|column\(1)) # (!\sprite_renderer|column\(2)))))
+-- \sprite_renderer|FB_Y0[5]~10_combout\ = (\sprite_renderer|column\(2) & (\sprite_renderer|column\(4) & !\sprite_renderer|row\(1))) # (!\sprite_renderer|column\(2) & (!\sprite_renderer|column\(4) & \sprite_renderer|row\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001010110101010",
+	lut_mask => "0001000110001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(3),
-	datab => \sprite_renderer|column\(2),
-	datac => \sprite_renderer|column\(1),
+	dataa => \sprite_renderer|column\(2),
+	datab => \sprite_renderer|column\(4),
+	datad => \sprite_renderer|row\(1),
+	combout => \sprite_renderer|FB_Y0[5]~10_combout\);
+
+-- Location: LCCOMB_X23_Y13_N18
+\sprite_renderer|FB_Y0[5]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[5]~11_combout\ = (\sprite_renderer|column\(3) & (!\sprite_renderer|column\(4) & ((\sprite_renderer|column\(1)) # (!\sprite_renderer|FB_Y0[5]~10_combout\)))) # (!\sprite_renderer|column\(3) & (\sprite_renderer|column\(4) & 
+-- ((!\sprite_renderer|FB_Y0[5]~10_combout\) # (!\sprite_renderer|column\(1)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001001110001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(1),
+	datab => \sprite_renderer|column\(3),
+	datac => \sprite_renderer|FB_Y0[5]~10_combout\,
 	datad => \sprite_renderer|column\(4),
-	combout => \sprite_renderer|Mux16~0_combout\);
+	combout => \sprite_renderer|FB_Y0[5]~11_combout\);
 
--- Location: LCCOMB_X32_Y15_N0
-\sprite_renderer|FB_COLOR~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_COLOR~0_combout\ = (\sprite_renderer|row\(0)) # (((\sprite_renderer|row\(3)) # (!\sprite_renderer|row\(4))) # (!\sprite_renderer|Mux16~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111110111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(0),
-	datab => \sprite_renderer|Mux16~0_combout\,
-	datac => \sprite_renderer|row\(4),
-	datad => \sprite_renderer|row\(3),
-	combout => \sprite_renderer|FB_COLOR~0_combout\);
-
--- Location: LCFF_X29_Y13_N31
+-- Location: LCFF_X19_Y13_N13
 \sprite_renderer|sprite_x[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|sprite_x[3]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|sprite_x\(3));
 
--- Location: LCFF_X29_Y13_N27
+-- Location: LCFF_X19_Y13_N23
+\sprite_renderer|sprite_x[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_x[2]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_x\(2));
+
+-- Location: LCFF_X21_Y13_N25
+\sprite_renderer|sprite_x[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_x[5]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_x\(5));
+
+-- Location: LCFF_X19_Y13_N25
 \sprite_renderer|sprite_x[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|sprite_x[7]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|sprite_x\(7));
+
+-- Location: LCFF_X19_Y13_N11
+\sprite_renderer|sprite_x[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_x[9]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_x\(9));
+
+-- Location: LCFF_X19_Y13_N31
+\sprite_renderer|sprite_y[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	sdata => \view|SPRITE_Y\(4),
+	sload => VCC,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(4));
+
+-- Location: LCFF_X19_Y13_N21
+\sprite_renderer|sprite_y[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	sdata => \view|SPRITE_Y\(1),
+	sload => VCC,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(1));
+
+-- Location: LCFF_X19_Y13_N15
+\sprite_renderer|sprite_y[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_y[7]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(7));
+
+-- Location: LCFF_X19_Y13_N1
+\sprite_renderer|sprite_y[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_y[6]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(6));
+
+-- Location: LCFF_X19_Y13_N27
+\sprite_renderer|sprite_y[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_y[8]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(8));
 
 -- Location: LCFF_X25_Y1_N31
 clock_25MHz : cycloneii_lcell_ff
@@ -2579,148 +3691,299 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \clock_25MHz~regout\);
 
--- Location: LCCOMB_X30_Y13_N6
-\sprite_renderer|LessThan1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~0_combout\ = (!\sprite_renderer|row\(6) & (!\sprite_renderer|row\(5) & (!\sprite_renderer|row\(8) & !\sprite_renderer|row\(7))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(6),
-	datab => \sprite_renderer|row\(5),
-	datac => \sprite_renderer|row\(8),
-	datad => \sprite_renderer|row\(7),
-	combout => \sprite_renderer|LessThan1~0_combout\);
-
--- Location: LCCOMB_X32_Y15_N20
-\sprite_renderer|LessThan1~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~4_combout\ = (!\sprite_renderer|row\(9) & !\sprite_renderer|row\(10))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000110011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(9),
-	datad => \sprite_renderer|row\(10),
-	combout => \sprite_renderer|LessThan1~4_combout\);
-
--- Location: LCCOMB_X32_Y14_N22
-\sprite_renderer|LessThan1~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~5_combout\ = (!\sprite_renderer|row\(24) & (!\sprite_renderer|row\(23) & (!\sprite_renderer|row\(26) & !\sprite_renderer|row\(25))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(24),
-	datab => \sprite_renderer|row\(23),
-	datac => \sprite_renderer|row\(26),
-	datad => \sprite_renderer|row\(25),
-	combout => \sprite_renderer|LessThan1~5_combout\);
-
--- Location: LCCOMB_X31_Y14_N16
-\sprite_renderer|LessThan0~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~4_combout\ = (!\sprite_renderer|column\(10) & !\sprite_renderer|column\(11))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000110011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(10),
-	datad => \sprite_renderer|column\(11),
-	combout => \sprite_renderer|LessThan0~4_combout\);
-
--- Location: LCCOMB_X30_Y14_N14
-\sprite_renderer|LessThan0~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~6_combout\ = (!\sprite_renderer|column\(20) & (!\sprite_renderer|column\(22) & (!\sprite_renderer|column\(21) & !\sprite_renderer|column\(23))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(20),
-	datab => \sprite_renderer|column\(22),
-	datac => \sprite_renderer|column\(21),
-	datad => \sprite_renderer|column\(23),
-	combout => \sprite_renderer|LessThan0~6_combout\);
-
--- Location: LCCOMB_X31_Y14_N10
-\sprite_renderer|Selector64~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector64~0_combout\ = (\sprite_renderer|state.IDLE~regout\ & (!\view|DRAW_SPRITE~regout\ & !\view|SHOW~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.IDLE~regout\,
-	datac => \view|DRAW_SPRITE~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|Selector64~0_combout\);
-
--- Location: LCFF_X31_Y15_N11
-\sprite_renderer|next_state.CLEARING\ : cycloneii_lcell_ff
+-- Location: LCFF_X22_Y15_N29
+\sprite_renderer|row[31]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	sdata => \sprite_renderer|state.SHOWING~regout\,
-	sload => VCC,
-	ena => \sprite_renderer|next_state.IDLE~4_combout\,
+	datain => \sprite_renderer|Add0~74_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|next_state.CLEARING~regout\);
+	regout => \sprite_renderer|row\(31));
 
--- Location: LCFF_X31_Y13_N1
+-- Location: LCCOMB_X22_Y15_N6
+\sprite_renderer|LessThan1~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~1_combout\ = (!\sprite_renderer|row\(29) & (!\sprite_renderer|row\(28) & (!\sprite_renderer|row\(27) & !\sprite_renderer|row\(30))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(29),
+	datab => \sprite_renderer|row\(28),
+	datac => \sprite_renderer|row\(27),
+	datad => \sprite_renderer|row\(30),
+	combout => \sprite_renderer|LessThan1~1_combout\);
+
+-- Location: LCCOMB_X24_Y14_N2
+\sprite_renderer|LessThan1~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~6_combout\ = (!\sprite_renderer|row\(20) & (!\sprite_renderer|row\(19) & (!\sprite_renderer|row\(22) & !\sprite_renderer|row\(21))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(20),
+	datab => \sprite_renderer|row\(19),
+	datac => \sprite_renderer|row\(22),
+	datad => \sprite_renderer|row\(21),
+	combout => \sprite_renderer|LessThan1~6_combout\);
+
+-- Location: LCCOMB_X23_Y13_N8
+\sprite_renderer|LessThan0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~0_combout\ = (!\sprite_renderer|column\(8) & (!\sprite_renderer|column\(6) & (!\sprite_renderer|column\(5) & !\sprite_renderer|column\(7))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(8),
+	datab => \sprite_renderer|column\(6),
+	datac => \sprite_renderer|column\(5),
+	datad => \sprite_renderer|column\(7),
+	combout => \sprite_renderer|LessThan0~0_combout\);
+
+-- Location: LCCOMB_X21_Y12_N12
+\sprite_renderer|LessThan0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~1_combout\ = (!\sprite_renderer|column\(29) & (!\sprite_renderer|column\(28) & (!\sprite_renderer|column\(9) & !\sprite_renderer|column\(30))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(29),
+	datab => \sprite_renderer|column\(28),
+	datac => \sprite_renderer|column\(9),
+	datad => \sprite_renderer|column\(30),
+	combout => \sprite_renderer|LessThan0~1_combout\);
+
+-- Location: LCCOMB_X23_Y13_N12
+\sprite_renderer|LessThan0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~2_combout\ = (((!\sprite_renderer|column\(0)) # (!\sprite_renderer|column\(2))) # (!\sprite_renderer|column\(3))) # (!\sprite_renderer|column\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(1),
+	datab => \sprite_renderer|column\(3),
+	datac => \sprite_renderer|column\(2),
+	datad => \sprite_renderer|column\(0),
+	combout => \sprite_renderer|LessThan0~2_combout\);
+
+-- Location: LCCOMB_X23_Y13_N6
+\sprite_renderer|LessThan0~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~3_combout\ = (\sprite_renderer|LessThan0~1_combout\ & (\sprite_renderer|LessThan0~0_combout\ & ((\sprite_renderer|LessThan0~2_combout\) # (!\sprite_renderer|column\(4)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~1_combout\,
+	datab => \sprite_renderer|column\(4),
+	datac => \sprite_renderer|LessThan0~0_combout\,
+	datad => \sprite_renderer|LessThan0~2_combout\,
+	combout => \sprite_renderer|LessThan0~3_combout\);
+
+-- Location: LCCOMB_X23_Y12_N12
+\sprite_renderer|LessThan0~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~5_combout\ = (!\sprite_renderer|column\(26) & (!\sprite_renderer|column\(25) & (!\sprite_renderer|column\(27) & !\sprite_renderer|column\(24))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(26),
+	datab => \sprite_renderer|column\(25),
+	datac => \sprite_renderer|column\(27),
+	datad => \sprite_renderer|column\(24),
+	combout => \sprite_renderer|LessThan0~5_combout\);
+
+-- Location: LCCOMB_X23_Y13_N30
+\sprite_renderer|Selector65~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector65~0_combout\ = (\vga|READY~1_combout\ & (\sprite_renderer|state.WAITING~regout\ & !\sprite_renderer|FB_FLIP~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|READY~1_combout\,
+	datab => \sprite_renderer|state.WAITING~regout\,
+	datac => \sprite_renderer|FB_FLIP~regout\,
+	combout => \sprite_renderer|Selector65~0_combout\);
+
+-- Location: LCFF_X24_Y13_N27
+\sprite_renderer|next_state.IDLE\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|next_state.IDLE~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|next_state.IDLE~regout\);
+
+-- Location: LCCOMB_X24_Y13_N12
+\sprite_renderer|Selector64~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector64~1_combout\ = (\sprite_renderer|Selector65~0_combout\ & (!\sprite_renderer|next_state.IDLE~regout\)) # (!\sprite_renderer|Selector65~0_combout\ & ((\sprite_renderer|Selector64~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011111100110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|next_state.IDLE~regout\,
+	datac => \sprite_renderer|Selector65~0_combout\,
+	datad => \sprite_renderer|Selector64~0_combout\,
+	combout => \sprite_renderer|Selector64~1_combout\);
+
+-- Location: LCCOMB_X24_Y13_N6
+\sprite_renderer|Selector64~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector64~2_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (!\sprite_renderer|LessThan0~10_combout\ & (!\sprite_renderer|LessThan1~10_combout\))) # (!\sprite_renderer|state.DRAWING~regout\ & 
+-- (((\sprite_renderer|Selector64~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101011100000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.DRAWING~regout\,
+	datab => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Selector64~1_combout\,
+	combout => \sprite_renderer|Selector64~2_combout\);
+
+-- Location: LCCOMB_X24_Y15_N16
+\sprite_renderer|Add0~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~8_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|Add0~6_combout\,
+	combout => \sprite_renderer|Add0~8_combout\);
+
+-- Location: LCFF_X19_Y14_N9
+\view|SPRITE.img_pixels[3][10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE.img_pixels[3][10]~regout\);
+
+-- Location: LCFF_X18_Y13_N29
 \view|SPRITE_X[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~2_combout\,
+	datain => \view|SPRITE_X~7_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \view|SPRITE_X\(3));
 
--- Location: LCFF_X31_Y13_N7
+-- Location: LCFF_X19_Y14_N17
 \view|SPRITE_X[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~6_combout\,
+	datain => \view|SPRITE_X~17_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \view|SPRITE_X\(7));
 
--- Location: LCCOMB_X32_Y14_N10
-\sprite_renderer|Add0~24\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N26
+\sprite_renderer|Add1~24\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~24_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~19_combout\)
+-- \sprite_renderer|Add1~24_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~19_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~19_combout\,
-	combout => \sprite_renderer|Add0~24_combout\);
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~19_combout\,
+	combout => \sprite_renderer|Add1~24_combout\);
+
+-- Location: LCCOMB_X21_Y12_N20
+\sprite_renderer|Add1~30\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~30_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~28_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~28_combout\,
+	combout => \sprite_renderer|Add1~30_combout\);
+
+-- Location: LCFF_X18_Y13_N7
+\view|SPRITE_Y[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y~3_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(4));
+
+-- Location: LCFF_X22_Y14_N25
+\view|SPRITE_Y[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y~9_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(6));
+
+-- Location: LCFF_X18_Y13_N3
+\view|SPRITE_Y[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(8));
 
 -- Location: LCFF_X25_Y1_N23
 \clock_25:counter\ : cycloneii_lcell_ff
@@ -2732,10 +3995,71 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \clock_25:counter~regout\);
 
--- Location: LCCOMB_X32_Y14_N14
+-- Location: LCCOMB_X22_Y15_N28
+\sprite_renderer|Add0~74\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~74_combout\ = (\sprite_renderer|LessThan1~10_combout\ & (\sprite_renderer|state.DRAWING~regout\ & \sprite_renderer|Add0~72_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datab => \sprite_renderer|state.DRAWING~regout\,
+	datac => \sprite_renderer|Add0~72_combout\,
+	combout => \sprite_renderer|Add0~74_combout\);
+
+-- Location: LCCOMB_X22_Y15_N22
 \sprite_renderer|Add0~75\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~75_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~70_combout\)
+-- \sprite_renderer|Add0~75_combout\ = (\sprite_renderer|Add0~70_combout\ & \sprite_renderer|LessThan1~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|Add0~70_combout\,
+	datad => \sprite_renderer|LessThan1~10_combout\,
+	combout => \sprite_renderer|Add0~75_combout\);
+
+-- Location: LCCOMB_X22_Y15_N16
+\sprite_renderer|Add0~76\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~76_combout\ = (\sprite_renderer|Add0~68_combout\ & \sprite_renderer|LessThan1~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|Add0~68_combout\,
+	datad => \sprite_renderer|LessThan1~10_combout\,
+	combout => \sprite_renderer|Add0~76_combout\);
+
+-- Location: LCCOMB_X22_Y15_N26
+\sprite_renderer|Add0~77\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~77_combout\ = (\sprite_renderer|Add0~66_combout\ & \sprite_renderer|LessThan1~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|Add0~66_combout\,
+	datad => \sprite_renderer|LessThan1~10_combout\,
+	combout => \sprite_renderer|Add0~77_combout\);
+
+-- Location: LCCOMB_X22_Y15_N20
+\sprite_renderer|Add0~78\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~78_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~64_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2744,43 +4068,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~70_combout\,
-	combout => \sprite_renderer|Add0~75_combout\);
+	datad => \sprite_renderer|Add0~64_combout\,
+	combout => \sprite_renderer|Add0~78_combout\);
 
--- Location: LCCOMB_X32_Y15_N2
-\sprite_renderer|Add0~79\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~79_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~30_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~30_combout\,
-	combout => \sprite_renderer|Add0~79_combout\);
-
--- Location: LCCOMB_X32_Y14_N8
+-- Location: LCCOMB_X24_Y14_N16
 \sprite_renderer|Add0~81\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~81_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~62_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~62_combout\,
+	datac => \sprite_renderer|Add0~62_combout\,
 	combout => \sprite_renderer|Add0~81_combout\);
 
--- Location: LCCOMB_X32_Y14_N30
-\sprite_renderer|Add0~84\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N30
+\sprite_renderer|Add1~76\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~84_combout\ = (\sprite_renderer|Add0~56_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add1~76_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~71_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2788,14 +4097,14 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~56_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~84_combout\);
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~71_combout\,
+	combout => \sprite_renderer|Add1~76_combout\);
 
--- Location: LCCOMB_X34_Y14_N6
-\sprite_renderer|Add0~96\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N16
+\sprite_renderer|Add1~77\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~96_combout\ = (\sprite_renderer|Add0~32_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add1~77_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~69_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2803,14 +4112,29 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~32_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~96_combout\);
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~69_combout\,
+	combout => \sprite_renderer|Add1~77_combout\);
 
--- Location: LCCOMB_X30_Y14_N22
-\sprite_renderer|Add1~80\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N18
+\sprite_renderer|Add1~78\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~80_combout\ = (\sprite_renderer|Add1~31_combout\ & \sprite_renderer|LessThan0~10_combout\)
+-- \sprite_renderer|Add1~78_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~67_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~67_combout\,
+	combout => \sprite_renderer|Add1~78_combout\);
+
+-- Location: LCCOMB_X23_Y12_N8
+\sprite_renderer|Add1~81\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~81_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~65_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2818,341 +4142,121 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|Add1~31_combout\,
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~65_combout\,
+	combout => \sprite_renderer|Add1~81_combout\);
+
+-- Location: LCCOMB_X23_Y12_N10
+\sprite_renderer|Add1~82\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~82_combout\ = (\sprite_renderer|Add1~63_combout\ & \sprite_renderer|LessThan0~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add1~63_combout\,
 	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~80_combout\);
+	combout => \sprite_renderer|Add1~82_combout\);
 
--- Location: LCFF_X26_Y1_N5
-\view|frame_time\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~regout\,
-	datain => \view|Equal0~6_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|frame_time~regout\);
-
--- Location: LCCOMB_X31_Y13_N0
-\view|SPRITE_X~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y12_N28
+\sprite_renderer|Add1~83\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|SPRITE_X~2_combout\ = (!\view|state~regout\ & (\view|x\(3) & !\sprite_renderer|READY~regout\))
+-- \sprite_renderer|Add1~83_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~61_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000001000100",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|state~regout\,
-	datab => \view|x\(3),
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|SPRITE_X~2_combout\);
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~61_combout\,
+	combout => \sprite_renderer|Add1~83_combout\);
 
--- Location: LCCOMB_X31_Y13_N6
-\view|SPRITE_X~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y12_N30
+\sprite_renderer|Add1~84\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|SPRITE_X~6_combout\ = (!\view|state~regout\ & (\view|x\(7) & !\sprite_renderer|READY~regout\))
+-- \sprite_renderer|Add1~84_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~59_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000001000100",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|state~regout\,
-	datab => \view|x\(7),
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|SPRITE_X~6_combout\);
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~59_combout\,
+	combout => \sprite_renderer|Add1~84_combout\);
 
--- Location: LCFF_X27_Y1_N23
-\view|draw_gen:counter[20]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[20]~regout\);
-
--- Location: LCFF_X27_Y1_N25
-\view|draw_gen:counter[19]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[19]~regout\);
-
--- Location: LCFF_X27_Y1_N17
-\view|draw_gen:counter[18]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~36_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[18]~regout\);
-
--- Location: LCFF_X27_Y1_N15
-\view|draw_gen:counter[17]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~34_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[17]~regout\);
-
--- Location: LCCOMB_X27_Y1_N26
-\view|Equal0~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y12_N24
+\sprite_renderer|Add1~85\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~0_combout\ = (\view|draw_gen:counter[19]~regout\ & (!\view|draw_gen:counter[17]~regout\ & (!\view|draw_gen:counter[18]~regout\ & \view|draw_gen:counter[20]~regout\)))
+-- \sprite_renderer|Add1~85_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~57_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000001000000000",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[19]~regout\,
-	datab => \view|draw_gen:counter[17]~regout\,
-	datac => \view|draw_gen:counter[18]~regout\,
-	datad => \view|draw_gen:counter[20]~regout\,
-	combout => \view|Equal0~0_combout\);
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~57_combout\,
+	combout => \sprite_renderer|Add1~85_combout\);
 
--- Location: LCFF_X26_Y1_N25
-\view|draw_gen:counter[16]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[16]~regout\);
-
--- Location: LCFF_X27_Y1_N29
-\view|draw_gen:counter[14]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~3_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[14]~regout\);
-
--- Location: LCFF_X26_Y1_N15
-\view|draw_gen:counter[13]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~4_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[13]~regout\);
-
--- Location: LCFF_X27_Y1_N11
-\view|draw_gen:counter[15]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~30_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[15]~regout\);
-
--- Location: LCCOMB_X27_Y1_N30
-\view|Equal0~1\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N10
+\sprite_renderer|Add1~92\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~1_combout\ = (!\view|draw_gen:counter[15]~regout\ & (\view|draw_gen:counter[16]~regout\ & (\view|draw_gen:counter[13]~regout\ & \view|draw_gen:counter[14]~regout\)))
+-- \sprite_renderer|Add1~92_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~43_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[15]~regout\,
-	datab => \view|draw_gen:counter[16]~regout\,
-	datac => \view|draw_gen:counter[13]~regout\,
-	datad => \view|draw_gen:counter[14]~regout\,
-	combout => \view|Equal0~1_combout\);
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~43_combout\,
+	combout => \sprite_renderer|Add1~92_combout\);
 
--- Location: LCFF_X26_Y1_N31
-\view|draw_gen:counter[11]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~5_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[11]~regout\);
-
--- Location: LCFF_X26_Y1_N11
-\view|draw_gen:counter[10]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~6_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[10]~regout\);
-
--- Location: LCFF_X26_Y1_N23
-\view|draw_gen:counter[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~7_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[9]~regout\);
-
--- Location: LCFF_X27_Y1_N5
-\view|draw_gen:counter[12]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~24_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[12]~regout\);
-
--- Location: LCCOMB_X26_Y1_N26
-\view|Equal0~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y14_N6
+\sprite_renderer|Add1~96\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~2_combout\ = (\view|draw_gen:counter[10]~regout\ & (\view|draw_gen:counter[9]~regout\ & (\view|draw_gen:counter[11]~regout\ & !\view|draw_gen:counter[12]~regout\)))
+-- \sprite_renderer|Add1~96_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~35_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000010000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[10]~regout\,
-	datab => \view|draw_gen:counter[9]~regout\,
-	datac => \view|draw_gen:counter[11]~regout\,
-	datad => \view|draw_gen:counter[12]~regout\,
-	combout => \view|Equal0~2_combout\);
+	datab => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|Add1~35_combout\,
+	combout => \sprite_renderer|Add1~96_combout\);
 
--- Location: LCFF_X27_Y2_N9
-\view|draw_gen:counter[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~8_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[6]~regout\);
-
--- Location: LCFF_X27_Y2_N11
-\view|draw_gen:counter[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~9_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[5]~regout\);
-
--- Location: LCFF_X27_Y2_N29
-\view|draw_gen:counter[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~16_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[8]~regout\);
-
--- Location: LCFF_X27_Y2_N27
-\view|draw_gen:counter[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~14_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[7]~regout\);
-
--- Location: LCCOMB_X27_Y2_N4
-\view|Equal0~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y13_N30
+\sprite_renderer|Selector65~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~3_combout\ = (\view|draw_gen:counter[5]~regout\ & (!\view|draw_gen:counter[7]~regout\ & (\view|draw_gen:counter[6]~regout\ & !\view|draw_gen:counter[8]~regout\)))
+-- \sprite_renderer|Selector65~2_combout\ = (\sprite_renderer|state.WAITING~regout\) # ((\sprite_renderer|state.IDLE~regout\ & ((\view|DRAW_SPRITE~regout\) # (\view|SHOW~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000100000",
+	lut_mask => "1111111010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[5]~regout\,
-	datab => \view|draw_gen:counter[7]~regout\,
-	datac => \view|draw_gen:counter[6]~regout\,
-	datad => \view|draw_gen:counter[8]~regout\,
-	combout => \view|Equal0~3_combout\);
+	dataa => \sprite_renderer|state.WAITING~regout\,
+	datab => \view|DRAW_SPRITE~regout\,
+	datac => \view|SHOW~regout\,
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|Selector65~2_combout\);
 
--- Location: LCCOMB_X26_Y1_N12
-\view|Equal0~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y13_N16
+\sprite_renderer|Selector65~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~4_combout\ = (\view|Equal0~3_combout\ & (\view|Equal0~2_combout\ & (\view|Equal0~0_combout\ & \view|Equal0~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~3_combout\,
-	datab => \view|Equal0~2_combout\,
-	datac => \view|Equal0~0_combout\,
-	datad => \view|Equal0~1_combout\,
-	combout => \view|Equal0~4_combout\);
-
--- Location: LCFF_X27_Y2_N7
-\view|draw_gen:counter[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~10_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[3]~regout\);
-
--- Location: LCFF_X27_Y2_N1
-\view|draw_gen:counter[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~11_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[1]~regout\);
-
--- Location: LCFF_X27_Y2_N21
-\view|draw_gen:counter[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~8_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[4]~regout\);
-
--- Location: LCFF_X27_Y2_N17
-\view|draw_gen:counter[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|Add0~4_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|draw_gen:counter[2]~regout\);
-
--- Location: LCCOMB_X27_Y2_N2
-\view|Equal0~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|Equal0~5_combout\ = (!\view|draw_gen:counter[4]~regout\ & (\view|draw_gen:counter[1]~regout\ & (!\view|draw_gen:counter[2]~regout\ & \view|draw_gen:counter[3]~regout\)))
+-- \sprite_renderer|Selector65~3_combout\ = (!\sprite_renderer|state.DRAWING~regout\ & (\sprite_renderer|state.CLEARING~regout\ & (!\sprite_renderer|Selector65~0_combout\ & \sprite_renderer|Selector65~2_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3160,258 +4264,538 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|draw_gen:counter[4]~regout\,
-	datab => \view|draw_gen:counter[1]~regout\,
-	datac => \view|draw_gen:counter[2]~regout\,
-	datad => \view|draw_gen:counter[3]~regout\,
-	combout => \view|Equal0~5_combout\);
+	dataa => \sprite_renderer|state.DRAWING~regout\,
+	datab => \sprite_renderer|state.CLEARING~regout\,
+	datac => \sprite_renderer|Selector65~0_combout\,
+	datad => \sprite_renderer|Selector65~2_combout\,
+	combout => \sprite_renderer|Selector65~3_combout\);
 
--- Location: LCFF_X26_Y1_N1
+-- Location: LCCOMB_X24_Y13_N10
+\sprite_renderer|next_state.IDLE~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|next_state.IDLE~2_combout\ = (!\sprite_renderer|state.WAITING~regout\ & \sprite_renderer|state.CLEARING~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|state.WAITING~regout\,
+	datad => \sprite_renderer|state.CLEARING~regout\,
+	combout => \sprite_renderer|next_state.IDLE~2_combout\);
+
+-- Location: LCCOMB_X24_Y13_N26
+\sprite_renderer|next_state.IDLE~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|next_state.IDLE~3_combout\ = (\sprite_renderer|next_state.IDLE~regout\) # ((\sprite_renderer|next_state.IDLE~2_combout\ & (!\sprite_renderer|Selector64~0_combout\ & \RESET_N~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|next_state.IDLE~2_combout\,
+	datab => \sprite_renderer|Selector64~0_combout\,
+	datac => \sprite_renderer|next_state.IDLE~regout\,
+	datad => \RESET_N~regout\,
+	combout => \sprite_renderer|next_state.IDLE~3_combout\);
+
+-- Location: LCCOMB_X18_Y14_N20
+\view|Selector9~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Selector9~0_combout\ = (\view|x\(0) & (((\view|state.RENDER_2~regout\) # (\view|state.RENDER_3~regout\)) # (!\view|state.RENDER_0~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010100010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(0),
+	datab => \view|state.RENDER_0~regout\,
+	datac => \view|state.RENDER_2~regout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|Selector9~0_combout\);
+
+-- Location: LCCOMB_X19_Y14_N8
+\view|SPRITE~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE~0_combout\ = (!\sprite_renderer|READY~regout\ & ((\view|state.RENDER_3~regout\) # (\view|state.RENDER_1~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_3~regout\,
+	datac => \view|state.RENDER_1~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|SPRITE~0_combout\);
+
+-- Location: LCCOMB_X19_Y14_N0
+\view|SPRITE_X~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~6_combout\ = (!\view|state.RENDER_4~regout\ & (!\view|state.SHOW_SPRITES~regout\ & !\sprite_renderer|READY~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_4~regout\,
+	datac => \view|state.SHOW_SPRITES~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|SPRITE_X~6_combout\);
+
+-- Location: LCCOMB_X19_Y14_N6
+\view|Add5~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~6_combout\ = (\view|state.RENDER_2~regout\ & (((\view|Add3~6_combout\)))) # (!\view|state.RENDER_2~regout\ & ((\view|x\(3)) # ((\view|state.RENDER_1~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111000001110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(3),
+	datab => \view|state.RENDER_1~regout\,
+	datac => \view|state.RENDER_2~regout\,
+	datad => \view|Add3~6_combout\,
+	combout => \view|Add5~6_combout\);
+
+-- Location: LCCOMB_X18_Y13_N28
+\view|SPRITE_X~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~7_combout\ = (\view|SPRITE_X~6_combout\ & ((\view|state.RENDER_3~regout\ & ((\view|Add5~4_combout\))) # (!\view|state.RENDER_3~regout\ & (\view|Add5~6_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~6_combout\,
+	datab => \view|Add5~6_combout\,
+	datac => \view|Add5~4_combout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_X~7_combout\);
+
+-- Location: LCCOMB_X19_Y14_N12
+\view|SPRITE_X~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~8_combout\ = (\view|state.RENDER_4~regout\) # ((\view|state.RENDER_1~regout\) # (\view|x\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_4~regout\,
+	datac => \view|state.RENDER_1~regout\,
+	datad => \view|x\(2),
+	combout => \view|SPRITE_X~8_combout\);
+
+-- Location: LCCOMB_X19_Y14_N10
+\view|SPRITE_X~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~9_combout\ = (\view|state.RENDER_4~regout\) # ((\view|state.RENDER_1~regout\) # (\view|x\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_4~regout\,
+	datac => \view|state.RENDER_1~regout\,
+	datad => \view|x\(5),
+	combout => \view|SPRITE_X~9_combout\);
+
+-- Location: LCCOMB_X19_Y14_N28
+\view|SPRITE_X~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~15_combout\ = (\view|SPRITE_X~10_combout\) # ((\view|state.RENDER_3~regout\ & (!\view|SPRITE_X[9]~5_combout\ & \view|Add5~13_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_3~regout\,
+	datab => \view|SPRITE_X[9]~5_combout\,
+	datac => \view|Add5~13_combout\,
+	datad => \view|SPRITE_X~10_combout\,
+	combout => \view|SPRITE_X~15_combout\);
+
+-- Location: LCCOMB_X19_Y14_N4
+\view|SPRITE_X~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~16_combout\ = (!\view|state.RENDER_2~regout\ & (!\view|SPRITE_X[9]~5_combout\ & (\view|x\(7) & !\view|state.RENDER_3~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_2~regout\,
+	datab => \view|SPRITE_X[9]~5_combout\,
+	datac => \view|x\(7),
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_X~16_combout\);
+
+-- Location: LCCOMB_X19_Y14_N16
+\view|SPRITE_X~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~17_combout\ = (\view|SPRITE_X~16_combout\) # ((\view|SPRITE_X~15_combout\) # ((\view|SPRITE_X~13_combout\ & \view|Add3~14_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~13_combout\,
+	datab => \view|SPRITE_X~16_combout\,
+	datac => \view|Add3~14_combout\,
+	datad => \view|SPRITE_X~15_combout\,
+	combout => \view|SPRITE_X~17_combout\);
+
+-- Location: LCCOMB_X18_Y14_N26
+\view|Add6~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~8_combout\ = (\view|state.RENDER_2~regout\ & (((\view|Add4~8_combout\)))) # (!\view|state.RENDER_2~regout\ & ((\view|state.RENDER_1~regout\) # ((\view|x\(4)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111001010100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_2~regout\,
+	datab => \view|state.RENDER_1~regout\,
+	datac => \view|x\(4),
+	datad => \view|Add4~8_combout\,
+	combout => \view|Add6~8_combout\);
+
+-- Location: LCCOMB_X18_Y13_N6
+\view|SPRITE_Y~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~3_combout\ = (\view|SPRITE_X~6_combout\ & ((\view|state.RENDER_3~regout\ & ((\view|Add6~4_combout\))) # (!\view|state.RENDER_3~regout\ & (\view|Add6~8_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~6_combout\,
+	datab => \view|Add6~8_combout\,
+	datac => \view|Add6~4_combout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_Y~3_combout\);
+
+-- Location: LCCOMB_X18_Y13_N30
+\view|SPRITE_Y~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~5_combout\ = (!\view|SPRITE_X[9]~5_combout\ & (!\view|state.RENDER_2~regout\ & (\view|x\(3) & !\view|state.RENDER_3~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X[9]~5_combout\,
+	datab => \view|state.RENDER_2~regout\,
+	datac => \view|x\(3),
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_Y~5_combout\);
+
+-- Location: LCCOMB_X18_Y14_N28
+\view|Selector18~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Selector18~0_combout\ = (\view|x\(1) & ((\view|state.RENDER_3~regout\) # (!\view|state.RENDER_0~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_0~regout\,
+	datac => \view|x\(1),
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|Selector18~0_combout\);
+
+-- Location: LCCOMB_X18_Y14_N30
+\view|Selector18~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Selector18~1_combout\ = (\view|Selector18~0_combout\) # ((\view|Add4~2_combout\ & \view|state.RENDER_2~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Selector18~0_combout\,
+	datac => \view|Add4~2_combout\,
+	datad => \view|state.RENDER_2~regout\,
+	combout => \view|Selector18~1_combout\);
+
+-- Location: LCCOMB_X19_Y14_N20
+\view|SPRITE_Y~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~7_combout\ = (\view|x\(7)) # ((\view|state.RENDER_1~regout\) # (\view|state.RENDER_4~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(7),
+	datac => \view|state.RENDER_1~regout\,
+	datad => \view|state.RENDER_4~regout\,
+	combout => \view|SPRITE_Y~7_combout\);
+
+-- Location: LCCOMB_X22_Y14_N30
+\view|SPRITE_Y~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~8_combout\ = (\view|state.RENDER_3~regout\ & (((\view|Add6~9_combout\)))) # (!\view|state.RENDER_3~regout\ & (\view|Add4~12_combout\ & (\view|state.RENDER_2~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|Add4~12_combout\,
+	datab => \view|state.RENDER_2~regout\,
+	datac => \view|Add6~9_combout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_Y~8_combout\);
+
+-- Location: LCCOMB_X22_Y14_N24
+\view|SPRITE_Y~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~9_combout\ = (\view|SPRITE_X~18_combout\) # ((\view|SPRITE_X~10_combout\) # ((!\view|SPRITE_X[9]~5_combout\ & \view|SPRITE_Y~8_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X[9]~5_combout\,
+	datab => \view|SPRITE_X~18_combout\,
+	datac => \view|SPRITE_X~10_combout\,
+	datad => \view|SPRITE_Y~8_combout\,
+	combout => \view|SPRITE_Y~9_combout\);
+
+-- Location: LCCOMB_X18_Y14_N22
+\view|SPRITE_Y~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~10_combout\ = (\view|state.RENDER_2~regout\ & (\view|Add4~16_combout\)) # (!\view|state.RENDER_2~regout\ & (((\view|state.RENDER_1~regout\) # (\view|x\(8)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110111011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_2~regout\,
+	datab => \view|Add4~16_combout\,
+	datac => \view|state.RENDER_1~regout\,
+	datad => \view|x\(8),
+	combout => \view|SPRITE_Y~10_combout\);
+
+-- Location: LCCOMB_X18_Y13_N2
+\view|SPRITE_Y~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~11_combout\ = (\view|SPRITE_X~6_combout\ & ((\view|state.RENDER_3~regout\ & ((\view|Add6~13_combout\))) # (!\view|state.RENDER_3~regout\ & (\view|SPRITE_Y~10_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~6_combout\,
+	datab => \view|SPRITE_Y~10_combout\,
+	datac => \view|Add6~13_combout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_Y~11_combout\);
+
+-- Location: LCFF_X27_Y2_N11
 \view|draw_gen:counter[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|counter~12_combout\,
+	datain => \view|counter~1_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \view|draw_gen:counter[0]~regout\);
 
--- Location: LCCOMB_X26_Y1_N4
-\view|Equal0~6\ : cycloneii_lcell_comb
+-- Location: LCFF_X27_Y1_N13
+\view|draw_gen:counter[16]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~32_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[16]~regout\);
+
+-- Location: LCFF_X26_Y1_N21
+\view|draw_gen:counter[13]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~5_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[13]~regout\);
+
+-- Location: LCFF_X26_Y1_N31
+\view|draw_gen:counter[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~7_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[10]~regout\);
+
+-- Location: LCCOMB_X26_Y1_N10
+\view|Equal0~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|Equal0~6_combout\ = (\view|Equal0~4_combout\ & (!\view|draw_gen:counter[0]~regout\ & \view|Equal0~5_combout\))
+-- \view|Equal0~3_combout\ = (!\view|draw_gen:counter[11]~regout\ & (\view|draw_gen:counter[10]~regout\ & (\view|draw_gen:counter[9]~regout\ & \view|draw_gen:counter[8]~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0010001000000000",
+	lut_mask => "0100000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|Equal0~6_combout\);
+	dataa => \view|draw_gen:counter[11]~regout\,
+	datab => \view|draw_gen:counter[10]~regout\,
+	datac => \view|draw_gen:counter[9]~regout\,
+	datad => \view|draw_gen:counter[8]~regout\,
+	combout => \view|Equal0~3_combout\);
 
--- Location: LCCOMB_X27_Y1_N22
-\view|counter~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~0_combout\ = (\view|Add0~40_combout\ & ((\view|draw_gen:counter[0]~regout\) # ((!\view|Equal0~4_combout\) # (!\view|Equal0~5_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
+-- Location: LCFF_X27_Y2_N7
+\view|draw_gen:counter[5]\ : cycloneii_lcell_ff
 PORT MAP (
-	dataa => \view|draw_gen:counter[0]~regout\,
-	datab => \view|Equal0~5_combout\,
-	datac => \view|Add0~40_combout\,
-	datad => \view|Equal0~4_combout\,
-	combout => \view|counter~0_combout\);
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~10_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[5]~regout\);
 
--- Location: LCCOMB_X27_Y1_N24
+-- Location: LCCOMB_X27_Y2_N10
 \view|counter~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~1_combout\ = (\view|Add0~38_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \view|counter~1_combout\ = (\view|Add0~0_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100010011001100",
+	lut_mask => "0101111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|Add0~38_combout\,
-	datac => \view|draw_gen:counter[0]~regout\,
-	datad => \view|Equal0~5_combout\,
+	dataa => \view|Equal0~5_combout\,
+	datac => \view|Equal0~0_combout\,
+	datad => \view|Add0~0_combout\,
 	combout => \view|counter~1_combout\);
 
--- Location: LCCOMB_X26_Y1_N24
-\view|counter~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X26_Y1_N20
+\view|counter~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~2_combout\ = (\view|Add0~32_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \view|counter~5_combout\ = (\view|Add0~26_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~32_combout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~2_combout\);
-
--- Location: LCCOMB_X27_Y1_N28
-\view|counter~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~3_combout\ = (\view|Add0~28_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100010011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|Add0~28_combout\,
-	datac => \view|draw_gen:counter[0]~regout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~3_combout\);
-
--- Location: LCCOMB_X26_Y1_N14
-\view|counter~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~4_combout\ = (\view|Add0~26_combout\ & ((\view|draw_gen:counter[0]~regout\) # ((!\view|Equal0~5_combout\) # (!\view|Equal0~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000101010101010",
+	lut_mask => "0000101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \view|Add0~26_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Equal0~4_combout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~4_combout\);
-
--- Location: LCCOMB_X26_Y1_N30
-\view|counter~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~5_combout\ = (\view|Add0~22_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~22_combout\,
-	datad => \view|Equal0~5_combout\,
+	datac => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
 	combout => \view|counter~5_combout\);
 
--- Location: LCCOMB_X26_Y1_N10
-\view|counter~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~6_combout\ = (\view|Add0~20_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~20_combout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~6_combout\);
-
--- Location: LCCOMB_X26_Y1_N22
+-- Location: LCCOMB_X26_Y1_N30
 \view|counter~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~7_combout\ = (\view|Add0~18_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \view|counter~7_combout\ = (\view|Add0~20_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101000011110000",
+	lut_mask => "0010001010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~18_combout\,
-	datad => \view|Equal0~5_combout\,
+	dataa => \view|Add0~20_combout\,
+	datab => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
 	combout => \view|counter~7_combout\);
-
--- Location: LCCOMB_X27_Y2_N8
-\view|counter~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~8_combout\ = (\view|Add0~12_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~12_combout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~8_combout\);
-
--- Location: LCCOMB_X27_Y2_N10
-\view|counter~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|counter~9_combout\ = (\view|Add0~10_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Equal0~5_combout\,
-	datad => \view|Add0~10_combout\,
-	combout => \view|counter~9_combout\);
 
 -- Location: LCCOMB_X27_Y2_N6
 \view|counter~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~10_combout\ = (\view|Add0~6_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \view|counter~10_combout\ = (\view|Add0~10_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101111100000000",
+	lut_mask => "0100110001001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Equal0~5_combout\,
-	datad => \view|Add0~6_combout\,
+	dataa => \view|Equal0~5_combout\,
+	datab => \view|Add0~10_combout\,
+	datac => \view|Equal0~0_combout\,
 	combout => \view|counter~10_combout\);
 
--- Location: LCCOMB_X27_Y2_N0
-\view|counter~11\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y11_N10
+\vga|substate.DRAWING_R2~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~11_combout\ = (\view|Add0~2_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \vga|substate.DRAWING_R2~7_combout\ = (\vga|substate.INIT~regout\ & (\vga|substate.DRAWING_R2~2_combout\ & (\vga|x_cursor\(9) $ (!\vga|x_end\(9)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101000011110000",
+	lut_mask => "1000000001000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|draw_gen:counter[0]~regout\,
-	datac => \view|Add0~2_combout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~11_combout\);
+	dataa => \vga|x_cursor\(9),
+	datab => \vga|substate.INIT~regout\,
+	datac => \vga|substate.DRAWING_R2~2_combout\,
+	datad => \vga|x_end\(9),
+	combout => \vga|substate.DRAWING_R2~7_combout\);
 
--- Location: LCCOMB_X26_Y1_N0
-\view|counter~12\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X19_Y13_N2
+\sprite_renderer|sprite_to_draw.color[6]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|counter~12_combout\ = (\view|Add0~0_combout\ & (((\view|draw_gen:counter[0]~regout\) # (!\view|Equal0~5_combout\)) # (!\view|Equal0~4_combout\)))
+-- \sprite_renderer|sprite_to_draw.color[6]~2_combout\ = !\view|SPRITE.img_pixels[3][10]~regout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100010011001100",
+	lut_mask => "0000000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \view|Equal0~4_combout\,
-	datab => \view|Add0~0_combout\,
-	datac => \view|draw_gen:counter[0]~regout\,
-	datad => \view|Equal0~5_combout\,
-	combout => \view|counter~12_combout\);
+	datad => \view|SPRITE.img_pixels[3][10]~regout\,
+	combout => \sprite_renderer|sprite_to_draw.color[6]~2_combout\);
 
 -- Location: LCCOMB_X25_Y1_N22
 \clock_25:counter~0\ : cycloneii_lcell_comb
@@ -3427,7 +4811,7 @@ PORT MAP (
 	datac => \clock_25:counter~regout\,
 	combout => \clock_25:counter~0_combout\);
 
--- Location: CLKCTRL_G12
+-- Location: CLKCTRL_G14
 \clock_25MHz~clkctrl\ : cycloneii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -3466,33 +4850,117 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \view|frame_time~clkctrl_outclk\);
 
--- Location: LCCOMB_X29_Y13_N30
+-- Location: LCCOMB_X19_Y13_N22
+\sprite_renderer|sprite_x[2]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_x[2]~feeder_combout\ = \view|SPRITE_X\(2)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_X\(2),
+	combout => \sprite_renderer|sprite_x[2]~feeder_combout\);
+
+-- Location: LCCOMB_X21_Y13_N24
+\sprite_renderer|sprite_x[5]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_x[5]~feeder_combout\ = \view|SPRITE_X\(5)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \view|SPRITE_X\(5),
+	combout => \sprite_renderer|sprite_x[5]~feeder_combout\);
+
+-- Location: LCCOMB_X19_Y13_N10
+\sprite_renderer|sprite_x[9]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_x[9]~feeder_combout\ = \view|SPRITE_X\(9)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_X\(9),
+	combout => \sprite_renderer|sprite_x[9]~feeder_combout\);
+
+-- Location: LCCOMB_X19_Y13_N14
+\sprite_renderer|sprite_y[7]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_y[7]~feeder_combout\ = \view|SPRITE_Y\(7)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_Y\(7),
+	combout => \sprite_renderer|sprite_y[7]~feeder_combout\);
+
+-- Location: LCCOMB_X19_Y13_N12
 \sprite_renderer|sprite_x[3]~feeder\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|sprite_x[3]~feeder_combout\ = \view|SPRITE_X\(3)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \view|SPRITE_X\(3),
+	datad => \view|SPRITE_X\(3),
 	combout => \sprite_renderer|sprite_x[3]~feeder_combout\);
 
--- Location: LCCOMB_X29_Y13_N26
+-- Location: LCCOMB_X19_Y13_N24
 \sprite_renderer|sprite_x[7]~feeder\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|sprite_x[7]~feeder_combout\ = \view|SPRITE_X\(7)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011110000",
+	lut_mask => "1111111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \view|SPRITE_X\(7),
+	datad => \view|SPRITE_X\(7),
 	combout => \sprite_renderer|sprite_x[7]~feeder_combout\);
+
+-- Location: LCCOMB_X19_Y13_N0
+\sprite_renderer|sprite_y[6]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_y[6]~feeder_combout\ = \view|SPRITE_Y\(6)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_Y\(6),
+	combout => \sprite_renderer|sprite_y[6]~feeder_combout\);
+
+-- Location: LCCOMB_X19_Y13_N26
+\sprite_renderer|sprite_y[8]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_y[8]~feeder_combout\ = \view|SPRITE_Y\(8)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_Y\(8),
+	combout => \sprite_renderer|sprite_y[8]~feeder_combout\);
 
 -- Location: LCCOMB_X25_Y1_N30
 \clock_25MHz~feeder\ : cycloneii_lcell_comb
@@ -3658,7 +5126,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3666,8 +5133,8 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -3686,7 +5153,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3694,8 +5160,8 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -3714,7 +5180,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3722,8 +5187,8 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -3880,7 +5345,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3888,8 +5352,8 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -3908,7 +5372,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3916,8 +5379,8 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -3936,7 +5399,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -3944,30 +5406,13 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	oe => VCC,
+	datain => \vga|latched_color\(10),
+	oe => \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	padio => SRAM_DQ(15),
 	combout => \SRAM_DQ[15]~15\);
-
--- Location: LCCOMB_X25_Y11_N0
-\vga|vga_timing|Add2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~0_combout\ = \vga|vga_timing|h_counter\(0) $ (VCC)
--- \vga|vga_timing|Add2~1\ = CARRY(\vga|vga_timing|h_counter\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(0),
-	datad => VCC,
-	combout => \vga|vga_timing|Add2~0_combout\,
-	cout => \vga|vga_timing|Add2~1\);
 
 -- Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \SW[9]~I\ : cycloneii_io
@@ -3995,30 +5440,17 @@ PORT MAP (
 	padio => ww_SW(9),
 	combout => \SW~combout\(9));
 
--- Location: LCCOMB_X24_Y13_N10
-\reset_sync_reg~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \reset_sync_reg~feeder_combout\ = \SW~combout\(9)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \SW~combout\(9),
-	combout => \reset_sync_reg~feeder_combout\);
-
--- Location: LCFF_X24_Y13_N11
+-- Location: LCFF_X20_Y10_N17
 reset_sync_reg : cycloneii_lcell_ff
 PORT MAP (
 	clk => \CLOCK_50~clkctrl_outclk\,
-	datain => \reset_sync_reg~feeder_combout\,
+	sdata => \SW~combout\(9),
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \reset_sync_reg~regout\);
 
--- Location: LCFF_X24_Y13_N3
+-- Location: LCFF_X20_Y10_N25
 RESET_N : cycloneii_lcell_ff
 PORT MAP (
 	clk => \CLOCK_50~clkctrl_outclk\,
@@ -4028,7 +5460,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \RESET_N~regout\);
 
--- Location: CLKCTRL_G6
+-- Location: CLKCTRL_G1
 \RESET_N~clkctrl\ : cycloneii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
@@ -4041,1213 +5473,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \RESET_N~clkctrl_outclk\);
 
--- Location: LCCOMB_X24_Y11_N2
-\vga|vga_timing|clock_count[0]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|clock_count[0]~1_combout\ = !\vga|vga_timing|clock_count\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \vga|vga_timing|clock_count\(0),
-	combout => \vga|vga_timing|clock_count[0]~1_combout\);
-
--- Location: LCFF_X24_Y11_N3
-\vga|vga_timing|clock_count[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|clock_count[0]~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|clock_count\(0));
-
--- Location: LCCOMB_X24_Y11_N0
-\vga|vga_timing|clock_count[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|clock_count[1]~0_combout\ = \vga|vga_timing|clock_count\(1) $ (\vga|vga_timing|clock_count\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \vga|vga_timing|clock_count\(1),
-	datad => \vga|vga_timing|clock_count\(0),
-	combout => \vga|vga_timing|clock_count[1]~0_combout\);
-
--- Location: LCFF_X24_Y11_N1
-\vga|vga_timing|clock_count[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|clock_count[1]~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|clock_count\(1));
-
--- Location: LCCOMB_X24_Y11_N20
-\vga|vga_timing|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal0~0_combout\ = (\vga|vga_timing|clock_count\(0) & \vga|vga_timing|clock_count\(1))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|clock_count\(0),
-	datad => \vga|vga_timing|clock_count\(1),
-	combout => \vga|vga_timing|Equal0~0_combout\);
-
--- Location: LCFF_X25_Y11_N1
-\vga|vga_timing|h_counter[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(0));
-
--- Location: LCCOMB_X25_Y11_N2
-\vga|vga_timing|Add2~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~2_combout\ = (\vga|vga_timing|h_counter\(1) & (!\vga|vga_timing|Add2~1\)) # (!\vga|vga_timing|h_counter\(1) & ((\vga|vga_timing|Add2~1\) # (GND)))
--- \vga|vga_timing|Add2~3\ = CARRY((!\vga|vga_timing|Add2~1\) # (!\vga|vga_timing|h_counter\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(1),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~1\,
-	combout => \vga|vga_timing|Add2~2_combout\,
-	cout => \vga|vga_timing|Add2~3\);
-
--- Location: LCFF_X25_Y11_N3
-\vga|vga_timing|h_counter[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(1));
-
--- Location: LCCOMB_X25_Y11_N4
-\vga|vga_timing|Add2~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~4_combout\ = (\vga|vga_timing|h_counter\(2) & (\vga|vga_timing|Add2~3\ $ (GND))) # (!\vga|vga_timing|h_counter\(2) & (!\vga|vga_timing|Add2~3\ & VCC))
--- \vga|vga_timing|Add2~5\ = CARRY((\vga|vga_timing|h_counter\(2) & !\vga|vga_timing|Add2~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(2),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~3\,
-	combout => \vga|vga_timing|Add2~4_combout\,
-	cout => \vga|vga_timing|Add2~5\);
-
--- Location: LCFF_X25_Y11_N5
-\vga|vga_timing|h_counter[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~4_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(2));
-
--- Location: LCCOMB_X25_Y11_N8
-\vga|vga_timing|Add2~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~8_combout\ = (\vga|vga_timing|h_counter\(4) & (\vga|vga_timing|Add2~7\ $ (GND))) # (!\vga|vga_timing|h_counter\(4) & (!\vga|vga_timing|Add2~7\ & VCC))
--- \vga|vga_timing|Add2~9\ = CARRY((\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|Add2~7\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(4),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~7\,
-	combout => \vga|vga_timing|Add2~8_combout\,
-	cout => \vga|vga_timing|Add2~9\);
-
--- Location: LCFF_X25_Y11_N9
-\vga|vga_timing|h_counter[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~8_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(4));
-
--- Location: LCCOMB_X25_Y11_N28
-\vga|vga_timing|Equal2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal2~0_combout\ = (\vga|vga_timing|h_counter\(3) & (\vga|vga_timing|h_counter\(1) & (\vga|vga_timing|h_counter\(2) & \vga|vga_timing|h_counter\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(3),
-	datab => \vga|vga_timing|h_counter\(1),
-	datac => \vga|vga_timing|h_counter\(2),
-	datad => \vga|vga_timing|h_counter\(0),
-	combout => \vga|vga_timing|Equal2~0_combout\);
-
--- Location: LCCOMB_X25_Y11_N12
-\vga|vga_timing|Add2~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~12_combout\ = (\vga|vga_timing|h_counter\(6) & (\vga|vga_timing|Add2~11\ $ (GND))) # (!\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|Add2~11\ & VCC))
--- \vga|vga_timing|Add2~13\ = CARRY((\vga|vga_timing|h_counter\(6) & !\vga|vga_timing|Add2~11\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(6),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~11\,
-	combout => \vga|vga_timing|Add2~12_combout\,
-	cout => \vga|vga_timing|Add2~13\);
-
--- Location: LCCOMB_X25_Y11_N14
-\vga|vga_timing|Add2~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~14_combout\ = (\vga|vga_timing|h_counter\(7) & (!\vga|vga_timing|Add2~13\)) # (!\vga|vga_timing|h_counter\(7) & ((\vga|vga_timing|Add2~13\) # (GND)))
--- \vga|vga_timing|Add2~15\ = CARRY((!\vga|vga_timing|Add2~13\) # (!\vga|vga_timing|h_counter\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(7),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~13\,
-	combout => \vga|vga_timing|Add2~14_combout\,
-	cout => \vga|vga_timing|Add2~15\);
-
--- Location: LCFF_X25_Y11_N15
-\vga|vga_timing|h_counter[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~14_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(7));
-
--- Location: LCCOMB_X24_Y11_N30
-\vga|vga_timing|Equal1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal1~0_combout\ = (!\vga|vga_timing|h_counter\(5) & (\vga|vga_timing|Equal2~0_combout\ & !\vga|vga_timing|h_counter\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(5),
-	datab => \vga|vga_timing|Equal2~0_combout\,
-	datac => \vga|vga_timing|h_counter\(7),
-	combout => \vga|vga_timing|Equal1~0_combout\);
-
--- Location: LCCOMB_X24_Y11_N22
-\vga|vga_timing|Equal3~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal3~0_combout\ = (\vga|vga_timing|h_counter\(8) & (!\vga|vga_timing|h_counter\(6) & (\vga|vga_timing|h_counter\(4) & \vga|vga_timing|Equal1~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(8),
-	datab => \vga|vga_timing|h_counter\(6),
-	datac => \vga|vga_timing|h_counter\(4),
-	datad => \vga|vga_timing|Equal1~0_combout\,
-	combout => \vga|vga_timing|Equal3~0_combout\);
-
--- Location: LCCOMB_X25_Y11_N16
-\vga|vga_timing|Add2~16\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~16_combout\ = (\vga|vga_timing|h_counter\(8) & (\vga|vga_timing|Add2~15\ $ (GND))) # (!\vga|vga_timing|h_counter\(8) & (!\vga|vga_timing|Add2~15\ & VCC))
--- \vga|vga_timing|Add2~17\ = CARRY((\vga|vga_timing|h_counter\(8) & !\vga|vga_timing|Add2~15\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|h_counter\(8),
-	datad => VCC,
-	cin => \vga|vga_timing|Add2~15\,
-	combout => \vga|vga_timing|Add2~16_combout\,
-	cout => \vga|vga_timing|Add2~17\);
-
--- Location: LCCOMB_X25_Y11_N26
-\vga|vga_timing|h_counter~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|h_counter~2_combout\ = (\vga|vga_timing|Add2~16_combout\ & ((!\vga|vga_timing|Equal3~0_combout\) # (!\vga|vga_timing|h_counter\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111000001110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(9),
-	datab => \vga|vga_timing|Equal3~0_combout\,
-	datac => \vga|vga_timing|Add2~16_combout\,
-	combout => \vga|vga_timing|h_counter~2_combout\);
-
--- Location: LCFF_X25_Y11_N27
-\vga|vga_timing|h_counter[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|h_counter~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(8));
-
--- Location: LCCOMB_X25_Y11_N18
-\vga|vga_timing|Add2~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add2~18_combout\ = \vga|vga_timing|h_counter\(9) $ (\vga|vga_timing|Add2~17\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(9),
-	cin => \vga|vga_timing|Add2~17\,
-	combout => \vga|vga_timing|Add2~18_combout\);
-
--- Location: LCCOMB_X25_Y11_N24
-\vga|vga_timing|h_counter~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|h_counter~1_combout\ = (\vga|vga_timing|Add2~18_combout\ & ((!\vga|vga_timing|h_counter\(9)) # (!\vga|vga_timing|Equal3~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|Equal3~0_combout\,
-	datac => \vga|vga_timing|h_counter\(9),
-	datad => \vga|vga_timing|Add2~18_combout\,
-	combout => \vga|vga_timing|h_counter~1_combout\);
-
--- Location: LCFF_X25_Y11_N25
-\vga|vga_timing|h_counter[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|h_counter~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(9));
-
--- Location: LCCOMB_X25_Y11_N30
-\vga|vga_timing|h_counter~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|h_counter~0_combout\ = (\vga|vga_timing|Add2~10_combout\ & ((!\vga|vga_timing|h_counter\(9)) # (!\vga|vga_timing|Equal3~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010101000101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Add2~10_combout\,
-	datab => \vga|vga_timing|Equal3~0_combout\,
-	datac => \vga|vga_timing|h_counter\(9),
-	combout => \vga|vga_timing|h_counter~0_combout\);
-
--- Location: LCFF_X25_Y11_N31
-\vga|vga_timing|h_counter[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|h_counter~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(5));
-
--- Location: LCFF_X25_Y11_N13
-\vga|vga_timing|h_counter[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add2~12_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_counter\(6));
-
--- Location: LCCOMB_X24_Y11_N18
-\vga|vga_timing|Equal2~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal2~1_combout\ = (!\vga|vga_timing|h_counter\(8) & (!\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|h_counter\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(8),
-	datab => \vga|vga_timing|h_counter\(6),
-	datac => \vga|vga_timing|h_counter\(4),
-	datad => \vga|vga_timing|h_counter\(9),
-	combout => \vga|vga_timing|Equal2~1_combout\);
-
--- Location: LCCOMB_X24_Y11_N28
-\vga|vga_timing|Equal2~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal2~2_combout\ = (\vga|vga_timing|h_counter\(5) & (\vga|vga_timing|Equal2~1_combout\ & (\vga|vga_timing|h_counter\(7) & \vga|vga_timing|Equal2~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(5),
-	datab => \vga|vga_timing|Equal2~1_combout\,
-	datac => \vga|vga_timing|h_counter\(7),
-	datad => \vga|vga_timing|Equal2~0_combout\,
-	combout => \vga|vga_timing|Equal2~2_combout\);
-
--- Location: LCCOMB_X24_Y11_N8
-\vga|vga_timing|Equal1~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal1~1_combout\ = (!\vga|vga_timing|h_counter\(8) & (\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|h_counter\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(8),
-	datab => \vga|vga_timing|h_counter\(6),
-	datac => \vga|vga_timing|h_counter\(4),
-	datad => \vga|vga_timing|h_counter\(9),
-	combout => \vga|vga_timing|Equal1~1_combout\);
-
--- Location: LCCOMB_X24_Y11_N16
-\vga|vga_timing|h_state~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|h_state~11_combout\ = (!\vga|vga_timing|Equal4~1_combout\ & (!\vga|vga_timing|Equal2~2_combout\ & ((!\vga|vga_timing|Equal1~0_combout\) # (!\vga|vga_timing|Equal1~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000100010001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Equal4~1_combout\,
-	datab => \vga|vga_timing|Equal2~2_combout\,
-	datac => \vga|vga_timing|Equal1~1_combout\,
-	datad => \vga|vga_timing|Equal1~0_combout\,
-	combout => \vga|vga_timing|h_state~11_combout\);
-
--- Location: LCCOMB_X24_Y11_N6
-\vga|vga_timing|h_state~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|h_state~12_combout\ = (\vga|vga_timing|Equal0~0_combout\ & (((\vga|vga_timing|Equal3~0_combout\ & !\vga|vga_timing|h_counter\(9))) # (!\vga|vga_timing|h_state~11_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101010001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Equal0~0_combout\,
-	datab => \vga|vga_timing|Equal3~0_combout\,
-	datac => \vga|vga_timing|h_state~11_combout\,
-	datad => \vga|vga_timing|h_counter\(9),
-	combout => \vga|vga_timing|h_state~12_combout\);
-
--- Location: LCFF_X24_Y11_N17
-\vga|vga_timing|h_state.DATA\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|h_state~11_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|h_state~12_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|h_state.DATA~regout\);
-
--- Location: LCCOMB_X20_Y11_N2
-\vga|vga_timing|Add4~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~0_combout\ = \vga|vga_timing|v_counter\(0) $ (VCC)
--- \vga|vga_timing|Add4~1\ = CARRY(\vga|vga_timing|v_counter\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|v_counter\(0),
-	datad => VCC,
-	combout => \vga|vga_timing|Add4~0_combout\,
-	cout => \vga|vga_timing|Add4~1\);
-
--- Location: LCCOMB_X20_Y11_N28
-\vga|vga_timing|v_counter~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_counter~3_combout\ = (\vga|vga_timing|Add4~0_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(5),
-	datab => \vga|vga_timing|v_counter\(9),
-	datac => \vga|vga_timing|Add4~0_combout\,
-	datad => \vga|vga_timing|Equal8~1_combout\,
-	combout => \vga|vga_timing|v_counter~3_combout\);
-
--- Location: LCCOMB_X25_Y11_N20
-\vga|vga_timing|Equal4~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal4~0_combout\ = (!\vga|vga_timing|h_counter\(3) & (!\vga|vga_timing|h_counter\(2) & (!\vga|vga_timing|h_counter\(7) & !\vga|vga_timing|h_counter\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|h_counter\(3),
-	datab => \vga|vga_timing|h_counter\(2),
-	datac => \vga|vga_timing|h_counter\(7),
-	datad => \vga|vga_timing|h_counter\(5),
-	combout => \vga|vga_timing|Equal4~0_combout\);
-
--- Location: LCCOMB_X25_Y11_N22
-\vga|vga_timing|Equal4~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal4~1_combout\ = (\vga|vga_timing|Equal2~1_combout\ & (!\vga|vga_timing|h_counter\(1) & (\vga|vga_timing|Equal4~0_combout\ & !\vga|vga_timing|h_counter\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Equal2~1_combout\,
-	datab => \vga|vga_timing|h_counter\(1),
-	datac => \vga|vga_timing|Equal4~0_combout\,
-	datad => \vga|vga_timing|h_counter\(0),
-	combout => \vga|vga_timing|Equal4~1_combout\);
-
--- Location: LCCOMB_X24_Y11_N4
-\vga|vga_timing|new_line~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|new_line~2_combout\ = (\vga|vga_timing|clock_count\(1) & (\vga|vga_timing|clock_count\(0) & \vga|vga_timing|Equal4~1_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|clock_count\(1),
-	datac => \vga|vga_timing|clock_count\(0),
-	datad => \vga|vga_timing|Equal4~1_combout\,
-	combout => \vga|vga_timing|new_line~2_combout\);
-
--- Location: LCFF_X24_Y11_N5
-\vga|vga_timing|new_line\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|new_line~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|new_line~regout\);
-
--- Location: LCFF_X20_Y11_N29
-\vga|vga_timing|v_counter[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_counter~3_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(0));
-
--- Location: LCCOMB_X20_Y11_N4
-\vga|vga_timing|Add4~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~2_combout\ = (\vga|vga_timing|v_counter\(1) & (!\vga|vga_timing|Add4~1\)) # (!\vga|vga_timing|v_counter\(1) & ((\vga|vga_timing|Add4~1\) # (GND)))
--- \vga|vga_timing|Add4~3\ = CARRY((!\vga|vga_timing|Add4~1\) # (!\vga|vga_timing|v_counter\(1)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|v_counter\(1),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~1\,
-	combout => \vga|vga_timing|Add4~2_combout\,
-	cout => \vga|vga_timing|Add4~3\);
-
--- Location: LCCOMB_X20_Y11_N30
-\vga|vga_timing|v_counter~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_counter~1_combout\ = (\vga|vga_timing|Add4~2_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(5),
-	datab => \vga|vga_timing|v_counter\(9),
-	datac => \vga|vga_timing|Add4~2_combout\,
-	datad => \vga|vga_timing|Equal8~1_combout\,
-	combout => \vga|vga_timing|v_counter~1_combout\);
-
--- Location: LCFF_X20_Y11_N31
-\vga|vga_timing|v_counter[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_counter~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(1));
-
--- Location: LCCOMB_X20_Y11_N6
-\vga|vga_timing|Add4~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~4_combout\ = (\vga|vga_timing|v_counter\(2) & (\vga|vga_timing|Add4~3\ $ (GND))) # (!\vga|vga_timing|v_counter\(2) & (!\vga|vga_timing|Add4~3\ & VCC))
--- \vga|vga_timing|Add4~5\ = CARRY((\vga|vga_timing|v_counter\(2) & !\vga|vga_timing|Add4~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|v_counter\(2),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~3\,
-	combout => \vga|vga_timing|Add4~4_combout\,
-	cout => \vga|vga_timing|Add4~5\);
-
--- Location: LCCOMB_X20_Y11_N0
-\vga|vga_timing|v_counter~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_counter~0_combout\ = (\vga|vga_timing|Add4~4_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(5),
-	datab => \vga|vga_timing|v_counter\(9),
-	datac => \vga|vga_timing|Add4~4_combout\,
-	datad => \vga|vga_timing|Equal8~1_combout\,
-	combout => \vga|vga_timing|v_counter~0_combout\);
-
--- Location: LCFF_X20_Y11_N1
-\vga|vga_timing|v_counter[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_counter~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(2));
-
--- Location: LCCOMB_X21_Y11_N14
-\vga|vga_timing|Equal8~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal8~0_combout\ = (\vga|vga_timing|v_counter\(1) & (\vga|vga_timing|v_counter\(2) & \vga|vga_timing|v_counter\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(1),
-	datac => \vga|vga_timing|v_counter\(2),
-	datad => \vga|vga_timing|v_counter\(3),
-	combout => \vga|vga_timing|Equal8~0_combout\);
-
--- Location: LCCOMB_X20_Y11_N8
-\vga|vga_timing|Add4~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~6_combout\ = (\vga|vga_timing|v_counter\(3) & (!\vga|vga_timing|Add4~5\)) # (!\vga|vga_timing|v_counter\(3) & ((\vga|vga_timing|Add4~5\) # (GND)))
--- \vga|vga_timing|Add4~7\ = CARRY((!\vga|vga_timing|Add4~5\) # (!\vga|vga_timing|v_counter\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(3),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~5\,
-	combout => \vga|vga_timing|Add4~6_combout\,
-	cout => \vga|vga_timing|Add4~7\);
-
--- Location: LCCOMB_X20_Y11_N10
-\vga|vga_timing|Add4~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~8_combout\ = (\vga|vga_timing|v_counter\(4) & (\vga|vga_timing|Add4~7\ $ (GND))) # (!\vga|vga_timing|v_counter\(4) & (!\vga|vga_timing|Add4~7\ & VCC))
--- \vga|vga_timing|Add4~9\ = CARRY((\vga|vga_timing|v_counter\(4) & !\vga|vga_timing|Add4~7\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(4),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~7\,
-	combout => \vga|vga_timing|Add4~8_combout\,
-	cout => \vga|vga_timing|Add4~9\);
-
--- Location: LCCOMB_X20_Y11_N12
-\vga|vga_timing|Add4~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~10_combout\ = (\vga|vga_timing|v_counter\(5) & (!\vga|vga_timing|Add4~9\)) # (!\vga|vga_timing|v_counter\(5) & ((\vga|vga_timing|Add4~9\) # (GND)))
--- \vga|vga_timing|Add4~11\ = CARRY((!\vga|vga_timing|Add4~9\) # (!\vga|vga_timing|v_counter\(5)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(5),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~9\,
-	combout => \vga|vga_timing|Add4~10_combout\,
-	cout => \vga|vga_timing|Add4~11\);
-
--- Location: LCCOMB_X20_Y11_N16
-\vga|vga_timing|Add4~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Add4~14_combout\ = (\vga|vga_timing|v_counter\(7) & (!\vga|vga_timing|Add4~13\)) # (!\vga|vga_timing|v_counter\(7) & ((\vga|vga_timing|Add4~13\) # (GND)))
--- \vga|vga_timing|Add4~15\ = CARRY((!\vga|vga_timing|Add4~13\) # (!\vga|vga_timing|v_counter\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(7),
-	datad => VCC,
-	cin => \vga|vga_timing|Add4~13\,
-	combout => \vga|vga_timing|Add4~14_combout\,
-	cout => \vga|vga_timing|Add4~15\);
-
--- Location: LCFF_X20_Y11_N19
-\vga|vga_timing|v_counter[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add4~16_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(8));
-
--- Location: LCFF_X20_Y11_N17
-\vga|vga_timing|v_counter[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add4~14_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(7));
-
--- Location: LCFF_X20_Y11_N11
-\vga|vga_timing|v_counter[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add4~8_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(4));
-
--- Location: LCCOMB_X20_Y11_N26
-\vga|vga_timing|Equal6~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal6~0_combout\ = (!\vga|vga_timing|v_counter\(6) & (!\vga|vga_timing|v_counter\(8) & (!\vga|vga_timing|v_counter\(7) & !\vga|vga_timing|v_counter\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(6),
-	datab => \vga|vga_timing|v_counter\(8),
-	datac => \vga|vga_timing|v_counter\(7),
-	datad => \vga|vga_timing|v_counter\(4),
-	combout => \vga|vga_timing|Equal6~0_combout\);
-
--- Location: LCCOMB_X21_Y11_N24
-\vga|vga_timing|Equal8~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal8~1_combout\ = (!\vga|vga_timing|v_counter\(0) & (\vga|vga_timing|Equal8~0_combout\ & \vga|vga_timing|Equal6~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|vga_timing|v_counter\(0),
-	datac => \vga|vga_timing|Equal8~0_combout\,
-	datad => \vga|vga_timing|Equal6~0_combout\,
-	combout => \vga|vga_timing|Equal8~1_combout\);
-
--- Location: LCFF_X20_Y11_N13
-\vga|vga_timing|v_counter[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|Add4~10_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(5));
-
--- Location: LCCOMB_X20_Y11_N22
-\vga|vga_timing|v_counter~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_counter~4_combout\ = (\vga|vga_timing|Add4~18_combout\ & (((\vga|vga_timing|v_counter\(5)) # (!\vga|vga_timing|v_counter\(9))) # (!\vga|vga_timing|Equal8~1_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Add4~18_combout\,
-	datab => \vga|vga_timing|Equal8~1_combout\,
-	datac => \vga|vga_timing|v_counter\(9),
-	datad => \vga|vga_timing|v_counter\(5),
-	combout => \vga|vga_timing|v_counter~4_combout\);
-
--- Location: LCFF_X20_Y11_N23
-\vga|vga_timing|v_counter[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_counter~4_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(9));
-
--- Location: LCCOMB_X20_Y11_N24
-\vga|vga_timing|v_counter~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_counter~2_combout\ = (\vga|vga_timing|Add4~6_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(5),
-	datab => \vga|vga_timing|v_counter\(9),
-	datac => \vga|vga_timing|Add4~6_combout\,
-	datad => \vga|vga_timing|Equal8~1_combout\,
-	combout => \vga|vga_timing|v_counter~2_combout\);
-
--- Location: LCFF_X20_Y11_N25
-\vga|vga_timing|v_counter[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_counter~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|new_line~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_counter\(3));
-
--- Location: LCCOMB_X21_Y11_N28
-\vga|vga_timing|Equal6~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal6~1_combout\ = (!\vga|vga_timing|v_counter\(0) & (\vga|vga_timing|Equal6~0_combout\ & (!\vga|vga_timing|v_counter\(5) & !\vga|vga_timing|v_counter\(9))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(0),
-	datab => \vga|vga_timing|Equal6~0_combout\,
-	datac => \vga|vga_timing|v_counter\(5),
-	datad => \vga|vga_timing|v_counter\(9),
-	combout => \vga|vga_timing|Equal6~1_combout\);
-
--- Location: LCCOMB_X21_Y11_N16
-\vga|vga_timing|v_state~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_state~11_combout\ = ((\vga|vga_timing|v_counter\(1) & ((\vga|vga_timing|v_counter\(2)) # (!\vga|vga_timing|v_counter\(3)))) # (!\vga|vga_timing|v_counter\(1) & (\vga|vga_timing|v_counter\(3) $ (\vga|vga_timing|v_counter\(2))))) # 
--- (!\vga|vga_timing|Equal6~1_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011011011111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(1),
-	datab => \vga|vga_timing|v_counter\(3),
-	datac => \vga|vga_timing|v_counter\(2),
-	datad => \vga|vga_timing|Equal6~1_combout\,
-	combout => \vga|vga_timing|v_state~11_combout\);
-
--- Location: LCCOMB_X21_Y11_N18
-\vga|vga_timing|Equal8~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|Equal8~2_combout\ = (\vga|vga_timing|v_counter\(5) & !\vga|vga_timing|v_counter\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \vga|vga_timing|v_counter\(5),
-	datad => \vga|vga_timing|v_counter\(9),
-	combout => \vga|vga_timing|Equal8~2_combout\);
-
--- Location: LCCOMB_X21_Y11_N20
-\vga|vga_timing|v_state~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|vga_timing|v_state~12_combout\ = (\vga|vga_timing|new_line~regout\ & (((\vga|vga_timing|Equal8~1_combout\ & \vga|vga_timing|Equal8~2_combout\)) # (!\vga|vga_timing|v_state~11_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_timing|Equal8~1_combout\,
-	datab => \vga|vga_timing|Equal8~2_combout\,
-	datac => \vga|vga_timing|v_state~11_combout\,
-	datad => \vga|vga_timing|new_line~regout\,
-	combout => \vga|vga_timing|v_state~12_combout\);
-
--- Location: LCFF_X21_Y11_N17
-\vga|vga_timing|v_state.DATA\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|vga_timing|v_state~11_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \vga|vga_timing|v_state~12_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|vga_timing|v_state.DATA~regout\);
-
--- Location: LCCOMB_X30_Y14_N28
-\sprite_renderer|Add1~85\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~85_combout\ = (\sprite_renderer|Add1~57_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~57_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~85_combout\);
-
--- Location: LCCOMB_X34_Y14_N14
-\sprite_renderer|Add0~92\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~92_combout\ = (\sprite_renderer|Add0~40_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add0~40_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~92_combout\);
-
--- Location: LCCOMB_X31_Y14_N18
-\sprite_renderer|READY~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|READY~0_combout\ = !\sprite_renderer|state.IDLE~regout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|state.IDLE~regout\,
-	combout => \sprite_renderer|READY~0_combout\);
-
--- Location: LCFF_X31_Y14_N19
-\sprite_renderer|READY\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|READY~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|READY~regout\);
-
--- Location: LCCOMB_X32_Y13_N30
-\view|render_asap~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|render_asap~0_combout\ = (\view|render_asap~regout\ & (((\sprite_renderer|READY~regout\) # (!\view|state~regout\)))) # (!\view|render_asap~regout\ & (\view|frame_time~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101000111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|frame_time~regout\,
-	datab => \view|state~regout\,
-	datac => \view|render_asap~regout\,
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|render_asap~0_combout\);
-
--- Location: LCFF_X32_Y13_N31
-\view|render_asap\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|render_asap~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|render_asap~regout\);
-
--- Location: LCCOMB_X32_Y13_N4
-\view|state~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|state~0_combout\ = (\sprite_renderer|READY~regout\ & (\view|state~regout\)) # (!\sprite_renderer|READY~regout\ & ((!\view|render_asap~regout\) # (!\view|state~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001111110011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	datad => \view|render_asap~regout\,
-	combout => \view|state~0_combout\);
-
--- Location: LCFF_X32_Y13_N5
-\view|state\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|state~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|state~regout\);
-
--- Location: LCCOMB_X32_Y13_N0
-\view|DRAW_SPRITE~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|DRAW_SPRITE~0_combout\ = (!\sprite_renderer|READY~regout\ & !\view|state~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001100000011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	combout => \view|DRAW_SPRITE~0_combout\);
-
--- Location: LCFF_X32_Y13_N1
-\view|DRAW_SPRITE\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|DRAW_SPRITE~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|DRAW_SPRITE~regout\);
-
--- Location: LCCOMB_X31_Y15_N6
-\sprite_renderer|Selector72~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector72~0_combout\ = (\sprite_renderer|state.WAITING~regout\) # (((\sprite_renderer|state.IDLE~regout\ & !\view|DRAW_SPRITE~regout\)) # (!\sprite_renderer|state.CLEARING~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011101111111011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.WAITING~regout\,
-	datab => \sprite_renderer|state.CLEARING~regout\,
-	datac => \sprite_renderer|state.IDLE~regout\,
-	datad => \view|DRAW_SPRITE~regout\,
-	combout => \sprite_renderer|Selector72~0_combout\);
-
--- Location: LCCOMB_X32_Y13_N2
-\view|SHOW~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SHOW~0_combout\ = (!\sprite_renderer|READY~regout\ & (\view|state~regout\ & \view|render_asap~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	datad => \view|render_asap~regout\,
-	combout => \view|SHOW~0_combout\);
-
--- Location: LCFF_X32_Y13_N3
-\view|SHOW\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SHOW~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SHOW~regout\);
-
--- Location: LCCOMB_X31_Y14_N20
-\sprite_renderer|Selector72~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector72~1_combout\ = (\sprite_renderer|state.IDLE~regout\ & ((\view|SHOW~regout\) # ((\sprite_renderer|Selector72~0_combout\ & \sprite_renderer|next_state.SHOWING~regout\)))) # (!\sprite_renderer|state.IDLE~regout\ & 
--- (\sprite_renderer|Selector72~0_combout\ & (\sprite_renderer|next_state.SHOWING~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110101011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.IDLE~regout\,
-	datab => \sprite_renderer|Selector72~0_combout\,
-	datac => \sprite_renderer|next_state.SHOWING~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|Selector72~1_combout\);
-
--- Location: LCFF_X31_Y14_N21
-\sprite_renderer|next_state.SHOWING\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Selector72~1_combout\,
-	ena => \RESET_N~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|next_state.SHOWING~regout\);
-
--- Location: LCCOMB_X31_Y15_N20
-\sprite_renderer|Selector67~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector67~0_combout\ = (\sprite_renderer|state.WAITING~regout\ & (\vga|READY~1_combout\ & (!\sprite_renderer|FB_FLIP~regout\ & \sprite_renderer|next_state.SHOWING~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.WAITING~regout\,
-	datab => \vga|READY~1_combout\,
-	datac => \sprite_renderer|FB_FLIP~regout\,
-	datad => \sprite_renderer|next_state.SHOWING~regout\,
-	combout => \sprite_renderer|Selector67~0_combout\);
-
--- Location: LCFF_X31_Y15_N21
-\sprite_renderer|state.SHOWING\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Selector67~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|state.SHOWING~regout\);
-
--- Location: LCFF_X31_Y15_N23
+-- Location: LCFF_X23_Y13_N31
 \sprite_renderer|FB_FLIP\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -5258,60 +5484,588 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \sprite_renderer|FB_FLIP~regout\);
 
--- Location: LCCOMB_X31_Y15_N14
-\sprite_renderer|Selector65~1\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X27_Y2_N14
+\view|Add0~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector65~1_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (\sprite_renderer|state.CLEARING~regout\ & ((\sprite_renderer|LessThan1~10_combout\) # (\sprite_renderer|LessThan0~10_combout\))))
+-- \view|Add0~2_combout\ = (\view|draw_gen:counter[1]~regout\ & (!\view|Add0~1\)) # (!\view|draw_gen:counter[1]~regout\ & ((\view|Add0~1\) # (GND)))
+-- \view|Add0~3\ = CARRY((!\view|Add0~1\) # (!\view|draw_gen:counter[1]~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100100000000000",
-	sum_lutc_input => "datac")
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datab => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	datad => \sprite_renderer|state.CLEARING~regout\,
-	combout => \sprite_renderer|Selector65~1_combout\);
+	datab => \view|draw_gen:counter[1]~regout\,
+	datad => VCC,
+	cin => \view|Add0~1\,
+	combout => \view|Add0~2_combout\,
+	cout => \view|Add0~3\);
 
--- Location: LCCOMB_X31_Y15_N22
-\sprite_renderer|Selector65~0\ : cycloneii_lcell_comb
+-- Location: LCFF_X27_Y2_N15
+\view|draw_gen:counter[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[1]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N16
+\view|Add0~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector65~0_combout\ = (\vga|READY~1_combout\ & (!\sprite_renderer|FB_FLIP~regout\ & \sprite_renderer|state.WAITING~regout\))
+-- \view|Add0~4_combout\ = (\view|draw_gen:counter[2]~regout\ & (\view|Add0~3\ $ (GND))) # (!\view|draw_gen:counter[2]~regout\ & (!\view|Add0~3\ & VCC))
+-- \view|Add0~5\ = CARRY((\view|draw_gen:counter[2]~regout\ & !\view|Add0~3\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000110000000000",
-	sum_lutc_input => "datac")
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \vga|READY~1_combout\,
-	datac => \sprite_renderer|FB_FLIP~regout\,
-	datad => \sprite_renderer|state.WAITING~regout\,
-	combout => \sprite_renderer|Selector65~0_combout\);
+	datab => \view|draw_gen:counter[2]~regout\,
+	datad => VCC,
+	cin => \view|Add0~3\,
+	combout => \view|Add0~4_combout\,
+	cout => \view|Add0~5\);
 
--- Location: LCCOMB_X31_Y15_N0
-\sprite_renderer|Selector65~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X27_Y2_N8
+\view|counter~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector65~2_combout\ = (\sprite_renderer|state.WAITING~regout\) # ((\sprite_renderer|state.IDLE~regout\ & ((\view|DRAW_SPRITE~regout\) # (\view|SHOW~regout\))))
+-- \view|counter~0_combout\ = (\view|Add0~4_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101011101010",
+	lut_mask => "0111000001110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|state.WAITING~regout\,
-	datab => \view|DRAW_SPRITE~regout\,
-	datac => \sprite_renderer|state.IDLE~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|Selector65~2_combout\);
+	dataa => \view|Equal0~5_combout\,
+	datab => \view|Equal0~0_combout\,
+	datac => \view|Add0~4_combout\,
+	combout => \view|counter~0_combout\);
 
--- Location: LCCOMB_X31_Y15_N24
-\sprite_renderer|Selector65~3\ : cycloneii_lcell_comb
+-- Location: LCFF_X27_Y2_N9
+\view|draw_gen:counter[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[2]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N18
+\view|Add0~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector65~3_combout\ = (!\sprite_renderer|state.DRAWING~regout\ & (!\sprite_renderer|Selector65~0_combout\ & (\sprite_renderer|Selector65~2_combout\ & \sprite_renderer|state.CLEARING~regout\)))
+-- \view|Add0~6_combout\ = (\view|draw_gen:counter[3]~regout\ & (!\view|Add0~5\)) # (!\view|draw_gen:counter[3]~regout\ & ((\view|Add0~5\) # (GND)))
+-- \view|Add0~7\ = CARRY((!\view|Add0~5\) # (!\view|draw_gen:counter[3]~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[3]~regout\,
+	datad => VCC,
+	cin => \view|Add0~5\,
+	combout => \view|Add0~6_combout\,
+	cout => \view|Add0~7\);
+
+-- Location: LCFF_X27_Y2_N19
+\view|draw_gen:counter[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~6_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[3]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N4
+\view|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Equal0~0_combout\ = (!\view|draw_gen:counter[0]~regout\ & (\view|draw_gen:counter[2]~regout\ & (!\view|draw_gen:counter[1]~regout\ & !\view|draw_gen:counter[3]~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|draw_gen:counter[0]~regout\,
+	datab => \view|draw_gen:counter[2]~regout\,
+	datac => \view|draw_gen:counter[1]~regout\,
+	datad => \view|draw_gen:counter[3]~regout\,
+	combout => \view|Equal0~0_combout\);
+
+-- Location: LCCOMB_X27_Y1_N26
+\view|counter~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~4_combout\ = (\view|Add0~30_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|Add0~30_combout\,
+	datac => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~4_combout\);
+
+-- Location: LCFF_X27_Y1_N27
+\view|draw_gen:counter[15]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~4_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[15]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N20
+\view|Add0~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~8_combout\ = (\view|draw_gen:counter[4]~regout\ & (\view|Add0~7\ $ (GND))) # (!\view|draw_gen:counter[4]~regout\ & (!\view|Add0~7\ & VCC))
+-- \view|Add0~9\ = CARRY((\view|draw_gen:counter[4]~regout\ & !\view|Add0~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[4]~regout\,
+	datad => VCC,
+	cin => \view|Add0~7\,
+	combout => \view|Add0~8_combout\,
+	cout => \view|Add0~9\);
+
+-- Location: LCCOMB_X27_Y2_N0
+\view|counter~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~11_combout\ = (\view|Add0~8_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111000001110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|Equal0~5_combout\,
+	datab => \view|Equal0~0_combout\,
+	datac => \view|Add0~8_combout\,
+	combout => \view|counter~11_combout\);
+
+-- Location: LCFF_X27_Y2_N1
+\view|draw_gen:counter[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[4]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N24
+\view|Add0~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~12_combout\ = (\view|draw_gen:counter[6]~regout\ & (\view|Add0~11\ $ (GND))) # (!\view|draw_gen:counter[6]~regout\ & (!\view|Add0~11\ & VCC))
+-- \view|Add0~13\ = CARRY((\view|draw_gen:counter[6]~regout\ & !\view|Add0~11\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|draw_gen:counter[6]~regout\,
+	datad => VCC,
+	cin => \view|Add0~11\,
+	combout => \view|Add0~12_combout\,
+	cout => \view|Add0~13\);
+
+-- Location: LCCOMB_X27_Y2_N26
+\view|Add0~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~14_combout\ = (\view|draw_gen:counter[7]~regout\ & (!\view|Add0~13\)) # (!\view|draw_gen:counter[7]~regout\ & ((\view|Add0~13\) # (GND)))
+-- \view|Add0~15\ = CARRY((!\view|Add0~13\) # (!\view|draw_gen:counter[7]~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[7]~regout\,
+	datad => VCC,
+	cin => \view|Add0~13\,
+	combout => \view|Add0~14_combout\,
+	cout => \view|Add0~15\);
+
+-- Location: LCFF_X27_Y2_N27
+\view|draw_gen:counter[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~14_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[7]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N28
+\view|Add0~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~16_combout\ = (\view|draw_gen:counter[8]~regout\ & (\view|Add0~15\ $ (GND))) # (!\view|draw_gen:counter[8]~regout\ & (!\view|Add0~15\ & VCC))
+-- \view|Add0~17\ = CARRY((\view|draw_gen:counter[8]~regout\ & !\view|Add0~15\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[8]~regout\,
+	datad => VCC,
+	cin => \view|Add0~15\,
+	combout => \view|Add0~16_combout\,
+	cout => \view|Add0~17\);
+
+-- Location: LCCOMB_X26_Y1_N0
+\view|counter~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~9_combout\ = (\view|Add0~16_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Equal0~5_combout\,
+	datac => \view|Add0~16_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~9_combout\);
+
+-- Location: LCFF_X26_Y1_N1
+\view|draw_gen:counter[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~9_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[8]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N30
+\view|Add0~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~18_combout\ = (\view|draw_gen:counter[9]~regout\ & (!\view|Add0~17\)) # (!\view|draw_gen:counter[9]~regout\ & ((\view|Add0~17\) # (GND)))
+-- \view|Add0~19\ = CARRY((!\view|Add0~17\) # (!\view|draw_gen:counter[9]~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[9]~regout\,
+	datad => VCC,
+	cin => \view|Add0~17\,
+	combout => \view|Add0~18_combout\,
+	cout => \view|Add0~19\);
+
+-- Location: LCCOMB_X26_Y1_N14
+\view|counter~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~8_combout\ = (\view|Add0~18_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Add0~18_combout\,
+	datac => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~8_combout\);
+
+-- Location: LCFF_X26_Y1_N15
+\view|draw_gen:counter[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~8_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[9]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N2
+\view|Add0~22\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~22_combout\ = (\view|draw_gen:counter[11]~regout\ & (!\view|Add0~21\)) # (!\view|draw_gen:counter[11]~regout\ & ((\view|Add0~21\) # (GND)))
+-- \view|Add0~23\ = CARRY((!\view|Add0~21\) # (!\view|draw_gen:counter[11]~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[11]~regout\,
+	datad => VCC,
+	cin => \view|Add0~21\,
+	combout => \view|Add0~22_combout\,
+	cout => \view|Add0~23\);
+
+-- Location: LCFF_X27_Y1_N3
+\view|draw_gen:counter[11]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~22_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[11]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N4
+\view|Add0~24\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~24_combout\ = (\view|draw_gen:counter[12]~regout\ & (\view|Add0~23\ $ (GND))) # (!\view|draw_gen:counter[12]~regout\ & (!\view|Add0~23\ & VCC))
+-- \view|Add0~25\ = CARRY((\view|draw_gen:counter[12]~regout\ & !\view|Add0~23\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[12]~regout\,
+	datad => VCC,
+	cin => \view|Add0~23\,
+	combout => \view|Add0~24_combout\,
+	cout => \view|Add0~25\);
+
+-- Location: LCCOMB_X27_Y1_N28
+\view|counter~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~6_combout\ = (\view|Add0~24_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Equal0~5_combout\,
+	datac => \view|Add0~24_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~6_combout\);
+
+-- Location: LCFF_X27_Y1_N29
+\view|draw_gen:counter[12]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~6_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[12]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N8
+\view|Add0~28\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~28_combout\ = (\view|draw_gen:counter[14]~regout\ & (\view|Add0~27\ $ (GND))) # (!\view|draw_gen:counter[14]~regout\ & (!\view|Add0~27\ & VCC))
+-- \view|Add0~29\ = CARRY((\view|draw_gen:counter[14]~regout\ & !\view|Add0~27\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[14]~regout\,
+	datad => VCC,
+	cin => \view|Add0~27\,
+	combout => \view|Add0~28_combout\,
+	cout => \view|Add0~29\);
+
+-- Location: LCFF_X27_Y1_N9
+\view|draw_gen:counter[14]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~28_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[14]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N30
+\view|Equal0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Equal0~2_combout\ = (\view|draw_gen:counter[13]~regout\ & (\view|draw_gen:counter[15]~regout\ & (!\view|draw_gen:counter[14]~regout\ & \view|draw_gen:counter[12]~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|draw_gen:counter[13]~regout\,
+	datab => \view|draw_gen:counter[15]~regout\,
+	datac => \view|draw_gen:counter[14]~regout\,
+	datad => \view|draw_gen:counter[12]~regout\,
+	combout => \view|Equal0~2_combout\);
+
+-- Location: LCFF_X27_Y2_N25
+\view|draw_gen:counter[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~12_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[6]~regout\);
+
+-- Location: LCCOMB_X27_Y2_N2
+\view|Equal0~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Equal0~4_combout\ = (\view|draw_gen:counter[5]~regout\ & (\view|draw_gen:counter[4]~regout\ & (!\view|draw_gen:counter[6]~regout\ & !\view|draw_gen:counter[7]~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|draw_gen:counter[5]~regout\,
+	datab => \view|draw_gen:counter[4]~regout\,
+	datac => \view|draw_gen:counter[6]~regout\,
+	datad => \view|draw_gen:counter[7]~regout\,
+	combout => \view|Equal0~4_combout\);
+
+-- Location: LCCOMB_X27_Y1_N14
+\view|Add0~34\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~34_combout\ = (\view|draw_gen:counter[17]~regout\ & (!\view|Add0~33\)) # (!\view|draw_gen:counter[17]~regout\ & ((\view|Add0~33\) # (GND)))
+-- \view|Add0~35\ = CARRY((!\view|Add0~33\) # (!\view|draw_gen:counter[17]~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[17]~regout\,
+	datad => VCC,
+	cin => \view|Add0~33\,
+	combout => \view|Add0~34_combout\,
+	cout => \view|Add0~35\);
+
+-- Location: LCFF_X27_Y1_N15
+\view|draw_gen:counter[17]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Add0~34_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[17]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N16
+\view|Add0~36\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~36_combout\ = (\view|draw_gen:counter[18]~regout\ & (\view|Add0~35\ $ (GND))) # (!\view|draw_gen:counter[18]~regout\ & (!\view|Add0~35\ & VCC))
+-- \view|Add0~37\ = CARRY((\view|draw_gen:counter[18]~regout\ & !\view|Add0~35\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|draw_gen:counter[18]~regout\,
+	datad => VCC,
+	cin => \view|Add0~35\,
+	combout => \view|Add0~36_combout\,
+	cout => \view|Add0~37\);
+
+-- Location: LCCOMB_X27_Y1_N22
+\view|counter~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~3_combout\ = (\view|Add0~36_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Equal0~5_combout\,
+	datac => \view|Add0~36_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~3_combout\);
+
+-- Location: LCFF_X27_Y1_N23
+\view|draw_gen:counter[18]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~3_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[18]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N18
+\view|Add0~38\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add0~38_combout\ = \view|draw_gen:counter[19]~regout\ $ (\view|Add0~37\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|draw_gen:counter[19]~regout\,
+	cin => \view|Add0~37\,
+	combout => \view|Add0~38_combout\);
+
+-- Location: LCCOMB_X27_Y1_N20
+\view|counter~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|counter~2_combout\ = (\view|Add0~38_combout\ & ((!\view|Equal0~0_combout\) # (!\view|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|Add0~38_combout\,
+	datac => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|counter~2_combout\);
+
+-- Location: LCFF_X27_Y1_N21
+\view|draw_gen:counter[19]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|counter~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|draw_gen:counter[19]~regout\);
+
+-- Location: LCCOMB_X27_Y1_N24
+\view|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Equal0~1_combout\ = (!\view|draw_gen:counter[16]~regout\ & (!\view|draw_gen:counter[17]~regout\ & (\view|draw_gen:counter[19]~regout\ & \view|draw_gen:counter[18]~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5319,158 +6073,71 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|state.DRAWING~regout\,
-	datab => \sprite_renderer|Selector65~0_combout\,
-	datac => \sprite_renderer|Selector65~2_combout\,
-	datad => \sprite_renderer|state.CLEARING~regout\,
-	combout => \sprite_renderer|Selector65~3_combout\);
+	dataa => \view|draw_gen:counter[16]~regout\,
+	datab => \view|draw_gen:counter[17]~regout\,
+	datac => \view|draw_gen:counter[19]~regout\,
+	datad => \view|draw_gen:counter[18]~regout\,
+	combout => \view|Equal0~1_combout\);
 
--- Location: LCCOMB_X31_Y15_N12
-\sprite_renderer|Selector65~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X26_Y1_N4
+\view|Equal0~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector65~4_combout\ = (\sprite_renderer|Selector65~1_combout\) # ((\sprite_renderer|Selector65~3_combout\) # ((\sprite_renderer|state.SHOWING~regout\ & \sprite_renderer|state.CLEARING~regout\)))
+-- \view|Equal0~5_combout\ = (\view|Equal0~3_combout\ & (\view|Equal0~2_combout\ & (\view|Equal0~4_combout\ & \view|Equal0~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111011111100",
+	lut_mask => "1000000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|state.SHOWING~regout\,
-	datab => \sprite_renderer|Selector65~1_combout\,
-	datac => \sprite_renderer|Selector65~3_combout\,
-	datad => \sprite_renderer|state.CLEARING~regout\,
-	combout => \sprite_renderer|Selector65~4_combout\);
+	dataa => \view|Equal0~3_combout\,
+	datab => \view|Equal0~2_combout\,
+	datac => \view|Equal0~4_combout\,
+	datad => \view|Equal0~1_combout\,
+	combout => \view|Equal0~5_combout\);
 
--- Location: LCFF_X31_Y15_N13
-\sprite_renderer|state.WAITING\ : cycloneii_lcell_ff
+-- Location: LCCOMB_X26_Y1_N12
+\view|Equal0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Equal0~6_combout\ = (\view|Equal0~5_combout\ & \view|Equal0~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
 PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Selector65~4_combout\,
+	datac => \view|Equal0~5_combout\,
+	datad => \view|Equal0~0_combout\,
+	combout => \view|Equal0~6_combout\);
+
+-- Location: LCFF_X26_Y1_N13
+\view|frame_time\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~regout\,
+	datain => \view|Equal0~6_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|state.WAITING~regout\);
+	regout => \view|frame_time~regout\);
 
--- Location: LCCOMB_X31_Y15_N28
-\sprite_renderer|Selector68~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector68~0_combout\ = (((\sprite_renderer|FB_FLIP~regout\) # (!\sprite_renderer|state.WAITING~regout\)) # (!\vga|READY~1_combout\)) # (!\sprite_renderer|next_state.CLEARING~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111011111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|next_state.CLEARING~regout\,
-	datab => \vga|READY~1_combout\,
-	datac => \sprite_renderer|FB_FLIP~regout\,
-	datad => \sprite_renderer|state.WAITING~regout\,
-	combout => \sprite_renderer|Selector68~0_combout\);
-
--- Location: LCFF_X31_Y15_N29
-\sprite_renderer|state.CLEARING\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Selector68~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|state.CLEARING~regout\);
-
--- Location: LCCOMB_X31_Y15_N18
-\sprite_renderer|next_state.IDLE~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|next_state.IDLE~2_combout\ = (!\sprite_renderer|state.WAITING~regout\ & \sprite_renderer|state.CLEARING~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.WAITING~regout\,
-	datad => \sprite_renderer|state.CLEARING~regout\,
-	combout => \sprite_renderer|next_state.IDLE~2_combout\);
-
--- Location: LCCOMB_X31_Y14_N4
-\sprite_renderer|next_state.IDLE~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|next_state.IDLE~3_combout\ = (\sprite_renderer|next_state.IDLE~regout\) # ((!\sprite_renderer|Selector64~0_combout\ & (\RESET_N~regout\ & \sprite_renderer|next_state.IDLE~2_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Selector64~0_combout\,
-	datab => \RESET_N~regout\,
-	datac => \sprite_renderer|next_state.IDLE~regout\,
-	datad => \sprite_renderer|next_state.IDLE~2_combout\,
-	combout => \sprite_renderer|next_state.IDLE~3_combout\);
-
--- Location: LCFF_X31_Y14_N5
-\sprite_renderer|next_state.IDLE\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|next_state.IDLE~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|next_state.IDLE~regout\);
-
--- Location: LCCOMB_X31_Y15_N2
-\sprite_renderer|Selector64~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector64~1_combout\ = (\sprite_renderer|Selector65~0_combout\ & ((!\sprite_renderer|next_state.IDLE~regout\))) # (!\sprite_renderer|Selector65~0_combout\ & (\sprite_renderer|Selector64~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Selector64~0_combout\,
-	datac => \sprite_renderer|next_state.IDLE~regout\,
-	datad => \sprite_renderer|Selector65~0_combout\,
-	combout => \sprite_renderer|Selector64~1_combout\);
-
--- Location: LCCOMB_X31_Y15_N4
-\sprite_renderer|Selector64~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector64~2_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (!\sprite_renderer|LessThan1~10_combout\ & ((!\sprite_renderer|LessThan0~10_combout\)))) # (!\sprite_renderer|state.DRAWING~regout\ & 
--- (((\sprite_renderer|Selector64~1_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datab => \sprite_renderer|Selector64~1_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	datad => \sprite_renderer|state.DRAWING~regout\,
-	combout => \sprite_renderer|Selector64~2_combout\);
-
--- Location: LCCOMB_X31_Y15_N16
+-- Location: LCCOMB_X24_Y13_N18
 \sprite_renderer|Selector64~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Selector64~3_combout\ = ((!\sprite_renderer|state.SHOWING~regout\ & \sprite_renderer|Selector64~2_combout\)) # (!\sprite_renderer|state.CLEARING~regout\)
+-- \sprite_renderer|Selector64~3_combout\ = ((\sprite_renderer|Selector64~2_combout\ & !\sprite_renderer|state.SHOWING~regout\)) # (!\sprite_renderer|state.CLEARING~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000011111111",
+	lut_mask => "0010001011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|state.SHOWING~regout\,
-	datac => \sprite_renderer|Selector64~2_combout\,
+	dataa => \sprite_renderer|Selector64~2_combout\,
+	datab => \sprite_renderer|state.SHOWING~regout\,
 	datad => \sprite_renderer|state.CLEARING~regout\,
 	combout => \sprite_renderer|Selector64~3_combout\);
 
--- Location: LCFF_X31_Y15_N17
+-- Location: LCFF_X24_Y13_N19
 \sprite_renderer|state.IDLE\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -5480,39 +6147,1283 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \sprite_renderer|state.IDLE~regout\);
 
--- Location: LCCOMB_X31_Y14_N2
-\sprite_renderer|Add0~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y13_N20
+\sprite_renderer|READY~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~3_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (!\sprite_renderer|LessThan0~10_combout\)) # (!\sprite_renderer|state.DRAWING~regout\ & ((\sprite_renderer|state.IDLE~regout\)))
+-- \sprite_renderer|READY~0_combout\ = !\sprite_renderer|state.IDLE~regout\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0111010001110100",
+	lut_mask => "0000000011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|READY~0_combout\);
+
+-- Location: LCFF_X24_Y13_N21
+\sprite_renderer|READY\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|READY~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|READY~regout\);
+
+-- Location: LCCOMB_X19_Y14_N30
+\view|render_asap~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|render_asap~0_combout\ = (\view|render_asap~regout\ & (((\sprite_renderer|READY~regout\)) # (!\view|state.SHOW_SPRITES~regout\))) # (!\view|render_asap~regout\ & (((\view|frame_time~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110001011100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.SHOW_SPRITES~regout\,
+	datab => \view|frame_time~regout\,
+	datac => \view|render_asap~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|render_asap~0_combout\);
+
+-- Location: LCFF_X19_Y14_N31
+\view|render_asap\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|render_asap~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|render_asap~regout\);
+
+-- Location: LCCOMB_X18_Y14_N24
+\view|SHOW~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SHOW~0_combout\ = (\view|render_asap~regout\ & \view|state.SHOW_SPRITES~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|render_asap~regout\,
+	datad => \view|state.SHOW_SPRITES~regout\,
+	combout => \view|SHOW~0_combout\);
+
+-- Location: LCCOMB_X18_Y14_N0
+\view|state.RENDER_0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|state.RENDER_0~0_combout\ = !\view|SHOW~0_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \view|SHOW~0_combout\,
+	combout => \view|state.RENDER_0~0_combout\);
+
+-- Location: LCFF_X18_Y14_N1
+\view|state.RENDER_0\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|state.RENDER_0~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.RENDER_0~regout\);
+
+-- Location: LCCOMB_X19_Y14_N14
+\view|state.RENDER_1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|state.RENDER_1~0_combout\ = !\view|state.RENDER_0~regout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \view|state.RENDER_0~regout\,
+	combout => \view|state.RENDER_1~0_combout\);
+
+-- Location: LCFF_X19_Y14_N15
+\view|state.RENDER_1\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|state.RENDER_1~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.RENDER_1~regout\);
+
+-- Location: LCFF_X19_Y14_N7
+\view|state.RENDER_2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	sdata => \view|state.RENDER_1~regout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sload => VCC,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.RENDER_2~regout\);
+
+-- Location: LCFF_X21_Y14_N3
+\view|state.RENDER_3\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	sdata => \view|state.RENDER_2~regout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sload => VCC,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.RENDER_3~regout\);
+
+-- Location: LCFF_X19_Y14_N19
+\view|state.RENDER_4\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	sdata => \view|state.RENDER_3~regout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sload => VCC,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.RENDER_4~regout\);
+
+-- Location: LCCOMB_X19_Y14_N24
+\view|Selector24~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Selector24~0_combout\ = (\view|state.RENDER_4~regout\) # ((!\view|render_asap~regout\ & \view|state.SHOW_SPRITES~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110011011100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|render_asap~regout\,
+	datab => \view|state.RENDER_4~regout\,
+	datac => \view|state.SHOW_SPRITES~regout\,
+	combout => \view|Selector24~0_combout\);
+
+-- Location: LCFF_X19_Y14_N25
+\view|state.SHOW_SPRITES\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|Selector24~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|ALT_INV_READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|state.SHOW_SPRITES~regout\);
+
+-- Location: LCCOMB_X19_Y14_N26
+\view|DRAW_SPRITE~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|DRAW_SPRITE~0_combout\ = (\view|state.SHOW_SPRITES~regout\) # (\sprite_renderer|READY~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \view|state.SHOW_SPRITES~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|DRAW_SPRITE~0_combout\);
+
+-- Location: LCCOMB_X20_Y14_N8
+\view|DRAW_SPRITE~0_wirecell\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|DRAW_SPRITE~0_wirecell_combout\ = !\view|DRAW_SPRITE~0_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|DRAW_SPRITE~0_combout\,
+	combout => \view|DRAW_SPRITE~0_wirecell_combout\);
+
+-- Location: LCFF_X20_Y14_N9
+\view|DRAW_SPRITE\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|DRAW_SPRITE~0_wirecell_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|DRAW_SPRITE~regout\);
+
+-- Location: LCCOMB_X24_Y13_N28
+\sprite_renderer|Selector72~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector72~0_combout\ = ((\sprite_renderer|state.WAITING~regout\) # ((\sprite_renderer|state.IDLE~regout\ & !\view|DRAW_SPRITE~regout\))) # (!\sprite_renderer|state.CLEARING~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001111111011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.IDLE~regout\,
+	datab => \sprite_renderer|state.CLEARING~regout\,
+	datac => \sprite_renderer|state.WAITING~regout\,
+	datad => \view|DRAW_SPRITE~regout\,
+	combout => \sprite_renderer|Selector72~0_combout\);
+
+-- Location: LCCOMB_X24_Y13_N2
+\sprite_renderer|Selector72~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector72~1_combout\ = (\view|SHOW~regout\ & ((\sprite_renderer|state.IDLE~regout\) # ((\sprite_renderer|Selector72~0_combout\ & \sprite_renderer|next_state.SHOWING~regout\)))) # (!\view|SHOW~regout\ & 
+-- (\sprite_renderer|Selector72~0_combout\ & (\sprite_renderer|next_state.SHOWING~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110101011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SHOW~regout\,
+	datab => \sprite_renderer|Selector72~0_combout\,
+	datac => \sprite_renderer|next_state.SHOWING~regout\,
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|Selector72~1_combout\);
+
+-- Location: LCFF_X24_Y13_N3
+\sprite_renderer|next_state.SHOWING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Selector72~1_combout\,
+	ena => \RESET_N~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|next_state.SHOWING~regout\);
+
+-- Location: LCCOMB_X23_Y13_N28
+\sprite_renderer|Selector67~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector67~0_combout\ = (\vga|READY~1_combout\ & (!\sprite_renderer|FB_FLIP~regout\ & (\sprite_renderer|state.WAITING~regout\ & \sprite_renderer|next_state.SHOWING~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|READY~1_combout\,
+	datab => \sprite_renderer|FB_FLIP~regout\,
+	datac => \sprite_renderer|state.WAITING~regout\,
+	datad => \sprite_renderer|next_state.SHOWING~regout\,
+	combout => \sprite_renderer|Selector67~0_combout\);
+
+-- Location: LCFF_X23_Y13_N29
+\sprite_renderer|state.SHOWING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Selector67~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|state.SHOWING~regout\);
+
+-- Location: LCCOMB_X23_Y13_N22
+\sprite_renderer|next_state.CLEARING~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|next_state.CLEARING~feeder_combout\ = \sprite_renderer|state.SHOWING~regout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \sprite_renderer|state.SHOWING~regout\,
+	combout => \sprite_renderer|next_state.CLEARING~feeder_combout\);
+
+-- Location: LCFF_X18_Y14_N25
+\view|SHOW\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SHOW~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|READY~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SHOW~regout\);
+
+-- Location: LCCOMB_X24_Y13_N22
+\sprite_renderer|Selector64~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector64~0_combout\ = (\sprite_renderer|state.IDLE~regout\ & (!\view|SHOW~regout\ & !\view|DRAW_SPRITE~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.IDLE~regout\,
+	datac => \view|SHOW~regout\,
+	datad => \view|DRAW_SPRITE~regout\,
+	combout => \sprite_renderer|Selector64~0_combout\);
+
+-- Location: LCCOMB_X24_Y13_N14
+\sprite_renderer|next_state.IDLE~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|next_state.IDLE~4_combout\ = (\RESET_N~regout\ & (\sprite_renderer|state.CLEARING~regout\ & (!\sprite_renderer|state.WAITING~regout\ & !\sprite_renderer|Selector64~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RESET_N~regout\,
+	datab => \sprite_renderer|state.CLEARING~regout\,
+	datac => \sprite_renderer|state.WAITING~regout\,
+	datad => \sprite_renderer|Selector64~0_combout\,
+	combout => \sprite_renderer|next_state.IDLE~4_combout\);
+
+-- Location: LCFF_X23_Y13_N23
+\sprite_renderer|next_state.CLEARING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|next_state.CLEARING~feeder_combout\,
+	ena => \sprite_renderer|next_state.IDLE~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|next_state.CLEARING~regout\);
+
+-- Location: LCCOMB_X23_Y13_N16
+\sprite_renderer|Selector68~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector68~0_combout\ = (((\sprite_renderer|FB_FLIP~regout\) # (!\sprite_renderer|state.WAITING~regout\)) # (!\sprite_renderer|next_state.CLEARING~regout\)) # (!\vga|READY~1_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111101111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|READY~1_combout\,
+	datab => \sprite_renderer|next_state.CLEARING~regout\,
+	datac => \sprite_renderer|state.WAITING~regout\,
+	datad => \sprite_renderer|FB_FLIP~regout\,
+	combout => \sprite_renderer|Selector68~0_combout\);
+
+-- Location: LCFF_X23_Y13_N17
+\sprite_renderer|state.CLEARING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Selector68~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|state.CLEARING~regout\);
+
+-- Location: LCCOMB_X23_Y12_N2
+\sprite_renderer|Add1~75\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~75_combout\ = (\sprite_renderer|Add1~73_combout\ & (\sprite_renderer|state.DRAWING~regout\ & \sprite_renderer|LessThan0~10_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add1~73_combout\,
+	datac => \sprite_renderer|state.DRAWING~regout\,
+	datad => \sprite_renderer|LessThan0~10_combout\,
+	combout => \sprite_renderer|Add1~75_combout\);
+
+-- Location: LCCOMB_X23_Y13_N2
+\sprite_renderer|Add1~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~3_combout\ = (\sprite_renderer|state.DRAWING~regout\) # (\sprite_renderer|state.IDLE~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.DRAWING~regout\,
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|Add1~3_combout\);
+
+-- Location: LCFF_X23_Y12_N3
+\sprite_renderer|column[31]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~75_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(31));
+
+-- Location: LCCOMB_X23_Y12_N6
+\sprite_renderer|Add1~80\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~80_combout\ = (\sprite_renderer|Add1~31_combout\ & \sprite_renderer|LessThan0~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add1~31_combout\,
+	datad => \sprite_renderer|LessThan0~10_combout\,
+	combout => \sprite_renderer|Add1~80_combout\);
+
+-- Location: LCFF_X23_Y12_N7
+\sprite_renderer|column[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~80_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(10));
+
+-- Location: LCCOMB_X21_Y12_N24
+\sprite_renderer|Add1~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~6_combout\ = (\sprite_renderer|Add1~4_combout\ & \sprite_renderer|LessThan0~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add1~4_combout\,
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	combout => \sprite_renderer|Add1~6_combout\);
+
+-- Location: LCFF_X21_Y12_N25
+\sprite_renderer|column[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~6_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(1));
+
+-- Location: LCCOMB_X22_Y13_N0
+\sprite_renderer|Add1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~0_combout\ = \sprite_renderer|column\(0) $ (VCC)
+-- \sprite_renderer|Add1~1\ = CARRY(\sprite_renderer|column\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(0),
+	datad => VCC,
+	combout => \sprite_renderer|Add1~0_combout\,
+	cout => \sprite_renderer|Add1~1\);
+
+-- Location: LCCOMB_X23_Y12_N0
+\sprite_renderer|Add1~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~2_combout\ = (\sprite_renderer|LessThan0~10_combout\ & (\sprite_renderer|state.DRAWING~regout\ & \sprite_renderer|Add1~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \sprite_renderer|LessThan0~10_combout\,
-	datab => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|state.IDLE~regout\,
-	combout => \sprite_renderer|Add0~3_combout\);
+	datac => \sprite_renderer|state.DRAWING~regout\,
+	datad => \sprite_renderer|Add1~0_combout\,
+	combout => \sprite_renderer|Add1~2_combout\);
 
--- Location: LCFF_X34_Y14_N15
-\sprite_renderer|row[15]\ : cycloneii_lcell_ff
+-- Location: LCFF_X23_Y12_N1
+\sprite_renderer|column[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~92_combout\,
+	datain => \sprite_renderer|Add1~2_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add1~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(15));
+	regout => \sprite_renderer|column\(0));
 
--- Location: LCCOMB_X33_Y15_N4
-\sprite_renderer|Add0~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y13_N4
+\sprite_renderer|Add1~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~6_combout\ = (\sprite_renderer|row\(2) & (\sprite_renderer|Add0~5\ $ (GND))) # (!\sprite_renderer|row\(2) & (!\sprite_renderer|Add0~5\ & VCC))
--- \sprite_renderer|Add0~7\ = CARRY((\sprite_renderer|row\(2) & !\sprite_renderer|Add0~5\))
+-- \sprite_renderer|Add1~7_combout\ = (\sprite_renderer|column\(2) & (\sprite_renderer|Add1~5\ $ (GND))) # (!\sprite_renderer|column\(2) & (!\sprite_renderer|Add1~5\ & VCC))
+-- \sprite_renderer|Add1~8\ = CARRY((\sprite_renderer|column\(2) & !\sprite_renderer|Add1~5\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(2),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~5\,
+	combout => \sprite_renderer|Add1~7_combout\,
+	cout => \sprite_renderer|Add1~8\);
+
+-- Location: LCCOMB_X21_Y12_N22
+\sprite_renderer|Add1~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~15_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~7_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~7_combout\,
+	combout => \sprite_renderer|Add1~15_combout\);
+
+-- Location: LCFF_X21_Y12_N23
+\sprite_renderer|column[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~15_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(2));
+
+-- Location: LCCOMB_X22_Y13_N8
+\sprite_renderer|Add1~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~12_combout\ = (\sprite_renderer|column\(4) & (\sprite_renderer|Add1~10\ $ (GND))) # (!\sprite_renderer|column\(4) & (!\sprite_renderer|Add1~10\ & VCC))
+-- \sprite_renderer|Add1~13\ = CARRY((\sprite_renderer|column\(4) & !\sprite_renderer|Add1~10\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(4),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~10\,
+	combout => \sprite_renderer|Add1~12_combout\,
+	cout => \sprite_renderer|Add1~13\);
+
+-- Location: LCCOMB_X21_Y12_N4
+\sprite_renderer|Add1~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~14_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~12_combout\,
+	combout => \sprite_renderer|Add1~14_combout\);
+
+-- Location: LCFF_X21_Y12_N5
+\sprite_renderer|column[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~14_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(4));
+
+-- Location: LCCOMB_X22_Y13_N10
+\sprite_renderer|Add1~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~16_combout\ = (\sprite_renderer|column\(5) & (!\sprite_renderer|Add1~13\)) # (!\sprite_renderer|column\(5) & ((\sprite_renderer|Add1~13\) # (GND)))
+-- \sprite_renderer|Add1~17\ = CARRY((!\sprite_renderer|Add1~13\) # (!\sprite_renderer|column\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(5),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~13\,
+	combout => \sprite_renderer|Add1~16_combout\,
+	cout => \sprite_renderer|Add1~17\);
+
+-- Location: LCCOMB_X22_Y13_N14
+\sprite_renderer|Add1~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~21_combout\ = (\sprite_renderer|column\(7) & (!\sprite_renderer|Add1~20\)) # (!\sprite_renderer|column\(7) & ((\sprite_renderer|Add1~20\) # (GND)))
+-- \sprite_renderer|Add1~22\ = CARRY((!\sprite_renderer|Add1~20\) # (!\sprite_renderer|column\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(7),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~20\,
+	combout => \sprite_renderer|Add1~21_combout\,
+	cout => \sprite_renderer|Add1~22\);
+
+-- Location: LCCOMB_X23_Y12_N16
+\sprite_renderer|Add1~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~23_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~21_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~21_combout\,
+	combout => \sprite_renderer|Add1~23_combout\);
+
+-- Location: LCFF_X23_Y12_N17
+\sprite_renderer|column[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~23_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(7));
+
+-- Location: LCCOMB_X22_Y13_N16
+\sprite_renderer|Add1~25\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~25_combout\ = (\sprite_renderer|column\(8) & (\sprite_renderer|Add1~22\ $ (GND))) # (!\sprite_renderer|column\(8) & (!\sprite_renderer|Add1~22\ & VCC))
+-- \sprite_renderer|Add1~26\ = CARRY((\sprite_renderer|column\(8) & !\sprite_renderer|Add1~22\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(8),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~22\,
+	combout => \sprite_renderer|Add1~25_combout\,
+	cout => \sprite_renderer|Add1~26\);
+
+-- Location: LCCOMB_X23_Y12_N18
+\sprite_renderer|Add1~27\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~27_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~25_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|Add1~25_combout\,
+	combout => \sprite_renderer|Add1~27_combout\);
+
+-- Location: LCFF_X23_Y12_N19
+\sprite_renderer|column[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~27_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(8));
+
+-- Location: LCCOMB_X22_Y13_N22
+\sprite_renderer|Add1~33\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~33_combout\ = (\sprite_renderer|column\(11) & (!\sprite_renderer|Add1~32\)) # (!\sprite_renderer|column\(11) & ((\sprite_renderer|Add1~32\) # (GND)))
+-- \sprite_renderer|Add1~34\ = CARRY((!\sprite_renderer|Add1~32\) # (!\sprite_renderer|column\(11)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(11),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~32\,
+	combout => \sprite_renderer|Add1~33_combout\,
+	cout => \sprite_renderer|Add1~34\);
+
+-- Location: LCCOMB_X23_Y12_N20
+\sprite_renderer|Add1~79\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~79_combout\ = (\sprite_renderer|Add1~33_combout\ & \sprite_renderer|LessThan0~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|Add1~33_combout\,
+	datad => \sprite_renderer|LessThan0~10_combout\,
+	combout => \sprite_renderer|Add1~79_combout\);
+
+-- Location: LCFF_X23_Y12_N21
+\sprite_renderer|column[11]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~79_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(11));
+
+-- Location: LCCOMB_X22_Y13_N28
+\sprite_renderer|Add1~39\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~39_combout\ = (\sprite_renderer|column\(14) & (\sprite_renderer|Add1~38\ $ (GND))) # (!\sprite_renderer|column\(14) & (!\sprite_renderer|Add1~38\ & VCC))
+-- \sprite_renderer|Add1~40\ = CARRY((\sprite_renderer|column\(14) & !\sprite_renderer|Add1~38\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(14),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~38\,
+	combout => \sprite_renderer|Add1~39_combout\,
+	cout => \sprite_renderer|Add1~40\);
+
+-- Location: LCCOMB_X24_Y14_N18
+\sprite_renderer|Add1~94\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~94_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~39_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|Add1~39_combout\,
+	combout => \sprite_renderer|Add1~94_combout\);
+
+-- Location: LCFF_X24_Y14_N19
+\sprite_renderer|column[14]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~94_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(14));
+
+-- Location: LCCOMB_X22_Y13_N30
+\sprite_renderer|Add1~41\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~41_combout\ = (\sprite_renderer|column\(15) & (!\sprite_renderer|Add1~40\)) # (!\sprite_renderer|column\(15) & ((\sprite_renderer|Add1~40\) # (GND)))
+-- \sprite_renderer|Add1~42\ = CARRY((!\sprite_renderer|Add1~40\) # (!\sprite_renderer|column\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(15),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~40\,
+	combout => \sprite_renderer|Add1~41_combout\,
+	cout => \sprite_renderer|Add1~42\);
+
+-- Location: LCCOMB_X22_Y12_N2
+\sprite_renderer|Add1~45\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~45_combout\ = (\sprite_renderer|column\(17) & (!\sprite_renderer|Add1~44\)) # (!\sprite_renderer|column\(17) & ((\sprite_renderer|Add1~44\) # (GND)))
+-- \sprite_renderer|Add1~46\ = CARRY((!\sprite_renderer|Add1~44\) # (!\sprite_renderer|column\(17)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(17),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~44\,
+	combout => \sprite_renderer|Add1~45_combout\,
+	cout => \sprite_renderer|Add1~46\);
+
+-- Location: LCCOMB_X22_Y12_N4
+\sprite_renderer|Add1~47\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~47_combout\ = (\sprite_renderer|column\(18) & (\sprite_renderer|Add1~46\ $ (GND))) # (!\sprite_renderer|column\(18) & (!\sprite_renderer|Add1~46\ & VCC))
+-- \sprite_renderer|Add1~48\ = CARRY((\sprite_renderer|column\(18) & !\sprite_renderer|Add1~46\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(18),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~46\,
+	combout => \sprite_renderer|Add1~47_combout\,
+	cout => \sprite_renderer|Add1~48\);
+
+-- Location: LCCOMB_X22_Y12_N6
+\sprite_renderer|Add1~49\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~49_combout\ = (\sprite_renderer|column\(19) & (!\sprite_renderer|Add1~48\)) # (!\sprite_renderer|column\(19) & ((\sprite_renderer|Add1~48\) # (GND)))
+-- \sprite_renderer|Add1~50\ = CARRY((!\sprite_renderer|Add1~48\) # (!\sprite_renderer|column\(19)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(19),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~48\,
+	combout => \sprite_renderer|Add1~49_combout\,
+	cout => \sprite_renderer|Add1~50\);
+
+-- Location: LCCOMB_X21_Y12_N28
+\sprite_renderer|Add1~89\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~89_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~49_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~49_combout\,
+	combout => \sprite_renderer|Add1~89_combout\);
+
+-- Location: LCFF_X21_Y12_N29
+\sprite_renderer|column[19]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~89_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(19));
+
+-- Location: LCCOMB_X22_Y12_N8
+\sprite_renderer|Add1~51\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~51_combout\ = (\sprite_renderer|column\(20) & (\sprite_renderer|Add1~50\ $ (GND))) # (!\sprite_renderer|column\(20) & (!\sprite_renderer|Add1~50\ & VCC))
+-- \sprite_renderer|Add1~52\ = CARRY((\sprite_renderer|column\(20) & !\sprite_renderer|Add1~50\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|column\(20),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~50\,
+	combout => \sprite_renderer|Add1~51_combout\,
+	cout => \sprite_renderer|Add1~52\);
+
+-- Location: LCCOMB_X23_Y12_N22
+\sprite_renderer|Add1~88\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~88_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~51_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~51_combout\,
+	combout => \sprite_renderer|Add1~88_combout\);
+
+-- Location: LCFF_X23_Y12_N23
+\sprite_renderer|column[20]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~88_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(20));
+
+-- Location: LCCOMB_X22_Y12_N10
+\sprite_renderer|Add1~53\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~53_combout\ = (\sprite_renderer|column\(21) & (!\sprite_renderer|Add1~52\)) # (!\sprite_renderer|column\(21) & ((\sprite_renderer|Add1~52\) # (GND)))
+-- \sprite_renderer|Add1~54\ = CARRY((!\sprite_renderer|Add1~52\) # (!\sprite_renderer|column\(21)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(21),
+	datad => VCC,
+	cin => \sprite_renderer|Add1~52\,
+	combout => \sprite_renderer|Add1~53_combout\,
+	cout => \sprite_renderer|Add1~54\);
+
+-- Location: LCCOMB_X23_Y12_N4
+\sprite_renderer|Add1~87\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~87_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~53_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~53_combout\,
+	combout => \sprite_renderer|Add1~87_combout\);
+
+-- Location: LCFF_X23_Y12_N5
+\sprite_renderer|column[21]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~87_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(21));
+
+-- Location: LCCOMB_X23_Y12_N26
+\sprite_renderer|Add1~86\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~86_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~55_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~55_combout\,
+	combout => \sprite_renderer|Add1~86_combout\);
+
+-- Location: LCFF_X23_Y12_N27
+\sprite_renderer|column[22]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~86_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(22));
+
+-- Location: LCCOMB_X23_Y12_N14
+\sprite_renderer|LessThan0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~6_combout\ = (!\sprite_renderer|column\(23) & (!\sprite_renderer|column\(20) & (!\sprite_renderer|column\(21) & !\sprite_renderer|column\(22))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(23),
+	datab => \sprite_renderer|column\(20),
+	datac => \sprite_renderer|column\(21),
+	datad => \sprite_renderer|column\(22),
+	combout => \sprite_renderer|LessThan0~6_combout\);
+
+-- Location: LCCOMB_X21_Y12_N8
+\sprite_renderer|Add1~91\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~91_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~45_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~45_combout\,
+	combout => \sprite_renderer|Add1~91_combout\);
+
+-- Location: LCFF_X21_Y12_N9
+\sprite_renderer|column[17]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~91_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(17));
+
+-- Location: LCCOMB_X21_Y12_N14
+\sprite_renderer|Add1~90\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~90_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~47_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~47_combout\,
+	combout => \sprite_renderer|Add1~90_combout\);
+
+-- Location: LCFF_X21_Y12_N15
+\sprite_renderer|column[18]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~90_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(18));
+
+-- Location: LCCOMB_X21_Y12_N6
+\sprite_renderer|LessThan0~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~7_combout\ = (!\sprite_renderer|column\(16) & (!\sprite_renderer|column\(17) & (!\sprite_renderer|column\(18) & !\sprite_renderer|column\(19))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(16),
+	datab => \sprite_renderer|column\(17),
+	datac => \sprite_renderer|column\(18),
+	datad => \sprite_renderer|column\(19),
+	combout => \sprite_renderer|LessThan0~7_combout\);
+
+-- Location: LCCOMB_X24_Y14_N4
+\sprite_renderer|Add1~95\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~95_combout\ = (\sprite_renderer|Add1~37_combout\ & \sprite_renderer|LessThan0~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add1~37_combout\,
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	combout => \sprite_renderer|Add1~95_combout\);
+
+-- Location: LCFF_X24_Y14_N5
+\sprite_renderer|column[13]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~95_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(13));
+
+-- Location: LCCOMB_X24_Y14_N8
+\sprite_renderer|Add1~93\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~93_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~41_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|Add1~41_combout\,
+	combout => \sprite_renderer|Add1~93_combout\);
+
+-- Location: LCFF_X24_Y14_N9
+\sprite_renderer|column[15]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~93_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(15));
+
+-- Location: LCCOMB_X24_Y14_N20
+\sprite_renderer|LessThan0~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~8_combout\ = (!\sprite_renderer|column\(12) & (!\sprite_renderer|column\(13) & (!\sprite_renderer|column\(15) & !\sprite_renderer|column\(14))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(12),
+	datab => \sprite_renderer|column\(13),
+	datac => \sprite_renderer|column\(15),
+	datad => \sprite_renderer|column\(14),
+	combout => \sprite_renderer|LessThan0~8_combout\);
+
+-- Location: LCCOMB_X23_Y13_N4
+\sprite_renderer|LessThan0~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~9_combout\ = (\sprite_renderer|LessThan0~5_combout\ & (\sprite_renderer|LessThan0~6_combout\ & (\sprite_renderer|LessThan0~7_combout\ & \sprite_renderer|LessThan0~8_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~5_combout\,
+	datab => \sprite_renderer|LessThan0~6_combout\,
+	datac => \sprite_renderer|LessThan0~7_combout\,
+	datad => \sprite_renderer|LessThan0~8_combout\,
+	combout => \sprite_renderer|LessThan0~9_combout\);
+
+-- Location: LCCOMB_X23_Y13_N26
+\sprite_renderer|LessThan0~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~4_combout\ = (!\sprite_renderer|column\(10) & !\sprite_renderer|column\(11))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100000101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|column\(10),
+	datac => \sprite_renderer|column\(11),
+	combout => \sprite_renderer|LessThan0~4_combout\);
+
+-- Location: LCCOMB_X23_Y13_N24
+\sprite_renderer|LessThan0~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan0~10_combout\ = (\sprite_renderer|column\(31)) # ((\sprite_renderer|LessThan0~3_combout\ & (\sprite_renderer|LessThan0~9_combout\ & \sprite_renderer|LessThan0~4_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan0~3_combout\,
+	datab => \sprite_renderer|column\(31),
+	datac => \sprite_renderer|LessThan0~9_combout\,
+	datad => \sprite_renderer|LessThan0~4_combout\,
+	combout => \sprite_renderer|LessThan0~10_combout\);
+
+-- Location: LCCOMB_X23_Y15_N0
+\sprite_renderer|Add0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~0_combout\ = \sprite_renderer|row\(0) $ (VCC)
+-- \sprite_renderer|Add0~1\ = CARRY(\sprite_renderer|row\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|row\(0),
+	datad => VCC,
+	combout => \sprite_renderer|Add0~0_combout\,
+	cout => \sprite_renderer|Add0~1\);
+
+-- Location: LCCOMB_X23_Y15_N2
+\sprite_renderer|Add0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~2_combout\ = (\sprite_renderer|row\(1) & (!\sprite_renderer|Add0~1\)) # (!\sprite_renderer|row\(1) & ((\sprite_renderer|Add0~1\) # (GND)))
+-- \sprite_renderer|Add0~3\ = CARRY((!\sprite_renderer|Add0~1\) # (!\sprite_renderer|row\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(1),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~1\,
+	combout => \sprite_renderer|Add0~2_combout\,
+	cout => \sprite_renderer|Add0~3\);
+
+-- Location: LCCOMB_X23_Y15_N4
+\sprite_renderer|Add0~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~4_combout\ = (\sprite_renderer|row\(2) & (\sprite_renderer|Add0~3\ $ (GND))) # (!\sprite_renderer|row\(2) & (!\sprite_renderer|Add0~3\ & VCC))
+-- \sprite_renderer|Add0~5\ = CARRY((\sprite_renderer|row\(2) & !\sprite_renderer|Add0~3\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5522,33 +7433,15 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \sprite_renderer|row\(2),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~5\,
-	combout => \sprite_renderer|Add0~6_combout\,
-	cout => \sprite_renderer|Add0~7\);
+	cin => \sprite_renderer|Add0~3\,
+	combout => \sprite_renderer|Add0~4_combout\,
+	cout => \sprite_renderer|Add0~5\);
 
--- Location: LCCOMB_X33_Y15_N6
-\sprite_renderer|Add0~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y15_N8
+\sprite_renderer|Add0~13\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~8_combout\ = (\sprite_renderer|row\(3) & (!\sprite_renderer|Add0~7\)) # (!\sprite_renderer|row\(3) & ((\sprite_renderer|Add0~7\) # (GND)))
--- \sprite_renderer|Add0~9\ = CARRY((!\sprite_renderer|Add0~7\) # (!\sprite_renderer|row\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(3),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~7\,
-	combout => \sprite_renderer|Add0~8_combout\,
-	cout => \sprite_renderer|Add0~9\);
-
--- Location: LCCOMB_X33_Y15_N8
-\sprite_renderer|Add0~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~11_combout\ = (\sprite_renderer|row\(4) & (\sprite_renderer|Add0~9\ $ (GND))) # (!\sprite_renderer|row\(4) & (!\sprite_renderer|Add0~9\ & VCC))
--- \sprite_renderer|Add0~12\ = CARRY((\sprite_renderer|row\(4) & !\sprite_renderer|Add0~9\))
+-- \sprite_renderer|Add0~13_combout\ = (\sprite_renderer|row\(4) & (\sprite_renderer|Add0~7\ $ (GND))) # (!\sprite_renderer|row\(4) & (!\sprite_renderer|Add0~7\ & VCC))
+-- \sprite_renderer|Add0~14\ = CARRY((\sprite_renderer|row\(4) & !\sprite_renderer|Add0~7\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5558,14 +7451,14 @@ GENERIC MAP (
 PORT MAP (
 	datab => \sprite_renderer|row\(4),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~9\,
-	combout => \sprite_renderer|Add0~11_combout\,
-	cout => \sprite_renderer|Add0~12\);
+	cin => \sprite_renderer|Add0~7\,
+	combout => \sprite_renderer|Add0~13_combout\,
+	cout => \sprite_renderer|Add0~14\);
 
--- Location: LCCOMB_X32_Y15_N16
-\sprite_renderer|Add0~13\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y15_N10
+\sprite_renderer|Add0~15\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~13_combout\ = (\sprite_renderer|Add0~11_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~15_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~13_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5573,41 +7466,129 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~11_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~13_combout\);
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~13_combout\,
+	combout => \sprite_renderer|Add0~15_combout\);
 
--- Location: LCFF_X32_Y15_N17
+-- Location: LCCOMB_X23_Y13_N0
+\sprite_renderer|Add0~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~9_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (!\sprite_renderer|LessThan0~10_combout\)) # (!\sprite_renderer|state.DRAWING~regout\ & ((\sprite_renderer|state.IDLE~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101111100001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.DRAWING~regout\,
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|Add0~9_combout\);
+
+-- Location: LCFF_X24_Y15_N11
 \sprite_renderer|row[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~13_combout\,
+	datain => \sprite_renderer|Add0~15_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(4));
 
--- Location: LCCOMB_X33_Y15_N10
+-- Location: LCCOMB_X23_Y15_N10
 \sprite_renderer|Add0~16\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~16_combout\ = (\sprite_renderer|row\(5) & (!\sprite_renderer|Add0~12\)) # (!\sprite_renderer|row\(5) & ((\sprite_renderer|Add0~12\) # (GND)))
--- \sprite_renderer|Add0~17\ = CARRY((!\sprite_renderer|Add0~12\) # (!\sprite_renderer|row\(5)))
+-- \sprite_renderer|Add0~16_combout\ = (\sprite_renderer|row\(5) & (!\sprite_renderer|Add0~14\)) # (!\sprite_renderer|row\(5) & ((\sprite_renderer|Add0~14\) # (GND)))
+-- \sprite_renderer|Add0~17\ = CARRY((!\sprite_renderer|Add0~14\) # (!\sprite_renderer|row\(5)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101101001011111",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(5),
+	datab => \sprite_renderer|row\(5),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~12\,
+	cin => \sprite_renderer|Add0~14\,
 	combout => \sprite_renderer|Add0~16_combout\,
 	cout => \sprite_renderer|Add0~17\);
 
--- Location: LCCOMB_X33_Y15_N14
+-- Location: LCCOMB_X24_Y15_N20
+\sprite_renderer|Add0~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~18_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~16_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~16_combout\,
+	combout => \sprite_renderer|Add0~18_combout\);
+
+-- Location: LCFF_X24_Y15_N21
+\sprite_renderer|row[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~18_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(5));
+
+-- Location: LCCOMB_X23_Y15_N12
+\sprite_renderer|Add0~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~19_combout\ = (\sprite_renderer|row\(6) & (\sprite_renderer|Add0~17\ $ (GND))) # (!\sprite_renderer|row\(6) & (!\sprite_renderer|Add0~17\ & VCC))
+-- \sprite_renderer|Add0~20\ = CARRY((\sprite_renderer|row\(6) & !\sprite_renderer|Add0~17\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|row\(6),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~17\,
+	combout => \sprite_renderer|Add0~19_combout\,
+	cout => \sprite_renderer|Add0~20\);
+
+-- Location: LCCOMB_X24_Y15_N8
+\sprite_renderer|Add0~24\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~24_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~19_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~19_combout\,
+	combout => \sprite_renderer|Add0~24_combout\);
+
+-- Location: LCFF_X24_Y15_N9
+\sprite_renderer|row[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~24_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(6));
+
+-- Location: LCCOMB_X23_Y15_N14
 \sprite_renderer|Add0~21\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~21_combout\ = (\sprite_renderer|row\(7) & (!\sprite_renderer|Add0~20\)) # (!\sprite_renderer|row\(7) & ((\sprite_renderer|Add0~20\) # (GND)))
@@ -5625,7 +7606,7 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~21_combout\,
 	cout => \sprite_renderer|Add0~22\);
 
--- Location: LCCOMB_X33_Y15_N16
+-- Location: LCCOMB_X23_Y15_N16
 \sprite_renderer|Add0~25\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~25_combout\ = (\sprite_renderer|row\(8) & (\sprite_renderer|Add0~22\ $ (GND))) # (!\sprite_renderer|row\(8) & (!\sprite_renderer|Add0~22\ & VCC))
@@ -5633,17 +7614,44 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100001010",
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(8),
+	datab => \sprite_renderer|row\(8),
 	datad => VCC,
 	cin => \sprite_renderer|Add0~22\,
 	combout => \sprite_renderer|Add0~25_combout\,
 	cout => \sprite_renderer|Add0~26\);
 
--- Location: LCCOMB_X33_Y15_N18
+-- Location: LCCOMB_X22_Y15_N4
+\sprite_renderer|Add0~27\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~27_combout\ = (\sprite_renderer|Add0~25_combout\ & \sprite_renderer|LessThan1~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|Add0~25_combout\,
+	datad => \sprite_renderer|LessThan1~10_combout\,
+	combout => \sprite_renderer|Add0~27_combout\);
+
+-- Location: LCFF_X22_Y15_N5
+\sprite_renderer|row[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~27_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(8));
+
+-- Location: LCCOMB_X23_Y15_N18
 \sprite_renderer|Add0~28\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~28_combout\ = (\sprite_renderer|row\(9) & (!\sprite_renderer|Add0~26\)) # (!\sprite_renderer|row\(9) & ((\sprite_renderer|Add0~26\) # (GND)))
@@ -5651,44 +7659,281 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
+	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|row\(9),
+	dataa => \sprite_renderer|row\(9),
 	datad => VCC,
 	cin => \sprite_renderer|Add0~26\,
 	combout => \sprite_renderer|Add0~28_combout\,
 	cout => \sprite_renderer|Add0~29\);
 
--- Location: LCCOMB_X32_Y15_N28
+-- Location: LCCOMB_X22_Y15_N0
 \sprite_renderer|Add0~80\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~80_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~28_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000000000",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|LessThan1~10_combout\,
+	dataa => \sprite_renderer|LessThan1~10_combout\,
 	datad => \sprite_renderer|Add0~28_combout\,
 	combout => \sprite_renderer|Add0~80_combout\);
 
--- Location: LCFF_X32_Y15_N29
+-- Location: LCFF_X22_Y15_N1
 \sprite_renderer|row[9]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~80_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(9));
 
--- Location: LCCOMB_X33_Y15_N24
+-- Location: LCCOMB_X23_Y15_N20
+\sprite_renderer|Add0~30\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~30_combout\ = (\sprite_renderer|row\(10) & (\sprite_renderer|Add0~29\ $ (GND))) # (!\sprite_renderer|row\(10) & (!\sprite_renderer|Add0~29\ & VCC))
+-- \sprite_renderer|Add0~31\ = CARRY((\sprite_renderer|row\(10) & !\sprite_renderer|Add0~29\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(10),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~29\,
+	combout => \sprite_renderer|Add0~30_combout\,
+	cout => \sprite_renderer|Add0~31\);
+
+-- Location: LCCOMB_X22_Y15_N30
+\sprite_renderer|Add0~79\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~79_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~30_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~30_combout\,
+	combout => \sprite_renderer|Add0~79_combout\);
+
+-- Location: LCFF_X22_Y15_N31
+\sprite_renderer|row[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~79_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(10));
+
+-- Location: LCCOMB_X22_Y15_N2
+\sprite_renderer|LessThan1~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~4_combout\ = (!\sprite_renderer|row\(9) & !\sprite_renderer|row\(10))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|row\(9),
+	datad => \sprite_renderer|row\(10),
+	combout => \sprite_renderer|LessThan1~4_combout\);
+
+-- Location: LCCOMB_X24_Y15_N6
+\sprite_renderer|Add0~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~23_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~21_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~21_combout\,
+	combout => \sprite_renderer|Add0~23_combout\);
+
+-- Location: LCFF_X24_Y15_N7
+\sprite_renderer|row[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~23_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(7));
+
+-- Location: LCCOMB_X20_Y13_N6
+\sprite_renderer|LessThan1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~0_combout\ = (!\sprite_renderer|row\(5) & (!\sprite_renderer|row\(8) & (!\sprite_renderer|row\(6) & !\sprite_renderer|row\(7))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(5),
+	datab => \sprite_renderer|row\(8),
+	datac => \sprite_renderer|row\(6),
+	datad => \sprite_renderer|row\(7),
+	combout => \sprite_renderer|LessThan1~0_combout\);
+
+-- Location: LCCOMB_X22_Y15_N8
+\sprite_renderer|Add0~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~10_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~4_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~4_combout\,
+	combout => \sprite_renderer|Add0~10_combout\);
+
+-- Location: LCFF_X22_Y15_N9
+\sprite_renderer|row[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~10_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(2));
+
+-- Location: LCCOMB_X20_Y13_N0
+\sprite_renderer|LessThan1~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~2_combout\ = (((!\sprite_renderer|row\(4)) # (!\sprite_renderer|row\(2))) # (!\sprite_renderer|row\(0))) # (!\sprite_renderer|row\(3))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(3),
+	datab => \sprite_renderer|row\(0),
+	datac => \sprite_renderer|row\(2),
+	datad => \sprite_renderer|row\(4),
+	combout => \sprite_renderer|LessThan1~2_combout\);
+
+-- Location: LCCOMB_X22_Y15_N10
+\sprite_renderer|Add0~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~11_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~2_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~2_combout\,
+	combout => \sprite_renderer|Add0~11_combout\);
+
+-- Location: LCFF_X22_Y15_N11
+\sprite_renderer|row[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(1));
+
+-- Location: LCCOMB_X22_Y15_N24
+\sprite_renderer|LessThan1~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~3_combout\ = (\sprite_renderer|LessThan1~1_combout\ & (\sprite_renderer|LessThan1~0_combout\ & ((\sprite_renderer|LessThan1~2_combout\) # (!\sprite_renderer|row\(1)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~1_combout\,
+	datab => \sprite_renderer|LessThan1~0_combout\,
+	datac => \sprite_renderer|LessThan1~2_combout\,
+	datad => \sprite_renderer|row\(1),
+	combout => \sprite_renderer|LessThan1~3_combout\);
+
+-- Location: LCCOMB_X23_Y15_N22
+\sprite_renderer|Add0~32\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~32_combout\ = (\sprite_renderer|row\(11) & (!\sprite_renderer|Add0~31\)) # (!\sprite_renderer|row\(11) & ((\sprite_renderer|Add0~31\) # (GND)))
+-- \sprite_renderer|Add0~33\ = CARRY((!\sprite_renderer|Add0~31\) # (!\sprite_renderer|row\(11)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|row\(11),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~31\,
+	combout => \sprite_renderer|Add0~32_combout\,
+	cout => \sprite_renderer|Add0~33\);
+
+-- Location: LCCOMB_X24_Y15_N24
+\sprite_renderer|Add0~96\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~96_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~32_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~32_combout\,
+	combout => \sprite_renderer|Add0~96_combout\);
+
+-- Location: LCFF_X24_Y15_N25
+\sprite_renderer|row[11]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~96_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(11));
+
+-- Location: LCCOMB_X23_Y15_N24
 \sprite_renderer|Add0~34\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~34_combout\ = (\sprite_renderer|row\(12) & (\sprite_renderer|Add0~33\ $ (GND))) # (!\sprite_renderer|row\(12) & (!\sprite_renderer|Add0~33\ & VCC))
@@ -5706,34 +7951,34 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~34_combout\,
 	cout => \sprite_renderer|Add0~35\);
 
--- Location: LCCOMB_X34_Y14_N4
+-- Location: LCCOMB_X24_Y15_N14
 \sprite_renderer|Add0~95\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~95_combout\ = (\sprite_renderer|Add0~34_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~95_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~34_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|Add0~34_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~34_combout\,
 	combout => \sprite_renderer|Add0~95_combout\);
 
--- Location: LCFF_X34_Y14_N5
+-- Location: LCFF_X24_Y15_N15
 \sprite_renderer|row[12]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~95_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(12));
 
--- Location: LCCOMB_X33_Y15_N26
+-- Location: LCCOMB_X23_Y15_N26
 \sprite_renderer|Add0~36\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~36_combout\ = (\sprite_renderer|row\(13) & (!\sprite_renderer|Add0~35\)) # (!\sprite_renderer|row\(13) & ((\sprite_renderer|Add0~35\) # (GND)))
@@ -5751,10 +7996,10 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~36_combout\,
 	cout => \sprite_renderer|Add0~37\);
 
--- Location: LCCOMB_X34_Y14_N2
+-- Location: LCCOMB_X24_Y15_N12
 \sprite_renderer|Add0~94\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~94_combout\ = (\sprite_renderer|Add0~36_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~94_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~36_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5762,23 +8007,23 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~36_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~36_combout\,
 	combout => \sprite_renderer|Add0~94_combout\);
 
--- Location: LCFF_X34_Y14_N3
+-- Location: LCFF_X24_Y15_N13
 \sprite_renderer|row[13]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~94_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(13));
 
--- Location: LCCOMB_X33_Y15_N28
+-- Location: LCCOMB_X23_Y15_N28
 \sprite_renderer|Add0~38\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~38_combout\ = (\sprite_renderer|row\(14) & (\sprite_renderer|Add0~37\ $ (GND))) # (!\sprite_renderer|row\(14) & (!\sprite_renderer|Add0~37\ & VCC))
@@ -5796,10 +8041,10 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~38_combout\,
 	cout => \sprite_renderer|Add0~39\);
 
--- Location: LCCOMB_X34_Y14_N16
+-- Location: LCCOMB_X24_Y15_N18
 \sprite_renderer|Add0~93\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~93_combout\ = (\sprite_renderer|Add0~38_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~93_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~38_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5807,68 +8052,68 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~38_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~38_combout\,
 	combout => \sprite_renderer|Add0~93_combout\);
 
--- Location: LCFF_X34_Y14_N17
+-- Location: LCFF_X24_Y15_N19
 \sprite_renderer|row[14]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~93_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(14));
 
--- Location: LCCOMB_X33_Y14_N0
-\sprite_renderer|Add0~42\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y15_N30
+\sprite_renderer|Add0~40\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~42_combout\ = (\sprite_renderer|row\(16) & (\sprite_renderer|Add0~41\ $ (GND))) # (!\sprite_renderer|row\(16) & (!\sprite_renderer|Add0~41\ & VCC))
--- \sprite_renderer|Add0~43\ = CARRY((\sprite_renderer|row\(16) & !\sprite_renderer|Add0~41\))
+-- \sprite_renderer|Add0~40_combout\ = (\sprite_renderer|row\(15) & (!\sprite_renderer|Add0~39\)) # (!\sprite_renderer|row\(15) & ((\sprite_renderer|Add0~39\) # (GND)))
+-- \sprite_renderer|Add0~41\ = CARRY((!\sprite_renderer|Add0~39\) # (!\sprite_renderer|row\(15)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100001100",
+	lut_mask => "0011110000111111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|row\(16),
+	datab => \sprite_renderer|row\(15),
 	datad => VCC,
-	cin => \sprite_renderer|Add0~41\,
-	combout => \sprite_renderer|Add0~42_combout\,
-	cout => \sprite_renderer|Add0~43\);
+	cin => \sprite_renderer|Add0~39\,
+	combout => \sprite_renderer|Add0~40_combout\,
+	cout => \sprite_renderer|Add0~41\);
 
--- Location: LCCOMB_X34_Y14_N20
-\sprite_renderer|Add0~91\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y15_N0
+\sprite_renderer|Add0~92\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~91_combout\ = (\sprite_renderer|Add0~42_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~92_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~40_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~42_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~91_combout\);
+	datab => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|Add0~40_combout\,
+	combout => \sprite_renderer|Add0~92_combout\);
 
--- Location: LCFF_X34_Y14_N21
-\sprite_renderer|row[16]\ : cycloneii_lcell_ff
+-- Location: LCFF_X24_Y15_N1
+\sprite_renderer|row[15]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~91_combout\,
+	datain => \sprite_renderer|Add0~92_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(16));
+	regout => \sprite_renderer|row\(15));
 
--- Location: LCCOMB_X33_Y14_N2
+-- Location: LCCOMB_X23_Y14_N2
 \sprite_renderer|Add0~44\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~44_combout\ = (\sprite_renderer|row\(17) & (!\sprite_renderer|Add0~43\)) # (!\sprite_renderer|row\(17) & ((\sprite_renderer|Add0~43\) # (GND)))
@@ -5886,34 +8131,34 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~44_combout\,
 	cout => \sprite_renderer|Add0~45\);
 
--- Location: LCCOMB_X34_Y14_N18
+-- Location: LCCOMB_X24_Y15_N28
 \sprite_renderer|Add0~90\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~90_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~44_combout\)
+-- \sprite_renderer|Add0~90_combout\ = (\sprite_renderer|Add0~44_combout\ & \sprite_renderer|LessThan1~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~44_combout\,
+	datab => \sprite_renderer|Add0~44_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
 	combout => \sprite_renderer|Add0~90_combout\);
 
--- Location: LCFF_X34_Y14_N19
+-- Location: LCFF_X24_Y15_N29
 \sprite_renderer|row[17]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~90_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(17));
 
--- Location: LCCOMB_X33_Y14_N4
+-- Location: LCCOMB_X23_Y14_N4
 \sprite_renderer|Add0~46\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~46_combout\ = (\sprite_renderer|row\(18) & (\sprite_renderer|Add0~45\ $ (GND))) # (!\sprite_renderer|row\(18) & (!\sprite_renderer|Add0~45\ & VCC))
@@ -5931,10 +8176,10 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~46_combout\,
 	cout => \sprite_renderer|Add0~47\);
 
--- Location: LCCOMB_X34_Y14_N24
+-- Location: LCCOMB_X24_Y15_N26
 \sprite_renderer|Add0~89\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~89_combout\ = (\sprite_renderer|Add0~46_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~89_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~46_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5942,40 +8187,23 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~46_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~46_combout\,
 	combout => \sprite_renderer|Add0~89_combout\);
 
--- Location: LCFF_X34_Y14_N25
+-- Location: LCFF_X24_Y15_N27
 \sprite_renderer|row[18]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~89_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(18));
 
--- Location: LCCOMB_X34_Y14_N26
-\sprite_renderer|LessThan1~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~7_combout\ = (!\sprite_renderer|row\(17) & (!\sprite_renderer|row\(15) & (!\sprite_renderer|row\(16) & !\sprite_renderer|row\(18))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(17),
-	datab => \sprite_renderer|row\(15),
-	datac => \sprite_renderer|row\(16),
-	datad => \sprite_renderer|row\(18),
-	combout => \sprite_renderer|LessThan1~7_combout\);
-
--- Location: LCCOMB_X33_Y14_N6
+-- Location: LCCOMB_X23_Y14_N6
 \sprite_renderer|Add0~48\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~48_combout\ = (\sprite_renderer|row\(19) & (!\sprite_renderer|Add0~47\)) # (!\sprite_renderer|row\(19) & ((\sprite_renderer|Add0~47\) # (GND)))
@@ -5993,34 +8221,34 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~48_combout\,
 	cout => \sprite_renderer|Add0~49\);
 
--- Location: LCCOMB_X34_Y14_N30
+-- Location: LCCOMB_X24_Y14_N30
 \sprite_renderer|Add0~88\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~88_combout\ = (\sprite_renderer|Add0~48_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~88_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~48_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
 	datac => \sprite_renderer|Add0~48_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
 	combout => \sprite_renderer|Add0~88_combout\);
 
--- Location: LCFF_X34_Y14_N31
+-- Location: LCFF_X24_Y14_N31
 \sprite_renderer|row[19]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~88_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(19));
 
--- Location: LCCOMB_X33_Y14_N8
+-- Location: LCCOMB_X23_Y14_N8
 \sprite_renderer|Add0~50\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~50_combout\ = (\sprite_renderer|row\(20) & (\sprite_renderer|Add0~49\ $ (GND))) # (!\sprite_renderer|row\(20) & (!\sprite_renderer|Add0~49\ & VCC))
@@ -6038,34 +8266,34 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~50_combout\,
 	cout => \sprite_renderer|Add0~51\);
 
--- Location: LCCOMB_X34_Y14_N28
+-- Location: LCCOMB_X24_Y14_N12
 \sprite_renderer|Add0~87\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~87_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~50_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
 	datad => \sprite_renderer|Add0~50_combout\,
 	combout => \sprite_renderer|Add0~87_combout\);
 
--- Location: LCFF_X34_Y14_N29
+-- Location: LCFF_X24_Y14_N13
 \sprite_renderer|row[20]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~87_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(20));
 
--- Location: LCCOMB_X33_Y14_N10
+-- Location: LCCOMB_X23_Y14_N10
 \sprite_renderer|Add0~52\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~52_combout\ = (\sprite_renderer|row\(21) & (!\sprite_renderer|Add0~51\)) # (!\sprite_renderer|row\(21) & ((\sprite_renderer|Add0~51\) # (GND)))
@@ -6083,34 +8311,34 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~52_combout\,
 	cout => \sprite_renderer|Add0~53\);
 
--- Location: LCCOMB_X34_Y14_N10
+-- Location: LCCOMB_X24_Y14_N10
 \sprite_renderer|Add0~86\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~86_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~52_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
 	datad => \sprite_renderer|Add0~52_combout\,
 	combout => \sprite_renderer|Add0~86_combout\);
 
--- Location: LCFF_X34_Y14_N11
+-- Location: LCFF_X24_Y14_N11
 \sprite_renderer|row[21]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~86_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(21));
 
--- Location: LCCOMB_X33_Y14_N12
+-- Location: LCCOMB_X23_Y14_N12
 \sprite_renderer|Add0~54\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~54_combout\ = (\sprite_renderer|row\(22) & (\sprite_renderer|Add0~53\ $ (GND))) # (!\sprite_renderer|row\(22) & (!\sprite_renderer|Add0~53\ & VCC))
@@ -6128,85 +8356,79 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~54_combout\,
 	cout => \sprite_renderer|Add0~55\);
 
--- Location: LCCOMB_X34_Y14_N0
+-- Location: LCCOMB_X24_Y14_N24
 \sprite_renderer|Add0~85\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~85_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~54_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
 	datad => \sprite_renderer|Add0~54_combout\,
 	combout => \sprite_renderer|Add0~85_combout\);
 
--- Location: LCFF_X34_Y14_N1
+-- Location: LCFF_X24_Y14_N25
 \sprite_renderer|row[22]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~85_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(22));
 
--- Location: LCCOMB_X34_Y14_N8
-\sprite_renderer|LessThan1~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X23_Y14_N14
+\sprite_renderer|Add0~56\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|LessThan1~6_combout\ = (!\sprite_renderer|row\(21) & (!\sprite_renderer|row\(20) & (!\sprite_renderer|row\(19) & !\sprite_renderer|row\(22))))
+-- \sprite_renderer|Add0~56_combout\ = (\sprite_renderer|row\(23) & (!\sprite_renderer|Add0~55\)) # (!\sprite_renderer|row\(23) & ((\sprite_renderer|Add0~55\) # (GND)))
+-- \sprite_renderer|Add0~57\ = CARRY((!\sprite_renderer|Add0~55\) # (!\sprite_renderer|row\(23)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(21),
-	datab => \sprite_renderer|row\(20),
-	datac => \sprite_renderer|row\(19),
-	datad => \sprite_renderer|row\(22),
-	combout => \sprite_renderer|LessThan1~6_combout\);
+	datab => \sprite_renderer|row\(23),
+	datad => VCC,
+	cin => \sprite_renderer|Add0~55\,
+	combout => \sprite_renderer|Add0~56_combout\,
+	cout => \sprite_renderer|Add0~57\);
 
--- Location: LCCOMB_X34_Y14_N12
-\sprite_renderer|LessThan1~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y14_N14
+\sprite_renderer|Add0~84\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|LessThan1~8_combout\ = (!\sprite_renderer|row\(11) & (!\sprite_renderer|row\(13) & (!\sprite_renderer|row\(12) & !\sprite_renderer|row\(14))))
+-- \sprite_renderer|Add0~84_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~56_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000001",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(11),
-	datab => \sprite_renderer|row\(13),
-	datac => \sprite_renderer|row\(12),
-	datad => \sprite_renderer|row\(14),
-	combout => \sprite_renderer|LessThan1~8_combout\);
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~56_combout\,
+	combout => \sprite_renderer|Add0~84_combout\);
 
--- Location: LCCOMB_X34_Y14_N22
-\sprite_renderer|LessThan1~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~9_combout\ = (\sprite_renderer|LessThan1~5_combout\ & (\sprite_renderer|LessThan1~7_combout\ & (\sprite_renderer|LessThan1~6_combout\ & \sprite_renderer|LessThan1~8_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
+-- Location: LCFF_X24_Y14_N15
+\sprite_renderer|row[23]\ : cycloneii_lcell_ff
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~5_combout\,
-	datab => \sprite_renderer|LessThan1~7_combout\,
-	datac => \sprite_renderer|LessThan1~6_combout\,
-	datad => \sprite_renderer|LessThan1~8_combout\,
-	combout => \sprite_renderer|LessThan1~9_combout\);
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~84_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(23));
 
--- Location: LCCOMB_X33_Y14_N16
+-- Location: LCCOMB_X23_Y14_N16
 \sprite_renderer|Add0~58\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~58_combout\ = (\sprite_renderer|row\(24) & (\sprite_renderer|Add0~57\ $ (GND))) # (!\sprite_renderer|row\(24) & (!\sprite_renderer|Add0~57\ & VCC))
@@ -6224,10 +8446,10 @@ PORT MAP (
 	combout => \sprite_renderer|Add0~58_combout\,
 	cout => \sprite_renderer|Add0~59\);
 
--- Location: LCCOMB_X32_Y14_N4
+-- Location: LCCOMB_X24_Y14_N28
 \sprite_renderer|Add0~83\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~83_combout\ = (\sprite_renderer|Add0~58_combout\ & \sprite_renderer|LessThan1~10_combout\)
+-- \sprite_renderer|Add0~83_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~58_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6235,292 +8457,53 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|Add0~58_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|Add0~58_combout\,
 	combout => \sprite_renderer|Add0~83_combout\);
 
--- Location: LCFF_X32_Y14_N5
+-- Location: LCFF_X24_Y14_N29
 \sprite_renderer|row[24]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~83_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(24));
 
--- Location: LCCOMB_X33_Y14_N18
-\sprite_renderer|Add0~60\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~60_combout\ = (\sprite_renderer|row\(25) & (!\sprite_renderer|Add0~59\)) # (!\sprite_renderer|row\(25) & ((\sprite_renderer|Add0~59\) # (GND)))
--- \sprite_renderer|Add0~61\ = CARRY((!\sprite_renderer|Add0~59\) # (!\sprite_renderer|row\(25)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(25),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~59\,
-	combout => \sprite_renderer|Add0~60_combout\,
-	cout => \sprite_renderer|Add0~61\);
-
--- Location: LCCOMB_X32_Y14_N26
+-- Location: LCCOMB_X24_Y14_N26
 \sprite_renderer|Add0~82\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|Add0~82_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~60_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
 	datad => \sprite_renderer|Add0~60_combout\,
 	combout => \sprite_renderer|Add0~82_combout\);
 
--- Location: LCFF_X32_Y14_N27
+-- Location: LCFF_X24_Y14_N27
 \sprite_renderer|row[25]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|Add0~82_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(25));
 
--- Location: LCCOMB_X33_Y14_N22
-\sprite_renderer|Add0~64\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y14_N0
+\sprite_renderer|LessThan1~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~64_combout\ = (\sprite_renderer|row\(27) & (!\sprite_renderer|Add0~63\)) # (!\sprite_renderer|row\(27) & ((\sprite_renderer|Add0~63\) # (GND)))
--- \sprite_renderer|Add0~65\ = CARRY((!\sprite_renderer|Add0~63\) # (!\sprite_renderer|row\(27)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(27),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~63\,
-	combout => \sprite_renderer|Add0~64_combout\,
-	cout => \sprite_renderer|Add0~65\);
-
--- Location: LCCOMB_X32_Y15_N24
-\sprite_renderer|Add0~78\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~78_combout\ = (\sprite_renderer|Add0~64_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add0~64_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~78_combout\);
-
--- Location: LCFF_X32_Y15_N25
-\sprite_renderer|row[27]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~78_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(27));
-
--- Location: LCCOMB_X33_Y14_N24
-\sprite_renderer|Add0~66\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~66_combout\ = (\sprite_renderer|row\(28) & (\sprite_renderer|Add0~65\ $ (GND))) # (!\sprite_renderer|row\(28) & (!\sprite_renderer|Add0~65\ & VCC))
--- \sprite_renderer|Add0~67\ = CARRY((\sprite_renderer|row\(28) & !\sprite_renderer|Add0~65\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(28),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~65\,
-	combout => \sprite_renderer|Add0~66_combout\,
-	cout => \sprite_renderer|Add0~67\);
-
--- Location: LCCOMB_X33_Y14_N26
-\sprite_renderer|Add0~68\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~68_combout\ = (\sprite_renderer|row\(29) & (!\sprite_renderer|Add0~67\)) # (!\sprite_renderer|row\(29) & ((\sprite_renderer|Add0~67\) # (GND)))
--- \sprite_renderer|Add0~69\ = CARRY((!\sprite_renderer|Add0~67\) # (!\sprite_renderer|row\(29)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(29),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~67\,
-	combout => \sprite_renderer|Add0~68_combout\,
-	cout => \sprite_renderer|Add0~69\);
-
--- Location: LCCOMB_X33_Y14_N30
-\sprite_renderer|Add0~72\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~72_combout\ = \sprite_renderer|row\(31) $ (\sprite_renderer|Add0~71\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(31),
-	cin => \sprite_renderer|Add0~71\,
-	combout => \sprite_renderer|Add0~72_combout\);
-
--- Location: LCCOMB_X32_Y15_N4
-\sprite_renderer|Add0~74\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~74_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (\sprite_renderer|Add0~72_combout\ & \sprite_renderer|LessThan1~10_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|Add0~72_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~74_combout\);
-
--- Location: LCFF_X32_Y15_N5
-\sprite_renderer|row[31]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~74_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(31));
-
--- Location: LCCOMB_X32_Y14_N0
-\sprite_renderer|Add0~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~10_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~8_combout\,
-	combout => \sprite_renderer|Add0~10_combout\);
-
--- Location: LCFF_X32_Y14_N1
-\sprite_renderer|row[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~10_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(3));
-
--- Location: LCCOMB_X32_Y15_N8
-\sprite_renderer|LessThan1~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~2_combout\ = (((!\sprite_renderer|row\(3)) # (!\sprite_renderer|row\(4))) # (!\sprite_renderer|row\(2))) # (!\sprite_renderer|row\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(0),
-	datab => \sprite_renderer|row\(2),
-	datac => \sprite_renderer|row\(4),
-	datad => \sprite_renderer|row\(3),
-	combout => \sprite_renderer|LessThan1~2_combout\);
-
--- Location: LCCOMB_X32_Y15_N30
-\sprite_renderer|Add0~77\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~77_combout\ = (\sprite_renderer|Add0~66_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add0~66_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~77_combout\);
-
--- Location: LCFF_X32_Y15_N31
-\sprite_renderer|row[28]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~77_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(28));
-
--- Location: LCCOMB_X32_Y15_N12
-\sprite_renderer|Add0~76\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~76_combout\ = (\sprite_renderer|Add0~68_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add0~68_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~76_combout\);
-
--- Location: LCFF_X32_Y15_N13
-\sprite_renderer|row[29]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~76_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(29));
-
--- Location: LCCOMB_X32_Y15_N14
-\sprite_renderer|LessThan1~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan1~1_combout\ = (!\sprite_renderer|row\(30) & (!\sprite_renderer|row\(28) & (!\sprite_renderer|row\(27) & !\sprite_renderer|row\(29))))
+-- \sprite_renderer|LessThan1~5_combout\ = (!\sprite_renderer|row\(26) & (!\sprite_renderer|row\(24) & (!\sprite_renderer|row\(23) & !\sprite_renderer|row\(25))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6528,183 +8511,285 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|row\(30),
-	datab => \sprite_renderer|row\(28),
-	datac => \sprite_renderer|row\(27),
-	datad => \sprite_renderer|row\(29),
-	combout => \sprite_renderer|LessThan1~1_combout\);
+	dataa => \sprite_renderer|row\(26),
+	datab => \sprite_renderer|row\(24),
+	datac => \sprite_renderer|row\(23),
+	datad => \sprite_renderer|row\(25),
+	combout => \sprite_renderer|LessThan1~5_combout\);
 
--- Location: LCCOMB_X32_Y15_N10
-\sprite_renderer|LessThan1~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y15_N4
+\sprite_renderer|LessThan1~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|LessThan1~3_combout\ = (\sprite_renderer|LessThan1~0_combout\ & (\sprite_renderer|LessThan1~1_combout\ & ((\sprite_renderer|LessThan1~2_combout\) # (!\sprite_renderer|row\(1)))))
+-- \sprite_renderer|LessThan1~8_combout\ = (!\sprite_renderer|row\(13) & (!\sprite_renderer|row\(12) & (!\sprite_renderer|row\(11) & !\sprite_renderer|row\(14))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000010100000",
+	lut_mask => "0000000000000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~0_combout\,
-	datab => \sprite_renderer|LessThan1~2_combout\,
-	datac => \sprite_renderer|LessThan1~1_combout\,
-	datad => \sprite_renderer|row\(1),
-	combout => \sprite_renderer|LessThan1~3_combout\);
+	dataa => \sprite_renderer|row\(13),
+	datab => \sprite_renderer|row\(12),
+	datac => \sprite_renderer|row\(11),
+	datad => \sprite_renderer|row\(14),
+	combout => \sprite_renderer|LessThan1~8_combout\);
 
--- Location: LCCOMB_X32_Y15_N22
+-- Location: LCCOMB_X24_Y15_N22
+\sprite_renderer|Add0~91\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~91_combout\ = (\sprite_renderer|Add0~42_combout\ & \sprite_renderer|LessThan1~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Add0~42_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	combout => \sprite_renderer|Add0~91_combout\);
+
+-- Location: LCFF_X24_Y15_N23
+\sprite_renderer|row[16]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add0~91_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add0~9_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|row\(16));
+
+-- Location: LCCOMB_X24_Y15_N2
+\sprite_renderer|LessThan1~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~7_combout\ = (!\sprite_renderer|row\(18) & (!\sprite_renderer|row\(15) & (!\sprite_renderer|row\(16) & !\sprite_renderer|row\(17))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(18),
+	datab => \sprite_renderer|row\(15),
+	datac => \sprite_renderer|row\(16),
+	datad => \sprite_renderer|row\(17),
+	combout => \sprite_renderer|LessThan1~7_combout\);
+
+-- Location: LCCOMB_X24_Y15_N30
+\sprite_renderer|LessThan1~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|LessThan1~9_combout\ = (\sprite_renderer|LessThan1~6_combout\ & (\sprite_renderer|LessThan1~5_combout\ & (\sprite_renderer|LessThan1~8_combout\ & \sprite_renderer|LessThan1~7_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~6_combout\,
+	datab => \sprite_renderer|LessThan1~5_combout\,
+	datac => \sprite_renderer|LessThan1~8_combout\,
+	datad => \sprite_renderer|LessThan1~7_combout\,
+	combout => \sprite_renderer|LessThan1~9_combout\);
+
+-- Location: LCCOMB_X22_Y15_N12
 \sprite_renderer|LessThan1~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|LessThan1~10_combout\ = (\sprite_renderer|row\(31)) # ((\sprite_renderer|LessThan1~4_combout\ & (\sprite_renderer|LessThan1~9_combout\ & \sprite_renderer|LessThan1~3_combout\)))
+-- \sprite_renderer|LessThan1~10_combout\ = (\sprite_renderer|row\(31)) # ((\sprite_renderer|LessThan1~4_combout\ & (\sprite_renderer|LessThan1~3_combout\ & \sprite_renderer|LessThan1~9_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111100011110000",
+	lut_mask => "1110101010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|LessThan1~4_combout\,
-	datab => \sprite_renderer|LessThan1~9_combout\,
-	datac => \sprite_renderer|row\(31),
-	datad => \sprite_renderer|LessThan1~3_combout\,
+	dataa => \sprite_renderer|row\(31),
+	datab => \sprite_renderer|LessThan1~4_combout\,
+	datac => \sprite_renderer|LessThan1~3_combout\,
+	datad => \sprite_renderer|LessThan1~9_combout\,
 	combout => \sprite_renderer|LessThan1~10_combout\);
 
--- Location: LCCOMB_X33_Y15_N0
-\sprite_renderer|Add0~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X24_Y13_N4
+\sprite_renderer|Selector65~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~0_combout\ = \sprite_renderer|row\(0) $ (VCC)
--- \sprite_renderer|Add0~1\ = CARRY(\sprite_renderer|row\(0))
+-- \sprite_renderer|Selector65~1_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (\sprite_renderer|state.CLEARING~regout\ & ((\sprite_renderer|LessThan0~10_combout\) # (\sprite_renderer|LessThan1~10_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(0),
-	datad => VCC,
-	combout => \sprite_renderer|Add0~0_combout\,
-	cout => \sprite_renderer|Add0~1\);
-
--- Location: LCCOMB_X32_Y15_N6
-\sprite_renderer|Add0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~2_combout\ = (\sprite_renderer|state.DRAWING~regout\ & (\sprite_renderer|Add0~0_combout\ & \sprite_renderer|LessThan1~10_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000000000000",
+	lut_mask => "1010100000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|Add0~0_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~2_combout\);
+	datab => \sprite_renderer|LessThan0~10_combout\,
+	datac => \sprite_renderer|LessThan1~10_combout\,
+	datad => \sprite_renderer|state.CLEARING~regout\,
+	combout => \sprite_renderer|Selector65~1_combout\);
 
--- Location: LCFF_X32_Y15_N7
+-- Location: LCCOMB_X24_Y13_N0
+\sprite_renderer|Selector65~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector65~4_combout\ = (\sprite_renderer|Selector65~3_combout\) # ((\sprite_renderer|Selector65~1_combout\) # ((\sprite_renderer|state.CLEARING~regout\ & \sprite_renderer|state.SHOWING~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|Selector65~3_combout\,
+	datab => \sprite_renderer|state.CLEARING~regout\,
+	datac => \sprite_renderer|Selector65~1_combout\,
+	datad => \sprite_renderer|state.SHOWING~regout\,
+	combout => \sprite_renderer|Selector65~4_combout\);
+
+-- Location: LCFF_X24_Y13_N1
+\sprite_renderer|state.WAITING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Selector65~4_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|state.WAITING~regout\);
+
+-- Location: LCCOMB_X23_Y13_N14
+\sprite_renderer|next_state.DRAWING~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|next_state.DRAWING~0_combout\ = (!\sprite_renderer|state.SHOWING~regout\ & ((\sprite_renderer|state.DRAWING~regout\) # (!\view|SHOW~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|state.SHOWING~regout\,
+	datac => \view|SHOW~regout\,
+	datad => \sprite_renderer|state.DRAWING~regout\,
+	combout => \sprite_renderer|next_state.DRAWING~0_combout\);
+
+-- Location: LCFF_X23_Y13_N15
+\sprite_renderer|next_state.DRAWING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|next_state.DRAWING~0_combout\,
+	ena => \sprite_renderer|next_state.IDLE~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|next_state.DRAWING~regout\);
+
+-- Location: LCCOMB_X23_Y13_N10
+\sprite_renderer|Selector66~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Selector66~0_combout\ = (\vga|READY~1_combout\ & (\sprite_renderer|state.WAITING~regout\ & (\sprite_renderer|next_state.DRAWING~regout\ & !\sprite_renderer|FB_FLIP~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|READY~1_combout\,
+	datab => \sprite_renderer|state.WAITING~regout\,
+	datac => \sprite_renderer|next_state.DRAWING~regout\,
+	datad => \sprite_renderer|FB_FLIP~regout\,
+	combout => \sprite_renderer|Selector66~0_combout\);
+
+-- Location: LCFF_X23_Y13_N11
+\sprite_renderer|state.DRAWING\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Selector66~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|state.DRAWING~regout\);
+
+-- Location: LCCOMB_X22_Y15_N18
+\sprite_renderer|Add0~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add0~12_combout\ = (\sprite_renderer|LessThan1~10_combout\ & (\sprite_renderer|state.DRAWING~regout\ & \sprite_renderer|Add0~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|LessThan1~10_combout\,
+	datab => \sprite_renderer|state.DRAWING~regout\,
+	datac => \sprite_renderer|Add0~0_combout\,
+	combout => \sprite_renderer|Add0~12_combout\);
+
+-- Location: LCFF_X22_Y15_N19
 \sprite_renderer|row[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~2_combout\,
+	datain => \sprite_renderer|Add0~12_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|Add0~3_combout\,
+	ena => \sprite_renderer|Add0~9_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|row\(0));
 
--- Location: LCCOMB_X33_Y15_N2
-\sprite_renderer|Add0~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y13_N2
+\sprite_renderer|FB_Y0[5]~9\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add0~4_combout\ = (\sprite_renderer|row\(1) & (!\sprite_renderer|Add0~1\)) # (!\sprite_renderer|row\(1) & ((\sprite_renderer|Add0~1\) # (GND)))
--- \sprite_renderer|Add0~5\ = CARRY((!\sprite_renderer|Add0~1\) # (!\sprite_renderer|row\(1)))
+-- \sprite_renderer|FB_Y0[5]~9_combout\ = (\sprite_renderer|sprite_to_draw.color\(6) & (!\sprite_renderer|row\(0) & (\sprite_renderer|row\(4) & !\sprite_renderer|row\(1)))) # (!\sprite_renderer|sprite_to_draw.color\(6) & (\sprite_renderer|row\(0) & 
+-- (!\sprite_renderer|row\(4) & \sprite_renderer|row\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(1),
-	datad => VCC,
-	cin => \sprite_renderer|Add0~1\,
-	combout => \sprite_renderer|Add0~4_combout\,
-	cout => \sprite_renderer|Add0~5\);
-
--- Location: LCCOMB_X32_Y15_N18
-\sprite_renderer|Add0~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~15_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
+	lut_mask => "0000010000100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~4_combout\,
-	combout => \sprite_renderer|Add0~15_combout\);
-
--- Location: LCFF_X32_Y15_N19
-\sprite_renderer|row[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~15_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(1));
-
--- Location: LCCOMB_X32_Y14_N2
-\sprite_renderer|Add0~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~14_combout\ = (\sprite_renderer|Add0~6_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add0~6_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~14_combout\);
-
--- Location: LCFF_X32_Y14_N3
-\sprite_renderer|row[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~14_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(2));
-
--- Location: LCCOMB_X32_Y15_N26
-\sprite_renderer|FB_COLOR~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_COLOR~1_combout\ = ((!\sprite_renderer|FB_COLOR~0_combout\ & (!\sprite_renderer|row\(2) & !\sprite_renderer|row\(1)))) # (!\sprite_renderer|state.DRAWING~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100011111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_COLOR~0_combout\,
-	datab => \sprite_renderer|row\(2),
-	datac => \sprite_renderer|state.DRAWING~regout\,
+	dataa => \sprite_renderer|sprite_to_draw.color\(6),
+	datab => \sprite_renderer|row\(0),
+	datac => \sprite_renderer|row\(4),
 	datad => \sprite_renderer|row\(1),
-	combout => \sprite_renderer|FB_COLOR~1_combout\);
+	combout => \sprite_renderer|FB_Y0[5]~9_combout\);
 
--- Location: LCCOMB_X29_Y13_N24
-\sprite_renderer|FB_COLOR~1_wirecell\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y13_N8
+\sprite_renderer|Mux32~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|FB_COLOR~1_wirecell_combout\ = !\sprite_renderer|FB_COLOR~1_combout\
+-- \sprite_renderer|Mux32~0_combout\ = (\sprite_renderer|row\(3)) # (\sprite_renderer|row\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(3),
+	datac => \sprite_renderer|row\(2),
+	combout => \sprite_renderer|Mux32~0_combout\);
+
+-- Location: LCCOMB_X20_Y13_N4
+\sprite_renderer|FB_Y0[5]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[5]~12_combout\ = ((\sprite_renderer|FB_Y0[5]~11_combout\ & (\sprite_renderer|FB_Y0[5]~9_combout\ & !\sprite_renderer|Mux32~0_combout\))) # (!\sprite_renderer|state.DRAWING~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_Y0[5]~11_combout\,
+	datab => \sprite_renderer|FB_Y0[5]~9_combout\,
+	datac => \sprite_renderer|Mux32~0_combout\,
+	datad => \sprite_renderer|state.DRAWING~regout\,
+	combout => \sprite_renderer|FB_Y0[5]~12_combout\);
+
+-- Location: LCCOMB_X21_Y13_N0
+\sprite_renderer|FB_Y0[5]~12_wirecell\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[5]~12_wirecell_combout\ = !\sprite_renderer|FB_Y0[5]~12_combout\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6712,20 +8797,20 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_COLOR~1_combout\,
-	combout => \sprite_renderer|FB_COLOR~1_wirecell_combout\);
+	datac => \sprite_renderer|FB_Y0[5]~12_combout\,
+	combout => \sprite_renderer|FB_Y0[5]~12_wirecell_combout\);
 
--- Location: LCFF_X29_Y13_N25
-\sprite_renderer|FB_COLOR[6]\ : cycloneii_lcell_ff
+-- Location: LCFF_X21_Y13_N1
+\sprite_renderer|FB_DRAW_RECT\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_COLOR~1_wirecell_combout\,
+	datain => \sprite_renderer|FB_Y0[5]~12_wirecell_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_COLOR\(6));
+	regout => \sprite_renderer|FB_DRAW_RECT~regout\);
 
--- Location: LCCOMB_X27_Y13_N22
+-- Location: LCCOMB_X22_Y11_N30
 \sprite_renderer|FB_CLEAR~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|FB_CLEAR~0_combout\ = !\sprite_renderer|state.CLEARING~regout\
@@ -6739,7 +8824,7 @@ PORT MAP (
 	datad => \sprite_renderer|state.CLEARING~regout\,
 	combout => \sprite_renderer|FB_CLEAR~0_combout\);
 
--- Location: LCFF_X27_Y13_N23
+-- Location: LCFF_X22_Y11_N31
 \sprite_renderer|FB_CLEAR\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -6749,7 +8834,405 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \sprite_renderer|FB_CLEAR~regout\);
 
--- Location: LCCOMB_X32_Y13_N22
+-- Location: LCCOMB_X19_Y11_N22
+\vga|Selector0~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~10_combout\ = (\vga|Selector0~9_combout\) # ((!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_DRAW_RECT~regout\) # (\sprite_renderer|FB_CLEAR~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010111110101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector0~9_combout\,
+	datab => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datac => \vga|state.IDLE~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|Selector0~10_combout\);
+
+-- Location: LCFF_X19_Y11_N23
+\vga|state.IDLE\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|Selector0~10_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|state.IDLE~regout\);
+
+-- Location: LCCOMB_X19_Y11_N4
+\vga|Selector2~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector2~1_combout\ = (\vga|Selector2~0_combout\ & ((\vga|state.FILLING_RECT~regout\) # ((!\vga|state.IDLE~regout\ & \sprite_renderer|FB_CLEAR~regout\)))) # (!\vga|Selector2~0_combout\ & (!\vga|state.IDLE~regout\ & 
+-- ((\sprite_renderer|FB_CLEAR~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011001110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector2~0_combout\,
+	datab => \vga|state.IDLE~regout\,
+	datac => \vga|state.FILLING_RECT~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|Selector2~1_combout\);
+
+-- Location: LCFF_X19_Y11_N5
+\vga|state.FILLING_RECT\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|Selector2~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|state.FILLING_RECT~regout\);
+
+-- Location: LCCOMB_X20_Y9_N0
+\vga|y_cursor[0]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[0]~12_combout\ = \vga|y_cursor\(0) $ (VCC)
+-- \vga|y_cursor[0]~13\ = CARRY(\vga|y_cursor\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(0),
+	datad => VCC,
+	combout => \vga|y_cursor[0]~12_combout\,
+	cout => \vga|y_cursor[0]~13\);
+
+-- Location: LCCOMB_X20_Y13_N10
+\sprite_renderer|FB_Y0[0]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[0]~13_combout\ = (\sprite_renderer|sprite_x\(0) & (\sprite_renderer|row\(0) $ (VCC))) # (!\sprite_renderer|sprite_x\(0) & (\sprite_renderer|row\(0) & VCC))
+-- \sprite_renderer|FB_Y0[0]~14\ = CARRY((\sprite_renderer|sprite_x\(0) & \sprite_renderer|row\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_x\(0),
+	datab => \sprite_renderer|row\(0),
+	datad => VCC,
+	combout => \sprite_renderer|FB_Y0[0]~13_combout\,
+	cout => \sprite_renderer|FB_Y0[0]~14\);
+
+-- Location: LCFF_X20_Y13_N11
+\sprite_renderer|FB_Y0[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[0]~13_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(0));
+
+-- Location: LCCOMB_X19_Y9_N16
+\vga|y_start~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~0_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_CLEAR~regout\,
+	datad => \sprite_renderer|FB_Y0\(0),
+	combout => \vga|y_start~0_combout\);
+
+-- Location: LCCOMB_X20_Y10_N18
+\vga|y_end[8]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end[8]~0_combout\ = (\RESET_N~regout\ & (!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_DRAW_RECT~regout\) # (\sprite_renderer|FB_CLEAR~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \RESET_N~regout\,
+	datab => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datac => \vga|state.IDLE~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end[8]~0_combout\);
+
+-- Location: LCFF_X19_Y9_N17
+\vga|y_start[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~0_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(0));
+
+-- Location: LCCOMB_X19_Y11_N6
+\vga|Selector0~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector0~8_combout\ = (!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_DRAW_RECT~regout\) # (\sprite_renderer|FB_CLEAR~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.IDLE~regout\,
+	datac => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|Selector0~8_combout\);
+
+-- Location: LCCOMB_X19_Y11_N10
+\vga|Selector1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector1~0_combout\ = (\vga|Selector2~0_combout\ & ((\vga|state.DRAWING_RECT~regout\) # ((!\sprite_renderer|FB_CLEAR~regout\ & \vga|Selector0~8_combout\)))) # (!\vga|Selector2~0_combout\ & (!\sprite_renderer|FB_CLEAR~regout\ & 
+-- ((\vga|Selector0~8_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011001110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector2~0_combout\,
+	datab => \sprite_renderer|FB_CLEAR~regout\,
+	datac => \vga|state.DRAWING_RECT~regout\,
+	datad => \vga|Selector0~8_combout\,
+	combout => \vga|Selector1~0_combout\);
+
+-- Location: LCFF_X19_Y11_N11
+\vga|state.DRAWING_RECT\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|Selector1~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|state.DRAWING_RECT~regout\);
+
+-- Location: LCCOMB_X20_Y10_N28
+\vga|Selector4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector4~0_combout\ = (\vga|state.IDLE~regout\) # ((!\sprite_renderer|FB_DRAW_RECT~regout\ & (\vga|substate.INIT~regout\ & !\sprite_renderer|FB_CLEAR~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011011100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_DRAW_RECT~regout\,
+	datab => \vga|state.IDLE~regout\,
+	datac => \vga|substate.INIT~regout\,
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|Selector4~0_combout\);
+
+-- Location: LCFF_X20_Y10_N29
+\vga|substate.INIT\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|Selector4~0_combout\,
+	ena => \RESET_N~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|substate.INIT~regout\);
+
+-- Location: LCCOMB_X20_Y10_N6
+\vga|y_cursor[6]~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~14_combout\ = (\vga|state.DRAWING_RECT~regout\ & (\vga|substate.DRAWING_R1~regout\)) # (!\vga|state.DRAWING_RECT~regout\ & ((\vga|substate.INIT~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101110001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|y_cursor[6]~14_combout\);
+
+-- Location: LCCOMB_X18_Y9_N0
+\vga|Add0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~2_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~0_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_start\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Add0~0_combout\,
+	datac => \vga|y_start\(0),
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~2_combout\);
+
+-- Location: LCCOMB_X20_Y10_N2
+\vga|x_cursor[3]~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[3]~16_combout\ = (\vga|substate.DRAWING_R1~regout\) # ((!\vga|substate.INIT~regout\) # (!\vga|state.DRAWING_RECT~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|x_cursor[3]~16_combout\);
+
+-- Location: LCCOMB_X20_Y11_N12
+\vga|x_cursor[0]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[0]~12_combout\ = \vga|x_cursor\(0) $ (VCC)
+-- \vga|x_cursor[0]~13\ = CARRY(\vga|x_cursor\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(0),
+	datad => VCC,
+	combout => \vga|x_cursor[0]~12_combout\,
+	cout => \vga|x_cursor[0]~13\);
+
+-- Location: LCCOMB_X20_Y11_N14
+\vga|x_cursor[1]~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[1]~19_combout\ = (\vga|x_cursor\(1) & (\vga|x_cursor[0]~13\ & VCC)) # (!\vga|x_cursor\(1) & (!\vga|x_cursor[0]~13\))
+-- \vga|x_cursor[1]~20\ = CARRY((!\vga|x_cursor\(1) & !\vga|x_cursor[0]~13\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(1),
+	datad => VCC,
+	cin => \vga|x_cursor[0]~13\,
+	combout => \vga|x_cursor[1]~19_combout\,
+	cout => \vga|x_cursor[1]~20\);
+
+-- Location: LCCOMB_X16_Y11_N4
+\vga|Add1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~0_combout\ = \vga|x_cursor\(0) $ (VCC)
+-- \vga|Add1~1\ = CARRY(\vga|x_cursor\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(0),
+	datad => VCC,
+	combout => \vga|Add1~0_combout\,
+	cout => \vga|Add1~1\);
+
+-- Location: LCCOMB_X20_Y10_N14
+\vga|x_cursor[3]~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[3]~14_combout\ = (\vga|state.FILLING_RECT~regout\ & \vga|substate.INIT~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.FILLING_RECT~regout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|x_cursor[3]~14_combout\);
+
+-- Location: LCCOMB_X20_Y10_N8
+\vga|x_cursor[3]~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[3]~15_combout\ = (\vga|substate.DRAWING_R1~regout\ & ((\vga|state.DRAWING_RECT~regout\) # ((\vga|x_cursor[3]~14_combout\ & !\vga|Equal0~6_combout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (((\vga|x_cursor[3]~14_combout\ & 
+-- !\vga|Equal0~6_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100011111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datac => \vga|x_cursor[3]~14_combout\,
+	datad => \vga|Equal0~6_combout\,
+	combout => \vga|x_cursor[3]~15_combout\);
+
+-- Location: LCCOMB_X22_Y11_N10
+\vga|Add1~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~2_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~0_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_start\(0),
+	datac => \vga|Add1~0_combout\,
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~2_combout\);
+
+-- Location: LCCOMB_X20_Y11_N20
+\vga|x_cursor[4]~25\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[4]~25_combout\ = (\vga|x_cursor\(4) & ((GND) # (!\vga|x_cursor[3]~24\))) # (!\vga|x_cursor\(4) & (\vga|x_cursor[3]~24\ $ (GND)))
+-- \vga|x_cursor[4]~26\ = CARRY((\vga|x_cursor\(4)) # (!\vga|x_cursor[3]~24\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(4),
+	datad => VCC,
+	cin => \vga|x_cursor[3]~24\,
+	combout => \vga|x_cursor[4]~25_combout\,
+	cout => \vga|x_cursor[4]~26\);
+
+-- Location: LCCOMB_X19_Y14_N18
+\view|SPRITE_X[9]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X[9]~5_combout\ = (\view|state.SHOW_SPRITES~regout\) # ((\view|state.RENDER_1~regout\) # ((\view|state.RENDER_4~regout\) # (\sprite_renderer|READY~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.SHOW_SPRITES~regout\,
+	datab => \view|state.RENDER_1~regout\,
+	datac => \view|state.RENDER_4~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|SPRITE_X[9]~5_combout\);
+
+-- Location: LCCOMB_X20_Y14_N10
 \view|x[0]~27\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \view|x[0]~27_combout\ = !\view|x\(0)
@@ -6763,7 +9246,7 @@ PORT MAP (
 	datac => \view|x\(0),
 	combout => \view|x[0]~27_combout\);
 
--- Location: LCFF_X32_Y13_N23
+-- Location: LCFF_X20_Y14_N11
 \view|x[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \view|frame_time~clkctrl_outclk\,
@@ -6773,7 +9256,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \view|x\(0));
 
--- Location: LCCOMB_X31_Y13_N16
+-- Location: LCCOMB_X20_Y14_N14
+\view|x[1]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[1]~9_combout\ = (\view|x\(1) & (\view|x\(0) $ (VCC))) # (!\view|x\(1) & (\view|x\(0) & VCC))
+-- \view|x[1]~10\ = CARRY((\view|x\(1) & \view|x\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110011010001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(1),
+	datab => \view|x\(0),
+	datad => VCC,
+	combout => \view|x[1]~9_combout\,
+	cout => \view|x[1]~10\);
+
+-- Location: LCCOMB_X20_Y14_N16
 \view|x[2]~11\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \view|x[2]~11_combout\ = (\view|x\(2) & (!\view|x[1]~10\)) # (!\view|x\(2) & ((\view|x[1]~10\) # (GND)))
@@ -6791,7 +9292,7 @@ PORT MAP (
 	combout => \view|x[2]~11_combout\,
 	cout => \view|x[2]~12\);
 
--- Location: LCCOMB_X31_Y13_N18
+-- Location: LCCOMB_X20_Y14_N18
 \view|x[3]~13\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \view|x[3]~13_combout\ = (\view|x\(3) & (\view|x[2]~12\ $ (GND))) # (!\view|x\(3) & (!\view|x[2]~12\ & VCC))
@@ -6809,7 +9310,7 @@ PORT MAP (
 	combout => \view|x[3]~13_combout\,
 	cout => \view|x[3]~14\);
 
--- Location: LCFF_X31_Y13_N19
+-- Location: LCFF_X20_Y14_N19
 \view|x[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \view|frame_time~clkctrl_outclk\,
@@ -6819,424 +9320,184 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \view|x\(3));
 
--- Location: LCCOMB_X31_Y13_N22
-\view|x[5]~17\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y14_N20
+\view|x[4]~15\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|x[5]~17_combout\ = (\view|x\(5) & (\view|x[4]~16\ $ (GND))) # (!\view|x\(5) & (!\view|x[4]~16\ & VCC))
--- \view|x[5]~18\ = CARRY((\view|x\(5) & !\view|x[4]~16\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|x\(5),
-	datad => VCC,
-	cin => \view|x[4]~16\,
-	combout => \view|x[5]~17_combout\,
-	cout => \view|x[5]~18\);
-
--- Location: LCFF_X31_Y13_N23
-\view|x[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[5]~17_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(5));
-
--- Location: LCCOMB_X31_Y13_N24
-\view|x[6]~19\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|x[6]~19_combout\ = (\view|x\(6) & (!\view|x[5]~18\)) # (!\view|x\(6) & ((\view|x[5]~18\) # (GND)))
--- \view|x[6]~20\ = CARRY((!\view|x[5]~18\) # (!\view|x\(6)))
+-- \view|x[4]~15_combout\ = (\view|x\(4) & (!\view|x[3]~14\)) # (!\view|x\(4) & ((\view|x[3]~14\) # (GND)))
+-- \view|x[4]~16\ = CARRY((!\view|x[3]~14\) # (!\view|x\(4)))
 
 -- pragma translate_off
 GENERIC MAP (
 	lut_mask => "0101101001011111",
 	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|x\(6),
-	datad => VCC,
-	cin => \view|x[5]~18\,
-	combout => \view|x[6]~19_combout\,
-	cout => \view|x[6]~20\);
-
--- Location: LCCOMB_X31_Y13_N26
-\view|x[7]~21\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|x[7]~21_combout\ = (\view|x\(7) & (\view|x[6]~20\ $ (GND))) # (!\view|x\(7) & (!\view|x[6]~20\ & VCC))
--- \view|x[7]~22\ = CARRY((\view|x\(7) & !\view|x[6]~20\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|x\(7),
-	datad => VCC,
-	cin => \view|x[6]~20\,
-	combout => \view|x[7]~21_combout\,
-	cout => \view|x[7]~22\);
-
--- Location: LCFF_X31_Y13_N27
-\view|x[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[7]~21_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(7));
-
--- Location: LCCOMB_X31_Y13_N28
-\view|x[8]~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|x[8]~23_combout\ = (\view|x\(8) & (!\view|x[7]~22\)) # (!\view|x\(8) & ((\view|x[7]~22\) # (GND)))
--- \view|x[8]~24\ = CARRY((!\view|x[7]~22\) # (!\view|x\(8)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \view|x\(8),
-	datad => VCC,
-	cin => \view|x[7]~22\,
-	combout => \view|x[8]~23_combout\,
-	cout => \view|x[8]~24\);
-
--- Location: LCFF_X31_Y13_N29
-\view|x[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[8]~23_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(8));
-
--- Location: LCCOMB_X31_Y13_N30
-\view|x[9]~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|x[9]~25_combout\ = \view|x[8]~24\ $ (!\view|x\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \view|x\(9),
-	cin => \view|x[8]~24\,
-	combout => \view|x[9]~25_combout\);
-
--- Location: LCFF_X31_Y13_N31
-\view|x[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[9]~25_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(9));
-
--- Location: LCCOMB_X31_Y13_N12
-\view|SPRITE_X~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~9_combout\ = (!\view|state~regout\ & (\view|x\(9) & !\sprite_renderer|READY~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|state~regout\,
-	datab => \view|x\(9),
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|SPRITE_X~9_combout\);
-
--- Location: LCFF_X31_Y13_N13
-\view|SPRITE_X[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~9_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(9));
-
--- Location: LCCOMB_X29_Y13_N28
-\sprite_renderer|sprite_x[9]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[9]~feeder_combout\ = \view|SPRITE_X\(9)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \view|SPRITE_X\(9),
-	combout => \sprite_renderer|sprite_x[9]~feeder_combout\);
-
--- Location: LCCOMB_X31_Y14_N6
-\sprite_renderer|sprite_x[0]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[0]~1_combout\ = (\sprite_renderer|state.IDLE~regout\ & (\RESET_N~regout\ & (\view|DRAW_SPRITE~regout\ & !\view|SHOW~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.IDLE~regout\,
-	datab => \RESET_N~regout\,
-	datac => \view|DRAW_SPRITE~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|sprite_x[0]~1_combout\);
-
--- Location: LCFF_X29_Y13_N29
-\sprite_renderer|sprite_x[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[9]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(9));
-
--- Location: LCCOMB_X32_Y14_N20
-\sprite_renderer|Add1~30\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~30_combout\ = (\sprite_renderer|Add1~28_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~28_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~30_combout\);
-
--- Location: LCCOMB_X31_Y14_N0
-\sprite_renderer|Add1~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~3_combout\ = (\sprite_renderer|state.DRAWING~regout\) # (\sprite_renderer|state.IDLE~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|state.IDLE~regout\,
-	combout => \sprite_renderer|Add1~3_combout\);
-
--- Location: LCFF_X32_Y14_N21
-\sprite_renderer|column[9]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~30_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(9));
-
--- Location: LCCOMB_X29_Y15_N14
-\sprite_renderer|Add1~21\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~21_combout\ = (\sprite_renderer|column\(7) & (!\sprite_renderer|Add1~20\)) # (!\sprite_renderer|column\(7) & ((\sprite_renderer|Add1~20\) # (GND)))
--- \sprite_renderer|Add1~22\ = CARRY((!\sprite_renderer|Add1~20\) # (!\sprite_renderer|column\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(7),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~20\,
-	combout => \sprite_renderer|Add1~21_combout\,
-	cout => \sprite_renderer|Add1~22\);
-
--- Location: LCCOMB_X30_Y14_N18
-\sprite_renderer|Add1~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~23_combout\ = (\sprite_renderer|Add1~21_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~21_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~23_combout\);
-
--- Location: LCFF_X30_Y14_N19
-\sprite_renderer|column[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~23_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(7));
-
--- Location: LCFF_X31_Y13_N25
-\view|x[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[6]~19_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(6));
-
--- Location: LCCOMB_X31_Y13_N8
-\view|SPRITE_X~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~7_combout\ = (!\sprite_renderer|READY~regout\ & (\view|x\(6) & !\view|state~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|x\(6),
-	datad => \view|state~regout\,
-	combout => \view|SPRITE_X~7_combout\);
-
--- Location: LCFF_X31_Y13_N9
-\view|SPRITE_X[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~7_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(6));
-
--- Location: LCCOMB_X30_Y13_N0
-\sprite_renderer|sprite_x[6]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[6]~feeder_combout\ = \view|SPRITE_X\(6)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \view|SPRITE_X\(6),
-	combout => \sprite_renderer|sprite_x[6]~feeder_combout\);
-
--- Location: LCFF_X30_Y13_N1
-\sprite_renderer|sprite_x[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[6]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(6));
-
--- Location: LCCOMB_X31_Y13_N4
-\view|SPRITE_X~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~4_combout\ = (!\view|state~regout\ & (\view|x\(5) & !\sprite_renderer|READY~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|state~regout\,
-	datab => \view|x\(5),
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|SPRITE_X~4_combout\);
-
--- Location: LCFF_X31_Y13_N5
-\view|SPRITE_X[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~4_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(5));
-
--- Location: LCCOMB_X30_Y13_N4
-\sprite_renderer|sprite_x[5]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[5]~feeder_combout\ = \view|SPRITE_X\(5)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \view|SPRITE_X\(5),
-	combout => \sprite_renderer|sprite_x[5]~feeder_combout\);
-
--- Location: LCFF_X30_Y13_N5
-\sprite_renderer|sprite_x[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[5]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(5));
-
--- Location: LCCOMB_X32_Y13_N20
-\view|SPRITE_X~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~5_combout\ = (\view|x\(4) & (!\sprite_renderer|READY~regout\ & !\view|state~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000010",
-	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \view|x\(4),
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	combout => \view|SPRITE_X~5_combout\);
+	datad => VCC,
+	cin => \view|x[3]~14\,
+	combout => \view|x[4]~15_combout\,
+	cout => \view|x[4]~16\);
 
--- Location: LCFF_X32_Y13_N21
+-- Location: LCFF_X20_Y14_N21
+\view|x[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[4]~15_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(4));
+
+-- Location: LCCOMB_X20_Y14_N4
+\view|SPRITE_X~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~12_combout\ = (!\view|state.RENDER_2~regout\ & (!\view|SPRITE_X[9]~5_combout\ & (\view|x\(4) & !\view|state.RENDER_3~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_2~regout\,
+	datab => \view|SPRITE_X[9]~5_combout\,
+	datac => \view|x\(4),
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_X~12_combout\);
+
+-- Location: LCFF_X20_Y14_N17
+\view|x[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[2]~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(2));
+
+-- Location: LCCOMB_X21_Y14_N8
+\view|Add3~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~1_cout\ = CARRY(!\view|x\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000001010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(0),
+	datad => VCC,
+	cout => \view|Add3~1_cout\);
+
+-- Location: LCCOMB_X21_Y14_N16
+\view|Add3~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~8_combout\ = (\view|x\(4) & (\view|Add3~7\ $ (GND))) # (!\view|x\(4) & ((GND) # (!\view|Add3~7\)))
+-- \view|Add3~9\ = CARRY((!\view|Add3~7\) # (!\view|x\(4)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010101011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(4),
+	datad => VCC,
+	cin => \view|Add3~7\,
+	combout => \view|Add3~8_combout\,
+	cout => \view|Add3~9\);
+
+-- Location: LCFF_X20_Y14_N15
+\view|x[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[1]~9_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(1));
+
+-- Location: LCCOMB_X22_Y14_N2
+\view|Add5~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~0_combout\ = \view|x\(1) $ (VCC)
+-- \view|Add5~1\ = CARRY(\view|x\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(1),
+	datad => VCC,
+	combout => \view|Add5~0_combout\,
+	cout => \view|Add5~1\);
+
+-- Location: LCCOMB_X22_Y14_N8
+\view|Add5~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~7_combout\ = (\view|x\(4) & (\view|Add5~5\ & VCC)) # (!\view|x\(4) & (!\view|Add5~5\))
+-- \view|Add5~8\ = CARRY((!\view|x\(4) & !\view|Add5~5\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(4),
+	datad => VCC,
+	cin => \view|Add5~5\,
+	combout => \view|Add5~7_combout\,
+	cout => \view|Add5~8\);
+
+-- Location: LCCOMB_X21_Y14_N2
+\view|SPRITE_X~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~11_combout\ = (\view|SPRITE_X~10_combout\) # ((\view|Add5~7_combout\ & (\view|state.RENDER_3~regout\ & !\view|SPRITE_X[9]~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~10_combout\,
+	datab => \view|Add5~7_combout\,
+	datac => \view|state.RENDER_3~regout\,
+	datad => \view|SPRITE_X[9]~5_combout\,
+	combout => \view|SPRITE_X~11_combout\);
+
+-- Location: LCCOMB_X21_Y14_N0
+\view|SPRITE_X~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~14_combout\ = (\view|SPRITE_X~12_combout\) # ((\view|SPRITE_X~11_combout\) # ((\view|SPRITE_X~13_combout\ & \view|Add3~8_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X~13_combout\,
+	datab => \view|SPRITE_X~12_combout\,
+	datac => \view|Add3~8_combout\,
+	datad => \view|SPRITE_X~11_combout\,
+	combout => \view|SPRITE_X~14_combout\);
+
+-- Location: LCFF_X21_Y14_N1
 \view|SPRITE_X[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~5_combout\,
+	datain => \view|SPRITE_X~14_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \view|SPRITE_X\(4));
 
--- Location: LCCOMB_X30_Y13_N30
+-- Location: LCCOMB_X21_Y13_N26
 \sprite_renderer|sprite_x[4]~feeder\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|sprite_x[4]~feeder_combout\ = \view|SPRITE_X\(4)
@@ -7250,20 +9511,37 @@ PORT MAP (
 	datac => \view|SPRITE_X\(4),
 	combout => \sprite_renderer|sprite_x[4]~feeder_combout\);
 
--- Location: LCFF_X30_Y13_N31
+-- Location: LCCOMB_X24_Y13_N24
+\sprite_renderer|sprite_to_draw.color[6]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_to_draw.color[6]~1_combout\ = (\sprite_renderer|state.IDLE~regout\ & (\view|DRAW_SPRITE~regout\ & (!\view|SHOW~regout\ & \RESET_N~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|state.IDLE~regout\,
+	datab => \view|DRAW_SPRITE~regout\,
+	datac => \view|SHOW~regout\,
+	datad => \RESET_N~regout\,
+	combout => \sprite_renderer|sprite_to_draw.color[6]~1_combout\);
+
+-- Location: LCFF_X21_Y13_N27
 \sprite_renderer|sprite_x[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|sprite_x[4]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|sprite_x\(4));
 
--- Location: LCCOMB_X30_Y15_N8
-\sprite_renderer|Add1~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y12_N2
+\sprite_renderer|Add1~11\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|Add1~6_combout\ = (\sprite_renderer|Add1~4_combout\ & \sprite_renderer|LessThan0~10_combout\)
+-- \sprite_renderer|Add1~11_combout\ = (\sprite_renderer|Add1~9_combout\ & \sprite_renderer|LessThan0~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7271,95 +9549,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|Add1~4_combout\,
+	dataa => \sprite_renderer|Add1~9_combout\,
 	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~6_combout\);
+	combout => \sprite_renderer|Add1~11_combout\);
 
--- Location: LCFF_X30_Y15_N9
-\sprite_renderer|column[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~6_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(1));
-
--- Location: LCCOMB_X29_Y15_N0
-\sprite_renderer|Add1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~0_combout\ = \sprite_renderer|column\(0) $ (VCC)
--- \sprite_renderer|Add1~1\ = CARRY(\sprite_renderer|column\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(0),
-	datad => VCC,
-	combout => \sprite_renderer|Add1~0_combout\,
-	cout => \sprite_renderer|Add1~1\);
-
--- Location: LCCOMB_X29_Y15_N4
-\sprite_renderer|Add1~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~7_combout\ = (\sprite_renderer|column\(2) & (\sprite_renderer|Add1~5\ $ (GND))) # (!\sprite_renderer|column\(2) & (!\sprite_renderer|Add1~5\ & VCC))
--- \sprite_renderer|Add1~8\ = CARRY((\sprite_renderer|column\(2) & !\sprite_renderer|Add1~5\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(2),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~5\,
-	combout => \sprite_renderer|Add1~7_combout\,
-	cout => \sprite_renderer|Add1~8\);
-
--- Location: LCCOMB_X29_Y15_N6
-\sprite_renderer|Add1~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~10_combout\ = (\sprite_renderer|column\(3) & (!\sprite_renderer|Add1~8\)) # (!\sprite_renderer|column\(3) & ((\sprite_renderer|Add1~8\) # (GND)))
--- \sprite_renderer|Add1~11\ = CARRY((!\sprite_renderer|Add1~8\) # (!\sprite_renderer|column\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(3),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~8\,
-	combout => \sprite_renderer|Add1~10_combout\,
-	cout => \sprite_renderer|Add1~11\);
-
--- Location: LCCOMB_X30_Y15_N12
-\sprite_renderer|Add1~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~12_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~10_combout\,
-	combout => \sprite_renderer|Add1~12_combout\);
-
--- Location: LCFF_X30_Y15_N13
+-- Location: LCFF_X21_Y12_N3
 \sprite_renderer|column[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~12_combout\,
+	datain => \sprite_renderer|Add1~11_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
 	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
 	ena => \sprite_renderer|Add1~3_combout\,
@@ -7367,121 +9565,64 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \sprite_renderer|column\(3));
 
--- Location: LCFF_X31_Y13_N17
-\view|x[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \view|frame_time~clkctrl_outclk\,
-	datain => \view|x[2]~11_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|x\(2));
-
--- Location: LCCOMB_X31_Y13_N10
-\view|SPRITE_X~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y14_N0
+\view|SPRITE_X[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \view|SPRITE_X~3_combout\ = (!\sprite_renderer|READY~regout\ & (\view|x\(2) & !\view|state~regout\))
+-- \view|SPRITE_X[1]~0_combout\ = (\view|state.RENDER_2~regout\ & (\view|Add3~2_combout\)) # (!\view|state.RENDER_2~regout\ & ((\view|x\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000110000",
+	lut_mask => "1011101110001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|x\(2),
-	datad => \view|state~regout\,
-	combout => \view|SPRITE_X~3_combout\);
+	dataa => \view|Add3~2_combout\,
+	datab => \view|state.RENDER_2~regout\,
+	datad => \view|x\(1),
+	combout => \view|SPRITE_X[1]~0_combout\);
 
--- Location: LCFF_X31_Y13_N11
-\view|SPRITE_X[2]\ : cycloneii_lcell_ff
+-- Location: LCFF_X22_Y14_N1
+\view|SPRITE_X[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~3_combout\,
+	datain => \view|SPRITE_X[1]~0_combout\,
+	sdata => \view|Add5~0_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|SPRITE_X[9]~5_combout\,
+	sload => \view|state.RENDER_3~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(2));
+	regout => \view|SPRITE_X\(1));
 
--- Location: LCCOMB_X29_Y13_N0
-\sprite_renderer|sprite_x[2]~feeder\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X21_Y13_N22
+\sprite_renderer|sprite_x[1]~feeder\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|sprite_x[2]~feeder_combout\ = \view|SPRITE_X\(2)
+-- \sprite_renderer|sprite_x[1]~feeder_combout\ = \view|SPRITE_X\(1)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "1111000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \view|SPRITE_X\(2),
-	combout => \sprite_renderer|sprite_x[2]~feeder_combout\);
+	datac => \view|SPRITE_X\(1),
+	combout => \sprite_renderer|sprite_x[1]~feeder_combout\);
 
--- Location: LCFF_X29_Y13_N1
-\sprite_renderer|sprite_x[2]\ : cycloneii_lcell_ff
+-- Location: LCFF_X21_Y13_N23
+\sprite_renderer|sprite_x[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[2]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
+	datain => \sprite_renderer|sprite_x[1]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(2));
+	regout => \sprite_renderer|sprite_x\(1));
 
--- Location: LCCOMB_X32_Y13_N16
-\view|SPRITE_X~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~0_combout\ = (!\sprite_renderer|READY~regout\ & (!\view|state~regout\ & \view|x\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	datad => \view|x\(0),
-	combout => \view|SPRITE_X~0_combout\);
-
--- Location: LCFF_X32_Y13_N17
-\view|SPRITE_X[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(0));
-
--- Location: LCCOMB_X30_Y13_N8
-\sprite_renderer|sprite_x[0]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[0]~feeder_combout\ = \view|SPRITE_X\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \view|SPRITE_X\(0),
-	combout => \sprite_renderer|sprite_x[0]~feeder_combout\);
-
--- Location: LCFF_X30_Y13_N9
-\sprite_renderer|sprite_x[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[0]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(0));
-
--- Location: LCCOMB_X29_Y13_N2
+-- Location: LCCOMB_X21_Y13_N2
 \sprite_renderer|FB_X0[0]~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|FB_X0[0]~10_combout\ = (\sprite_renderer|column\(0) & (\sprite_renderer|sprite_x\(0) $ (VCC))) # (!\sprite_renderer|column\(0) & (\sprite_renderer|sprite_x\(0) & VCC))
--- \sprite_renderer|FB_X0[0]~11\ = CARRY((\sprite_renderer|column\(0) & \sprite_renderer|sprite_x\(0)))
+-- \sprite_renderer|FB_X0[0]~10_combout\ = (\sprite_renderer|sprite_x\(0) & (\sprite_renderer|column\(0) $ (VCC))) # (!\sprite_renderer|sprite_x\(0) & (\sprite_renderer|column\(0) & VCC))
+-- \sprite_renderer|FB_X0[0]~11\ = CARRY((\sprite_renderer|sprite_x\(0) & \sprite_renderer|column\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7489,18 +9630,18 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(0),
-	datab => \sprite_renderer|sprite_x\(0),
+	dataa => \sprite_renderer|sprite_x\(0),
+	datab => \sprite_renderer|column\(0),
 	datad => VCC,
 	combout => \sprite_renderer|FB_X0[0]~10_combout\,
 	cout => \sprite_renderer|FB_X0[0]~11\);
 
--- Location: LCCOMB_X29_Y13_N4
+-- Location: LCCOMB_X21_Y13_N4
 \sprite_renderer|FB_X0[1]~12\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|FB_X0[1]~12_combout\ = (\sprite_renderer|sprite_x\(1) & ((\sprite_renderer|column\(1) & (\sprite_renderer|FB_X0[0]~11\ & VCC)) # (!\sprite_renderer|column\(1) & (!\sprite_renderer|FB_X0[0]~11\)))) # (!\sprite_renderer|sprite_x\(1) & 
--- ((\sprite_renderer|column\(1) & (!\sprite_renderer|FB_X0[0]~11\)) # (!\sprite_renderer|column\(1) & ((\sprite_renderer|FB_X0[0]~11\) # (GND)))))
--- \sprite_renderer|FB_X0[1]~13\ = CARRY((\sprite_renderer|sprite_x\(1) & (!\sprite_renderer|column\(1) & !\sprite_renderer|FB_X0[0]~11\)) # (!\sprite_renderer|sprite_x\(1) & ((!\sprite_renderer|FB_X0[0]~11\) # (!\sprite_renderer|column\(1)))))
+-- \sprite_renderer|FB_X0[1]~12_combout\ = (\sprite_renderer|column\(1) & ((\sprite_renderer|sprite_x\(1) & (\sprite_renderer|FB_X0[0]~11\ & VCC)) # (!\sprite_renderer|sprite_x\(1) & (!\sprite_renderer|FB_X0[0]~11\)))) # (!\sprite_renderer|column\(1) & 
+-- ((\sprite_renderer|sprite_x\(1) & (!\sprite_renderer|FB_X0[0]~11\)) # (!\sprite_renderer|sprite_x\(1) & ((\sprite_renderer|FB_X0[0]~11\) # (GND)))))
+-- \sprite_renderer|FB_X0[1]~13\ = CARRY((\sprite_renderer|column\(1) & (!\sprite_renderer|sprite_x\(1) & !\sprite_renderer|FB_X0[0]~11\)) # (!\sprite_renderer|column\(1) & ((!\sprite_renderer|FB_X0[0]~11\) # (!\sprite_renderer|sprite_x\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7508,18 +9649,18 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(1),
-	datab => \sprite_renderer|column\(1),
+	dataa => \sprite_renderer|column\(1),
+	datab => \sprite_renderer|sprite_x\(1),
 	datad => VCC,
 	cin => \sprite_renderer|FB_X0[0]~11\,
 	combout => \sprite_renderer|FB_X0[1]~12_combout\,
 	cout => \sprite_renderer|FB_X0[1]~13\);
 
--- Location: LCCOMB_X29_Y13_N6
+-- Location: LCCOMB_X21_Y13_N6
 \sprite_renderer|FB_X0[2]~14\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|FB_X0[2]~14_combout\ = ((\sprite_renderer|column\(2) $ (\sprite_renderer|sprite_x\(2) $ (!\sprite_renderer|FB_X0[1]~13\)))) # (GND)
--- \sprite_renderer|FB_X0[2]~15\ = CARRY((\sprite_renderer|column\(2) & ((\sprite_renderer|sprite_x\(2)) # (!\sprite_renderer|FB_X0[1]~13\))) # (!\sprite_renderer|column\(2) & (\sprite_renderer|sprite_x\(2) & !\sprite_renderer|FB_X0[1]~13\)))
+-- \sprite_renderer|FB_X0[2]~14_combout\ = ((\sprite_renderer|sprite_x\(2) $ (\sprite_renderer|column\(2) $ (!\sprite_renderer|FB_X0[1]~13\)))) # (GND)
+-- \sprite_renderer|FB_X0[2]~15\ = CARRY((\sprite_renderer|sprite_x\(2) & ((\sprite_renderer|column\(2)) # (!\sprite_renderer|FB_X0[1]~13\))) # (!\sprite_renderer|sprite_x\(2) & (\sprite_renderer|column\(2) & !\sprite_renderer|FB_X0[1]~13\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7527,14 +9668,14 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(2),
-	datab => \sprite_renderer|sprite_x\(2),
+	dataa => \sprite_renderer|sprite_x\(2),
+	datab => \sprite_renderer|column\(2),
 	datad => VCC,
 	cin => \sprite_renderer|FB_X0[1]~13\,
 	combout => \sprite_renderer|FB_X0[2]~14_combout\,
 	cout => \sprite_renderer|FB_X0[2]~15\);
 
--- Location: LCCOMB_X29_Y13_N8
+-- Location: LCCOMB_X21_Y13_N8
 \sprite_renderer|FB_X0[3]~16\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|FB_X0[3]~16_combout\ = (\sprite_renderer|sprite_x\(3) & ((\sprite_renderer|column\(3) & (\sprite_renderer|FB_X0[2]~15\ & VCC)) # (!\sprite_renderer|column\(3) & (!\sprite_renderer|FB_X0[2]~15\)))) # (!\sprite_renderer|sprite_x\(3) & 
@@ -7554,7 +9695,7 @@ PORT MAP (
 	combout => \sprite_renderer|FB_X0[3]~16_combout\,
 	cout => \sprite_renderer|FB_X0[3]~17\);
 
--- Location: LCCOMB_X29_Y13_N10
+-- Location: LCCOMB_X21_Y13_N10
 \sprite_renderer|FB_X0[4]~18\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|FB_X0[4]~18_combout\ = ((\sprite_renderer|column\(4) $ (\sprite_renderer|sprite_x\(4) $ (!\sprite_renderer|FB_X0[3]~17\)))) # (GND)
@@ -7573,27 +9714,414 @@ PORT MAP (
 	combout => \sprite_renderer|FB_X0[4]~18_combout\,
 	cout => \sprite_renderer|FB_X0[4]~19\);
 
--- Location: LCCOMB_X29_Y13_N12
-\sprite_renderer|FB_X0[5]~20\ : cycloneii_lcell_comb
+-- Location: LCFF_X21_Y13_N11
+\sprite_renderer|FB_X0[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[4]~18_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(4));
+
+-- Location: LCCOMB_X22_Y11_N28
+\vga|x_start~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \sprite_renderer|FB_X0[5]~20_combout\ = (\sprite_renderer|column\(5) & ((\sprite_renderer|sprite_x\(5) & (\sprite_renderer|FB_X0[4]~19\ & VCC)) # (!\sprite_renderer|sprite_x\(5) & (!\sprite_renderer|FB_X0[4]~19\)))) # (!\sprite_renderer|column\(5) & 
--- ((\sprite_renderer|sprite_x\(5) & (!\sprite_renderer|FB_X0[4]~19\)) # (!\sprite_renderer|sprite_x\(5) & ((\sprite_renderer|FB_X0[4]~19\) # (GND)))))
--- \sprite_renderer|FB_X0[5]~21\ = CARRY((\sprite_renderer|column\(5) & (!\sprite_renderer|sprite_x\(5) & !\sprite_renderer|FB_X0[4]~19\)) # (!\sprite_renderer|column\(5) & ((!\sprite_renderer|FB_X0[4]~19\) # (!\sprite_renderer|sprite_x\(5)))))
+-- \vga|x_start~5_combout\ = (\sprite_renderer|FB_X0\(4) & !\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001011000010111",
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(4),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~5_combout\);
+
+-- Location: LCFF_X22_Y11_N29
+\vga|x_start[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~5_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(4));
+
+-- Location: LCCOMB_X20_Y11_N4
+\vga|Add1~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~14_combout\ = (\vga|x_cursor[3]~15_combout\ & (\vga|Add1~12_combout\)) # (!\vga|x_cursor[3]~15_combout\ & ((\vga|x_start\(4))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Add1~12_combout\,
+	datab => \vga|x_start\(4),
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~14_combout\);
+
+-- Location: LCFF_X20_Y11_N21
+\vga|x_cursor[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[4]~25_combout\,
+	sdata => \vga|Add1~14_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(4));
+
+-- Location: LCCOMB_X21_Y11_N14
+\vga|Equal2~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal2~3_combout\ = (\vga|x_start\(3) & (\vga|x_cursor\(3) & (\vga|x_cursor\(4) $ (!\vga|x_start\(4))))) # (!\vga|x_start\(3) & (!\vga|x_cursor\(3) & (\vga|x_cursor\(4) $ (!\vga|x_start\(4)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001000000001001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_start\(3),
+	datab => \vga|x_cursor\(3),
+	datac => \vga|x_cursor\(4),
+	datad => \vga|x_start\(4),
+	combout => \vga|Equal2~3_combout\);
+
+-- Location: LCCOMB_X20_Y14_N22
+\view|x[5]~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[5]~17_combout\ = (\view|x\(5) & (\view|x[4]~16\ $ (GND))) # (!\view|x\(5) & (!\view|x[4]~16\ & VCC))
+-- \view|x[5]~18\ = CARRY((\view|x\(5) & !\view|x[4]~16\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|column\(5),
-	datab => \sprite_renderer|sprite_x\(5),
+	datab => \view|x\(5),
 	datad => VCC,
-	cin => \sprite_renderer|FB_X0[4]~19\,
-	combout => \sprite_renderer|FB_X0[5]~20_combout\,
-	cout => \sprite_renderer|FB_X0[5]~21\);
+	cin => \view|x[4]~16\,
+	combout => \view|x[5]~17_combout\,
+	cout => \view|x[5]~18\);
 
--- Location: LCCOMB_X29_Y13_N14
+-- Location: LCFF_X20_Y14_N23
+\view|x[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[5]~17_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(5));
+
+-- Location: LCCOMB_X20_Y14_N24
+\view|x[6]~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[6]~19_combout\ = (\view|x\(6) & (!\view|x[5]~18\)) # (!\view|x\(6) & ((\view|x[5]~18\) # (GND)))
+-- \view|x[6]~20\ = CARRY((!\view|x[5]~18\) # (!\view|x\(6)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(6),
+	datad => VCC,
+	cin => \view|x[5]~18\,
+	combout => \view|x[6]~19_combout\,
+	cout => \view|x[6]~20\);
+
+-- Location: LCCOMB_X20_Y14_N26
+\view|x[7]~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|x[7]~21_combout\ = (\view|x\(7) & (\view|x[6]~20\ $ (GND))) # (!\view|x\(7) & (!\view|x[6]~20\ & VCC))
+-- \view|x[7]~22\ = CARRY((\view|x\(7) & !\view|x[6]~20\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(7),
+	datad => VCC,
+	cin => \view|x[6]~20\,
+	combout => \view|x[7]~21_combout\,
+	cout => \view|x[7]~22\);
+
+-- Location: LCFF_X20_Y14_N27
+\view|x[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[7]~21_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(7));
+
+-- Location: LCFF_X20_Y14_N29
+\view|x[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[8]~23_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(8));
+
+-- Location: LCCOMB_X19_Y14_N22
+\view|SPRITE_X~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~21_combout\ = (\view|state.RENDER_4~regout\) # ((\view|state.RENDER_1~regout\) # (\view|x\(8)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_4~regout\,
+	datac => \view|state.RENDER_1~regout\,
+	datad => \view|x\(8),
+	combout => \view|SPRITE_X~21_combout\);
+
+-- Location: LCFF_X20_Y14_N25
+\view|x[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \view|frame_time~clkctrl_outclk\,
+	datain => \view|x[6]~19_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|x\(6));
+
+-- Location: LCCOMB_X21_Y14_N20
+\view|Add3~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add3~12_combout\ = (\view|x\(6) & (!\view|Add3~11\ & VCC)) # (!\view|x\(6) & (\view|Add3~11\ $ (GND)))
+-- \view|Add3~13\ = CARRY((!\view|x\(6) & !\view|Add3~11\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(6),
+	datad => VCC,
+	cin => \view|Add3~11\,
+	combout => \view|Add3~12_combout\,
+	cout => \view|Add3~13\);
+
+-- Location: LCCOMB_X20_Y14_N12
+\view|SPRITE_X[8]~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X[8]~3_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add3~16_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|SPRITE_X~21_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111001000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_2~regout\,
+	datab => \view|SPRITE_X~21_combout\,
+	datad => \view|Add3~16_combout\,
+	combout => \view|SPRITE_X[8]~3_combout\);
+
+-- Location: LCCOMB_X22_Y14_N12
+\view|Add5~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add5~11_combout\ = (\view|x\(6) & (!\view|Add5~10\)) # (!\view|x\(6) & ((\view|Add5~10\) # (GND)))
+-- \view|Add5~12\ = CARRY((!\view|Add5~10\) # (!\view|x\(6)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(6),
+	datad => VCC,
+	cin => \view|Add5~10\,
+	combout => \view|Add5~11_combout\,
+	cout => \view|Add5~12\);
+
+-- Location: LCFF_X20_Y14_N13
+\view|SPRITE_X[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_X[8]~3_combout\,
+	sdata => \view|Add5~15_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|DRAW_SPRITE~0_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(8));
+
+-- Location: LCCOMB_X21_Y13_N30
+\sprite_renderer|sprite_x[8]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_x[8]~feeder_combout\ = \view|SPRITE_X\(8)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \view|SPRITE_X\(8),
+	combout => \sprite_renderer|sprite_x[8]~feeder_combout\);
+
+-- Location: LCFF_X21_Y13_N31
+\sprite_renderer|sprite_x[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_x[8]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_x\(8));
+
+-- Location: LCCOMB_X22_Y14_N26
+\view|SPRITE_X~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~18_combout\ = (\view|x\(6) & (!\view|SPRITE_X[9]~5_combout\ & (!\view|state.RENDER_2~regout\ & !\view|state.RENDER_3~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(6),
+	datab => \view|SPRITE_X[9]~5_combout\,
+	datac => \view|state.RENDER_2~regout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_X~18_combout\);
+
+-- Location: LCCOMB_X19_Y14_N2
+\view|SPRITE_X~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~10_combout\ = (\view|state.RENDER_4~regout\ & !\sprite_renderer|READY~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|state.RENDER_4~regout\,
+	datad => \sprite_renderer|READY~regout\,
+	combout => \view|SPRITE_X~10_combout\);
+
+-- Location: LCCOMB_X22_Y14_N28
+\view|SPRITE_X~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~19_combout\ = (\view|state.RENDER_3~regout\ & (((\view|Add5~11_combout\)))) # (!\view|state.RENDER_3~regout\ & (\view|state.RENDER_2~regout\ & (\view|Add3~12_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110101001000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|state.RENDER_3~regout\,
+	datab => \view|state.RENDER_2~regout\,
+	datac => \view|Add3~12_combout\,
+	datad => \view|Add5~11_combout\,
+	combout => \view|SPRITE_X~19_combout\);
+
+-- Location: LCCOMB_X22_Y14_N22
+\view|SPRITE_X~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~20_combout\ = (\view|SPRITE_X~18_combout\) # ((\view|SPRITE_X~10_combout\) # ((!\view|SPRITE_X[9]~5_combout\ & \view|SPRITE_X~19_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110111111100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X[9]~5_combout\,
+	datab => \view|SPRITE_X~18_combout\,
+	datac => \view|SPRITE_X~10_combout\,
+	datad => \view|SPRITE_X~19_combout\,
+	combout => \view|SPRITE_X~20_combout\);
+
+-- Location: LCFF_X22_Y14_N23
+\view|SPRITE_X[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_X~20_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_X\(6));
+
+-- Location: LCCOMB_X21_Y13_N28
+\sprite_renderer|sprite_x[6]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_x[6]~feeder_combout\ = \view|SPRITE_X\(6)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_X\(6),
+	combout => \sprite_renderer|sprite_x[6]~feeder_combout\);
+
+-- Location: LCFF_X21_Y13_N29
+\sprite_renderer|sprite_x[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_x[6]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_x\(6));
+
+-- Location: LCCOMB_X21_Y12_N0
+\sprite_renderer|Add1~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|Add1~18_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~16_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|LessThan0~10_combout\,
+	datad => \sprite_renderer|Add1~16_combout\,
+	combout => \sprite_renderer|Add1~18_combout\);
+
+-- Location: LCFF_X21_Y12_N1
+\sprite_renderer|column[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|Add1~18_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
+	ena => \sprite_renderer|Add1~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|column\(5));
+
+-- Location: LCCOMB_X21_Y13_N14
 \sprite_renderer|FB_X0[6]~22\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|FB_X0[6]~22_combout\ = ((\sprite_renderer|column\(6) $ (\sprite_renderer|sprite_x\(6) $ (!\sprite_renderer|FB_X0[5]~21\)))) # (GND)
@@ -7612,7 +10140,7 @@ PORT MAP (
 	combout => \sprite_renderer|FB_X0[6]~22_combout\,
 	cout => \sprite_renderer|FB_X0[6]~23\);
 
--- Location: LCCOMB_X29_Y13_N16
+-- Location: LCCOMB_X21_Y13_N16
 \sprite_renderer|FB_X0[7]~24\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \sprite_renderer|FB_X0[7]~24_combout\ = (\sprite_renderer|sprite_x\(7) & ((\sprite_renderer|column\(7) & (\sprite_renderer|FB_X0[6]~23\ & VCC)) # (!\sprite_renderer|column\(7) & (!\sprite_renderer|FB_X0[6]~23\)))) # (!\sprite_renderer|sprite_x\(7) & 
@@ -7632,2985 +10160,69 @@ PORT MAP (
 	combout => \sprite_renderer|FB_X0[7]~24_combout\,
 	cout => \sprite_renderer|FB_X0[7]~25\);
 
--- Location: LCCOMB_X29_Y13_N18
-\sprite_renderer|FB_X0[8]~26\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_X0[8]~26_combout\ = ((\sprite_renderer|sprite_x\(8) $ (\sprite_renderer|column\(8) $ (!\sprite_renderer|FB_X0[7]~25\)))) # (GND)
--- \sprite_renderer|FB_X0[8]~27\ = CARRY((\sprite_renderer|sprite_x\(8) & ((\sprite_renderer|column\(8)) # (!\sprite_renderer|FB_X0[7]~25\))) # (!\sprite_renderer|sprite_x\(8) & (\sprite_renderer|column\(8) & !\sprite_renderer|FB_X0[7]~25\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(8),
-	datab => \sprite_renderer|column\(8),
-	datad => VCC,
-	cin => \sprite_renderer|FB_X0[7]~25\,
-	combout => \sprite_renderer|FB_X0[8]~26_combout\,
-	cout => \sprite_renderer|FB_X0[8]~27\);
-
--- Location: LCCOMB_X29_Y13_N20
-\sprite_renderer|FB_X0[9]~28\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_X0[9]~28_combout\ = \sprite_renderer|sprite_x\(9) $ (\sprite_renderer|FB_X0[8]~27\ $ (\sprite_renderer|column\(9)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100111100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|sprite_x\(9),
-	datad => \sprite_renderer|column\(9),
-	cin => \sprite_renderer|FB_X0[8]~27\,
-	combout => \sprite_renderer|FB_X0[9]~28_combout\);
-
--- Location: LCFF_X29_Y13_N21
-\sprite_renderer|FB_X0[9]\ : cycloneii_lcell_ff
+-- Location: LCFF_X21_Y13_N19
+\sprite_renderer|FB_X0[8]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[9]~28_combout\,
+	datain => \sprite_renderer|FB_X0[8]~26_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(9));
+	regout => \sprite_renderer|FB_X0\(8));
 
--- Location: LCCOMB_X25_Y13_N0
-\vga|x_end~9\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y11_N28
+\vga|x_start~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|x_end~9_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(9))
+-- \vga|x_start~1_combout\ = (\sprite_renderer|FB_X0\(8) & !\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(9),
-	combout => \vga|x_end~9_combout\);
+	datac => \sprite_renderer|FB_X0\(8),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~1_combout\);
 
--- Location: LCCOMB_X24_Y13_N14
-\vga|y_end[8]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end[8]~0_combout\ = (\RESET_N~regout\ & (!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_COLOR\(6)) # (\sprite_renderer|FB_CLEAR~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_COLOR\(6),
-	datab => \RESET_N~regout\,
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \vga|state.IDLE~regout\,
-	combout => \vga|y_end[8]~0_combout\);
-
--- Location: LCFF_X25_Y13_N1
-\vga|x_end[9]\ : cycloneii_lcell_ff
+-- Location: LCFF_X18_Y11_N29
+\vga|x_start[8]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~9_combout\,
+	datain => \vga|x_start~1_combout\,
 	ena => \vga|y_end[8]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|x_end\(9));
+	regout => \vga|x_start\(8));
 
--- Location: LCCOMB_X25_Y13_N12
-\vga|x_cursor[0]~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[0]~12_combout\ = \vga|x_cursor\(0) $ (VCC)
--- \vga|x_cursor[0]~13\ = CARRY(\vga|x_cursor\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(0),
-	datad => VCC,
-	combout => \vga|x_cursor[0]~12_combout\,
-	cout => \vga|x_cursor[0]~13\);
-
--- Location: LCCOMB_X25_Y13_N14
-\vga|x_cursor[1]~19\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[1]~19_combout\ = (\vga|x_cursor\(1) & (\vga|x_cursor[0]~13\ & VCC)) # (!\vga|x_cursor\(1) & (!\vga|x_cursor[0]~13\))
--- \vga|x_cursor[1]~20\ = CARRY((!\vga|x_cursor\(1) & !\vga|x_cursor[0]~13\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(1),
-	datad => VCC,
-	cin => \vga|x_cursor[0]~13\,
-	combout => \vga|x_cursor[1]~19_combout\,
-	cout => \vga|x_cursor[1]~20\);
-
--- Location: LCFF_X29_Y13_N5
-\sprite_renderer|FB_X0[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[1]~12_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(1));
-
--- Location: LCCOMB_X25_Y13_N6
-\vga|x_start~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~4_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(1))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(1),
-	combout => \vga|x_start~4_combout\);
-
--- Location: LCFF_X25_Y13_N7
-\vga|x_start[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~4_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(1));
-
--- Location: LCCOMB_X26_Y12_N26
-\vga|x_end~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~8_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(8))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(8),
-	combout => \vga|x_end~8_combout\);
-
--- Location: LCFF_X26_Y12_N27
-\vga|x_end[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~8_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(8));
-
--- Location: LCFF_X29_Y13_N13
-\sprite_renderer|FB_X0[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[5]~20_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(5));
-
--- Location: LCCOMB_X26_Y13_N4
-\vga|x_end~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~4_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(5))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(5),
-	combout => \vga|x_end~4_combout\);
-
--- Location: LCFF_X26_Y13_N27
-\vga|x_end[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|x_end~4_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(5));
-
--- Location: LCFF_X29_Y13_N11
-\sprite_renderer|FB_X0[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[4]~18_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(4));
-
--- Location: LCCOMB_X26_Y13_N12
-\vga|x_end~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~5_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(4),
-	combout => \vga|x_end~5_combout\);
-
--- Location: LCFF_X26_Y13_N13
-\vga|x_end[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~5_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(4));
-
--- Location: LCCOMB_X26_Y13_N26
-\vga|Equal0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~2_combout\ = (\vga|x_cursor\(4) & (\vga|x_end\(4) & (\vga|x_cursor\(5) $ (!\vga|x_end\(5))))) # (!\vga|x_cursor\(4) & (!\vga|x_end\(4) & (\vga|x_cursor\(5) $ (!\vga|x_end\(5)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000001001000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(4),
-	datab => \vga|x_cursor\(5),
-	datac => \vga|x_end\(5),
-	datad => \vga|x_end\(4),
-	combout => \vga|Equal0~2_combout\);
-
--- Location: LCFF_X29_Y13_N17
+-- Location: LCFF_X21_Y13_N17
 \sprite_renderer|FB_X0[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
 	datain => \sprite_renderer|FB_X0[7]~24_combout\,
 	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \sprite_renderer|FB_X0\(7));
 
--- Location: LCCOMB_X26_Y13_N14
-\vga|x_end~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~6_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(7),
-	combout => \vga|x_end~6_combout\);
-
--- Location: LCFF_X26_Y13_N31
-\vga|x_end[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|x_end~6_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(7));
-
--- Location: LCCOMB_X25_Y13_N24
-\vga|x_cursor[6]~29\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[6]~29_combout\ = (\vga|x_cursor\(6) & ((GND) # (!\vga|x_cursor[5]~28\))) # (!\vga|x_cursor\(6) & (\vga|x_cursor[5]~28\ $ (GND)))
--- \vga|x_cursor[6]~30\ = CARRY((\vga|x_cursor\(6)) # (!\vga|x_cursor[5]~28\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101010101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(6),
-	datad => VCC,
-	cin => \vga|x_cursor[5]~28\,
-	combout => \vga|x_cursor[6]~29_combout\,
-	cout => \vga|x_cursor[6]~30\);
-
--- Location: LCCOMB_X25_Y13_N16
-\vga|x_cursor[2]~21\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[2]~21_combout\ = (\vga|x_cursor\(2) & ((GND) # (!\vga|x_cursor[1]~20\))) # (!\vga|x_cursor\(2) & (\vga|x_cursor[1]~20\ $ (GND)))
--- \vga|x_cursor[2]~22\ = CARRY((\vga|x_cursor\(2)) # (!\vga|x_cursor[1]~20\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101010101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(2),
-	datad => VCC,
-	cin => \vga|x_cursor[1]~20\,
-	combout => \vga|x_cursor[2]~21_combout\,
-	cout => \vga|x_cursor[2]~22\);
-
--- Location: LCFF_X29_Y13_N7
-\sprite_renderer|FB_X0[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[2]~14_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(2));
-
--- Location: LCCOMB_X25_Y13_N4
-\vga|x_start~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~3_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(2))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(2),
-	combout => \vga|x_start~3_combout\);
-
--- Location: LCFF_X25_Y13_N5
-\vga|x_start[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~3_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(2));
-
--- Location: LCCOMB_X24_Y13_N18
-\vga|Add1~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~8_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~6_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010111110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add1~6_combout\,
-	datac => \vga|x_cursor[7]~15_combout\,
-	datad => \vga|x_start\(2),
-	combout => \vga|Add1~8_combout\);
-
--- Location: LCCOMB_X25_Y12_N2
-\vga|Selector4~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector4~0_combout\ = (\vga|state.IDLE~regout\) # ((!\sprite_renderer|FB_COLOR\(6) & (\vga|substate.INIT~regout\ & !\sprite_renderer|FB_CLEAR~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011011100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_COLOR\(6),
-	datab => \vga|state.IDLE~regout\,
-	datac => \vga|substate.INIT~regout\,
-	datad => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|Selector4~0_combout\);
-
--- Location: LCFF_X25_Y12_N3
-\vga|substate.INIT\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|Selector4~0_combout\,
-	ena => \RESET_N~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|substate.INIT~regout\);
-
--- Location: LCCOMB_X27_Y13_N14
-\vga|Selector0~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~8_combout\ = (!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_COLOR\(6)) # (\sprite_renderer|FB_CLEAR~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111000001110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_COLOR\(6),
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \vga|state.IDLE~regout\,
-	combout => \vga|Selector0~8_combout\);
-
--- Location: LCCOMB_X27_Y13_N16
-\vga|Selector1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector1~0_combout\ = (\vga|Selector2~0_combout\ & ((\vga|state.DRAWING_RECT~regout\) # ((\vga|Selector0~8_combout\ & !\sprite_renderer|FB_CLEAR~regout\)))) # (!\vga|Selector2~0_combout\ & (\vga|Selector0~8_combout\ & 
--- ((!\sprite_renderer|FB_CLEAR~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000011101100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Selector2~0_combout\,
-	datab => \vga|Selector0~8_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|Selector1~0_combout\);
-
--- Location: LCFF_X27_Y13_N17
-\vga|state.DRAWING_RECT\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|Selector1~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|state.DRAWING_RECT~regout\);
-
--- Location: LCCOMB_X24_Y13_N16
-\vga|x_cursor[7]~16\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[7]~16_combout\ = (\vga|substate.DRAWING_R1~regout\) # ((!\vga|state.DRAWING_RECT~regout\) # (!\vga|substate.INIT~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011111110111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|substate.INIT~regout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	combout => \vga|x_cursor[7]~16_combout\);
-
--- Location: LCCOMB_X24_Y12_N0
-\vga|y_cursor[0]~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~12_combout\ = \vga|y_cursor\(0) $ (VCC)
--- \vga|y_cursor[0]~13\ = CARRY(\vga|y_cursor\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(0),
-	datad => VCC,
-	combout => \vga|y_cursor[0]~12_combout\,
-	cout => \vga|y_cursor[0]~13\);
-
--- Location: LCCOMB_X30_Y13_N10
-\sprite_renderer|FB_Y0[0]~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[0]~9_combout\ = (\sprite_renderer|row\(0) & (\sprite_renderer|sprite_x\(0) $ (VCC))) # (!\sprite_renderer|row\(0) & (\sprite_renderer|sprite_x\(0) & VCC))
--- \sprite_renderer|FB_Y0[0]~10\ = CARRY((\sprite_renderer|row\(0) & \sprite_renderer|sprite_x\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110011010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(0),
-	datab => \sprite_renderer|sprite_x\(0),
-	datad => VCC,
-	combout => \sprite_renderer|FB_Y0[0]~9_combout\,
-	cout => \sprite_renderer|FB_Y0[0]~10\);
-
--- Location: LCFF_X30_Y13_N11
-\sprite_renderer|FB_Y0[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[0]~9_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(0));
-
--- Location: LCCOMB_X23_Y11_N0
-\vga|y_start~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~0_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(0),
-	combout => \vga|y_start~0_combout\);
-
--- Location: LCFF_X23_Y11_N1
-\vga|y_start[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~0_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(0));
-
--- Location: LCCOMB_X22_Y12_N12
-\vga|Add0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~0_combout\ = \vga|y_cursor\(0) $ (VCC)
--- \vga|Add0~1\ = CARRY(\vga|y_cursor\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(0),
-	datad => VCC,
-	combout => \vga|Add0~0_combout\,
-	cout => \vga|Add0~1\);
-
--- Location: LCCOMB_X25_Y12_N26
-\vga|y_cursor[0]~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~14_combout\ = (\vga|state.DRAWING_RECT~regout\ & (\vga|substate.DRAWING_R1~regout\)) # (!\vga|state.DRAWING_RECT~regout\ & ((\vga|substate.INIT~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010110010101100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|substate.INIT~regout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	combout => \vga|y_cursor[0]~14_combout\);
-
--- Location: LCCOMB_X23_Y11_N2
-\vga|Add0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~2_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~0_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_start\(0),
-	datac => \vga|Add0~0_combout\,
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~2_combout\);
-
--- Location: LCCOMB_X24_Y12_N4
-\vga|y_cursor[2]~29\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[2]~29_combout\ = (\vga|y_cursor\(2) & ((GND) # (!\vga|y_cursor[1]~28\))) # (!\vga|y_cursor\(2) & (\vga|y_cursor[1]~28\ $ (GND)))
--- \vga|y_cursor[2]~30\ = CARRY((\vga|y_cursor\(2)) # (!\vga|y_cursor[1]~28\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110011001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(2),
-	datad => VCC,
-	cin => \vga|y_cursor[1]~28\,
-	combout => \vga|y_cursor[2]~29_combout\,
-	cout => \vga|y_cursor[2]~30\);
-
--- Location: LCCOMB_X24_Y12_N6
-\vga|y_cursor[3]~31\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[3]~31_combout\ = (\vga|y_cursor\(3) & (\vga|y_cursor[2]~30\ & VCC)) # (!\vga|y_cursor\(3) & (!\vga|y_cursor[2]~30\))
--- \vga|y_cursor[3]~32\ = CARRY((!\vga|y_cursor\(3) & !\vga|y_cursor[2]~30\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100000101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(3),
-	datad => VCC,
-	cin => \vga|y_cursor[2]~30\,
-	combout => \vga|y_cursor[3]~31_combout\,
-	cout => \vga|y_cursor[3]~32\);
-
--- Location: LCCOMB_X24_Y12_N8
-\vga|y_cursor[4]~33\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[4]~33_combout\ = (\vga|y_cursor\(4) & ((GND) # (!\vga|y_cursor[3]~32\))) # (!\vga|y_cursor\(4) & (\vga|y_cursor[3]~32\ $ (GND)))
--- \vga|y_cursor[4]~34\ = CARRY((\vga|y_cursor\(4)) # (!\vga|y_cursor[3]~32\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110011001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(4),
-	datad => VCC,
-	cin => \vga|y_cursor[3]~32\,
-	combout => \vga|y_cursor[4]~33_combout\,
-	cout => \vga|y_cursor[4]~34\);
-
--- Location: LCCOMB_X32_Y13_N10
-\view|SPRITE_X~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~1_combout\ = (\view|x\(1) & (!\sprite_renderer|READY~regout\ & !\view|state~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000000010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|x\(1),
-	datab => \sprite_renderer|READY~regout\,
-	datac => \view|state~regout\,
-	combout => \view|SPRITE_X~1_combout\);
-
--- Location: LCFF_X32_Y13_N11
-\view|SPRITE_X[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(1));
-
--- Location: LCCOMB_X30_Y13_N2
-\sprite_renderer|sprite_x[1]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[1]~feeder_combout\ = \view|SPRITE_X\(1)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \view|SPRITE_X\(1),
-	combout => \sprite_renderer|sprite_x[1]~feeder_combout\);
-
--- Location: LCFF_X30_Y13_N3
-\sprite_renderer|sprite_x[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[1]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(1));
-
--- Location: LCCOMB_X30_Y13_N12
-\sprite_renderer|FB_Y0[1]~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[1]~11_combout\ = (\sprite_renderer|row\(1) & ((\sprite_renderer|sprite_x\(1) & (\sprite_renderer|FB_Y0[0]~10\ & VCC)) # (!\sprite_renderer|sprite_x\(1) & (!\sprite_renderer|FB_Y0[0]~10\)))) # (!\sprite_renderer|row\(1) & 
--- ((\sprite_renderer|sprite_x\(1) & (!\sprite_renderer|FB_Y0[0]~10\)) # (!\sprite_renderer|sprite_x\(1) & ((\sprite_renderer|FB_Y0[0]~10\) # (GND)))))
--- \sprite_renderer|FB_Y0[1]~12\ = CARRY((\sprite_renderer|row\(1) & (!\sprite_renderer|sprite_x\(1) & !\sprite_renderer|FB_Y0[0]~10\)) # (!\sprite_renderer|row\(1) & ((!\sprite_renderer|FB_Y0[0]~10\) # (!\sprite_renderer|sprite_x\(1)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(1),
-	datab => \sprite_renderer|sprite_x\(1),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[0]~10\,
-	combout => \sprite_renderer|FB_Y0[1]~11_combout\,
-	cout => \sprite_renderer|FB_Y0[1]~12\);
-
--- Location: LCCOMB_X30_Y13_N14
-\sprite_renderer|FB_Y0[2]~13\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[2]~13_combout\ = ((\sprite_renderer|sprite_x\(2) $ (\sprite_renderer|row\(2) $ (!\sprite_renderer|FB_Y0[1]~12\)))) # (GND)
--- \sprite_renderer|FB_Y0[2]~14\ = CARRY((\sprite_renderer|sprite_x\(2) & ((\sprite_renderer|row\(2)) # (!\sprite_renderer|FB_Y0[1]~12\))) # (!\sprite_renderer|sprite_x\(2) & (\sprite_renderer|row\(2) & !\sprite_renderer|FB_Y0[1]~12\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(2),
-	datab => \sprite_renderer|row\(2),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[1]~12\,
-	combout => \sprite_renderer|FB_Y0[2]~13_combout\,
-	cout => \sprite_renderer|FB_Y0[2]~14\);
-
--- Location: LCCOMB_X30_Y13_N16
-\sprite_renderer|FB_Y0[3]~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[3]~15_combout\ = (\sprite_renderer|sprite_x\(3) & ((\sprite_renderer|row\(3) & (\sprite_renderer|FB_Y0[2]~14\ & VCC)) # (!\sprite_renderer|row\(3) & (!\sprite_renderer|FB_Y0[2]~14\)))) # (!\sprite_renderer|sprite_x\(3) & 
--- ((\sprite_renderer|row\(3) & (!\sprite_renderer|FB_Y0[2]~14\)) # (!\sprite_renderer|row\(3) & ((\sprite_renderer|FB_Y0[2]~14\) # (GND)))))
--- \sprite_renderer|FB_Y0[3]~16\ = CARRY((\sprite_renderer|sprite_x\(3) & (!\sprite_renderer|row\(3) & !\sprite_renderer|FB_Y0[2]~14\)) # (!\sprite_renderer|sprite_x\(3) & ((!\sprite_renderer|FB_Y0[2]~14\) # (!\sprite_renderer|row\(3)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(3),
-	datab => \sprite_renderer|row\(3),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[2]~14\,
-	combout => \sprite_renderer|FB_Y0[3]~15_combout\,
-	cout => \sprite_renderer|FB_Y0[3]~16\);
-
--- Location: LCCOMB_X30_Y13_N18
-\sprite_renderer|FB_Y0[4]~17\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[4]~17_combout\ = ((\sprite_renderer|row\(4) $ (\sprite_renderer|sprite_x\(4) $ (!\sprite_renderer|FB_Y0[3]~16\)))) # (GND)
--- \sprite_renderer|FB_Y0[4]~18\ = CARRY((\sprite_renderer|row\(4) & ((\sprite_renderer|sprite_x\(4)) # (!\sprite_renderer|FB_Y0[3]~16\))) # (!\sprite_renderer|row\(4) & (\sprite_renderer|sprite_x\(4) & !\sprite_renderer|FB_Y0[3]~16\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(4),
-	datab => \sprite_renderer|sprite_x\(4),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[3]~16\,
-	combout => \sprite_renderer|FB_Y0[4]~17_combout\,
-	cout => \sprite_renderer|FB_Y0[4]~18\);
-
--- Location: LCFF_X30_Y13_N19
-\sprite_renderer|FB_Y0[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[4]~17_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(4));
-
--- Location: LCCOMB_X23_Y12_N0
-\vga|y_start~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~3_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(4),
-	combout => \vga|y_start~3_combout\);
-
--- Location: LCFF_X23_Y12_N1
-\vga|y_start[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~3_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(4));
-
--- Location: LCCOMB_X22_Y12_N16
-\vga|Add0~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~6_combout\ = (\vga|y_cursor\(2) & (\vga|Add0~4\ $ (GND))) # (!\vga|y_cursor\(2) & (!\vga|Add0~4\ & VCC))
--- \vga|Add0~7\ = CARRY((\vga|y_cursor\(2) & !\vga|Add0~4\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(2),
-	datad => VCC,
-	cin => \vga|Add0~4\,
-	combout => \vga|Add0~6_combout\,
-	cout => \vga|Add0~7\);
-
--- Location: LCCOMB_X22_Y12_N18
-\vga|Add0~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~9_combout\ = (\vga|y_cursor\(3) & (!\vga|Add0~7\)) # (!\vga|y_cursor\(3) & ((\vga|Add0~7\) # (GND)))
--- \vga|Add0~10\ = CARRY((!\vga|Add0~7\) # (!\vga|y_cursor\(3)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(3),
-	datad => VCC,
-	cin => \vga|Add0~7\,
-	combout => \vga|Add0~9_combout\,
-	cout => \vga|Add0~10\);
-
--- Location: LCCOMB_X22_Y12_N20
-\vga|Add0~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~12_combout\ = (\vga|y_cursor\(4) & (\vga|Add0~10\ $ (GND))) # (!\vga|y_cursor\(4) & (!\vga|Add0~10\ & VCC))
--- \vga|Add0~13\ = CARRY((\vga|y_cursor\(4) & !\vga|Add0~10\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(4),
-	datad => VCC,
-	cin => \vga|Add0~10\,
-	combout => \vga|Add0~12_combout\,
-	cout => \vga|Add0~13\);
-
--- Location: LCCOMB_X22_Y12_N4
-\vga|Add0~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~14_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~12_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(4)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_start\(4),
-	datac => \vga|Add0~12_combout\,
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~14_combout\);
-
--- Location: LCFF_X24_Y12_N9
-\vga|y_cursor[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[4]~33_combout\,
-	sdata => \vga|Add0~14_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(4));
-
--- Location: LCCOMB_X24_Y12_N10
-\vga|y_cursor[5]~35\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[5]~35_combout\ = (\vga|y_cursor\(5) & (\vga|y_cursor[4]~34\ & VCC)) # (!\vga|y_cursor\(5) & (!\vga|y_cursor[4]~34\))
--- \vga|y_cursor[5]~36\ = CARRY((!\vga|y_cursor\(5) & !\vga|y_cursor[4]~34\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100000101",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(5),
-	datad => VCC,
-	cin => \vga|y_cursor[4]~34\,
-	combout => \vga|y_cursor[5]~35_combout\,
-	cout => \vga|y_cursor[5]~36\);
-
--- Location: LCCOMB_X24_Y12_N12
-\vga|y_cursor[6]~37\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[6]~37_combout\ = (\vga|y_cursor\(6) & ((GND) # (!\vga|y_cursor[5]~36\))) # (!\vga|y_cursor\(6) & (\vga|y_cursor[5]~36\ $ (GND)))
--- \vga|y_cursor[6]~38\ = CARRY((\vga|y_cursor\(6)) # (!\vga|y_cursor[5]~36\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101010101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(6),
-	datad => VCC,
-	cin => \vga|y_cursor[5]~36\,
-	combout => \vga|y_cursor[6]~37_combout\,
-	cout => \vga|y_cursor[6]~38\);
-
--- Location: LCCOMB_X24_Y12_N14
-\vga|y_cursor[7]~39\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[7]~39_combout\ = (\vga|y_cursor\(7) & (\vga|y_cursor[6]~38\ & VCC)) # (!\vga|y_cursor\(7) & (!\vga|y_cursor[6]~38\))
--- \vga|y_cursor[7]~40\ = CARRY((!\vga|y_cursor\(7) & !\vga|y_cursor[6]~38\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(7),
-	datad => VCC,
-	cin => \vga|y_cursor[6]~38\,
-	combout => \vga|y_cursor[7]~39_combout\,
-	cout => \vga|y_cursor[7]~40\);
-
--- Location: LCCOMB_X32_Y14_N16
-\sprite_renderer|Add0~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~23_combout\ = (\sprite_renderer|Add0~21_combout\ & \sprite_renderer|LessThan1~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add0~21_combout\,
-	datad => \sprite_renderer|LessThan1~10_combout\,
-	combout => \sprite_renderer|Add0~23_combout\);
-
--- Location: LCFF_X32_Y14_N17
-\sprite_renderer|row[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~23_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(7));
-
--- Location: LCCOMB_X32_Y14_N6
-\sprite_renderer|Add0~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~18_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~16_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datad => \sprite_renderer|Add0~16_combout\,
-	combout => \sprite_renderer|Add0~18_combout\);
-
--- Location: LCFF_X32_Y14_N7
-\sprite_renderer|row[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~18_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(5));
-
--- Location: LCCOMB_X30_Y13_N20
-\sprite_renderer|FB_Y0[5]~19\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[5]~19_combout\ = (\sprite_renderer|sprite_x\(5) & ((\sprite_renderer|row\(5) & (\sprite_renderer|FB_Y0[4]~18\ & VCC)) # (!\sprite_renderer|row\(5) & (!\sprite_renderer|FB_Y0[4]~18\)))) # (!\sprite_renderer|sprite_x\(5) & 
--- ((\sprite_renderer|row\(5) & (!\sprite_renderer|FB_Y0[4]~18\)) # (!\sprite_renderer|row\(5) & ((\sprite_renderer|FB_Y0[4]~18\) # (GND)))))
--- \sprite_renderer|FB_Y0[5]~20\ = CARRY((\sprite_renderer|sprite_x\(5) & (!\sprite_renderer|row\(5) & !\sprite_renderer|FB_Y0[4]~18\)) # (!\sprite_renderer|sprite_x\(5) & ((!\sprite_renderer|FB_Y0[4]~18\) # (!\sprite_renderer|row\(5)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(5),
-	datab => \sprite_renderer|row\(5),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[4]~18\,
-	combout => \sprite_renderer|FB_Y0[5]~19_combout\,
-	cout => \sprite_renderer|FB_Y0[5]~20\);
-
--- Location: LCCOMB_X30_Y13_N22
-\sprite_renderer|FB_Y0[6]~21\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[6]~21_combout\ = ((\sprite_renderer|row\(6) $ (\sprite_renderer|sprite_x\(6) $ (!\sprite_renderer|FB_Y0[5]~20\)))) # (GND)
--- \sprite_renderer|FB_Y0[6]~22\ = CARRY((\sprite_renderer|row\(6) & ((\sprite_renderer|sprite_x\(6)) # (!\sprite_renderer|FB_Y0[5]~20\))) # (!\sprite_renderer|row\(6) & (\sprite_renderer|sprite_x\(6) & !\sprite_renderer|FB_Y0[5]~20\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0110100110001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|row\(6),
-	datab => \sprite_renderer|sprite_x\(6),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[5]~20\,
-	combout => \sprite_renderer|FB_Y0[6]~21_combout\,
-	cout => \sprite_renderer|FB_Y0[6]~22\);
-
--- Location: LCCOMB_X30_Y13_N24
-\sprite_renderer|FB_Y0[7]~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[7]~23_combout\ = (\sprite_renderer|sprite_x\(7) & ((\sprite_renderer|row\(7) & (\sprite_renderer|FB_Y0[6]~22\ & VCC)) # (!\sprite_renderer|row\(7) & (!\sprite_renderer|FB_Y0[6]~22\)))) # (!\sprite_renderer|sprite_x\(7) & 
--- ((\sprite_renderer|row\(7) & (!\sprite_renderer|FB_Y0[6]~22\)) # (!\sprite_renderer|row\(7) & ((\sprite_renderer|FB_Y0[6]~22\) # (GND)))))
--- \sprite_renderer|FB_Y0[7]~24\ = CARRY((\sprite_renderer|sprite_x\(7) & (!\sprite_renderer|row\(7) & !\sprite_renderer|FB_Y0[6]~22\)) # (!\sprite_renderer|sprite_x\(7) & ((!\sprite_renderer|FB_Y0[6]~22\) # (!\sprite_renderer|row\(7)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001011000010111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|sprite_x\(7),
-	datab => \sprite_renderer|row\(7),
-	datad => VCC,
-	cin => \sprite_renderer|FB_Y0[6]~22\,
-	combout => \sprite_renderer|FB_Y0[7]~23_combout\,
-	cout => \sprite_renderer|FB_Y0[7]~24\);
-
--- Location: LCFF_X30_Y13_N25
-\sprite_renderer|FB_Y0[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[7]~23_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(7));
-
--- Location: LCCOMB_X23_Y12_N30
-\vga|y_start~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~5_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(7),
-	combout => \vga|y_start~5_combout\);
-
--- Location: LCFF_X23_Y12_N31
-\vga|y_start[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~5_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(7));
-
--- Location: LCFF_X30_Y13_N23
-\sprite_renderer|FB_Y0[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[6]~21_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(6));
-
--- Location: LCCOMB_X23_Y12_N24
-\vga|y_start~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~6_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(6))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(6),
-	combout => \vga|y_start~6_combout\);
-
--- Location: LCFF_X23_Y12_N25
-\vga|y_start[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~6_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(6));
-
--- Location: LCCOMB_X22_Y12_N22
-\vga|Add0~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~15_combout\ = (\vga|y_cursor\(5) & (!\vga|Add0~13\)) # (!\vga|y_cursor\(5) & ((\vga|Add0~13\) # (GND)))
--- \vga|Add0~16\ = CARRY((!\vga|Add0~13\) # (!\vga|y_cursor\(5)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(5),
-	datad => VCC,
-	cin => \vga|Add0~13\,
-	combout => \vga|Add0~15_combout\,
-	cout => \vga|Add0~16\);
-
--- Location: LCFF_X30_Y13_N21
-\sprite_renderer|FB_Y0[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[5]~19_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(5));
-
--- Location: LCCOMB_X23_Y11_N28
-\vga|y_end~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~1_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(5))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(5),
-	combout => \vga|y_end~1_combout\);
-
--- Location: LCFF_X23_Y11_N29
-\vga|y_end[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_end~1_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(5));
-
--- Location: LCCOMB_X22_Y12_N30
-\vga|Add0~17\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~17_combout\ = (\vga|y_cursor[0]~14_combout\ & (\vga|Add0~15_combout\)) # (!\vga|y_cursor[0]~14_combout\ & ((\vga|y_end\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|Add0~15_combout\,
-	datac => \vga|y_end\(5),
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~17_combout\);
-
--- Location: LCFF_X24_Y12_N11
-\vga|y_cursor[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[5]~35_combout\,
-	sdata => \vga|Add0~17_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(5));
-
--- Location: LCCOMB_X22_Y12_N24
-\vga|Add0~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~18_combout\ = (\vga|y_cursor\(6) & (\vga|Add0~16\ $ (GND))) # (!\vga|y_cursor\(6) & (!\vga|Add0~16\ & VCC))
--- \vga|Add0~19\ = CARRY((\vga|y_cursor\(6) & !\vga|Add0~16\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(6),
-	datad => VCC,
-	cin => \vga|Add0~16\,
-	combout => \vga|Add0~18_combout\,
-	cout => \vga|Add0~19\);
-
--- Location: LCCOMB_X22_Y12_N8
-\vga|Add0~20\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~20_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~18_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(6)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_start\(6),
-	datac => \vga|Add0~18_combout\,
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~20_combout\);
-
--- Location: LCFF_X24_Y12_N13
-\vga|y_cursor[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[6]~37_combout\,
-	sdata => \vga|Add0~20_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(6));
-
--- Location: LCCOMB_X22_Y12_N26
-\vga|Add0~21\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~21_combout\ = (\vga|y_cursor\(7) & (!\vga|Add0~19\)) # (!\vga|y_cursor\(7) & ((\vga|Add0~19\) # (GND)))
--- \vga|Add0~22\ = CARRY((!\vga|Add0~19\) # (!\vga|y_cursor\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(7),
-	datad => VCC,
-	cin => \vga|Add0~19\,
-	combout => \vga|Add0~21_combout\,
-	cout => \vga|Add0~22\);
-
--- Location: LCCOMB_X22_Y12_N2
-\vga|Add0~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~23_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~21_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_start\(7),
-	datac => \vga|Add0~21_combout\,
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~23_combout\);
-
--- Location: LCFF_X24_Y12_N15
-\vga|y_cursor[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[7]~39_combout\,
-	sdata => \vga|Add0~23_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(7));
-
--- Location: LCCOMB_X24_Y12_N16
-\vga|y_cursor[8]~41\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[8]~41_combout\ = \vga|y_cursor\(8) $ (\vga|y_cursor[7]~40\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(8),
-	cin => \vga|y_cursor[7]~40\,
-	combout => \vga|y_cursor[8]~41_combout\);
-
--- Location: LCCOMB_X22_Y12_N28
-\vga|Add0~24\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~24_combout\ = \vga|Add0~22\ $ (!\vga|y_cursor\(8))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \vga|y_cursor\(8),
-	cin => \vga|Add0~22\,
-	combout => \vga|Add0~24_combout\);
-
--- Location: LCCOMB_X22_Y12_N6
-\vga|Add0~26\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~26_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~24_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(8)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110111000100010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_start\(8),
-	datab => \vga|y_cursor[0]~14_combout\,
-	datad => \vga|Add0~24_combout\,
-	combout => \vga|Add0~26_combout\);
-
--- Location: LCFF_X24_Y12_N17
-\vga|y_cursor[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[8]~41_combout\,
-	sdata => \vga|Add0~26_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(8));
-
--- Location: LCCOMB_X23_Y12_N10
-\vga|Selector0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~2_combout\ = (!\vga|substate.DRAWING_R1~regout\ & (\vga|substate.DRAWING_R2~regout\ & (\vga|y_start\(8) $ (!\vga|y_cursor\(8)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_start\(8),
-	datab => \vga|y_cursor\(8),
-	datac => \vga|substate.DRAWING_R1~regout\,
-	datad => \vga|substate.DRAWING_R2~regout\,
-	combout => \vga|Selector0~2_combout\);
-
--- Location: LCCOMB_X25_Y13_N20
-\vga|x_cursor[4]~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[4]~25_combout\ = (\vga|x_cursor\(4) & ((GND) # (!\vga|x_cursor[3]~24\))) # (!\vga|x_cursor\(4) & (\vga|x_cursor[3]~24\ $ (GND)))
--- \vga|x_cursor[4]~26\ = CARRY((\vga|x_cursor\(4)) # (!\vga|x_cursor[3]~24\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101010101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(4),
-	datad => VCC,
-	cin => \vga|x_cursor[3]~24\,
-	combout => \vga|x_cursor[4]~25_combout\,
-	cout => \vga|x_cursor[4]~26\);
-
--- Location: LCCOMB_X26_Y13_N20
-\vga|x_start~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~5_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(4))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(4),
-	combout => \vga|x_start~5_combout\);
-
--- Location: LCFF_X26_Y13_N21
-\vga|x_start[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~5_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(4));
-
--- Location: LCCOMB_X24_Y13_N4
-\vga|Add1~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~14_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~12_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010111110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add1~12_combout\,
-	datac => \vga|x_cursor[7]~15_combout\,
-	datad => \vga|x_start\(4),
-	combout => \vga|Add1~14_combout\);
-
--- Location: LCFF_X25_Y13_N21
-\vga|x_cursor[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[4]~25_combout\,
-	sdata => \vga|Add1~14_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(4));
-
--- Location: LCCOMB_X25_Y12_N18
-\vga|Equal2~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal2~3_combout\ = (\vga|x_start\(3) & (\vga|x_cursor\(3) & (\vga|x_cursor\(4) $ (!\vga|x_start\(4))))) # (!\vga|x_start\(3) & (!\vga|x_cursor\(3) & (\vga|x_cursor\(4) $ (!\vga|x_start\(4)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000010000100001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_start\(3),
-	datab => \vga|x_cursor\(4),
-	datac => \vga|x_cursor\(3),
-	datad => \vga|x_start\(4),
-	combout => \vga|Equal2~3_combout\);
-
--- Location: LCCOMB_X25_Y12_N28
-\vga|Selector0~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~3_combout\ = (\vga|Equal2~4_combout\ & (\vga|Selector0~2_combout\ & (\vga|state.DRAWING_RECT~regout\ & \vga|Equal2~3_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal2~4_combout\,
-	datab => \vga|Selector0~2_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|Equal2~3_combout\,
-	combout => \vga|Selector0~3_combout\);
-
--- Location: LCCOMB_X23_Y12_N2
-\vga|y_cursor[0]~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~18_combout\ = (\vga|y_start\(6) & (\vga|y_cursor\(6) & (\vga|y_start\(7) $ (!\vga|y_cursor\(7))))) # (!\vga|y_start\(6) & (!\vga|y_cursor\(6) & (\vga|y_start\(7) $ (!\vga|y_cursor\(7)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000010000100001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_start\(6),
-	datab => \vga|y_start\(7),
-	datac => \vga|y_cursor\(6),
-	datad => \vga|y_cursor\(7),
-	combout => \vga|y_cursor[0]~18_combout\);
-
--- Location: LCCOMB_X23_Y12_N4
-\vga|y_cursor[0]~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~15_combout\ = (\vga|y_cursor\(0) & (\vga|y_start\(0) & (\vga|y_cursor\(5) $ (!\vga|y_end\(5))))) # (!\vga|y_cursor\(0) & (!\vga|y_start\(0) & (\vga|y_cursor\(5) $ (!\vga|y_end\(5)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001000000001001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(0),
-	datab => \vga|y_start\(0),
-	datac => \vga|y_cursor\(5),
-	datad => \vga|y_end\(5),
-	combout => \vga|y_cursor[0]~15_combout\);
-
--- Location: LCFF_X30_Y13_N15
-\sprite_renderer|FB_Y0[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[2]~13_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(2));
-
--- Location: LCCOMB_X23_Y11_N6
-\vga|y_start~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~1_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(2))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(2),
-	combout => \vga|y_start~1_combout\);
-
--- Location: LCFF_X23_Y11_N7
-\vga|y_start[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~1_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(2));
-
--- Location: LCFF_X30_Y13_N13
-\sprite_renderer|FB_Y0[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[1]~11_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(1));
-
--- Location: LCCOMB_X23_Y13_N24
-\vga|y_start~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~2_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(1))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000001010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_Y0\(1),
-	combout => \vga|y_start~2_combout\);
-
--- Location: LCFF_X23_Y13_N25
-\vga|y_start[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~2_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(1));
-
--- Location: LCCOMB_X23_Y12_N22
-\vga|y_cursor[0]~16\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~16_combout\ = (\vga|y_cursor\(2) & (\vga|y_start\(2) & (\vga|y_cursor\(1) $ (!\vga|y_start\(1))))) # (!\vga|y_cursor\(2) & (!\vga|y_start\(2) & (\vga|y_cursor\(1) $ (!\vga|y_start\(1)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001000000001001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(2),
-	datab => \vga|y_start\(2),
-	datac => \vga|y_cursor\(1),
-	datad => \vga|y_start\(1),
-	combout => \vga|y_cursor[0]~16_combout\);
-
--- Location: LCCOMB_X23_Y12_N28
-\vga|y_cursor[0]~19\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~19_combout\ = (\vga|y_cursor[0]~17_combout\ & (\vga|y_cursor[0]~18_combout\ & (\vga|y_cursor[0]~15_combout\ & \vga|y_cursor[0]~16_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor[0]~17_combout\,
-	datab => \vga|y_cursor[0]~18_combout\,
-	datac => \vga|y_cursor[0]~15_combout\,
-	datad => \vga|y_cursor[0]~16_combout\,
-	combout => \vga|y_cursor[0]~19_combout\);
-
--- Location: LCCOMB_X25_Y13_N8
-\vga|Equal2~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal2~1_combout\ = (\vga|x_cursor\(2) & (\vga|x_start\(2) & (\vga|x_cursor\(1) $ (!\vga|x_start\(1))))) # (!\vga|x_cursor\(2) & (!\vga|x_start\(2) & (\vga|x_cursor\(1) $ (!\vga|x_start\(1)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001000000001001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(2),
-	datab => \vga|x_start\(2),
-	datac => \vga|x_cursor\(1),
-	datad => \vga|x_start\(1),
-	combout => \vga|Equal2~1_combout\);
-
--- Location: LCFF_X29_Y13_N3
-\sprite_renderer|FB_X0[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[0]~10_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(0));
-
--- Location: LCCOMB_X26_Y13_N24
-\vga|x_start~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~0_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000000110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(0),
-	combout => \vga|x_start~0_combout\);
-
--- Location: LCFF_X26_Y13_N25
-\vga|x_start[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~0_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(0));
-
--- Location: LCCOMB_X25_Y13_N10
-\vga|Equal2~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal2~2_combout\ = (!\vga|Equal0~5_combout\ & (\vga|Equal2~1_combout\ & (\vga|x_cursor\(0) $ (!\vga|x_start\(0)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000000010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(0),
-	datab => \vga|Equal0~5_combout\,
-	datac => \vga|Equal2~1_combout\,
-	datad => \vga|x_start\(0),
-	combout => \vga|Equal2~2_combout\);
-
--- Location: LCCOMB_X27_Y13_N0
-\vga|Selector0~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~4_combout\ = (\vga|Equal2~0_combout\ & (\vga|Selector0~3_combout\ & (\vga|y_cursor[0]~19_combout\ & \vga|Equal2~2_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal2~0_combout\,
-	datab => \vga|Selector0~3_combout\,
-	datac => \vga|y_cursor[0]~19_combout\,
-	datad => \vga|Equal2~2_combout\,
-	combout => \vga|Selector0~4_combout\);
-
--- Location: LCCOMB_X27_Y13_N24
-\vga|Selector2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector2~0_combout\ = (!\vga|Selector0~8_combout\ & (((!\vga|Selector0~6_combout\ & !\vga|Selector0~4_combout\)) # (!\vga|Selector0~7_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010100000111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Selector0~7_combout\,
-	datab => \vga|Selector0~6_combout\,
-	datac => \vga|Selector0~8_combout\,
-	datad => \vga|Selector0~4_combout\,
-	combout => \vga|Selector2~0_combout\);
-
--- Location: LCCOMB_X27_Y13_N18
-\vga|Selector2~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector2~1_combout\ = (\vga|state.IDLE~regout\ & (((\vga|state.FILLING_RECT~regout\ & \vga|Selector2~0_combout\)))) # (!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_CLEAR~regout\) # ((\vga|state.FILLING_RECT~regout\ & 
--- \vga|Selector2~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010001000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|state.IDLE~regout\,
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \vga|state.FILLING_RECT~regout\,
-	datad => \vga|Selector2~0_combout\,
-	combout => \vga|Selector2~1_combout\);
-
--- Location: LCFF_X27_Y13_N19
-\vga|state.FILLING_RECT\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|Selector2~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|state.FILLING_RECT~regout\);
-
--- Location: LCCOMB_X24_Y13_N0
-\vga|x_cursor[7]~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[7]~14_combout\ = (\vga|substate.INIT~regout\ & \vga|state.FILLING_RECT~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \vga|substate.INIT~regout\,
-	datad => \vga|state.FILLING_RECT~regout\,
-	combout => \vga|x_cursor[7]~14_combout\);
-
--- Location: LCCOMB_X24_Y12_N24
-\vga|y_cursor[0]~24\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~24_combout\ = (\vga|x_cursor[7]~14_combout\ & ((\vga|vga_fb|SRAM_WE_N~0_combout\) # ((\vga|Equal1~5_combout\)))) # (!\vga|x_cursor[7]~14_combout\ & (((\vga|substate.DRAWING_R1~regout\ & \vga|Equal1~5_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datab => \vga|x_cursor[7]~14_combout\,
-	datac => \vga|substate.DRAWING_R1~regout\,
-	datad => \vga|Equal1~5_combout\,
-	combout => \vga|y_cursor[0]~24_combout\);
-
--- Location: LCCOMB_X24_Y12_N26
-\vga|y_cursor[0]~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~25_combout\ = (\vga|state.DRAWING_RECT~regout\ & ((\vga|y_cursor[0]~20_combout\) # ((\vga|y_cursor[0]~24_combout\) # (!\vga|y_cursor[0]~23_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100100011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor[0]~20_combout\,
-	datab => \vga|state.DRAWING_RECT~regout\,
-	datac => \vga|y_cursor[0]~24_combout\,
-	datad => \vga|y_cursor[0]~23_combout\,
-	combout => \vga|y_cursor[0]~25_combout\);
-
--- Location: LCCOMB_X23_Y12_N18
-\vga|y_cursor[0]~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~11_combout\ = (\RESET_N~regout\ & \vga|state.IDLE~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \RESET_N~regout\,
-	datad => \vga|state.IDLE~regout\,
-	combout => \vga|y_cursor[0]~11_combout\);
-
--- Location: LCCOMB_X24_Y12_N30
-\vga|y_cursor[0]~43\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~43_combout\ = (\vga|state.FILLING_RECT~regout\ & (\vga|substate.INIT~regout\ & ((\vga|y_cursor[0]~24_combout\) # (!\vga|Equal0~6_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor[0]~24_combout\,
-	datab => \vga|Equal0~6_combout\,
-	datac => \vga|state.FILLING_RECT~regout\,
-	datad => \vga|substate.INIT~regout\,
-	combout => \vga|y_cursor[0]~43_combout\);
-
--- Location: LCCOMB_X24_Y12_N28
-\vga|y_cursor[0]~26\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[0]~26_combout\ = (\vga|y_cursor[0]~11_combout\ & (!\vga|y_cursor[0]~43_combout\ & ((!\vga|y_cursor[0]~25_combout\) # (!\vga|substate.INIT~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.INIT~regout\,
-	datab => \vga|y_cursor[0]~25_combout\,
-	datac => \vga|y_cursor[0]~11_combout\,
-	datad => \vga|y_cursor[0]~43_combout\,
-	combout => \vga|y_cursor[0]~26_combout\);
-
--- Location: LCFF_X24_Y12_N1
-\vga|y_cursor[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[0]~12_combout\,
-	sdata => \vga|Add0~2_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(0));
-
--- Location: LCCOMB_X24_Y12_N2
-\vga|y_cursor[1]~27\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_cursor[1]~27_combout\ = (\vga|y_cursor\(1) & (\vga|y_cursor[0]~13\ & VCC)) # (!\vga|y_cursor\(1) & (!\vga|y_cursor[0]~13\))
--- \vga|y_cursor[1]~28\ = CARRY((!\vga|y_cursor\(1) & !\vga|y_cursor[0]~13\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_cursor\(1),
-	datad => VCC,
-	cin => \vga|y_cursor[0]~13\,
-	combout => \vga|y_cursor[1]~27_combout\,
-	cout => \vga|y_cursor[1]~28\);
-
--- Location: LCCOMB_X23_Y13_N2
-\vga|Add0~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~5_combout\ = (\vga|y_cursor[0]~14_combout\ & (\vga|Add0~3_combout\)) # (!\vga|y_cursor[0]~14_combout\ & ((\vga|y_start\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add0~3_combout\,
-	datac => \vga|y_start\(1),
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~5_combout\);
-
--- Location: LCFF_X24_Y12_N3
-\vga|y_cursor[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[1]~27_combout\,
-	sdata => \vga|Add0~5_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(1));
-
--- Location: LCCOMB_X22_Y12_N0
-\vga|Add0~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~8_combout\ = (\vga|y_cursor[0]~14_combout\ & ((\vga|Add0~6_combout\))) # (!\vga|y_cursor[0]~14_combout\ & (\vga|y_start\(2)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|y_start\(2),
-	datac => \vga|Add0~6_combout\,
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~8_combout\);
-
--- Location: LCFF_X24_Y12_N5
-\vga|y_cursor[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[2]~29_combout\,
-	sdata => \vga|Add0~8_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(2));
-
--- Location: LCCOMB_X23_Y11_N18
-\vga|y_end~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~5_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_Y0\(2))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(2),
-	combout => \vga|y_end~5_combout\);
-
--- Location: LCFF_X23_Y11_N31
-\vga|y_end[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|y_end~5_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(2));
-
--- Location: LCFF_X30_Y13_N17
-\sprite_renderer|FB_Y0[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[3]~15_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(3));
-
--- Location: LCCOMB_X23_Y12_N26
-\vga|y_start~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_start~4_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(3))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(3),
-	combout => \vga|y_start~4_combout\);
-
--- Location: LCFF_X23_Y12_N27
-\vga|y_start[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_start~4_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_start\(3));
-
--- Location: LCCOMB_X22_Y12_N10
-\vga|Add0~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add0~11_combout\ = (\vga|y_cursor[0]~14_combout\ & (\vga|Add0~9_combout\)) # (!\vga|y_cursor[0]~14_combout\ & ((\vga|y_start\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|Add0~9_combout\,
-	datac => \vga|y_start\(3),
-	datad => \vga|y_cursor[0]~14_combout\,
-	combout => \vga|Add0~11_combout\);
-
--- Location: LCFF_X24_Y12_N7
-\vga|y_cursor[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_cursor[3]~31_combout\,
-	sdata => \vga|Add0~11_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|y_cursor[0]~26_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_cursor\(3));
-
--- Location: LCCOMB_X23_Y11_N30
-\vga|Equal1~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal1~1_combout\ = (\vga|y_end\(3) & (\vga|y_cursor\(3) & (\vga|y_cursor\(2) $ (!\vga|y_end\(2))))) # (!\vga|y_end\(3) & (!\vga|y_cursor\(3) & (\vga|y_cursor\(2) $ (!\vga|y_end\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000001001000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_end\(3),
-	datab => \vga|y_cursor\(2),
-	datac => \vga|y_end\(2),
-	datad => \vga|y_cursor\(3),
-	combout => \vga|Equal1~1_combout\);
-
--- Location: LCCOMB_X23_Y11_N20
-\vga|y_end~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~6_combout\ = (\sprite_renderer|FB_Y0\(4)) # (\sprite_renderer|FB_CLEAR~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101011111010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_Y0\(4),
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|y_end~6_combout\);
-
--- Location: LCFF_X23_Y11_N9
-\vga|y_end[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|y_end~6_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(4));
-
--- Location: LCCOMB_X23_Y11_N8
-\vga|Equal1~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal1~2_combout\ = (\vga|y_cursor\(5) & (\vga|y_end\(5) & (\vga|y_cursor\(4) $ (!\vga|y_end\(4))))) # (!\vga|y_cursor\(5) & (!\vga|y_end\(5) & (\vga|y_cursor\(4) $ (!\vga|y_end\(4)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000001001000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(5),
-	datab => \vga|y_cursor\(4),
-	datac => \vga|y_end\(4),
-	datad => \vga|y_end\(5),
-	combout => \vga|Equal1~2_combout\);
-
--- Location: LCCOMB_X23_Y11_N26
-\vga|y_end~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~7_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_Y0\(7))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_Y0\(7),
-	combout => \vga|y_end~7_combout\);
-
--- Location: LCFF_X23_Y11_N27
-\vga|y_end[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_end~7_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(7));
-
--- Location: LCCOMB_X23_Y11_N14
-\vga|y_end~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~8_combout\ = (\sprite_renderer|FB_Y0\(6)) # (\sprite_renderer|FB_CLEAR~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_Y0\(6),
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|y_end~8_combout\);
-
--- Location: LCFF_X23_Y11_N13
-\vga|y_end[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|y_end~8_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(6));
-
--- Location: LCCOMB_X23_Y11_N12
-\vga|Equal1~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal1~3_combout\ = (\vga|y_cursor\(7) & (\vga|y_end\(7) & (\vga|y_end\(6) $ (!\vga|y_cursor\(6))))) # (!\vga|y_cursor\(7) & (!\vga|y_end\(7) & (\vga|y_end\(6) $ (!\vga|y_cursor\(6)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001000000001001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|y_cursor\(7),
-	datab => \vga|y_end\(7),
-	datac => \vga|y_end\(6),
-	datad => \vga|y_cursor\(6),
-	combout => \vga|Equal1~3_combout\);
-
--- Location: LCCOMB_X23_Y11_N22
-\vga|Equal1~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal1~4_combout\ = (\vga|Equal1~0_combout\ & (\vga|Equal1~1_combout\ & (\vga|Equal1~2_combout\ & \vga|Equal1~3_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal1~0_combout\,
-	datab => \vga|Equal1~1_combout\,
-	datac => \vga|Equal1~2_combout\,
-	datad => \vga|Equal1~3_combout\,
-	combout => \vga|Equal1~4_combout\);
-
--- Location: LCCOMB_X32_Y14_N12
-\sprite_renderer|Add0~27\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add0~27_combout\ = (\sprite_renderer|LessThan1~10_combout\ & \sprite_renderer|Add0~25_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan1~10_combout\,
-	datac => \sprite_renderer|Add0~25_combout\,
-	combout => \sprite_renderer|Add0~27_combout\);
-
--- Location: LCFF_X32_Y14_N13
-\sprite_renderer|row[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add0~27_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add0~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|row\(8));
-
--- Location: LCCOMB_X31_Y13_N2
-\view|SPRITE_X~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \view|SPRITE_X~8_combout\ = (!\view|state~regout\ & (\view|x\(8) & !\sprite_renderer|READY~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001000100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \view|state~regout\,
-	datab => \view|x\(8),
-	datad => \sprite_renderer|READY~regout\,
-	combout => \view|SPRITE_X~8_combout\);
-
--- Location: LCFF_X31_Y13_N3
-\view|SPRITE_X[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \clock_25MHz~clkctrl_outclk\,
-	datain => \view|SPRITE_X~8_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \view|SPRITE_X\(8));
-
--- Location: LCCOMB_X30_Y13_N28
-\sprite_renderer|sprite_x[8]~feeder\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[8]~feeder_combout\ = \view|SPRITE_X\(8)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \view|SPRITE_X\(8),
-	combout => \sprite_renderer|sprite_x[8]~feeder_combout\);
-
--- Location: LCFF_X30_Y13_N29
-\sprite_renderer|sprite_x[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[8]~feeder_combout\,
-	ena => \sprite_renderer|sprite_x[0]~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|sprite_x\(8));
-
--- Location: LCCOMB_X30_Y13_N26
-\sprite_renderer|FB_Y0[8]~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|FB_Y0[8]~25_combout\ = \sprite_renderer|row\(8) $ (\sprite_renderer|FB_Y0[7]~24\ $ (!\sprite_renderer|sprite_x\(8)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110011000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|row\(8),
-	datad => \sprite_renderer|sprite_x\(8),
-	cin => \sprite_renderer|FB_Y0[7]~24\,
-	combout => \sprite_renderer|FB_Y0[8]~25_combout\);
-
--- Location: LCFF_X30_Y13_N27
-\sprite_renderer|FB_Y0[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_Y0[8]~25_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_Y0\(8));
-
--- Location: LCCOMB_X26_Y12_N8
-\vga|y_end~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|y_end~9_combout\ = (\sprite_renderer|FB_Y0\(8)) # (\sprite_renderer|FB_CLEAR~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|FB_Y0\(8),
-	datad => \sprite_renderer|FB_CLEAR~regout\,
-	combout => \vga|y_end~9_combout\);
-
--- Location: LCFF_X26_Y12_N9
-\vga|y_end[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|y_end~9_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|y_end\(8));
-
--- Location: LCCOMB_X24_Y12_N22
-\vga|Equal1~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal1~5_combout\ = (\vga|Equal1~4_combout\ & (\vga|y_cursor\(8) $ (!\vga|y_end\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|Equal1~4_combout\,
-	datac => \vga|y_cursor\(8),
-	datad => \vga|y_end\(8),
-	combout => \vga|Equal1~5_combout\);
-
--- Location: LCCOMB_X25_Y12_N24
-\vga|Selector6~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector6~4_combout\ = (\vga|Selector6~3_combout\) # ((\vga|Selector6~2_combout\ & ((!\vga|Equal1~5_combout\) # (!\vga|Equal0~6_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011111110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Selector6~3_combout\,
-	datab => \vga|Equal0~6_combout\,
-	datac => \vga|Equal1~5_combout\,
-	datad => \vga|Selector6~2_combout\,
-	combout => \vga|Selector6~4_combout\);
-
--- Location: LCFF_X25_Y12_N25
-\vga|substate.DRAWING_R1\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|Selector6~4_combout\,
-	ena => \RESET_N~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|substate.DRAWING_R1~regout\);
-
--- Location: LCCOMB_X26_Y12_N24
-\vga|Selector6~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector6~2_combout\ = (\vga|substate.DRAWING_R1~regout\ & \vga|state.DRAWING_RECT~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|substate.DRAWING_R1~regout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	combout => \vga|Selector6~2_combout\);
-
--- Location: LCCOMB_X26_Y12_N22
-\vga|substate.DRAWING_R2~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|substate.DRAWING_R2~5_combout\ = (\vga|substate.DRAWING_R2~regout\ & ((\vga|substate.DRAWING_R2~4_combout\) # ((\vga|READY~1_combout\ & !\vga|state.DRAWING_RECT~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010111000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R2~4_combout\,
-	datab => \vga|READY~1_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|substate.DRAWING_R2~regout\,
-	combout => \vga|substate.DRAWING_R2~5_combout\);
-
--- Location: LCCOMB_X26_Y12_N28
-\vga|substate.DRAWING_R2~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|substate.DRAWING_R2~6_combout\ = (\vga|substate.DRAWING_R2~5_combout\) # ((\vga|substate.DRAWING_R2~3_combout\ & (\RESET_N~regout\ & \vga|Selector6~2_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111110000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R2~3_combout\,
-	datab => \RESET_N~regout\,
-	datac => \vga|Selector6~2_combout\,
-	datad => \vga|substate.DRAWING_R2~5_combout\,
-	combout => \vga|substate.DRAWING_R2~6_combout\);
-
--- Location: LCFF_X26_Y12_N29
-\vga|substate.DRAWING_R2\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|substate.DRAWING_R2~6_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|substate.DRAWING_R2~regout\);
-
--- Location: LCCOMB_X25_Y12_N20
-\vga|Equal2~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal2~5_combout\ = (\vga|Equal2~4_combout\ & (\vga|Equal2~3_combout\ & (\vga|Equal2~2_combout\ & \vga|Equal2~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal2~4_combout\,
-	datab => \vga|Equal2~3_combout\,
-	datac => \vga|Equal2~2_combout\,
-	datad => \vga|Equal2~0_combout\,
-	combout => \vga|Equal2~5_combout\);
-
--- Location: LCCOMB_X25_Y12_N14
-\vga|x_cursor[0]~17\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[0]~17_combout\ = (\vga|substate.DRAWING_R1~regout\ & (((!\vga|Equal0~6_combout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (\vga|substate.DRAWING_R2~regout\ & (!\vga|Equal2~5_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000010010101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|substate.DRAWING_R2~regout\,
-	datac => \vga|Equal2~5_combout\,
-	datad => \vga|Equal0~6_combout\,
-	combout => \vga|x_cursor[0]~17_combout\);
-
--- Location: LCCOMB_X25_Y12_N0
-\vga|x_cursor[0]~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[0]~18_combout\ = (\vga|vga_fb|SRAM_WE_N~0_combout\ & (((\vga|state.DRAWING_RECT~regout\) # (\vga|state.FILLING_RECT~regout\)))) # (!\vga|vga_fb|SRAM_WE_N~0_combout\ & (!\vga|x_cursor[0]~17_combout\ & (\vga|state.DRAWING_RECT~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011101010110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datab => \vga|x_cursor[0]~17_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|state.FILLING_RECT~regout\,
-	combout => \vga|x_cursor[0]~18_combout\);
-
--- Location: LCCOMB_X25_Y12_N6
-\vga|x_cursor[0]~37\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[0]~37_combout\ = (\RESET_N~regout\ & (\vga|state.IDLE~regout\ & ((!\vga|x_cursor[0]~18_combout\) # (!\vga|substate.INIT~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \RESET_N~regout\,
-	datab => \vga|substate.INIT~regout\,
-	datac => \vga|state.IDLE~regout\,
-	datad => \vga|x_cursor[0]~18_combout\,
-	combout => \vga|x_cursor[0]~37_combout\);
-
--- Location: LCFF_X25_Y13_N17
-\vga|x_cursor[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[2]~21_combout\,
-	sdata => \vga|Add1~8_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(2));
-
--- Location: LCCOMB_X23_Y13_N4
-\vga|Add1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~0_combout\ = \vga|x_cursor\(0) $ (VCC)
--- \vga|Add1~1\ = CARRY(\vga|x_cursor\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(0),
-	datad => VCC,
-	combout => \vga|Add1~0_combout\,
-	cout => \vga|Add1~1\);
-
--- Location: LCCOMB_X24_Y13_N12
-\vga|Add1~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~2_combout\ = (\vga|x_cursor[7]~15_combout\ & ((\vga|Add1~0_combout\))) # (!\vga|x_cursor[7]~15_combout\ & (\vga|x_start\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100101011001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_start\(0),
-	datab => \vga|Add1~0_combout\,
-	datac => \vga|x_cursor[7]~15_combout\,
-	combout => \vga|Add1~2_combout\);
-
--- Location: LCFF_X25_Y13_N13
-\vga|x_cursor[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[0]~12_combout\,
-	sdata => \vga|Add1~2_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(0));
-
--- Location: LCCOMB_X23_Y13_N16
-\vga|Add1~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~18_combout\ = (\vga|x_cursor\(6) & (\vga|Add1~16\ $ (GND))) # (!\vga|x_cursor\(6) & (!\vga|Add1~16\ & VCC))
--- \vga|Add1~19\ = CARRY((\vga|x_cursor\(6) & !\vga|Add1~16\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(6),
-	datad => VCC,
-	cin => \vga|Add1~16\,
-	combout => \vga|Add1~18_combout\,
-	cout => \vga|Add1~19\);
-
--- Location: LCFF_X29_Y13_N15
-\sprite_renderer|FB_X0[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[6]~22_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(6));
-
--- Location: LCCOMB_X26_Y13_N6
-\vga|x_start~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~7_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(6))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(6),
-	combout => \vga|x_start~7_combout\);
-
--- Location: LCFF_X26_Y13_N7
-\vga|x_start[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~7_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(6));
-
--- Location: LCCOMB_X24_Y13_N8
-\vga|Add1~20\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~20_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~18_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(6))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor[7]~15_combout\,
-	datac => \vga|Add1~18_combout\,
-	datad => \vga|x_start\(6),
-	combout => \vga|Add1~20_combout\);
-
--- Location: LCFF_X25_Y13_N25
-\vga|x_cursor[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[6]~29_combout\,
-	sdata => \vga|Add1~20_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(6));
-
--- Location: LCCOMB_X26_Y13_N30
-\vga|Equal0~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~3_combout\ = (\vga|x_end\(6) & (\vga|x_cursor\(6) & (\vga|x_cursor\(7) $ (!\vga|x_end\(7))))) # (!\vga|x_end\(6) & (!\vga|x_cursor\(6) & (\vga|x_cursor\(7) $ (!\vga|x_end\(7)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000001001000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_end\(6),
-	datab => \vga|x_cursor\(7),
-	datac => \vga|x_end\(7),
-	datad => \vga|x_cursor\(6),
-	combout => \vga|Equal0~3_combout\);
-
--- Location: LCCOMB_X26_Y13_N28
-\vga|x_end~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~1_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110011111100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(0),
-	combout => \vga|x_end~1_combout\);
-
--- Location: LCFF_X26_Y13_N29
-\vga|x_end[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_end~1_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(0));
-
--- Location: LCCOMB_X27_Y13_N26
-\vga|x_end~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_end~0_combout\ = (\sprite_renderer|FB_CLEAR~regout\) # (\sprite_renderer|FB_X0\(1))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(1),
-	combout => \vga|x_end~0_combout\);
-
--- Location: LCFF_X26_Y13_N19
-\vga|x_end[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	sdata => \vga|x_end~0_combout\,
-	sload => VCC,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_end\(1));
-
--- Location: LCCOMB_X26_Y13_N18
-\vga|Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~0_combout\ = (\vga|x_cursor\(1) & (\vga|x_end\(1) & (\vga|x_end\(0) $ (!\vga|x_cursor\(0))))) # (!\vga|x_cursor\(1) & (!\vga|x_end\(1) & (\vga|x_end\(0) $ (!\vga|x_cursor\(0)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000010000100001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor\(1),
-	datab => \vga|x_end\(0),
-	datac => \vga|x_end\(1),
-	datad => \vga|x_cursor\(0),
-	combout => \vga|Equal0~0_combout\);
-
--- Location: LCCOMB_X26_Y13_N0
-\vga|Equal0~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~4_combout\ = (\vga|Equal0~1_combout\ & (\vga|Equal0~2_combout\ & (\vga|Equal0~3_combout\ & \vga|Equal0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal0~1_combout\,
-	datab => \vga|Equal0~2_combout\,
-	datac => \vga|Equal0~3_combout\,
-	datad => \vga|Equal0~0_combout\,
-	combout => \vga|Equal0~4_combout\);
-
--- Location: LCCOMB_X26_Y13_N10
-\vga|Equal0~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Equal0~6_combout\ = (!\vga|Equal0~5_combout\ & (\vga|Equal0~4_combout\ & (\vga|x_cursor\(8) $ (!\vga|x_end\(8)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0100000100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Equal0~5_combout\,
-	datab => \vga|x_cursor\(8),
-	datac => \vga|x_end\(8),
-	datad => \vga|Equal0~4_combout\,
-	combout => \vga|Equal0~6_combout\);
-
--- Location: LCCOMB_X24_Y13_N24
-\vga|x_cursor[7]~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[7]~15_combout\ = (\vga|substate.DRAWING_R1~regout\ & ((\vga|state.DRAWING_RECT~regout\) # ((!\vga|Equal0~6_combout\ & \vga|x_cursor[7]~14_combout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (!\vga|Equal0~6_combout\ & 
--- ((\vga|x_cursor[7]~14_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1011001110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|substate.DRAWING_R1~regout\,
-	datab => \vga|Equal0~6_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|x_cursor[7]~14_combout\,
-	combout => \vga|x_cursor[7]~15_combout\);
-
--- Location: LCCOMB_X24_Y13_N22
-\vga|Add1~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~5_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~3_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010110010101100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add1~3_combout\,
-	datab => \vga|x_start\(1),
-	datac => \vga|x_cursor[7]~15_combout\,
-	combout => \vga|Add1~5_combout\);
-
--- Location: LCFF_X25_Y13_N15
-\vga|x_cursor[1]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[1]~19_combout\,
-	sdata => \vga|Add1~5_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(1));
-
--- Location: LCCOMB_X25_Y13_N18
-\vga|x_cursor[3]~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[3]~23_combout\ = (\vga|x_cursor\(3) & (\vga|x_cursor[2]~22\ & VCC)) # (!\vga|x_cursor\(3) & (!\vga|x_cursor[2]~22\))
--- \vga|x_cursor[3]~24\ = CARRY((!\vga|x_cursor\(3) & !\vga|x_cursor[2]~22\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(3),
-	datad => VCC,
-	cin => \vga|x_cursor[2]~22\,
-	combout => \vga|x_cursor[3]~23_combout\,
-	cout => \vga|x_cursor[3]~24\);
-
--- Location: LCFF_X29_Y13_N9
-\sprite_renderer|FB_X0[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[3]~16_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(3));
-
--- Location: LCCOMB_X25_Y12_N8
-\vga|x_start~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~6_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(3))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000001010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_X0\(3),
-	combout => \vga|x_start~6_combout\);
-
--- Location: LCFF_X25_Y12_N9
-\vga|x_start[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~6_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(3));
-
--- Location: LCCOMB_X24_Y13_N20
-\vga|Add1~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~11_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~9_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(3))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010111110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add1~9_combout\,
-	datac => \vga|x_cursor[7]~15_combout\,
-	datad => \vga|x_start\(3),
-	combout => \vga|Add1~11_combout\);
-
--- Location: LCFF_X25_Y13_N19
-\vga|x_cursor[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[3]~23_combout\,
-	sdata => \vga|Add1~11_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(3));
-
--- Location: LCCOMB_X25_Y13_N22
-\vga|x_cursor[5]~27\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[5]~27_combout\ = (\vga|x_cursor\(5) & (\vga|x_cursor[4]~26\ & VCC)) # (!\vga|x_cursor\(5) & (!\vga|x_cursor[4]~26\))
--- \vga|x_cursor[5]~28\ = CARRY((!\vga|x_cursor\(5) & !\vga|x_cursor[4]~26\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(5),
-	datad => VCC,
-	cin => \vga|x_cursor[4]~26\,
-	combout => \vga|x_cursor[5]~27_combout\,
-	cout => \vga|x_cursor[5]~28\);
-
--- Location: LCCOMB_X26_Y13_N8
-\vga|x_start~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~8_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(5))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(5),
-	combout => \vga|x_start~8_combout\);
-
--- Location: LCFF_X26_Y13_N9
-\vga|x_start[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~8_combout\,
-	ena => \vga|y_end[8]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_start\(5));
-
--- Location: LCCOMB_X24_Y13_N26
-\vga|Add1~17\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~17_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~15_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(5))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010110010101100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Add1~15_combout\,
-	datab => \vga|x_start\(5),
-	datac => \vga|x_cursor[7]~15_combout\,
-	combout => \vga|Add1~17_combout\);
-
--- Location: LCFF_X25_Y13_N23
-\vga|x_cursor[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[5]~27_combout\,
-	sdata => \vga|Add1~17_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(5));
-
--- Location: LCCOMB_X25_Y13_N26
-\vga|x_cursor[7]~31\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[7]~31_combout\ = (\vga|x_cursor\(7) & (\vga|x_cursor[6]~30\ & VCC)) # (!\vga|x_cursor\(7) & (!\vga|x_cursor[6]~30\))
--- \vga|x_cursor[7]~32\ = CARRY((!\vga|x_cursor\(7) & !\vga|x_cursor[6]~30\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(7),
-	datad => VCC,
-	cin => \vga|x_cursor[6]~30\,
-	combout => \vga|x_cursor[7]~31_combout\,
-	cout => \vga|x_cursor[7]~32\);
-
--- Location: LCCOMB_X23_Y13_N26
+-- Location: LCCOMB_X18_Y11_N14
 \vga|x_start~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|x_start~2_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(7))
+-- \vga|x_start~2_combout\ = (\sprite_renderer|FB_X0\(7) & !\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(7),
+	datac => \sprite_renderer|FB_X0\(7),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
 	combout => \vga|x_start~2_combout\);
 
--- Location: LCFF_X23_Y13_N27
+-- Location: LCFF_X18_Y11_N15
 \vga|x_start[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -10620,53 +10232,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|x_start\(7));
 
--- Location: LCCOMB_X23_Y13_N18
-\vga|Add1~21\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y11_N24
+\vga|Equal2~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Add1~21_combout\ = (\vga|x_cursor\(7) & (!\vga|Add1~19\)) # (!\vga|x_cursor\(7) & ((\vga|Add1~19\) # (GND)))
--- \vga|Add1~22\ = CARRY((!\vga|Add1~19\) # (!\vga|x_cursor\(7)))
+-- \vga|Equal2~0_combout\ = (\vga|x_cursor\(7) & (\vga|x_start\(7) & (\vga|x_start\(8) $ (!\vga|x_cursor\(8))))) # (!\vga|x_cursor\(7) & (!\vga|x_start\(7) & (\vga|x_start\(8) $ (!\vga|x_cursor\(8)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \vga|x_cursor\(7),
-	datad => VCC,
-	cin => \vga|Add1~19\,
-	combout => \vga|Add1~21_combout\,
-	cout => \vga|Add1~22\);
-
--- Location: LCCOMB_X24_Y13_N30
-\vga|Add1~23\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~23_combout\ = (\vga|x_cursor[7]~15_combout\ & ((\vga|Add1~21_combout\))) # (!\vga|x_cursor[7]~15_combout\ & (\vga|x_start\(7)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110010011100100",
+	lut_mask => "1000010000100001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_cursor[7]~15_combout\,
-	datab => \vga|x_start\(7),
-	datac => \vga|Add1~21_combout\,
-	combout => \vga|Add1~23_combout\);
+	dataa => \vga|x_cursor\(7),
+	datab => \vga|x_start\(8),
+	datac => \vga|x_start\(7),
+	datad => \vga|x_cursor\(8),
+	combout => \vga|Equal2~0_combout\);
 
--- Location: LCFF_X25_Y13_N27
-\vga|x_cursor[7]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[7]~31_combout\,
-	sdata => \vga|Add1~23_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(7));
-
--- Location: LCCOMB_X25_Y13_N28
+-- Location: LCCOMB_X20_Y11_N28
 \vga|x_cursor[8]~33\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|x_cursor[8]~33_combout\ = (\vga|x_cursor\(8) & ((GND) # (!\vga|x_cursor[7]~32\))) # (!\vga|x_cursor\(8) & (\vga|x_cursor[7]~32\ $ (GND)))
@@ -10684,7 +10267,130 @@ PORT MAP (
 	combout => \vga|x_cursor[8]~33_combout\,
 	cout => \vga|x_cursor[8]~34\);
 
--- Location: LCCOMB_X23_Y13_N20
+-- Location: LCCOMB_X20_Y11_N30
+\vga|x_cursor[9]~35\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[9]~35_combout\ = \vga|x_cursor[8]~34\ $ (!\vga|x_cursor\(9))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \vga|x_cursor\(9),
+	cin => \vga|x_cursor[8]~34\,
+	combout => \vga|x_cursor[9]~35_combout\);
+
+-- Location: LCCOMB_X16_Y11_N6
+\vga|Add1~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~3_combout\ = (\vga|x_cursor\(1) & (!\vga|Add1~1\)) # (!\vga|x_cursor\(1) & ((\vga|Add1~1\) # (GND)))
+-- \vga|Add1~4\ = CARRY((!\vga|Add1~1\) # (!\vga|x_cursor\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(1),
+	datad => VCC,
+	cin => \vga|Add1~1\,
+	combout => \vga|Add1~3_combout\,
+	cout => \vga|Add1~4\);
+
+-- Location: LCCOMB_X16_Y11_N8
+\vga|Add1~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~6_combout\ = (\vga|x_cursor\(2) & (\vga|Add1~4\ $ (GND))) # (!\vga|x_cursor\(2) & (!\vga|Add1~4\ & VCC))
+-- \vga|Add1~7\ = CARRY((\vga|x_cursor\(2) & !\vga|Add1~4\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(2),
+	datad => VCC,
+	cin => \vga|Add1~4\,
+	combout => \vga|Add1~6_combout\,
+	cout => \vga|Add1~7\);
+
+-- Location: LCCOMB_X16_Y11_N10
+\vga|Add1~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~9_combout\ = (\vga|x_cursor\(3) & (!\vga|Add1~7\)) # (!\vga|x_cursor\(3) & ((\vga|Add1~7\) # (GND)))
+-- \vga|Add1~10\ = CARRY((!\vga|Add1~7\) # (!\vga|x_cursor\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(3),
+	datad => VCC,
+	cin => \vga|Add1~7\,
+	combout => \vga|Add1~9_combout\,
+	cout => \vga|Add1~10\);
+
+-- Location: LCCOMB_X16_Y11_N14
+\vga|Add1~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~15_combout\ = (\vga|x_cursor\(5) & (!\vga|Add1~13\)) # (!\vga|x_cursor\(5) & ((\vga|Add1~13\) # (GND)))
+-- \vga|Add1~16\ = CARRY((!\vga|Add1~13\) # (!\vga|x_cursor\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(5),
+	datad => VCC,
+	cin => \vga|Add1~13\,
+	combout => \vga|Add1~15_combout\,
+	cout => \vga|Add1~16\);
+
+-- Location: LCCOMB_X16_Y11_N16
+\vga|Add1~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~18_combout\ = (\vga|x_cursor\(6) & (\vga|Add1~16\ $ (GND))) # (!\vga|x_cursor\(6) & (!\vga|Add1~16\ & VCC))
+-- \vga|Add1~19\ = CARRY((\vga|x_cursor\(6) & !\vga|Add1~16\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(6),
+	datad => VCC,
+	cin => \vga|Add1~16\,
+	combout => \vga|Add1~18_combout\,
+	cout => \vga|Add1~19\);
+
+-- Location: LCCOMB_X16_Y11_N18
+\vga|Add1~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~21_combout\ = (\vga|x_cursor\(7) & (!\vga|Add1~19\)) # (!\vga|x_cursor\(7) & ((\vga|Add1~19\) # (GND)))
+-- \vga|Add1~22\ = CARRY((!\vga|Add1~19\) # (!\vga|x_cursor\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(7),
+	datad => VCC,
+	cin => \vga|Add1~19\,
+	combout => \vga|Add1~21_combout\,
+	cout => \vga|Add1~22\);
+
+-- Location: LCCOMB_X16_Y11_N20
 \vga|Add1~24\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|Add1~24_combout\ = (\vga|x_cursor\(8) & (\vga|Add1~22\ $ (GND))) # (!\vga|x_cursor\(8) & (!\vga|Add1~22\ & VCC))
@@ -10702,50 +10408,7 @@ PORT MAP (
 	combout => \vga|Add1~24_combout\,
 	cout => \vga|Add1~25\);
 
--- Location: LCCOMB_X24_Y13_N6
-\vga|Add1~26\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Add1~26_combout\ = (\vga|x_cursor[7]~15_combout\ & (\vga|Add1~24_combout\)) # (!\vga|x_cursor[7]~15_combout\ & ((\vga|x_start\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111010110100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|x_cursor[7]~15_combout\,
-	datac => \vga|Add1~24_combout\,
-	datad => \vga|x_start\(8),
-	combout => \vga|Add1~26_combout\);
-
--- Location: LCFF_X25_Y13_N29
-\vga|x_cursor[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_cursor[8]~33_combout\,
-	sdata => \vga|Add1~26_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
-	ena => \vga|x_cursor[0]~37_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|x_cursor\(8));
-
--- Location: LCCOMB_X25_Y13_N30
-\vga|x_cursor[9]~35\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_cursor[9]~35_combout\ = \vga|x_cursor[8]~34\ $ (!\vga|x_cursor\(9))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \vga|x_cursor\(9),
-	cin => \vga|x_cursor[8]~34\,
-	combout => \vga|x_cursor[9]~35_combout\);
-
--- Location: LCCOMB_X23_Y13_N22
+-- Location: LCCOMB_X16_Y11_N22
 \vga|Add1~27\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|Add1~27_combout\ = \vga|Add1~25\ $ (\vga|x_cursor\(9))
@@ -10760,1424 +10423,207 @@ PORT MAP (
 	cin => \vga|Add1~25\,
 	combout => \vga|Add1~27_combout\);
 
--- Location: LCCOMB_X24_Y13_N28
+-- Location: LCCOMB_X16_Y11_N30
 \vga|Add1~29\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Add1~29_combout\ = (\vga|x_cursor[7]~15_combout\ & ((\vga|Add1~27_combout\))) # (!\vga|x_cursor[7]~15_combout\ & (\vga|x_end\(9)))
+-- \vga|Add1~29_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~27_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_end\(9)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101001010000",
+	lut_mask => "1100101011001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_cursor[7]~15_combout\,
-	datac => \vga|x_end\(9),
-	datad => \vga|Add1~27_combout\,
+	dataa => \vga|x_end\(9),
+	datab => \vga|Add1~27_combout\,
+	datac => \vga|x_cursor[3]~15_combout\,
 	combout => \vga|Add1~29_combout\);
 
--- Location: LCFF_X25_Y13_N31
+-- Location: LCFF_X20_Y11_N31
 \vga|x_cursor[9]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
 	datain => \vga|x_cursor[9]~35_combout\,
 	sdata => \vga|Add1~29_combout\,
-	sload => \vga|x_cursor[7]~16_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
 	ena => \vga|x_cursor[0]~37_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \vga|x_cursor\(9));
 
--- Location: LCCOMB_X25_Y13_N2
+-- Location: LCCOMB_X21_Y11_N26
 \vga|Equal0~5\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|Equal0~5_combout\ = \vga|x_end\(9) $ (\vga|x_cursor\(9))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001111001100",
+	lut_mask => "0101101001011010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \vga|x_end\(9),
-	datad => \vga|x_cursor\(9),
+	dataa => \vga|x_end\(9),
+	datac => \vga|x_cursor\(9),
 	combout => \vga|Equal0~5_combout\);
 
--- Location: LCCOMB_X27_Y13_N2
-\vga|Selector0~6\ : cycloneii_lcell_comb
+-- Location: LCFF_X21_Y13_N3
+\sprite_renderer|FB_X0[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[0]~10_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(0));
+
+-- Location: LCCOMB_X22_Y11_N16
+\vga|x_start~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector0~6_combout\ = (\vga|Selector0~5_combout\ & (!\vga|Equal0~5_combout\ & (\vga|Equal0~4_combout\ & \vga|Equal1~4_combout\)))
+-- \vga|x_start~0_combout\ = (\sprite_renderer|FB_X0\(0) & !\sprite_renderer|FB_CLEAR~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0010000000000000",
+	lut_mask => "0000000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|Selector0~5_combout\,
-	datab => \vga|Equal0~5_combout\,
-	datac => \vga|Equal0~4_combout\,
-	datad => \vga|Equal1~4_combout\,
-	combout => \vga|Selector0~6_combout\);
+	datac => \sprite_renderer|FB_X0\(0),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~0_combout\);
 
--- Location: LCCOMB_X27_Y13_N6
-\vga|Selector0~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~9_combout\ = (\vga|state.IDLE~regout\ & (((!\vga|Selector0~6_combout\ & !\vga|Selector0~4_combout\)) # (!\vga|Selector0~7_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000001110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \vga|Selector0~7_combout\,
-	datab => \vga|Selector0~6_combout\,
-	datac => \vga|state.IDLE~regout\,
-	datad => \vga|Selector0~4_combout\,
-	combout => \vga|Selector0~9_combout\);
-
--- Location: LCCOMB_X27_Y13_N20
-\vga|Selector0~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|Selector0~10_combout\ = (\vga|Selector0~9_combout\) # ((!\vga|state.IDLE~regout\ & ((\sprite_renderer|FB_COLOR\(6)) # (\sprite_renderer|FB_CLEAR~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100001110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_COLOR\(6),
-	datab => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \vga|state.IDLE~regout\,
-	datad => \vga|Selector0~9_combout\,
-	combout => \vga|Selector0~10_combout\);
-
--- Location: LCFF_X27_Y13_N21
-\vga|state.IDLE\ : cycloneii_lcell_ff
+-- Location: LCFF_X22_Y11_N17
+\vga|x_start[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|Selector0~10_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \vga|state.IDLE~regout\);
-
--- Location: LCCOMB_X26_Y12_N4
-\vga|READY~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|READY~1_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & (!\sprite_renderer|FB_COLOR\(6) & !\vga|state.IDLE~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datac => \sprite_renderer|FB_COLOR\(6),
-	datad => \vga|state.IDLE~regout\,
-	combout => \vga|READY~1_combout\);
-
--- Location: LCCOMB_X31_Y15_N26
-\sprite_renderer|next_state.DRAWING~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|next_state.DRAWING~0_combout\ = (!\sprite_renderer|state.SHOWING~regout\ & ((\sprite_renderer|state.DRAWING~regout\) # (!\view|SHOW~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110000001111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|state.DRAWING~regout\,
-	datac => \sprite_renderer|state.SHOWING~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|next_state.DRAWING~0_combout\);
-
--- Location: LCCOMB_X31_Y15_N8
-\sprite_renderer|next_state.IDLE~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|next_state.IDLE~4_combout\ = (!\sprite_renderer|Selector64~0_combout\ & (\sprite_renderer|state.CLEARING~regout\ & (\RESET_N~regout\ & !\sprite_renderer|state.WAITING~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Selector64~0_combout\,
-	datab => \sprite_renderer|state.CLEARING~regout\,
-	datac => \RESET_N~regout\,
-	datad => \sprite_renderer|state.WAITING~regout\,
-	combout => \sprite_renderer|next_state.IDLE~4_combout\);
-
--- Location: LCFF_X31_Y15_N27
-\sprite_renderer|next_state.DRAWING\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|next_state.DRAWING~0_combout\,
-	ena => \sprite_renderer|next_state.IDLE~4_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|next_state.DRAWING~regout\);
-
--- Location: LCCOMB_X31_Y15_N30
-\sprite_renderer|Selector66~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Selector66~0_combout\ = (\sprite_renderer|state.WAITING~regout\ & (\vga|READY~1_combout\ & (!\sprite_renderer|FB_FLIP~regout\ & \sprite_renderer|next_state.DRAWING~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000100000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.WAITING~regout\,
-	datab => \vga|READY~1_combout\,
-	datac => \sprite_renderer|FB_FLIP~regout\,
-	datad => \sprite_renderer|next_state.DRAWING~regout\,
-	combout => \sprite_renderer|Selector66~0_combout\);
-
--- Location: LCFF_X31_Y15_N31
-\sprite_renderer|state.DRAWING\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Selector66~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|state.DRAWING~regout\);
-
--- Location: LCFF_X30_Y14_N29
-\sprite_renderer|column[23]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~85_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(23));
-
--- Location: LCCOMB_X30_Y14_N30
-\sprite_renderer|Add1~86\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~86_combout\ = (\sprite_renderer|Add1~55_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~55_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~86_combout\);
-
--- Location: LCFF_X30_Y14_N31
-\sprite_renderer|column[22]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~86_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(22));
-
--- Location: LCCOMB_X30_Y14_N24
-\sprite_renderer|Add1~87\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~87_combout\ = (\sprite_renderer|Add1~53_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~53_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~87_combout\);
-
--- Location: LCFF_X30_Y14_N25
-\sprite_renderer|column[21]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~87_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(21));
-
--- Location: LCCOMB_X30_Y14_N10
-\sprite_renderer|Add1~88\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~88_combout\ = (\sprite_renderer|Add1~51_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~51_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~88_combout\);
-
--- Location: LCFF_X30_Y14_N11
-\sprite_renderer|column[20]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~88_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(20));
-
--- Location: LCCOMB_X29_Y15_N16
-\sprite_renderer|Add1~25\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~25_combout\ = (\sprite_renderer|column\(8) & (\sprite_renderer|Add1~22\ $ (GND))) # (!\sprite_renderer|column\(8) & (!\sprite_renderer|Add1~22\ & VCC))
--- \sprite_renderer|Add1~26\ = CARRY((\sprite_renderer|column\(8) & !\sprite_renderer|Add1~22\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(8),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~22\,
-	combout => \sprite_renderer|Add1~25_combout\,
-	cout => \sprite_renderer|Add1~26\);
-
--- Location: LCCOMB_X29_Y15_N22
-\sprite_renderer|Add1~33\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~33_combout\ = (\sprite_renderer|column\(11) & (!\sprite_renderer|Add1~32\)) # (!\sprite_renderer|column\(11) & ((\sprite_renderer|Add1~32\) # (GND)))
--- \sprite_renderer|Add1~34\ = CARRY((!\sprite_renderer|Add1~32\) # (!\sprite_renderer|column\(11)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(11),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~32\,
-	combout => \sprite_renderer|Add1~33_combout\,
-	cout => \sprite_renderer|Add1~34\);
-
--- Location: LCCOMB_X30_Y14_N12
-\sprite_renderer|Add1~79\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~79_combout\ = (\sprite_renderer|Add1~33_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~33_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~79_combout\);
-
--- Location: LCFF_X30_Y14_N13
-\sprite_renderer|column[11]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~79_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(11));
-
--- Location: LCCOMB_X29_Y15_N24
-\sprite_renderer|Add1~35\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~35_combout\ = (\sprite_renderer|column\(12) & (\sprite_renderer|Add1~34\ $ (GND))) # (!\sprite_renderer|column\(12) & (!\sprite_renderer|Add1~34\ & VCC))
--- \sprite_renderer|Add1~36\ = CARRY((\sprite_renderer|column\(12) & !\sprite_renderer|Add1~34\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(12),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~34\,
-	combout => \sprite_renderer|Add1~35_combout\,
-	cout => \sprite_renderer|Add1~36\);
-
--- Location: LCCOMB_X30_Y15_N28
-\sprite_renderer|Add1~96\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~96_combout\ = (\sprite_renderer|Add1~35_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~35_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~96_combout\);
-
--- Location: LCFF_X30_Y15_N29
-\sprite_renderer|column[12]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~96_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(12));
-
--- Location: LCCOMB_X29_Y15_N26
-\sprite_renderer|Add1~37\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~37_combout\ = (\sprite_renderer|column\(13) & (!\sprite_renderer|Add1~36\)) # (!\sprite_renderer|column\(13) & ((\sprite_renderer|Add1~36\) # (GND)))
--- \sprite_renderer|Add1~38\ = CARRY((!\sprite_renderer|Add1~36\) # (!\sprite_renderer|column\(13)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(13),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~36\,
-	combout => \sprite_renderer|Add1~37_combout\,
-	cout => \sprite_renderer|Add1~38\);
-
--- Location: LCCOMB_X29_Y15_N28
-\sprite_renderer|Add1~39\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~39_combout\ = (\sprite_renderer|column\(14) & (\sprite_renderer|Add1~38\ $ (GND))) # (!\sprite_renderer|column\(14) & (!\sprite_renderer|Add1~38\ & VCC))
--- \sprite_renderer|Add1~40\ = CARRY((\sprite_renderer|column\(14) & !\sprite_renderer|Add1~38\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(14),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~38\,
-	combout => \sprite_renderer|Add1~39_combout\,
-	cout => \sprite_renderer|Add1~40\);
-
--- Location: LCCOMB_X30_Y15_N24
-\sprite_renderer|Add1~94\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~94_combout\ = (\sprite_renderer|Add1~39_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~39_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~94_combout\);
-
--- Location: LCFF_X30_Y15_N25
-\sprite_renderer|column[14]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~94_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(14));
-
--- Location: LCCOMB_X29_Y15_N30
-\sprite_renderer|Add1~41\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~41_combout\ = (\sprite_renderer|column\(15) & (!\sprite_renderer|Add1~40\)) # (!\sprite_renderer|column\(15) & ((\sprite_renderer|Add1~40\) # (GND)))
--- \sprite_renderer|Add1~42\ = CARRY((!\sprite_renderer|Add1~40\) # (!\sprite_renderer|column\(15)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(15),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~40\,
-	combout => \sprite_renderer|Add1~41_combout\,
-	cout => \sprite_renderer|Add1~42\);
-
--- Location: LCCOMB_X30_Y15_N14
-\sprite_renderer|Add1~93\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~93_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~41_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~41_combout\,
-	combout => \sprite_renderer|Add1~93_combout\);
-
--- Location: LCFF_X30_Y15_N15
-\sprite_renderer|column[15]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~93_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(15));
-
--- Location: LCCOMB_X29_Y14_N0
-\sprite_renderer|Add1~43\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~43_combout\ = (\sprite_renderer|column\(16) & (\sprite_renderer|Add1~42\ $ (GND))) # (!\sprite_renderer|column\(16) & (!\sprite_renderer|Add1~42\ & VCC))
--- \sprite_renderer|Add1~44\ = CARRY((\sprite_renderer|column\(16) & !\sprite_renderer|Add1~42\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(16),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~42\,
-	combout => \sprite_renderer|Add1~43_combout\,
-	cout => \sprite_renderer|Add1~44\);
-
--- Location: LCCOMB_X30_Y15_N20
-\sprite_renderer|Add1~92\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~92_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~43_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~43_combout\,
-	combout => \sprite_renderer|Add1~92_combout\);
-
--- Location: LCFF_X30_Y15_N21
-\sprite_renderer|column[16]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~92_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(16));
-
--- Location: LCCOMB_X29_Y14_N2
-\sprite_renderer|Add1~45\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~45_combout\ = (\sprite_renderer|column\(17) & (!\sprite_renderer|Add1~44\)) # (!\sprite_renderer|column\(17) & ((\sprite_renderer|Add1~44\) # (GND)))
--- \sprite_renderer|Add1~46\ = CARRY((!\sprite_renderer|Add1~44\) # (!\sprite_renderer|column\(17)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(17),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~44\,
-	combout => \sprite_renderer|Add1~45_combout\,
-	cout => \sprite_renderer|Add1~46\);
-
--- Location: LCCOMB_X32_Y14_N28
-\sprite_renderer|Add1~91\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~91_combout\ = (\sprite_renderer|Add1~45_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~45_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~91_combout\);
-
--- Location: LCFF_X32_Y14_N29
-\sprite_renderer|column[17]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~91_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(17));
-
--- Location: LCCOMB_X29_Y14_N4
-\sprite_renderer|Add1~47\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~47_combout\ = (\sprite_renderer|column\(18) & (\sprite_renderer|Add1~46\ $ (GND))) # (!\sprite_renderer|column\(18) & (!\sprite_renderer|Add1~46\ & VCC))
--- \sprite_renderer|Add1~48\ = CARRY((\sprite_renderer|column\(18) & !\sprite_renderer|Add1~46\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(18),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~46\,
-	combout => \sprite_renderer|Add1~47_combout\,
-	cout => \sprite_renderer|Add1~48\);
-
--- Location: LCCOMB_X29_Y14_N6
-\sprite_renderer|Add1~49\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~49_combout\ = (\sprite_renderer|column\(19) & (!\sprite_renderer|Add1~48\)) # (!\sprite_renderer|column\(19) & ((\sprite_renderer|Add1~48\) # (GND)))
--- \sprite_renderer|Add1~50\ = CARRY((!\sprite_renderer|Add1~48\) # (!\sprite_renderer|column\(19)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(19),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~48\,
-	combout => \sprite_renderer|Add1~49_combout\,
-	cout => \sprite_renderer|Add1~50\);
-
--- Location: LCCOMB_X29_Y14_N18
-\sprite_renderer|Add1~61\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~61_combout\ = (\sprite_renderer|column\(25) & (!\sprite_renderer|Add1~60\)) # (!\sprite_renderer|column\(25) & ((\sprite_renderer|Add1~60\) # (GND)))
--- \sprite_renderer|Add1~62\ = CARRY((!\sprite_renderer|Add1~60\) # (!\sprite_renderer|column\(25)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101001011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(25),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~60\,
-	combout => \sprite_renderer|Add1~61_combout\,
-	cout => \sprite_renderer|Add1~62\);
-
--- Location: LCCOMB_X30_Y14_N26
-\sprite_renderer|Add1~83\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~83_combout\ = (\sprite_renderer|Add1~61_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~61_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~83_combout\);
-
--- Location: LCFF_X30_Y14_N27
-\sprite_renderer|column[25]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~83_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(25));
-
--- Location: LCCOMB_X30_Y15_N18
-\sprite_renderer|Add1~84\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~84_combout\ = (\sprite_renderer|Add1~59_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~59_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~84_combout\);
-
--- Location: LCFF_X30_Y15_N19
-\sprite_renderer|column[24]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~84_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(24));
-
--- Location: LCCOMB_X29_Y14_N20
-\sprite_renderer|Add1~63\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~63_combout\ = (\sprite_renderer|column\(26) & (\sprite_renderer|Add1~62\ $ (GND))) # (!\sprite_renderer|column\(26) & (!\sprite_renderer|Add1~62\ & VCC))
--- \sprite_renderer|Add1~64\ = CARRY((\sprite_renderer|column\(26) & !\sprite_renderer|Add1~62\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(26),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~62\,
-	combout => \sprite_renderer|Add1~63_combout\,
-	cout => \sprite_renderer|Add1~64\);
-
--- Location: LCCOMB_X30_Y15_N16
-\sprite_renderer|Add1~82\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~82_combout\ = (\sprite_renderer|Add1~63_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~63_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~82_combout\);
-
--- Location: LCFF_X30_Y15_N17
-\sprite_renderer|column[26]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~82_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(26));
-
--- Location: LCCOMB_X31_Y14_N26
-\sprite_renderer|LessThan0~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~5_combout\ = (!\sprite_renderer|column\(27) & (!\sprite_renderer|column\(25) & (!\sprite_renderer|column\(24) & !\sprite_renderer|column\(26))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(27),
-	datab => \sprite_renderer|column\(25),
-	datac => \sprite_renderer|column\(24),
-	datad => \sprite_renderer|column\(26),
-	combout => \sprite_renderer|LessThan0~5_combout\);
-
--- Location: LCCOMB_X30_Y15_N2
-\sprite_renderer|Add1~95\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~95_combout\ = (\sprite_renderer|Add1~37_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~37_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~95_combout\);
-
--- Location: LCFF_X30_Y15_N3
-\sprite_renderer|column[13]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~95_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(13));
-
--- Location: LCCOMB_X30_Y15_N22
-\sprite_renderer|LessThan0~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~8_combout\ = (!\sprite_renderer|column\(14) & (!\sprite_renderer|column\(12) & (!\sprite_renderer|column\(15) & !\sprite_renderer|column\(13))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(14),
-	datab => \sprite_renderer|column\(12),
-	datac => \sprite_renderer|column\(15),
-	datad => \sprite_renderer|column\(13),
-	combout => \sprite_renderer|LessThan0~8_combout\);
-
--- Location: LCCOMB_X30_Y14_N4
-\sprite_renderer|Add1~90\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~90_combout\ = (\sprite_renderer|Add1~47_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~47_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~90_combout\);
-
--- Location: LCFF_X30_Y14_N5
-\sprite_renderer|column[18]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~90_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(18));
-
--- Location: LCCOMB_X32_Y14_N18
-\sprite_renderer|Add1~89\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~89_combout\ = (\sprite_renderer|Add1~49_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~49_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~89_combout\);
-
--- Location: LCFF_X32_Y14_N19
-\sprite_renderer|column[19]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~89_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(19));
-
--- Location: LCCOMB_X31_Y14_N12
-\sprite_renderer|LessThan0~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~7_combout\ = (!\sprite_renderer|column\(16) & (!\sprite_renderer|column\(17) & (!\sprite_renderer|column\(18) & !\sprite_renderer|column\(19))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(16),
-	datab => \sprite_renderer|column\(17),
-	datac => \sprite_renderer|column\(18),
-	datad => \sprite_renderer|column\(19),
-	combout => \sprite_renderer|LessThan0~7_combout\);
-
--- Location: LCCOMB_X31_Y14_N22
-\sprite_renderer|LessThan0~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~9_combout\ = (\sprite_renderer|LessThan0~6_combout\ & (\sprite_renderer|LessThan0~5_combout\ & (\sprite_renderer|LessThan0~8_combout\ & \sprite_renderer|LessThan0~7_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan0~6_combout\,
-	datab => \sprite_renderer|LessThan0~5_combout\,
-	datac => \sprite_renderer|LessThan0~8_combout\,
-	datad => \sprite_renderer|LessThan0~7_combout\,
-	combout => \sprite_renderer|LessThan0~9_combout\);
-
--- Location: LCCOMB_X29_Y14_N22
-\sprite_renderer|Add1~65\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~65_combout\ = (\sprite_renderer|column\(27) & (!\sprite_renderer|Add1~64\)) # (!\sprite_renderer|column\(27) & ((\sprite_renderer|Add1~64\) # (GND)))
--- \sprite_renderer|Add1~66\ = CARRY((!\sprite_renderer|Add1~64\) # (!\sprite_renderer|column\(27)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(27),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~64\,
-	combout => \sprite_renderer|Add1~65_combout\,
-	cout => \sprite_renderer|Add1~66\);
-
--- Location: LCCOMB_X30_Y14_N8
-\sprite_renderer|Add1~81\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~81_combout\ = (\sprite_renderer|Add1~65_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~65_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~81_combout\);
-
--- Location: LCFF_X30_Y14_N9
-\sprite_renderer|column[27]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~81_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(27));
-
--- Location: LCCOMB_X29_Y14_N24
-\sprite_renderer|Add1~67\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~67_combout\ = (\sprite_renderer|column\(28) & (\sprite_renderer|Add1~66\ $ (GND))) # (!\sprite_renderer|column\(28) & (!\sprite_renderer|Add1~66\ & VCC))
--- \sprite_renderer|Add1~68\ = CARRY((\sprite_renderer|column\(28) & !\sprite_renderer|Add1~66\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(28),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~66\,
-	combout => \sprite_renderer|Add1~67_combout\,
-	cout => \sprite_renderer|Add1~68\);
-
--- Location: LCCOMB_X30_Y14_N2
-\sprite_renderer|Add1~78\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~78_combout\ = (\sprite_renderer|Add1~67_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~67_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~78_combout\);
-
--- Location: LCFF_X30_Y14_N3
-\sprite_renderer|column[28]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~78_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(28));
-
--- Location: LCCOMB_X29_Y14_N26
-\sprite_renderer|Add1~69\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~69_combout\ = (\sprite_renderer|column\(29) & (!\sprite_renderer|Add1~68\)) # (!\sprite_renderer|column\(29) & ((\sprite_renderer|Add1~68\) # (GND)))
--- \sprite_renderer|Add1~70\ = CARRY((!\sprite_renderer|Add1~68\) # (!\sprite_renderer|column\(29)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(29),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~68\,
-	combout => \sprite_renderer|Add1~69_combout\,
-	cout => \sprite_renderer|Add1~70\);
-
--- Location: LCCOMB_X32_Y14_N24
-\sprite_renderer|Add1~77\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~77_combout\ = (\sprite_renderer|Add1~69_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~69_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~77_combout\);
-
--- Location: LCFF_X32_Y14_N25
-\sprite_renderer|column[29]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~77_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(29));
-
--- Location: LCCOMB_X29_Y14_N28
-\sprite_renderer|Add1~71\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~71_combout\ = (\sprite_renderer|column\(30) & (\sprite_renderer|Add1~70\ $ (GND))) # (!\sprite_renderer|column\(30) & (!\sprite_renderer|Add1~70\ & VCC))
--- \sprite_renderer|Add1~72\ = CARRY((\sprite_renderer|column\(30) & !\sprite_renderer|Add1~70\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010010100001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(30),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~70\,
-	combout => \sprite_renderer|Add1~71_combout\,
-	cout => \sprite_renderer|Add1~72\);
-
--- Location: LCCOMB_X29_Y14_N30
-\sprite_renderer|Add1~73\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~73_combout\ = \sprite_renderer|Add1~72\ $ (\sprite_renderer|column\(31))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => \sprite_renderer|column\(31),
-	cin => \sprite_renderer|Add1~72\,
-	combout => \sprite_renderer|Add1~73_combout\);
-
--- Location: LCCOMB_X30_Y15_N10
-\sprite_renderer|Add1~75\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~75_combout\ = (\sprite_renderer|LessThan0~10_combout\ & (\sprite_renderer|Add1~73_combout\ & \sprite_renderer|state.DRAWING~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~73_combout\,
-	datad => \sprite_renderer|state.DRAWING~regout\,
-	combout => \sprite_renderer|Add1~75_combout\);
-
--- Location: LCFF_X30_Y15_N11
-\sprite_renderer|column[31]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~75_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(31));
-
--- Location: LCCOMB_X30_Y15_N26
-\sprite_renderer|Add1~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~9_combout\ = (\sprite_renderer|LessThan0~10_combout\ & \sprite_renderer|Add1~7_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~7_combout\,
-	combout => \sprite_renderer|Add1~9_combout\);
-
--- Location: LCFF_X30_Y15_N27
-\sprite_renderer|column[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~9_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(2));
-
--- Location: LCCOMB_X30_Y15_N6
-\sprite_renderer|Add1~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~2_combout\ = (\sprite_renderer|LessThan0~10_combout\ & (\sprite_renderer|Add1~0_combout\ & \sprite_renderer|state.DRAWING~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|LessThan0~10_combout\,
-	datac => \sprite_renderer|Add1~0_combout\,
-	datad => \sprite_renderer|state.DRAWING~regout\,
-	combout => \sprite_renderer|Add1~2_combout\);
-
--- Location: LCFF_X30_Y15_N7
-\sprite_renderer|column[0]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(0));
-
--- Location: LCCOMB_X30_Y15_N4
-\sprite_renderer|LessThan0~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~2_combout\ = (((!\sprite_renderer|column\(0)) # (!\sprite_renderer|column\(1))) # (!\sprite_renderer|column\(2))) # (!\sprite_renderer|column\(3))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0111111111111111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(3),
-	datab => \sprite_renderer|column\(2),
-	datac => \sprite_renderer|column\(1),
-	datad => \sprite_renderer|column\(0),
-	combout => \sprite_renderer|LessThan0~2_combout\);
-
--- Location: LCCOMB_X29_Y13_N22
-\sprite_renderer|LessThan0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~0_combout\ = (!\sprite_renderer|column\(5) & (!\sprite_renderer|column\(7) & (!\sprite_renderer|column\(6) & !\sprite_renderer|column\(8))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(5),
-	datab => \sprite_renderer|column\(7),
-	datac => \sprite_renderer|column\(6),
-	datad => \sprite_renderer|column\(8),
-	combout => \sprite_renderer|LessThan0~0_combout\);
-
--- Location: LCCOMB_X30_Y14_N16
-\sprite_renderer|Add1~76\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~76_combout\ = (\sprite_renderer|Add1~71_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|Add1~71_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~76_combout\);
-
--- Location: LCFF_X30_Y14_N17
-\sprite_renderer|column[30]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~76_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(30));
-
--- Location: LCCOMB_X31_Y14_N28
-\sprite_renderer|LessThan0~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~1_combout\ = (!\sprite_renderer|column\(28) & (!\sprite_renderer|column\(30) & (!\sprite_renderer|column\(9) & !\sprite_renderer|column\(29))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(28),
-	datab => \sprite_renderer|column\(30),
-	datac => \sprite_renderer|column\(9),
-	datad => \sprite_renderer|column\(29),
-	combout => \sprite_renderer|LessThan0~1_combout\);
-
--- Location: LCCOMB_X31_Y14_N30
-\sprite_renderer|LessThan0~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~3_combout\ = (\sprite_renderer|LessThan0~0_combout\ & (\sprite_renderer|LessThan0~1_combout\ & ((\sprite_renderer|LessThan0~2_combout\) # (!\sprite_renderer|column\(4)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|column\(4),
-	datab => \sprite_renderer|LessThan0~2_combout\,
-	datac => \sprite_renderer|LessThan0~0_combout\,
-	datad => \sprite_renderer|LessThan0~1_combout\,
-	combout => \sprite_renderer|LessThan0~3_combout\);
-
--- Location: LCCOMB_X31_Y14_N24
-\sprite_renderer|LessThan0~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|LessThan0~10_combout\ = (\sprite_renderer|column\(31)) # ((\sprite_renderer|LessThan0~4_combout\ & (\sprite_renderer|LessThan0~9_combout\ & \sprite_renderer|LessThan0~3_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111100011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|LessThan0~4_combout\,
-	datab => \sprite_renderer|LessThan0~9_combout\,
-	datac => \sprite_renderer|column\(31),
-	datad => \sprite_renderer|LessThan0~3_combout\,
-	combout => \sprite_renderer|LessThan0~10_combout\);
-
--- Location: LCCOMB_X30_Y14_N0
-\sprite_renderer|Add1~18\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~18_combout\ = (\sprite_renderer|Add1~16_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~16_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~18_combout\);
-
--- Location: LCFF_X30_Y14_N1
-\sprite_renderer|column[5]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~18_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(5));
-
--- Location: LCCOMB_X30_Y15_N30
-\sprite_renderer|Add1~15\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~15_combout\ = (\sprite_renderer|Add1~13_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|Add1~13_combout\,
-	datac => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~15_combout\);
-
--- Location: LCFF_X30_Y15_N31
-\sprite_renderer|column[4]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~15_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(4));
-
--- Location: LCCOMB_X29_Y15_N12
-\sprite_renderer|Add1~19\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~19_combout\ = (\sprite_renderer|column\(6) & (\sprite_renderer|Add1~17\ $ (GND))) # (!\sprite_renderer|column\(6) & (!\sprite_renderer|Add1~17\ & VCC))
--- \sprite_renderer|Add1~20\ = CARRY((\sprite_renderer|column\(6) & !\sprite_renderer|Add1~17\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \sprite_renderer|column\(6),
-	datad => VCC,
-	cin => \sprite_renderer|Add1~17\,
-	combout => \sprite_renderer|Add1~19_combout\,
-	cout => \sprite_renderer|Add1~20\);
-
--- Location: LCCOMB_X30_Y14_N20
-\sprite_renderer|Add1~24\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~24_combout\ = (\sprite_renderer|Add1~19_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~19_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~24_combout\);
-
--- Location: LCFF_X30_Y14_N21
-\sprite_renderer|column[6]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~24_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(6));
-
--- Location: LCCOMB_X30_Y14_N6
-\sprite_renderer|Add1~27\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|Add1~27_combout\ = (\sprite_renderer|Add1~25_combout\ & \sprite_renderer|LessThan0~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \sprite_renderer|Add1~25_combout\,
-	datad => \sprite_renderer|LessThan0~10_combout\,
-	combout => \sprite_renderer|Add1~27_combout\);
-
--- Location: LCFF_X30_Y14_N7
-\sprite_renderer|column[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|Add1~27_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|ALT_INV_state.DRAWING~regout\,
-	ena => \sprite_renderer|Add1~3_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|column\(8));
-
--- Location: LCFF_X29_Y13_N19
-\sprite_renderer|FB_X0[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|FB_X0[8]~26_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	sclr => \sprite_renderer|FB_COLOR~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|FB_X0\(8));
-
--- Location: LCCOMB_X25_Y12_N4
-\vga|x_start~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \vga|x_start~1_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_X0\(8))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|FB_CLEAR~regout\,
-	datad => \sprite_renderer|FB_X0\(8),
-	combout => \vga|x_start~1_combout\);
-
--- Location: LCFF_X25_Y12_N5
-\vga|x_start[8]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|x_start~1_combout\,
+	datain => \vga|x_start~0_combout\,
 	ena => \vga|y_end[8]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \vga|x_start\(8));
+	regout => \vga|x_start\(0));
 
--- Location: LCCOMB_X25_Y12_N30
-\vga|Equal2~0\ : cycloneii_lcell_comb
+-- Location: LCFF_X21_Y13_N7
+\sprite_renderer|FB_X0[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[2]~14_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(2));
+
+-- Location: LCCOMB_X22_Y11_N4
+\vga|x_start~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Equal2~0_combout\ = (\vga|x_start\(7) & (\vga|x_cursor\(7) & (\vga|x_start\(8) $ (!\vga|x_cursor\(8))))) # (!\vga|x_start\(7) & (!\vga|x_cursor\(7) & (\vga|x_start\(8) $ (!\vga|x_cursor\(8)))))
+-- \vga|x_start~3_combout\ = (\sprite_renderer|FB_X0\(2) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(2),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~3_combout\);
+
+-- Location: LCFF_X22_Y11_N5
+\vga|x_start[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~3_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(2));
+
+-- Location: LCCOMB_X20_Y11_N16
+\vga|x_cursor[2]~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[2]~21_combout\ = (\vga|x_cursor\(2) & ((GND) # (!\vga|x_cursor[1]~20\))) # (!\vga|x_cursor\(2) & (\vga|x_cursor[1]~20\ $ (GND)))
+-- \vga|x_cursor[2]~22\ = CARRY((\vga|x_cursor\(2)) # (!\vga|x_cursor[1]~20\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(2),
+	datad => VCC,
+	cin => \vga|x_cursor[1]~20\,
+	combout => \vga|x_cursor[2]~21_combout\,
+	cout => \vga|x_cursor[2]~22\);
+
+-- Location: LCCOMB_X22_Y11_N20
+\vga|Add1~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~8_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~6_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_start\(2),
+	datac => \vga|Add1~6_combout\,
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~8_combout\);
+
+-- Location: LCFF_X20_Y11_N17
+\vga|x_cursor[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[2]~21_combout\,
+	sdata => \vga|Add1~8_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(2));
+
+-- Location: LCFF_X21_Y13_N5
+\sprite_renderer|FB_X0[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[1]~12_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(1));
+
+-- Location: LCCOMB_X22_Y11_N6
+\vga|x_start~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_start~4_combout\ = (\sprite_renderer|FB_X0\(1) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(1),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~4_combout\);
+
+-- Location: LCFF_X22_Y11_N7
+\vga|x_start[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~4_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(1));
+
+-- Location: LCCOMB_X22_Y11_N0
+\vga|Equal2~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal2~1_combout\ = (\vga|x_cursor\(1) & (\vga|x_start\(1) & (\vga|x_start\(2) $ (!\vga|x_cursor\(2))))) # (!\vga|x_cursor\(1) & (!\vga|x_start\(1) & (\vga|x_start\(2) $ (!\vga|x_cursor\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -12185,50 +10631,835 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|x_start\(7),
-	datab => \vga|x_start\(8),
-	datac => \vga|x_cursor\(8),
-	datad => \vga|x_cursor\(7),
-	combout => \vga|Equal2~0_combout\);
+	dataa => \vga|x_cursor\(1),
+	datab => \vga|x_start\(2),
+	datac => \vga|x_cursor\(2),
+	datad => \vga|x_start\(1),
+	combout => \vga|Equal2~1_combout\);
 
--- Location: LCCOMB_X25_Y12_N12
-\vga|y_cursor[0]~21\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X22_Y11_N2
+\vga|Equal2~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_cursor[0]~21_combout\ = (\vga|Equal2~4_combout\ & (\vga|Equal2~3_combout\ & (!\vga|substate.DRAWING_R1~regout\ & \vga|substate.DRAWING_R2~regout\)))
+-- \vga|Equal2~2_combout\ = (!\vga|Equal0~5_combout\ & (\vga|Equal2~1_combout\ & (\vga|x_cursor\(0) $ (!\vga|x_start\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000100000000000",
+	lut_mask => "0010000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(0),
+	datab => \vga|Equal0~5_combout\,
+	datac => \vga|x_start\(0),
+	datad => \vga|Equal2~1_combout\,
+	combout => \vga|Equal2~2_combout\);
+
+-- Location: LCCOMB_X21_Y11_N18
+\vga|Equal2~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal2~5_combout\ = (\vga|Equal2~4_combout\ & (\vga|Equal2~3_combout\ & (\vga|Equal2~0_combout\ & \vga|Equal2~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|Equal2~4_combout\,
 	datab => \vga|Equal2~3_combout\,
-	datac => \vga|substate.DRAWING_R1~regout\,
-	datad => \vga|substate.DRAWING_R2~regout\,
-	combout => \vga|y_cursor[0]~21_combout\);
+	datac => \vga|Equal2~0_combout\,
+	datad => \vga|Equal2~2_combout\,
+	combout => \vga|Equal2~5_combout\);
 
--- Location: LCCOMB_X24_Y12_N18
-\vga|y_cursor[0]~22\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y10_N24
+\vga|substate.DRAWING_R2~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_cursor[0]~22_combout\ = (!\vga|vga_fb|SRAM_WE_N~0_combout\ & (\vga|Equal2~0_combout\ & (\vga|y_cursor[0]~21_combout\ & \vga|Equal2~2_combout\)))
+-- \vga|substate.DRAWING_R2~4_combout\ = ((\vga|substate.INIT~regout\ & ((\vga|state.IDLE~regout\) # (\vga|state.DRAWING_RECT~regout\)))) # (!\RESET_N~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000000000000",
+	lut_mask => "1110111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datab => \vga|Equal2~0_combout\,
-	datac => \vga|y_cursor[0]~21_combout\,
-	datad => \vga|Equal2~2_combout\,
-	combout => \vga|y_cursor[0]~22_combout\);
+	dataa => \vga|state.IDLE~regout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datac => \RESET_N~regout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|substate.DRAWING_R2~4_combout\);
 
--- Location: LCCOMB_X24_Y12_N20
-\vga|y_cursor[0]~23\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y10_N4
+\vga|substate.DRAWING_R2~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|y_cursor[0]~23_combout\ = (\vga|y_cursor[0]~22_combout\) # ((!\vga|vga_fb|SRAM_WE_N~0_combout\ & (\vga|substate.DRAWING_R1~regout\ & \vga|Equal0~6_combout\)))
+-- \vga|substate.DRAWING_R2~5_combout\ = (\vga|substate.DRAWING_R2~regout\ & ((\vga|substate.DRAWING_R2~4_combout\) # ((\vga|READY~1_combout\ & !\vga|state.DRAWING_RECT~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|READY~1_combout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datac => \vga|substate.DRAWING_R2~4_combout\,
+	datad => \vga|substate.DRAWING_R2~regout\,
+	combout => \vga|substate.DRAWING_R2~5_combout\);
+
+-- Location: LCCOMB_X18_Y11_N2
+\vga|substate.DRAWING_R2~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|substate.DRAWING_R2~6_combout\ = (\vga|substate.DRAWING_R2~5_combout\) # ((\vga|Selector6~2_combout\ & (\RESET_N~regout\ & \vga|substate.DRAWING_R2~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector6~2_combout\,
+	datab => \RESET_N~regout\,
+	datac => \vga|substate.DRAWING_R2~3_combout\,
+	datad => \vga|substate.DRAWING_R2~5_combout\,
+	combout => \vga|substate.DRAWING_R2~6_combout\);
+
+-- Location: LCFF_X18_Y11_N3
+\vga|substate.DRAWING_R2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|substate.DRAWING_R2~6_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|substate.DRAWING_R2~regout\);
+
+-- Location: LCCOMB_X21_Y11_N4
+\vga|x_cursor[0]~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[0]~17_combout\ = (\vga|substate.DRAWING_R1~regout\ & (((!\vga|Equal0~6_combout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (!\vga|Equal2~5_combout\ & (\vga|substate.DRAWING_R2~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000010111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|Equal2~5_combout\,
+	datac => \vga|substate.DRAWING_R2~regout\,
+	datad => \vga|Equal0~6_combout\,
+	combout => \vga|x_cursor[0]~17_combout\);
+
+-- Location: LCCOMB_X19_Y11_N0
+\vga|x_cursor[0]~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[0]~18_combout\ = (\vga|state.DRAWING_RECT~regout\ & (((\vga|vga_fb|SRAM_WE_N~0_combout\) # (!\vga|x_cursor[0]~17_combout\)))) # (!\vga|state.DRAWING_RECT~regout\ & (\vga|state.FILLING_RECT~regout\ & (\vga|vga_fb|SRAM_WE_N~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000011101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|state.DRAWING_RECT~regout\,
+	datab => \vga|state.FILLING_RECT~regout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|x_cursor[0]~17_combout\,
+	combout => \vga|x_cursor[0]~18_combout\);
+
+-- Location: LCCOMB_X19_Y11_N14
+\vga|x_cursor[0]~37\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[0]~37_combout\ = (\vga|state.IDLE~regout\ & (\RESET_N~regout\ & ((!\vga|x_cursor[0]~18_combout\) # (!\vga|substate.INIT~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.INIT~regout\,
+	datab => \vga|state.IDLE~regout\,
+	datac => \RESET_N~regout\,
+	datad => \vga|x_cursor[0]~18_combout\,
+	combout => \vga|x_cursor[0]~37_combout\);
+
+-- Location: LCFF_X20_Y11_N13
+\vga|x_cursor[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[0]~12_combout\,
+	sdata => \vga|Add1~2_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(0));
+
+-- Location: LCCOMB_X20_Y11_N8
+\vga|Add1~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~5_combout\ = (\vga|x_cursor[3]~15_combout\ & (\vga|Add1~3_combout\)) # (!\vga|x_cursor[3]~15_combout\ & ((\vga|x_start\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor[3]~15_combout\,
+	datac => \vga|Add1~3_combout\,
+	datad => \vga|x_start\(1),
+	combout => \vga|Add1~5_combout\);
+
+-- Location: LCFF_X20_Y11_N15
+\vga|x_cursor[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[1]~19_combout\,
+	sdata => \vga|Add1~5_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(1));
+
+-- Location: LCCOMB_X20_Y11_N18
+\vga|x_cursor[3]~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[3]~23_combout\ = (\vga|x_cursor\(3) & (\vga|x_cursor[2]~22\ & VCC)) # (!\vga|x_cursor\(3) & (!\vga|x_cursor[2]~22\))
+-- \vga|x_cursor[3]~24\ = CARRY((!\vga|x_cursor\(3) & !\vga|x_cursor[2]~22\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(3),
+	datad => VCC,
+	cin => \vga|x_cursor[2]~22\,
+	combout => \vga|x_cursor[3]~23_combout\,
+	cout => \vga|x_cursor[3]~24\);
+
+-- Location: LCFF_X21_Y13_N9
+\sprite_renderer|FB_X0[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[3]~16_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(3));
+
+-- Location: LCCOMB_X22_Y11_N22
+\vga|x_start~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_start~6_combout\ = (\sprite_renderer|FB_X0\(3) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(3),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~6_combout\);
+
+-- Location: LCFF_X22_Y11_N23
+\vga|x_start[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~6_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(3));
+
+-- Location: LCCOMB_X20_Y11_N10
+\vga|Add1~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~11_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~9_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_start\(3),
+	datac => \vga|Add1~9_combout\,
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~11_combout\);
+
+-- Location: LCFF_X20_Y11_N19
+\vga|x_cursor[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[3]~23_combout\,
+	sdata => \vga|Add1~11_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(3));
+
+-- Location: LCCOMB_X20_Y11_N22
+\vga|x_cursor[5]~27\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[5]~27_combout\ = (\vga|x_cursor\(5) & (\vga|x_cursor[4]~26\ & VCC)) # (!\vga|x_cursor\(5) & (!\vga|x_cursor[4]~26\))
+-- \vga|x_cursor[5]~28\ = CARRY((!\vga|x_cursor\(5) & !\vga|x_cursor[4]~26\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(5),
+	datad => VCC,
+	cin => \vga|x_cursor[4]~26\,
+	combout => \vga|x_cursor[5]~27_combout\,
+	cout => \vga|x_cursor[5]~28\);
+
+-- Location: LCCOMB_X20_Y10_N20
+\vga|Add1~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~17_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~15_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111000100010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_start\(5),
+	datab => \vga|x_cursor[3]~15_combout\,
+	datad => \vga|Add1~15_combout\,
+	combout => \vga|Add1~17_combout\);
+
+-- Location: LCFF_X20_Y11_N23
+\vga|x_cursor[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[5]~27_combout\,
+	sdata => \vga|Add1~17_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(5));
+
+-- Location: LCCOMB_X20_Y11_N24
+\vga|x_cursor[6]~29\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[6]~29_combout\ = (\vga|x_cursor\(6) & ((GND) # (!\vga|x_cursor[5]~28\))) # (!\vga|x_cursor\(6) & (\vga|x_cursor[5]~28\ $ (GND)))
+-- \vga|x_cursor[6]~30\ = CARRY((\vga|x_cursor\(6)) # (!\vga|x_cursor[5]~28\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(6),
+	datad => VCC,
+	cin => \vga|x_cursor[5]~28\,
+	combout => \vga|x_cursor[6]~29_combout\,
+	cout => \vga|x_cursor[6]~30\);
+
+-- Location: LCCOMB_X20_Y11_N26
+\vga|x_cursor[7]~31\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_cursor[7]~31_combout\ = (\vga|x_cursor\(7) & (\vga|x_cursor[6]~30\ & VCC)) # (!\vga|x_cursor\(7) & (!\vga|x_cursor[6]~30\))
+-- \vga|x_cursor[7]~32\ = CARRY((!\vga|x_cursor\(7) & !\vga|x_cursor[6]~30\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_cursor\(7),
+	datad => VCC,
+	cin => \vga|x_cursor[6]~30\,
+	combout => \vga|x_cursor[7]~31_combout\,
+	cout => \vga|x_cursor[7]~32\);
+
+-- Location: LCCOMB_X20_Y11_N0
+\vga|Add1~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~23_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~21_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_start\(7),
+	datab => \vga|Add1~21_combout\,
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~23_combout\);
+
+-- Location: LCFF_X20_Y11_N27
+\vga|x_cursor[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[7]~31_combout\,
+	sdata => \vga|Add1~23_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(7));
+
+-- Location: LCCOMB_X20_Y11_N2
+\vga|Add1~26\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~26_combout\ = (\vga|x_cursor[3]~15_combout\ & ((\vga|Add1~24_combout\))) # (!\vga|x_cursor[3]~15_combout\ & (\vga|x_start\(8)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|x_start\(8),
+	datac => \vga|Add1~24_combout\,
+	datad => \vga|x_cursor[3]~15_combout\,
+	combout => \vga|Add1~26_combout\);
+
+-- Location: LCFF_X20_Y11_N29
+\vga|x_cursor[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[8]~33_combout\,
+	sdata => \vga|Add1~26_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(8));
+
+-- Location: LCCOMB_X18_Y11_N22
+\vga|x_end~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~8_combout\ = (\sprite_renderer|FB_X0\(8)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(8),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~8_combout\);
+
+-- Location: LCFF_X18_Y11_N23
+\vga|x_end[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_end~8_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(8));
+
+-- Location: LCCOMB_X21_Y11_N2
+\vga|x_end~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~1_combout\ = (\sprite_renderer|FB_X0\(0)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_X0\(0),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~1_combout\);
+
+-- Location: LCFF_X21_Y11_N3
+\vga|x_end[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_end~1_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(0));
+
+-- Location: LCCOMB_X22_Y11_N8
+\vga|x_end~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~0_combout\ = (\sprite_renderer|FB_X0\(1)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(1),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~0_combout\);
+
+-- Location: LCFF_X21_Y11_N9
+\vga|x_end[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|x_end~0_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(1));
+
+-- Location: LCCOMB_X21_Y11_N8
+\vga|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~0_combout\ = (\vga|x_cursor\(1) & (\vga|x_end\(1) & (\vga|x_end\(0) $ (!\vga|x_cursor\(0))))) # (!\vga|x_cursor\(1) & (!\vga|x_end\(1) & (\vga|x_end\(0) $ (!\vga|x_cursor\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor\(1),
+	datab => \vga|x_end\(0),
+	datac => \vga|x_end\(1),
+	datad => \vga|x_cursor\(0),
+	combout => \vga|Equal0~0_combout\);
+
+-- Location: LCCOMB_X22_Y11_N26
+\vga|x_end~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~2_combout\ = (\sprite_renderer|FB_X0\(3)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(3),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~2_combout\);
+
+-- Location: LCFF_X21_Y11_N21
+\vga|x_end[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|x_end~2_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(3));
+
+-- Location: LCCOMB_X21_Y11_N20
+\vga|Equal0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~1_combout\ = (\vga|x_end\(2) & (\vga|x_cursor\(2) & (\vga|x_cursor\(3) $ (!\vga|x_end\(3))))) # (!\vga|x_end\(2) & (!\vga|x_cursor\(2) & (\vga|x_cursor\(3) $ (!\vga|x_end\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000001001000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_end\(2),
+	datab => \vga|x_cursor\(3),
+	datac => \vga|x_end\(3),
+	datad => \vga|x_cursor\(2),
+	combout => \vga|Equal0~1_combout\);
+
+-- Location: LCFF_X21_Y13_N15
+\sprite_renderer|FB_X0[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_X0[6]~22_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_X0\(6));
+
+-- Location: LCCOMB_X22_Y11_N14
+\vga|x_end~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_end~7_combout\ = (\sprite_renderer|FB_X0\(6)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(6),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_end~7_combout\);
+
+-- Location: LCFF_X21_Y11_N29
+\vga|x_end[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|x_end~7_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_end\(6));
+
+-- Location: LCCOMB_X22_Y11_N24
+\vga|x_start~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|x_start~7_combout\ = (\sprite_renderer|FB_X0\(6) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_X0\(6),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|x_start~7_combout\);
+
+-- Location: LCFF_X22_Y11_N25
+\vga|x_start[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_start~7_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_start\(6));
+
+-- Location: LCCOMB_X20_Y11_N6
+\vga|Add1~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add1~20_combout\ = (\vga|x_cursor[3]~15_combout\ & (\vga|Add1~18_combout\)) # (!\vga|x_cursor[3]~15_combout\ & ((\vga|x_start\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101100011011000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_cursor[3]~15_combout\,
+	datab => \vga|Add1~18_combout\,
+	datac => \vga|x_start\(6),
+	combout => \vga|Add1~20_combout\);
+
+-- Location: LCFF_X20_Y11_N25
+\vga|x_cursor[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|x_cursor[6]~29_combout\,
+	sdata => \vga|Add1~20_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|x_cursor[0]~37_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|x_cursor\(6));
+
+-- Location: LCCOMB_X21_Y11_N28
+\vga|Equal0~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~3_combout\ = (\vga|x_end\(7) & (\vga|x_cursor\(7) & (\vga|x_end\(6) $ (!\vga|x_cursor\(6))))) # (!\vga|x_end\(7) & (!\vga|x_cursor\(7) & (\vga|x_end\(6) $ (!\vga|x_cursor\(6)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001000000001001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|x_end\(7),
+	datab => \vga|x_cursor\(7),
+	datac => \vga|x_end\(6),
+	datad => \vga|x_cursor\(6),
+	combout => \vga|Equal0~3_combout\);
+
+-- Location: LCCOMB_X21_Y11_N6
+\vga|Equal0~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~4_combout\ = (\vga|Equal0~2_combout\ & (\vga|Equal0~0_combout\ & (\vga|Equal0~1_combout\ & \vga|Equal0~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal0~2_combout\,
+	datab => \vga|Equal0~0_combout\,
+	datac => \vga|Equal0~1_combout\,
+	datad => \vga|Equal0~3_combout\,
+	combout => \vga|Equal0~4_combout\);
+
+-- Location: LCCOMB_X21_Y11_N12
+\vga|Equal0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal0~6_combout\ = (!\vga|Equal0~5_combout\ & (\vga|Equal0~4_combout\ & (\vga|x_cursor\(8) $ (!\vga|x_end\(8)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal0~5_combout\,
+	datab => \vga|x_cursor\(8),
+	datac => \vga|x_end\(8),
+	datad => \vga|Equal0~4_combout\,
+	combout => \vga|Equal0~6_combout\);
+
+-- Location: LCCOMB_X20_Y9_N30
+\vga|y_cursor[0]~43\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[0]~43_combout\ = (\vga|state.FILLING_RECT~regout\ & (\vga|substate.INIT~regout\ & ((\vga|y_cursor[0]~24_combout\) # (!\vga|Equal0~6_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor[0]~24_combout\,
+	datab => \vga|state.FILLING_RECT~regout\,
+	datac => \vga|Equal0~6_combout\,
+	datad => \vga|substate.INIT~regout\,
+	combout => \vga|y_cursor[0]~43_combout\);
+
+-- Location: LCCOMB_X18_Y11_N8
+\vga|y_cursor[0]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[0]~11_combout\ = (\vga|state.IDLE~regout\ & \RESET_N~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.IDLE~regout\,
+	datad => \RESET_N~regout\,
+	combout => \vga|y_cursor[0]~11_combout\);
+
+-- Location: LCCOMB_X20_Y9_N4
+\vga|y_cursor[2]~29\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[2]~29_combout\ = (\vga|y_cursor\(2) & ((GND) # (!\vga|y_cursor[1]~28\))) # (!\vga|y_cursor\(2) & (\vga|y_cursor[1]~28\ $ (GND)))
+-- \vga|y_cursor[2]~30\ = CARRY((\vga|y_cursor\(2)) # (!\vga|y_cursor[1]~28\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(2),
+	datad => VCC,
+	cin => \vga|y_cursor[1]~28\,
+	combout => \vga|y_cursor[2]~29_combout\,
+	cout => \vga|y_cursor[2]~30\);
+
+-- Location: LCCOMB_X20_Y9_N6
+\vga|y_cursor[3]~31\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[3]~31_combout\ = (\vga|y_cursor\(3) & (\vga|y_cursor[2]~30\ & VCC)) # (!\vga|y_cursor\(3) & (!\vga|y_cursor[2]~30\))
+-- \vga|y_cursor[3]~32\ = CARRY((!\vga|y_cursor\(3) & !\vga|y_cursor[2]~30\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(3),
+	datad => VCC,
+	cin => \vga|y_cursor[2]~30\,
+	combout => \vga|y_cursor[3]~31_combout\,
+	cout => \vga|y_cursor[3]~32\);
+
+-- Location: LCCOMB_X20_Y9_N8
+\vga|y_cursor[4]~33\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[4]~33_combout\ = (\vga|y_cursor\(4) & ((GND) # (!\vga|y_cursor[3]~32\))) # (!\vga|y_cursor\(4) & (\vga|y_cursor[3]~32\ $ (GND)))
+-- \vga|y_cursor[4]~34\ = CARRY((\vga|y_cursor\(4)) # (!\vga|y_cursor[3]~32\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(4),
+	datad => VCC,
+	cin => \vga|y_cursor[3]~32\,
+	combout => \vga|y_cursor[4]~33_combout\,
+	cout => \vga|y_cursor[4]~34\);
+
+-- Location: LCCOMB_X18_Y13_N26
+\view|SPRITE_X~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_X~13_combout\ = (!\view|SPRITE_X[9]~5_combout\ & (\view|state.RENDER_2~regout\ & !\view|state.RENDER_3~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000001000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|SPRITE_X[9]~5_combout\,
+	datab => \view|state.RENDER_2~regout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_X~13_combout\);
+
+-- Location: LCCOMB_X18_Y13_N12
+\view|Add6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~0_combout\ = \view|x\(2) $ (VCC)
+-- \view|Add6~1\ = CARRY(\view|x\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(2),
+	datad => VCC,
+	combout => \view|Add6~0_combout\,
+	cout => \view|Add6~1\);
+
+-- Location: LCCOMB_X18_Y13_N14
+\view|Add6~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|Add6~2_combout\ = (\view|x\(3) & (!\view|Add6~1\)) # (!\view|x\(3) & ((\view|Add6~1\) # (GND)))
+-- \view|Add6~3\ = CARRY((!\view|Add6~1\) # (!\view|x\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(3),
+	datad => VCC,
+	cin => \view|Add6~1\,
+	combout => \view|Add6~2_combout\,
+	cout => \view|Add6~3\);
+
+-- Location: LCCOMB_X18_Y13_N4
+\view|SPRITE_Y~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~4_combout\ = (\view|SPRITE_X~10_combout\) # ((!\view|SPRITE_X[9]~5_combout\ & (\view|Add6~2_combout\ & \view|state.RENDER_3~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -12236,82 +11467,1468 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datab => \vga|y_cursor[0]~22_combout\,
-	datac => \vga|substate.DRAWING_R1~regout\,
-	datad => \vga|Equal0~6_combout\,
-	combout => \vga|y_cursor[0]~23_combout\);
+	dataa => \view|SPRITE_X[9]~5_combout\,
+	datab => \view|SPRITE_X~10_combout\,
+	datac => \view|Add6~2_combout\,
+	datad => \view|state.RENDER_3~regout\,
+	combout => \view|SPRITE_Y~4_combout\);
 
--- Location: LCCOMB_X26_Y12_N30
-\vga|Selector8~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y14_N2
+\view|Add4~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector8~0_combout\ = (\vga|y_cursor[0]~23_combout\ & ((\vga|y_cursor[0]~20_combout\) # ((\vga|Equal1~5_combout\ & \vga|substate.DRAWING_R1~regout\))))
+-- \view|Add4~1_cout\ = CARRY(!\view|x\(0))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100100010001000",
+	lut_mask => "0000000001010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|y_cursor[0]~20_combout\,
-	datab => \vga|y_cursor[0]~23_combout\,
-	datac => \vga|Equal1~5_combout\,
-	datad => \vga|substate.DRAWING_R1~regout\,
-	combout => \vga|Selector8~0_combout\);
+	dataa => \view|x\(0),
+	datad => VCC,
+	cout => \view|Add4~1_cout\);
 
--- Location: LCCOMB_X26_Y12_N0
-\vga|substate.DRAWING_R2~7\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X18_Y14_N8
+\view|Add4~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|substate.DRAWING_R2~7_combout\ = (\vga|substate.DRAWING_R2~2_combout\ & (\vga|substate.INIT~regout\ & (\vga|x_end\(9) $ (!\vga|x_cursor\(9)))))
+-- \view|Add4~6_combout\ = (\view|x\(3) & ((\view|Add4~5\) # (GND))) # (!\view|x\(3) & (!\view|Add4~5\))
+-- \view|Add4~7\ = CARRY((\view|x\(3)) # (!\view|Add4~5\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000001000000000",
+	lut_mask => "1100001111001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|x\(3),
+	datad => VCC,
+	cin => \view|Add4~5\,
+	combout => \view|Add4~6_combout\,
+	cout => \view|Add4~7\);
+
+-- Location: LCCOMB_X18_Y13_N0
+\view|SPRITE_Y~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y~6_combout\ = (\view|SPRITE_Y~5_combout\) # ((\view|SPRITE_Y~4_combout\) # ((\view|SPRITE_X~13_combout\ & \view|Add4~6_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111011111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|substate.DRAWING_R2~2_combout\,
-	datab => \vga|x_end\(9),
-	datac => \vga|x_cursor\(9),
+	dataa => \view|SPRITE_Y~5_combout\,
+	datab => \view|SPRITE_X~13_combout\,
+	datac => \view|SPRITE_Y~4_combout\,
+	datad => \view|Add4~6_combout\,
+	combout => \view|SPRITE_Y~6_combout\);
+
+-- Location: LCFF_X18_Y13_N1
+\view|SPRITE_Y[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y~6_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(3));
+
+-- Location: LCFF_X19_Y13_N17
+\sprite_renderer|sprite_y[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	sdata => \view|SPRITE_Y\(3),
+	sload => VCC,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(3));
+
+-- Location: LCCOMB_X18_Y13_N10
+\view|SPRITE_Y[2]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y[2]~0_combout\ = (\view|state.RENDER_2~regout\ & (\view|Add4~4_combout\)) # (!\view|state.RENDER_2~regout\ & ((\view|x\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101110001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|Add4~4_combout\,
+	datab => \view|state.RENDER_2~regout\,
+	datad => \view|x\(2),
+	combout => \view|SPRITE_Y[2]~0_combout\);
+
+-- Location: LCFF_X18_Y13_N11
+\view|SPRITE_Y[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y[2]~0_combout\,
+	sdata => \view|Add6~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|SPRITE_X[9]~5_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(2));
+
+-- Location: LCCOMB_X19_Y13_N18
+\sprite_renderer|sprite_y[2]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_y[2]~feeder_combout\ = \view|SPRITE_Y\(2)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_Y\(2),
+	combout => \sprite_renderer|sprite_y[2]~feeder_combout\);
+
+-- Location: LCFF_X19_Y13_N19
+\sprite_renderer|sprite_y[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_y[2]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(2));
+
+-- Location: LCCOMB_X20_Y13_N14
+\sprite_renderer|FB_Y0[2]~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[2]~17_combout\ = ((\sprite_renderer|row\(2) $ (\sprite_renderer|sprite_y\(2) $ (!\sprite_renderer|FB_Y0[1]~16\)))) # (GND)
+-- \sprite_renderer|FB_Y0[2]~18\ = CARRY((\sprite_renderer|row\(2) & ((\sprite_renderer|sprite_y\(2)) # (!\sprite_renderer|FB_Y0[1]~16\))) # (!\sprite_renderer|row\(2) & (\sprite_renderer|sprite_y\(2) & !\sprite_renderer|FB_Y0[1]~16\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(2),
+	datab => \sprite_renderer|sprite_y\(2),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[1]~16\,
+	combout => \sprite_renderer|FB_Y0[2]~17_combout\,
+	cout => \sprite_renderer|FB_Y0[2]~18\);
+
+-- Location: LCCOMB_X20_Y13_N16
+\sprite_renderer|FB_Y0[3]~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[3]~19_combout\ = (\sprite_renderer|row\(3) & ((\sprite_renderer|sprite_y\(3) & (\sprite_renderer|FB_Y0[2]~18\ & VCC)) # (!\sprite_renderer|sprite_y\(3) & (!\sprite_renderer|FB_Y0[2]~18\)))) # (!\sprite_renderer|row\(3) & 
+-- ((\sprite_renderer|sprite_y\(3) & (!\sprite_renderer|FB_Y0[2]~18\)) # (!\sprite_renderer|sprite_y\(3) & ((\sprite_renderer|FB_Y0[2]~18\) # (GND)))))
+-- \sprite_renderer|FB_Y0[3]~20\ = CARRY((\sprite_renderer|row\(3) & (!\sprite_renderer|sprite_y\(3) & !\sprite_renderer|FB_Y0[2]~18\)) # (!\sprite_renderer|row\(3) & ((!\sprite_renderer|FB_Y0[2]~18\) # (!\sprite_renderer|sprite_y\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(3),
+	datab => \sprite_renderer|sprite_y\(3),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[2]~18\,
+	combout => \sprite_renderer|FB_Y0[3]~19_combout\,
+	cout => \sprite_renderer|FB_Y0[3]~20\);
+
+-- Location: LCCOMB_X20_Y13_N18
+\sprite_renderer|FB_Y0[4]~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[4]~21_combout\ = ((\sprite_renderer|sprite_y\(4) $ (\sprite_renderer|row\(4) $ (!\sprite_renderer|FB_Y0[3]~20\)))) # (GND)
+-- \sprite_renderer|FB_Y0[4]~22\ = CARRY((\sprite_renderer|sprite_y\(4) & ((\sprite_renderer|row\(4)) # (!\sprite_renderer|FB_Y0[3]~20\))) # (!\sprite_renderer|sprite_y\(4) & (\sprite_renderer|row\(4) & !\sprite_renderer|FB_Y0[3]~20\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_y\(4),
+	datab => \sprite_renderer|row\(4),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[3]~20\,
+	combout => \sprite_renderer|FB_Y0[4]~21_combout\,
+	cout => \sprite_renderer|FB_Y0[4]~22\);
+
+-- Location: LCFF_X20_Y13_N19
+\sprite_renderer|FB_Y0[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[4]~21_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(4));
+
+-- Location: LCCOMB_X19_Y9_N12
+\vga|y_start~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~3_combout\ = (\sprite_renderer|FB_Y0\(4) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_Y0\(4),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~3_combout\);
+
+-- Location: LCFF_X19_Y9_N13
+\vga|y_start[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~3_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(4));
+
+-- Location: LCCOMB_X19_Y9_N30
+\vga|Add0~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~14_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~12_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_start\(4))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010111110100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Add0~12_combout\,
+	datac => \vga|y_cursor[6]~14_combout\,
+	datad => \vga|y_start\(4),
+	combout => \vga|Add0~14_combout\);
+
+-- Location: LCFF_X20_Y9_N9
+\vga|y_cursor[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[4]~33_combout\,
+	sdata => \vga|Add0~14_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(4));
+
+-- Location: LCCOMB_X20_Y9_N10
+\vga|y_cursor[5]~35\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[5]~35_combout\ = (\vga|y_cursor\(5) & (\vga|y_cursor[4]~34\ & VCC)) # (!\vga|y_cursor\(5) & (!\vga|y_cursor[4]~34\))
+-- \vga|y_cursor[5]~36\ = CARRY((!\vga|y_cursor\(5) & !\vga|y_cursor[4]~34\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(5),
+	datad => VCC,
+	cin => \vga|y_cursor[4]~34\,
+	combout => \vga|y_cursor[5]~35_combout\,
+	cout => \vga|y_cursor[5]~36\);
+
+-- Location: LCCOMB_X18_Y9_N14
+\vga|Add0~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~3_combout\ = (\vga|y_cursor\(1) & (!\vga|Add0~1\)) # (!\vga|y_cursor\(1) & ((\vga|Add0~1\) # (GND)))
+-- \vga|Add0~4\ = CARRY((!\vga|Add0~1\) # (!\vga|y_cursor\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(1),
+	datad => VCC,
+	cin => \vga|Add0~1\,
+	combout => \vga|Add0~3_combout\,
+	cout => \vga|Add0~4\);
+
+-- Location: LCCOMB_X18_Y9_N16
+\vga|Add0~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~6_combout\ = (\vga|y_cursor\(2) & (\vga|Add0~4\ $ (GND))) # (!\vga|y_cursor\(2) & (!\vga|Add0~4\ & VCC))
+-- \vga|Add0~7\ = CARRY((\vga|y_cursor\(2) & !\vga|Add0~4\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(2),
+	datad => VCC,
+	cin => \vga|Add0~4\,
+	combout => \vga|Add0~6_combout\,
+	cout => \vga|Add0~7\);
+
+-- Location: LCCOMB_X18_Y9_N18
+\vga|Add0~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~9_combout\ = (\vga|y_cursor\(3) & (!\vga|Add0~7\)) # (!\vga|y_cursor\(3) & ((\vga|Add0~7\) # (GND)))
+-- \vga|Add0~10\ = CARRY((!\vga|Add0~7\) # (!\vga|y_cursor\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(3),
+	datad => VCC,
+	cin => \vga|Add0~7\,
+	combout => \vga|Add0~9_combout\,
+	cout => \vga|Add0~10\);
+
+-- Location: LCFF_X20_Y13_N17
+\sprite_renderer|FB_Y0[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[3]~19_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(3));
+
+-- Location: LCCOMB_X19_Y9_N22
+\vga|y_start~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~4_combout\ = (\sprite_renderer|FB_Y0\(3) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_Y0\(3),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~4_combout\);
+
+-- Location: LCFF_X19_Y9_N23
+\vga|y_start[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~4_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(3));
+
+-- Location: LCCOMB_X19_Y9_N20
+\vga|Add0~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~11_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~9_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_start\(3))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|Add0~9_combout\,
+	datac => \vga|y_cursor[6]~14_combout\,
+	datad => \vga|y_start\(3),
+	combout => \vga|Add0~11_combout\);
+
+-- Location: LCFF_X20_Y9_N7
+\vga|y_cursor[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[3]~31_combout\,
+	sdata => \vga|Add0~11_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(3));
+
+-- Location: LCCOMB_X18_Y9_N22
+\vga|Add0~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~15_combout\ = (\vga|y_cursor\(5) & (!\vga|Add0~13\)) # (!\vga|y_cursor\(5) & ((\vga|Add0~13\) # (GND)))
+-- \vga|Add0~16\ = CARRY((!\vga|Add0~13\) # (!\vga|y_cursor\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(5),
+	datad => VCC,
+	cin => \vga|Add0~13\,
+	combout => \vga|Add0~15_combout\,
+	cout => \vga|Add0~16\);
+
+-- Location: LCCOMB_X18_Y13_N8
+\view|SPRITE_Y[5]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \view|SPRITE_Y[5]~1_combout\ = (\view|state.RENDER_2~regout\ & ((\view|Add4~10_combout\))) # (!\view|state.RENDER_2~regout\ & (\view|x\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \view|x\(5),
+	datab => \view|Add4~10_combout\,
+	datad => \view|state.RENDER_2~regout\,
+	combout => \view|SPRITE_Y[5]~1_combout\);
+
+-- Location: LCFF_X18_Y13_N9
+\view|SPRITE_Y[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \clock_25MHz~clkctrl_outclk\,
+	datain => \view|SPRITE_Y[5]~1_combout\,
+	sdata => \view|Add6~6_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \view|SPRITE_X[9]~5_combout\,
+	sload => \view|state.RENDER_3~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \view|SPRITE_Y\(5));
+
+-- Location: LCCOMB_X19_Y13_N28
+\sprite_renderer|sprite_y[5]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_y[5]~feeder_combout\ = \view|SPRITE_Y\(5)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \view|SPRITE_Y\(5),
+	combout => \sprite_renderer|sprite_y[5]~feeder_combout\);
+
+-- Location: LCFF_X19_Y13_N29
+\sprite_renderer|sprite_y[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_y[5]~feeder_combout\,
+	ena => \sprite_renderer|sprite_to_draw.color[6]~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|sprite_y\(5));
+
+-- Location: LCCOMB_X20_Y13_N20
+\sprite_renderer|FB_Y0[5]~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[5]~23_combout\ = (\sprite_renderer|row\(5) & ((\sprite_renderer|sprite_y\(5) & (\sprite_renderer|FB_Y0[4]~22\ & VCC)) # (!\sprite_renderer|sprite_y\(5) & (!\sprite_renderer|FB_Y0[4]~22\)))) # (!\sprite_renderer|row\(5) & 
+-- ((\sprite_renderer|sprite_y\(5) & (!\sprite_renderer|FB_Y0[4]~22\)) # (!\sprite_renderer|sprite_y\(5) & ((\sprite_renderer|FB_Y0[4]~22\) # (GND)))))
+-- \sprite_renderer|FB_Y0[5]~24\ = CARRY((\sprite_renderer|row\(5) & (!\sprite_renderer|sprite_y\(5) & !\sprite_renderer|FB_Y0[4]~22\)) # (!\sprite_renderer|row\(5) & ((!\sprite_renderer|FB_Y0[4]~22\) # (!\sprite_renderer|sprite_y\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011000010111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|row\(5),
+	datab => \sprite_renderer|sprite_y\(5),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[4]~22\,
+	combout => \sprite_renderer|FB_Y0[5]~23_combout\,
+	cout => \sprite_renderer|FB_Y0[5]~24\);
+
+-- Location: LCFF_X20_Y13_N21
+\sprite_renderer|FB_Y0[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[5]~23_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(5));
+
+-- Location: LCCOMB_X19_Y9_N18
+\vga|y_end~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~1_combout\ = (\sprite_renderer|FB_Y0\(5) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_Y0\(5),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~1_combout\);
+
+-- Location: LCFF_X19_Y9_N19
+\vga|y_end[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_end~1_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(5));
+
+-- Location: LCCOMB_X18_Y9_N6
+\vga|Add0~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~17_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~15_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_end\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|Add0~15_combout\,
+	datac => \vga|y_end\(5),
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~17_combout\);
+
+-- Location: LCFF_X20_Y9_N11
+\vga|y_cursor[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[5]~35_combout\,
+	sdata => \vga|Add0~17_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(5));
+
+-- Location: LCCOMB_X19_Y9_N4
+\vga|y_cursor[6]~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~15_combout\ = (\vga|y_start\(0) & (\vga|y_cursor\(0) & (\vga|y_cursor\(5) $ (!\vga|y_end\(5))))) # (!\vga|y_start\(0) & (!\vga|y_cursor\(0) & (\vga|y_cursor\(5) $ (!\vga|y_end\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_start\(0),
+	datab => \vga|y_cursor\(5),
+	datac => \vga|y_cursor\(0),
+	datad => \vga|y_end\(5),
+	combout => \vga|y_cursor[6]~15_combout\);
+
+-- Location: LCCOMB_X19_Y9_N8
+\vga|y_cursor[6]~17\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~17_combout\ = (\vga|y_start\(4) & (\vga|y_cursor\(4) & (\vga|y_start\(3) $ (!\vga|y_cursor\(3))))) # (!\vga|y_start\(4) & (!\vga|y_cursor\(4) & (\vga|y_start\(3) $ (!\vga|y_cursor\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_start\(4),
+	datab => \vga|y_start\(3),
+	datac => \vga|y_cursor\(4),
+	datad => \vga|y_cursor\(3),
+	combout => \vga|y_cursor[6]~17_combout\);
+
+-- Location: LCCOMB_X20_Y13_N22
+\sprite_renderer|FB_Y0[6]~25\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|FB_Y0[6]~25_combout\ = ((\sprite_renderer|sprite_y\(6) $ (\sprite_renderer|row\(6) $ (!\sprite_renderer|FB_Y0[5]~24\)))) # (GND)
+-- \sprite_renderer|FB_Y0[6]~26\ = CARRY((\sprite_renderer|sprite_y\(6) & ((\sprite_renderer|row\(6)) # (!\sprite_renderer|FB_Y0[5]~24\))) # (!\sprite_renderer|sprite_y\(6) & (\sprite_renderer|row\(6) & !\sprite_renderer|FB_Y0[5]~24\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_y\(6),
+	datab => \sprite_renderer|row\(6),
+	datad => VCC,
+	cin => \sprite_renderer|FB_Y0[5]~24\,
+	combout => \sprite_renderer|FB_Y0[6]~25_combout\,
+	cout => \sprite_renderer|FB_Y0[6]~26\);
+
+-- Location: LCFF_X20_Y13_N23
+\sprite_renderer|FB_Y0[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[6]~25_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(6));
+
+-- Location: LCCOMB_X21_Y9_N10
+\vga|y_start~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~6_combout\ = (\sprite_renderer|FB_Y0\(6) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_Y0\(6),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~6_combout\);
+
+-- Location: LCFF_X21_Y9_N11
+\vga|y_start[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~6_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(6));
+
+-- Location: LCCOMB_X20_Y9_N12
+\vga|y_cursor[6]~37\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~37_combout\ = (\vga|y_cursor\(6) & ((GND) # (!\vga|y_cursor[5]~36\))) # (!\vga|y_cursor\(6) & (\vga|y_cursor[5]~36\ $ (GND)))
+-- \vga|y_cursor[6]~38\ = CARRY((\vga|y_cursor\(6)) # (!\vga|y_cursor[5]~36\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(6),
+	datad => VCC,
+	cin => \vga|y_cursor[5]~36\,
+	combout => \vga|y_cursor[6]~37_combout\,
+	cout => \vga|y_cursor[6]~38\);
+
+-- Location: LCCOMB_X20_Y9_N14
+\vga|y_cursor[7]~39\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[7]~39_combout\ = (\vga|y_cursor\(7) & (\vga|y_cursor[6]~38\ & VCC)) # (!\vga|y_cursor\(7) & (!\vga|y_cursor[6]~38\))
+-- \vga|y_cursor[7]~40\ = CARRY((!\vga|y_cursor\(7) & !\vga|y_cursor[6]~38\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(7),
+	datad => VCC,
+	cin => \vga|y_cursor[6]~38\,
+	combout => \vga|y_cursor[7]~39_combout\,
+	cout => \vga|y_cursor[7]~40\);
+
+-- Location: LCCOMB_X18_Y9_N24
+\vga|Add0~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~18_combout\ = (\vga|y_cursor\(6) & (\vga|Add0~16\ $ (GND))) # (!\vga|y_cursor\(6) & (!\vga|Add0~16\ & VCC))
+-- \vga|Add0~19\ = CARRY((\vga|y_cursor\(6) & !\vga|Add0~16\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(6),
+	datad => VCC,
+	cin => \vga|Add0~16\,
+	combout => \vga|Add0~18_combout\,
+	cout => \vga|Add0~19\);
+
+-- Location: LCCOMB_X18_Y9_N26
+\vga|Add0~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~21_combout\ = (\vga|y_cursor\(7) & (!\vga|Add0~19\)) # (!\vga|y_cursor\(7) & ((\vga|Add0~19\) # (GND)))
+-- \vga|Add0~22\ = CARRY((!\vga|Add0~19\) # (!\vga|y_cursor\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(7),
+	datad => VCC,
+	cin => \vga|Add0~19\,
+	combout => \vga|Add0~21_combout\,
+	cout => \vga|Add0~22\);
+
+-- Location: LCCOMB_X18_Y9_N2
+\vga|Add0~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~23_combout\ = (\vga|y_cursor[6]~14_combout\ & ((\vga|Add0~21_combout\))) # (!\vga|y_cursor[6]~14_combout\ & (\vga|y_start\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_start\(7),
+	datab => \vga|Add0~21_combout\,
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~23_combout\);
+
+-- Location: LCFF_X20_Y9_N15
+\vga|y_cursor[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[7]~39_combout\,
+	sdata => \vga|Add0~23_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(7));
+
+-- Location: LCCOMB_X18_Y9_N8
+\vga|Add0~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~20_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~18_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_start\(6))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001111000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor[6]~14_combout\,
+	datac => \vga|Add0~18_combout\,
+	datad => \vga|y_start\(6),
+	combout => \vga|Add0~20_combout\);
+
+-- Location: LCFF_X20_Y9_N13
+\vga|y_cursor[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[6]~37_combout\,
+	sdata => \vga|Add0~20_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(6));
+
+-- Location: LCCOMB_X19_Y9_N2
+\vga|y_cursor[6]~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~18_combout\ = (\vga|y_start\(7) & (\vga|y_cursor\(7) & (\vga|y_start\(6) $ (!\vga|y_cursor\(6))))) # (!\vga|y_start\(7) & (!\vga|y_cursor\(7) & (\vga|y_start\(6) $ (!\vga|y_cursor\(6)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_start\(7),
+	datab => \vga|y_start\(6),
+	datac => \vga|y_cursor\(7),
+	datad => \vga|y_cursor\(6),
+	combout => \vga|y_cursor[6]~18_combout\);
+
+-- Location: LCCOMB_X19_Y9_N28
+\vga|y_cursor[6]~19\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~19_combout\ = (\vga|y_cursor[6]~16_combout\ & (\vga|y_cursor[6]~15_combout\ & (\vga|y_cursor[6]~17_combout\ & \vga|y_cursor[6]~18_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor[6]~16_combout\,
+	datab => \vga|y_cursor[6]~15_combout\,
+	datac => \vga|y_cursor[6]~17_combout\,
+	datad => \vga|y_cursor[6]~18_combout\,
+	combout => \vga|y_cursor[6]~19_combout\);
+
+-- Location: LCCOMB_X20_Y9_N16
+\vga|y_cursor[8]~41\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[8]~41_combout\ = \vga|y_cursor\(8) $ (\vga|y_cursor[7]~40\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(8),
+	cin => \vga|y_cursor[7]~40\,
+	combout => \vga|y_cursor[8]~41_combout\);
+
+-- Location: LCCOMB_X18_Y9_N28
+\vga|Add0~24\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~24_combout\ = \vga|y_cursor\(8) $ (!\vga|Add0~22\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001111000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(8),
+	cin => \vga|Add0~22\,
+	combout => \vga|Add0~24_combout\);
+
+-- Location: LCCOMB_X19_Y9_N6
+\vga|y_start~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~7_combout\ = (\sprite_renderer|FB_Y0\(8) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_Y0\(8),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~7_combout\);
+
+-- Location: LCFF_X19_Y9_N7
+\vga|y_start[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~7_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(8));
+
+-- Location: LCCOMB_X18_Y9_N30
+\vga|Add0~26\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~26_combout\ = (\vga|y_cursor[6]~14_combout\ & (\vga|Add0~24_combout\)) # (!\vga|y_cursor[6]~14_combout\ & ((\vga|y_start\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|Add0~24_combout\,
+	datac => \vga|y_start\(8),
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~26_combout\);
+
+-- Location: LCFF_X20_Y9_N17
+\vga|y_cursor[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[8]~41_combout\,
+	sdata => \vga|Add0~26_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(8));
+
+-- Location: LCCOMB_X20_Y10_N30
+\vga|Selector6~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector6~1_combout\ = (\vga|substate.DRAWING_R1~regout\ & ((\vga|state.FILLING_RECT~regout\) # ((\vga|state.DRAWING_RECT~regout\ & !\vga|substate.INIT~regout\)))) # (!\vga|substate.DRAWING_R1~regout\ & (\vga|state.DRAWING_RECT~regout\ & 
+-- ((!\vga|substate.INIT~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000011101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.DRAWING_R1~regout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datac => \vga|state.FILLING_RECT~regout\,
 	datad => \vga|substate.INIT~regout\,
-	combout => \vga|substate.DRAWING_R2~7_combout\);
+	combout => \vga|Selector6~1_combout\);
 
--- Location: LCCOMB_X26_Y12_N20
+-- Location: LCCOMB_X20_Y10_N0
+\vga|Selector6~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector6~2_combout\ = (\vga|state.DRAWING_RECT~regout\ & \vga|substate.DRAWING_R1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|Selector6~2_combout\);
+
+-- Location: LCCOMB_X20_Y10_N26
+\vga|Selector6~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector6~3_combout\ = (\vga|Selector6~0_combout\) # ((\vga|Selector6~1_combout\) # ((\vga|vga_fb|SRAM_WE_N~0_combout\ & \vga|Selector6~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111011101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Selector6~0_combout\,
+	datab => \vga|Selector6~1_combout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|Selector6~2_combout\,
+	combout => \vga|Selector6~3_combout\);
+
+-- Location: LCCOMB_X19_Y9_N26
+\vga|y_end~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~9_combout\ = (\sprite_renderer|FB_Y0\(8)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_Y0\(8),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~9_combout\);
+
+-- Location: LCFF_X19_Y9_N27
+\vga|y_end[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_end~9_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(8));
+
+-- Location: LCCOMB_X20_Y9_N22
+\vga|Equal1~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal1~5_combout\ = (\vga|Equal1~4_combout\ & (\vga|y_end\(8) $ (!\vga|y_cursor\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_end\(8),
+	datac => \vga|y_cursor\(8),
+	datad => \vga|Equal1~4_combout\,
+	combout => \vga|Equal1~5_combout\);
+
+-- Location: LCCOMB_X20_Y10_N10
+\vga|Selector6~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Selector6~4_combout\ = (\vga|Selector6~3_combout\) # ((\vga|Selector6~2_combout\ & ((!\vga|Equal1~5_combout\) # (!\vga|Equal0~6_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal0~6_combout\,
+	datab => \vga|Selector6~3_combout\,
+	datac => \vga|Equal1~5_combout\,
+	datad => \vga|Selector6~2_combout\,
+	combout => \vga|Selector6~4_combout\);
+
+-- Location: LCFF_X20_Y10_N11
+\vga|substate.DRAWING_R1\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|Selector6~4_combout\,
+	ena => \RESET_N~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|substate.DRAWING_R1~regout\);
+
+-- Location: LCCOMB_X19_Y9_N0
+\vga|y_cursor[6]~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~20_combout\ = (\vga|y_cursor[6]~19_combout\ & (!\vga|substate.DRAWING_R1~regout\ & (\vga|y_start\(8) $ (!\vga|y_cursor\(8)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_start\(8),
+	datab => \vga|y_cursor[6]~19_combout\,
+	datac => \vga|y_cursor\(8),
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|y_cursor[6]~20_combout\);
+
+-- Location: LCCOMB_X21_Y11_N22
+\vga|y_cursor[6]~21\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~21_combout\ = (\vga|Equal2~4_combout\ & (\vga|Equal2~3_combout\ & (\vga|substate.DRAWING_R2~regout\ & !\vga|substate.DRAWING_R1~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal2~4_combout\,
+	datab => \vga|Equal2~3_combout\,
+	datac => \vga|substate.DRAWING_R2~regout\,
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|y_cursor[6]~21_combout\);
+
+-- Location: LCCOMB_X20_Y9_N18
+\vga|y_cursor[6]~22\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~22_combout\ = (\vga|Equal2~0_combout\ & (\vga|y_cursor[6]~21_combout\ & (!\vga|vga_fb|SRAM_WE_N~0_combout\ & \vga|Equal2~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal2~0_combout\,
+	datab => \vga|y_cursor[6]~21_combout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|Equal2~2_combout\,
+	combout => \vga|y_cursor[6]~22_combout\);
+
+-- Location: LCCOMB_X20_Y9_N28
+\vga|y_cursor[6]~23\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[6]~23_combout\ = (\vga|y_cursor[6]~22_combout\) # ((\vga|Equal0~6_combout\ & (!\vga|vga_fb|SRAM_WE_N~0_combout\ & \vga|substate.DRAWING_R1~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100111011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal0~6_combout\,
+	datab => \vga|y_cursor[6]~22_combout\,
+	datac => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datad => \vga|substate.DRAWING_R1~regout\,
+	combout => \vga|y_cursor[6]~23_combout\);
+
+-- Location: LCCOMB_X20_Y9_N26
+\vga|y_cursor[0]~25\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[0]~25_combout\ = (\vga|state.DRAWING_RECT~regout\ & ((\vga|y_cursor[0]~24_combout\) # ((\vga|y_cursor[6]~20_combout\) # (!\vga|y_cursor[6]~23_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100100011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor[0]~24_combout\,
+	datab => \vga|state.DRAWING_RECT~regout\,
+	datac => \vga|y_cursor[6]~20_combout\,
+	datad => \vga|y_cursor[6]~23_combout\,
+	combout => \vga|y_cursor[0]~25_combout\);
+
+-- Location: LCCOMB_X20_Y9_N20
+\vga|y_cursor[0]~26\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[0]~26_combout\ = (!\vga|y_cursor[0]~43_combout\ & (\vga|y_cursor[0]~11_combout\ & ((!\vga|y_cursor[0]~25_combout\) # (!\vga|substate.INIT~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|substate.INIT~regout\,
+	datab => \vga|y_cursor[0]~43_combout\,
+	datac => \vga|y_cursor[0]~11_combout\,
+	datad => \vga|y_cursor[0]~25_combout\,
+	combout => \vga|y_cursor[0]~26_combout\);
+
+-- Location: LCFF_X20_Y9_N1
+\vga|y_cursor[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[0]~12_combout\,
+	sdata => \vga|Add0~2_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(0));
+
+-- Location: LCCOMB_X20_Y9_N2
+\vga|y_cursor[1]~27\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_cursor[1]~27_combout\ = (\vga|y_cursor\(1) & (\vga|y_cursor[0]~13\ & VCC)) # (!\vga|y_cursor\(1) & (!\vga|y_cursor[0]~13\))
+-- \vga|y_cursor[1]~28\ = CARRY((!\vga|y_cursor\(1) & !\vga|y_cursor[0]~13\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_cursor\(1),
+	datad => VCC,
+	cin => \vga|y_cursor[0]~13\,
+	combout => \vga|y_cursor[1]~27_combout\,
+	cout => \vga|y_cursor[1]~28\);
+
+-- Location: LCCOMB_X19_Y9_N24
+\vga|y_start~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~2_combout\ = (\sprite_renderer|FB_Y0\(1) & !\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|FB_Y0\(1),
+	datac => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_start~2_combout\);
+
+-- Location: LCFF_X19_Y9_N25
+\vga|y_start[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~2_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(1));
+
+-- Location: LCCOMB_X18_Y9_N10
+\vga|Add0~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~5_combout\ = (\vga|y_cursor[6]~14_combout\ & ((\vga|Add0~3_combout\))) # (!\vga|y_cursor[6]~14_combout\ & (\vga|y_start\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_start\(1),
+	datac => \vga|Add0~3_combout\,
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~5_combout\);
+
+-- Location: LCFF_X20_Y9_N3
+\vga|y_cursor[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[1]~27_combout\,
+	sdata => \vga|Add0~5_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(1));
+
+-- Location: LCFF_X20_Y13_N15
+\sprite_renderer|FB_Y0[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[2]~17_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(2));
+
+-- Location: LCCOMB_X19_Y9_N14
+\vga|y_start~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_start~1_combout\ = (!\sprite_renderer|FB_CLEAR~regout\ & \sprite_renderer|FB_Y0\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_CLEAR~regout\,
+	datac => \sprite_renderer|FB_Y0\(2),
+	combout => \vga|y_start~1_combout\);
+
+-- Location: LCFF_X19_Y9_N15
+\vga|y_start[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_start~1_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_start\(2));
+
+-- Location: LCCOMB_X18_Y9_N4
+\vga|Add0~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Add0~8_combout\ = (\vga|y_cursor[6]~14_combout\ & ((\vga|Add0~6_combout\))) # (!\vga|y_cursor[6]~14_combout\ & (\vga|y_start\(2)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|y_start\(2),
+	datac => \vga|Add0~6_combout\,
+	datad => \vga|y_cursor[6]~14_combout\,
+	combout => \vga|Add0~8_combout\);
+
+-- Location: LCFF_X20_Y9_N5
+\vga|y_cursor[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_cursor[2]~29_combout\,
+	sdata => \vga|Add0~8_combout\,
+	sload => \vga|x_cursor[3]~16_combout\,
+	ena => \vga|y_cursor[0]~26_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_cursor\(2));
+
+-- Location: LCCOMB_X21_Y9_N14
+\vga|y_end~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~5_combout\ = (\sprite_renderer|FB_Y0\(2)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_Y0\(2),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~5_combout\);
+
+-- Location: LCFF_X21_Y9_N27
+\vga|y_end[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|y_end~5_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(2));
+
+-- Location: LCCOMB_X21_Y9_N26
+\vga|Equal1~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal1~1_combout\ = (\vga|y_end\(3) & (\vga|y_cursor\(3) & (\vga|y_cursor\(2) $ (!\vga|y_end\(2))))) # (!\vga|y_end\(3) & (!\vga|y_cursor\(3) & (\vga|y_cursor\(2) $ (!\vga|y_end\(2)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000001001000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_end\(3),
+	datab => \vga|y_cursor\(2),
+	datac => \vga|y_end\(2),
+	datad => \vga|y_cursor\(3),
+	combout => \vga|Equal1~1_combout\);
+
+-- Location: LCCOMB_X21_Y9_N18
+\vga|y_end~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~8_combout\ = (\sprite_renderer|FB_Y0\(6)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_Y0\(6),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~8_combout\);
+
+-- Location: LCFF_X21_Y9_N9
+\vga|y_end[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|y_end~8_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(6));
+
+-- Location: LCFF_X20_Y13_N25
+\sprite_renderer|FB_Y0[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_Y0[7]~27_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	sclr => \sprite_renderer|FB_Y0[5]~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_Y0\(7));
+
+-- Location: LCCOMB_X21_Y9_N22
+\vga|y_end~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~7_combout\ = (\sprite_renderer|FB_Y0\(7)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \sprite_renderer|FB_Y0\(7),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~7_combout\);
+
+-- Location: LCFF_X21_Y9_N23
+\vga|y_end[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|y_end~7_combout\,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(7));
+
+-- Location: LCCOMB_X21_Y9_N8
+\vga|Equal1~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal1~3_combout\ = (\vga|y_cursor\(7) & (\vga|y_end\(7) & (\vga|y_cursor\(6) $ (!\vga|y_end\(6))))) # (!\vga|y_cursor\(7) & (!\vga|y_end\(7) & (\vga|y_cursor\(6) $ (!\vga|y_end\(6)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000001001000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(7),
+	datab => \vga|y_cursor\(6),
+	datac => \vga|y_end\(6),
+	datad => \vga|y_end\(7),
+	combout => \vga|Equal1~3_combout\);
+
+-- Location: LCCOMB_X21_Y9_N24
+\vga|y_end~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end~6_combout\ = (\sprite_renderer|FB_Y0\(4)) # (\sprite_renderer|FB_CLEAR~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \sprite_renderer|FB_Y0\(4),
+	datad => \sprite_renderer|FB_CLEAR~regout\,
+	combout => \vga|y_end~6_combout\);
+
+-- Location: LCFF_X21_Y9_N29
+\vga|y_end[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \vga|y_end~6_combout\,
+	sload => VCC,
+	ena => \vga|y_end[8]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|y_end\(4));
+
+-- Location: LCCOMB_X21_Y9_N28
+\vga|Equal1~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal1~2_combout\ = (\vga|y_cursor\(4) & (\vga|y_end\(4) & (\vga|y_end\(5) $ (!\vga|y_cursor\(5))))) # (!\vga|y_cursor\(4) & (!\vga|y_end\(4) & (\vga|y_end\(5) $ (!\vga|y_cursor\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000010000100001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|y_cursor\(4),
+	datab => \vga|y_end\(5),
+	datac => \vga|y_end\(4),
+	datad => \vga|y_cursor\(5),
+	combout => \vga|Equal1~2_combout\);
+
+-- Location: LCCOMB_X21_Y9_N2
+\vga|Equal1~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|Equal1~4_combout\ = (\vga|Equal1~0_combout\ & (\vga|Equal1~1_combout\ & (\vga|Equal1~3_combout\ & \vga|Equal1~2_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|Equal1~0_combout\,
+	datab => \vga|Equal1~1_combout\,
+	datac => \vga|Equal1~3_combout\,
+	datad => \vga|Equal1~2_combout\,
+	combout => \vga|Equal1~4_combout\);
+
+-- Location: LCCOMB_X19_Y11_N26
 \vga|substate.DRAWING_R2~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|substate.DRAWING_R2~3_combout\ = (!\vga|vga_fb|SRAM_WE_N~0_combout\ & (\vga|Equal1~4_combout\ & (\vga|Equal0~4_combout\ & \vga|substate.DRAWING_R2~7_combout\)))
+-- \vga|substate.DRAWING_R2~3_combout\ = (\vga|substate.DRAWING_R2~7_combout\ & (!\vga|vga_fb|SRAM_WE_N~0_combout\ & (\vga|Equal1~4_combout\ & \vga|Equal0~4_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000000000000",
+	lut_mask => "0010000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_fb|SRAM_WE_N~0_combout\,
-	datab => \vga|Equal1~4_combout\,
-	datac => \vga|Equal0~4_combout\,
-	datad => \vga|substate.DRAWING_R2~7_combout\,
+	dataa => \vga|substate.DRAWING_R2~7_combout\,
+	datab => \vga|vga_fb|SRAM_WE_N~0_combout\,
+	datac => \vga|Equal1~4_combout\,
+	datad => \vga|Equal0~4_combout\,
 	combout => \vga|substate.DRAWING_R2~3_combout\);
 
--- Location: LCCOMB_X26_Y12_N16
+-- Location: LCCOMB_X19_Y11_N24
 \vga|Selector8~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|Selector8~1_combout\ = (\vga|state.FILLING_RECT~regout\ & (((!\vga|Selector8~0_combout\ & \vga|state.DRAWING_RECT~regout\)) # (!\vga|substate.DRAWING_R2~3_combout\))) # (!\vga|state.FILLING_RECT~regout\ & (!\vga|Selector8~0_combout\ & 
--- (\vga|state.DRAWING_RECT~regout\)))
+-- \vga|Selector8~1_combout\ = (\vga|Selector8~0_combout\ & (\vga|state.FILLING_RECT~regout\ & (!\vga|substate.DRAWING_R2~3_combout\))) # (!\vga|Selector8~0_combout\ & ((\vga|state.DRAWING_RECT~regout\) # ((\vga|state.FILLING_RECT~regout\ & 
+-- !\vga|substate.DRAWING_R2~3_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011000010111010",
+	lut_mask => "0101110100001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|state.FILLING_RECT~regout\,
-	datab => \vga|Selector8~0_combout\,
-	datac => \vga|state.DRAWING_RECT~regout\,
-	datad => \vga|substate.DRAWING_R2~3_combout\,
+	dataa => \vga|Selector8~0_combout\,
+	datab => \vga|state.FILLING_RECT~regout\,
+	datac => \vga|substate.DRAWING_R2~3_combout\,
+	datad => \vga|state.DRAWING_RECT~regout\,
 	combout => \vga|Selector8~1_combout\);
 
--- Location: LCFF_X26_Y12_N17
+-- Location: LCFF_X19_Y11_N25
 \vga|fb_wr_req\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12321,20 +12938,950 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|fb_wr_req~regout\);
 
--- Location: LCCOMB_X23_Y8_N4
+-- Location: LCCOMB_X15_Y10_N0
+\vga|vga_timing|Add2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~0_combout\ = \vga|vga_timing|h_counter\(0) $ (VCC)
+-- \vga|vga_timing|Add2~1\ = CARRY(\vga|vga_timing|h_counter\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(0),
+	datad => VCC,
+	combout => \vga|vga_timing|Add2~0_combout\,
+	cout => \vga|vga_timing|Add2~1\);
+
+-- Location: LCCOMB_X16_Y10_N2
+\vga|vga_timing|clock_count[0]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|clock_count[0]~1_combout\ = !\vga|vga_timing|clock_count\(0)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \vga|vga_timing|clock_count\(0),
+	combout => \vga|vga_timing|clock_count[0]~1_combout\);
+
+-- Location: LCFF_X16_Y10_N3
+\vga|vga_timing|clock_count[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|clock_count[0]~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|clock_count\(0));
+
+-- Location: LCCOMB_X16_Y10_N16
+\vga|vga_timing|clock_count[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|clock_count[1]~0_combout\ = \vga|vga_timing|clock_count\(1) $ (\vga|vga_timing|clock_count\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \vga|vga_timing|clock_count\(1),
+	datad => \vga|vga_timing|clock_count\(0),
+	combout => \vga|vga_timing|clock_count[1]~0_combout\);
+
+-- Location: LCFF_X16_Y10_N17
+\vga|vga_timing|clock_count[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|clock_count[1]~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|clock_count\(1));
+
+-- Location: LCCOMB_X16_Y10_N12
+\vga|vga_timing|Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal0~0_combout\ = (\vga|vga_timing|clock_count\(0) & \vga|vga_timing|clock_count\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|clock_count\(0),
+	datac => \vga|vga_timing|clock_count\(1),
+	combout => \vga|vga_timing|Equal0~0_combout\);
+
+-- Location: LCFF_X15_Y10_N1
+\vga|vga_timing|h_counter[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add2~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(0));
+
+-- Location: LCCOMB_X15_Y10_N2
+\vga|vga_timing|Add2~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~2_combout\ = (\vga|vga_timing|h_counter\(1) & (!\vga|vga_timing|Add2~1\)) # (!\vga|vga_timing|h_counter\(1) & ((\vga|vga_timing|Add2~1\) # (GND)))
+-- \vga|vga_timing|Add2~3\ = CARRY((!\vga|vga_timing|Add2~1\) # (!\vga|vga_timing|h_counter\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(1),
+	datad => VCC,
+	cin => \vga|vga_timing|Add2~1\,
+	combout => \vga|vga_timing|Add2~2_combout\,
+	cout => \vga|vga_timing|Add2~3\);
+
+-- Location: LCFF_X15_Y10_N3
+\vga|vga_timing|h_counter[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add2~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(1));
+
+-- Location: LCCOMB_X15_Y10_N4
+\vga|vga_timing|Add2~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~4_combout\ = (\vga|vga_timing|h_counter\(2) & (\vga|vga_timing|Add2~3\ $ (GND))) # (!\vga|vga_timing|h_counter\(2) & (!\vga|vga_timing|Add2~3\ & VCC))
+-- \vga|vga_timing|Add2~5\ = CARRY((\vga|vga_timing|h_counter\(2) & !\vga|vga_timing|Add2~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(2),
+	datad => VCC,
+	cin => \vga|vga_timing|Add2~3\,
+	combout => \vga|vga_timing|Add2~4_combout\,
+	cout => \vga|vga_timing|Add2~5\);
+
+-- Location: LCFF_X15_Y10_N5
+\vga|vga_timing|h_counter[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add2~4_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(2));
+
+-- Location: LCCOMB_X15_Y10_N14
+\vga|vga_timing|Add2~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~14_combout\ = (\vga|vga_timing|h_counter\(7) & (!\vga|vga_timing|Add2~13\)) # (!\vga|vga_timing|h_counter\(7) & ((\vga|vga_timing|Add2~13\) # (GND)))
+-- \vga|vga_timing|Add2~15\ = CARRY((!\vga|vga_timing|Add2~13\) # (!\vga|vga_timing|h_counter\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(7),
+	datad => VCC,
+	cin => \vga|vga_timing|Add2~13\,
+	combout => \vga|vga_timing|Add2~14_combout\,
+	cout => \vga|vga_timing|Add2~15\);
+
+-- Location: LCCOMB_X15_Y10_N16
+\vga|vga_timing|Add2~16\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~16_combout\ = (\vga|vga_timing|h_counter\(8) & (\vga|vga_timing|Add2~15\ $ (GND))) # (!\vga|vga_timing|h_counter\(8) & (!\vga|vga_timing|Add2~15\ & VCC))
+-- \vga|vga_timing|Add2~17\ = CARRY((\vga|vga_timing|h_counter\(8) & !\vga|vga_timing|Add2~15\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(8),
+	datad => VCC,
+	cin => \vga|vga_timing|Add2~15\,
+	combout => \vga|vga_timing|Add2~16_combout\,
+	cout => \vga|vga_timing|Add2~17\);
+
+-- Location: LCCOMB_X15_Y10_N8
+\vga|vga_timing|Add2~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~8_combout\ = (\vga|vga_timing|h_counter\(4) & (\vga|vga_timing|Add2~7\ $ (GND))) # (!\vga|vga_timing|h_counter\(4) & (!\vga|vga_timing|Add2~7\ & VCC))
+-- \vga|vga_timing|Add2~9\ = CARRY((\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|Add2~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|h_counter\(4),
+	datad => VCC,
+	cin => \vga|vga_timing|Add2~7\,
+	combout => \vga|vga_timing|Add2~8_combout\,
+	cout => \vga|vga_timing|Add2~9\);
+
+-- Location: LCFF_X15_Y10_N9
+\vga|vga_timing|h_counter[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add2~8_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(4));
+
+-- Location: LCCOMB_X15_Y10_N28
+\vga|vga_timing|Equal2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal2~0_combout\ = (\vga|vga_timing|h_counter\(3) & (\vga|vga_timing|h_counter\(0) & (\vga|vga_timing|h_counter\(2) & \vga|vga_timing|h_counter\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(3),
+	datab => \vga|vga_timing|h_counter\(0),
+	datac => \vga|vga_timing|h_counter\(2),
+	datad => \vga|vga_timing|h_counter\(1),
+	combout => \vga|vga_timing|Equal2~0_combout\);
+
+-- Location: LCCOMB_X16_Y10_N22
+\vga|vga_timing|Equal1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal1~0_combout\ = (!\vga|vga_timing|h_counter\(7) & (!\vga|vga_timing|h_counter\(5) & \vga|vga_timing|Equal2~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(7),
+	datac => \vga|vga_timing|h_counter\(5),
+	datad => \vga|vga_timing|Equal2~0_combout\,
+	combout => \vga|vga_timing|Equal1~0_combout\);
+
+-- Location: LCCOMB_X16_Y10_N30
+\vga|vga_timing|Equal3~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal3~0_combout\ = (!\vga|vga_timing|h_counter\(6) & (\vga|vga_timing|h_counter\(8) & (\vga|vga_timing|h_counter\(4) & \vga|vga_timing|Equal1~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(6),
+	datab => \vga|vga_timing|h_counter\(8),
+	datac => \vga|vga_timing|h_counter\(4),
+	datad => \vga|vga_timing|Equal1~0_combout\,
+	combout => \vga|vga_timing|Equal3~0_combout\);
+
+-- Location: LCCOMB_X15_Y10_N26
+\vga|vga_timing|h_counter~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|h_counter~2_combout\ = (\vga|vga_timing|Add2~16_combout\ & ((!\vga|vga_timing|Equal3~0_combout\) # (!\vga|vga_timing|h_counter\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(9),
+	datac => \vga|vga_timing|Add2~16_combout\,
+	datad => \vga|vga_timing|Equal3~0_combout\,
+	combout => \vga|vga_timing|h_counter~2_combout\);
+
+-- Location: LCFF_X15_Y10_N27
+\vga|vga_timing|h_counter[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|h_counter~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(8));
+
+-- Location: LCCOMB_X15_Y10_N18
+\vga|vga_timing|Add2~18\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add2~18_combout\ = \vga|vga_timing|h_counter\(9) $ (\vga|vga_timing|Add2~17\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(9),
+	cin => \vga|vga_timing|Add2~17\,
+	combout => \vga|vga_timing|Add2~18_combout\);
+
+-- Location: LCCOMB_X15_Y10_N24
+\vga|vga_timing|h_counter~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|h_counter~1_combout\ = (\vga|vga_timing|Add2~18_combout\ & ((!\vga|vga_timing|Equal3~0_combout\) # (!\vga|vga_timing|h_counter\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|Add2~18_combout\,
+	datac => \vga|vga_timing|h_counter\(9),
+	datad => \vga|vga_timing|Equal3~0_combout\,
+	combout => \vga|vga_timing|h_counter~1_combout\);
+
+-- Location: LCFF_X15_Y10_N25
+\vga|vga_timing|h_counter[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|h_counter~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(9));
+
+-- Location: LCCOMB_X15_Y10_N30
+\vga|vga_timing|h_counter~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|h_counter~0_combout\ = (\vga|vga_timing|Add2~10_combout\ & ((!\vga|vga_timing|Equal3~0_combout\) # (!\vga|vga_timing|h_counter\(9))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|Add2~10_combout\,
+	datac => \vga|vga_timing|h_counter\(9),
+	datad => \vga|vga_timing|Equal3~0_combout\,
+	combout => \vga|vga_timing|h_counter~0_combout\);
+
+-- Location: LCFF_X15_Y10_N31
+\vga|vga_timing|h_counter[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|h_counter~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(5));
+
+-- Location: LCFF_X15_Y10_N15
+\vga|vga_timing|h_counter[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add2~14_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_counter\(7));
+
+-- Location: LCCOMB_X15_Y10_N20
+\vga|vga_timing|Equal4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal4~0_combout\ = (!\vga|vga_timing|h_counter\(3) & (!\vga|vga_timing|h_counter\(2) & (!\vga|vga_timing|h_counter\(7) & !\vga|vga_timing|h_counter\(5))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(3),
+	datab => \vga|vga_timing|h_counter\(2),
+	datac => \vga|vga_timing|h_counter\(7),
+	datad => \vga|vga_timing|h_counter\(5),
+	combout => \vga|vga_timing|Equal4~0_combout\);
+
+-- Location: LCCOMB_X15_Y10_N22
+\vga|vga_timing|Equal4~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal4~1_combout\ = (\vga|vga_timing|Equal2~1_combout\ & (!\vga|vga_timing|h_counter\(1) & (\vga|vga_timing|Equal4~0_combout\ & !\vga|vga_timing|h_counter\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|Equal2~1_combout\,
+	datab => \vga|vga_timing|h_counter\(1),
+	datac => \vga|vga_timing|Equal4~0_combout\,
+	datad => \vga|vga_timing|h_counter\(0),
+	combout => \vga|vga_timing|Equal4~1_combout\);
+
+-- Location: LCCOMB_X16_Y10_N24
+\vga|vga_timing|Equal1~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal1~1_combout\ = (\vga|vga_timing|h_counter\(6) & (!\vga|vga_timing|h_counter\(9) & (!\vga|vga_timing|h_counter\(4) & !\vga|vga_timing|h_counter\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|h_counter\(6),
+	datab => \vga|vga_timing|h_counter\(9),
+	datac => \vga|vga_timing|h_counter\(4),
+	datad => \vga|vga_timing|h_counter\(8),
+	combout => \vga|vga_timing|Equal1~1_combout\);
+
+-- Location: LCCOMB_X16_Y10_N0
+\vga|vga_timing|h_state~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|h_state~11_combout\ = (!\vga|vga_timing|Equal2~2_combout\ & (!\vga|vga_timing|Equal4~1_combout\ & ((!\vga|vga_timing|Equal1~0_combout\) # (!\vga|vga_timing|Equal1~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000100010001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|Equal2~2_combout\,
+	datab => \vga|vga_timing|Equal4~1_combout\,
+	datac => \vga|vga_timing|Equal1~1_combout\,
+	datad => \vga|vga_timing|Equal1~0_combout\,
+	combout => \vga|vga_timing|h_state~11_combout\);
+
+-- Location: LCCOMB_X16_Y10_N6
+\vga|vga_timing|h_state~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|h_state~12_combout\ = (\vga|vga_timing|Equal0~0_combout\ & (((!\vga|vga_timing|h_counter\(9) & \vga|vga_timing|Equal3~0_combout\)) # (!\vga|vga_timing|h_state~11_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010101000100010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|Equal0~0_combout\,
+	datab => \vga|vga_timing|h_state~11_combout\,
+	datac => \vga|vga_timing|h_counter\(9),
+	datad => \vga|vga_timing|Equal3~0_combout\,
+	combout => \vga|vga_timing|h_state~12_combout\);
+
+-- Location: LCFF_X16_Y10_N1
+\vga|vga_timing|h_state.DATA\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|h_state~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|h_state~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|h_state.DATA~regout\);
+
+-- Location: LCCOMB_X15_Y9_N2
+\vga|vga_timing|Add4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~0_combout\ = \vga|vga_timing|v_counter\(0) $ (VCC)
+-- \vga|vga_timing|Add4~1\ = CARRY(\vga|vga_timing|v_counter\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|v_counter\(0),
+	datad => VCC,
+	combout => \vga|vga_timing|Add4~0_combout\,
+	cout => \vga|vga_timing|Add4~1\);
+
+-- Location: LCCOMB_X15_Y9_N28
+\vga|vga_timing|v_counter~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_counter~3_combout\ = (\vga|vga_timing|Add4~0_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|v_counter\(9)) # (!\vga|vga_timing|Equal8~1_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datab => \vga|vga_timing|Add4~0_combout\,
+	datac => \vga|vga_timing|Equal8~1_combout\,
+	datad => \vga|vga_timing|v_counter\(9),
+	combout => \vga|vga_timing|v_counter~3_combout\);
+
+-- Location: LCCOMB_X16_Y10_N4
+\vga|vga_timing|new_line~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|new_line~2_combout\ = (\vga|vga_timing|Equal4~1_combout\ & (\vga|vga_timing|clock_count\(1) & \vga|vga_timing|clock_count\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|Equal4~1_combout\,
+	datac => \vga|vga_timing|clock_count\(1),
+	datad => \vga|vga_timing|clock_count\(0),
+	combout => \vga|vga_timing|new_line~2_combout\);
+
+-- Location: LCFF_X16_Y10_N5
+\vga|vga_timing|new_line\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|new_line~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|new_line~regout\);
+
+-- Location: LCFF_X15_Y9_N29
+\vga|vga_timing|v_counter[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_counter~3_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(0));
+
+-- Location: LCCOMB_X15_Y9_N4
+\vga|vga_timing|Add4~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~2_combout\ = (\vga|vga_timing|v_counter\(1) & (!\vga|vga_timing|Add4~1\)) # (!\vga|vga_timing|v_counter\(1) & ((\vga|vga_timing|Add4~1\) # (GND)))
+-- \vga|vga_timing|Add4~3\ = CARRY((!\vga|vga_timing|Add4~1\) # (!\vga|vga_timing|v_counter\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|v_counter\(1),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~1\,
+	combout => \vga|vga_timing|Add4~2_combout\,
+	cout => \vga|vga_timing|Add4~3\);
+
+-- Location: LCCOMB_X15_Y9_N22
+\vga|vga_timing|v_counter~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_counter~1_combout\ = (\vga|vga_timing|Add4~2_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datab => \vga|vga_timing|v_counter\(9),
+	datac => \vga|vga_timing|Equal8~1_combout\,
+	datad => \vga|vga_timing|Add4~2_combout\,
+	combout => \vga|vga_timing|v_counter~1_combout\);
+
+-- Location: LCFF_X15_Y9_N23
+\vga|vga_timing|v_counter[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_counter~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(1));
+
+-- Location: LCCOMB_X15_Y9_N6
+\vga|vga_timing|Add4~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~4_combout\ = (\vga|vga_timing|v_counter\(2) & (\vga|vga_timing|Add4~3\ $ (GND))) # (!\vga|vga_timing|v_counter\(2) & (!\vga|vga_timing|Add4~3\ & VCC))
+-- \vga|vga_timing|Add4~5\ = CARRY((\vga|vga_timing|v_counter\(2) & !\vga|vga_timing|Add4~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|v_counter\(2),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~3\,
+	combout => \vga|vga_timing|Add4~4_combout\,
+	cout => \vga|vga_timing|Add4~5\);
+
+-- Location: LCCOMB_X15_Y9_N0
+\vga|vga_timing|v_counter~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_counter~0_combout\ = (\vga|vga_timing|Add4~4_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datab => \vga|vga_timing|v_counter\(9),
+	datac => \vga|vga_timing|Equal8~1_combout\,
+	datad => \vga|vga_timing|Add4~4_combout\,
+	combout => \vga|vga_timing|v_counter~0_combout\);
+
+-- Location: LCFF_X15_Y9_N1
+\vga|vga_timing|v_counter[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_counter~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(2));
+
+-- Location: LCCOMB_X15_Y9_N8
+\vga|vga_timing|Add4~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~6_combout\ = (\vga|vga_timing|v_counter\(3) & (!\vga|vga_timing|Add4~5\)) # (!\vga|vga_timing|v_counter\(3) & ((\vga|vga_timing|Add4~5\) # (GND)))
+-- \vga|vga_timing|Add4~7\ = CARRY((!\vga|vga_timing|Add4~5\) # (!\vga|vga_timing|v_counter\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(3),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~5\,
+	combout => \vga|vga_timing|Add4~6_combout\,
+	cout => \vga|vga_timing|Add4~7\);
+
+-- Location: LCCOMB_X15_Y9_N12
+\vga|vga_timing|Add4~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~10_combout\ = (\vga|vga_timing|v_counter\(5) & (!\vga|vga_timing|Add4~9\)) # (!\vga|vga_timing|v_counter\(5) & ((\vga|vga_timing|Add4~9\) # (GND)))
+-- \vga|vga_timing|Add4~11\ = CARRY((!\vga|vga_timing|Add4~9\) # (!\vga|vga_timing|v_counter\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~9\,
+	combout => \vga|vga_timing|Add4~10_combout\,
+	cout => \vga|vga_timing|Add4~11\);
+
+-- Location: LCCOMB_X15_Y9_N14
+\vga|vga_timing|Add4~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~12_combout\ = (\vga|vga_timing|v_counter\(6) & (\vga|vga_timing|Add4~11\ $ (GND))) # (!\vga|vga_timing|v_counter\(6) & (!\vga|vga_timing|Add4~11\ & VCC))
+-- \vga|vga_timing|Add4~13\ = CARRY((\vga|vga_timing|v_counter\(6) & !\vga|vga_timing|Add4~11\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|v_counter\(6),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~11\,
+	combout => \vga|vga_timing|Add4~12_combout\,
+	cout => \vga|vga_timing|Add4~13\);
+
+-- Location: LCFF_X15_Y9_N15
+\vga|vga_timing|v_counter[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add4~12_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(6));
+
+-- Location: LCCOMB_X15_Y9_N16
+\vga|vga_timing|Add4~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Add4~14_combout\ = (\vga|vga_timing|v_counter\(7) & (!\vga|vga_timing|Add4~13\)) # (!\vga|vga_timing|v_counter\(7) & ((\vga|vga_timing|Add4~13\) # (GND)))
+-- \vga|vga_timing|Add4~15\ = CARRY((!\vga|vga_timing|Add4~13\) # (!\vga|vga_timing|v_counter\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(7),
+	datad => VCC,
+	cin => \vga|vga_timing|Add4~13\,
+	combout => \vga|vga_timing|Add4~14_combout\,
+	cout => \vga|vga_timing|Add4~15\);
+
+-- Location: LCFF_X15_Y9_N17
+\vga|vga_timing|v_counter[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add4~14_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(7));
+
+-- Location: LCFF_X15_Y9_N19
+\vga|vga_timing|v_counter[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add4~16_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(8));
+
+-- Location: LCCOMB_X15_Y9_N26
+\vga|vga_timing|Equal6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal6~0_combout\ = (!\vga|vga_timing|v_counter\(4) & (!\vga|vga_timing|v_counter\(6) & (!\vga|vga_timing|v_counter\(7) & !\vga|vga_timing|v_counter\(8))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(4),
+	datab => \vga|vga_timing|v_counter\(6),
+	datac => \vga|vga_timing|v_counter\(7),
+	datad => \vga|vga_timing|v_counter\(8),
+	combout => \vga|vga_timing|Equal6~0_combout\);
+
+-- Location: LCCOMB_X16_Y9_N22
+\vga|vga_timing|Equal8~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal8~0_combout\ = (\vga|vga_timing|v_counter\(2) & (\vga|vga_timing|v_counter\(3) & \vga|vga_timing|v_counter\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(2),
+	datab => \vga|vga_timing|v_counter\(3),
+	datac => \vga|vga_timing|v_counter\(1),
+	combout => \vga|vga_timing|Equal8~0_combout\);
+
+-- Location: LCCOMB_X16_Y9_N0
+\vga|vga_timing|Equal8~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal8~1_combout\ = (\vga|vga_timing|Equal6~0_combout\ & (!\vga|vga_timing|v_counter\(0) & \vga|vga_timing|Equal8~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \vga|vga_timing|Equal6~0_combout\,
+	datac => \vga|vga_timing|v_counter\(0),
+	datad => \vga|vga_timing|Equal8~0_combout\,
+	combout => \vga|vga_timing|Equal8~1_combout\);
+
+-- Location: LCFF_X15_Y9_N13
+\vga|vga_timing|v_counter[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|Add4~10_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(5));
+
+-- Location: LCCOMB_X15_Y9_N30
+\vga|vga_timing|v_counter~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_counter~4_combout\ = (\vga|vga_timing|Add4~18_combout\ & (((\vga|vga_timing|v_counter\(5)) # (!\vga|vga_timing|v_counter\(9))) # (!\vga|vga_timing|Equal8~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|Add4~18_combout\,
+	datab => \vga|vga_timing|Equal8~1_combout\,
+	datac => \vga|vga_timing|v_counter\(9),
+	datad => \vga|vga_timing|v_counter\(5),
+	combout => \vga|vga_timing|v_counter~4_combout\);
+
+-- Location: LCFF_X15_Y9_N31
+\vga|vga_timing|v_counter[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_counter~4_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(9));
+
+-- Location: LCCOMB_X15_Y9_N24
+\vga|vga_timing|v_counter~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_counter~2_combout\ = (\vga|vga_timing|Add4~6_combout\ & ((\vga|vga_timing|v_counter\(5)) # ((!\vga|vga_timing|Equal8~1_combout\) # (!\vga|vga_timing|v_counter\(9)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datab => \vga|vga_timing|v_counter\(9),
+	datac => \vga|vga_timing|Equal8~1_combout\,
+	datad => \vga|vga_timing|Add4~6_combout\,
+	combout => \vga|vga_timing|v_counter~2_combout\);
+
+-- Location: LCFF_X15_Y9_N25
+\vga|vga_timing|v_counter[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_counter~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|new_line~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_counter\(3));
+
+-- Location: LCCOMB_X16_Y9_N12
+\vga|vga_timing|Equal6~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal6~1_combout\ = (!\vga|vga_timing|v_counter\(5) & (!\vga|vga_timing|v_counter\(0) & (!\vga|vga_timing|v_counter\(9) & \vga|vga_timing|Equal6~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datab => \vga|vga_timing|v_counter\(0),
+	datac => \vga|vga_timing|v_counter\(9),
+	datad => \vga|vga_timing|Equal6~0_combout\,
+	combout => \vga|vga_timing|Equal6~1_combout\);
+
+-- Location: LCCOMB_X16_Y9_N16
+\vga|vga_timing|v_state~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_state~11_combout\ = ((\vga|vga_timing|v_counter\(2) & ((\vga|vga_timing|v_counter\(1)) # (!\vga|vga_timing|v_counter\(3)))) # (!\vga|vga_timing|v_counter\(2) & (\vga|vga_timing|v_counter\(3) $ (\vga|vga_timing|v_counter\(1))))) # 
+-- (!\vga|vga_timing|Equal6~1_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011011011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(2),
+	datab => \vga|vga_timing|v_counter\(3),
+	datac => \vga|vga_timing|v_counter\(1),
+	datad => \vga|vga_timing|Equal6~1_combout\,
+	combout => \vga|vga_timing|v_state~11_combout\);
+
+-- Location: LCCOMB_X16_Y9_N26
+\vga|vga_timing|Equal8~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal8~2_combout\ = (\vga|vga_timing|v_counter\(5) & !\vga|vga_timing|v_counter\(9))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(5),
+	datac => \vga|vga_timing|v_counter\(9),
+	combout => \vga|vga_timing|Equal8~2_combout\);
+
+-- Location: LCCOMB_X16_Y9_N28
+\vga|vga_timing|v_state~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|v_state~12_combout\ = (\vga|vga_timing|new_line~regout\ & (((\vga|vga_timing|Equal8~2_combout\ & \vga|vga_timing|Equal8~1_combout\)) # (!\vga|vga_timing|v_state~11_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|new_line~regout\,
+	datab => \vga|vga_timing|Equal8~2_combout\,
+	datac => \vga|vga_timing|v_state~11_combout\,
+	datad => \vga|vga_timing|Equal8~1_combout\,
+	combout => \vga|vga_timing|v_state~12_combout\);
+
+-- Location: LCFF_X16_Y9_N17
+\vga|vga_timing|v_state.DATA\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	datain => \vga|vga_timing|v_state~11_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \vga|vga_timing|v_state~12_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|vga_timing|v_state.DATA~regout\);
+
+-- Location: LCCOMB_X16_Y11_N0
 \vga|vga_fb|SRAM_WE_N~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_WE_N~0_combout\ = ((\vga|vga_timing|h_state.DATA~regout\ & \vga|vga_timing|v_state.DATA~regout\)) # (!\vga|fb_wr_req~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000011111111",
+	lut_mask => "1101010111010101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
+	dataa => \vga|fb_wr_req~regout\,
+	datab => \vga|vga_timing|h_state.DATA~regout\,
 	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|fb_wr_req~regout\,
 	combout => \vga|vga_fb|SRAM_WE_N~0_combout\);
 
 -- Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -12435,50 +13982,111 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \pll|altpll_component|_clk0~clkctrl_outclk\);
 
--- Location: LCCOMB_X23_Y13_N28
-\vga|latched_color[6]~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y13_N28
+\sprite_renderer|FB_COLOR~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|latched_color[6]~0_combout\ = (\vga|state.IDLE~regout\ & (((\vga|latched_color\(6))))) # (!\vga|state.IDLE~regout\ & ((\RESET_N~regout\ & ((\sprite_renderer|FB_COLOR\(6)))) # (!\RESET_N~regout\ & (\vga|latched_color\(6)))))
+-- \sprite_renderer|FB_COLOR~0_combout\ = (\sprite_renderer|sprite_to_draw.color\(6) & !\sprite_renderer|FB_Y0[5]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111010010110000",
+	lut_mask => "0000101000001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \sprite_renderer|sprite_to_draw.color\(6),
+	datac => \sprite_renderer|FB_Y0[5]~12_combout\,
+	combout => \sprite_renderer|FB_COLOR~0_combout\);
+
+-- Location: LCFF_X20_Y13_N29
+\sprite_renderer|FB_COLOR[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_COLOR~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_COLOR\(6));
+
+-- Location: LCCOMB_X19_Y10_N2
+\vga|y_end[8]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|y_end[8]~10_combout\ = (!\vga|state.IDLE~regout\ & \RESET_N~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|state.IDLE~regout\,
-	datab => \RESET_N~regout\,
-	datac => \vga|latched_color\(6),
-	datad => \sprite_renderer|FB_COLOR\(6),
-	combout => \vga|latched_color[6]~0_combout\);
+	datad => \RESET_N~regout\,
+	combout => \vga|y_end[8]~10_combout\);
 
--- Location: LCFF_X23_Y13_N29
+-- Location: LCFF_X19_Y10_N7
 \vga|latched_color[6]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
-	datain => \vga|latched_color[6]~0_combout\,
+	sdata => \sprite_renderer|FB_COLOR\(6),
+	sload => VCC,
+	ena => \vga|y_end[8]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \vga|latched_color\(6));
 
--- Location: LCCOMB_X21_Y11_N26
-\vga|vga_timing|Equal6~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X20_Y13_N30
+\sprite_renderer|FB_COLOR~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_timing|Equal6~2_combout\ = (\vga|vga_timing|v_counter\(1) & (\vga|vga_timing|v_counter\(3) & (!\vga|vga_timing|v_counter\(2) & \vga|vga_timing|Equal6~1_combout\)))
+-- \sprite_renderer|FB_COLOR~1_combout\ = (!\sprite_renderer|sprite_to_draw.color\(6) & !\sprite_renderer|FB_Y0[5]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000100000000000",
+	lut_mask => "0000010100000101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(1),
+	dataa => \sprite_renderer|sprite_to_draw.color\(6),
+	datac => \sprite_renderer|FB_Y0[5]~12_combout\,
+	combout => \sprite_renderer|FB_COLOR~1_combout\);
+
+-- Location: LCFF_X20_Y13_N31
+\sprite_renderer|FB_COLOR[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|FB_COLOR~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|FB_COLOR\(10));
+
+-- Location: LCFF_X19_Y10_N17
+\vga|latched_color[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
+	sdata => \sprite_renderer|FB_COLOR\(10),
+	sload => VCC,
+	ena => \vga|y_end[8]~10_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \vga|latched_color\(10));
+
+-- Location: LCCOMB_X16_Y9_N10
+\vga|vga_timing|Equal6~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \vga|vga_timing|Equal6~2_combout\ = (!\vga|vga_timing|v_counter\(2) & (\vga|vga_timing|v_counter\(3) & (\vga|vga_timing|v_counter\(1) & \vga|vga_timing|Equal6~1_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \vga|vga_timing|v_counter\(2),
 	datab => \vga|vga_timing|v_counter\(3),
-	datac => \vga|vga_timing|v_counter\(2),
+	datac => \vga|vga_timing|v_counter\(1),
 	datad => \vga|vga_timing|Equal6~1_combout\,
 	combout => \vga|vga_timing|Equal6~2_combout\);
 
--- Location: LCFF_X21_Y11_N27
+-- Location: LCFF_X16_Y9_N11
 \vga|vga_timing|v_state.SYNC\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12489,40 +14097,40 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_state.SYNC~regout\);
 
--- Location: LCCOMB_X23_Y12_N12
+-- Location: LCCOMB_X19_Y10_N28
 \vga|flip_on_next_vs~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|flip_on_next_vs~0_combout\ = (\vga|flip_on_next_vs~regout\ & ((\vga|state.IDLE~regout\) # (!\vga|vga_timing|v_state.SYNC~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110000001100",
+	lut_mask => "1010111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \vga|flip_on_next_vs~regout\,
+	dataa => \vga|state.IDLE~regout\,
 	datac => \vga|vga_timing|v_state.SYNC~regout\,
-	datad => \vga|state.IDLE~regout\,
+	datad => \vga|flip_on_next_vs~regout\,
 	combout => \vga|flip_on_next_vs~0_combout\);
 
--- Location: LCCOMB_X23_Y12_N8
+-- Location: LCCOMB_X19_Y10_N18
 \vga|flip_on_next_vs~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|flip_on_next_vs~1_combout\ = (\vga|flip_on_next_vs~0_combout\) # ((\sprite_renderer|FB_FLIP~regout\ & (\vga|READY~1_combout\ & !\vga|flip_on_next_vs~regout\)))
+-- \vga|flip_on_next_vs~1_combout\ = (\vga|flip_on_next_vs~0_combout\) # ((\vga|READY~1_combout\ & (!\vga|flip_on_next_vs~regout\ & \sprite_renderer|FB_FLIP~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001000",
+	lut_mask => "1100111011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|FB_FLIP~regout\,
-	datab => \vga|READY~1_combout\,
+	dataa => \vga|READY~1_combout\,
+	datab => \vga|flip_on_next_vs~0_combout\,
 	datac => \vga|flip_on_next_vs~regout\,
-	datad => \vga|flip_on_next_vs~0_combout\,
+	datad => \sprite_renderer|FB_FLIP~regout\,
 	combout => \vga|flip_on_next_vs~1_combout\);
 
--- Location: LCFF_X23_Y12_N9
+-- Location: LCFF_X19_Y10_N19
 \vga|flip_on_next_vs\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12532,24 +14140,24 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|flip_on_next_vs~regout\);
 
--- Location: LCCOMB_X23_Y12_N16
+-- Location: LCCOMB_X19_Y10_N8
 \vga|fb_buffer_idx~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|fb_buffer_idx~0_combout\ = \vga|fb_buffer_idx~regout\ $ (((\vga|vga_timing|v_state.SYNC~regout\ & (\vga|flip_on_next_vs~regout\ & !\vga|state.IDLE~regout\))))
+-- \vga|fb_buffer_idx~0_combout\ = \vga|fb_buffer_idx~regout\ $ (((!\vga|state.IDLE~regout\ & (\vga|vga_timing|v_state.SYNC~regout\ & \vga|flip_on_next_vs~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000001111000",
+	lut_mask => "1011010011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_state.SYNC~regout\,
-	datab => \vga|flip_on_next_vs~regout\,
+	dataa => \vga|state.IDLE~regout\,
+	datab => \vga|vga_timing|v_state.SYNC~regout\,
 	datac => \vga|fb_buffer_idx~regout\,
-	datad => \vga|state.IDLE~regout\,
+	datad => \vga|flip_on_next_vs~regout\,
 	combout => \vga|fb_buffer_idx~0_combout\);
 
--- Location: LCFF_X23_Y12_N17
+-- Location: LCFF_X19_Y10_N9
 \vga|fb_buffer_idx\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12559,38 +14167,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|fb_buffer_idx~regout\);
 
--- Location: LCCOMB_X12_Y4_N16
+-- Location: LCCOMB_X12_Y4_N0
 \vga|vga_fb|ram_rd_word[5]~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[5]~0_combout\ = (\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[13]~13\)) # (!\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[5]~5\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1010101011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SRAM_DQ[13]~13\,
-	datac => \vga|fb_buffer_idx~regout\,
-	datad => \SRAM_DQ[5]~5\,
+	datac => \SRAM_DQ[5]~5\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[5]~0_combout\);
 
--- Location: LCCOMB_X12_Y4_N22
+-- Location: LCCOMB_X16_Y11_N26
 \vga|vga_timing|BLANK~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_timing|BLANK~0_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & \vga|vga_timing|v_state.DATA~regout\)
+-- \vga|vga_timing|BLANK~0_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|vga_timing|BLANK~0_combout\);
 
--- Location: LCFF_X12_Y4_N17
+-- Location: LCFF_X12_Y4_N1
 \vga|vga_fb|latched_ram[5]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12601,39 +14209,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(5));
 
--- Location: LCCOMB_X23_Y8_N16
+-- Location: LCCOMB_X12_Y4_N18
 \vga|VGA_R[0]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_R[0]~0_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(5) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_R[0]~0_combout\ = (\vga|vga_fb|latched_ram\(5) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000010000000",
+	lut_mask => "1100000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_fb|latched_ram\(5),
 	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_R[0]~0_combout\);
 
--- Location: LCCOMB_X12_Y4_N2
+-- Location: LCCOMB_X12_Y4_N12
 \vga|vga_fb|ram_rd_word[6]~1\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[6]~1_combout\ = (\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[14]~14\))) # (!\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[6]~6\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110010011100100",
+	lut_mask => "1111000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|fb_buffer_idx~regout\,
 	datab => \SRAM_DQ[6]~6\,
 	datac => \SRAM_DQ[14]~14\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[6]~1_combout\);
 
--- Location: LCFF_X12_Y4_N3
+-- Location: LCFF_X12_Y4_N13
 \vga|vga_fb|latched_ram[6]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12644,39 +14252,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(6));
 
--- Location: LCCOMB_X12_Y4_N12
+-- Location: LCCOMB_X12_Y4_N6
 \vga|VGA_R[2]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_R[2]~1_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(6) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_R[2]~1_combout\ = (\vga|vga_fb|latched_ram\(6) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100000000000",
+	lut_mask => "1010000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|vga_fb|latched_ram\(6),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	dataa => \vga|vga_fb|latched_ram\(6),
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_R[2]~1_combout\);
 
--- Location: LCCOMB_X12_Y4_N6
+-- Location: LCCOMB_X12_Y4_N16
 \vga|vga_fb|ram_rd_word[7]~2\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[7]~2_combout\ = (\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[15]~15\))) # (!\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[7]~7\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100101011001010",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SRAM_DQ[7]~7\,
 	datab => \SRAM_DQ[15]~15\,
-	datac => \vga|fb_buffer_idx~regout\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[7]~2_combout\);
 
--- Location: LCFF_X12_Y4_N7
+-- Location: LCFF_X12_Y4_N17
 \vga|vga_fb|latched_ram[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12687,10 +14295,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(7));
 
--- Location: LCCOMB_X12_Y4_N8
+-- Location: LCCOMB_X12_Y4_N2
 \vga|VGA_R[3]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_R[3]~2_combout\ = (\vga|vga_fb|latched_ram\(7) & (\vga|vga_timing|h_state.DATA~regout\ & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_R[3]~2_combout\ = (\vga|vga_fb|latched_ram\(7) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -12699,27 +14307,27 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_fb|latched_ram\(7),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_R[3]~2_combout\);
 
--- Location: LCCOMB_X12_Y4_N26
+-- Location: LCCOMB_X12_Y4_N28
 \vga|vga_fb|ram_rd_word[3]~3\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[3]~3_combout\ = (\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[11]~11\))) # (!\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[3]~3\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100101011001010",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SRAM_DQ[3]~3\,
 	datab => \SRAM_DQ[11]~11\,
-	datac => \vga|fb_buffer_idx~regout\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[3]~3_combout\);
 
--- Location: LCFF_X12_Y4_N27
+-- Location: LCFF_X12_Y4_N29
 \vga|vga_fb|latched_ram[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12730,39 +14338,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(3));
 
--- Location: LCCOMB_X12_Y4_N28
+-- Location: LCCOMB_X12_Y4_N22
 \vga|VGA_G[0]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_G[0]~0_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(3) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_G[0]~0_combout\ = (\vga|vga_fb|latched_ram\(3) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100000000000",
+	lut_mask => "1100000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_fb|latched_ram\(3),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_G[0]~0_combout\);
 
--- Location: LCCOMB_X12_Y4_N14
+-- Location: LCCOMB_X12_Y4_N24
 \vga|vga_fb|ram_rd_word[4]~4\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[4]~4_combout\ = (\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[12]~12\))) # (!\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[4]~4\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100101011001010",
+	lut_mask => "1111000010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SRAM_DQ[4]~4\,
-	datab => \SRAM_DQ[12]~12\,
-	datac => \vga|fb_buffer_idx~regout\,
+	datac => \SRAM_DQ[12]~12\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[4]~4_combout\);
 
--- Location: LCFF_X12_Y4_N15
+-- Location: LCFF_X12_Y4_N25
 \vga|vga_fb|latched_ram[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12773,10 +14381,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(4));
 
--- Location: LCCOMB_X12_Y4_N0
+-- Location: LCCOMB_X12_Y4_N26
 \vga|VGA_G[3]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_G[3]~1_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(4) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_G[3]~1_combout\ = (\vga|vga_fb|latched_ram\(4) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -12784,28 +14392,28 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datac => \vga|vga_fb|latched_ram\(4),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	dataa => \vga|vga_fb|latched_ram\(4),
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_G[3]~1_combout\);
 
--- Location: LCCOMB_X12_Y4_N18
+-- Location: LCCOMB_X12_Y4_N4
 \vga|vga_fb|ram_rd_word[0]~5\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[0]~5_combout\ = (\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[8]~8\)) # (!\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[0]~0\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101100011011000",
+	lut_mask => "1100110011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|fb_buffer_idx~regout\,
 	datab => \SRAM_DQ[8]~8\,
 	datac => \SRAM_DQ[0]~0\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[0]~5_combout\);
 
--- Location: LCFF_X12_Y4_N19
+-- Location: LCFF_X12_Y4_N5
 \vga|vga_fb|latched_ram[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12816,39 +14424,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(0));
 
--- Location: LCCOMB_X12_Y4_N4
+-- Location: LCCOMB_X12_Y4_N14
 \vga|VGA_B[0]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_B[0]~0_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(0) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_B[0]~0_combout\ = (\vga|vga_fb|latched_ram\(0) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100000000000",
+	lut_mask => "1100000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_fb|latched_ram\(0),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_B[0]~0_combout\);
 
--- Location: LCCOMB_X12_Y4_N30
+-- Location: LCCOMB_X12_Y4_N8
 \vga|vga_fb|ram_rd_word[1]~6\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[1]~6_combout\ = (\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[9]~9\)) # (!\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[1]~1\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101100011011000",
+	lut_mask => "1100110011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|fb_buffer_idx~regout\,
 	datab => \SRAM_DQ[9]~9\,
 	datac => \SRAM_DQ[1]~1\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[1]~6_combout\);
 
--- Location: LCFF_X12_Y4_N31
+-- Location: LCFF_X12_Y4_N9
 \vga|vga_fb|latched_ram[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12859,39 +14467,39 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(1));
 
--- Location: LCCOMB_X12_Y4_N24
+-- Location: LCCOMB_X12_Y4_N10
 \vga|VGA_B[2]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_B[2]~1_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_fb|latched_ram\(1) & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_B[2]~1_combout\ = (\vga|vga_fb|latched_ram\(1) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100000000000",
+	lut_mask => "1100000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_fb|latched_ram\(1),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_B[2]~1_combout\);
 
--- Location: LCCOMB_X12_Y4_N10
+-- Location: LCCOMB_X12_Y4_N20
 \vga|vga_fb|ram_rd_word[2]~7\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|ram_rd_word[2]~7_combout\ = (\vga|fb_buffer_idx~regout\ & ((\SRAM_DQ[10]~10\))) # (!\vga|fb_buffer_idx~regout\ & (\SRAM_DQ[2]~2\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110010011100100",
+	lut_mask => "1111000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|fb_buffer_idx~regout\,
 	datab => \SRAM_DQ[2]~2\,
 	datac => \SRAM_DQ[10]~10\,
+	datad => \vga|fb_buffer_idx~regout\,
 	combout => \vga|vga_fb|ram_rd_word[2]~7_combout\);
 
--- Location: LCFF_X12_Y4_N11
+-- Location: LCFF_X12_Y4_N21
 \vga|vga_fb|latched_ram[2]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12902,10 +14510,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_fb|latched_ram\(2));
 
--- Location: LCCOMB_X12_Y4_N20
+-- Location: LCCOMB_X12_Y4_N30
 \vga|VGA_B[3]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|VGA_B[3]~2_combout\ = (\vga|vga_fb|latched_ram\(2) & (\vga|vga_timing|h_state.DATA~regout\ & \vga|vga_timing|v_state.DATA~regout\))
+-- \vga|VGA_B[3]~2_combout\ = (\vga|vga_fb|latched_ram\(2) & (\vga|vga_timing|v_state.DATA~regout\ & \vga|vga_timing|h_state.DATA~regout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -12914,28 +14522,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_fb|latched_ram\(2),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|h_state.DATA~regout\,
 	combout => \vga|VGA_B[3]~2_combout\);
 
--- Location: LCCOMB_X24_Y11_N10
+-- Location: LCCOMB_X16_Y10_N26
 \vga|vga_timing|Equal1~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_timing|Equal1~2_combout\ = (!\vga|vga_timing|h_counter\(5) & (\vga|vga_timing|Equal1~1_combout\ & (!\vga|vga_timing|h_counter\(7) & \vga|vga_timing|Equal2~0_combout\)))
+-- \vga|vga_timing|Equal1~2_combout\ = (!\vga|vga_timing|h_counter\(5) & (\vga|vga_timing|Equal2~0_combout\ & (\vga|vga_timing|Equal1~1_combout\ & !\vga|vga_timing|h_counter\(7))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000010000000000",
+	lut_mask => "0000000001000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|h_counter\(5),
-	datab => \vga|vga_timing|Equal1~1_combout\,
-	datac => \vga|vga_timing|h_counter\(7),
-	datad => \vga|vga_timing|Equal2~0_combout\,
+	datab => \vga|vga_timing|Equal2~0_combout\,
+	datac => \vga|vga_timing|Equal1~1_combout\,
+	datad => \vga|vga_timing|h_counter\(7),
 	combout => \vga|vga_timing|Equal1~2_combout\);
 
--- Location: LCFF_X24_Y11_N11
+-- Location: LCFF_X16_Y10_N27
 \vga|vga_timing|h_state.SYNC\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12946,7 +14554,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_state.SYNC~regout\);
 
--- Location: LCCOMB_X22_Y8_N6
+-- Location: LCCOMB_X15_Y11_N6
 \vga|vga_timing|h_pixel[0]~9\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[0]~9_combout\ = \vga|vga_timing|h_pixel\(0) $ (VCC)
@@ -12963,22 +14571,22 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[0]~9_combout\,
 	cout => \vga|vga_timing|h_pixel[0]~10\);
 
--- Location: LCCOMB_X22_Y8_N30
+-- Location: LCCOMB_X16_Y10_N8
 \vga|vga_timing|h_timing~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_timing~0_combout\ = (\vga|vga_timing|Equal4~1_combout\) # (!\vga|vga_timing|h_state.DATA~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100001111",
+	lut_mask => "1100111111001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	datab => \vga|vga_timing|Equal4~1_combout\,
 	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|Equal4~1_combout\,
 	combout => \vga|vga_timing|h_timing~0_combout\);
 
--- Location: LCFF_X22_Y8_N7
+-- Location: LCFF_X15_Y11_N7
 \vga|vga_timing|h_pixel[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -12990,7 +14598,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(0));
 
--- Location: LCCOMB_X22_Y8_N24
+-- Location: LCCOMB_X15_Y11_N24
 \vga|vga_fb|SRAM_ADDR[0]~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[0]~0_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(0))) # (!\vga|vga_timing|h_state.DATA~regout\ & ((\vga|x_cursor\(0)))))) # 
@@ -13008,7 +14616,7 @@ PORT MAP (
 	datad => \vga|x_cursor\(0),
 	combout => \vga|vga_fb|SRAM_ADDR[0]~0_combout\);
 
--- Location: LCCOMB_X22_Y8_N8
+-- Location: LCCOMB_X15_Y11_N8
 \vga|vga_timing|h_pixel[1]~11\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[1]~11_combout\ = (\vga|vga_timing|h_pixel\(1) & (!\vga|vga_timing|h_pixel[0]~10\)) # (!\vga|vga_timing|h_pixel\(1) & ((\vga|vga_timing|h_pixel[0]~10\) # (GND)))
@@ -13026,7 +14634,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[1]~11_combout\,
 	cout => \vga|vga_timing|h_pixel[1]~12\);
 
--- Location: LCFF_X22_Y8_N9
+-- Location: LCFF_X15_Y11_N9
 \vga|vga_timing|h_pixel[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13038,25 +14646,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(1));
 
--- Location: LCCOMB_X23_Y8_N26
+-- Location: LCCOMB_X15_Y11_N26
 \vga|vga_fb|SRAM_ADDR[1]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[1]~1_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|h_pixel\(1)))) # (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|x_cursor\(1))))) # 
--- (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|x_cursor\(1)))
+-- \vga|vga_fb|SRAM_ADDR[1]~1_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(1))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(1)))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|x_cursor\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110110001001100",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_state.DATA~regout\,
-	datab => \vga|x_cursor\(1),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|h_pixel\(1),
+	dataa => \vga|vga_timing|h_state.DATA~regout\,
+	datab => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|h_pixel\(1),
+	datad => \vga|x_cursor\(1),
 	combout => \vga|vga_fb|SRAM_ADDR[1]~1_combout\);
 
--- Location: LCCOMB_X22_Y8_N10
+-- Location: LCCOMB_X15_Y11_N10
 \vga|vga_timing|h_pixel[2]~13\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[2]~13_combout\ = (\vga|vga_timing|h_pixel\(2) & (\vga|vga_timing|h_pixel[1]~12\ $ (GND))) # (!\vga|vga_timing|h_pixel\(2) & (!\vga|vga_timing|h_pixel[1]~12\ & VCC))
@@ -13074,7 +14682,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[2]~13_combout\,
 	cout => \vga|vga_timing|h_pixel[2]~14\);
 
--- Location: LCFF_X22_Y8_N11
+-- Location: LCFF_X15_Y11_N11
 \vga|vga_timing|h_pixel[2]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13086,25 +14694,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(2));
 
--- Location: LCCOMB_X22_Y8_N2
+-- Location: LCCOMB_X18_Y11_N0
 \vga|vga_fb|SRAM_ADDR[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[2]~2_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_pixel\(2)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|x_cursor\(2))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|x_cursor\(2)))))
+-- \vga|vga_fb|SRAM_ADDR[2]~2_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(2))) # (!\vga|vga_timing|h_state.DATA~regout\ & ((\vga|x_cursor\(2)))))) # 
+-- (!\vga|vga_timing|v_state.DATA~regout\ & (((\vga|x_cursor\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111100001110000",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|vga_timing|v_state.DATA~regout\,
-	datac => \vga|x_cursor\(2),
-	datad => \vga|vga_timing|h_pixel\(2),
+	dataa => \vga|vga_timing|v_state.DATA~regout\,
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|vga_timing|h_pixel\(2),
+	datad => \vga|x_cursor\(2),
 	combout => \vga|vga_fb|SRAM_ADDR[2]~2_combout\);
 
--- Location: LCCOMB_X22_Y8_N12
+-- Location: LCCOMB_X15_Y11_N12
 \vga|vga_timing|h_pixel[3]~15\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[3]~15_combout\ = (\vga|vga_timing|h_pixel\(3) & (!\vga|vga_timing|h_pixel[2]~14\)) # (!\vga|vga_timing|h_pixel\(3) & ((\vga|vga_timing|h_pixel[2]~14\) # (GND)))
@@ -13122,7 +14730,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[3]~15_combout\,
 	cout => \vga|vga_timing|h_pixel[3]~16\);
 
--- Location: LCFF_X22_Y8_N13
+-- Location: LCFF_X15_Y11_N13
 \vga|vga_timing|h_pixel[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13134,7 +14742,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(3));
 
--- Location: LCCOMB_X23_Y8_N20
+-- Location: LCCOMB_X15_Y11_N4
 \vga|vga_fb|SRAM_ADDR[3]~3\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[3]~3_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|h_pixel\(3)))) # (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|x_cursor\(3))))) # 
@@ -13142,17 +14750,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110110001001100",
+	lut_mask => "1110101000101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_state.DATA~regout\,
-	datab => \vga|x_cursor\(3),
+	dataa => \vga|x_cursor\(3),
+	datab => \vga|vga_timing|v_state.DATA~regout\,
 	datac => \vga|vga_timing|h_state.DATA~regout\,
 	datad => \vga|vga_timing|h_pixel\(3),
 	combout => \vga|vga_fb|SRAM_ADDR[3]~3_combout\);
 
--- Location: LCCOMB_X22_Y8_N14
+-- Location: LCCOMB_X15_Y11_N14
 \vga|vga_timing|h_pixel[4]~17\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[4]~17_combout\ = (\vga|vga_timing|h_pixel\(4) & (\vga|vga_timing|h_pixel[3]~16\ $ (GND))) # (!\vga|vga_timing|h_pixel\(4) & (!\vga|vga_timing|h_pixel[3]~16\ & VCC))
@@ -13170,7 +14778,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[4]~17_combout\,
 	cout => \vga|vga_timing|h_pixel[4]~18\);
 
--- Location: LCFF_X22_Y8_N15
+-- Location: LCFF_X15_Y11_N15
 \vga|vga_timing|h_pixel[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13182,7 +14790,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(4));
 
--- Location: LCCOMB_X22_Y8_N4
+-- Location: LCCOMB_X16_Y11_N24
 \vga|vga_fb|SRAM_ADDR[4]~4\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[4]~4_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(4))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(4)))))) # 
@@ -13190,17 +14798,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111011110000000",
+	lut_mask => "1011111110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|vga_timing|v_state.DATA~regout\,
-	datac => \vga|vga_timing|h_pixel\(4),
+	dataa => \vga|vga_timing|h_pixel\(4),
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
 	datad => \vga|x_cursor\(4),
 	combout => \vga|vga_fb|SRAM_ADDR[4]~4_combout\);
 
--- Location: LCCOMB_X22_Y8_N16
+-- Location: LCCOMB_X15_Y11_N16
 \vga|vga_timing|h_pixel[5]~19\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[5]~19_combout\ = (\vga|vga_timing|h_pixel\(5) & (!\vga|vga_timing|h_pixel[4]~18\)) # (!\vga|vga_timing|h_pixel\(5) & ((\vga|vga_timing|h_pixel[4]~18\) # (GND)))
@@ -13218,7 +14826,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[5]~19_combout\,
 	cout => \vga|vga_timing|h_pixel[5]~20\);
 
--- Location: LCFF_X22_Y8_N17
+-- Location: LCFF_X15_Y11_N17
 \vga|vga_timing|h_pixel[5]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13230,7 +14838,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(5));
 
--- Location: LCCOMB_X23_Y8_N22
+-- Location: LCCOMB_X15_Y11_N0
 \vga|vga_fb|SRAM_ADDR[5]~5\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[5]~5_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(5))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(5)))))) # 
@@ -13238,17 +14846,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101111110000000",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|vga_timing|h_pixel\(5),
-	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datab => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|h_pixel\(5),
 	datad => \vga|x_cursor\(5),
 	combout => \vga|vga_fb|SRAM_ADDR[5]~5_combout\);
 
--- Location: LCCOMB_X22_Y8_N18
+-- Location: LCCOMB_X15_Y11_N18
 \vga|vga_timing|h_pixel[6]~21\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[6]~21_combout\ = (\vga|vga_timing|h_pixel\(6) & (\vga|vga_timing|h_pixel[5]~20\ $ (GND))) # (!\vga|vga_timing|h_pixel\(6) & (!\vga|vga_timing|h_pixel[5]~20\ & VCC))
@@ -13266,7 +14874,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[6]~21_combout\,
 	cout => \vga|vga_timing|h_pixel[6]~22\);
 
--- Location: LCFF_X22_Y8_N19
+-- Location: LCFF_X15_Y11_N19
 \vga|vga_timing|h_pixel[6]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13278,7 +14886,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(6));
 
--- Location: LCCOMB_X22_Y8_N0
+-- Location: LCCOMB_X15_Y11_N2
 \vga|vga_fb|SRAM_ADDR[6]~6\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[6]~6_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(6))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(6)))))) # 
@@ -13296,7 +14904,7 @@ PORT MAP (
 	datad => \vga|x_cursor\(6),
 	combout => \vga|vga_fb|SRAM_ADDR[6]~6_combout\);
 
--- Location: LCCOMB_X22_Y8_N20
+-- Location: LCCOMB_X15_Y11_N20
 \vga|vga_timing|h_pixel[7]~23\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[7]~23_combout\ = (\vga|vga_timing|h_pixel\(7) & (!\vga|vga_timing|h_pixel[6]~22\)) # (!\vga|vga_timing|h_pixel\(7) & ((\vga|vga_timing|h_pixel[6]~22\) # (GND)))
@@ -13314,7 +14922,7 @@ PORT MAP (
 	combout => \vga|vga_timing|h_pixel[7]~23_combout\,
 	cout => \vga|vga_timing|h_pixel[7]~24\);
 
--- Location: LCFF_X22_Y8_N21
+-- Location: LCFF_X15_Y11_N21
 \vga|vga_timing|h_pixel[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13326,7 +14934,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(7));
 
--- Location: LCCOMB_X22_Y8_N26
+-- Location: LCCOMB_X15_Y11_N28
 \vga|vga_fb|SRAM_ADDR[7]~7\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[7]~7_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(7))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(7)))))) # 
@@ -13344,7 +14952,7 @@ PORT MAP (
 	datad => \vga|x_cursor\(7),
 	combout => \vga|vga_fb|SRAM_ADDR[7]~7_combout\);
 
--- Location: LCCOMB_X22_Y8_N22
+-- Location: LCCOMB_X15_Y11_N22
 \vga|vga_timing|h_pixel[8]~25\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|h_pixel[8]~25_combout\ = \vga|vga_timing|h_pixel[7]~24\ $ (!\vga|vga_timing|h_pixel\(8))
@@ -13359,7 +14967,7 @@ PORT MAP (
 	cin => \vga|vga_timing|h_pixel[7]~24\,
 	combout => \vga|vga_timing|h_pixel[8]~25_combout\);
 
--- Location: LCFF_X22_Y8_N23
+-- Location: LCFF_X15_Y11_N23
 \vga|vga_timing|h_pixel[8]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13371,7 +14979,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|h_pixel\(8));
 
--- Location: LCCOMB_X22_Y8_N28
+-- Location: LCCOMB_X15_Y11_N30
 \vga|vga_fb|SRAM_ADDR[8]~8\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[8]~8_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|h_pixel\(8))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|x_cursor\(8)))))) # 
@@ -13389,7 +14997,7 @@ PORT MAP (
 	datad => \vga|x_cursor\(8),
 	combout => \vga|vga_fb|SRAM_ADDR[8]~8_combout\);
 
--- Location: LCCOMB_X22_Y11_N6
+-- Location: LCCOMB_X18_Y8_N6
 \vga|vga_timing|v_pixel[0]~9\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[0]~9_combout\ = \vga|vga_timing|v_pixel\(0) $ (VCC)
@@ -13406,39 +15014,39 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[0]~9_combout\,
 	cout => \vga|vga_timing|v_pixel[0]~10\);
 
--- Location: LCCOMB_X21_Y11_N30
+-- Location: LCCOMB_X16_Y9_N30
 \vga|vga_timing|Equal9~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_timing|Equal9~0_combout\ = (!\vga|vga_timing|v_counter\(1) & (!\vga|vga_timing|v_counter\(2) & !\vga|vga_timing|v_counter\(3)))
+-- \vga|vga_timing|Equal9~0_combout\ = (!\vga|vga_timing|v_counter\(2) & (!\vga|vga_timing|v_counter\(3) & !\vga|vga_timing|v_counter\(1)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000000101",
+	lut_mask => "0000000100000001",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_counter\(1),
-	datac => \vga|vga_timing|v_counter\(2),
-	datad => \vga|vga_timing|v_counter\(3),
+	dataa => \vga|vga_timing|v_counter\(2),
+	datab => \vga|vga_timing|v_counter\(3),
+	datac => \vga|vga_timing|v_counter\(1),
 	combout => \vga|vga_timing|Equal9~0_combout\);
 
--- Location: LCCOMB_X21_Y11_N0
+-- Location: LCCOMB_X16_Y9_N24
 \vga|vga_timing|v_timing~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_timing|v_timing~0_combout\ = ((\vga|vga_timing|Equal9~0_combout\ & \vga|vga_timing|Equal6~1_combout\)) # (!\vga|vga_timing|v_state.DATA~regout\)
+-- \vga|vga_timing|v_timing~0_combout\ = ((\vga|vga_timing|Equal6~1_combout\ & \vga|vga_timing|Equal9~0_combout\)) # (!\vga|vga_timing|v_state.DATA~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100111100001111",
+	lut_mask => "1000100011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \vga|vga_timing|Equal6~1_combout\,
 	datab => \vga|vga_timing|Equal9~0_combout\,
-	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|vga_timing|Equal6~1_combout\,
+	datad => \vga|vga_timing|v_state.DATA~regout\,
 	combout => \vga|vga_timing|v_timing~0_combout\);
 
--- Location: LCFF_X22_Y11_N7
+-- Location: LCFF_X18_Y8_N7
 \vga|vga_timing|v_pixel[0]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13450,25 +15058,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(0));
 
--- Location: LCCOMB_X22_Y11_N0
+-- Location: LCCOMB_X18_Y8_N24
 \vga|vga_fb|SRAM_ADDR[9]~9\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[9]~9_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(0))) # (!\vga|vga_timing|h_state.DATA~regout\ & ((\vga|y_cursor\(0)))))) # 
--- (!\vga|vga_timing|v_state.DATA~regout\ & (((\vga|y_cursor\(0)))))
+-- \vga|vga_fb|SRAM_ADDR[9]~9_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(0)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(0))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011111110000000",
+	lut_mask => "1110110001001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_pixel\(0),
-	datab => \vga|vga_timing|v_state.DATA~regout\,
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|y_cursor\(0),
+	dataa => \vga|vga_timing|h_state.DATA~regout\,
+	datab => \vga|y_cursor\(0),
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|v_pixel\(0),
 	combout => \vga|vga_fb|SRAM_ADDR[9]~9_combout\);
 
--- Location: LCCOMB_X22_Y11_N8
+-- Location: LCCOMB_X18_Y8_N8
 \vga|vga_timing|v_pixel[1]~11\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[1]~11_combout\ = (\vga|vga_timing|v_pixel\(1) & (!\vga|vga_timing|v_pixel[0]~10\)) # (!\vga|vga_timing|v_pixel\(1) & ((\vga|vga_timing|v_pixel[0]~10\) # (GND)))
@@ -13486,7 +15094,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[1]~11_combout\,
 	cout => \vga|vga_timing|v_pixel[1]~12\);
 
--- Location: LCFF_X22_Y11_N9
+-- Location: LCFF_X18_Y8_N9
 \vga|vga_timing|v_pixel[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13498,7 +15106,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(1));
 
--- Location: LCCOMB_X22_Y11_N2
+-- Location: LCCOMB_X18_Y11_N18
 \vga|vga_fb|SRAM_ADDR[10]~10\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[10]~10_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(1))) # (!\vga|vga_timing|h_state.DATA~regout\ & ((\vga|y_cursor\(1)))))) # 
@@ -13506,17 +15114,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101111110000000",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|v_state.DATA~regout\,
-	datab => \vga|vga_timing|v_pixel\(1),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|vga_timing|v_pixel\(1),
 	datad => \vga|y_cursor\(1),
 	combout => \vga|vga_fb|SRAM_ADDR[10]~10_combout\);
 
--- Location: LCCOMB_X22_Y11_N10
+-- Location: LCCOMB_X18_Y8_N10
 \vga|vga_timing|v_pixel[2]~13\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[2]~13_combout\ = (\vga|vga_timing|v_pixel\(2) & (\vga|vga_timing|v_pixel[1]~12\ $ (GND))) # (!\vga|vga_timing|v_pixel\(2) & (!\vga|vga_timing|v_pixel[1]~12\ & VCC))
@@ -13534,7 +15142,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[2]~13_combout\,
 	cout => \vga|vga_timing|v_pixel[2]~14\);
 
--- Location: LCFF_X22_Y11_N11
+-- Location: LCFF_X18_Y8_N11
 \vga|vga_timing|v_pixel[2]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13546,25 +15154,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(2));
 
--- Location: LCCOMB_X22_Y11_N4
+-- Location: LCCOMB_X18_Y8_N26
 \vga|vga_fb|SRAM_ADDR[11]~11\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[11]~11_combout\ = (\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|h_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(2))) # (!\vga|vga_timing|h_state.DATA~regout\ & ((\vga|y_cursor\(2)))))) # 
--- (!\vga|vga_timing|v_state.DATA~regout\ & (((\vga|y_cursor\(2)))))
+-- \vga|vga_fb|SRAM_ADDR[11]~11_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(2)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(2))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011111110000000",
+	lut_mask => "1111100001110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_pixel\(2),
+	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_timing|v_state.DATA~regout\,
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|y_cursor\(2),
+	datac => \vga|y_cursor\(2),
+	datad => \vga|vga_timing|v_pixel\(2),
 	combout => \vga|vga_fb|SRAM_ADDR[11]~11_combout\);
 
--- Location: LCCOMB_X22_Y11_N12
+-- Location: LCCOMB_X18_Y8_N12
 \vga|vga_timing|v_pixel[3]~15\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[3]~15_combout\ = (\vga|vga_timing|v_pixel\(3) & (!\vga|vga_timing|v_pixel[2]~14\)) # (!\vga|vga_timing|v_pixel\(3) & ((\vga|vga_timing|v_pixel[2]~14\) # (GND)))
@@ -13582,7 +15190,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[3]~15_combout\,
 	cout => \vga|vga_timing|v_pixel[3]~16\);
 
--- Location: LCFF_X22_Y11_N13
+-- Location: LCFF_X18_Y8_N13
 \vga|vga_timing|v_pixel[3]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13594,25 +15202,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(3));
 
--- Location: LCCOMB_X22_Y11_N24
+-- Location: LCCOMB_X18_Y8_N28
 \vga|vga_fb|SRAM_ADDR[12]~12\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[12]~12_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(3))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(3)))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(3)))))
+-- \vga|vga_fb|SRAM_ADDR[12]~12_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(3)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(3))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(3)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010110011001100",
+	lut_mask => "1110110001001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|v_pixel\(3),
+	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|y_cursor\(3),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|vga_timing|v_pixel\(3),
 	combout => \vga|vga_fb|SRAM_ADDR[12]~12_combout\);
 
--- Location: LCCOMB_X22_Y11_N14
+-- Location: LCCOMB_X18_Y8_N14
 \vga|vga_timing|v_pixel[4]~17\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[4]~17_combout\ = (\vga|vga_timing|v_pixel\(4) & (\vga|vga_timing|v_pixel[3]~16\ $ (GND))) # (!\vga|vga_timing|v_pixel\(4) & (!\vga|vga_timing|v_pixel[3]~16\ & VCC))
@@ -13630,7 +15238,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[4]~17_combout\,
 	cout => \vga|vga_timing|v_pixel[4]~18\);
 
--- Location: LCFF_X22_Y11_N15
+-- Location: LCFF_X18_Y8_N15
 \vga|vga_timing|v_pixel[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13642,25 +15250,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(4));
 
--- Location: LCCOMB_X22_Y11_N26
+-- Location: LCCOMB_X18_Y8_N0
 \vga|vga_fb|SRAM_ADDR[13]~13\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[13]~13_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(4)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(4))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(4)))
+-- \vga|vga_fb|SRAM_ADDR[13]~13_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(4))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(4)))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(4)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100101010101010",
+	lut_mask => "1101100011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|y_cursor\(4),
+	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_timing|v_pixel\(4),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|y_cursor\(4),
 	datad => \vga|vga_timing|v_state.DATA~regout\,
 	combout => \vga|vga_fb|SRAM_ADDR[13]~13_combout\);
 
--- Location: LCCOMB_X22_Y11_N16
+-- Location: LCCOMB_X18_Y8_N16
 \vga|vga_timing|v_pixel[5]~19\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[5]~19_combout\ = (\vga|vga_timing|v_pixel\(5) & (!\vga|vga_timing|v_pixel[4]~18\)) # (!\vga|vga_timing|v_pixel\(5) & ((\vga|vga_timing|v_pixel[4]~18\) # (GND)))
@@ -13678,7 +15286,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[5]~19_combout\,
 	cout => \vga|vga_timing|v_pixel[5]~20\);
 
--- Location: LCFF_X22_Y11_N17
+-- Location: LCFF_X18_Y8_N17
 \vga|vga_timing|v_pixel[5]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13690,25 +15298,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(5));
 
--- Location: LCCOMB_X23_Y8_N8
+-- Location: LCCOMB_X18_Y8_N2
 \vga|vga_fb|SRAM_ADDR[14]~14\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[14]~14_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(5)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(5))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(5)))
+-- \vga|vga_fb|SRAM_ADDR[14]~14_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(5))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(5)))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(5)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110110001001100",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|y_cursor\(5),
-	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|vga_timing|v_pixel\(5),
+	datab => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_pixel\(5),
+	datad => \vga|y_cursor\(5),
 	combout => \vga|vga_fb|SRAM_ADDR[14]~14_combout\);
 
--- Location: LCCOMB_X22_Y11_N18
+-- Location: LCCOMB_X18_Y8_N18
 \vga|vga_timing|v_pixel[6]~21\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[6]~21_combout\ = (\vga|vga_timing|v_pixel\(6) & (\vga|vga_timing|v_pixel[5]~20\ $ (GND))) # (!\vga|vga_timing|v_pixel\(6) & (!\vga|vga_timing|v_pixel[5]~20\ & VCC))
@@ -13726,7 +15334,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[6]~21_combout\,
 	cout => \vga|vga_timing|v_pixel[6]~22\);
 
--- Location: LCFF_X22_Y11_N19
+-- Location: LCFF_X18_Y8_N19
 \vga|vga_timing|v_pixel[6]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13738,7 +15346,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(6));
 
--- Location: LCCOMB_X22_Y11_N28
+-- Location: LCCOMB_X18_Y8_N4
 \vga|vga_fb|SRAM_ADDR[15]~15\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_ADDR[15]~15_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(6))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(6)))))) # 
@@ -13746,17 +15354,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101100011110000",
+	lut_mask => "1101111110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|h_state.DATA~regout\,
 	datab => \vga|vga_timing|v_pixel\(6),
-	datac => \vga|y_cursor\(6),
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|y_cursor\(6),
 	combout => \vga|vga_fb|SRAM_ADDR[15]~15_combout\);
 
--- Location: LCCOMB_X22_Y11_N20
+-- Location: LCCOMB_X18_Y8_N20
 \vga|vga_timing|v_pixel[7]~23\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[7]~23_combout\ = (\vga|vga_timing|v_pixel\(7) & (!\vga|vga_timing|v_pixel[6]~22\)) # (!\vga|vga_timing|v_pixel\(7) & ((\vga|vga_timing|v_pixel[6]~22\) # (GND)))
@@ -13774,7 +15382,7 @@ PORT MAP (
 	combout => \vga|vga_timing|v_pixel[7]~23_combout\,
 	cout => \vga|vga_timing|v_pixel[7]~24\);
 
--- Location: LCFF_X22_Y11_N21
+-- Location: LCFF_X18_Y8_N21
 \vga|vga_timing|v_pixel[7]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13786,25 +15394,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(7));
 
--- Location: LCCOMB_X23_Y8_N18
+-- Location: LCCOMB_X18_Y8_N30
 \vga|vga_fb|SRAM_ADDR[16]~16\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[16]~16_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(7)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(7))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(7)))
+-- \vga|vga_fb|SRAM_ADDR[16]~16_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(7))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(7)))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(7)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110110001001100",
+	lut_mask => "1111011110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|y_cursor\(7),
-	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|vga_timing|v_pixel\(7),
+	datab => \vga|vga_timing|v_state.DATA~regout\,
+	datac => \vga|vga_timing|v_pixel\(7),
+	datad => \vga|y_cursor\(7),
 	combout => \vga|vga_fb|SRAM_ADDR[16]~16_combout\);
 
--- Location: LCCOMB_X22_Y11_N22
+-- Location: LCCOMB_X18_Y8_N22
 \vga|vga_timing|v_pixel[8]~25\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_timing|v_pixel[8]~25_combout\ = \vga|vga_timing|v_pixel[7]~24\ $ (!\vga|vga_timing|v_pixel\(8))
@@ -13819,7 +15427,7 @@ PORT MAP (
 	cin => \vga|vga_timing|v_pixel[7]~24\,
 	combout => \vga|vga_timing|v_pixel[8]~25_combout\);
 
--- Location: LCFF_X22_Y11_N23
+-- Location: LCFF_X18_Y8_N23
 \vga|vga_timing|v_pixel[8]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk0~clkctrl_outclk\,
@@ -13831,25 +15439,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \vga|vga_timing|v_pixel\(8));
 
--- Location: LCCOMB_X22_Y11_N30
+-- Location: LCCOMB_X18_Y11_N12
 \vga|vga_fb|SRAM_ADDR[17]~17\ : cycloneii_lcell_comb
 -- Equation(s):
--- \vga|vga_fb|SRAM_ADDR[17]~17_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & ((\vga|vga_timing|v_pixel\(8)))) # (!\vga|vga_timing|v_state.DATA~regout\ & (\vga|y_cursor\(8))))) # 
--- (!\vga|vga_timing|h_state.DATA~regout\ & (\vga|y_cursor\(8)))
+-- \vga|vga_fb|SRAM_ADDR[17]~17_combout\ = (\vga|vga_timing|h_state.DATA~regout\ & ((\vga|vga_timing|v_state.DATA~regout\ & (\vga|vga_timing|v_pixel\(8))) # (!\vga|vga_timing|v_state.DATA~regout\ & ((\vga|y_cursor\(8)))))) # 
+-- (!\vga|vga_timing|h_state.DATA~regout\ & (((\vga|y_cursor\(8)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100101010101010",
+	lut_mask => "1011111110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|y_cursor\(8),
-	datab => \vga|vga_timing|v_pixel\(8),
-	datac => \vga|vga_timing|h_state.DATA~regout\,
-	datad => \vga|vga_timing|v_state.DATA~regout\,
+	dataa => \vga|vga_timing|v_pixel\(8),
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|vga_timing|v_state.DATA~regout\,
+	datad => \vga|y_cursor\(8),
 	combout => \vga|vga_fb|SRAM_ADDR[17]~17_combout\);
 
--- Location: LCCOMB_X23_Y8_N14
+-- Location: LCCOMB_X16_Y11_N2
 \vga|vga_fb|SRAM_UB_N~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_UB_N~0_combout\ = (\vga|fb_buffer_idx~regout\ & (((!\vga|vga_timing|v_state.DATA~regout\)) # (!\vga|vga_timing|h_state.DATA~regout\))) # (!\vga|fb_buffer_idx~regout\ & (((\vga|vga_timing|h_state.DATA~regout\ & 
@@ -13857,17 +15465,17 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110110001111111",
+	lut_mask => "0110011110101111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|fb_buffer_idx~regout\,
-	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|fb_wr_req~regout\,
+	dataa => \vga|fb_buffer_idx~regout\,
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|fb_wr_req~regout\,
+	datad => \vga|vga_timing|v_state.DATA~regout\,
 	combout => \vga|vga_fb|SRAM_UB_N~0_combout\);
 
--- Location: LCCOMB_X23_Y8_N24
+-- Location: LCCOMB_X16_Y11_N28
 \vga|vga_fb|SRAM_LB_N~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \vga|vga_fb|SRAM_LB_N~0_combout\ = (\vga|fb_buffer_idx~regout\ & (((\vga|vga_timing|h_state.DATA~regout\ & \vga|vga_timing|v_state.DATA~regout\)) # (!\vga|fb_wr_req~regout\))) # (!\vga|fb_buffer_idx~regout\ & (((!\vga|vga_timing|v_state.DATA~regout\)) # 
@@ -13875,14 +15483,14 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001001111011111",
+	lut_mask => "1001101101011111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \vga|vga_timing|h_state.DATA~regout\,
-	datab => \vga|fb_buffer_idx~regout\,
-	datac => \vga|vga_timing|v_state.DATA~regout\,
-	datad => \vga|fb_wr_req~regout\,
+	dataa => \vga|fb_buffer_idx~regout\,
+	datab => \vga|vga_timing|h_state.DATA~regout\,
+	datac => \vga|fb_wr_req~regout\,
+	datad => \vga|vga_timing|v_state.DATA~regout\,
 	combout => \vga|vga_fb|SRAM_LB_N~0_combout\);
 
 -- Location: CLKCTRL_G2
@@ -13898,7 +15506,61 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \pll|altpll_component|_clk1~clkctrl_outclk\);
 
--- Location: LCCOMB_X35_Y14_N22
+-- Location: LCCOMB_X24_Y13_N8
+\sprite_renderer|sprite_to_draw.color[6]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \sprite_renderer|sprite_to_draw.color[6]~0_combout\ = (\view|DRAW_SPRITE~regout\ & (!\view|SHOW~regout\ & \sprite_renderer|state.IDLE~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \view|DRAW_SPRITE~regout\,
+	datac => \view|SHOW~regout\,
+	datad => \sprite_renderer|state.IDLE~regout\,
+	combout => \sprite_renderer|sprite_to_draw.color[6]~0_combout\);
+
+-- Location: LCFF_X24_Y13_N9
+\sprite_renderer|DEBUG_OUT\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \sprite_renderer|sprite_to_draw.color[6]~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \sprite_renderer|DEBUG_OUT~regout\);
+
+-- Location: LCCOMB_X24_Y11_N18
+\Add0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Add0~0_combout\ = \test_pulsating_led:counter[0]~regout\ $ (VCC)
+-- \Add0~1\ = CARRY(\test_pulsating_led:counter[0]~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \test_pulsating_led:counter[0]~regout\,
+	datad => VCC,
+	combout => \Add0~0_combout\,
+	cout => \Add0~1\);
+
+-- Location: LCFF_X24_Y11_N19
+\test_pulsating_led:counter[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \Add0~0_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|DEBUG_OUT~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \test_pulsating_led:counter[0]~regout\);
+
+-- Location: LCCOMB_X24_Y11_N20
 \Add0~2\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \Add0~2_combout\ = (\test_pulsating_led:counter[1]~regout\ & (!\Add0~1\)) # (!\test_pulsating_led:counter[1]~regout\ & ((\Add0~1\) # (GND)))
@@ -13916,49 +15578,40 @@ PORT MAP (
 	combout => \Add0~2_combout\,
 	cout => \Add0~3\);
 
--- Location: LCCOMB_X35_Y14_N18
+-- Location: LCCOMB_X24_Y11_N12
+\Equal0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \Equal0~0_combout\ = (!\test_pulsating_led:counter[1]~regout\ & (\test_pulsating_led:counter[0]~regout\ & (\test_pulsating_led:counter[2]~regout\ & \test_pulsating_led:counter[3]~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \test_pulsating_led:counter[1]~regout\,
+	datab => \test_pulsating_led:counter[0]~regout\,
+	datac => \test_pulsating_led:counter[2]~regout\,
+	datad => \test_pulsating_led:counter[3]~regout\,
+	combout => \Equal0~0_combout\);
+
+-- Location: LCCOMB_X24_Y11_N2
 \counter~3\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \counter~3_combout\ = (\Add0~2_combout\ & ((!\Equal0~0_combout\) # (!\test_pulsating_led:counter[4]~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101111100000000",
+	lut_mask => "0011000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \test_pulsating_led:counter[4]~regout\,
-	datac => \Equal0~0_combout\,
-	datad => \Add0~2_combout\,
+	datab => \test_pulsating_led:counter[4]~regout\,
+	datac => \Add0~2_combout\,
+	datad => \Equal0~0_combout\,
 	combout => \counter~3_combout\);
 
--- Location: LCCOMB_X31_Y14_N8
-\sprite_renderer|sprite_x[0]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \sprite_renderer|sprite_x[0]~0_combout\ = (\sprite_renderer|state.IDLE~regout\ & (\view|DRAW_SPRITE~regout\ & !\view|SHOW~regout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \sprite_renderer|state.IDLE~regout\,
-	datac => \view|DRAW_SPRITE~regout\,
-	datad => \view|SHOW~regout\,
-	combout => \sprite_renderer|sprite_x[0]~0_combout\);
-
--- Location: LCFF_X31_Y14_N9
-\sprite_renderer|DEBUG_OUT\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \sprite_renderer|sprite_x[0]~0_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \sprite_renderer|DEBUG_OUT~regout\);
-
--- Location: LCFF_X35_Y14_N19
+-- Location: LCFF_X24_Y11_N3
 \test_pulsating_led:counter[1]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -13969,7 +15622,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \test_pulsating_led:counter[1]~regout\);
 
--- Location: LCCOMB_X35_Y14_N24
+-- Location: LCCOMB_X24_Y11_N22
 \Add0~4\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \Add0~4_combout\ = (\test_pulsating_led:counter[2]~regout\ & (\Add0~3\ $ (GND))) # (!\test_pulsating_led:counter[2]~regout\ & (!\Add0~3\ & VCC))
@@ -13987,7 +15640,34 @@ PORT MAP (
 	combout => \Add0~4_combout\,
 	cout => \Add0~5\);
 
--- Location: LCCOMB_X35_Y14_N26
+-- Location: LCCOMB_X24_Y11_N14
+\counter~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \counter~1_combout\ = (\Add0~4_combout\ & ((!\test_pulsating_led:counter[4]~regout\) # (!\Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0111011100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Equal0~0_combout\,
+	datab => \test_pulsating_led:counter[4]~regout\,
+	datad => \Add0~4_combout\,
+	combout => \counter~1_combout\);
+
+-- Location: LCFF_X24_Y11_N15
+\test_pulsating_led:counter[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \counter~1_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|DEBUG_OUT~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \test_pulsating_led:counter[2]~regout\);
+
+-- Location: LCCOMB_X24_Y11_N24
 \Add0~6\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \Add0~6_combout\ = (\test_pulsating_led:counter[3]~regout\ & (!\Add0~5\)) # (!\test_pulsating_led:counter[3]~regout\ & ((\Add0~5\) # (GND)))
@@ -14005,7 +15685,34 @@ PORT MAP (
 	combout => \Add0~6_combout\,
 	cout => \Add0~7\);
 
--- Location: LCCOMB_X35_Y14_N28
+-- Location: LCCOMB_X24_Y11_N0
+\counter~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \counter~2_combout\ = (\Add0~6_combout\ & ((!\Equal0~0_combout\) # (!\test_pulsating_led:counter[4]~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \test_pulsating_led:counter[4]~regout\,
+	datac => \Add0~6_combout\,
+	datad => \Equal0~0_combout\,
+	combout => \counter~2_combout\);
+
+-- Location: LCFF_X24_Y11_N1
+\test_pulsating_led:counter[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
+	datain => \counter~2_combout\,
+	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
+	ena => \sprite_renderer|DEBUG_OUT~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \test_pulsating_led:counter[3]~regout\);
+
+-- Location: LCCOMB_X24_Y11_N26
 \Add0~8\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \Add0~8_combout\ = \Add0~7\ $ (!\test_pulsating_led:counter[4]~regout\)
@@ -14020,23 +15727,23 @@ PORT MAP (
 	cin => \Add0~7\,
 	combout => \Add0~8_combout\);
 
--- Location: LCCOMB_X35_Y14_N12
+-- Location: LCCOMB_X24_Y11_N28
 \counter~0\ : cycloneii_lcell_comb
 -- Equation(s):
 -- \counter~0_combout\ = (\Add0~8_combout\ & ((!\test_pulsating_led:counter[4]~regout\) # (!\Equal0~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011111100000000",
+	lut_mask => "0101111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \Equal0~0_combout\,
+	dataa => \Equal0~0_combout\,
 	datac => \test_pulsating_led:counter[4]~regout\,
 	datad => \Add0~8_combout\,
 	combout => \counter~0_combout\);
 
--- Location: LCFF_X35_Y14_N13
+-- Location: LCFF_X24_Y11_N29
 \test_pulsating_led:counter[4]\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -14047,81 +15754,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \test_pulsating_led:counter[4]~regout\);
 
--- Location: LCCOMB_X35_Y14_N14
-\counter~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \counter~1_combout\ = (\Add0~4_combout\ & ((!\test_pulsating_led:counter[4]~regout\) # (!\Equal0~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \Equal0~0_combout\,
-	datac => \Add0~4_combout\,
-	datad => \test_pulsating_led:counter[4]~regout\,
-	combout => \counter~1_combout\);
-
--- Location: LCFF_X35_Y14_N15
-\test_pulsating_led:counter[2]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \counter~1_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|DEBUG_OUT~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \test_pulsating_led:counter[2]~regout\);
-
--- Location: LCCOMB_X35_Y14_N0
-\counter~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \counter~2_combout\ = (\Add0~6_combout\ & ((!\Equal0~0_combout\) # (!\test_pulsating_led:counter[4]~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \test_pulsating_led:counter[4]~regout\,
-	datac => \Equal0~0_combout\,
-	datad => \Add0~6_combout\,
-	combout => \counter~2_combout\);
-
--- Location: LCFF_X35_Y14_N1
-\test_pulsating_led:counter[3]\ : cycloneii_lcell_ff
-PORT MAP (
-	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
-	datain => \counter~2_combout\,
-	aclr => \ALT_INV_RESET_N~clkctrl_outclk\,
-	ena => \sprite_renderer|DEBUG_OUT~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \test_pulsating_led:counter[3]~regout\);
-
--- Location: LCCOMB_X35_Y14_N4
-\Equal0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \Equal0~0_combout\ = (\test_pulsating_led:counter[0]~regout\ & (\test_pulsating_led:counter[3]~regout\ & (\test_pulsating_led:counter[2]~regout\ & !\test_pulsating_led:counter[1]~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \test_pulsating_led:counter[0]~regout\,
-	datab => \test_pulsating_led:counter[3]~regout\,
-	datac => \test_pulsating_led:counter[2]~regout\,
-	datad => \test_pulsating_led:counter[1]~regout\,
-	combout => \Equal0~0_combout\);
-
--- Location: LCCOMB_X35_Y14_N2
+-- Location: LCCOMB_X24_Y11_N10
 \counter_latched~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \counter_latched~0_combout\ = \counter_latched~regout\ $ (((\sprite_renderer|DEBUG_OUT~regout\ & (\Equal0~0_combout\ & \test_pulsating_led:counter[4]~regout\))))
+-- \counter_latched~0_combout\ = \counter_latched~regout\ $ (((\Equal0~0_combout\ & (\test_pulsating_led:counter[4]~regout\ & \sprite_renderer|DEBUG_OUT~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -14129,13 +15765,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|DEBUG_OUT~regout\,
-	datab => \Equal0~0_combout\,
+	dataa => \Equal0~0_combout\,
+	datab => \test_pulsating_led:counter[4]~regout\,
 	datac => \counter_latched~regout\,
-	datad => \test_pulsating_led:counter[4]~regout\,
+	datad => \sprite_renderer|DEBUG_OUT~regout\,
 	combout => \counter_latched~0_combout\);
 
--- Location: LCFF_X35_Y14_N3
+-- Location: LCFF_X24_Y11_N11
 counter_latched : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
@@ -14145,10 +15781,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \counter_latched~regout\);
 
--- Location: LCCOMB_X35_Y14_N16
+-- Location: LCCOMB_X24_Y11_N16
 \LEDR[0]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \LEDR[0]~0_combout\ = (\sprite_renderer|DEBUG_OUT~regout\ & ((\RESET_N~regout\ & ((\counter_latched~regout\))) # (!\RESET_N~regout\ & (\LEDR[0]~reg0_regout\)))) # (!\sprite_renderer|DEBUG_OUT~regout\ & (((\LEDR[0]~reg0_regout\))))
+-- \LEDR[0]~0_combout\ = (\RESET_N~regout\ & ((\sprite_renderer|DEBUG_OUT~regout\ & ((\counter_latched~regout\))) # (!\sprite_renderer|DEBUG_OUT~regout\ & (\LEDR[0]~reg0_regout\)))) # (!\RESET_N~regout\ & (((\LEDR[0]~reg0_regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -14156,13 +15792,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \sprite_renderer|DEBUG_OUT~regout\,
-	datab => \RESET_N~regout\,
+	dataa => \RESET_N~regout\,
+	datab => \sprite_renderer|DEBUG_OUT~regout\,
 	datac => \LEDR[0]~reg0_regout\,
 	datad => \counter_latched~regout\,
 	combout => \LEDR[0]~0_combout\);
 
--- Location: LCFF_X35_Y14_N17
+-- Location: LCFF_X24_Y11_N17
 \LEDR[0]~reg0\ : cycloneii_lcell_ff
 PORT MAP (
 	clk => \pll|altpll_component|_clk1~clkctrl_outclk\,
