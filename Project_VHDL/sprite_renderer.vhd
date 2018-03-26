@@ -174,50 +174,49 @@ begin
 			FB_FLIP        <= '0';
 			READY 			<= '1';
 			FB_COLOR 		<= COLOR_BLACK;
+			FB_X0 			<= 0;
+			FB_X1 			<= 0;
+			FB_Y0 			<= 0;
+			FB_Y1 			<= 0;
 			row 				<= 0;
 			column 			<= 0;
-			show_latched   <= '0';
 			state <= CLEARING;
 			
 			DEBUG_OUT <= '0';
 	
 		elsif(rising_edge(CLOCK)) then
 			
-			DEBUG_OUT <= '0';
+			DEBUG_OUT	   <= '0';
+			FB_CLEAR       <= '0';
+			FB_DRAW_RECT   <= '0';
+			FB_FLIP        <= '0';
+			READY 			<= '0';
+			FB_X0 			<= 0;
+			FB_X1 			<= 0;
+			FB_Y0 			<= 0;
+			FB_Y1 			<= 0;
+			FB_COLOR 		<= COLOR_BLACK;
 		
 			case (state) is 
 				when IDLE => 
 		
-					FB_CLEAR       <= '0';
-					FB_DRAW_RECT   <= '0';
-					FB_FLIP        <= '0';
 					READY <= '1';
 					row 			<= 0;
 					column		<= 0;
 					
-					if (SHOW = '1' and show_latched = '0') then
+					if (SHOW = '1') then
 						state <= WAITING;
 						next_state <= SHOWING;
-						show_latched <= '1';
-					end if;
-					
-					if (SHOW = '0') then
-						show_latched <= '0';
-						if (DRAW_SPRITE = '1') then
-							state 			<= WAITING;
-							next_state 		<= DRAWING;
-							sprite_to_draw <= SPRITE;
-							sprite_x 		<= X;
-							sprite_y 		<= Y;
-						end if;
+					elsif (DRAW_SPRITE = '1') then
+						state 			<= WAITING;
+						next_state 		<= DRAWING;
+						sprite_to_draw <= SPRITE;
+						sprite_x 		<= X;
+						sprite_y 		<= Y;
+						DEBUG_OUT 	<= '1'; -- DEBUG
 					end if;
 					
 				when WAITING =>
-							
-					FB_CLEAR       <= '0';
-					FB_DRAW_RECT   <= '0';
-					FB_FLIP        <= '0';
-					READY <= '0';
 					
 					if (FB_READY = '1') then
 						state <= next_state;
@@ -225,18 +224,16 @@ begin
 				
 				when DRAWING =>
 				
-					READY <= '0';
-					FB_CLEAR       <= '0';
-					FB_FLIP        <= '0';
-				
 					state <= WAITING;
 					next_state <= DRAWING;
+					-- DEBUG_OUT 	<= '1'; -- DEBUG
 					
 					if (column >= 31) then
 						column <= 0;
 						if (row >= 31) then
 							row <= 0;
 							state <= IDLE;
+							-- READY <= '1';
 						else
 							row <= row + 1;
 						end if;
@@ -251,26 +248,17 @@ begin
 						FB_Y1 		 	<= sprite_y + row;
 						FB_COLOR 	 	<= sprite_to_draw.color;
 						FB_DRAW_RECT 	<= '1';
-					else
-						FB_DRAW_RECT   <= '0';
 					end if;
 			
 				when SHOWING => 
 				
-					READY <= '0';
-					FB_CLEAR       <= '0';
-					FB_DRAW_RECT   <= '0';
 					FB_FLIP 	  	<= '1';
-					DEBUG_OUT 	<= '1'; -- DEBUG
 					state 	  	<= WAITING;
 					next_state 	<= CLEARING;
 					
 				when CLEARING =>
 				
-					READY <= '1';
-					FB_DRAW_RECT   <= '0';
-					FB_FLIP        <= '0';
-					FB_COLOR 	<= COLOR_BLACK;
+					-- READY <= '1';
 					FB_CLEAR 	<= '1';
 					state 		<= IDLE;
 				

@@ -21,7 +21,7 @@ end entity;
 
 architecture RTL of view is 
 
-type state_type is (RENDER_0, RENDER_1, SHOW_SPRITES);
+type state_type is (RENDER_0, SHOW_SPRITES);
 
 signal frame_time		: std_logic;
 signal render_asap	: std_logic;
@@ -56,12 +56,13 @@ begin
 			y <= 0;
 		elsif rising_edge (frame_time) then
 			x <= x + 1;
-			y <= y + 1;
+		   y <= y + 1;
 		end if;
 	end process;
 	
 	main : process(CLOCK, RESET_N)
 	begin
+		
 		if (RESET_N = '0') then
 			state <= RENDER_0;
 			DRAW_SPRITE <= '0';
@@ -70,9 +71,16 @@ begin
 			SPRITE_X <= 0;
 			SPRITE_Y <= 0;
 			render_asap <= '0';
+		
 		elsif rising_edge(CLOCK) then
 			
-			if (frame_time = '1' and render_asap <= '0') then
+			DRAW_SPRITE <= '0';
+			SHOW <= '0';
+			SPRITE <= dummy_sprite_1;
+			SPRITE_X <= 0;
+			SPRITE_Y <= 0;
+			
+			if (frame_time = '1' and render_asap = '0') then
 				render_asap <= '1';
 			end if;
 			
@@ -84,23 +92,44 @@ begin
 						SPRITE_X <= x;
 						SPRITE_Y <= y;
 						DRAW_SPRITE <= '1';
-						SHOW <= '0';
-						state <= RENDER_1;
-					when RENDER_1 => 
-						SPRITE <= dummy_sprite_2;
-						SPRITE_X <= 80;
-						SPRITE_Y <= 80;
-						DRAW_SPRITE <= '1';
-						SHOW <= '0';
 						state <= SHOW_SPRITES;
+--					when RENDER_1 => 
+--						SPRITE <= dummy_sprite_2;
+--						SPRITE_X <= 300;
+--						SPRITE_Y <= 400;
+--						DRAW_SPRITE <= '1';
+--						state <= RENDER_2;
+--					when RENDER_2 => 
+--						SPRITE <= dummy_sprite_1;
+--						SPRITE_X <= 50 - x;
+--						SPRITE_Y <= 100 - y;
+--						DRAW_SPRITE <= '1';
+--						state <= RENDER_3;
+--					when RENDER_3 => 
+--						SPRITE <= dummy_sprite_2;
+--						SPRITE_X <= x + 50;
+--						SPRITE_Y <= y + 500;
+--						DRAW_SPRITE <= '1';
+--						state <= RENDER_4;
+--					when RENDER_4 => 
+--						SPRITE <= dummy_sprite_1;
+--						SPRITE_X <= 500;
+--						SPRITE_Y <= 200;
+--						DRAW_SPRITE <= '1';
+--						state <= SHOW_SPRITES;
 					when SHOW_SPRITES =>
 						if (render_asap = '1') then
 							SHOW <= '1';
-							DRAW_SPRITE <= '0';
 							state <= RENDER_0;
 							render_asap <= '0';
 						end if;
-				end case;	
+				end case;
+--			else
+--				SHOW <= '0';
+--				DRAW_SPRITE <= '0';
+--				SPRITE <= dummy_sprite_1;
+--				SPRITE_X <= 0;
+--				SPRITE_Y <= 0;
 			end if;		
 		end if;
 	end process;

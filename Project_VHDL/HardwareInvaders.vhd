@@ -30,6 +30,7 @@ entity HardwareInvaders is
 end entity;
 
 architecture RTL of HardwareInvaders is
+	signal clock_25MHz 		  : std_logic;
 	signal clock_50MHz        : std_logic;
 	signal clock_100MHz       : std_logic;
 	signal RESET_N            : std_logic;
@@ -90,6 +91,23 @@ begin
 		end if;
 	end process;
 	
+	clock_25 : process(clock_50MHz, RESET_N)
+		variable counter : integer range 0 to (2 - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			clock_25MHz <= '0';
+		elsif (rising_edge(clock_50MHz)) then
+			if(counter = counter'high) then
+				counter := 0;
+				clock_25MHz <= '1';
+			else
+				counter := counter+1;
+				clock_25MHz <= '0';			
+			end if;
+		end if;
+	end process;
+	
 	vga : entity work.VGA_Framebuffer
 		port map (
 			CLOCK     => clock_100MHz,
@@ -124,7 +142,7 @@ begin
 	view : entity work.view
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> clock_25MHz,
 			RESET_N			=> RESET_N,
 			READY 			=> sr_ready,
 			
