@@ -15,14 +15,25 @@ state.DRAWING 0 0 1 0 1
 state.SHOWING 0 1 0 0 1 
 state.IDLE 1 0 0 0 1 
 
+State Machine - |HardwareInvaders|view:view|next_state
+Name next_state.WAITING next_state.SHOW_SPRITES next_state.RENDER_4 next_state.RENDER_3 next_state.RENDER_2 next_state.RENDER_1 next_state.RENDER_0 
+next_state.RENDER_0 0 0 0 0 0 0 0 
+next_state.RENDER_1 0 0 0 0 0 1 1 
+next_state.RENDER_2 0 0 0 0 1 0 1 
+next_state.RENDER_3 0 0 0 1 0 0 1 
+next_state.RENDER_4 0 0 1 0 0 0 1 
+next_state.SHOW_SPRITES 0 1 0 0 0 0 1 
+next_state.WAITING 1 0 0 0 0 0 1 
+
 State Machine - |HardwareInvaders|view:view|state
-Name state.SHOW_SPRITES state.RENDER_4 state.RENDER_3 state.RENDER_2 state.RENDER_1 state.RENDER_0 
-state.RENDER_0 0 0 0 0 0 0 
-state.RENDER_1 0 0 0 0 1 1 
-state.RENDER_2 0 0 0 1 0 1 
-state.RENDER_3 0 0 1 0 0 1 
-state.RENDER_4 0 1 0 0 0 1 
-state.SHOW_SPRITES 1 0 0 0 0 1 
+Name state.RENDER_0 state.SHOW_SPRITES state.RENDER_4 state.RENDER_3 state.RENDER_2 state.RENDER_1 state.WAITING 
+state.WAITING 0 0 0 0 0 0 0 
+state.RENDER_1 0 0 0 0 0 1 1 
+state.RENDER_2 0 0 0 0 1 0 1 
+state.RENDER_3 0 0 0 1 0 0 1 
+state.RENDER_4 0 0 1 0 0 0 1 
+state.SHOW_SPRITES 0 1 0 0 0 0 1 
+state.RENDER_0 1 0 0 0 0 0 1 
 
 State Machine - |HardwareInvaders|VGA_Framebuffer:vga|substate
 Name substate.DRAWING_R2 substate.DRAWING_R1 substate.DRAWING substate.INIT 
