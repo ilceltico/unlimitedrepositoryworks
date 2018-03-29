@@ -24,10 +24,10 @@ entity sprite_renderer is
 		FB_Y0          : out xy_coord_type;
 		FB_X1          : out xy_coord_type;
 		FB_Y1          : out xy_coord_type;
-		READY 			: out std_logic;
+		READY 			: out std_logic
 		
-		DEBUG_OUT      : out std_logic;
-		DEBUG_STATE    : out integer
+--		DEBUG_OUT      : out std_logic
+--		DEBUG_STATE    : out integer
 	);
 end entity;
 
@@ -42,24 +42,11 @@ signal column				: integer;
 signal sprite_to_draw	: sprite_type;
 signal sprite_x			: xy_coord_type;
 signal sprite_y			: xy_coord_type;
-signal show_latched		: std_logic;
+signal show_asap			: std_logic;
 
 begin
 	process(CLOCK, RESET_N)
 	begin
-	
-		case (state) is 
-			when IDLE => 
-				DEBUG_STATE <= 0;
-			when WAITING => 
-				DEBUG_STATE <= 7;
-			when DRAWING => 
-				DEBUG_STATE <= 1;
-			when SHOWING => 
-				DEBUG_STATE <= 2;
-			when CLEARING => 
-				DEBUG_STATE <= 3;
-		end case;
 	
 		if(RESET_N = '0') then
 			FB_CLEAR       <= '0';
@@ -73,13 +60,27 @@ begin
 			FB_Y1 			<= 0;
 			row 				<= 0;
 			column 			<= 0;
-			state <= CLEARING;
+			show_asap 		<= '0';
+			state 			<= CLEARING;
 			
-			DEBUG_OUT <= '0';
+--			DEBUG_OUT <= '0';
 	
 		elsif(rising_edge(CLOCK)) then
 			
-			DEBUG_OUT	   <= '0';
+--			case (state) is 
+--			when IDLE => 
+--				DEBUG_STATE <= 0;
+--			when WAITING => 
+--				DEBUG_STATE <= 7;
+--			when DRAWING => 
+--				DEBUG_STATE <= 1;
+--			when SHOWING => 
+--				DEBUG_STATE <= 2;
+--			when CLEARING => 
+--				DEBUG_STATE <= 3;
+--			end case;
+			
+--			DEBUG_OUT	   <= '0';
 			FB_CLEAR       <= '0';
 			FB_DRAW_RECT   <= '0';
 			FB_FLIP        <= '0';
@@ -89,6 +90,10 @@ begin
 			FB_Y0 			<= 0;
 			FB_Y1 			<= 0;
 			FB_COLOR 		<= COLOR_BLACK;
+			
+			if (SHOW = '1') then
+				show_asap <= '1';
+			end if;
 		
 			case (state) is 
 				when IDLE => 
@@ -96,18 +101,23 @@ begin
 					row 			<= 0;
 					column		<= 0;
 					
-					if (SHOW = '1' and DRAW_SPRITE = '0') then
-						state <= WAITING;
-						next_state <= SHOWING;
-					elsif (DRAW_SPRITE = '1' and SHOW = '0') then
+					READY 		<= '1';
+					
+					if (show_asap = '1' and DRAW_SPRITE = '0') then
+						state 		<= WAITING;
+						next_state 	<= SHOWING;
+						show_asap 	<= '0';
+						READY 		<= '0';
+					end if;
+					
+					if (DRAW_SPRITE = '1') then
 						state 			<= WAITING;
 						next_state 		<= DRAWING;
 						sprite_to_draw <= SPRITE;
 						sprite_x 		<= X;
 						sprite_y 		<= Y;
-						-- DEBUG_OUT 	<= '1'; -- DEBUG
-					elsif (SHOW = '0' and DRAW_SPRITE = '0') then
-						READY <= '1';
+						READY 			<= '0';
+--						DEBUG_OUT 		<= '1';
 					end if;
 					
 				when WAITING =>
@@ -120,14 +130,12 @@ begin
 				
 					state <= WAITING;
 					next_state <= DRAWING;
-					-- DEBUG_OUT 	<= '1'; -- DEBUG
 					
-					if (column >= 2) then
+					if (column >= 31) then
 						column <= 0;
-						if (row >= 2) then
+						if (row >= 31) then
 							row <= 0;
 							next_state <= IDLE;
-						   -- READY <= '1';
 						else
 							row <= row + 1;
 						end if;
@@ -152,7 +160,6 @@ begin
 					
 				when CLEARING =>
 				
-					-- READY <= '1';
 					FB_CLEAR 	<= '1';
 					state 		<= WAITING;
 					next_state  <= IDLE;
