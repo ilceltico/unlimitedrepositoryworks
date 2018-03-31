@@ -1,15 +1,33 @@
 
-State Machine - |HardwareInvaders|View:view|substate
-Name substate.FLIP substate.DRAW substate.CLEAR 
-substate.CLEAR 0 0 0 
-substate.DRAW 0 1 1 
-substate.FLIP 1 0 1 
+State Machine - |HardwareInvaders|sprite_renderer:sprite_renderer|next_state
+Name next_state.CLEARING next_state.SHOWING next_state.DRAWING next_state.WAITING next_state.IDLE 
+next_state.IDLE 0 0 0 0 0 
+next_state.WAITING 0 0 0 1 1 
+next_state.DRAWING 0 0 1 0 1 
+next_state.SHOWING 0 1 0 0 1 
+next_state.CLEARING 1 0 0 0 1 
 
-State Machine - |HardwareInvaders|View:view|state
-Name state.DRAWING state.WAITING state.IDLE 
-state.IDLE 0 0 0 
-state.WAITING 0 1 1 
-state.DRAWING 1 0 1 
+State Machine - |HardwareInvaders|sprite_renderer:sprite_renderer|state
+Name state.IDLE state.SHOWING state.DRAWING state.WAITING state.CLEARING 
+state.CLEARING 0 0 0 0 0 
+state.WAITING 0 0 0 1 1 
+state.DRAWING 0 0 1 0 1 
+state.SHOWING 0 1 0 0 1 
+state.IDLE 1 0 0 0 1 
+
+State Machine - |HardwareInvaders|view:view|next_state
+Name next_state.WAITING_2 next_state.WAITING next_state.SHOW_SPRITES next_state.RENDER 
+next_state.RENDER 0 0 0 0 
+next_state.SHOW_SPRITES 0 0 1 1 
+next_state.WAITING 0 1 0 1 
+next_state.WAITING_2 1 0 0 1 
+
+State Machine - |HardwareInvaders|view:view|state
+Name state.WAITING_2 state.RENDER state.SHOW_SPRITES state.WAITING 
+state.WAITING 0 0 0 0 
+state.SHOW_SPRITES 0 0 1 1 
+state.RENDER 0 1 0 1 
+state.WAITING_2 1 0 0 1 
 
 State Machine - |HardwareInvaders|VGA_Framebuffer:vga|substate
 Name substate.DRAWING_R2 substate.DRAWING_R1 substate.DRAWING substate.INIT 

@@ -5,7 +5,7 @@ use work.vga_package.all;
 
 package HI_package is
 	-- Constants declarations
-	type shape_type is (ALIEN_1, ALIEN_2, ALIEN_3, RAND_ALIEN, PLAYER);
+	type spaceship_type is (ALIEN_1, ALIEN_2, ALIEN_3, RAND_ALIEN, PLAYER);
 	
 	-- Hitbox declaration
 	type hitbox_type is record 
@@ -17,29 +17,12 @@ package HI_package is
 	
 	-- Spaceship declaration 	
 	type spaceship is record
-		ship_type      	: shape_type;
+		ship_type      	: spaceship_type;
 		hitbox				: hitbox_type;
-		visible				: std_logic;
+		-- visible			: std_logic;
 		exploding			: std_logic;
 	end record;	
-	
-	-- Bullet declaration
-	type bullet is record
-		bullet_type			: shape_type;
-		hitbox				: hitbox_type;
-		visible 				: std_logic;
-		exploding			: std_logic;
-	end record;
 
-	-- Level declaration
-	type level is record
-		starting_line		: integer range 0 to (ROWS-1); -- definire ROWS
-		alienSpeed			: integer;
-		alienFrameNanos	: integer;
-		alienFrameNanosDecrement	: integer;
-		alienExploding		: std_logic;
-	end record;
-	
 	type img_pixels_type is array(0 to 31, 0 to 31) of std_logic;
 	
 	type sprite_type is record 
@@ -47,13 +30,52 @@ package HI_package is
 		color 					: color_type;
 	end record;
 	
-	CONSTANT dummy_sprite: sprite_type := 
+	CONSTANT dummy_sprite_1: sprite_type := 
 	(
 		(
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111000000000000001111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111"
+		),
+		COLOR_GREEN
+	);
+	
+	CONSTANT dummy_sprite_2: sprite_type := 
+	(
+		(
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111111111111111111111111111",
+		"11111111110000000000000011111111",
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111",
@@ -83,7 +105,7 @@ package HI_package is
 		"11111111111111111111111111111111",
 		"11111111111111111111111111111111"
 		),
-		COLOR_WHITE
+		COLOR_RED
 	);
 	
 end package;

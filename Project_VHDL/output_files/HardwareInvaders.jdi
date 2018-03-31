@@ -1,10 +1,6 @@
 <sld_project_info>
   <project>
-<<<<<<< HEAD
-    <hash md5_digest_80b="4a1da9fbb22bb8d8ebfc"/>
-=======
-    <hash md5_digest_80b="108a95c3a483574a2e11"/>
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
+    <hash md5_digest_80b="1ea2d34bd3f57aa17b85"/>
   </project>
   <file_info>
     <file device="EP2C20F484C7" path="HardwareInvaders.sof" usercode="0xFFFFFFFF"/>

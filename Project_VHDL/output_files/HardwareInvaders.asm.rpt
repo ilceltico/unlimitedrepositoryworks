@@ -1,9 +1,5 @@
 Assembler report for HardwareInvaders
-<<<<<<< HEAD
-Sun Mar 18 18:29:54 2018
-=======
-Wed Mar 21 14:55:34 2018
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
+Sat Mar 31 17:26:37 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,13 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-<<<<<<< HEAD
-  5. Assembler Device Options: C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.sof
-  6. Assembler Device Options: C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.pof
-=======
-  5. Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.sof
-  6. Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.pof
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
+  5. Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.sof
+  6. Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.pof
   7. Assembler Messages
 
 
@@ -47,11 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-<<<<<<< HEAD
-; Assembler Status      ; Successful - Sun Mar 18 18:29:54 2018 ;
-=======
-; Assembler Status      ; Successful - Wed Mar 21 14:55:34 2018 ;
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
+; Assembler Status      ; Successful - Sat Mar 31 17:26:37 2018 ;
 ; Revision Name         ; HardwareInvaders                      ;
 ; Top-level Entity Name ; HardwareInvaders                      ;
 ; Family                ; Cyclone II                            ;
@@ -91,71 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-<<<<<<< HEAD
-+---------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                               ;
-+---------------------------------------------------------------------------------------------------------+
-; File Name                                                                                               ;
-+---------------------------------------------------------------------------------------------------------+
-; C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.sof ;
-; C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.pof ;
-+---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                          ;
++----------------------------------------------------------------------------------------------------+
+; File Name                                                                                          ;
++----------------------------------------------------------------------------------------------------+
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.sof ;
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.pof ;
++----------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                          ;
-+----------------+------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                                                     ;
-; JTAG usercode  ; 0x001C97ED                                                                                                       ;
-; Checksum       ; 0x001C97ED                                                                                                       ;
-+----------------+------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                     ;
++----------------+-------------------------------------------------------------------------------------------------------------+
+; Device         ; EP2C20F484C7                                                                                                ;
+; JTAG usercode  ; 0x0022B4AD                                                                                                  ;
+; Checksum       ; 0x0022B4AD                                                                                                  ;
++----------------+-------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/output_files/HardwareInvaders.pof ;
-+--------------------+--------------------------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                                      ;
-+--------------------+--------------------------------------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                                                       ;
-; JTAG usercode      ; 0x00000000                                                                                                   ;
-; Checksum           ; 0x1DD6A324                                                                                                   ;
-; Compression Ratio  ; 3                                                                                                            ;
-+--------------------+--------------------------------------------------------------------------------------------------------------+
-=======
-+--------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                              ;
-+--------------------------------------------------------------------------------------------------------+
-; File Name                                                                                              ;
-+--------------------------------------------------------------------------------------------------------+
-; C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.sof ;
-; C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.pof ;
-+--------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.sof ;
-+----------------+-----------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                         ;
-+----------------+-----------------------------------------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                                                    ;
-; JTAG usercode  ; 0x00203EDE                                                                                                      ;
-; Checksum       ; 0x00203EDE                                                                                                      ;
-+----------------+-----------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.pof ;
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                                     ;
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                                                      ;
-; JTAG usercode      ; 0x00000000                                                                                                  ;
-; Checksum           ; 0x1DCF3E37                                                                                                  ;
-; Compression Ratio  ; 3                                                                                                           ;
-+--------------------+-------------------------------------------------------------------------------------------------------------+
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
++------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/output_files/HardwareInvaders.pof ;
++--------------------+---------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                 ;
++--------------------+---------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                                                  ;
+; JTAG usercode      ; 0x00000000                                                                                              ;
+; Checksum           ; 0x1DCDEF34                                                                                              ;
+; Compression Ratio  ; 3                                                                                                       ;
++--------------------+---------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -164,25 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-<<<<<<< HEAD
-    Info: Processing started: Sun Mar 18 18:29:34 2018
-=======
-    Info: Processing started: Wed Mar 21 14:55:33 2018
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
+    Info: Processing started: Sat Mar 31 17:26:35 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off HardwareInvaders -c HardwareInvaders
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-<<<<<<< HEAD
-    Info: Peak virtual memory: 446 megabytes
-    Info: Processing ended: Sun Mar 18 18:29:54 2018
-    Info: Elapsed time: 00:00:20
+    Info: Peak virtual memory: 474 megabytes
+    Info: Processing ended: Sat Mar 31 17:26:37 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
-=======
-    Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Wed Mar 21 14:55:34 2018
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
->>>>>>> 3bd6aa2413471d308c8bcea78e23aff45eaabfdb
 
 

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for HardwareInvaders
-Sun Mar 18 18:20:28 2018
+Sat Mar 31 17:26:43 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -8,7 +8,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. EDA Netlist Writer Messages
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
 
 
 
@@ -31,14 +33,49 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                                       ;
-+---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Sun Mar 18 18:20:28 2018 ;
-; Revision Name             ; HardwareInvaders                                     ;
-; Top-level Entity Name     ; HardwareInvaders                                     ;
-; Family                    ; Cyclone II                                           ;
-+---------------------------+------------------------------------------------------+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Sat Mar 31 17:26:43 2018 ;
+; Revision Name             ; HardwareInvaders                      ;
+; Top-level Entity Name     ; HardwareInvaders                      ;
+; Family                    ; Cyclone II                            ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                        ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Option                                                                                            ; Setting                ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
+; Generate netlist for functional simulation only                                                   ; Off                    ;
+; Time scale                                                                                        ; 1 ps                   ;
+; Truncate long hierarchy paths                                                                     ; Off                    ;
+; Map illegal HDL characters                                                                        ; Off                    ;
+; Flatten buses into individual nodes                                                               ; Off                    ;
+; Maintain hierarchy                                                                                ; Off                    ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
+; Enable glitch filtering                                                                           ; Off                    ;
+; Do not write top level VHDL entity                                                                ; Off                    ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
+; Architecture name in VHDL output netlist                                                          ; structure              ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
++---------------------------------------------------------------------------------------------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                    ;
++--------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/simulation/modelsim/HardwareInvaders.vho          ;
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/simulation/modelsim/HardwareInvaders_fast.vho     ;
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/simulation/modelsim/HardwareInvaders_vhd.sdo      ;
+; C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/simulation/modelsim/HardwareInvaders_vhd_fast.sdo ;
++--------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -47,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 18 18:20:27 2018
+    Info: Processing started: Sat Mar 31 17:26:42 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off HardwareInvaders -c HardwareInvaders
-Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
-Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 408 megabytes
-    Info: Processing ended: Sun Mar 18 18:20:28 2018
-    Info: Elapsed time: 00:00:01
+Info (204026): Generated files "HardwareInvaders.vho", "HardwareInvaders_fast.vho", "HardwareInvaders_vhd.sdo" and "HardwareInvaders_vhd_fast.sdo" in directory "C:/Users/Luca/Documents/unlimitedrepositoryworks_sr/Project_VHDL/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 451 megabytes
+    Info: Processing ended: Sat Mar 31 17:26:44 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

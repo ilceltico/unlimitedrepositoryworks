@@ -23,7 +23,7 @@ public class Level {
 		this.shields = shields;
 		this.alienSpeed = alienSpeed;
 		this.alienFrameNanos = alienFrameNanos;
-		this.alienFrameNanosDecrement = alienFrameNanosDecrement;	
+		this.alienFrameNanosDecrement = alienFrameNanosDecrement;
 	}
 
 	public int getStartingLine() {
