@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "03/31/2018 17:26:43"
+-- DATE "03/31/2018 17:48:59"
 
 -- 
 -- Device: Altera EP2C20F484C7 Package FBGA484
@@ -1288,6 +1288,18 @@ SIGNAL \vga|vga_timing|v_pixel[8]~25_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_ADDR[17]~17_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_UB_N~0_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_LB_N~0_combout\ : std_logic;
+SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|v_pixel\ : std_logic_vector(8 DOWNTO 0);
+SIGNAL \vga|vga_timing|h_pixel\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|column\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_Y0\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \view|SPRITE_Y\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|clock_count\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \sprite_renderer|sprite_to_draw.color\ : std_logic_vector(11 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_COLOR\ : std_logic_vector(11 DOWNTO 0);
+SIGNAL \vga|vga_fb|latched_ram\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \sprite_renderer|row\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \view|x\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|y_start\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|y_end\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|y_cursor\ : std_logic_vector(8 DOWNTO 0);
@@ -1295,25 +1307,13 @@ SIGNAL \vga|x_start\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|x_end\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|x_cursor\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \vga|latched_color\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|sprite_to_draw.color\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \vga|vga_timing|h_counter\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|row\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \view|SPRITE_X\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \vga|vga_timing|h_pixel\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \vga|vga_timing|clock_count\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_X0\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \view|x\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|sprite_x\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_COLOR\ : std_logic_vector(11 DOWNTO 0);
-SIGNAL \vga|vga_timing|v_counter\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \sprite_renderer|column\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \vga|vga_timing|v_pixel\ : std_logic_vector(8 DOWNTO 0);
-SIGNAL \view|render_counter\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \sprite_renderer|sprite_y\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \vga|vga_fb|latched_ram\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \sprite_renderer|FB_Y0\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \view|SPRITE_Y\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|v_counter\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|sprite_x\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \view|render_counter\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \view|SPRITE_X\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \sprite_renderer|FB_X0\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \vga|vga_timing|h_counter\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \view|ALT_INV_state.RENDER~regout\ : std_logic;
 SIGNAL \sprite_renderer|ALT_INV_state.DRAWING~regout\ : std_logic;
 SIGNAL \vga|vga_fb|ALT_INV_SRAM_WE_N~0_combout\ : std_logic;
