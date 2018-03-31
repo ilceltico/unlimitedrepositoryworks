@@ -55,12 +55,6 @@ architecture RTL of HardwareInvaders is
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
 	signal fb_vsync			  : std_logic;
-	
-	signal test 				  : std_logic; 
-	signal counter_latched    : std_logic;
---	signal state_view			  : integer;
---	signal state_renderer	  : integer;
---	signal render_asap_debug  : std_logic;
 
 begin
 
@@ -79,71 +73,6 @@ begin
 			RESET_N <= reset_sync_reg;
 		end if;
 	end process;
-	
-	debug : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (30 - 1);
-	begin
-		
-		if (RESET_N = '0') then
-			counter := 0;
-			counter_latched <= '0';
-		elsif (rising_edge(clock_50MHz)) then
-		
---			LEDR <= "0000000000";
---			LEDG <= "00000000";
---		
---			case (state_view) is
---				when 0 => LEDR(0) <= '1'; 
---				when 1 => LEDR(1) <= '1';
---				when 2 => LEDR(2) <= '1';
---				when 3 => LEDR(3) <= '1';
---				when 4 => LEDR(4) <= '1';
---				when 5 => LEDR(5) <= '1';
---				when 9 => LEDR(9) <= '1';
---				when others => 
---			end case;
---	
---			case (state_renderer) is
---				when 0 => LEDG(0) <= '1';
---				when 1 => LEDG(1) <= '1';
---				when 2 => LEDG(2) <= '1';
---				when 3 => LEDG(3) <= '1';
---				when 7 => LEDG(7) <= '1';
---				when others =>
---			end case;
---		
-			if (test = '1') then
-				LEDR(0) <= counter_latched;
-				if(counter = counter'high) then
-					counter := 0;
-					counter_latched <= not(counter_latched);
-				else
-					counter := counter+1;		
-				end if;
-			end if;
---			
---			if (render_asap_debug = '1') then
---				LEDR(8) <= '1';
---			end if;
-		end if;
-	end process;
-	
---	process(clock_50MHz, RESET_N)
---		variable counter : integer range 0 to (125000 - 1);
---	begin
---		if (RESET_N = '0') then
---			counter := 0;
---			clock_debug <= '0';
---		elsif (rising_edge(clock_50MHz)) then
---			if(counter = counter'high) then
---				counter := 0;
---				clock_debug <= '1';
---			else
---				counter := counter+1;
---				clock_debug <= '0';			
---			end if;
---		end if;
---	end process;
 
 	fps : process(clock_50MHz, RESET_N)
 		variable counter : integer range 0 to (833333 - 1);
@@ -208,10 +137,6 @@ begin
 			SPRITE_X			=> sprite_x,
 			SPRITE_Y			=> sprite_y,
 			SHOW				=> show
-			
---			DEBUG_OUT 		=> test
---			DEBUG_OUT 		=> render_asap_debug,
---			DEBUG_STATE 	=> state_view
 		);
 		
 	sprite_renderer : entity work.sprite_renderer
@@ -236,9 +161,6 @@ begin
 			FB_X1          => fb_x1,
 			FB_Y1          => fb_y1,
 			READY 			=> sr_ready
-			
---		   DEBUG_OUT 		=> test
---			DEBUG_STATE    => state_renderer
 		);		
 		
 end architecture;

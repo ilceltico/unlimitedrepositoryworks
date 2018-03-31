@@ -17,9 +17,6 @@ entity view is
 		SPRITE_X			: out xy_coord_type;
 		SPRITE_Y			: out	xy_coord_type;
 		SHOW				: out std_logic
-		
---		DEBUG_OUT 		: out std_logic
---		DEBUG_STATE		: out integer
 	);
 end entity;
 
@@ -52,17 +49,15 @@ begin
 	begin
 		
 		if (RESET_N = '0') then
-			state <= WAITING;
-			next_state <= RENDER;
 			DRAW_SPRITE <= '0';
 			SHOW <= '0';
 			SPRITE <= dummy_sprite_1;
 			SPRITE_X <= 0;
 			SPRITE_Y <= 0;
---			DEBUG_OUT <= '0';
 			render_asap <= '0';
 			render_counter <= 0;
-			
+			state <= WAITING;
+			next_state <= RENDER;
 		elsif rising_edge(CLOCK) then
 			
 			DRAW_SPRITE <= '0';
@@ -70,7 +65,6 @@ begin
 			SPRITE <= dummy_sprite_1;
 			SPRITE_X <= 0;
 			SPRITE_Y <= 0;
---			DEBUG_OUT <= '0';
 		
 			if (FRAME_TIME = '1') then
 				render_asap <= '1';
