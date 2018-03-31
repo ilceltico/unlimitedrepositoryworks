@@ -15,6 +15,7 @@ entity sprite_renderer is
 		X					: in 	xy_coord_type;
 		Y					: in 	xy_coord_type;
 		SHOW				: in  std_logic;
+		FB_VSYNC			: in 	std_logic;
 		
 		FB_FLIP 			: out std_logic;
 		FB_DRAW_RECT   : out std_logic;
@@ -154,9 +155,11 @@ begin
 			
 				when SHOWING => 
 				
-					FB_FLIP 	  	<= '1';
-					state 	  	<= WAITING;
-					next_state 	<= CLEARING;
+					if (FB_VSYNC = '0') then
+						FB_FLIP 	  	<= '1';
+						state 	  	<= WAITING;
+						next_state 	<= CLEARING;
+					end if;
 					
 				when CLEARING =>
 				

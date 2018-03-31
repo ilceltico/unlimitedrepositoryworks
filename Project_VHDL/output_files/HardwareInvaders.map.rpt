@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HardwareInvaders
-Thu Mar 29 14:26:33 2018
+Sat Mar 31 14:25:53 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -63,15 +63,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 29 14:26:33 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 31 14:25:53 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 765                                             ;
-;     Total combinational functions  ; 740                                             ;
-;     Dedicated logic registers      ; 332                                             ;
-; Total registers                    ; 332                                             ;
+; Total logic elements               ; 768                                             ;
+;     Total combinational functions  ; 744                                             ;
+;     Dedicated logic registers      ; 331                                             ;
+; Total registers                    ; 331                                             ;
 ; Total pins                         ; 86                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -203,20 +203,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 765                                   ;
+; Estimated Total logic elements              ; 768                                   ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 740                                   ;
+; Total combinational functions               ; 744                                   ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 218                                   ;
-;     -- 3 input functions                    ; 141                                   ;
-;     -- <=2 input functions                  ; 381                                   ;
+;     -- 4 input functions                    ; 210                                   ;
+;     -- 3 input functions                    ; 151                                   ;
+;     -- <=2 input functions                  ; 383                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 475                                   ;
-;     -- arithmetic mode                      ; 265                                   ;
+;     -- normal mode                          ; 480                                   ;
+;     -- arithmetic mode                      ; 264                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 332                                   ;
-;     -- Dedicated logic registers            ; 332                                   ;
+; Total registers                             ; 331                                   ;
+;     -- Dedicated logic registers            ; 331                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 86                                    ;
@@ -225,9 +225,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; PLL:pll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 330                                   ;
-; Total fan-out                               ; 3399                                  ;
-; Average fan-out                             ; 2.93                                  ;
+; Maximum fan-out                             ; 319                                   ;
+; Total fan-out                               ; 3386                                  ;
+; Average fan-out                             ; 2.91                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
@@ -236,14 +236,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+--------------+
-; |HardwareInvaders                    ; 740 (41)          ; 332 (24)     ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |HardwareInvaders                                           ; work         ;
+; |HardwareInvaders                    ; 744 (39)          ; 331 (23)     ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |HardwareInvaders                                           ; work         ;
 ;    |PLL:pll|                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll                                   ; work         ;
 ;       |altpll:altpll_component|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll|altpll:altpll_component           ; work         ;
-;    |VGA_Framebuffer:vga|             ; 270 (168)         ; 119 (66)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga                       ; work         ;
+;    |VGA_Framebuffer:vga|             ; 269 (167)         ; 119 (66)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga                       ; work         ;
 ;       |VGA_RAMDAC:vga_fb|            ; 29 (29)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb     ; work         ;
 ;       |VGA_Timing:vga_timing|        ; 73 (73)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing ; work         ;
-;    |sprite_renderer:sprite_renderer| ; 199 (199)         ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|sprite_renderer:sprite_renderer           ; work         ;
-;    |view:view|                       ; 230 (230)         ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|view:view                                 ; work         ;
+;    |sprite_renderer:sprite_renderer| ; 207 (207)         ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|sprite_renderer:sprite_renderer           ; work         ;
+;    |view:view|                       ; 229 (229)         ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|view:view                                 ; work         ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -4509,12 +4509,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 332   ;
-; Number of registers using Synchronous Clear  ; 115   ;
+; Total registers                              ; 331   ;
+; Number of registers using Synchronous Clear  ; 114   ;
 ; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 246   ;
+; Number of registers using Asynchronous Clear ; 245   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 239   ;
+; Number of registers using Clock Enable       ; 229   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -4529,29 +4529,30 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_end[8]                      ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |HardwareInvaders|sprite_renderer:sprite_renderer|FB_X0[1]          ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|view:view|render_counter[21]                      ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_Y[1]                             ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_Y[6]                             ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_X[2]                             ;
-; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[1]                   ;
-; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[7]                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|view:view|render_counter[31]                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_UB_N   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |HardwareInvaders|sprite_renderer:sprite_renderer|row               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|view:view|Selector24                              ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |HardwareInvaders|view:view|Selector22                              ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING_R2           ;
-; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector0                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_end[7]                       ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |HardwareInvaders|sprite_renderer:sprite_renderer|FB_X0[1]           ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|view:view|render_counter[23]                       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_Y[1]                              ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_Y[6]                              ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; Yes        ; |HardwareInvaders|view:view|SPRITE_X[3]                              ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[1]                    ;
+; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[7]                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|view:view|render_counter[31]                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_LB_N    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |HardwareInvaders|sprite_renderer:sprite_renderer|row                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|view:view|Selector24                               ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state  ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HardwareInvaders|sprite_renderer:sprite_renderer|next_state.WAITING ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |HardwareInvaders|sprite_renderer:sprite_renderer|Selector68         ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING               ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector0                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -5032,7 +5033,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Mar 29 14:26:28 2018
+    Info: Processing started: Sat Mar 31 14:25:49 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HardwareInvaders -c HardwareInvaders
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file view.vhd
@@ -5062,8 +5063,8 @@ Info (12021): Found 1 design units, including 0 entities, in source file hi_pack
     Info (12022): Found design unit 1: HI_package
 Info (12127): Elaborating entity "HardwareInvaders" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at HardwareInvaders.vhd(29): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at HardwareInvaders.vhd(58): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10631): VHDL Process Statement warning at HardwareInvaders.vhd(82): inferring latch(es) for signal or variable "counter_latched", which holds its previous value in one or more paths through the process
+Warning (10541): VHDL Signal Declaration warning at HardwareInvaders.vhd(59): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at HardwareInvaders.vhd(83): inferring latch(es) for signal or variable "counter_latched", which holds its previous value in one or more paths through the process
 Warning (10873): Using initial value X (don't care) for net "LEDR" at HardwareInvaders.vhd(28)
 Info (12128): Elaborating entity "PLL" for hierarchy "PLL:pll"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL:pll|altpll:altpll_component"
@@ -5175,16 +5176,16 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
-Info (21057): Implemented 855 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 859 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 768 logic cells
+    Info (21061): Implemented 772 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 583 megabytes
-    Info: Processing ended: Thu Mar 29 14:26:33 2018
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 587 megabytes
+    Info: Processing ended: Sat Mar 31 14:25:53 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

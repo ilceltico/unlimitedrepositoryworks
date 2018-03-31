@@ -37,16 +37,14 @@ signal y						: xy_coord_type;
 
 begin
 	
-	location : process (CLOCK, RESET_N) 
+	location : process (render_asap, RESET_N) 
 	begin
 		if (RESET_N = '0') then
 			x <= 0;
 			y <= 0;
-		elsif rising_edge (CLOCK) then
-			if (FRAME_TIME = '1') then
-				x <= x + 1;
-				y <= y + 1;
-			end if;
+		elsif rising_edge (render_asap) then
+			x <= x + 1;
+			y <= y + 1;
 		end if;
 	end process;
 	
@@ -80,7 +78,11 @@ begin
 			
 				case (state) is 
 					when RENDER =>
-						state <= WAITING;
+						if (READY = '1') then
+							state <= WAITING;
+						else
+							state <= WAITING_2;
+						end if;
 						next_state <= RENDER;
 						render_counter <= render_counter + 1;
 						DRAW_SPRITE <= '1';
