@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.vga_package.all;
-use work.HI_package.all;
+use work.hi_package.all;
 
 entity HardwareInvaders is
 	port
@@ -51,6 +51,7 @@ architecture RTL of HardwareInvaders is
 	signal fb_y1              : xy_coord_type;
 	signal fb_color           : color_type;
 	signal sprite_to_render	  : sprite_type;
+	signal hitbox_to_render	  : hitbox_type;
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
@@ -124,7 +125,7 @@ begin
 			SRAM_LB_N => SRAM_LB_N
 		);
 
-	view : entity work.view
+	view_control_unit : entity work.HI_View_Control_Unit
 		port map 
 		(
 			CLOCK				=> clock_50MHz,
@@ -133,13 +134,10 @@ begin
 			READY 			=> sr_ready,
 			
 			DRAW_SPRITE		=> draw_sprite,
-			SPRITE			=> sprite_to_render,
-			SPRITE_X			=> sprite_x,
-			SPRITE_Y			=> sprite_y,
 			SHOW				=> show
 		);
 		
-	sprite_renderer : entity work.sprite_renderer
+	view : entity work.HI_View
 		port map 
 		(
 			CLOCK				=> clock_50MHz,
@@ -147,8 +145,7 @@ begin
 			DRAW_SPRITE		=> draw_sprite,
 			FB_READY			=> fb_ready,
 			SPRITE			=> sprite_to_render,
-			X					=> sprite_x,
-			Y					=> sprite_y,
+			HITBOX			=> hitbox_to_render,
 			SHOW				=> show,
 			FB_VSYNC			=> fb_vsync,
 			
@@ -163,4 +160,15 @@ begin
 			READY 			=> sr_ready
 		);		
 		
+		datapath : entity work.HI_Datapath
+		port map 
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			
+			CHANGE_ALIEN_SPRITES		=> clock_50MHz,
+			
+			SPRITE 				=> sprite_to_render,
+			HITBOX				=> hitbox_to_render
+		);		
 end architecture;

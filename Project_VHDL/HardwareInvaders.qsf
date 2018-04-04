@@ -330,13 +330,17 @@ set_location_assignment PIN_W7 -to SRAM_UB_N
 set_location_assignment PIN_AA10 -to SRAM_WE_N
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name VHDL_FILE view.vhd
-set_global_assignment -name VHDL_FILE sprite_renderer.vhd
+set_global_assignment -name VHDL_FILE HI_View_Control_Unit.vhd
+set_global_assignment -name VHDL_FILE HI_View.vhd
+set_global_assignment -name VHDL_FILE HI_Datapath.vhd
+set_global_assignment -name SDC_FILE HardwareInvaders.sdc
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name VHDL_FILE hi_package.vhd
+set_global_assignment -name VHDL_FILE HI_Controller.vhd
 set_global_assignment -name VHDL_FILE PLL.vhd
 set_global_assignment -name VHDL_FILE VGA_Timing.vhd
 set_global_assignment -name VHDL_FILE VGA_RAMDAC.vhd
 set_global_assignment -name VHDL_FILE vga_package.vhd
 set_global_assignment -name VHDL_FILE VGA_FrameBuffer.vhd
 set_global_assignment -name VHDL_FILE HardwareInvaders.vhd
-set_global_assignment -name VHDL_FILE HI_package.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

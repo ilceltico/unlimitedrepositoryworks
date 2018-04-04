@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 use work.HI_package.all;
 use work.vga_package.all;
 
-entity view is 
+entity Hi_View_Control_Unit is 
 	port 
 	(
 		CLOCK				: in	std_logic;
@@ -13,14 +13,11 @@ entity view is
 		READY 			: in  std_logic;
 		
 		DRAW_SPRITE		: out std_logic;
-		SPRITE			: out sprite_type;
-		SPRITE_X			: out xy_coord_type;
-		SPRITE_Y			: out	xy_coord_type;
 		SHOW				: out std_logic
 	);
 end entity;
 
-architecture RTL of view is 
+architecture RTL of Hi_View_Control_Unit is 
 
 type state_type is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
 
@@ -51,9 +48,6 @@ begin
 		if (RESET_N = '0') then
 			DRAW_SPRITE <= '0';
 			SHOW <= '0';
-			SPRITE <= dummy_sprite_1;
-			SPRITE_X <= 0;
-			SPRITE_Y <= 0;
 			render_asap <= '0';
 			render_counter <= 0;
 			state <= WAITING;
@@ -62,9 +56,6 @@ begin
 			
 			DRAW_SPRITE <= '0';
 			SHOW <= '0';
-			SPRITE <= dummy_sprite_1;
-			SPRITE_X <= 0;
-			SPRITE_Y <= 0;
 		
 			if (FRAME_TIME = '1') then
 				render_asap <= '1';
@@ -83,40 +74,41 @@ begin
 						
 						case (render_counter) is
 							when 0 => 
-								SPRITE <= dummy_sprite_1;
-								SPRITE_X <= x;
-								SPRITE_Y <= y;
-								
-							when 1 =>
-								SPRITE <= dummy_sprite_2;
-								SPRITE_X <= 2 * x - 50;
-								SPRITE_Y <= y + 30;
-						
-							when 2 =>
-								SPRITE <= dummy_sprite_1;
-								SPRITE_X <= 3 * x;
-								SPRITE_Y <= y;
-					
-							when 3 =>
-								SPRITE <= dummy_sprite_2;
-								SPRITE_X <= 3 * x;
-								SPRITE_Y <= 2 * y;
-							
-							when 4 =>
-								SPRITE <= dummy_sprite_1;
-								SPRITE_X <= -x;
-								SPRITE_Y <= y + 200;
-								
-							when 5 =>
-								SPRITE <= dummy_sprite_1;
-								SPRITE_X <= 0 * x;
-								SPRITE_Y <= -5 * y;
-								
-							when 6 =>
-								SPRITE <= dummy_sprite_1;
-								SPRITE_X <= -3 * x;
-								SPRITE_Y <= 2 * y;
 								next_state <= SHOW_SPRITES;
+--								SPRITE <= dummy_sprite_1;
+--								SPRITE_X <= x;
+--								SPRITE_Y <= y;
+								
+--							when 1 =>
+--								SPRITE <= dummy_sprite_2;
+--								SPRITE_X <= 2 * x - 50;
+--								SPRITE_Y <= y + 30;
+--						
+--							when 2 =>
+--								SPRITE <= dummy_sprite_1;
+--								SPRITE_X <= 3 * x;
+--								SPRITE_Y <= y;
+--					
+--							when 3 =>
+--								SPRITE <= dummy_sprite_2;
+--								SPRITE_X <= 3 * x;
+--								SPRITE_Y <= 2 * y;
+--							
+--							when 4 =>
+--								SPRITE <= dummy_sprite_1;
+--								SPRITE_X <= -x;
+--								SPRITE_Y <= y + 200;
+--								
+--							when 5 =>
+--								SPRITE <= dummy_sprite_1;
+--								SPRITE_X <= 100;
+--								SPRITE_Y <= 100;
+--								
+--							when 6 =>
+--								SPRITE <= dummy_sprite_1;
+--								SPRITE_X <= -3 * x;
+--								SPRITE_Y <= 2 * y;
+--								next_state <= SHOW_SPRITES;
 							when others => --UNREACHABLE
 								
 						end case;

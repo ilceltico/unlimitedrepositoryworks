@@ -2,7 +2,7 @@ package utils;
 
 public final class Commons {
 	public static final int GRIDWIDTH = 500;
-	public static final int GRIDHEIGHT = 550;
+	public static final int GRIDHEIGHT = 480;
 	public static final int COLNUMBER = 11;
 	public static final int ROWNUMBER = 5;
 	public static final int ALIENWIDTH = 26;

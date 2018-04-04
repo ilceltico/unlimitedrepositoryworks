@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.HI_package.all;
+use work.hi_package.all;
 use work.vga_package.all;
 
-entity sprite_renderer is 
+entity HI_View is 
 	port 
 	(
 		CLOCK				: in	std_logic;
@@ -12,8 +12,7 @@ entity sprite_renderer is
 		DRAW_SPRITE		: in 	std_logic;
 		FB_READY			: in 	std_logic;
 		SPRITE			: in 	sprite_type;
-		X					: in 	xy_coord_type;
-		Y					: in 	xy_coord_type;
+		HITBOX			: in 	hitbox_type;
 		SHOW				: in  std_logic;
 		FB_VSYNC			: in 	std_logic;
 		
@@ -29,7 +28,7 @@ entity sprite_renderer is
 	);
 end entity;
 
-architecture RTL of sprite_renderer is
+architecture RTL of HI_View is
 
 type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING);
 
@@ -37,9 +36,8 @@ signal state				: state_type;
 signal next_state			: state_type;
 signal row					: integer;
 signal column				: integer;
-signal sprite_to_draw	: sprite_type;
-signal sprite_x			: xy_coord_type;
-signal sprite_y			: xy_coord_type;
+signal reg_sprite				: sprite_type;
+signal reg_hitbox 		: hitbox_type;
 signal show_asap			: std_logic;
 
 begin
@@ -102,9 +100,9 @@ begin
 						READY 			<= '0';
 						state 			<= WAITING;
 						next_state 		<= DRAWING;
-						sprite_to_draw <= SPRITE;
-						sprite_x 		<= X;
-						sprite_y 		<= Y;
+						reg_sprite		<= SPRITE;
+						reg_hitbox 		<= HITBOX;
+						
 					
 					end if;
 					
@@ -121,10 +119,10 @@ begin
 					state 		<= WAITING;
 					next_state 	<= DRAWING;
 					
-					if (column >= 31) then
+					if (column >= reg_hitbox.size_x - 1) then
 					
 						column <= 0;
-						if (row >= 31) then
+						if (row >= reg_hitbox.size_y - 1) then
 							
 							row <= 0;
 							next_state <= IDLE;
@@ -141,13 +139,13 @@ begin
 					
 					end if;
 					
-					if (sprite_to_draw.img_pixels(row, column) = '1') then
+					if (reg_sprite.img_pixels(row, column) = '1') then
 					
-						FB_X0 		 	<= sprite_x + column;
-						FB_X1 		 	<= sprite_x + column;
-						FB_Y0 		 	<= sprite_y + row;
-						FB_Y1 		 	<= sprite_y + row;
-						FB_COLOR 	 	<= sprite_to_draw.color;
+						FB_X0 		 	<= reg_hitbox.up_left_x + column;
+						FB_X1 		 	<= reg_hitbox.up_left_x + column;
+						FB_Y0 		 	<= reg_hitbox.up_left_y + row;
+						FB_Y1 		 	<= reg_hitbox.up_left_y + row;
+						FB_COLOR 	 	<= reg_sprite.color;
 						FB_DRAW_RECT 	<= '1';
 					
 					end if;
