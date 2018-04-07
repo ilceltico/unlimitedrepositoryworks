@@ -56,6 +56,7 @@ architecture RTL of HardwareInvaders is
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
 	signal fb_vsync			  : std_logic;
+	signal req_next_sprite 	  : std_logic;
 
 begin
 
@@ -134,7 +135,8 @@ begin
 			READY 			=> sr_ready,
 			
 			DRAW_SPRITE		=> draw_sprite,
-			SHOW				=> show
+			SHOW				=> show,
+			REQ_NEXT_SPRITE => req_next_sprite
 		);
 		
 	view : entity work.HI_View
@@ -156,8 +158,7 @@ begin
 			FB_X0          => fb_x0,
 			FB_Y0          => fb_y0,
 			FB_X1          => fb_x1,
-			FB_Y1          => fb_y1,
-			READY 			=> sr_ready
+			FB_Y1          => fb_y1
 		);		
 		
 		datapath : entity work.HI_Datapath
@@ -165,7 +166,7 @@ begin
 		(
 			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
-			
+			REQ_NEXT_SPRITE => req_next_sprite,
 			CHANGE_ALIEN_SPRITES		=> clock_50MHz,
 			
 			SPRITE 				=> sprite_to_render,

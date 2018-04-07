@@ -1,5 +1,5 @@
 EDA Netlist Writer report for HardwareInvaders
-Wed Apr 04 16:30:51 2018
+Sat Apr 07 15:11:20 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Apr 04 16:30:51 2018 ;
+; EDA Netlist Writer Status ; Successful - Sat Apr 07 15:11:20 2018 ;
 ; Revision Name             ; HardwareInvaders                      ;
 ; Top-level Entity Name     ; HardwareInvaders                      ;
 ; Family                    ; Cyclone II                            ;
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Apr 04 16:30:50 2018
+    Info: Processing started: Sat Apr 07 15:11:19 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off HardwareInvaders -c HardwareInvaders
 Info (204026): Generated files "HardwareInvaders.vho", "HardwareInvaders_fast.vho", "HardwareInvaders_vhd.sdo" and "HardwareInvaders_vhd_fast.sdo" in directory "C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 456 megabytes
-    Info: Processing ended: Wed Apr 04 16:30:51 2018
+    Info: Peak virtual memory: 446 megabytes
+    Info: Processing ended: Sat Apr 07 15:11:20 2018
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

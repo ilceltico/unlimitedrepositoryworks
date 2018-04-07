@@ -5,7 +5,10 @@ use work.vga_package.all;
 
 package HI_package is
 	-- Constants declarations
-	
+	constant ALIEN_SPRITE_COUNT	: positive	:= 3;
+	constant ALIENS_PER_COLUMN		: positive	:= 10;
+	constant COLUMNS_PER_GRID 		: positive  := 10;
+	constant SPRITE_SIZE				: positive 	:= 32;
 	
 	
 	-- Hitbox declaration
@@ -17,8 +20,8 @@ package HI_package is
 	end record;
 	
 	-- Spaceship declaration 	
-	type alien_sprite_indexes_type is array(0 to 2) of integer;
-	subtype alien_sprite_current_index_type is integer range 0 to 2;
+	type alien_sprite_indexes_type is array(0 to ALIEN_SPRITE_COUNT - 1) of integer;
+	subtype alien_sprite_current_index_type is integer range 0 to ALIEN_SPRITE_COUNT - 1;
 	type alien_type is record
 		sprite_indexes   	: alien_sprite_indexes_type;
 		hitbox				: hitbox_type;
@@ -26,8 +29,17 @@ package HI_package is
 		-- visible			: std_logic;
 		-- exploding		: std_logic;
 	end record;	
+	
+	-- Alien Column declaration
+	type alien_column_type is array(0 to ALIENS_PER_COLUMN - 1) of alien_type;
+	subtype alien_column_index_type is integer range 0 to ALIENS_PER_COLUMN - 1;
+	
+	-- Alien Grid declaration
+	type alien_grid_type is array(0 to COLUMNS_PER_GRID - 1) of alien_column_type;
+	subtype alien_grid_index_type is integer range 0 to COLUMNS_PER_GRID - 1;
+	
 
-	type img_pixels_type is array(0 to 31, 0 to 31) of std_logic;
+	type img_pixels_type is array(0 to SPRITE_SIZE - 1 , 0 to SPRITE_SIZE - 1) of std_logic;
 	
 	
 	type sprite_type is record 

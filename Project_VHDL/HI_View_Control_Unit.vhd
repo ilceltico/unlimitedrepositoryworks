@@ -13,7 +13,8 @@ entity Hi_View_Control_Unit is
 		READY 			: in  std_logic;
 		
 		DRAW_SPRITE		: out std_logic;
-		SHOW				: out std_logic
+		SHOW				: out std_logic;
+		REQ_NEXT_SPRITE: out std_logic
 	);
 end entity;
 
@@ -48,6 +49,7 @@ begin
 		if (RESET_N = '0') then
 			DRAW_SPRITE <= '0';
 			SHOW <= '0';
+			REQ_NEXT_SPRITE <= '0';
 			render_asap <= '0';
 			render_counter <= 0;
 			state <= WAITING;
@@ -56,6 +58,7 @@ begin
 			
 			DRAW_SPRITE <= '0';
 			SHOW <= '0';
+			REQ_NEXT_SPRITE <= '0';
 		
 			if (FRAME_TIME = '1') then
 				render_asap <= '1';
@@ -68,47 +71,14 @@ begin
 						else
 							state <= WAITING_2;
 						end if;
+						REQ_NEXT_SPRITE <= '1';
 						next_state <= RENDER;
 						render_counter <= render_counter + 1;
 						DRAW_SPRITE <= '1';
 						
 						case (render_counter) is
-							when 0 => 
+							when 99 => 
 								next_state <= SHOW_SPRITES;
---								SPRITE <= dummy_sprite_1;
---								SPRITE_X <= x;
---								SPRITE_Y <= y;
-								
---							when 1 =>
---								SPRITE <= dummy_sprite_2;
---								SPRITE_X <= 2 * x - 50;
---								SPRITE_Y <= y + 30;
---						
---							when 2 =>
---								SPRITE <= dummy_sprite_1;
---								SPRITE_X <= 3 * x;
---								SPRITE_Y <= y;
---					
---							when 3 =>
---								SPRITE <= dummy_sprite_2;
---								SPRITE_X <= 3 * x;
---								SPRITE_Y <= 2 * y;
---							
---							when 4 =>
---								SPRITE <= dummy_sprite_1;
---								SPRITE_X <= -x;
---								SPRITE_Y <= y + 200;
---								
---							when 5 =>
---								SPRITE <= dummy_sprite_1;
---								SPRITE_X <= 100;
---								SPRITE_Y <= 100;
---								
---							when 6 =>
---								SPRITE <= dummy_sprite_1;
---								SPRITE_X <= -3 * x;
---								SPRITE_Y <= 2 * y;
---								next_state <= SHOW_SPRITES;
 							when others => --UNREACHABLE
 								
 						end case;
