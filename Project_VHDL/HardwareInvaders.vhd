@@ -55,10 +55,13 @@ architecture RTL of HardwareInvaders is
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
+	signal game_tick			  : std_logic;
 	signal fb_vsync			  : std_logic;
 	signal req_next_sprite 	  : std_logic;
 
 begin
+
+	LEDG(7) <= show;
 
 	pll : entity work.PLL
 		port map (
@@ -76,7 +79,7 @@ begin
 		end if;
 	end process;
 
-	fps : process(clock_50MHz, RESET_N)
+	frame_time_gen : process(clock_50MHz, RESET_N)
 		variable counter : integer range 0 to (833333 - 1);
 	begin
 		if (RESET_N = '0') then
@@ -89,6 +92,23 @@ begin
 			else
 				counter := counter+1;
 				frame_time <= '0';			
+			end if;
+		end if;
+	end process;
+	
+	game_tick_gen : process(clock_50MHz, RESET_N)
+		variable counter : integer range 0 to (50000000 - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			game_tick <= '0';
+		elsif (rising_edge(clock_50MHz)) then
+			if(counter = counter'high) then
+				counter := 0;
+				game_tick <= '1';
+			else
+				counter := counter+1;
+				game_tick <= '0';			
 			end if;
 		end if;
 	end process;
@@ -158,7 +178,8 @@ begin
 			FB_X0          => fb_x0,
 			FB_Y0          => fb_y0,
 			FB_X1          => fb_x1,
-			FB_Y1          => fb_y1
+			FB_Y1          => fb_y1,
+			READY 			=> sr_ready
 		);		
 		
 		datapath : entity work.HI_Datapath
@@ -167,7 +188,7 @@ begin
 			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			REQ_NEXT_SPRITE => req_next_sprite,
-			CHANGE_ALIEN_SPRITES		=> clock_50MHz,
+			CHANGE_ALIEN_SPRITES		=> game_tick,
 			
 			SPRITE 				=> sprite_to_render,
 			HITBOX				=> hitbox_to_render

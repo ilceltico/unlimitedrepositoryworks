@@ -30,7 +30,7 @@ end entity;
 
 architecture RTL of HI_View is
 
-type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING);
+type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
 
 signal state				: state_type;
 signal next_state			: state_type;
@@ -164,7 +164,18 @@ begin
 				
 					FB_CLEAR 	<= '1';
 					state 		<= WAITING;
-					next_state  <= IDLE;
+					next_state  <= INIT;
+				
+				when INIT =>
+					
+					FB_DRAW_RECT <= '1';
+					FB_X0 <= 0;
+					FB_X1 <= 511;
+					FB_Y0 <= 0;
+					FB_Y1 <= 479;
+					FB_COLOR <= COLOR_RED;
+					state <= WAITING;
+					next_state <= IDLE;
 				
 			end case;
 		end if;

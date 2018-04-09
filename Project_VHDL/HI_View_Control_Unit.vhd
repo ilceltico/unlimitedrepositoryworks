@@ -77,7 +77,7 @@ begin
 						DRAW_SPRITE <= '1';
 						
 						case (render_counter) is
-							when 99 => 
+							when ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1 => 
 								next_state <= SHOW_SPRITES;
 							when others => --UNREACHABLE
 								
