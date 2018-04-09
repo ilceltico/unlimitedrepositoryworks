@@ -30,6 +30,8 @@ signal render_counter	: integer;
 signal x						: xy_coord_type;
 signal y						: xy_coord_type;
 
+signal draw_delayed		: std_logic;
+
 begin
 	
 	location : process (render_asap, RESET_N) 
@@ -54,9 +56,12 @@ begin
 			render_counter <= 0;
 			state <= WAITING;
 			next_state <= RENDER;
+			draw_delayed <= '0';
+			
 		elsif rising_edge(CLOCK) then
 			
-			DRAW_SPRITE <= '0';
+			DRAW_SPRITE <= draw_delayed;
+			draw_delayed <= '0';
 			SHOW <= '0';
 			REQ_NEXT_SPRITE <= '0';
 		
@@ -64,45 +69,49 @@ begin
 				render_asap <= '1';
 			end if;
 			
-				case (state) is 
-					when RENDER =>
-						if (READY = '1') then
-							state <= WAITING;
-						else
-							state <= WAITING_2;
-						end if;
-						REQ_NEXT_SPRITE <= '1';
+			case (state) is 
+				when RENDER =>
+					if (READY = '1') then
+						state <= WAITING;
+					else
+						state <= WAITING_2;
+					end if;
+					REQ_NEXT_SPRITE <= '1';
+					next_state <= RENDER;
+					render_counter <= render_counter + 1;
+					draw_delayed <= '1';
+					
+					case (render_counter) is
+						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1=> 
+							next_state <= SHOW_SPRITES;
+--						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID => 
+--							REQ_NEXT_SPRITE  <= '0';
+--						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID + 1=> 
+--							REQ_NEXT_SPRITE  <= '0';
+--							next_state <= SHOW_SPRITES;
+						when others => --UNREACHABLE
+							
+					end case;
+				when SHOW_SPRITES =>
+					state <= SHOW_SPRITES;
+					next_state <= SHOW_SPRITES;
+					if (render_asap = '1') then
+						SHOW <= '1';
+						render_asap <= '0';
+						state <= WAITING;
 						next_state <= RENDER;
-						render_counter <= render_counter + 1;
-						DRAW_SPRITE <= '1';
-						
-						case (render_counter) is
-							when ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1 => 
-								next_state <= SHOW_SPRITES;
-							when others => --UNREACHABLE
-								
-						end case;
-
-					when SHOW_SPRITES =>
-						state <= SHOW_SPRITES;
-						next_state <= SHOW_SPRITES;
-						if (render_asap = '1') then
-							SHOW <= '1';
-							render_asap <= '0';
-							state <= WAITING;
-							next_state <= RENDER;
-							render_counter <= 0;
-						end if;
-					when WAITING =>
-						if (READY = '0') then
-							state <= WAITING_2;
-						end if;
-					when WAITING_2 =>
-						if (READY = '1') then 
-							state <= next_state;
-						end if;
-					when others => -- UNREACHABLE
-				end case;
+						render_counter <= 0;
+					end if;
+				when WAITING =>
+					if (READY = '0') then
+						state <= WAITING_2;
+					end if;
+				when WAITING_2 =>
+					if (READY = '1') then 
+						state <= next_state;
+					end if;
+				when others => -- UNREACHABLE
+			end case;
 		end if;
 	end process;
 

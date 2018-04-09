@@ -97,7 +97,7 @@ begin
 	end process;
 	
 	game_tick_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (50000000 - 1);
+		variable counter : integer range 0 to (2500000 - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;

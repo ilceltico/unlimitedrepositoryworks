@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HardwareInvaders
-Mon Apr 09 12:29:08 2018
+Mon Apr 09 14:49:09 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -63,15 +63,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 09 12:29:08 2018           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 09 14:49:09 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 851                                             ;
-;     Total combinational functions  ; 834                                             ;
-;     Dedicated logic registers      ; 392                                             ;
-; Total registers                    ; 392                                             ;
+; Total logic elements               ; 890                                             ;
+;     Total combinational functions  ; 872                                             ;
+;     Dedicated logic registers      ; 410                                             ;
+; Total registers                    ; 410                                             ;
 ; Total pins                         ; 86                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -204,20 +204,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 851                                   ;
+; Estimated Total logic elements              ; 890                                   ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 834                                   ;
+; Total combinational functions               ; 872                                   ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 284                                   ;
-;     -- 3 input functions                    ; 130                                   ;
-;     -- <=2 input functions                  ; 420                                   ;
+;     -- 4 input functions                    ; 299                                   ;
+;     -- 3 input functions                    ; 131                                   ;
+;     -- <=2 input functions                  ; 442                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 577                                   ;
-;     -- arithmetic mode                      ; 257                                   ;
+;     -- normal mode                          ; 598                                   ;
+;     -- arithmetic mode                      ; 274                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 392                                   ;
-;     -- Dedicated logic registers            ; 392                                   ;
+; Total registers                             ; 410                                   ;
+;     -- Dedicated logic registers            ; 410                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 86                                    ;
@@ -226,8 +226,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; PLL:pll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 390                                   ;
-; Total fan-out                               ; 3888                                  ;
+; Maximum fan-out                             ; 408                                   ;
+; Total fan-out                               ; 4054                                  ;
 ; Average fan-out                             ; 2.96                                  ;
 +---------------------------------------------+---------------------------------------+
 
@@ -237,10 +237,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+--------------+
-; |HardwareInvaders                           ; 834 (86)          ; 392 (50)     ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |HardwareInvaders                                           ; work         ;
-;    |HI_Datapath:datapath|                   ; 84 (84)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_Datapath:datapath                      ; work         ;
+; |HardwareInvaders                           ; 872 (76)          ; 410 (46)     ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |HardwareInvaders                                           ; work         ;
+;    |HI_Datapath:datapath|                   ; 132 (132)         ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_Datapath:datapath                      ; work         ;
 ;    |HI_View:view|                           ; 313 (313)         ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_View:view                              ; work         ;
-;    |Hi_View_Control_Unit:view_control_unit| ; 84 (84)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit    ; work         ;
+;    |Hi_View_Control_Unit:view_control_unit| ; 84 (84)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit    ; work         ;
 ;    |PLL:pll|                                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll                                   ; work         ;
 ;       |altpll:altpll_component|             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll|altpll:altpll_component           ; work         ;
 ;    |VGA_Framebuffer:vga|                    ; 267 (165)         ; 119 (66)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga                       ; work         ;
@@ -2080,15 +2080,30 @@ Encoding Type:  One-Hot
 ; HI_Datapath:datapath|SPRITE.img_pixels[27][22]                 ; Merged with HI_Datapath:datapath|SPRITE.img_pixels[19][0]                  ;
 ; HI_View:view|FB_X1[9]                                          ; Merged with HI_View:view|FB_X0[9]                                          ;
 ; HI_View:view|FB_Y1[5]                                          ; Merged with HI_View:view|FB_Y0[5]                                          ;
-; Hi_View_Control_Unit:view_control_unit|REQ_NEXT_SPRITE         ; Merged with Hi_View_Control_Unit:view_control_unit|DRAW_SPRITE             ;
+; Hi_View_Control_Unit:view_control_unit|REQ_NEXT_SPRITE         ; Merged with Hi_View_Control_Unit:view_control_unit|draw_delayed            ;
+; HI_Datapath:datapath|HITBOX.size_x[31]                         ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
+; HI_Datapath:datapath|HITBOX.size_y[0,31]                       ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
+; HI_Datapath:datapath|HITBOX.up_left_x[0]                       ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
+; HI_Datapath:datapath|HITBOX.up_left_y[0]                       ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
+; HI_Datapath:datapath|HITBOX.size_y[5]                          ; Merged with HI_Datapath:datapath|HITBOX.size_x[5]                          ;
 ; HI_Datapath:datapath|alien_grid[1][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
 ; HI_Datapath:datapath|alien_grid[2][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
 ; HI_Datapath:datapath|alien_grid[3][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
 ; HI_Datapath:datapath|alien_grid[4][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
+; HI_Datapath:datapath|alien_grid[5][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
+; HI_Datapath:datapath|alien_grid[6][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
+; HI_Datapath:datapath|alien_grid[7][0].current_index[0]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
 ; HI_Datapath:datapath|alien_grid[1][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
 ; HI_Datapath:datapath|alien_grid[2][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
 ; HI_Datapath:datapath|alien_grid[3][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
 ; HI_Datapath:datapath|alien_grid[4][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
+; HI_Datapath:datapath|alien_grid[5][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
+; HI_Datapath:datapath|alien_grid[6][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
+; HI_Datapath:datapath|alien_grid[7][0].current_index[1]         ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ;
+; HI_View:view|reg_hitbox.size_x[31]                             ; Merged with HI_View:view|reg_hitbox.size_x[0]                              ;
+; HI_View:view|reg_hitbox.size_y[0,31]                           ; Merged with HI_View:view|reg_hitbox.size_x[0]                              ;
+; HI_View:view|reg_hitbox.up_left_x[0]                           ; Merged with HI_View:view|reg_hitbox.size_x[0]                              ;
+; HI_View:view|reg_hitbox.up_left_y[0]                           ; Merged with HI_View:view|reg_hitbox.size_x[0]                              ;
 ; HI_View:view|FB_COLOR[9,11]                                    ; Merged with HI_View:view|FB_COLOR[10]                                      ;
 ; HI_View:view|FB_DRAW_RECT                                      ; Merged with HI_View:view|FB_COLOR[10]                                      ;
 ; HI_View:view|FB_COLOR[2,3,6,7]                                 ; Merged with HI_View:view|FB_COLOR[1]                                       ;
@@ -2530,41 +2545,39 @@ Encoding Type:  One-Hot
 ; HI_View:view|reg_sprite.img_pixels[27][21]                     ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
 ; HI_View:view|reg_sprite.img_pixels[27][22]                     ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
 ; HI_View:view|reg_sprite.img_pixels[27][9]                      ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
+; HI_View:view|reg_hitbox.size_y[5]                              ; Merged with HI_View:view|reg_hitbox.size_x[5]                              ;
 ; VGA_Framebuffer:vga|latched_color[9,11]                        ; Merged with VGA_Framebuffer:vga|latched_color[10]                          ;
 ; VGA_Framebuffer:vga|latched_color[2,3,6,7]                     ; Merged with VGA_Framebuffer:vga|latched_color[1]                           ;
 ; VGA_Framebuffer:vga|x_start[9]                                 ; Merged with VGA_Framebuffer:vga|x_end[9]                                   ;
 ; VGA_Framebuffer:vga|y_start[5]                                 ; Merged with VGA_Framebuffer:vga|y_end[5]                                   ;
-; HI_Datapath:datapath|HITBOX.up_left_y[1..8]                    ; Stuck at GND due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_x[1..4,6..30]                 ; Stuck at GND due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_y[1..4,6..30]                 ; Stuck at GND due to stuck port data_in                                     ;
-; HI_View:view|reg_hitbox.up_left_y[1..8]                        ; Stuck at GND due to stuck port data_in                                     ;
-; HI_View:view|reg_hitbox.size_x[1..4,6..30]                     ; Stuck at GND due to stuck port data_in                                     ;
-; HI_View:view|reg_hitbox.size_y[1..4,6..30]                     ; Stuck at GND due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_y[31]                         ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
-; HI_Datapath:datapath|HITBOX.size_x[0]                          ; Merged with HI_Datapath:datapath|HITBOX.size_x[31]                         ;
-; HI_Datapath:datapath|HITBOX.size_x[31]                         ; Merged with HI_Datapath:datapath|HITBOX.up_left_y[0]                       ;
-; HI_Datapath:datapath|HITBOX.up_left_y[0]                       ; Merged with HI_Datapath:datapath|HITBOX.up_left_x[0]                       ;
-; HI_Datapath:datapath|HITBOX.up_left_x[0]                       ; Merged with HI_Datapath:datapath|HITBOX.size_y[0]                          ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[1]      ;
+; HI_Datapath:datapath|HITBOX.size_x[1..4,6..9,11..30]           ; Merged with HI_Datapath:datapath|HITBOX.size_x[10]                         ;
+; HI_Datapath:datapath|HITBOX.size_y[1..4,6..30]                 ; Merged with HI_Datapath:datapath|HITBOX.size_x[10]                         ;
+; HI_Datapath:datapath|HITBOX.up_left_y[1..8]                    ; Merged with HI_Datapath:datapath|HITBOX.size_x[10]                         ;
+; HI_View:view|reg_hitbox.size_x[1..4,6..9,11..30]               ; Merged with HI_View:view|reg_hitbox.size_x[10]                             ;
+; HI_View:view|reg_hitbox.size_y[1..4,6..30]                     ; Merged with HI_View:view|reg_hitbox.size_x[10]                             ;
+; HI_View:view|reg_hitbox.up_left_y[1..8]                        ; Merged with HI_View:view|reg_hitbox.size_x[10]                             ;
+; HI_Datapath:datapath|HITBOX.size_x[10]                         ; Stuck at GND due to stuck port data_in                                     ;
+; HI_View:view|reg_hitbox.size_x[10]                             ; Stuck at GND due to stuck port data_in                                     ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[1]      ;
 ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[1]      ;
+; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[1]      ;
+; HI_Datapath:datapath|HITBOX.size_x[0]                          ; Merged with HI_Datapath:datapath|HITBOX.size_x[5]                          ;
+; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1]      ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1]      ;
-; HI_View:view|reg_hitbox.up_left_x[0]                           ; Merged with HI_View:view|reg_hitbox.size_y[0]                              ;
-; HI_View:view|reg_hitbox.up_left_y[0]                           ; Merged with HI_View:view|reg_hitbox.size_y[0]                              ;
-; HI_View:view|reg_hitbox.size_x[0,31]                           ; Merged with HI_View:view|reg_hitbox.size_y[0]                              ;
-; HI_View:view|reg_hitbox.size_y[31]                             ; Merged with HI_View:view|reg_hitbox.size_y[0]                              ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1]      ;
 ; HI_View:view|reg_sprite.img_pixels[10][26]                     ; Merged with HI_View:view|reg_sprite.img_pixels[10][10]                     ;
+; HI_View:view|reg_hitbox.size_x[0]                              ; Merged with HI_View:view|reg_hitbox.size_x[5]                              ;
 ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[2]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[2]      ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[2]      ; Merged with HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[2]      ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[2]      ; Merged with HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2]      ;
+; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[2]      ; Merged with HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[2]      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[2]       ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_Datapath:datapath|alien_grid[0][0].current_index[1]         ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[4][6]                   ; Stuck at VCC due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.img_pixels[10][10]                     ; Stuck at VCC due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_x[5]                          ; Merged with HI_Datapath:datapath|HITBOX.size_y[5]                          ;
-; HI_View:view|reg_hitbox.size_x[5]                              ; Merged with HI_View:view|reg_hitbox.size_y[5]                              ;
-; HI_Datapath:datapath|HITBOX.size_y[5]                          ; Merged with HI_Datapath:datapath|HITBOX.size_y[0]                          ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[15][2]                  ; Merged with HI_Datapath:datapath|SPRITE.img_pixels[7][0]                   ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[19][0]                  ; Merged with HI_Datapath:datapath|SPRITE.img_pixels[7][0]                   ;
 ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[1]      ; Merged with HI_Datapath:datapath|alien_grid[0][0].current_index[0]         ;
-; HI_View:view|reg_hitbox.size_y[5]                              ; Merged with HI_View:view|reg_hitbox.size_y[0]                              ;
 ; HI_View:view|reg_sprite.img_pixels[15][29]                     ; Merged with HI_View:view|reg_sprite.img_pixels[10][0]                      ;
 ; HI_View:view|reg_sprite.img_pixels[19][0]                      ; Merged with HI_View:view|reg_sprite.img_pixels[10][0]                      ;
 ; VGA_Framebuffer:vga|substate.DRAWING                           ; Lost fanout                                                                ;
@@ -2585,10 +2598,13 @@ Encoding Type:  One-Hot
 ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
 ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
+; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[9]           ; Lost fanout                                                                ;
 ; Hi_View_Control_Unit:view_control_unit|next_state.RENDER       ; Merged with Hi_View_Control_Unit:view_control_unit|next_state.SHOW_SPRITES ;
-; HI_Datapath:datapath|HITBOX.size_y[0]                          ; Stuck at GND due to stuck port data_in                                     ;
-; Total Number of Removed Registers = 2457                       ;                                                                            ;
+; HI_Datapath:datapath|HITBOX.size_x[5]                          ; Stuck at GND due to stuck port data_in                                     ;
+; Total Number of Removed Registers = 2535                       ;                                                                            ;
 +----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -2602,133 +2618,199 @@ Encoding Type:  One-Hot
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[31], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[31], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[31], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[31]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[31], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[31], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[31], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[31]  ;
 ; HI_View:view|reg_hitbox.up_left_x[30]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[30],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[30], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[30], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[30], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[30], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[30]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[30], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[30], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[30], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[30]  ;
 ; HI_View:view|reg_hitbox.up_left_x[29]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[29],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[29], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[29], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[29], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[29], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[29]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[29], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[29], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[29], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[29]  ;
 ; HI_View:view|reg_hitbox.up_left_x[28]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[28],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[28], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[28], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[28], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[28], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[28]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[28], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[28], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[28], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[28]  ;
 ; HI_View:view|reg_hitbox.up_left_x[27]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[27],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[27], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[27], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[27], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[27], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[27]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[27], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[27], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[27], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[27]  ;
 ; HI_View:view|reg_hitbox.up_left_x[26]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[26],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[26], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[26], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[26], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[26], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[26]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[26], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[26], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[26], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[26]  ;
 ; HI_View:view|reg_hitbox.up_left_x[25]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[25],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[25], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[25], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[25], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[25], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[25]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[25], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[25], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[25], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[25]  ;
 ; HI_View:view|reg_hitbox.up_left_x[24]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[24],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[24], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[24], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[24], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[24], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[24]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[24], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[24], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[24], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[24]  ;
 ; HI_View:view|reg_hitbox.up_left_x[23]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[23],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[23], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[23], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[23], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[23], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[23]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[23], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[23], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[23], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[23]  ;
 ; HI_View:view|reg_hitbox.up_left_x[22]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[22],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[22], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[22], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[22], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[22], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[22]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[22], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[22], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[22], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[22]  ;
 ; HI_View:view|reg_hitbox.up_left_x[21]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[21],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[21], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[21], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[21], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[21], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[21]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[21], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[21], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[21], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[21]  ;
 ; HI_View:view|reg_hitbox.up_left_x[20]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[20],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[20], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[20], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[20], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[20], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[20]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[20], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[20], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[20], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[20]  ;
 ; HI_View:view|reg_hitbox.up_left_x[19]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[19],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[19], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[19], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[19], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[19], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[19]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[19], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[19], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[19], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[19]  ;
 ; HI_View:view|reg_hitbox.up_left_x[18]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[18],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[18], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[18], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[18], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[18], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[18]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[18], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[18], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[18], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[18]  ;
 ; HI_View:view|reg_hitbox.up_left_x[17]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[17],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[17], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[17], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[17], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[17], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[17]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[17], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[17], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[17], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[17]  ;
 ; HI_View:view|reg_hitbox.up_left_x[16]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[16],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[16], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[16], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[16], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[16], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[16]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[16], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[16], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[16], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[16]  ;
 ; HI_View:view|reg_hitbox.up_left_x[15]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[15],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[15], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[15], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[15], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[15], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[15]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[15], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[15], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[15], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[15]  ;
 ; HI_View:view|reg_hitbox.up_left_x[14]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[14],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[14], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[14], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[14], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[14], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[14]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[14], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[14], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[14], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[14]  ;
 ; HI_View:view|reg_hitbox.up_left_x[13]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[13],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[13], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[13], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[13], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[13], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[13]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[13], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[13], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[13], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[13]  ;
 ; HI_View:view|reg_hitbox.up_left_x[12]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[12],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[12], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[12], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[12], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[12], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[12]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[12], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[12], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[12], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[12]  ;
 ; HI_View:view|reg_hitbox.up_left_x[11]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[11],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[11], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[11], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[11], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[11], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[11]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[11], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[11], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[11], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[11]  ;
 ; HI_View:view|reg_hitbox.up_left_x[10]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[10],                  ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[10], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[10], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[10], ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[10], ;
-;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[10]  ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[10], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[10], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[10], ;
+;                                                        ;                           ; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[10]  ;
 ; HI_Datapath:datapath|alien_grid[0][0].current_index[1] ; Stuck at GND              ; HI_Datapath:datapath|SPRITE.img_pixels[4][6],               ;
 ;                                                        ; due to stuck port data_in ; HI_View:view|reg_sprite.img_pixels[10][10]                  ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[0][23]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][23]                   ;
@@ -3639,7 +3721,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[28][23]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[28][23]                  ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|SPRITE.img_pixels[28][24]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[28][24]                  ;
+; HI_Datapath:datapath|SPRITE.img_pixels[0][0]           ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][0]                    ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[28][25]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[28][25]                  ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
@@ -3737,7 +3819,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[30][8]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][8]                   ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|SPRITE.img_pixels[0][0]           ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][0]                    ;
+; HI_Datapath:datapath|SPRITE.img_pixels[30][9]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][9]                   ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[30][10]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][10]                  ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
@@ -3797,7 +3879,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[31][6]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][6]                   ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|SPRITE.img_pixels[31][7]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][7]                   ;
+; HI_Datapath:datapath|SPRITE.img_pixels[28][24]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[28][24]                  ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[31][8]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][8]                   ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
@@ -3909,8 +3991,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_View:view|reg_hitbox.up_left_y[31]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[31]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[30]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[30]                   ;
-; HI_Datapath:datapath|SPRITE.img_pixels[30][9]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][9]                   ;
-;                                                        ; due to stuck port data_in ;                                                             ;
+; HI_View:view|reg_hitbox.up_left_y[29]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[29]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[28]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[28]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[27]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[27]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[26]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[26]                   ;
@@ -3931,139 +4012,10 @@ Encoding Type:  One-Hot
 ; HI_View:view|reg_hitbox.up_left_y[11]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[11]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[10]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[10]                   ;
 ; HI_View:view|reg_hitbox.up_left_y[9]                   ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[9]                    ;
-; HI_Datapath:datapath|HITBOX.up_left_y[8]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[8]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[7]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[7]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[6]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[6]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[5]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[5]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[4]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[4]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[3]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[3]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[2]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[2]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.up_left_y[1]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[1]                        ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[30]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[30]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[29]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[29]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[28]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[28]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[27]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[27]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[26]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[26]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[25]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[25]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[24]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[24]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[23]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[23]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[22]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[22]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[21]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[21]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[20]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[20]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[19]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[19]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[18]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[18]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[17]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[17]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[16]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[16]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[15]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[15]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[14]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[14]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[13]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[13]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[12]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[12]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[11]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[11]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
 ; HI_Datapath:datapath|HITBOX.size_x[10]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[10]                          ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[9]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[9]                           ;
+; HI_Datapath:datapath|SPRITE.img_pixels[31][7]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][7]                   ;
 ;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[8]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[8]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[7]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[7]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[6]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[6]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[4]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[4]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[3]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[3]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[2]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[2]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_x[1]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[1]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[30]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[30]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[29]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[29]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[28]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[28]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[27]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[27]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[26]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[26]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[25]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[25]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[24]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[24]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[23]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[23]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[22]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[22]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[21]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[21]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[20]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[20]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[19]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[19]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[18]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[18]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[17]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[17]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[16]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[16]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[15]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[15]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[14]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[14]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[13]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[13]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[12]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[12]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[11]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[11]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[10]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[10]                          ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[9]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[9]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[8]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[8]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[7]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[7]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[6]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[6]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[4]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[4]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[3]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[3]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[2]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[2]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_Datapath:datapath|HITBOX.size_y[1]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[1]                           ;
-;                                                        ; due to stuck port data_in ;                                                             ;
-; HI_View:view|reg_hitbox.up_left_y[29]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[29]                   ;
 +--------------------------------------------------------+---------------------------+-------------------------------------------------------------+
 
 
@@ -4072,12 +4024,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 392   ;
+; Total registers                              ; 410   ;
 ; Number of registers using Synchronous Clear  ; 79    ;
 ; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 314   ;
+; Number of registers using Asynchronous Clear ; 332   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 275   ;
+; Number of registers using Clock Enable       ; 294   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -4087,48 +4039,56 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------+---------+
 ; Inverted Register                                         ; Fan out ;
 +-----------------------------------------------------------+---------+
-; HI_View:view|reg_hitbox.size_y[0]                         ; 64      ;
+; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[8] ; 2       ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[7] ; 2       ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[7] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[7] ; 2       ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[6] ; 2       ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[6] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[6] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[6] ; 2       ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[5] ; 2       ;
+; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[5] ; 2       ;
+; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[5] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[5] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[5] ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[5] ; 2       ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[4] ; 2       ;
+; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[4] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[4] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[4] ; 2       ;
+; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[3] ; 2       ;
+; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[3] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[3] ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[3] ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2] ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[2] ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1] ; 4       ;
-; Total number of inverted registers = 15                   ;         ;
+; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2] ; 3       ;
+; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[2] ; 3       ;
+; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1] ; 6       ;
+; Total number of inverted registers = 24                   ;         ;
 +-----------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_end[6]                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|HI_View:view|FB_X0[9]                                    ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |HardwareInvaders|HI_Datapath:datapath|HITBOX.up_left_x[3]                 ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[7] ;
-; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[8]                          ;
-; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[3]                          ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[0] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_UB_N          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |HardwareInvaders|HI_View:view|row                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|Selector5         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; No         ; |HardwareInvaders|HI_Datapath:datapath|Mux9                                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state        ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HardwareInvaders|HI_View:view|next_state.WAITING                          ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |HardwareInvaders|HI_View:view|Selector69                                  ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING_R2                  ;
-; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector3                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_end[7]                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|HI_View:view|FB_X0[9]                                     ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; Yes        ; |HardwareInvaders|HI_Datapath:datapath|HITBOX.up_left_x[8]                  ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[14] ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[0]                           ;
+; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[9]                           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[0]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_UB_N           ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |HardwareInvaders|HI_View:view|row                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|Selector5          ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HardwareInvaders|HI_View:view|next_state.CLEARING                          ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |HardwareInvaders|HI_View:view|Selector69                                   ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING_R2                   ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector0                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -4609,7 +4569,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Apr 09 12:29:03 2018
+    Info: Processing started: Mon Apr 09 14:49:03 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HardwareInvaders -c HardwareInvaders
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file hi_view_control_unit.vhd
@@ -4712,6 +4672,315 @@ Info (12128): Elaborating entity "Hi_View_Control_Unit" for hierarchy "Hi_View_C
 Info (12128): Elaborating entity "HI_View" for hierarchy "HI_View:view"
 Info (12128): Elaborating entity "HI_Datapath" for hierarchy "HI_Datapath:datapath"
 Warning (10631): VHDL Process Statement warning at HI_Datapath.vhd(77): inferring latch(es) for signal or variable "alien_grid", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.size_x[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].hitbox.up_left_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[2][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[2][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[1][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[1][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[0][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[7][0].sprite_indexes[0][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.size_x[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].hitbox.up_left_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[2][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[2][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[1][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[1][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[0][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[6][0].sprite_indexes[0][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.size_x[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[2]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[3]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[4]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[5]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[6]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[7]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[8]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[9]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[10]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[11]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[12]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[13]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[14]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[15]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[16]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[17]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[18]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[19]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[20]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[21]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[22]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[23]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[24]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[25]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[26]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[27]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[28]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[29]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[30]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_y[31]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].hitbox.up_left_x[0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[2][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[2][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[1][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[1][1]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[0][0]" at HI_Datapath.vhd(77)
+Info (10041): Inferred latch for "alien_grid[5][0].sprite_indexes[0][1]" at HI_Datapath.vhd(77)
 Info (10041): Inferred latch for "alien_grid[4][0].hitbox.size_y[0]" at HI_Datapath.vhd(77)
 Info (10041): Inferred latch for "alien_grid[4][0].hitbox.size_y[1]" at HI_Datapath.vhd(77)
 Info (10041): Inferred latch for "alien_grid[4][0].hitbox.size_y[2]" at HI_Datapath.vhd(77)
@@ -5255,22 +5524,32 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register Hi_View_Control_Unit:view_control_unit|render_counter[0] will power up to Low
     Critical Warning (18010): Register HI_View:view|row[31] will power up to Low
     Critical Warning (18010): Register HI_View:view|column[31] will power up to Low
-    Critical Warning (18010): Register HI_Datapath:datapath|HITBOX.size_y[0] will power up to Low
+    Critical Warning (18010): Register HI_Datapath:datapath|HITBOX.size_x[5] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[2] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[3] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[3] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[3] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[4] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[4] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[4] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[4] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[5] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[5] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[5] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[5] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[5] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[6] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[6] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[6] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[6] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[7] will power up to High
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[7] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[7] will power up to High
-Info (17049): 209 registers lost all their fanouts during netlist optimizations.
+    Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[8] will power up to High
+Info (17049): 275 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 13 input pin(s) that do not drive logic
@@ -5287,16 +5566,16 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
-Info (21057): Implemented 946 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 985 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 859 logic cells
+    Info (21061): Implemented 898 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 59 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
     Info: Peak virtual memory: 587 megabytes
-    Info: Processing ended: Mon Apr 09 12:29:08 2018
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Mon Apr 09 14:49:09 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

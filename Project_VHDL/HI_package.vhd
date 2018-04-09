@@ -7,7 +7,7 @@ package HI_package is
 	-- Constants declarations
 	constant ALIEN_SPRITE_COUNT	: positive	:= 3;
 	constant ALIENS_PER_COLUMN		: positive	:= 1;
-	constant COLUMNS_PER_GRID 		: positive  := 5;
+	constant COLUMNS_PER_GRID 		: positive  := 8;
 	constant SPRITE_SIZE				: positive 	:= 32;
 	
 	

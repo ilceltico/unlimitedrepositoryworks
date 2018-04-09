@@ -3,15 +3,15 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 2.570
+Slack : 2.630
 TNS   : 0.000
 
 Type  : Slow Model Setup 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 5.349
+Slack : 5.343
 TNS   : 0.000
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : 18.464
+Slack : 18.981
 TNS   : 0.000
 
 Type  : Slow Model Hold 'PLL:pll|altpll:altpll_component|_clk0'
@@ -23,23 +23,23 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : 1.288
+Slack : 0.771
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 2.811
+Slack : 3.014
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 12.811
+Slack : 13.014
 TNS   : 0.000
 
 Type  : Slow Model Removal 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 6.941
+Slack : 6.738
 TNS   : 0.000
 
 Type  : Slow Model Removal 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 6.941
+Slack : 6.738
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'PLL:pll|altpll:altpll_component|_clk0'
@@ -55,15 +55,15 @@ Slack : 8.889
 TNS   : 0.000
 
 Type  : Fast Model Setup 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 6.320
+Slack : 6.160
 TNS   : 0.000
 
 Type  : Fast Model Setup 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 8.254
+Slack : 8.250
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : 19.357
+Slack : 19.552
 TNS   : 0.000
 
 Type  : Fast Model Hold 'PLL:pll|altpll:altpll_component|_clk0'
@@ -75,23 +75,23 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : 0.523
+Slack : 0.328
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 5.560
+Slack : 5.684
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 15.559
+Slack : 15.683
 TNS   : 0.000
 
 Type  : Fast Model Removal 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 4.320
+Slack : 4.196
 TNS   : 0.000
 
 Type  : Fast Model Removal 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 4.321
+Slack : 4.197
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'PLL:pll|altpll:altpll_component|_clk0'
