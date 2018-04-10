@@ -18,6 +18,7 @@ entity HI_View is
 		
 		FB_FLIP 			: out std_logic;
 		FB_DRAW_RECT	: out std_logic;
+		FB_FILL_RECT	: out std_logic;
 		FB_CLEAR 		: out std_logic;
 		FB_COLOR       : out color_type;
 		FB_X0          : out xy_coord_type;
@@ -34,20 +35,31 @@ type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
 
 signal state				: state_type;
 signal next_state			: state_type;
-signal row					: integer;
-signal column				: integer;
-signal reg_sprite				: sprite_type;
-signal reg_hitbox 		: hitbox_type;
-signal show_asap			: std_logic;
 
 begin
 	process(CLOCK, RESET_N)
+	
+		variable pixel_scale_factor_x : integer := 1;
+		variable pixel_scale_factor_y : integer := 1;
+		variable row						: integer := 0;
+		variable column					: integer := 0;
+		variable reg_sprite				: sprite_type;
+		variable reg_hitbox 				: hitbox_type;
+		variable show_asap				: std_logic := '0';
+		variable reg_fb_x0				: xy_coord_type := 0; 
+		variable reg_fb_x1				: xy_coord_type := 0;
+		variable reg_fb_y0				: xy_coord_type := 0;
+		variable reg_fb_y1				: xy_coord_type := 0;
+		
+		constant upscale_precision 	: integer := 1024;
+	
 	begin
 	
 		if(RESET_N = '0') then
 		
 			FB_CLEAR       <= '0';
-			FB_DRAW_RECT   <= '0';
+			FB_DRAW_RECT 	<= '0';
+			FB_FILL_RECT   <= '0';
 			FB_FLIP        <= '0';
 			READY 			<= '0';
 			FB_COLOR 		<= COLOR_BLACK;
@@ -55,26 +67,38 @@ begin
 			FB_X1 			<= 0;
 			FB_Y0 			<= 0;
 			FB_Y1 			<= 0;
-			row 				<= 0;
-			column 			<= 0;
-			show_asap 		<= '0';
+	
+			row 				:= 0;
+			column 			:= 0;
+			show_asap 		:= '0';
+			reg_sprite 		:= sprites(0);
+			reg_hitbox		:= (0,0,1,1);
 			state 			<= CLEARING;
+			reg_fb_x0 		:= 0;
+			reg_fb_x1		:= 0;
+			reg_fb_y0		:= 0;
+			reg_fb_y1		:= 0;
 	
 		elsif(rising_edge(CLOCK)) then
 			
 			FB_CLEAR       <= '0';
-			FB_DRAW_RECT   <= '0';
+			FB_DRAW_RECT 	<= '0';
+			FB_FILL_RECT   <= '0';
 			FB_FLIP        <= '0';
 			READY 			<= '0';
 			FB_X0 			<= 0;
 			FB_X1 			<= 0;
 			FB_Y0 			<= 0;
 			FB_Y1 			<= 0;
+			reg_fb_x0 		:= 0;
+			reg_fb_x1		:= 0;
+			reg_fb_y0		:= 0;
+			reg_fb_y1		:= 0;
 			FB_COLOR 		<= COLOR_BLACK;
 			
 			if (SHOW = '1') then
 			
-				show_asap <= '1';
+				show_asap := '1';
 			
 			end if;
 		
@@ -83,26 +107,27 @@ begin
 				when IDLE => 
 	
 					READY 		<= '1';
-					row 			<= 0;
-					column		<= 0;
+					row 			:= 0;
+					column		:= 0;
 					
 					if (show_asap = '1' and DRAW_SPRITE = '0') then
 					
 						READY 		<= '0';
 						state 		<= WAITING;
 						next_state 	<= SHOWING;
-						show_asap 	<= '0';
+						show_asap 	:= '0';
 					
 					end if;
 					
 					if (DRAW_SPRITE = '1') then
 					
-						READY 			<= '0';
-						state 			<= WAITING;
-						next_state 		<= DRAWING;
-						reg_sprite		<= SPRITE;
-						reg_hitbox 		<= HITBOX;
-						
+						READY 					<= '0';
+						state 					<= WAITING;
+						next_state 				<= DRAWING;
+						reg_sprite				:= SPRITE;
+						reg_hitbox 				:= HITBOX;
+						pixel_scale_factor_x := (HITBOX.size_x * upscale_precision) / SPRITE.logic_dim_x;
+						pixel_scale_factor_y := (HITBOX.size_y * upscale_precision) / SPRITE.logic_dim_y;
 					
 					end if;
 					
@@ -119,35 +144,44 @@ begin
 					state 		<= WAITING;
 					next_state 	<= DRAWING;
 					
-					if (column >= reg_hitbox.size_x - 1) then
+					if (column >= reg_sprite.logic_dim_x - 1) then
 					
-						column <= 0;
-						if (row >= reg_hitbox.size_y - 1) then
+						column := 0;
+						if (row >= reg_sprite.logic_dim_y - 1) then
 							
-							row <= 0;
+							row := 0;
 							next_state <= IDLE;
 						
 						else
 						
-							row <= row + 1;
+							row := row + 1;
 						
 						end if;
 						
 					else
 					
-						column <= column + 1;
+						column := column + 1;
 					
 					end if;
 					
 					if (reg_sprite.img_pixels(row, column) = '1') then
 					
-						FB_X0 		 	<= reg_hitbox.up_left_x + column;
-						FB_X1 		 	<= reg_hitbox.up_left_x + column;
-						FB_Y0 		 	<= reg_hitbox.up_left_y + row;
-						FB_Y1 		 	<= reg_hitbox.up_left_y + row;
-						FB_COLOR 	 	<= reg_sprite.color;
-						FB_DRAW_RECT 	<= '1';
-					
+						reg_fb_x0 	 	:= reg_hitbox.up_left_x + (column * pixel_scale_factor_x) / upscale_precision;
+						reg_fb_x1	 	:= reg_hitbox.up_left_x + ((column + 1) * pixel_scale_factor_x) / upscale_precision - 1;
+						reg_fb_y0	 	:= reg_hitbox.up_left_y + (row * pixel_scale_factor_y) / upscale_precision;
+						reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) * pixel_scale_factor_y) / upscale_precision - 1;
+						
+						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then
+				
+							FB_FILL_RECT 	<= '1';
+							FB_COLOR 	 	<= reg_sprite.color;
+							FB_X0 			<= reg_fb_x0;
+							FB_X1 			<= reg_fb_x1;
+							FB_Y0 			<= reg_fb_y0;
+							FB_Y1 			<= reg_fb_y1;
+						
+						end if;
+							
 					end if;
 			
 				when SHOWING => 
@@ -168,14 +202,14 @@ begin
 				
 				when INIT =>
 					
-					FB_DRAW_RECT <= '1';
-					FB_X0 <= 0;
-					FB_X1 <= 511;
-					FB_Y0 <= 0;
-					FB_Y1 <= 479;
-					FB_COLOR <= COLOR_RED;
-					state <= WAITING;
-					next_state <= IDLE;
+					FB_DRAW_RECT 	<= '1';
+					FB_X0 			<= 0;
+					FB_X1 			<= 511;
+					FB_Y0 			<= 0;
+					FB_Y1 			<= 479;
+					FB_COLOR 		<= COLOR_RED;
+					state 			<= WAITING;
+					next_state 		<= IDLE;
 				
 			end case;
 		end if;

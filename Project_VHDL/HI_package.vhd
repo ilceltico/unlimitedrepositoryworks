@@ -7,7 +7,7 @@ package HI_package is
 	-- Constants declarations
 	constant ALIEN_SPRITE_COUNT	: positive	:= 3;
 	constant ALIENS_PER_COLUMN		: positive	:= 1;
-	constant COLUMNS_PER_GRID 		: positive  := 8;
+	constant COLUMNS_PER_GRID 		: positive  := 2;
 	constant SPRITE_SIZE				: positive 	:= 32;
 	
 	
@@ -40,16 +40,18 @@ package HI_package is
 	
 
 	type img_pixels_type is array(0 to SPRITE_SIZE - 1 , 0 to SPRITE_SIZE - 1) of std_logic;
-	
+	subtype img_pixel_index_type is integer range 0 to SPRITE_SIZE - 1;
 	
 	type sprite_type is record 
 		img_pixels				: img_pixels_type;
+		logic_dim_x				: integer;
+		logic_dim_y				: integer;
 		color 					: color_type;
 	end record;
 	
 	type sprite_array_type is array (0 to 2) of sprite_type;
 	
-	CONSTANT sprites: sprite_array_type := 
+	constant sprites: sprite_array_type := 
 	(
 		(
 			(
@@ -86,6 +88,8 @@ package HI_package is
 			"00000000000000000000000000000000",
 			"00000000000000000000000000000000"
 			),
+			32,
+			32,
 			COLOR_WHITE
 		),
 		(	
@@ -123,6 +127,8 @@ package HI_package is
 			"00000000000000000000000000000000",
 			"00000000000000000000000000000000"
 			),
+			32,
+			32,
 			COLOR_WHITE
 		),
 		( 
@@ -160,6 +166,8 @@ package HI_package is
 			"00000000000000000000000000000000",
 			"00000000000000000000000000000000"
 			),
+			32,
+			32,
 			COLOR_WHITE
 		)
 	);

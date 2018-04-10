@@ -82,12 +82,30 @@ begin
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				for J in 0 to ALIENS_PER_COLUMN - 1 loop
 				
+--					alien_grid(I)(J).sprite_indexes <= (0,1,2);
+--					alien_grid(I)(J).hitbox.up_left_x <= I * (SPRITE_SIZE + 10);
+--					alien_grid(I)(J).hitbox.up_left_y <= J * (SPRITE_SIZE + 10);
+--					alien_grid(I)(J).hitbox.size_x <= SPRITE_SIZE;
+--					alien_grid(I)(J).hitbox.size_y <= SPRITE_SIZE;
+--					alien_grid(I)(J).current_index <= 0;
+					
 					alien_grid(I)(J).sprite_indexes <= (0,1,2);
 					alien_grid(I)(J).hitbox.up_left_x <= I * (SPRITE_SIZE + 10);
 					alien_grid(I)(J).hitbox.up_left_y <= J * (SPRITE_SIZE + 10);
-					alien_grid(I)(J).hitbox.size_x <= SPRITE_SIZE;
-					alien_grid(I)(J).hitbox.size_y <= SPRITE_SIZE;
 					alien_grid(I)(J).current_index <= 0;
+					
+					if (I = 0) then
+	
+						alien_grid(I)(J).hitbox.size_x <= 32;
+						alien_grid(I)(J).hitbox.size_y <= 32;
+					
+					else
+						
+						alien_grid(I)(J).hitbox.size_x <= 16;
+						alien_grid(I)(J).hitbox.size_y <= 26;
+						
+					end if;
+					
 					
 				end loop;	
 			end loop;
