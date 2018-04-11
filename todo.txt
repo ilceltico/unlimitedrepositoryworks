@@ -1,0 +1,31 @@
+COSE DA FARE:
+- Spostare nella View Control Unit la richiesta degli sprite al datapath. La comunicazione avverrà attraverso un bus indirizzi, con il quale la View Control Unit indica al datapath di quale entità vuole lo sprite, e un bus dati con il quale il datapath invia lo sprite e la hitbox. Le dimensioni devono essere GENERICHE. Oltre al bus indirizzi servono anche alcuni bit che indichino se vogliamo alieni, proiettili, giocatore o scudi.
+- TUTTO (QUASI)
+
+
+Componenti:
+DATAPATH:
+in 	-> bus indirizzi: un segnale costituito da 2 interi, uno pari al numero di righe, l'altro al massimo tra numero di colonne, numero di proiettili e numero di scudi.
+	-> tipologia indirizzo (alieni, proiettili_alieni, proiettili_giocatore, scudi, giocatore, random_alien)
+	-> Reset per nuovo livello (quindi segnale nuovo_livello)
+	-> segnali per movimento (sinistra/destra) e per sparare
+	-> muovi alieni a sinistra
+	-> muovi alieni a destra
+	-> muovi randalien a sinistra
+	-> muovi randalien a destra
+	-> mostra random alien (negato per non mostrare)
+	-> indirizzo colonna che deve sparare (ci pensa il datapath a capire quale proiettile sparare)
+	-> muovi proiettili alieni
+	-> muovi proiettili giocatore
+
+out	-> punteggio
+	-> vite
+	-> livello
+	-> numero alieni vivi
+	-> bus dati (un segnale per lo sprite, un segnale per la hitbox)
+	-> bus indirizzi per esplosioni (uno per alieni, uno per proiettili_alieni, uno per proiettili_giocatore, uno per scudi, uno per giocatore, uno per random_alien) Ogni bus ha un bit che indica la validità dell'indirizzo (ovvero l'entità a quell'indirizzo è in collisione in questo momento)
+	-> gli alieni stanno toccando a destra
+	-> gli alieni stanno toccando a sinistra
+	-> randalien sta toccando a sinitra
+	-> randalien sta toccando a destra
+	-> colonna indicata (dal controller) può sparare o no
