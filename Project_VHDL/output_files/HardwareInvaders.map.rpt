@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HardwareInvaders
-Tue Apr 10 11:29:25 2018
+Wed Apr 11 15:08:42 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -33,15 +33,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  25. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga
  26. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_Timing:vga_timing
  27. Parameter Settings for User Entity Instance: VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb
- 28. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult0
- 29. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult2
- 30. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_divide:Div0
- 31. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult1
- 32. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_divide:Div1
- 33. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult3
- 34. altpll Parameter Settings by Entity Instance
- 35. lpm_mult Parameter Settings by Entity Instance
- 36. Port Connectivity Checks: "HI_View:view"
+ 28. Parameter Settings for User Entity Instance: HI_View:view
+ 29. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult0
+ 30. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult2
+ 31. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_divide:Div0
+ 32. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult1
+ 33. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_divide:Div1
+ 34. Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult3
+ 35. altpll Parameter Settings by Entity Instance
+ 36. lpm_mult Parameter Settings by Entity Instance
  37. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb"
  38. Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_Timing:vga_timing"
  39. Port Connectivity Checks: "VGA_Framebuffer:vga"
@@ -72,15 +72,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 10 11:29:25 2018           ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 11 15:08:42 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,292                                           ;
-;     Total combinational functions  ; 1,272                                           ;
-;     Dedicated logic registers      ; 378                                             ;
-; Total registers                    ; 378                                             ;
+; Total logic elements               ; 1,255                                           ;
+;     Total combinational functions  ; 1,232                                           ;
+;     Dedicated logic registers      ; 382                                             ;
+; Total registers                    ; 382                                             ;
 ; Total pins                         ; 86                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -228,20 +228,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------+
 ; Resource                                    ; Usage                                 ;
 +---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 1,292                                 ;
+; Estimated Total logic elements              ; 1,255                                 ;
 ;                                             ;                                       ;
-; Total combinational functions               ; 1272                                  ;
+; Total combinational functions               ; 1232                                  ;
 ; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 242                                   ;
-;     -- 3 input functions                    ; 326                                   ;
-;     -- <=2 input functions                  ; 704                                   ;
+;     -- 4 input functions                    ; 237                                   ;
+;     -- 3 input functions                    ; 363                                   ;
+;     -- <=2 input functions                  ; 632                                   ;
 ;                                             ;                                       ;
 ; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 683                                   ;
-;     -- arithmetic mode                      ; 589                                   ;
+;     -- normal mode                          ; 671                                   ;
+;     -- arithmetic mode                      ; 561                                   ;
 ;                                             ;                                       ;
-; Total registers                             ; 378                                   ;
-;     -- Dedicated logic registers            ; 378                                   ;
+; Total registers                             ; 382                                   ;
+;     -- Dedicated logic registers            ; 382                                   ;
 ;     -- I/O registers                        ; 0                                     ;
 ;                                             ;                                       ;
 ; I/O pins                                    ; 86                                    ;
@@ -250,9 +250,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                                     ;
 ;                                             ;                                       ;
 ; Maximum fan-out node                        ; PLL:pll|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 376                                   ;
-; Total fan-out                               ; 4975                                  ;
-; Average fan-out                             ; 2.78                                  ;
+; Maximum fan-out                             ; 380                                   ;
+; Total fan-out                               ; 4991                                  ;
+; Average fan-out                             ; 2.85                                  ;
 +---------------------------------------------+---------------------------------------+
 
 
@@ -261,9 +261,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |HardwareInvaders                           ; 1272 (87)         ; 378 (50)     ; 0           ; 24           ; 0       ; 12        ; 86   ; 0            ; |HardwareInvaders                                                                                                          ; work         ;
+; |HardwareInvaders                           ; 1232 (79)         ; 382 (47)     ; 0           ; 24           ; 0       ; 12        ; 86   ; 0            ; |HardwareInvaders                                                                                                          ; work         ;
 ;    |HI_Datapath:datapath|                   ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_Datapath:datapath                                                                                     ; work         ;
-;    |HI_View:view|                           ; 875 (527)         ; 137 (137)    ; 0           ; 24           ; 0       ; 12        ; 0    ; 0            ; |HardwareInvaders|HI_View:view                                                                                             ; work         ;
+;    |HI_View:view|                           ; 768 (420)         ; 141 (141)    ; 0           ; 24           ; 0       ; 12        ; 0    ; 0            ; |HardwareInvaders|HI_View:view                                                                                             ; work         ;
 ;       |lpm_divide:Div0|                     ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0                                                                             ; work         ;
 ;          |lpm_divide_nto:auto_generated|    ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated                                               ; work         ;
 ;             |abs_divider_4dg:divider|       ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                       ; work         ;
@@ -283,7 +283,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |Hi_View_Control_Unit:view_control_unit| ; 84 (84)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit                                                                   ; work         ;
 ;    |PLL:pll|                                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll                                                                                                  ; work         ;
 ;       |altpll:altpll_component|             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|PLL:pll|altpll:altpll_component                                                                          ; work         ;
-;    |VGA_Framebuffer:vga|                    ; 194 (92)          ; 118 (65)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga                                                                                      ; work         ;
+;    |VGA_Framebuffer:vga|                    ; 269 (167)         ; 121 (68)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga                                                                                      ; work         ;
 ;       |VGA_RAMDAC:vga_fb|                   ; 29 (29)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb                                                                    ; work         ;
 ;       |VGA_Timing:vga_timing|               ; 73 (73)           ; 45 (45)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing                                                                ; work         ;
 +---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -1028,8 +1028,8 @@ Encoding Type:  One-Hot
 ; HI_Datapath:datapath|SPRITE.logic_dim_y[1..4,6..30]            ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_Datapath:datapath|SPRITE.color[1..3,6,7,9..11]              ; Stuck at VCC due to stuck port data_in                                     ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[1..30]                   ; Stuck at GND due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_x[1..3,6..21]                 ; Stuck at GND due to stuck port data_in                                     ;
-; HI_Datapath:datapath|HITBOX.size_y[2,6..21]                    ; Stuck at GND due to stuck port data_in                                     ;
+; HI_Datapath:datapath|HITBOX.size_x[1..3,6..30]                 ; Stuck at GND due to stuck port data_in                                     ;
+; HI_Datapath:datapath|HITBOX.size_y[2,6..30]                    ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.img_pixels[0][0]                       ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.img_pixels[0][1]                       ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.img_pixels[0][2]                       ; Stuck at GND due to stuck port data_in                                     ;
@@ -1615,6 +1615,8 @@ Encoding Type:  One-Hot
 ; HI_View:view|reg_sprite.logic_dim_y[1..4,6..30]                ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.color[1..3,6,7,9..11]                  ; Stuck at VCC due to stuck port data_in                                     ;
 ; HI_View:view|reg_hitbox.up_left_y[1..30]                       ; Stuck at GND due to stuck port data_in                                     ;
+; HI_View:view|reg_hitbox.size_x[1..3,6..30]                     ; Stuck at GND due to stuck port data_in                                     ;
+; HI_View:view|reg_hitbox.size_y[2,6..30]                        ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_hitbox.up_left_x[31]                          ; Lost fanout                                                                ;
 ; HI_Datapath:datapath|HITBOX.up_left_x[31]                      ; Lost fanout                                                                ;
 ; HI_View:view|reg_hitbox.up_left_x[30]                          ; Lost fanout                                                                ;
@@ -1661,7 +1663,9 @@ Encoding Type:  One-Hot
 ; HI_Datapath:datapath|HITBOX.up_left_x[10]                      ; Lost fanout                                                                ;
 ; HI_View:view|reg_hitbox.up_left_y[31]                          ; Lost fanout                                                                ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[31]                      ; Lost fanout                                                                ;
-; HI_Datapath:datapath|HITBOX.size_x[0]                          ; Merged with HI_Datapath:datapath|HITBOX.up_left_y[0]                       ;
+; HI_Datapath:datapath|HITBOX.size_y[31]                         ; Merged with HI_Datapath:datapath|HITBOX.size_x[0]                          ;
+; HI_Datapath:datapath|HITBOX.size_x[0]                          ; Merged with HI_Datapath:datapath|HITBOX.size_x[31]                         ;
+; HI_Datapath:datapath|HITBOX.size_x[31]                         ; Merged with HI_Datapath:datapath|HITBOX.up_left_y[0]                       ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[0]                       ; Merged with HI_Datapath:datapath|HITBOX.up_left_x[0]                       ;
 ; HI_Datapath:datapath|HITBOX.up_left_x[0]                       ; Merged with HI_Datapath:datapath|SPRITE.logic_dim_y[0]                     ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_y[0]                     ; Merged with HI_Datapath:datapath|SPRITE.logic_dim_y[31]                    ;
@@ -2551,10 +2555,15 @@ Encoding Type:  One-Hot
 ; HI_View:view|reg_sprite.img_pixels[27][21]                     ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
 ; HI_View:view|reg_sprite.img_pixels[27][22]                     ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
 ; HI_View:view|reg_sprite.img_pixels[27][9]                      ; Merged with HI_View:view|reg_sprite.img_pixels[19][0]                      ;
-; HI_View:view|reg_hitbox.up_left_y[0]                           ; Merged with HI_View:view|reg_hitbox.up_left_x[0]                           ;
-; HI_View:view|reg_sprite.logic_dim_x[0,31]                      ; Merged with HI_View:view|reg_hitbox.up_left_x[0]                           ;
-; HI_View:view|reg_sprite.logic_dim_y[0,31]                      ; Merged with HI_View:view|reg_hitbox.up_left_x[0]                           ;
+; HI_View:view|reg_hitbox.size_y[31]                             ; Merged with HI_View:view|reg_hitbox.size_x[31]                             ;
+; HI_View:view|reg_hitbox.up_left_x[0]                           ; Merged with HI_View:view|reg_hitbox.size_x[31]                             ;
+; HI_View:view|reg_hitbox.up_left_y[0]                           ; Merged with HI_View:view|reg_hitbox.size_x[31]                             ;
+; HI_View:view|reg_sprite.logic_dim_x[0,31]                      ; Merged with HI_View:view|reg_hitbox.size_x[31]                             ;
+; HI_View:view|reg_sprite.logic_dim_y[0,31]                      ; Merged with HI_View:view|reg_hitbox.size_x[31]                             ;
 ; HI_View:view|reg_sprite.logic_dim_y[5]                         ; Merged with HI_View:view|reg_sprite.logic_dim_x[5]                         ;
+; HI_View:view|reg_hitbox.size_y[5]                              ; Merged with HI_View:view|reg_hitbox.size_x[5]                              ;
+; HI_View:view|reg_hitbox.size_y[1,3,4]                          ; Merged with HI_View:view|reg_hitbox.size_x[4]                              ;
+; HI_View:view|reg_hitbox.size_y[0]                              ; Merged with HI_View:view|reg_hitbox.size_x[0]                              ;
 ; HI_View:view|FB_COLOR[2,3,6,7]                                 ; Merged with HI_View:view|FB_COLOR[1]                                       ;
 ; HI_View:view|FB_FILL_RECT                                      ; Merged with HI_View:view|FB_COLOR[1]                                       ;
 ; HI_View:view|FB_COLOR[9,11]                                    ; Merged with HI_View:view|FB_COLOR[10]                                      ;
@@ -2562,7 +2571,7 @@ Encoding Type:  One-Hot
 ; VGA_Framebuffer:vga|latched_color[2,3,6,7]                     ; Merged with VGA_Framebuffer:vga|latched_color[1]                           ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_x[5]                     ; Merged with HI_Datapath:datapath|HITBOX.size_y[0]                          ;
 ; HI_View:view|reg_sprite.img_pixels[10][26]                     ; Merged with HI_View:view|reg_sprite.img_pixels[10][10]                     ;
-; HI_View:view|reg_hitbox.up_left_x[0]                           ; Merged with HI_View:view|reg_sprite.logic_dim_x[5]                         ;
+; HI_View:view|reg_hitbox.size_x[31]                             ; Merged with HI_View:view|reg_sprite.logic_dim_x[5]                         ;
 ; HI_View:view|pixel_scale_factor_x[1..8]                        ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|pixel_scale_factor_y[1..5]                        ; Stuck at GND due to stuck port data_in                                     ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[2]       ; Stuck at GND due to stuck port data_in                                     ;
@@ -2583,13 +2592,11 @@ Encoding Type:  One-Hot
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.BACK_PORCH   ; Lost fanout                                                                ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.FRONT_PORCH  ; Lost fanout                                                                ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.BACK_PORCH   ; Lost fanout                                                                ;
-; VGA_Framebuffer:vga|state.DRAWING_RECT                         ; Merged with VGA_Framebuffer:vga|state.DRAWING_LINE                         ;
 ; Hi_View_Control_Unit:view_control_unit|next_state.WAITING_2    ; Merged with Hi_View_Control_Unit:view_control_unit|next_state.WAITING      ;
 ; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_state.IDLE           ; Stuck at GND due to stuck port data_in                                     ;
 ; VGA_Framebuffer:vga|state.DRAWING_LINE                         ; Stuck at GND due to stuck port data_in                                     ;
 ; Hi_View_Control_Unit:view_control_unit|next_state.WAITING      ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|next_state.WAITING                                ; Stuck at GND due to stuck port data_in                                     ;
-; VGA_Framebuffer:vga|substate.DRAWING_R2                        ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[10..31] ; Lost fanout                                                                ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_pixel[9]           ; Lost fanout                                                                ;
@@ -2598,9 +2605,9 @@ Encoding Type:  One-Hot
 ; HI_View:view|pixel_scale_factor_y[18..31]                      ; Merged with HI_View:view|pixel_scale_factor_y[17]                          ;
 ; HI_Datapath:datapath|HITBOX.size_y[0]                          ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|reg_sprite.logic_dim_x[5]                         ; Stuck at GND due to stuck port data_in                                     ;
-; HI_View:view|pixel_scale_factor_x[11..17]                      ; Stuck at GND due to stuck port data_in                                     ;
 ; HI_View:view|pixel_scale_factor_y[11..17]                      ; Stuck at GND due to stuck port data_in                                     ;
-; Total Number of Removed Registers = 2478                       ;                                                                            ;
+; HI_View:view|pixel_scale_factor_x[11..17]                      ; Stuck at GND due to stuck port data_in                                     ;
+; Total Number of Removed Registers = 2557                       ;                                                                            ;
 +----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -2609,14 +2616,14 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------+
 ; Register name                                          ; Reason for Removal        ; Registers Removed due to This Register                                         ;
 +--------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------+
-; HI_Datapath:datapath|HITBOX.size_y[0]                  ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_x[5], HI_View:view|pixel_scale_factor_x[11], ;
-;                                                        ; due to stuck port data_in ; HI_View:view|pixel_scale_factor_x[12], HI_View:view|pixel_scale_factor_x[13],  ;
+; HI_Datapath:datapath|HITBOX.size_y[0]                  ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_x[5], HI_View:view|pixel_scale_factor_y[17], ;
+;                                                        ; due to stuck port data_in ; HI_View:view|pixel_scale_factor_y[11], HI_View:view|pixel_scale_factor_y[12],  ;
+;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[13], HI_View:view|pixel_scale_factor_y[14],  ;
+;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[15], HI_View:view|pixel_scale_factor_y[16],  ;
+;                                                        ;                           ; HI_View:view|pixel_scale_factor_x[17], HI_View:view|pixel_scale_factor_x[11],  ;
+;                                                        ;                           ; HI_View:view|pixel_scale_factor_x[12], HI_View:view|pixel_scale_factor_x[13],  ;
 ;                                                        ;                           ; HI_View:view|pixel_scale_factor_x[14], HI_View:view|pixel_scale_factor_x[15],  ;
-;                                                        ;                           ; HI_View:view|pixel_scale_factor_x[16], HI_View:view|pixel_scale_factor_x[17],  ;
-;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[17], HI_View:view|pixel_scale_factor_y[11],  ;
-;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[12], HI_View:view|pixel_scale_factor_y[13],  ;
-;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[14], HI_View:view|pixel_scale_factor_y[15],  ;
-;                                                        ;                           ; HI_View:view|pixel_scale_factor_y[16]                                          ;
+;                                                        ;                           ; HI_View:view|pixel_scale_factor_x[16]                                          ;
 ; HI_View:view|reg_hitbox.up_left_x[31]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_x[31],                                     ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[31],                    ;
 ;                                                        ;                           ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[31]                     ;
@@ -3691,7 +3698,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[30][9]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][9]                                      ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
-; HI_Datapath:datapath|SPRITE.img_pixels[0][0]           ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][0]                                       ;
+; HI_Datapath:datapath|SPRITE.img_pixels[30][10]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][10]                                     ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[30][11]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][11]                                     ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
@@ -3771,7 +3778,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[31][17]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][17]                                     ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
-; HI_Datapath:datapath|SPRITE.img_pixels[31][18]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][18]                                     ;
+; HI_Datapath:datapath|SPRITE.img_pixels[0][0]           ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][0]                                       ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[31][19]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][19]                                     ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
@@ -3865,7 +3872,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_y[27]            ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_y[27]                                        ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
-; HI_Datapath:datapath|SPRITE.img_pixels[30][10]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[30][10]                                     ;
+; HI_Datapath:datapath|SPRITE.logic_dim_y[26]            ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_y[26]                                        ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_y[25]            ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_y[25]                                        ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
@@ -3959,7 +3966,7 @@ Encoding Type:  One-Hot
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[17]              ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[17]                                          ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
-; HI_Datapath:datapath|HITBOX.up_left_y[16]              ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[16]                                          ;
+; HI_Datapath:datapath|SPRITE.img_pixels[31][18]         ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[31][18]                                     ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[15]              ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[15]                                          ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
@@ -3990,6 +3997,114 @@ Encoding Type:  One-Hot
 ; HI_Datapath:datapath|HITBOX.up_left_y[2]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[2]                                           ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|HITBOX.up_left_y[1]               ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[1]                                           ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[30]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[30]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[29]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[29]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[28]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[28]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[27]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[27]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[26]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[26]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[25]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[25]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[24]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[24]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[23]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[23]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[22]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[22]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[21]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[21]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[20]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[20]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[19]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[19]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[18]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[18]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[17]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[17]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[16]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[16]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[15]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[15]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[14]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[14]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[13]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[13]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[12]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[12]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[11]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[11]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[10]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[10]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[9]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[9]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[8]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[8]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[7]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[7]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[6]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[6]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[3]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[3]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[2]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[2]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_x[1]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_x[1]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[30]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[30]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[29]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[29]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[28]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[28]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[27]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[27]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[26]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[26]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[25]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[25]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[24]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[24]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[23]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[23]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[22]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[22]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[21]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[21]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[20]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[20]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[19]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[19]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[18]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[18]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[17]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[17]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[16]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[16]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[15]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[15]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[14]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[14]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[13]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[13]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[12]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[12]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[11]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[11]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[10]                 ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[10]                                             ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[9]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[9]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[8]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[8]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[7]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[7]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[6]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[6]                                              ;
+;                                                        ; due to stuck port data_in ;                                                                                ;
+; HI_Datapath:datapath|HITBOX.size_y[2]                  ; Stuck at GND              ; HI_View:view|reg_hitbox.size_y[2]                                              ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[0][1]           ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][1]                                       ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
@@ -4038,7 +4153,7 @@ Encoding Type:  One-Hot
 ; HI_View:view|reg_hitbox.up_left_y[31]                  ; Lost Fanouts              ; HI_Datapath:datapath|HITBOX.up_left_y[31]                                      ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[0][23]          ; Stuck at GND              ; HI_View:view|reg_sprite.img_pixels[0][23]                                      ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
-; HI_Datapath:datapath|SPRITE.logic_dim_y[26]            ; Stuck at GND              ; HI_View:view|reg_sprite.logic_dim_y[26]                                        ;
+; HI_Datapath:datapath|HITBOX.up_left_y[16]              ; Stuck at GND              ; HI_View:view|reg_hitbox.up_left_y[16]                                          ;
 ;                                                        ; due to stuck port data_in ;                                                                                ;
 +--------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------+
 
@@ -4048,12 +4163,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 378   ;
-; Number of registers using Synchronous Clear  ; 19    ;
+; Total registers                              ; 382   ;
+; Number of registers using Synchronous Clear  ; 79    ;
 ; Number of registers using Synchronous Load   ; 19    ;
-; Number of registers using Asynchronous Clear ; 303   ;
+; Number of registers using Asynchronous Clear ; 305   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 260   ;
+; Number of registers using Clock Enable       ; 266   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -4063,12 +4178,13 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------+---------+
 ; Inverted Register                                         ; Fan out ;
 +-----------------------------------------------------------+---------+
+; HI_View:view|reg_hitbox.size_x[0]                         ; 2       ;
+; HI_Datapath:datapath|HITBOX.size_x[5]                     ; 5       ;
 ; HI_View:view|pixel_scale_factor_x[0]                      ; 8       ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[5] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3] ; 2       ;
 ; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1] ; 3       ;
-; HI_Datapath:datapath|HITBOX.size_x[5]                     ; 4       ;
-; Total number of inverted registers = 5                    ;         ;
+; Total number of inverted registers = 6                    ;         ;
 +-----------------------------------------------------------+---------+
 
 
@@ -4077,22 +4193,22 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
-; 3:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_start[0]                            ;
-; 4:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |HardwareInvaders|HI_View:view|FB_Y0[7]                                     ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[27] ;
-; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[0]                           ;
-; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[3]                           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[0]  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_UB_N           ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |HardwareInvaders|HI_View:view|FB_X1                                        ;
+; 4:1                ; 38 bits   ; 76 LEs        ; 38 LEs               ; 38 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_end[4]                              ;
+; 4:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |HardwareInvaders|HI_View:view|FB_X0[9]                                     ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[14] ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|y_cursor[3]                           ;
+; 14:1               ; 10 bits   ; 90 LEs        ; 20 LEs               ; 70 LEs                 ; Yes        ; |HardwareInvaders|VGA_Framebuffer:vga|x_cursor[9]                           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|render_counter[31] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_LB_N           ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; No         ; |HardwareInvaders|HI_View:view|FB_Y1                                        ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |HardwareInvaders|HI_View:view|row                                          ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|Selector5          ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state         ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state         ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HardwareInvaders|HI_View:view|next_state.CLEARING                          ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |HardwareInvaders|HI_View:view|Selector66                                   ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING                      ;
-; 15:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector3                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HardwareInvaders|HI_View:view|next_state.WAITING                           ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |HardwareInvaders|HI_View:view|Selector68                                   ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|substate.DRAWING                      ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 12 LEs               ; 28 LEs                 ; No         ; |HardwareInvaders|VGA_Framebuffer:vga|Selector3                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
 
 
@@ -4512,6 +4628,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HI_View:view ;
++-------------------+-------+-------------------------------+
+; Parameter Name    ; Value ; Type                          ;
++-------------------+-------+-------------------------------+
+; upscale_precision ; 1024  ; Signed Integer                ;
++-------------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: HI_View:view|lpm_mult:Mult0      ;
 +------------------------------------------------+------------+---------------------+
@@ -4768,15 +4894,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+-----------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "HI_View:view"                                                                               ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; fb_draw_rect ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb"                                                     ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -4802,7 +4919,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+------------------+
 ; Port      ; Type  ; Severity ; Details          ;
 +-----------+-------+----------+------------------+
-; draw_rect ; Input ; Info     ; Stuck at GND     ;
 ; draw_line ; Input ; Info     ; Stuck at GND     ;
 +-----------+-------+----------+------------------+
 
@@ -4822,7 +4938,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 10 11:29:17 2018
+    Info: Processing started: Wed Apr 11 15:08:34 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HardwareInvaders -c HardwareInvaders
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file hi_view_control_unit.vhd
@@ -4858,7 +4974,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file hardwar
     Info (12023): Found entity 1: HardwareInvaders
 Info (12127): Elaborating entity "HardwareInvaders" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at HardwareInvaders.vhd(28): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at HardwareInvaders.vhd(43): object "fb_draw_rect" assigned a value but never read
 Warning (10873): Using initial value X (don't care) for net "LEDG[6..0]" at HardwareInvaders.vhd(29)
 Info (12128): Elaborating entity "PLL" for hierarchy "PLL:pll"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL:pll|altpll:altpll_component"
@@ -5224,37 +5339,41 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[6]" is stuck at GND
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register HI_View:view|reg_sprite.logic_dim_x[5] will power up to High
+    Critical Warning (18010): Register HI_View:view|row[0] will power up to Low
+    Critical Warning (18010): Register HI_View:view|column[0] will power up to Low
     Critical Warning (18010): Register Hi_View_Control_Unit:view_control_unit|render_counter[31] will power up to Low
     Critical Warning (18010): Register Hi_View_Control_Unit:view_control_unit|render_counter[0] will power up to Low
     Critical Warning (18010): Register HI_Datapath:datapath|HITBOX.size_y[0] will power up to Low
+    Critical Warning (18010): Register HI_Datapath:datapath|HITBOX.size_x[5] will power up to High
+    Critical Warning (18010): Register HI_View:view|row[31] will power up to Low
+    Critical Warning (18010): Register HI_View:view|column[31] will power up to Low
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[5] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3] will power up to High
     Critical Warning (18010): Register HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[1] will power up to High
-    Critical Warning (18010): Register HI_Datapath:datapath|HITBOX.size_x[5] will power up to High
 Info (17049): 99 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "HI_View:view|Add5~0"
-    Info (17048): Logic cell "HI_View:view|Add8~18"
-    Info (17048): Logic cell "HI_View:view|Add14~0"
-    Info (17048): Logic cell "HI_View:view|Add14~2"
-    Info (17048): Logic cell "HI_View:view|Add14~4"
-    Info (17048): Logic cell "HI_View:view|Add14~6"
-    Info (17048): Logic cell "HI_View:view|Add14~8"
-    Info (17048): Logic cell "HI_View:view|Add14~10"
-    Info (17048): Logic cell "HI_View:view|Add14~12"
-    Info (17048): Logic cell "HI_View:view|Add14~14"
-    Info (17048): Logic cell "HI_View:view|Add14~16"
-    Info (17048): Logic cell "HI_View:view|Add14~18"
-    Info (17048): Logic cell "HI_View:view|Add11~0"
-    Info (17048): Logic cell "HI_View:view|Add11~2"
-    Info (17048): Logic cell "HI_View:view|Add11~4"
-    Info (17048): Logic cell "HI_View:view|Add11~6"
-    Info (17048): Logic cell "HI_View:view|Add11~8"
-    Info (17048): Logic cell "HI_View:view|Add11~10"
-    Info (17048): Logic cell "HI_View:view|Add11~12"
-    Info (17048): Logic cell "HI_View:view|Add11~14"
-    Info (17048): Logic cell "HI_View:view|Add11~16"
-    Info (17048): Logic cell "HI_View:view|Add11~18"
+    Info (17048): Logic cell "HI_View:view|Add3~0"
+    Info (17048): Logic cell "HI_View:view|Add6~18"
+    Info (17048): Logic cell "HI_View:view|Add12~0"
+    Info (17048): Logic cell "HI_View:view|Add12~2"
+    Info (17048): Logic cell "HI_View:view|Add12~4"
+    Info (17048): Logic cell "HI_View:view|Add12~6"
+    Info (17048): Logic cell "HI_View:view|Add12~8"
+    Info (17048): Logic cell "HI_View:view|Add12~10"
+    Info (17048): Logic cell "HI_View:view|Add12~12"
+    Info (17048): Logic cell "HI_View:view|Add12~14"
+    Info (17048): Logic cell "HI_View:view|Add12~16"
+    Info (17048): Logic cell "HI_View:view|Add12~18"
+    Info (17048): Logic cell "HI_View:view|Add9~0"
+    Info (17048): Logic cell "HI_View:view|Add9~2"
+    Info (17048): Logic cell "HI_View:view|Add9~4"
+    Info (17048): Logic cell "HI_View:view|Add9~6"
+    Info (17048): Logic cell "HI_View:view|Add9~8"
+    Info (17048): Logic cell "HI_View:view|Add9~10"
+    Info (17048): Logic cell "HI_View:view|Add9~12"
+    Info (17048): Logic cell "HI_View:view|Add9~14"
+    Info (17048): Logic cell "HI_View:view|Add9~16"
+    Info (17048): Logic cell "HI_View:view|Add9~18"
     Info (17048): Logic cell "HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_21_result_int[4]~36"
     Info (17048): Logic cell "HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_21_result_int[3]~36"
     Info (17048): Logic cell "HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_21_result_int[1]~38"
@@ -5276,17 +5395,17 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
-Info (21057): Implemented 1440 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1399 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 1329 logic cells
+    Info (21061): Implemented 1288 logic cells
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 24 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
-    Info: Peak virtual memory: 632 megabytes
-    Info: Processing ended: Tue Apr 10 11:29:25 2018
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 636 megabytes
+    Info: Processing ended: Wed Apr 11 15:08:42 2018
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:08
 
 

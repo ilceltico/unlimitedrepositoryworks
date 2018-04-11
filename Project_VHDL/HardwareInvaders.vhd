@@ -97,7 +97,7 @@ begin
 	end process;
 	
 	game_tick_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (50000000 - 1);
+		variable counter : integer range 0 to (5000000 - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
@@ -122,7 +122,7 @@ begin
 			READY     => fb_ready,
 			COLOR     => fb_color,
 			CLEAR     => fb_clear,
-			DRAW_RECT => '0',
+			DRAW_RECT => fb_draw_rect,
 			FILL_RECT => fb_fill_rect,
 			DRAW_LINE => '0',
 			FLIP      => fb_flip,	
@@ -160,6 +160,10 @@ begin
 		);
 		
 	view : entity work.HI_View
+		generic map 
+		(
+			UPSCALE_PRECISION => 1024
+		)
 		port map 
 		(
 			CLOCK				=> clock_50MHz,
@@ -182,6 +186,7 @@ begin
 			FB_Y1          => fb_y1,
 			READY 			=> sr_ready
 		);		
+		
 		
 		datapath : entity work.HI_Datapath
 		port map 
