@@ -68,6 +68,7 @@ begin
 					rendered_alien := 0;
 				end if;
 				
+						
 			end if;
 			
 		end if;

@@ -84,11 +84,6 @@ begin
 					case (render_counter) is
 						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1=> 
 							next_state <= SHOW_SPRITES;
---						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID => 
---							REQ_NEXT_SPRITE  <= '0';
---						when ALIENS_PER_COLUMN * COLUMNS_PER_GRID + 1=> 
---							REQ_NEXT_SPRITE  <= '0';
---							next_state <= SHOW_SPRITES;
 						when others => --UNREACHABLE
 							
 					end case;
