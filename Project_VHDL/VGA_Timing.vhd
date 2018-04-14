@@ -7,7 +7,7 @@ entity VGA_Timing is
 		generic
 		(
 			CLOCK_DIV       : natural := 4;
-			H_DISP          : natural := 640-128;
+			H_DISP          : natural := 640-128; 
 			H_FRONT_PORCH   : natural := 16+64;
 			H_SYNC_LEN      : natural := 96;
 			H_BACK_PORCH    : natural := 48+64;

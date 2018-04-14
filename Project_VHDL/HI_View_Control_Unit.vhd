@@ -15,7 +15,7 @@ entity Hi_View_Control_Unit is
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
 		REQ_NEXT_SPRITE				: out std_logic;
-		REQUEST_ENTITY_SPRITE		: out datapath_entity_index_type;
+		REQUEST_ENTITY_SPRITE		: out datapath_entity_index_type
 	);
 end entity;
 
@@ -26,7 +26,6 @@ type state_type is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
 signal render_asap		: std_logic;
 signal state 				: state_type;
 signal next_state 		: state_type;
-signal render_counter	: integer;
 
 signal draw_delayed		: std_logic;
 
@@ -34,8 +33,9 @@ begin
 	
 	datapath_entity_query : process(CLOCK, RESET_N)
 		
-		variable rendered_column : alien_grid_index_type := 0;
-		variable rendered_alien  : alien_column_index_type := 0;
+		variable rendered_column 	: alien_grid_index_type := 0;
+		variable rendered_alien  	: alien_column_index_type := 0;
+		variable render_counter		: integer;
 	
 	begin
 		
@@ -75,11 +75,12 @@ begin
 					
 					REQ_NEXT_SPRITE 	<= '1';
 					next_state 			<= RENDER;
-					render_counter		<= render_counter + 1;
 					draw_delayed 		<= '1';
 					
 					if (render_counter < ALIENS_PER_COLUMN * COLUMNS_PER_GRID) then 
 
+						REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ALIEN);
+					
 						rendered_column := rendered_column + 1;
 			
 						if (rendered_column > COLUMNS_PER_GRID - 1) then
@@ -90,17 +91,14 @@ begin
 						if (rendered_alien > ALIENS_PER_COLUMN - 1) then
 							rendered_alien := 0;
 						end if;
-						
-						REQUEST_ENTITY_SPRITE <= (rendered_alien, render_counter, ALIEN);
 
 					else
 						
 						next_state <= SHOW_SPRITES;
 						
 					end if;
-				
-							
-					end case;
+					
+					render_counter		:= render_counter + 1;
 					
 				when SHOW_SPRITES =>
 				

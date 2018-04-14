@@ -17,6 +17,16 @@ state.SHOWING 0 0 1 0 0 1
 state.IDLE 0 1 0 0 0 1 
 state.INIT 1 0 0 0 0 1 
 
+State Machine - |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type
+Name REQUEST_ENTITY_SPRITE.entity_type.COLUMN~reg0 REQUEST_ENTITY_SPRITE.entity_type.PLAYER~reg0 REQUEST_ENTITY_SPRITE.entity_type.RANDOM_ALIEN~reg0 REQUEST_ENTITY_SPRITE.entity_type.SHIELD~reg0 REQUEST_ENTITY_SPRITE.entity_type.PLAYER_BULLET~reg0 REQUEST_ENTITY_SPRITE.entity_type.ALIEN_BULLET~reg0 REQUEST_ENTITY_SPRITE.entity_type.ALIEN~reg0 
+REQUEST_ENTITY_SPRITE.entity_type.ALIEN~reg0 0 0 0 0 0 0 0 
+REQUEST_ENTITY_SPRITE.entity_type.ALIEN_BULLET~reg0 0 0 0 0 0 1 1 
+REQUEST_ENTITY_SPRITE.entity_type.PLAYER_BULLET~reg0 0 0 0 0 1 0 1 
+REQUEST_ENTITY_SPRITE.entity_type.SHIELD~reg0 0 0 0 1 0 0 1 
+REQUEST_ENTITY_SPRITE.entity_type.RANDOM_ALIEN~reg0 0 0 1 0 0 0 1 
+REQUEST_ENTITY_SPRITE.entity_type.PLAYER~reg0 0 1 0 0 0 0 1 
+REQUEST_ENTITY_SPRITE.entity_type.COLUMN~reg0 1 0 0 0 0 0 1 
+
 State Machine - |HardwareInvaders|Hi_View_Control_Unit:view_control_unit|next_state
 Name next_state.WAITING_2 next_state.WAITING next_state.SHOW_SPRITES next_state.RENDER 
 next_state.RENDER 0 0 0 0 

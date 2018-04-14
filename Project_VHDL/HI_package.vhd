@@ -6,18 +6,120 @@ use work.vga_package.all;
 package HI_package is
 
 	-- Common constants
-	constant SPRITE_COUNT			: positive 	:= 3;
-	constant ALIEN_SPRITE_COUNT	: positive	:= 3;
-	constant BULLET_SPRITE_COUNT	: positive 	:= 3;
-	constant SHIELD_SPRITE_COUNT	: positive 	:= 4;
+	constant SPRITE_COUNT									: natural 	:= 26;
+	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
+	constant BULLET_SPRITE_COUNT							: natural 	:= 4;
+	constant SHIELD_SPRITE_COUNT							: natural 	:= 4;
+	constant SPRITE_SIZE										: natural 	:= 32;
 	
-	constant ALIENS_PER_COLUMN		: positive	:= 10;
-	constant COLUMNS_PER_GRID 		: positive  := 10;
-	constant SHIELD_COUNT			: positive  := 16;
-	constant BULLET_COUNT			: positive 	:= 3;
-	constant INDEX_1_MAX				: positive  := 16; -- Set this to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
+	constant ALIENS_PER_COLUMN								: natural	:= 5;
+	constant COLUMNS_PER_GRID 								: natural  := 11;
+	constant SHIELD_COUNT									: natural  := 16;
+	constant BULLET_COUNT									: natural 	:= 3;
+	constant ALIEN_SIZE_X									: natural 	:= 26;
+	constant ALIEN_SIZE_y									: natural 	:= 26;
+	constant ALIEN_SPACING_X								: natural 	:= 8;
+	constant ALIEN_SPACING_Y								: natural 	:= 15;
+	constant SIDE_MARGIN 									: natural 	:= 10;
+	constant TOP_MARGIN 										: natural 	:= 50;
+	constant BOTTOM_MARGIN 									: natural	:= 10;
+	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
+	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
+	constant INDEX_1_MAX										: natural  := 16; 
+	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
 	
-	constant SPRITE_SIZE				: positive 	:= 32;
+	constant FRAME_TIME_50MHz 								: natural := 833333;
+	constant H_DISP											: natural := 640 - 128;
+	constant V_DISP											: natural := 480;
+	constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
+	constant RAND_ALIEN_EXPLOSION_TIME_50MHz 			: natural := 25000000;
+	
+	-- Player
+	constant PLAYER_SIZE_X 									: natural := 30;
+	constant PLAYER_SIZE_Y 									: natural := 18;
+	constant PLAYER_START_X 								: natural := (H_DISP - PLAYER_SIZE_X) / 2;
+	constant PLAYER_START_Y 								: natural := V_DISP - 4*PLAYER_SIZE_Y - BOTTOM_MARGIN;
+	constant PLAYER_LIVES 									: natural := 3;
+	constant PLAYER_SPEED 									: natural := 5;
+	
+	-- Bullets
+	constant ALIEN_BULLET_TIME_50MHz 					: natural := 2500000;
+	constant ALIEN_BULLET_SPEED 							: natural := 5;
+	constant ALIEN_BULLET_SIZE_X 							: natural := 3;
+	constant ALIEN_BULLET_SIZE_Y 							: natural := 10;
+	constant PLAYER_BULLET_TIME_50MHz					: natural := 833333;
+	constant PLAYER_BULLET_SPEED 							: natural := 15;
+	constant PLAYER_BULLET_SIZE_X 						: natural := 3;
+	constant PLAYER_BULLET_SIZE_Y 						: natural := 8;
+	constant BULLET_EXPLOSION_SIZE_X 					: natural := 30;
+	constant BULLET_EXPLOSION_SIZE_Y 					: natural := 35;
+	constant BULLET_EXPLOSION_TIME_50MHz 				: natural := 10000000;
+	
+	-- Alien points 
+	constant ALIEN_1_POINTS 								: natural := 10;
+	constant ALIEN_2_POINTS 								: natural := 20;
+	constant ALIEN_3_POINTS 								: natural := 30;
+	constant ALIEN_4_POINTS 								: natural := 300;
+		
+	-- Shields
+	constant SHIELD_SIZE_X 									: natural := 33;
+	constant SHIELD_SIZE_Y 									: natural := 33;
+	constant SHIELD_SPACING 								: natural := 55;
+	constant SHIELD_H_OVERLAP 								: natural := 7;
+	constant SHIELD_V_OVERLAP 								: natural := 7;
+	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
+	constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
+	
+	-- Level
+	constant LEVEL_NUMBER 									: natural := 3;
+	constant ALIEN_1_ROWS									: natural	:= 2;
+	constant ALIEN_2_ROWS									: natural 	:= 2;
+	constant ALIEN_3_ROWS									: natural 	:= 1;
+	constant FIRST_ALIEN_CELL_X 							: natural := SIDE_MARGIN + 0;
+	constant FIRST_ALIEN_CELL_Y 							: natural := TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
+	-- constant FIRST_RAND_ALIEN_CELL_X 					: natural := - RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_X 					: natural := RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 0;
+	constant ALIEN_DOWN_SPEED 								: natural := 20;
+	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
+	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 50000000;
+	constant ALIEN_FRAME_TIME_DECREASE_50MHz 			: natural := (BASE_ALIEN_FRAME_TIME_50MHz - FRAME_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); --Nanoseconds decrease each time an alien gets destroyed
+	constant BASE_ALIEN_BULLET_GEN_TIME_50MHz 		: natural := 100000000; --One bullet per 2 seconds
+	constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
+	constant ALIEN_BULLET_GEN_TIME_DECREASE_50MHz 	: natural := (BASE_ALIEN_BULLET_GEN_TIME_50MHz - MAX_ALIEN_BULLET_GEN_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
+	constant BASE_ALIEN_BULLET_TIME_50MHz 				: natural := 50000000; --One bullet per second
+	constant MAX_ALIEN_BULLET_TIME_50MHz 				: natural := 15000000; --More than 3 bullets per second
+	constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
+	constant RAND_ALIEN_SPEED 								: natural := 3;
+	constant RAND_ALIEN_FRAME_TIME_50MHz 				: natural := 833333;
+	
+	-- Sprites
+	constant ALIEN_1_1_SPRITE 								: natural := 0;
+	constant ALIEN_1_2_SPRITE 								: natural := 1;	 
+	constant ALIEN_2_1_SPRITE 								: natural := 2;
+	constant ALIEN_2_2_SPRITE 								: natural := 3;
+	constant ALIEN_3_1_SPRITE 								: natural := 4;
+	constant ALIEN_3_2_SPRITE 								: natural := 5;
+	constant ALIEN_4_SPRITE  								: natural := 6;
+	constant ALIEN_BULLET_1_1_SPRITE						: natural := 7;
+	constant ALIEN_BULLET_1_2_SPRITE						: natural := 8;
+	constant ALIEN_BULLET_1_3_SPRITE						: natural := 9;
+	constant ALIEN_BULLET_1_4_SPRITE						: natural := 10;
+	constant ALIEN_BULLET_2_1_SPRITE						: natural := 11;
+	constant ALIEN_BULLET_2_2_SPRITE						: natural := 12;
+	constant ALIEN_BULLET_2_3_SPRITE						: natural := 13;
+	constant ALIEN_BULLET_2_4_SPRITE						: natural := 14;
+	constant ALIEN_BULLET_3_1_SPRITE						: natural := 15;
+	constant ALIEN_BULLET_3_2_SPRITE						: natural := 16;
+	constant ALIEN_BULLET_3_3_SPRITE						: natural := 17;
+	constant ALIEN_BULLET_3_4_SPRITE						: natural := 18;
+	constant ALIEN_BULLET_EXPLOSION_SPRITE				: natural := 19;
+	constant ALIEN_EXPLOSION_SPRITE						: natural := 20;
+	constant PLAYER_SPRITE									: natural := 21;
+	constant PLAYER_BULLET_SPRITE							: natural := 22;
+	constant PLAYER_BULLET_EXPLOSION_SPRITE			: natural := 23;
+	constant PLAYER_EXPLOSION_1_SPRITE					: natural := 24;
+	constant PLAYER_EXPLOSION_2_SPRITE					: natural := 25;
 	
 	--------------------------------------------------------------
 	--					            HITBOX				               --

@@ -1,14 +1,14 @@
-Fitter Status : Successful - Fri Apr 13 16:52:55 2018
+Fitter Status : Successful - Sat Apr 14 20:08:35 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : HardwareInvaders
 Top-level Entity Name : HardwareInvaders
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 1,459 / 18,752 ( 8 % )
-    Total combinational functions : 1,440 / 18,752 ( 8 % )
-    Dedicated logic registers : 439 / 18,752 ( 2 % )
-Total registers : 439
+Total logic elements : 2,605 / 18,752 ( 14 % )
+    Total combinational functions : 2,562 / 18,752 ( 14 % )
+    Dedicated logic registers : 540 / 18,752 ( 3 % )
+Total registers : 540
 Total pins : 86 / 315 ( 27 % )
 Total virtual pins : 0
 Total memory bits : 0 / 239,616 ( 0 % )

@@ -3,15 +3,15 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : -3.768
-TNS   : -138.269
+Slack : -47.222
+TNS   : -793.118
 
 Type  : Slow Model Setup 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 2.511
+Slack : 2.922
 TNS   : 0.000
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : 19.134
+Slack : 19.136
 TNS   : 0.000
 
 Type  : Slow Model Hold 'PLL:pll|altpll:altpll_component|_clk0'
@@ -23,23 +23,23 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : 0.618
+Slack : 0.616
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 3.367
+Slack : 3.324
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 12.686
+Slack : 12.673
 TNS   : 0.000
 
 Type  : Slow Model Removal 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 6.383
+Slack : 6.412
 TNS   : 0.000
 
 Type  : Slow Model Removal 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 6.383
+Slack : 6.413
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'PLL:pll|altpll:altpll_component|_clk0'
@@ -54,12 +54,12 @@ Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : 8.889
 TNS   : 0.000
 
-Type  : Fast Model Setup 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 6.296
-TNS   : 0.000
-
 Type  : Fast Model Setup 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 8.308
+Slack : -7.057
+TNS   : -29.025
+
+Type  : Fast Model Setup 'PLL:pll|altpll:altpll_component|_clk0'
+Slack : 6.175
 TNS   : 0.000
 
 Type  : Fast Model Setup 'CLOCK_50'
@@ -83,15 +83,15 @@ Slack : 5.746
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 15.502
+Slack : 15.528
 TNS   : 0.000
 
 Type  : Fast Model Removal 'PLL:pll|altpll:altpll_component|_clk0'
-Slack : 4.133
+Slack : 4.120
 TNS   : 0.000
 
 Type  : Fast Model Removal 'PLL:pll|altpll:altpll_component|_clk1'
-Slack : 4.134
+Slack : 4.121
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'PLL:pll|altpll:altpll_component|_clk0'
