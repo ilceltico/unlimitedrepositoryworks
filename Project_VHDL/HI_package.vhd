@@ -20,7 +20,7 @@ package HI_package is
 	constant SPRITE_SIZE				: positive 	:= 32;
 	
 	--------------------------------------------------------------
-	--					        DATAPATH INDEXES                     --
+	--					            HITBOX				               --
 	--------------------------------------------------------------
 	
 	-- Hitbox type declaration
@@ -1214,6 +1214,6 @@ package HI_package is
 			16,
 			8,
 			COLOR_WHITE
-		),
+		)
 	);
 end package;

@@ -12,6 +12,9 @@ entity HI_Datapath is
 		CHANGE_ALIEN_SPRITES 		: in  std_logic;
 		REQ_NEXT_SPRITE				: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
+		COLUMN_INDEX					: in 	alien_grid_index_type;
+		ROW_INDEX						: in 	alien_column_index_type;
+		
 		NEW_LEVEL						: in 	std_logic;
 		PLAYER_MOVEMENT				: in 	direction_type;
 		PLAYER_SHOOT					: in 	std_logic;
@@ -21,18 +24,19 @@ entity HI_Datapath is
 		SHOW_RAND_ALIEN				: in 	direction_type;
 		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
+		DESTROY_PLAYER					: in 	std_logic;
 		ADVANCE_PLAYER_BULLETS		: in 	std_logic;
 		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
 		SPRITE 							: out sprite_type;
-		HITBOX							: out hitbox_type
+		HITBOX							: out hitbox_type;
 		SCORE								: out integer;
 		LIVES								: out integer;
 		LIVING_ALIEN_COUNT			: out integer;
 		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
-		BORDER_REACHED					: out direction;
-		RAND_ALIEN_BORDER_REACHED	: out direction;
-		COLUMN_CANNOT_SHOOT			: out std_logic;
+		BORDER_REACHED					: out direction_type;
+		RAND_ALIEN_BORDER_REACHED	: out direction_type;
+		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
 end entity;
 
@@ -44,17 +48,10 @@ begin
 	
 	process(CLOCK, RESET_N) is 
 	
-	variable rendered_column : alien_grid_index_type := 0;
-	variable rendered_alien  : alien_column_index_type := 0;
-	variable reg_req			 : std_logic := '0';
-	
 	begin
 		
 		if (RESET_N = '0') then 
 			
-			rendered_alien := 0;
-			rendered_column := 0;
-			reg_req := '0';
 			SPRITE <= sprites(0);
 			HITBOX.up_left_x <= 0;
 			HITBOX.up_left_y <= 0;
@@ -63,30 +60,10 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then	
 			
-			if (REQ_NEXT_SPRITE = '0') then
-
-				reg_req := '1';
-
-			end if;
-			
-			if (REQ_NEXT_SPRITE = '1' and reg_req = '1') then
-			
-				reg_req := '0';
+			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN) then
 				
-				SPRITE <= sprites(alien_grid(rendered_column)(rendered_alien).sprite_indexes(alien_grid(rendered_column)(rendered_alien).current_index));
-				HITBOX <= alien_grid(rendered_column)(rendered_alien).hitbox;
-				
-				rendered_column := rendered_column + 1;
-			
-				if (rendered_column > COLUMNS_PER_GRID - 1) then
-					rendered_column := 0;
-					rendered_alien := rendered_alien + 1;
-				end if;
-				
-				if (rendered_alien > ALIENS_PER_COLUMN - 1) then
-					rendered_alien := 0;
-				end if;
-				
+				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
+				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 						
 			end if;
 			
