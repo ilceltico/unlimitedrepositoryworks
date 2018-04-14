@@ -7,13 +7,32 @@ use work.vga_package.all;
 entity HI_Datapath is 
 	port 
 	(
-		CLOCK							: in	std_logic;
-		RESET_N						: in 	std_logic;
-		CHANGE_ALIEN_SPRITES 	: in  std_logic;
-		REQ_NEXT_SPRITE			: in 	std_logic;
+		CLOCK								: in	std_logic;
+		RESET_N							: in 	std_logic;
+		CHANGE_ALIEN_SPRITES 		: in  std_logic;
+		REQ_NEXT_SPRITE				: in 	std_logic;
+		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
+		NEW_LEVEL						: in 	std_logic;
+		PLAYER_MOVEMENT				: in 	direction_type;
+		PLAYER_SHOOT					: in 	std_logic;
+		ALIEN_GRID_MOVEMENT			: in 	direction_type;
+		ALIEN_SHOOT						: in 	std_logic;
+		RAND_ALIEN_MOVEMENT			: in 	direction_type;
+		SHOW_RAND_ALIEN				: in 	direction_type;
+		DESTROY_ALIEN					: in 	std_logic;
+		HIDE_ALIEN						: in 	std_logic;
+		ADVANCE_PLAYER_BULLETS		: in 	std_logic;
+		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
-		SPRITE 						: out sprite_type;
-		HITBOX						: out hitbox_type
+		SPRITE 							: out sprite_type;
+		HITBOX							: out hitbox_type
+		SCORE								: out integer;
+		LIVES								: out integer;
+		LIVING_ALIEN_COUNT			: out integer;
+		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
+		BORDER_REACHED					: out direction;
+		RAND_ALIEN_BORDER_REACHED	: out direction;
+		COLUMN_CANNOT_SHOOT			: out std_logic;
 	);
 end entity;
 
@@ -83,31 +102,13 @@ begin
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				for J in 0 to ALIENS_PER_COLUMN - 1 loop
 				
---					alien_grid(I)(J).sprite_indexes <= (0,1,2);
---					alien_grid(I)(J).hitbox.up_left_x <= I * (SPRITE_SIZE + 10);
---					alien_grid(I)(J).hitbox.up_left_y <= J * (SPRITE_SIZE + 10);
---					alien_grid(I)(J).hitbox.size_x <= SPRITE_SIZE;
---					alien_grid(I)(J).hitbox.size_y <= SPRITE_SIZE;
---					alien_grid(I)(J).current_index <= 0;
-					
 					alien_grid(I)(J).sprite_indexes <= (0,1,2);
 					alien_grid(I)(J).hitbox.up_left_x <= I * (SPRITE_SIZE + 10);
 					alien_grid(I)(J).hitbox.up_left_y <= J * (SPRITE_SIZE + 10);
+					alien_grid(I)(J).hitbox.size_x <= SPRITE_SIZE;
+					alien_grid(I)(J).hitbox.size_y <= SPRITE_SIZE;
 					alien_grid(I)(J).current_index <= 0;
-					
-					if (I = 0) then
-	
-						alien_grid(I)(J).hitbox.size_x <= 32;
-						alien_grid(I)(J).hitbox.size_y <= 32;
-					
-					else
-						
-						alien_grid(I)(J).hitbox.size_x <= 16;
-						alien_grid(I)(J).hitbox.size_y <= 26;
-						
-					end if;
-					
-					
+		
 				end loop;	
 			end loop;
 			
