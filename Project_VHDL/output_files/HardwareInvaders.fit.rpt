@@ -1,5 +1,5 @@
 Fitter report for HardwareInvaders
-Sat Apr 14 20:08:36 2018
+Sun Apr 15 18:25:36 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -69,17 +69,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 14 20:08:35 2018           ;
+; Fitter Status                      ; Successful - Sun Apr 15 18:25:36 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 2,605 / 18,752 ( 14 % )                         ;
-;     Total combinational functions  ; 2,562 / 18,752 ( 14 % )                         ;
-;     Dedicated logic registers      ; 540 / 18,752 ( 3 % )                            ;
-; Total registers                    ; 540                                             ;
+; Total logic elements               ; 2,958 / 18,752 ( 16 % )                         ;
+;     Total combinational functions  ; 2,899 / 18,752 ( 15 % )                         ;
+;     Dedicated logic registers      ; 689 / 18,752 ( 4 % )                            ;
+; Total registers                    ; 689                                             ;
 ; Total pins                         ; 86 / 315 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -624,8 +624,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 3225 ( 0.00 % )    ;
-;     -- Achieved     ; 0 / 3225 ( 0.00 % )    ;
+;     -- Requested    ; 0 / 3711 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 3711 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -648,7 +648,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 3219    ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 3705    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 6       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -664,26 +664,26 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 2,605 / 18,752 ( 14 % ) ;
-;     -- Combinational with no register       ; 2065                    ;
-;     -- Register only                        ; 43                      ;
-;     -- Combinational with a register        ; 497                     ;
+; Total logic elements                        ; 2,958 / 18,752 ( 16 % ) ;
+;     -- Combinational with no register       ; 2269                    ;
+;     -- Register only                        ; 59                      ;
+;     -- Combinational with a register        ; 630                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 340                     ;
-;     -- 3 input functions                    ; 836                     ;
-;     -- <=2 input functions                  ; 1386                    ;
-;     -- Register only                        ; 43                      ;
+;     -- 4 input functions                    ; 405                     ;
+;     -- 3 input functions                    ; 988                     ;
+;     -- <=2 input functions                  ; 1506                    ;
+;     -- Register only                        ; 59                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 1384                    ;
-;     -- arithmetic mode                      ; 1178                    ;
+;     -- normal mode                          ; 1505                    ;
+;     -- arithmetic mode                      ; 1394                    ;
 ;                                             ;                         ;
-; Total registers*                            ; 540 / 19,649 ( 3 % )    ;
-;     -- Dedicated logic registers            ; 540 / 18,752 ( 3 % )    ;
+; Total registers*                            ; 689 / 19,649 ( 4 % )    ;
+;     -- Dedicated logic registers            ; 689 / 18,752 ( 4 % )    ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 204 / 1,172 ( 17 % )    ;
+; Total LABs:  partially or completely used   ; 226 / 1,172 ( 19 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 86 / 315 ( 27 % )       ;
 ;     -- Clock pins                           ; 6 / 8 ( 75 % )          ;
@@ -699,11 +699,11 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
 ; Average interconnect usage (total/H/V)      ; 3% / 3% / 4%            ;
-; Peak interconnect usage (total/H/V)         ; 10% / 8% / 13%          ;
-; Maximum fan-out                             ; 443                     ;
-; Highest non-global fan-out                  ; 80                      ;
-; Total fan-out                               ; 8872                    ;
-; Average fan-out                             ; 2.72                    ;
+; Peak interconnect usage (total/H/V)         ; 12% / 12% / 13%         ;
+; Maximum fan-out                             ; 587                     ;
+; Highest non-global fan-out                  ; 133                     ;
+; Total fan-out                               ; 10415                   ;
+; Average fan-out                             ; 2.77                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -716,25 +716,25 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 2605 / 18752 ( 14 % ) ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 2065                  ; 0                              ;
-;     -- Register only                        ; 43                    ; 0                              ;
-;     -- Combinational with a register        ; 497                   ; 0                              ;
+; Total logic elements                        ; 2958 / 18752 ( 16 % ) ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 2269                  ; 0                              ;
+;     -- Register only                        ; 59                    ; 0                              ;
+;     -- Combinational with a register        ; 630                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 340                   ; 0                              ;
-;     -- 3 input functions                    ; 836                   ; 0                              ;
-;     -- <=2 input functions                  ; 1386                  ; 0                              ;
-;     -- Register only                        ; 43                    ; 0                              ;
+;     -- 4 input functions                    ; 405                   ; 0                              ;
+;     -- 3 input functions                    ; 988                   ; 0                              ;
+;     -- <=2 input functions                  ; 1506                  ; 0                              ;
+;     -- Register only                        ; 59                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 1384                  ; 0                              ;
-;     -- arithmetic mode                      ; 1178                  ; 0                              ;
+;     -- normal mode                          ; 1505                  ; 0                              ;
+;     -- arithmetic mode                      ; 1394                  ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 540                   ; 0                              ;
-;     -- Dedicated logic registers            ; 540 / 18752 ( 3 % )   ; 0 / 18752 ( 0 % )              ;
+; Total registers                             ; 689                   ; 0                              ;
+;     -- Dedicated logic registers            ; 689 / 18752 ( 4 % )   ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 203 / 1172 ( 17 % )   ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 226 / 1172 ( 19 % )   ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 86                    ; 0                              ;
@@ -745,18 +745,18 @@ The pin-out file can be found in C:/Users/Luca/Documents/unlimitedrepositorywork
 ; Clock control block                         ; 2 / 20 ( 10 % )       ; 2 / 20 ( 10 % )                ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 544                   ; 1                              ;
-;     -- Registered Input Connections         ; 538                   ; 0                              ;
-;     -- Output Connections                   ; 1                     ; 544                            ;
+;     -- Input Connections                    ; 693                   ; 1                              ;
+;     -- Registered Input Connections         ; 687                   ; 0                              ;
+;     -- Output Connections                   ; 1                     ; 693                            ;
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 9322                  ; 547                            ;
-;     -- Registered Connections               ; 2484                  ; 0                              ;
+;     -- Total Connections                    ; 10865                 ; 696                            ;
+;     -- Registered Connections               ; 3098                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 0                     ; 545                            ;
-;     -- hard_block:auto_generated_inst       ; 545                   ; 0                              ;
+;     -- Top                                  ; 0                     ; 694                            ;
+;     -- hard_block:auto_generated_inst       ; 694                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 15                    ; 1                              ;
@@ -1478,37 +1478,38 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                   ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                        ; Library Name ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
-; |HardwareInvaders                           ; 2605 (91)   ; 540 (50)                  ; 0 (0)         ; 0           ; 0    ; 24           ; 0       ; 12        ; 86   ; 0            ; 2065 (41)    ; 43 (4)            ; 497 (46)         ; |HardwareInvaders                                                                                                          ; work         ;
-;    |HI_Datapath:datapath|                   ; 221 (221)   ; 123 (123)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 93 (93)      ; 11 (11)           ; 117 (117)        ; |HardwareInvaders|HI_Datapath:datapath                                                                                     ; work         ;
-;    |HI_View:view|                           ; 1920 (582)  ; 190 (190)                 ; 0 (0)         ; 0           ; 0    ; 24           ; 0       ; 12        ; 0    ; 0            ; 1726 (395)   ; 20 (20)           ; 174 (165)        ; |HardwareInvaders|HI_View:view                                                                                             ; work         ;
-;       |lpm_divide:Div0|                     ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 650 (0)      ; 0 (0)             ; 7 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0                                                                             ; work         ;
-;          |lpm_divide_nto:auto_generated|    ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 650 (0)      ; 0 (0)             ; 7 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated                                               ; work         ;
-;             |abs_divider_4dg:divider|       ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 650 (0)      ; 0 (0)             ; 7 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                       ; work         ;
-;                |alt_u_div_k5f:divider|      ; 657 (657)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 650 (650)    ; 0 (0)             ; 7 (7)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider ; work         ;
-;       |lpm_divide:Div1|                     ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 569 (0)      ; 0 (0)             ; 2 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1                                                                             ; work         ;
-;          |lpm_divide_nto:auto_generated|    ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 569 (0)      ; 0 (0)             ; 2 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated                                               ; work         ;
-;             |abs_divider_4dg:divider|       ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 569 (0)      ; 0 (0)             ; 2 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                       ; work         ;
-;                |alt_u_div_k5f:divider|      ; 571 (571)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 569 (569)    ; 0 (0)             ; 2 (2)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider ; work         ;
-;       |lpm_mult:Mult0|                      ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult0                                                                              ; work         ;
-;          |mult_i1t:auto_generated|          ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated                                                      ; work         ;
-;       |lpm_mult:Mult1|                      ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult1                                                                              ; work         ;
-;          |mult_i1t:auto_generated|          ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated                                                      ; work         ;
-;       |lpm_mult:Mult2|                      ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult2                                                                              ; work         ;
-;          |mult_i1t:auto_generated|          ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated                                                      ; work         ;
-;       |lpm_mult:Mult3|                      ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult3                                                                              ; work         ;
-;          |mult_i1t:auto_generated|          ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated                                                      ; work         ;
-;    |Hi_View_Control_Unit:view_control_unit| ; 111 (111)   ; 56 (56)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (55)      ; 4 (4)             ; 52 (52)          ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit                                                                   ; work         ;
-;    |PLL:pll|                                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll                                                                                                  ; work         ;
-;       |altpll:altpll_component|             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll|altpll:altpll_component                                                                          ; work         ;
-;    |VGA_Framebuffer:vga|                    ; 273 (170)   ; 121 (68)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 150 (100)    ; 4 (3)             ; 119 (67)         ; |HardwareInvaders|VGA_Framebuffer:vga                                                                                      ; work         ;
-;       |VGA_RAMDAC:vga_fb|                   ; 29 (29)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 8 (8)            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb                                                                    ; work         ;
-;       |VGA_Timing:vga_timing|               ; 74 (74)     ; 45 (45)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 1 (1)             ; 44 (44)          ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing                                                                ; work         ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                           ;
++-----------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                          ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                        ; Library Name ;
++-----------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |HardwareInvaders                                   ; 2958 (81)   ; 689 (47)                  ; 0 (0)         ; 0           ; 0    ; 24           ; 0       ; 12        ; 86   ; 0            ; 2269 (34)    ; 59 (3)            ; 630 (45)         ; |HardwareInvaders                                                                                                          ; work         ;
+;    |HI_Datapath:datapath|                           ; 553 (553)   ; 262 (262)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 290 (290)    ; 10 (10)           ; 253 (253)        ; |HardwareInvaders|HI_Datapath:datapath                                                                                     ; work         ;
+;    |HI_View:view|                                   ; 1934 (594)  ; 194 (194)                 ; 0 (0)         ; 0           ; 0    ; 24           ; 0       ; 12        ; 0    ; 0            ; 1737 (402)   ; 32 (32)           ; 165 (160)        ; |HardwareInvaders|HI_View:view                                                                                             ; work         ;
+;       |lpm_divide:Div0|                             ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 653 (0)      ; 0 (0)             ; 4 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0                                                                             ; work         ;
+;          |lpm_divide_nto:auto_generated|            ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 653 (0)      ; 0 (0)             ; 4 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated                                               ; work         ;
+;             |abs_divider_4dg:divider|               ; 657 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 653 (0)      ; 0 (0)             ; 4 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                       ; work         ;
+;                |alt_u_div_k5f:divider|              ; 657 (657)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 653 (653)    ; 0 (0)             ; 4 (4)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider ; work         ;
+;       |lpm_divide:Div1|                             ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 570 (0)      ; 0 (0)             ; 1 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1                                                                             ; work         ;
+;          |lpm_divide_nto:auto_generated|            ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 570 (0)      ; 0 (0)             ; 1 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated                                               ; work         ;
+;             |abs_divider_4dg:divider|               ; 571 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 570 (0)      ; 0 (0)             ; 1 (0)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider                       ; work         ;
+;                |alt_u_div_k5f:divider|              ; 571 (571)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 570 (570)    ; 0 (0)             ; 1 (1)            ; |HardwareInvaders|HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider ; work         ;
+;       |lpm_mult:Mult0|                              ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult0                                                                              ; work         ;
+;          |mult_i1t:auto_generated|                  ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated                                                      ; work         ;
+;       |lpm_mult:Mult1|                              ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult1                                                                              ; work         ;
+;          |mult_i1t:auto_generated|                  ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated                                                      ; work         ;
+;       |lpm_mult:Mult2|                              ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult2                                                                              ; work         ;
+;          |mult_i1t:auto_generated|                  ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated                                                      ; work         ;
+;       |lpm_mult:Mult3|                              ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult3                                                                              ; work         ;
+;          |mult_i1t:auto_generated|                  ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 6            ; 0       ; 3         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated                                                      ; work         ;
+;    |Hi_Datapath_Control_Unit:datapath_control_unit| ; 14 (14)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 2 (2)             ; 7 (7)            ; |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit                                                           ; work         ;
+;    |Hi_View_Control_Unit:view_control_unit|         ; 111 (111)   ; 56 (56)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (55)      ; 9 (9)             ; 47 (47)          ; |HardwareInvaders|Hi_View_Control_Unit:view_control_unit                                                                   ; work         ;
+;    |PLL:pll|                                        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll                                                                                                  ; work         ;
+;       |altpll:altpll_component|                     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |HardwareInvaders|PLL:pll|altpll:altpll_component                                                                          ; work         ;
+;    |VGA_Framebuffer:vga|                            ; 272 (169)   ; 121 (68)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 148 (98)     ; 3 (2)             ; 121 (69)         ; |HardwareInvaders|VGA_Framebuffer:vga                                                                                      ; work         ;
+;       |VGA_RAMDAC:vga_fb|                           ; 29 (29)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 8 (8)            ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb                                                                    ; work         ;
+;       |VGA_Timing:vga_timing|                       ; 74 (74)     ; 45 (45)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 1 (1)             ; 44 (44)          ; |HardwareInvaders|VGA_Framebuffer:vga|VGA_Timing:vga_timing                                                                ; work         ;
++-----------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1614,11 +1615,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[0]                                                    ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[0]~5 ; 0                 ; 6       ;
 ; SRAM_DQ[1]                                                    ;                   ;         ;
-;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[1]~6 ; 1                 ; 6       ;
+;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[1]~6 ; 0                 ; 6       ;
 ; SRAM_DQ[2]                                                    ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[2]~7 ; 0                 ; 6       ;
 ; SRAM_DQ[3]                                                    ;                   ;         ;
-;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[3]~3 ; 1                 ; 6       ;
+;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[3]~3 ; 0                 ; 6       ;
 ; SRAM_DQ[4]                                                    ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[4]~4 ; 0                 ; 6       ;
 ; SRAM_DQ[5]                                                    ;                   ;         ;
@@ -1630,7 +1631,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_DQ[8]                                                    ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[0]~5 ; 0                 ; 6       ;
 ; SRAM_DQ[9]                                                    ;                   ;         ;
-;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[1]~6 ; 0                 ; 6       ;
+;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[1]~6 ; 1                 ; 6       ;
 ; SRAM_DQ[10]                                                   ;                   ;         ;
 ;      - VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|ram_rd_word[2]~7 ; 0                 ; 6       ;
 ; SRAM_DQ[11]                                                   ;                   ;         ;
@@ -1661,55 +1662,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                                  ;
-+------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                               ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                           ; PIN_L1             ; 2       ; Clock         ; no     ; --                   ; --               ; --                        ;
-; CLOCK_50                                                                           ; PIN_L1             ; 2       ; Clock         ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; HI_Datapath:datapath|process_0~0                                                   ; LCCOMB_X24_Y10_N18 ; 43      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; HI_View:view|Selector0~0                                                           ; LCCOMB_X26_Y12_N2  ; 35      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; HI_View:view|Selector32~0                                                          ; LCCOMB_X26_Y14_N12 ; 35      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; HI_View:view|pixel_scale_factor_x[31]~0                                            ; LCCOMB_X26_Y9_N16  ; 26      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; HI_View:view|reg_sprite.img_pixels[4][6]~0                                         ; LCCOMB_X25_Y10_N12 ; 44      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; HI_View:view|state.IDLE                                                            ; LCFF_X25_Y9_N3     ; 11      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type.COLUMN~0  ; LCCOMB_X24_Y10_N4  ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[31]~0 ; LCCOMB_X24_Y10_N22 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[2]~3  ; LCCOMB_X24_Y10_N12 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Hi_View_Control_Unit:view_control_unit|render_counter~0                            ; LCCOMB_X24_Y10_N20 ; 1       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk0                                              ; PLL_1              ; 121     ; Clock         ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk1                                              ; PLL_1              ; 423     ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; RESET_N                                                                            ; LCFF_X18_Y8_N21    ; 17      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; RESET_N                                                                            ; LCFF_X18_Y8_N21    ; 443     ; Async. clear  ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; VGA_Framebuffer:vga|Selector1~6                                                    ; LCCOMB_X15_Y11_N4  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0                                  ; LCCOMB_X11_Y9_N0   ; 23      ; Output enable ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0                                  ; LCCOMB_X12_Y4_N0   ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0                                 ; LCCOMB_X12_Y8_N30  ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~12                               ; LCCOMB_X12_Y8_N8   ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0                               ; LCCOMB_X12_Y8_N14  ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line                                 ; LCFF_X12_Y8_N23    ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state~12                               ; LCCOMB_X11_Y9_N26  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0                               ; LCCOMB_X11_Y9_N6   ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|x_cursor[0]~19                                                 ; LCCOMB_X14_Y9_N20  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|x_cursor[1]~14                                                 ; LCCOMB_X14_Y9_N26  ; 19      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_cursor[0]~35                                                 ; LCCOMB_X13_Y10_N6  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_end[8]~0                                                     ; LCCOMB_X15_Y11_N28 ; 38      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; VGA_Framebuffer:vga|y_end[8]~10                                                    ; LCCOMB_X16_Y11_N16 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; game_tick                                                                          ; LCFF_X23_Y12_N7    ; 80      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-+------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                        ;
++------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                                     ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                                                 ; PIN_L1             ; 2       ; Clock         ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; CLOCK_50                                                                                 ; PIN_L1             ; 2       ; Clock         ; no     ; --                   ; --               ; --                        ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[31]~0                             ; LCCOMB_X38_Y14_N26 ; 127     ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[31]~0                             ; LCCOMB_X33_Y14_N4  ; 82      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_Datapath:datapath|render_entity_query~0                                               ; LCCOMB_X31_Y10_N2  ; 47      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_View:view|Selector0~0                                                                 ; LCCOMB_X29_Y9_N22  ; 35      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_View:view|Selector32~0                                                                ; LCCOMB_X29_Y9_N12  ; 35      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_View:view|pixel_scale_factor_x[31]~0                                                  ; LCCOMB_X29_Y9_N10  ; 26      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_View:view|reg_hitbox.up_left_x[6]~0                                                   ; LCCOMB_X29_Y9_N2   ; 48      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; HI_View:view|state.IDLE                                                                  ; LCFF_X29_Y9_N15    ; 11      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type.PLAYER_BULLET~0 ; LCCOMB_X31_Y10_N0  ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[2]                  ; LCFF_X34_Y15_N7    ; 25      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[31]~0       ; LCCOMB_X31_Y10_N18 ; 32      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[0]~3        ; LCCOMB_X31_Y10_N6  ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Hi_View_Control_Unit:view_control_unit|render_counter~0                                  ; LCCOMB_X31_Y10_N4  ; 1       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk0                                                    ; PLL_1              ; 121     ; Clock         ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk1                                                    ; PLL_1              ; 572     ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; RESET_N                                                                                  ; LCFF_X27_Y5_N1     ; 22      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; RESET_N                                                                                  ; LCFF_X27_Y5_N1     ; 587     ; Async. clear  ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; VGA_Framebuffer:vga|Selector0~5                                                          ; LCCOMB_X32_Y8_N22  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_RAMDAC:vga_fb|SRAM_WE_N~0                                        ; LCCOMB_X31_Y8_N12  ; 23      ; Output enable ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0                                        ; LCCOMB_X15_Y2_N20  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0                                       ; LCCOMB_X34_Y6_N6   ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state~12                                     ; LCCOMB_X34_Y6_N4   ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0                                     ; LCCOMB_X34_Y6_N28  ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line                                       ; LCFF_X34_Y6_N9     ; 20      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state~12                                     ; LCCOMB_X37_Y7_N14  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0                                     ; LCCOMB_X37_Y7_N30  ; 9       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|x_cursor[0]~19                                                       ; LCCOMB_X32_Y6_N30  ; 10      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|x_cursor[3]~14                                                       ; LCCOMB_X34_Y8_N4   ; 19      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_cursor[0]~35                                                       ; LCCOMB_X34_Y8_N0   ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_end[8]~0                                                           ; LCCOMB_X32_Y8_N0   ; 38      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; VGA_Framebuffer:vga|y_end[8]~10                                                          ; LCCOMB_X30_Y7_N4   ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
++------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                             ;
-+---------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; Name                                  ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50                              ; PIN_L1          ; 2       ; Global Clock         ; GCLK0            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk0 ; PLL_1           ; 121     ; Global Clock         ; GCLK3            ; --                        ;
-; PLL:pll|altpll:altpll_component|_clk1 ; PLL_1           ; 423     ; Global Clock         ; GCLK2            ; --                        ;
-; RESET_N                               ; LCFF_X18_Y8_N21 ; 443     ; Global Clock         ; GCLK15           ; --                        ;
-+---------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                            ;
++---------------------------------------+----------------+---------+----------------------+------------------+---------------------------+
+; Name                                  ; Location       ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------+----------------+---------+----------------------+------------------+---------------------------+
+; CLOCK_50                              ; PIN_L1         ; 2       ; Global Clock         ; GCLK0            ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk0 ; PLL_1          ; 121     ; Global Clock         ; GCLK3            ; --                        ;
+; PLL:pll|altpll:altpll_component|_clk1 ; PLL_1          ; 572     ; Global Clock         ; GCLK2            ; --                        ;
+; RESET_N                               ; LCFF_X27_Y5_N1 ; 587     ; Global Clock         ; GCLK12           ; --                        ;
++---------------------------------------+----------------+---------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1717,11 +1720,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                                                  ; Fan-Out ;
 +---------------------------------------------------------------------------------------------------------------------------------------+---------+
-; game_tick                                                                                                                             ; 80      ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT.DIR_RIGHT~reg0                                                     ; 133     ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[31]~0                                                                          ; 127     ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[31]~0                                                                          ; 82      ;
 ; HI_View:view|state.DRAWING                                                                                                            ; 71      ;
+; HI_View:view|reg_hitbox.up_left_x[6]~0                                                                                                ; 48      ;
+; HI_Datapath:datapath|render_entity_query~0                                                                                            ; 47      ;
 ; Hi_View_Control_Unit:view_control_unit|state.SHOW_SPRITES                                                                             ; 46      ;
-; HI_View:view|reg_sprite.img_pixels[4][6]~0                                                                                            ; 44      ;
-; HI_Datapath:datapath|process_0~0                                                                                                      ; 43      ;
 ; HI_View:view|FB_CLEAR                                                                                                                 ; 43      ;
 ; VGA_Framebuffer:vga|y_end[8]~0                                                                                                        ; 38      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_10~40                     ; 38      ;
@@ -1731,14 +1736,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|LessThan0~62                                                                                                             ; 35      ;
 ; HI_View:view|LessThan1~10                                                                                                             ; 34      ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_x[0]                                                                                            ; 33      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[0]                                                               ; 32      ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[31]~0                                                    ; 32      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_23~62                     ; 32      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_21~60                     ; 32      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[0]                                                               ; 31      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_state.DATA                                                                                ; 31      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.DATA                                                                                ; 31      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_20~58                     ; 31      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[1]                                                               ; 30      ;
 ; HI_View:view|column[0]~_Duplicate_2                                                                                                   ; 30      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_19~56                     ; 30      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[1]                                                               ; 29      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_23~54                     ; 29      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_21~52                     ; 29      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_18~54                     ; 29      ;
@@ -1748,15 +1757,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_19~48                     ; 27      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_16~50                     ; 27      ;
 ; HI_View:view|pixel_scale_factor_x[31]~0                                                                                               ; 26      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[1]                                                               ; 26      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_18~46                     ; 26      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_15~48                     ; 26      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[0]                                                               ; 25      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[2]                                                               ; 25      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_17~44                     ; 25      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_14~46                     ; 25      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_16~42                     ; 24      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_21_result_int[22]~44 ; 24      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[0]                                                               ; 23      ;
 ; HI_View:view|FB_COLOR~2                                                                                                               ; 23      ;
 ; HI_View:view|FB_COLOR~1                                                                                                               ; 23      ;
 ; HI_View:view|FB_COLOR~0                                                                                                               ; 23      ;
@@ -1765,56 +1772,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|state.INIT                                                                                                               ; 22      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|op_15~42                     ; 22      ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_20_result_int[21]~42 ; 22      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[1]                                                               ; 21      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[3]                                                               ; 21      ;
+; RESET_N                                                                                                                               ; 21      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_21_result_int[22]~38 ; 21      ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|add_sub_20_result_int[21]~36 ; 21      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal0~0                                                                                    ; 20      ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|new_line                                                                                    ; 20      ;
-; HI_Datapath:datapath|alien_grid[0][0].current_index[0]                                                                                ; 19      ;
-; VGA_Framebuffer:vga|x_cursor[1]~14                                                                                                    ; 19      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_2[2]                                                               ; 18      ;
+; VGA_Framebuffer:vga|x_cursor[3]~14                                                                                                    ; 19      ;
 ; HI_View:view|FB_COLOR~3                                                                                                               ; 18      ;
 ; HI_View:view|column[3]~_Duplicate_2                                                                                                   ; 17      ;
 ; ~GND                                                                                                                                  ; 16      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[3]                                                               ; 16      ;
-; RESET_N                                                                                                                               ; 16      ;
 ; HI_View:view|column[2]~_Duplicate_2                                                                                                   ; 16      ;
 ; HI_Datapath:datapath|SPRITE.logic_dim_x[1]                                                                                            ; 14      ;
 ; HI_Datapath:datapath|SPRITE.img_pixels[0][5]                                                                                          ; 14      ;
 ; VGA_Framebuffer:vga|state.IDLE                                                                                                        ; 14      ;
-; Equal1~8                                                                                                                              ; 13      ;
+; HI_Datapath:datapath|alien_grid[0][0].current_index[0]                                                                                ; 13      ;
 ; HI_Datapath:datapath|HITBOX.size_x[4]                                                                                                 ; 13      ;
 ; Equal0~6                                                                                                                              ; 13      ;
 ; VGA_Framebuffer:vga|state.DRAWING_RECT                                                                                                ; 13      ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[2]                                                               ; 12      ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT.DIR_LEFT~reg0                                                      ; 12      ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.index_1[2]                                                               ; 11      ;
 ; HI_View:view|state.IDLE                                                                                                               ; 11      ;
 ; VGA_Framebuffer:vga|fb_buffer_idx                                                                                                     ; 11      ;
 ; HI_View:view|reg_sprite.img_pixels[0][5]                                                                                              ; 10      ;
 ; VGA_Framebuffer:vga|latched_color[1]                                                                                                  ; 10      ;
 ; VGA_Framebuffer:vga|x_cursor[0]~19                                                                                                    ; 10      ;
-; VGA_Framebuffer:vga|x_cursor[1]~13                                                                                                    ; 10      ;
+; VGA_Framebuffer:vga|x_cursor[3]~13                                                                                                    ; 10      ;
 ; VGA_Framebuffer:vga|substate.INIT                                                                                                     ; 10      ;
 ; VGA_Framebuffer:vga|substate.DRAWING_R1                                                                                               ; 10      ;
 ; VGA_Framebuffer:vga|y_cursor[0]~35                                                                                                    ; 9       ;
-; HI_Datapath:datapath|HITBOX.up_left_x[4]~1                                                                                            ; 9       ;
-; HI_Datapath:datapath|HITBOX.up_left_x[4]~0                                                                                            ; 9       ;
+; Equal1~6                                                                                                                              ; 9       ;
+; Equal1~5                                                                                                                              ; 9       ;
+; Equal1~4                                                                                                                              ; 9       ;
 ; Hi_View_Control_Unit:view_control_unit|DRAW_SPRITE                                                                                    ; 9       ;
-; VGA_Framebuffer:vga|y_cursor[7]~13                                                                                                    ; 9       ;
+; VGA_Framebuffer:vga|y_cursor[1]~13                                                                                                    ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_timing~0                                                                                  ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_timing~0                                                                                  ; 9       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|BLANK~0                                                                                     ; 9       ;
 ; HI_View:view|column[4]~_Duplicate_2                                                                                                   ; 9       ;
 ; Hi_View_Control_Unit:view_control_unit|LessThan1~0                                                                                    ; 8       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[1]                                                                            ; 8       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_x[1]                                                                            ; 8       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[5]                                                                                ; 8       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_counter[9]                                                                                ; 8       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[2]~3                                                     ; 7       ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type.COLUMN~0                                                     ; 7       ;
+; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[0]~3                                                     ; 7       ;
+; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type.PLAYER_BULLET~0                                              ; 7       ;
+; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2]                                                                             ; 7       ;
 ; HI_View:view|reg_sprite.img_pixels[1][7]                                                                                              ; 7       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[9]                                                                                ; 7       ;
+; HI_Datapath:datapath|Add1~1                                                                                                           ; 6       ;
+; HI_Datapath:datapath|Add1~0                                                                                                           ; 6       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_column[0]                                                      ; 6       ;
-; HI_View:view|Selector65~4                                                                                                             ; 6       ;
-; HI_View:view|Selector65~3                                                                                                             ; 6       ;
+; game_tick                                                                                                                             ; 6       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[1]                                                                             ; 6       ;
+; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[3]                                                                             ; 6       ;
+; HI_Datapath:datapath|HITBOX.up_left_x[9]~0                                                                                            ; 6       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_y[2]                                                                            ; 6       ;
+; HI_Datapath:datapath|alien_grid[0][2].hitbox.up_left_y[3]                                                                             ; 6       ;
+; HI_View:view|Selector69~4                                                                                                             ; 6       ;
+; HI_View:view|Selector69~3                                                                                                             ; 6       ;
 ; HI_View:view|show_asap                                                                                                                ; 6       ;
 ; HI_View:view|row[0]~_Duplicate_2                                                                                                      ; 6       ;
 ; VGA_Framebuffer:vga|latched_color[10]                                                                                                 ; 6       ;
@@ -1823,9 +1838,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|Equal0~6                                                                                                          ; 6       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal8~1                                                                                    ; 6       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|v_state.SYNC                                                                                ; 6       ;
+; HI_Datapath:datapath|LessThan55~10                                                                                                    ; 5       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_column[1]                                                      ; 5       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[0]                                                       ; 5       ;
-; HI_Datapath:datapath|Mux517~0                                                                                                         ; 5       ;
+; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[2]                                                                             ; 5       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[2]                                                                             ; 5       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[4]                                                                            ; 5       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[5]                                                                            ; 5       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[6]                                                                            ; 5       ;
+; HI_Datapath:datapath|HITBOX.up_left_x[5]~1                                                                                            ; 5       ;
 ; Hi_View_Control_Unit:view_control_unit|state.RENDER                                                                                   ; 5       ;
 ; HI_Datapath:datapath|HITBOX.size_x[5]                                                                                                 ; 5       ;
 ; HI_View:view|state.SHOWING                                                                                                            ; 5       ;
@@ -1857,11 +1878,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_Framebuffer:vga|x_cursor[2]                                                                                                       ; 5       ;
 ; VGA_Framebuffer:vga|x_cursor[1]                                                                                                       ; 5       ;
 ; VGA_Framebuffer:vga|x_cursor[0]                                                                                                       ; 5       ;
+; HI_Datapath:datapath|LessThan56~9                                                                                                     ; 4       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT~17                                                                 ; 4       ;
+; HI_Datapath:datapath|BORDER_REACHED.DIR_LEFT~reg0                                                                                     ; 4       ;
+; HI_Datapath:datapath|Add26~2                                                                                                          ; 4       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_column[2]                                                      ; 4       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[1]                                                       ; 4       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[2]                                                                             ; 4       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[2]                                                                             ; 4       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[2]                                                                             ; 4       ;
+; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3]                                                                             ; 4       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[3]                                                                             ; 4       ;
+; HI_Datapath:datapath|HITBOX.up_left_x[5]~2                                                                                            ; 4       ;
+; HI_Datapath:datapath|alien_grid[0][1].hitbox.up_left_y[2]                                                                             ; 4       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_y[4]                                                                            ; 4       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_y[5]                                                                            ; 4       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_y[6]                                                                            ; 4       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_y[7]                                                                            ; 4       ;
 ; HI_View:view|pixel_scale_factor_y[12]                                                                                                 ; 4       ;
 ; HI_View:view|pixel_scale_factor_y[11]                                                                                                 ; 4       ;
 ; HI_View:view|pixel_scale_factor_y[10]                                                                                                 ; 4       ;
@@ -1892,12 +1922,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Hi_View_Control_Unit:view_control_unit|LessThan0~10                                                                                   ; 4       ;
 ; HI_View:view|state.CLEARING                                                                                                           ; 4       ;
 ; HI_View:view|reg_hitbox.size_x[3]                                                                                                     ; 4       ;
-; HI_View:view|reg_hitbox.up_left_y[3]                                                                                                  ; 4       ;
-; HI_View:view|reg_hitbox.up_left_y[4]                                                                                                  ; 4       ;
 ; HI_View:view|reg_sprite.img_pixels[5][0]                                                                                              ; 4       ;
 ; HI_View:view|reg_sprite.img_pixels[0][4]                                                                                              ; 4       ;
 ; Hi_View_Control_Unit:view_control_unit|state.WAITING_2                                                                                ; 4       ;
-; HI_View:view|Selector65~1                                                                                                             ; 4       ;
+; HI_View:view|Selector69~1                                                                                                             ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|clock_count[0]                                                                              ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|Equal3~0                                                                                    ; 4       ;
 ; VGA_Framebuffer:vga|VGA_Timing:vga_timing|h_counter[4]                                                                                ; 4       ;
@@ -1939,15 +1967,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|row[3]~SCLR_LUT                                                                                                          ; 3       ;
 ; HI_View:view|row[2]~SCLR_LUT                                                                                                          ; 3       ;
 ; HI_View:view|row[1]~SCLR_LUT                                                                                                          ; 3       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[2]~2                                                     ; 3       ;
+; HI_Datapath:datapath|BORDER_REACHED~9                                                                                                 ; 3       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:grid_movement.DIR_LEFT                                   ; 3       ;
+; HI_Datapath:datapath|BORDER_REACHED.DIR_RIGHT~reg0                                                                                    ; 3       ;
+; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[0]~2                                                     ; 3       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_column[3]                                                      ; 3       ;
 ; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:rendered_alien[2]                                                       ; 3       ;
 ; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[2]                                                                             ; 3       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[3]                                                                             ; 3       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[3]                                                                             ; 3       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[3]                                                                             ; 3       ;
+; HI_Datapath:datapath|Mux517~0                                                                                                         ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[4]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[4]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[5]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[5]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[6]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[6]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_x[7]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[7]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[7]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[7]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_x[8]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[8]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[8]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[8]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][4].hitbox.up_left_x[9]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[9]                                                                            ; 3       ;
+; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[9]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[9]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[4]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[5]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[6]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[7]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[8]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[8]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[9]                                                                             ; 3       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[9]                                                                             ; 3       ;
 ; HI_Datapath:datapath|Mux480~0                                                                                                         ; 3       ;
-; HI_View:view|next_state.WAITING~0                                                                                                     ; 3       ;
+; HI_View:view|next_state.CLEARING~0                                                                                                    ; 3       ;
 ; HI_View:view|next_state.SHOWING                                                                                                       ; 3       ;
 ; HI_View:view|Selector31~0                                                                                                             ; 3       ;
 ; HI_View:view|Selector63~0                                                                                                             ; 3       ;
@@ -2113,33 +2168,132 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[658]~334            ; 2       ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[659]~333            ; 2       ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[660]~332            ; 2       ;
-; VGA_Framebuffer:vga|Selector1~7                                                                                                       ; 2       ;
+; VGA_Framebuffer:vga|Selector0~8                                                                                                       ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[31]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[30]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[25]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[26]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[27]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[28]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[29]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[24]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[17]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[18]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[19]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[20]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[21]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[22]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[23]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[16]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[15]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[14]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[13]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[12]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[11]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][4].hitbox.up_left_y[10]                                                                            ; 2       ;
+; HI_Datapath:datapath|LessThan58~8                                                                                                     ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[10]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[11]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[12]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[13]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[14]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[15]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[16]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[17]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[18]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[19]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[20]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[21]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[22]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[23]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[24]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[25]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[26]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[27]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[28]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[29]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[30]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_y[31]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[10]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[11]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[12]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[13]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[14]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[15]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[16]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[17]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[18]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[19]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[20]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[21]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[22]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[23]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[24]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[25]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[26]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[27]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[28]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[29]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[30]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[31]                                                                            ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[31]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[30]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[25]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[26]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[27]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[28]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[29]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[24]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[17]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[18]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[19]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[20]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[21]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[22]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[23]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[16]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[15]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[14]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[13]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[12]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[11]                                                                           ; 2       ;
+; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[10]                                                                           ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached.DIR_LEFT                               ; 2       ;
+; HI_Datapath:datapath|BORDER_REACHED.DIR_UP~reg0                                                                                       ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached.DIR_UP                                 ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached.DIR_RIGHT                              ; 2       ;
+; HI_Datapath:datapath|BORDER_REACHED.DIR_DOWN~reg0                                                                                     ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached.DIR_DOWN                               ; 2       ;
+; HI_Datapath:datapath|BORDER_REACHED.DIR_NONE~reg0                                                                                     ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached.DIR_NONE                               ; 2       ;
 ; \game_tick_gen:counter[0]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[1]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[2]                                                                                                             ; 2       ;
+; \game_tick_gen:counter[6]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[3]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[4]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[5]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[7]                                                                                                             ; 2       ;
+; \game_tick_gen:counter[10]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[8]                                                                                                             ; 2       ;
 ; \game_tick_gen:counter[9]                                                                                                             ; 2       ;
-; \game_tick_gen:counter[6]                                                                                                             ; 2       ;
-; \game_tick_gen:counter[10]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[11]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[12]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[13]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[16]                                                                                                            ; 2       ;
+; \game_tick_gen:counter[11]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[14]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[15]                                                                                                            ; 2       ;
+; \game_tick_gen:counter[16]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[17]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[18]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[19]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[20]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[21]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[24]                                                                                                            ; 2       ;
+; \game_tick_gen:counter[19]                                                                                                            ; 2       ;
 ; \game_tick_gen:counter[22]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[23]                                                                                                            ; 2       ;
-; \game_tick_gen:counter[25]                                                                                                            ; 2       ;
+; HI_Datapath:datapath|Add76~1                                                                                                          ; 2       ;
+; HI_Datapath:datapath|Add76~0                                                                                                          ; 2       ;
+; HI_Datapath:datapath|Add26~1                                                                                                          ; 2       ;
+; HI_Datapath:datapath|Add26~0                                                                                                          ; 2       ;
+; Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT.DIR_DOWN~reg0                                                      ; 2       ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[932]~256            ; 2       ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[933]~255            ; 2       ;
 ; HI_View:view|lpm_divide:Div1|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[934]~254            ; 2       ;
@@ -2566,157 +2720,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[691]~78             ; 2       ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[692]~77             ; 2       ;
 ; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[693]~76             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[640]~75             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[642]~74             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[643]~73             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[644]~72             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[609]~70             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[610]~69             ; 2       ;
-; HI_View:view|lpm_divide:Div0|lpm_divide_nto:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider|StageOut[611]~68             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[3]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[3]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[3]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[3]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[3]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[4]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[4]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[5]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[5]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[6]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[6]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[7]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[7]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[8]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[8]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[7][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[4][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[5][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[6][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[10][0].hitbox.up_left_x[9]                                                                            ; 2       ;
-; HI_Datapath:datapath|alien_grid[8][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[9][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[3][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[0][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[2][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|alien_grid[1][0].hitbox.up_left_x[9]                                                                             ; 2       ;
-; HI_Datapath:datapath|Mux27~0                                                                                                          ; 2       ;
-; HI_Datapath:datapath|Mux482~0                                                                                                         ; 2       ;
-; HI_Datapath:datapath|Mux460~3                                                                                                         ; 2       ;
-; HI_Datapath:datapath|Mux381~0                                                                                                         ; 2       ;
-; HI_View:view|Selector0~1                                                                                                              ; 2       ;
-; HI_Datapath:datapath|Mux444~0                                                                                                         ; 2       ;
-; HI_Datapath:datapath|Mux362~0                                                                                                         ; 2       ;
-; HI_Datapath:datapath|Mux460~1                                                                                                         ; 2       ;
-; HI_Datapath:datapath|Mux28~0                                                                                                          ; 2       ;
-; HI_View:view|Selector32~1                                                                                                             ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|REQUEST_ENTITY_SPRITE.entity_type.ALIEN~reg0                                                   ; 2       ;
-; HI_View:view|Selector72~0                                                                                                             ; 2       ;
-; HI_View:view|next_state.IDLE                                                                                                          ; 2       ;
-; HI_View:view|Selector64~0                                                                                                             ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|REQ_NEXT_SPRITE                                                                                ; 2       ;
-; HI_View:view|next_state.INIT                                                                                                          ; 2       ;
-; HI_View:view|next_state.CLEARING                                                                                                      ; 2       ;
-; HI_View:view|row[31]~_Duplicate_1                                                                                                     ; 2       ;
-; HI_View:view|column[31]~_Duplicate_1                                                                                                  ; 2       ;
-; HI_View:view|next_state.DRAWING                                                                                                       ; 2       ;
-; VGA_Framebuffer:vga|y_end[8]~10                                                                                                       ; 2       ;
-; HI_View:view|next_state~14                                                                                                            ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[6]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[7]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[8]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[9]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[10]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[11]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[12]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[13]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[14]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[15]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[16]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[17]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[18]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[19]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[20]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[21]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[22]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[4]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[5]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[3]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[0]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[1]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[2]                                                       ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[23]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[24]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[25]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[26]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[27]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[28]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[29]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[30]                                                      ; 2       ;
-; Hi_View_Control_Unit:view_control_unit|\datapath_entity_query:render_counter[31]                                                      ; 2       ;
-; \frame_time_gen:counter[11]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[6]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[7]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[4]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[5]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[8]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[9]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[10]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[14]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[12]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[13]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[15]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[16]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[17]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[18]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[19]                                                                                                           ; 2       ;
-; \frame_time_gen:counter[0]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[1]                                                                                                            ; 2       ;
-; \frame_time_gen:counter[3]                                                                                                            ; 2       ;
 +---------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -2742,30 +2745,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 ; Name                                                             ; Mode                       ; Location           ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
 +------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
-; HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y14_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y14_N0 ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y13_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y13_N0 ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
 ; HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y15_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
 ;    HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y15_N0 ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y16_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y16_N0 ; Variable            ;                                ; no                    ; yes                   ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y8_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y8_N0  ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y9_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y9_N0  ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y10_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y10_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y13_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y13_N0 ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y12_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y12_N0 ; Variable            ;                                ; no                    ; yes                   ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y11_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y11_N0 ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y18_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y18_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y17_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y17_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
-; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y19_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y19_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y14_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult0|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y14_N0 ; Variable            ;                                ; no                    ; yes                   ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y4_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y4_N0  ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y3_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y3_N0  ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y5_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult3|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y5_N0  ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y7_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y7_N0  ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y6_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y6_N0  ; Variable            ;                                ; no                    ; yes                   ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y8_N2   ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult2|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y8_N0  ; Variable            ;                                ; yes                   ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y12_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult3 ;                            ; DSPMULT_X28_Y12_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_out6     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y10_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult5 ;                            ; DSPMULT_X28_Y10_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
+; HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|w569w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X28_Y11_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    HI_View:view|lpm_mult:Mult1|mult_i1t:auto_generated|mac_mult1 ;                            ; DSPMULT_X28_Y11_N0 ; Variable            ;                                ; no                    ; no                    ; no                ;                 ;
 +------------------------------------------------------------------+----------------------------+--------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 
 
@@ -2774,52 +2777,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 3,587 / 54,004 ( 7 % ) ;
-; C16 interconnects           ; 6 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 1,655 / 36,000 ( 5 % ) ;
-; Direct links                ; 864 / 54,004 ( 2 % )   ;
+; Block interconnects         ; 3,933 / 54,004 ( 7 % ) ;
+; C16 interconnects           ; 7 / 2,100 ( < 1 % )    ;
+; C4 interconnects            ; 1,763 / 36,000 ( 5 % ) ;
+; Direct links                ; 985 / 54,004 ( 2 % )   ;
 ; Global clocks               ; 4 / 16 ( 25 % )        ;
-; Local interconnects         ; 964 / 18,752 ( 5 % )   ;
-; R24 interconnects           ; 8 / 1,900 ( < 1 % )    ;
-; R4 interconnects            ; 1,537 / 46,920 ( 3 % ) ;
+; Local interconnects         ; 1,194 / 18,752 ( 6 % ) ;
+; R24 interconnects           ; 16 / 1,900 ( < 1 % )   ;
+; R4 interconnects            ; 1,660 / 46,920 ( 4 % ) ;
 +-----------------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 12.81) ; Number of LABs  (Total = 204) ;
+; Number of Logic Elements  (Average = 13.12) ; Number of LABs  (Total = 226) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 4                             ;
-; 2                                           ; 9                             ;
-; 3                                           ; 6                             ;
-; 4                                           ; 7                             ;
-; 5                                           ; 3                             ;
-; 6                                           ; 6                             ;
-; 7                                           ; 1                             ;
-; 8                                           ; 2                             ;
-; 9                                           ; 4                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 11                            ;
-; 12                                          ; 7                             ;
-; 13                                          ; 3                             ;
-; 14                                          ; 20                            ;
-; 15                                          ; 13                            ;
-; 16                                          ; 106                           ;
+; 1                                           ; 8                             ;
+; 2                                           ; 4                             ;
+; 3                                           ; 5                             ;
+; 4                                           ; 6                             ;
+; 5                                           ; 6                             ;
+; 6                                           ; 4                             ;
+; 7                                           ; 6                             ;
+; 8                                           ; 1                             ;
+; 9                                           ; 7                             ;
+; 10                                          ; 5                             ;
+; 11                                          ; 3                             ;
+; 12                                          ; 5                             ;
+; 13                                          ; 4                             ;
+; 14                                          ; 15                            ;
+; 15                                          ; 14                            ;
+; 16                                          ; 133                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 1.04) ; Number of LABs  (Total = 204) ;
+; LAB-wide Signals  (Average = 1.15) ; Number of LABs  (Total = 226) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 69                            ;
-; 1 Clock                            ; 82                            ;
-; 1 Clock enable                     ; 51                            ;
+; 1 Async. clear                     ; 81                            ;
+; 1 Clock                            ; 98                            ;
+; 1 Clock enable                     ; 73                            ;
 ; 1 Sync. clear                      ; 2                             ;
 ; 1 Sync. load                       ; 1                             ;
-; 2 Clock enables                    ; 5                             ;
+; 2 Clock enables                    ; 4                             ;
 ; 2 Clocks                           ; 2                             ;
 +------------------------------------+-------------------------------+
 
@@ -2827,122 +2830,113 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 14.52) ; Number of LABs  (Total = 204) ;
+; Number of Signals Sourced  (Average = 15.16) ; Number of LABs  (Total = 226) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 2                             ;
-; 1                                            ; 5                             ;
-; 2                                            ; 9                             ;
-; 3                                            ; 10                            ;
-; 4                                            ; 7                             ;
-; 5                                            ; 3                             ;
+; 1                                            ; 8                             ;
+; 2                                            ; 7                             ;
+; 3                                            ; 9                             ;
+; 4                                            ; 4                             ;
+; 5                                            ; 5                             ;
 ; 6                                            ; 5                             ;
-; 7                                            ; 1                             ;
-; 8                                            ; 3                             ;
+; 7                                            ; 8                             ;
+; 8                                            ; 2                             ;
 ; 9                                            ; 4                             ;
-; 10                                           ; 5                             ;
-; 11                                           ; 3                             ;
-; 12                                           ; 6                             ;
-; 13                                           ; 4                             ;
-; 14                                           ; 14                            ;
+; 10                                           ; 6                             ;
+; 11                                           ; 4                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 5                             ;
+; 14                                           ; 9                             ;
 ; 15                                           ; 14                            ;
-; 16                                           ; 46                            ;
-; 17                                           ; 6                             ;
-; 18                                           ; 5                             ;
+; 16                                           ; 50                            ;
+; 17                                           ; 5                             ;
+; 18                                           ; 2                             ;
 ; 19                                           ; 5                             ;
-; 20                                           ; 5                             ;
-; 21                                           ; 8                             ;
-; 22                                           ; 2                             ;
-; 23                                           ; 4                             ;
-; 24                                           ; 8                             ;
-; 25                                           ; 7                             ;
+; 20                                           ; 7                             ;
+; 21                                           ; 7                             ;
+; 22                                           ; 11                            ;
+; 23                                           ; 10                            ;
+; 24                                           ; 6                             ;
+; 25                                           ; 6                             ;
 ; 26                                           ; 4                             ;
-; 27                                           ; 3                             ;
-; 28                                           ; 2                             ;
+; 27                                           ; 5                             ;
+; 28                                           ; 5                             ;
 ; 29                                           ; 1                             ;
-; 30                                           ; 2                             ;
-; 31                                           ; 0                             ;
-; 32                                           ; 1                             ;
+; 30                                           ; 0                             ;
+; 31                                           ; 3                             ;
+; 32                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                          ;
-+--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 10.03) ; Number of LABs  (Total = 204) ;
-+--------------------------------------------------+-------------------------------+
-; 0                                                ; 3                             ;
-; 1                                                ; 11                            ;
-; 2                                                ; 9                             ;
-; 3                                                ; 11                            ;
-; 4                                                ; 7                             ;
-; 5                                                ; 5                             ;
-; 6                                                ; 9                             ;
-; 7                                                ; 10                            ;
-; 8                                                ; 7                             ;
-; 9                                                ; 11                            ;
-; 10                                               ; 13                            ;
-; 11                                               ; 9                             ;
-; 12                                               ; 21                            ;
-; 13                                               ; 15                            ;
-; 14                                               ; 21                            ;
-; 15                                               ; 18                            ;
-; 16                                               ; 17                            ;
-; 17                                               ; 3                             ;
-; 18                                               ; 1                             ;
-; 19                                               ; 1                             ;
-; 20                                               ; 0                             ;
-; 21                                               ; 1                             ;
-; 22                                               ; 0                             ;
-; 23                                               ; 0                             ;
-; 24                                               ; 0                             ;
-; 25                                               ; 0                             ;
-; 26                                               ; 0                             ;
-; 27                                               ; 0                             ;
-; 28                                               ; 0                             ;
-; 29                                               ; 0                             ;
-; 30                                               ; 0                             ;
-; 31                                               ; 0                             ;
-; 32                                               ; 1                             ;
-+--------------------------------------------------+-------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++-------------------------------------------------+-------------------------------+
+; Number of Signals Sourced Out  (Average = 9.91) ; Number of LABs  (Total = 226) ;
++-------------------------------------------------+-------------------------------+
+; 0                                               ; 4                             ;
+; 1                                               ; 16                            ;
+; 2                                               ; 6                             ;
+; 3                                               ; 15                            ;
+; 4                                               ; 8                             ;
+; 5                                               ; 5                             ;
+; 6                                               ; 7                             ;
+; 7                                               ; 9                             ;
+; 8                                               ; 10                            ;
+; 9                                               ; 14                            ;
+; 10                                              ; 13                            ;
+; 11                                              ; 17                            ;
+; 12                                              ; 19                            ;
+; 13                                              ; 14                            ;
+; 14                                              ; 17                            ;
+; 15                                              ; 19                            ;
+; 16                                              ; 28                            ;
+; 17                                              ; 1                             ;
+; 18                                              ; 0                             ;
+; 19                                              ; 1                             ;
+; 20                                              ; 0                             ;
+; 21                                              ; 1                             ;
+; 22                                              ; 2                             ;
++-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 15.87) ; Number of LABs  (Total = 204) ;
+; Number of Distinct Inputs  (Average = 15.73) ; Number of LABs  (Total = 226) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 3                             ;
-; 2                                            ; 1                             ;
-; 3                                            ; 6                             ;
-; 4                                            ; 2                             ;
-; 5                                            ; 12                            ;
-; 6                                            ; 5                             ;
+; 1                                            ; 1                             ;
+; 2                                            ; 3                             ;
+; 3                                            ; 5                             ;
+; 4                                            ; 7                             ;
+; 5                                            ; 7                             ;
+; 6                                            ; 8                             ;
 ; 7                                            ; 5                             ;
-; 8                                            ; 4                             ;
-; 9                                            ; 5                             ;
+; 8                                            ; 8                             ;
+; 9                                            ; 6                             ;
 ; 10                                           ; 6                             ;
-; 11                                           ; 5                             ;
-; 12                                           ; 11                            ;
-; 13                                           ; 9                             ;
-; 14                                           ; 9                             ;
-; 15                                           ; 13                            ;
-; 16                                           ; 13                            ;
-; 17                                           ; 17                            ;
-; 18                                           ; 5                             ;
+; 11                                           ; 7                             ;
+; 12                                           ; 9                             ;
+; 13                                           ; 15                            ;
+; 14                                           ; 14                            ;
+; 15                                           ; 5                             ;
+; 16                                           ; 22                            ;
+; 17                                           ; 12                            ;
+; 18                                           ; 9                             ;
 ; 19                                           ; 14                            ;
-; 20                                           ; 8                             ;
-; 21                                           ; 6                             ;
+; 20                                           ; 10                            ;
+; 21                                           ; 7                             ;
 ; 22                                           ; 7                             ;
-; 23                                           ; 4                             ;
+; 23                                           ; 3                             ;
 ; 24                                           ; 3                             ;
-; 25                                           ; 3                             ;
-; 26                                           ; 2                             ;
-; 27                                           ; 6                             ;
+; 25                                           ; 4                             ;
+; 26                                           ; 1                             ;
+; 27                                           ; 3                             ;
 ; 28                                           ; 12                            ;
-; 29                                           ; 3                             ;
+; 29                                           ; 6                             ;
 ; 30                                           ; 4                             ;
-; 31                                           ; 1                             ;
+; 31                                           ; 2                             ;
+; 32                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -3228,14 +3222,14 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:07
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 3% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 9% of the available device resources in the region that extends from location X25_Y0 to location X37_Y13
+    Info (170196): Router estimated peak interconnect usage is 11% of the available device resources in the region that extends from location X25_Y0 to location X37_Y13
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 2.11 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 2.09 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 71 output pins without output pin load capacitance assignment
     Info (306007): Pin "SRAM_DQ[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -3317,9 +3311,9 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/output_files/HardwareInvaders.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 198 warnings
-    Info: Peak virtual memory: 796 megabytes
-    Info: Processing ended: Sat Apr 14 20:08:36 2018
-    Info: Elapsed time: 00:00:19
+    Info: Peak virtual memory: 799 megabytes
+    Info: Processing ended: Sun Apr 15 18:25:37 2018
+    Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:19
 
 

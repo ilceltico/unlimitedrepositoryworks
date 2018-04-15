@@ -59,6 +59,8 @@ architecture RTL of HardwareInvaders is
 	signal fb_vsync			  : std_logic;
 	signal req_next_sprite 	  : std_logic;
 	signal request_entity_sprite	: datapath_entity_index_type;
+	signal alien_grid_movement : direction_type;
+	signal border_reached	: direction_type;
 
 begin
 
@@ -81,7 +83,7 @@ begin
 	end process;
 
 	frame_time_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (833333 - 1);
+		variable counter : integer range 0 to (FRAME_TIME_50MHz - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
@@ -98,7 +100,7 @@ begin
 	end process;
 	
 	game_tick_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (50000000 - 1);
+		variable counter : integer range 0 to (BASE_ALIEN_FRAME_TIME_50MHz - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
@@ -193,13 +195,26 @@ begin
 		datapath : entity work.HI_Datapath
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
-			RESET_N			=> RESET_N,
-			REQ_NEXT_SPRITE => req_next_sprite,
-			CHANGE_ALIEN_SPRITES		=> game_tick,
+			CLOCK							=> clock_50MHz,
+			RESET_N						=> RESET_N,
+			REQ_NEXT_SPRITE 			=> req_next_sprite,
+			ADVANCE_ALIENS				=> game_tick,
 			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
+			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			
-			SPRITE 				=> sprite_to_render,
-			HITBOX				=> hitbox_to_render
-		);		
+			SPRITE 						=> sprite_to_render,
+			HITBOX						=> hitbox_to_render,
+			BORDER_REACHED				=> border_reached
+		);	
+	
+		datapath_control_unit : entity work.HI_Datapath_Control_Unit
+		port map
+		(
+			CLOCK => clock_50MHz,
+			RESET_N => RESET_N, 
+			BORDER_REACHED => border_reached,
+			GAME_TICK	=> game_tick,
+			
+			ALIEN_GRID_MOVEMENT => alien_grid_movement
+		);
 end architecture;

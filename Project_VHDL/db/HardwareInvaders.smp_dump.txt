@@ -1,4 +1,36 @@
 
+State Machine - |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT
+Name ALIEN_GRID_MOVEMENT.DIR_NONE~reg0 ALIEN_GRID_MOVEMENT.DIR_DOWN~reg0 ALIEN_GRID_MOVEMENT.DIR_UP~reg0 ALIEN_GRID_MOVEMENT.DIR_LEFT~reg0 ALIEN_GRID_MOVEMENT.DIR_RIGHT~reg0 
+ALIEN_GRID_MOVEMENT.DIR_RIGHT~reg0 0 0 0 0 0 
+ALIEN_GRID_MOVEMENT.DIR_LEFT~reg0 0 0 0 1 1 
+ALIEN_GRID_MOVEMENT.DIR_UP~reg0 0 0 1 0 1 
+ALIEN_GRID_MOVEMENT.DIR_DOWN~reg0 0 1 0 0 1 
+ALIEN_GRID_MOVEMENT.DIR_NONE~reg0 1 0 0 0 1 
+
+State Machine - |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:last_wall_reached
+Name \alien_grid_movement_handling:last_wall_reached.DIR_NONE \alien_grid_movement_handling:last_wall_reached.DIR_DOWN \alien_grid_movement_handling:last_wall_reached.DIR_UP \alien_grid_movement_handling:last_wall_reached.DIR_RIGHT \alien_grid_movement_handling:last_wall_reached.DIR_LEFT 
+\alien_grid_movement_handling:last_wall_reached.DIR_LEFT 0 0 0 0 0 
+\alien_grid_movement_handling:last_wall_reached.DIR_RIGHT 0 0 0 1 1 
+\alien_grid_movement_handling:last_wall_reached.DIR_UP 0 0 1 0 1 
+\alien_grid_movement_handling:last_wall_reached.DIR_DOWN 0 1 0 0 1 
+\alien_grid_movement_handling:last_wall_reached.DIR_NONE 1 0 0 0 1 
+
+State Machine - |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|\alien_grid_movement_handling:grid_movement
+Name \alien_grid_movement_handling:grid_movement.DIR_NONE \alien_grid_movement_handling:grid_movement.DIR_DOWN \alien_grid_movement_handling:grid_movement.DIR_UP \alien_grid_movement_handling:grid_movement.DIR_LEFT \alien_grid_movement_handling:grid_movement.DIR_RIGHT 
+\alien_grid_movement_handling:grid_movement.DIR_RIGHT 0 0 0 0 0 
+\alien_grid_movement_handling:grid_movement.DIR_LEFT 0 0 0 1 1 
+\alien_grid_movement_handling:grid_movement.DIR_UP 0 0 1 0 1 
+\alien_grid_movement_handling:grid_movement.DIR_DOWN 0 1 0 0 1 
+\alien_grid_movement_handling:grid_movement.DIR_NONE 1 0 0 0 1 
+
+State Machine - |HardwareInvaders|HI_Datapath:datapath|BORDER_REACHED
+Name BORDER_REACHED.DIR_LEFT~reg0 BORDER_REACHED.DIR_DOWN~reg0 BORDER_REACHED.DIR_UP~reg0 BORDER_REACHED.DIR_RIGHT~reg0 BORDER_REACHED.DIR_NONE~reg0 
+BORDER_REACHED.DIR_NONE~reg0 0 0 0 0 0 
+BORDER_REACHED.DIR_RIGHT~reg0 0 0 0 1 1 
+BORDER_REACHED.DIR_UP~reg0 0 0 1 0 1 
+BORDER_REACHED.DIR_DOWN~reg0 0 1 0 0 1 
+BORDER_REACHED.DIR_LEFT~reg0 1 0 0 0 1 
+
 State Machine - |HardwareInvaders|HI_View:view|next_state
 Name next_state.INIT next_state.CLEARING next_state.SHOWING next_state.DRAWING next_state.WAITING next_state.IDLE 
 next_state.IDLE 0 0 0 0 0 0 

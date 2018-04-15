@@ -1,5 +1,5 @@
 Flow report for HardwareInvaders
-Sat Apr 14 20:08:45 2018
+Sun Apr 15 18:25:47 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Apr 14 20:08:45 2018           ;
+; Flow Status                        ; Successful - Sun Apr 15 18:25:47 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HardwareInvaders                                ;
 ; Top-level Entity Name              ; HardwareInvaders                                ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 2,605 / 18,752 ( 14 % )                         ;
-;     Total combinational functions  ; 2,562 / 18,752 ( 14 % )                         ;
-;     Dedicated logic registers      ; 540 / 18,752 ( 3 % )                            ;
-; Total registers                    ; 540                                             ;
+; Total logic elements               ; 2,958 / 18,752 ( 16 % )                         ;
+;     Total combinational functions  ; 2,899 / 18,752 ( 15 % )                         ;
+;     Dedicated logic registers      ; 689 / 18,752 ( 4 % )                            ;
+; Total registers                    ; 689                                             ;
 ; Total pins                         ; 86 / 315 ( 27 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/14/2018 20:08:06 ;
+; Start date & time ; 04/15/2018 18:24:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HardwareInvaders    ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 35490513764543.152372928507028 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 35490513764543.152380949608148 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --             ;
@@ -92,12 +92,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 646 MB              ; 00:00:10                           ;
-; Fitter                    ; 00:00:18     ; 1.0                     ; 796 MB              ; 00:00:18                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 478 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 522 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 472 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:33     ; --                      ; --                  ; 00:00:33                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 654 MB              ; 00:00:19                           ;
+; Fitter                    ; 00:00:19     ; 1.0                     ; 799 MB              ; 00:00:18                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 486 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 531 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 469 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:46     ; --                      ; --                  ; 00:00:44                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

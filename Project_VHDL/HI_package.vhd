@@ -82,7 +82,7 @@ package HI_package is
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 0;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
-	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 50000000;
+	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 5000000;
 	constant ALIEN_FRAME_TIME_DECREASE_50MHz 			: natural := (BASE_ALIEN_FRAME_TIME_50MHz - FRAME_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); --Nanoseconds decrease each time an alien gets destroyed
 	constant BASE_ALIEN_BULLET_GEN_TIME_50MHz 		: natural := 100000000; --One bullet per 2 seconds
 	constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
@@ -242,7 +242,7 @@ package HI_package is
 		random_alien_exploding	: std_logic;
 	end record;
 	
-	type direction_type is (DIR_LEFT, DIR_RIGHT, DIR_NONE);
+	type direction_type is (DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_NONE);
 	
 	--------------------------------------------------------------
 	--					     ARRAY OF ALL SPRITES	                  --

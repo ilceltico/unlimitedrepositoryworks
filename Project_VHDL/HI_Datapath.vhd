@@ -9,7 +9,7 @@ entity HI_Datapath is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		CHANGE_ALIEN_SPRITES 		: in  std_logic;
+		ADVANCE_ALIENS 				: in  std_logic;
 		REQ_NEXT_SPRITE				: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
 --		COLUMN_INDEX					: in 	alien_grid_index_type;
@@ -17,7 +17,7 @@ entity HI_Datapath is
 --		NEW_LEVEL						: in 	std_logic;
 --		PLAYER_MOVEMENT				: in 	direction_type;
 --		PLAYER_SHOOT					: in 	std_logic;
---		ALIEN_GRID_MOVEMENT			: in 	direction_type;
+		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 --		ALIEN_SHOOT						: in 	std_logic;
 --		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 --		SHOW_RAND_ALIEN				: in 	direction_type;
@@ -28,12 +28,12 @@ entity HI_Datapath is
 --		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
 		SPRITE 							: out sprite_type;
-		HITBOX							: out hitbox_type
+		HITBOX							: out hitbox_type;
 --		SCORE								: out integer;
 --		LIVES								: out integer;
 --		LIVING_ALIEN_COUNT			: out integer;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
---		BORDER_REACHED					: out direction_type;
+		BORDER_REACHED					: out direction_type
 --		RAND_ALIEN_BORDER_REACHED	: out direction_type;
 --		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
@@ -45,8 +45,7 @@ architecture RTL of HI_Datapath is
 
 begin
 	
-	process(CLOCK, RESET_N) is 
-	
+	render_entity_query : process(CLOCK, RESET_N) is 
 	begin
 		
 		if (RESET_N = '0') then 
@@ -70,7 +69,7 @@ begin
 		
 	end process;
 	
-	process(CLOCK, RESET_N) is 
+	alien_grid_handling : process(CLOCK, RESET_N) is 
 	begin
 		
 		if (RESET_N = '0') then 
@@ -86,11 +85,14 @@ begin
 					elsif (J >= ALIEN_3_ROWS + ALIEN_2_ROWS and J < ALIEN_3_ROWS + ALIEN_2_ROWS + ALIEN_1_ROWS) then
 						alien_grid(I)(J).sprite_indexes <= (ALIEN_1_1_SPRITE, ALIEN_1_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
 					end if;
-					alien_grid(I)(J).hitbox.up_left_x <= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
-					alien_grid(I)(J).hitbox.up_left_y <= FIRST_ALIEN_CELL_Y + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);
-					alien_grid(I)(J).hitbox.size_x <= ALIEN_SIZE_X;
-					alien_grid(I)(J).hitbox.size_y <= ALIEN_SIZE_Y;
-					alien_grid(I)(J).current_index <= 0;
+					
+					alien_grid(I)(J).hitbox.up_left_x 	<= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
+					alien_grid(I)(J).hitbox.up_left_y 	<= FIRST_ALIEN_CELL_Y + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);
+					alien_grid(I)(J).hitbox.size_x 		<= ALIEN_SIZE_X;
+					alien_grid(I)(J).hitbox.size_y 		<= ALIEN_SIZE_Y;
+					alien_grid(I)(J).current_index 		<= 0;
+					alien_grid(I)(J).visible 				<= '0';
+					alien_grid(I)(J).exploding 			<= '0';
 		
 				end loop;	
 				
@@ -98,12 +100,25 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then 
 		
-			if (CHANGE_ALIEN_SPRITES = '1') then 
+			if (ADVANCE_ALIENS = '1') then 
 			
 				for I in 0 to COLUMNS_PER_GRID - 1 loop
+				
 					for J in 0 to ALIENS_PER_COLUMN - 1 loop
 			
-						alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
+						case (ALIEN_GRID_MOVEMENT) is
+						
+							when DIR_RIGHT => 
+								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
+							when DIR_LEFT =>
+								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
+							when DIR_UP =>
+								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
+							when DIR_DOWN =>
+								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
+							when DIR_NONE =>
+						
+						end case;	
 						
 						if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
 							alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
@@ -111,7 +126,8 @@ begin
 							alien_grid(I)(J).current_index <= 0;
 						end if;
 					
-					end loop;	
+					end loop;
+					
 				end loop;
 				
 			end if;
@@ -119,5 +135,30 @@ begin
 		end if;
 		
 	end process;
-
+	
+	border_collision_detection : process(CLOCK, RESET_N) is
+	begin
+	
+		if (RESET_N = '0') then 
+		
+			BORDER_REACHED <= DIR_NONE;
+			
+		elsif (rising_edge(CLOCK)) then 
+		
+			if (alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.up_left_x + alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
+				BORDER_REACHED <= DIR_RIGHT;
+			elsif (alien_grid(0)(0).hitbox.up_left_x < SIDE_MARGIN) then
+				BORDER_REACHED <= DIR_LEFT;
+			elsif (alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.up_left_y + alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
+				BORDER_REACHED <= DIR_DOWN;
+			elsif (alien_grid(0)(0).hitbox.up_left_y < TOP_MARGIN) then
+				BORDER_REACHED <= DIR_UP;
+			else
+				BORDER_REACHED <= DIR_NONE;
+			end if;
+		
+		end if;
+		
+	end process;
+	
 end architecture;
