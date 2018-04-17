@@ -13,8 +13,8 @@ package HI_package is
 	constant SPRITE_SIZE										: natural 	:= 32;
 	
 	constant ALIENS_PER_COLUMN								: natural	:= 5;
-	constant COLUMNS_PER_GRID 								: natural  := 11;
-	constant SHIELD_COUNT									: natural  := 16;
+	constant COLUMNS_PER_GRID 								: natural  	:= 11;
+	constant SHIELD_COUNT									: natural  	:= 16;
 	constant BULLET_COUNT									: natural 	:= 3;
 	constant ALIEN_SIZE_X									: natural 	:= 26;
 	constant ALIEN_SIZE_y									: natural 	:= 26;
@@ -25,7 +25,7 @@ package HI_package is
 	constant BOTTOM_MARGIN 									: natural	:= 10;
 	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
 	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
-	constant INDEX_1_MAX										: natural  := 16; 
+	constant INDEX_1_MAX										: natural 	:= 16; 
 	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
 	
 	constant FRAME_TIME_50MHz 								: natural := 833333;
@@ -82,7 +82,7 @@ package HI_package is
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 0;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
-	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 5000000;
+	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 50000000;
 	constant ALIEN_FRAME_TIME_DECREASE_50MHz 			: natural := (BASE_ALIEN_FRAME_TIME_50MHz - FRAME_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); --Nanoseconds decrease each time an alien gets destroyed
 	constant BASE_ALIEN_BULLET_GEN_TIME_50MHz 		: natural := 100000000; --One bullet per 2 seconds
 	constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second

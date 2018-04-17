@@ -12,8 +12,8 @@ entity HI_Datapath is
 		ADVANCE_ALIENS 				: in  std_logic;
 		REQ_NEXT_SPRITE				: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
---		COLUMN_INDEX					: in 	alien_grid_index_type;
---		ROW_INDEX						: in 	alien_column_index_type;
+		COLUMN_INDEX					: in 	alien_grid_index_type;
+		ROW_INDEX						: in 	alien_column_index_type;
 --		NEW_LEVEL						: in 	std_logic;
 --		PLAYER_MOVEMENT				: in 	direction_type;
 --		PLAYER_SHOOT					: in 	std_logic;
@@ -22,7 +22,7 @@ entity HI_Datapath is
 --		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 --		SHOW_RAND_ALIEN				: in 	direction_type;
 --		DESTROY_ALIEN					: in 	std_logic;
---		HIDE_ALIEN						: in 	std_logic;
+		HIDE_ALIEN						: in 	std_logic;
 --		DESTROY_PLAYER					: in 	std_logic;
 --		ADVANCE_PLAYER_BULLETS		: in 	std_logic;
 --		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
@@ -41,7 +41,12 @@ end entity;
 
 architecture RTL of HI_Datapath is 
 
-	signal alien_grid : alien_grid_type;
+	signal alien_grid 	: alien_grid_type;
+	
+	signal first_column 	: alien_grid_index_type;
+	signal first_row 		: alien_column_index_type;
+	signal last_column 	: alien_grid_index_type;
+	signal last_row 		: alien_column_index_type;
 
 begin
 	
@@ -70,9 +75,25 @@ begin
 	end process;
 	
 	alien_grid_handling : process(CLOCK, RESET_N) is 
+	
+	variable var_first_column 	: alien_grid_index_type;
+	variable var_first_row 		: alien_column_index_type;
+	variable var_last_column 	: alien_grid_index_type;
+	variable var_last_row 		: alien_column_index_type;
+	
 	begin
 		
 		if (RESET_N = '0') then 
+			
+			var_first_column 	:= 0;
+			var_first_row 		:= 0;
+			var_last_column 	:= COLUMNS_PER_GRID - 1;
+			var_last_row 		:= ALIENS_PER_COLUMN - 1;
+			
+			first_column 	<= var_first_column;
+			first_row 		<= var_first_row;
+			last_column 	<= var_last_column;
+			last_row 		<= var_last_row;
 		
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				
@@ -100,10 +121,51 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then 
 		
+			if (HIDE_ALIEN = '1') then 
+				
+				alien_grid(COLUMN_INDEX)(ROW_INDEX).visible <= '0';
+				
+				var_last_column 	:= 0;
+				var_last_row 		:= 0;
+				var_first_column 	:= COLUMNS_PER_GRID - 1;
+				var_first_row		:= ALIENS_PER_COLUMN - 1;
+				
+				for I in 0 to COLUMNS_PER_GRID - 1 loop 
+					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+					
+						if (I /= COLUMN_INDEX and J /= ROW_INDEX and alien_grid(I)(J).visible = '1') then 
+						
+							if (I > var_last_column) then 
+								var_last_column := I;
+							end if;
+						
+							if (I < var_first_column) then 
+								var_first_column := I;
+							end if;
+							
+							if (J > var_last_row) then
+								var_last_row := J;
+							end if;
+							
+							if (J < var_first_row) then 
+								var_first_row := J;
+							end if;
+								
+						end if;
+					
+					end loop;
+				end loop;
+				
+				first_column 	<= var_first_column;
+				first_row 		<= var_first_row;
+				last_column 	<= var_last_column;
+				last_row 		<= var_last_row;
+				
+			end if;
+	
 			if (ADVANCE_ALIENS = '1') then 
 			
 				for I in 0 to COLUMNS_PER_GRID - 1 loop
-				
 					for J in 0 to ALIENS_PER_COLUMN - 1 loop
 			
 						case (ALIEN_GRID_MOVEMENT) is
@@ -116,7 +178,7 @@ begin
 								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
 							when DIR_DOWN =>
 								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
-							when DIR_NONE =>
+							when DIR_NONE => -- Unreachable
 						
 						end case;	
 						
@@ -127,7 +189,6 @@ begin
 						end if;
 					
 					end loop;
-					
 				end loop;
 				
 			end if;
@@ -145,17 +206,29 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then 
 		
-			if (alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.up_left_x + alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
+			if (alien_grid(last_column)(0).hitbox.up_left_x + alien_grid(last_column)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
 				BORDER_REACHED <= DIR_RIGHT;
-			elsif (alien_grid(0)(0).hitbox.up_left_x < SIDE_MARGIN) then
+			elsif (alien_grid(first_column)(0).hitbox.up_left_x < SIDE_MARGIN) then
 				BORDER_REACHED <= DIR_LEFT;
-			elsif (alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.up_left_y + alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
+			elsif (alien_grid(0)(last_row).hitbox.up_left_y + alien_grid(0)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
 				BORDER_REACHED <= DIR_DOWN;
-			elsif (alien_grid(0)(0).hitbox.up_left_y < TOP_MARGIN) then
+			elsif (alien_grid(0)(first_row).hitbox.up_left_y < TOP_MARGIN) then
 				BORDER_REACHED <= DIR_UP;
 			else
 				BORDER_REACHED <= DIR_NONE;
 			end if;
+
+--			if (alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.up_left_x + alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
+--				BORDER_REACHED <= DIR_RIGHT;
+--			elsif (alien_grid(0)(0).hitbox.up_left_x < SIDE_MARGIN) then
+--				BORDER_REACHED <= DIR_LEFT;
+--			elsif (alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.up_left_y + alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
+--				BORDER_REACHED <= DIR_DOWN;
+--			elsif (alien_grid(0)(0).hitbox.up_left_y < TOP_MARGIN) then
+--				BORDER_REACHED <= DIR_UP;
+--			else
+--				BORDER_REACHED <= DIR_NONE;
+--			end if;
 		
 		end if;
 		

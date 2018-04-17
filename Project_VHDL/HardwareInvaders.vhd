@@ -201,6 +201,9 @@ begin
 			ADVANCE_ALIENS				=> game_tick,
 			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
+			COLUMN_INDEX				=> 0,
+			ROW_INDEX					=> 0,
+			HIDE_ALIEN					=> '0',
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
