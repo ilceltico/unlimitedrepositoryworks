@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "04/17/2018 12:05:46"
+-- DATE "04/21/2018 22:09:53"
 
 -- 
 -- Device: Altera EP2C20F484C7 Package FBGA484
@@ -5545,33 +5545,7 @@ SIGNAL \vga|vga_timing|v_pixel[8]~25_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_ADDR[17]~17_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_UB_N~0_combout\ : std_logic;
 SIGNAL \vga|vga_fb|SRAM_LB_N~0_combout\ : std_logic;
-SIGNAL \view|Mult2|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
 SIGNAL \view|Mult3|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
-SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
-SIGNAL \datapath|alien_grid[3][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][0].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|HITBOX.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[8][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|HITBOX.size_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][4].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][2].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[6][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[10][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[10][4].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][0].current_index\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \datapath|SPRITE.logic_dim_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[9][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[7][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[4][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|HITBOX.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[5][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[10][4].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][1].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[2][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[1][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \datapath|alien_grid[0][3].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
-SIGNAL \view|Mult1|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
 SIGNAL \view|Mult0|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
 SIGNAL \vga|y_start\ : std_logic_vector(8 DOWNTO 0);
 SIGNAL \vga|y_end\ : std_logic_vector(8 DOWNTO 0);
@@ -5598,6 +5572,32 @@ SIGNAL \view|FB_Y0\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \view|FB_X1\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \view|FB_X0\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \view|FB_COLOR\ : std_logic_vector(11 DOWNTO 0);
+SIGNAL \view|Mult2|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
+SIGNAL \view|Mult1|auto_generated|w569w\ : std_logic_vector(64 DOWNTO 0);
+SIGNAL \SW~combout\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \datapath|alien_grid[3][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][0].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|HITBOX.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[8][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|HITBOX.size_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][4].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][2].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[6][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[10][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[10][4].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][0].current_index\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \datapath|SPRITE.logic_dim_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[9][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[7][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[4][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|HITBOX.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[5][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[10][4].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][1].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[2][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[1][0].hitbox.up_left_x\ : std_logic_vector(31 DOWNTO 0);
+SIGNAL \datapath|alien_grid[0][3].hitbox.up_left_y\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \ALT_INV_RESET_N~clkctrl_outclk\ : std_logic;
 SIGNAL \view|ALT_INV_pixel_scale_factor_y\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \view|ALT_INV_pixel_scale_factor_x\ : std_logic_vector(0 DOWNTO 0);

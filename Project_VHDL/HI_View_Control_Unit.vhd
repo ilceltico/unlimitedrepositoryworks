@@ -35,7 +35,7 @@ begin
 		
 		variable rendered_column 	: alien_grid_index_type := 0;
 		variable rendered_alien  	: alien_column_index_type := 0;
-		variable render_counter		: integer;
+		variable render_counter		: integer := 0;
 	
 	begin
 		

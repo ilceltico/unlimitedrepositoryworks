@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for HardwareInvaders
-Tue Apr 17 12:05:45 2018
+Sat Apr 21 22:09:52 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -128,7 +128,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+--------+--------------------------+
 ; SDC File Path        ; Status ; Read at                  ;
 +----------------------+--------+--------------------------+
-; HardwareInvaders.sdc ; OK     ; Tue Apr 17 12:05:42 2018 ;
+; HardwareInvaders.sdc ; OK     ; Sat Apr 21 22:09:49 2018 ;
 +----------------------+--------+--------------------------+
 
 
@@ -3217,7 +3217,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 17 12:05:41 2018
+    Info: Processing started: Sat Apr 21 22:09:49 2018
 Info: Command: quartus_sta HardwareInvaders -c HardwareInvaders
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -3293,9 +3293,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 526 megabytes
-    Info: Processing ended: Tue Apr 17 12:05:45 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 527 megabytes
+    Info: Processing ended: Sat Apr 21 22:09:52 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
