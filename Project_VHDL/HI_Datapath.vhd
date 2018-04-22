@@ -134,8 +134,7 @@ begin
 					for J in 0 to ALIENS_PER_COLUMN - 1 loop
 					
 					--Credo che debba essere:
-					-- if ((I /= COLUMN_INDEX or J /= ROW_INDEX) and alien_grid(I)(J).visible = '1') then 
-						if (I /= COLUMN_INDEX and J /= ROW_INDEX and alien_grid(I)(J).visible = '1') then 
+						if ((I /= COLUMN_INDEX or J /= ROW_INDEX) and alien_grid(I)(J).visible = '1') then 
 						
 							if (I > var_last_column) then 
 								var_last_column := I;
