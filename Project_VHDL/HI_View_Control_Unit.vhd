@@ -36,6 +36,7 @@ begin
 		variable rendered_column 	: alien_grid_index_type := 0;
 		variable rendered_alien  	: alien_column_index_type := 0;
 		variable render_counter		: integer := 0;
+		variable rendered_bullet   : bullet_type;
 	
 	begin
 		
@@ -52,6 +53,7 @@ begin
 			render_counter 	:= 0;
 			rendered_alien 	:= 0;
 			rendered_column 	:= 0;
+			rendered_bullet	:= 0;
 			
 		elsif rising_edge(CLOCK) then
 			
@@ -91,7 +93,7 @@ begin
 						if (rendered_alien > ALIENS_PER_COLUMN - 1) then
 							rendered_alien := 0;
 						end if;
-
+				
 					else
 						
 						next_state <= SHOW_SPRITES;
