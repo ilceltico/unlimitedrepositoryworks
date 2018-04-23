@@ -15,7 +15,7 @@ entity HI_Datapath is
 		COLUMN_INDEX					: in 	alien_grid_index_type;
 		ROW_INDEX						: in 	alien_column_index_type;
 --		NEW_LEVEL						: in 	std_logic;
---		PLAYER_MOVEMENT				: in 	direction_type;
+		PLAYER_MOVEMENT				: in 	direction_type;
 --		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 --		ALIEN_SHOOT						: in 	std_logic;
@@ -47,6 +47,8 @@ architecture RTL of HI_Datapath is
 	signal first_row 		: alien_column_index_type;
 	signal last_column 	: alien_grid_index_type;
 	signal last_row 		: alien_column_index_type;
+	
+	signal player			: player_type;
 
 begin
 	
@@ -230,6 +232,38 @@ begin
 --			else
 --				BORDER_REACHED <= DIR_NONE;
 --			end if;
+		
+		end if;
+		
+	end process;
+	
+	player_movement_handler : process(RESET_N, PLAYER_MOVEMENT) is
+	begin
+	
+		if (RESET_N = '0') then
+		
+			player.sprite_indexes <= (PLAYER_SPRITE, PLAYER_EXPLOSION_1_SPRITE, PLAYER_EXPLOSION_2_SPRITE);
+			player.hitbox.up_left_x <= PLAYER_START_X;
+			player.hitbox.up_left_y <= PLAYER_START_Y;
+			player.hitbox.size_x <= PLAYER_SIZE_X;
+			player.hitbox.size_y <= PLAYER_SIZE_Y;
+			player.current_index <= 0;
+			player.lives <= PLAYER_LIVES;
+			player.exploding <= '0';
+			
+		elsif (rising_edge(CLOCK)) then
+		
+			case (PLAYER_MOVEMENT) is
+						
+				when DIR_RIGHT => 
+					player.hitbox.up_left_x <= player.hitbox.up_left_x + PLAYER_SPEED;
+				when DIR_LEFT =>
+					player.hitbox.up_left_x <= player.hitbox.up_left_x - PLAYER_SPEED;
+				when DIR_UP => -- Unreachable
+				when DIR_DOWN => -- Unreachable
+				when DIR_NONE => -- Unreachable
+						
+			end case;	
 		
 		end if;
 		

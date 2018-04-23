@@ -28,19 +28,21 @@ package HI_package is
 	constant INDEX_1_MAX										: natural 	:= 16; 
 	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
 	
-	constant FRAME_TIME_50MHz 								: natural := 833333;
+	constant FRAME_TIME_50MHz 								: natural := 833333; --60fps
 	constant H_DISP											: natural := 640 - 128;
 	constant V_DISP											: natural := 480;
 	constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
 	constant RAND_ALIEN_EXPLOSION_TIME_50MHz 			: natural := 25000000;
 	
 	-- Player
+	constant PLAYER_MOVEMENT_TIME_50Mhz					: natural := 1666666; --30fps
 	constant PLAYER_SIZE_X 									: natural := 30;
 	constant PLAYER_SIZE_Y 									: natural := 18;
 	constant PLAYER_START_X 								: natural := (H_DISP - PLAYER_SIZE_X) / 2;
 	constant PLAYER_START_Y 								: natural := V_DISP - 4*PLAYER_SIZE_Y - BOTTOM_MARGIN;
 	constant PLAYER_LIVES 									: natural := 3;
 	constant PLAYER_SPEED 									: natural := 5;
+	constant PLAYER_SPRITE_COUNT							: natural := 3;
 	
 	-- Bullets
 	constant ALIEN_BULLET_TIME_50MHz 					: natural := 2500000;
@@ -150,6 +152,22 @@ package HI_package is
 	-- Array of all sprites
 	type sprite_array_type is array (0 to SPRITE_COUNT - 1) of sprite_type;
 	subtype sprite_array_index_type is integer range 0 to SPRITE_COUNT - 1;
+	
+	--------------------------------------------------------------
+	--	   							 PLAYER                          --
+	--------------------------------------------------------------
+	
+	-- Player type declaration
+	type player_sprite_indexes_type is array(0 to PLAYER_SPRITE_COUNT - 1) of sprite_array_index_type;
+	subtype player_sprite_current_index_type is integer range 0 to PLAYER_SPRITE_COUNT - 1;
+	subtype player_lives_type is integer range 0 to PLAYER_LIVES;
+	type player_type is record
+		sprite_indexes   	: player_sprite_indexes_type;
+		hitbox				: hitbox_type;
+		current_index		: player_sprite_current_index_type;
+		lives					: player_lives_type;
+		exploding			: std_logic;
+	end record;	
 	
 	--------------------------------------------------------------
 	--	   							 ALIEN                           --

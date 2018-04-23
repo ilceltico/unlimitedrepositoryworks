@@ -12,11 +12,17 @@ entity Hi_Datapath_Control_Unit is
 		BORDER_REACHED					: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
 		
-		ALIEN_GRID_MOVEMENT			: out direction_type
+		ALIEN_GRID_MOVEMENT			: out direction_type;
+		PLAYER_MOVEMENT				: out direction_type;
+		
+		BUTTON_LEFT						: in std_logic;
+		BUTTON_RIGHT					: in std_logic
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
+
+	signal player_move_time			: std_logic;
 
 begin
 	
@@ -55,6 +61,48 @@ begin
 			
 		end if;
 	
+	end process;
+	
+	player_timed_move : process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (PLAYER_MOVEMENT_TIME_50Mhz - 1);
+	begin
+		if (RESET_N = '0') then
+			counter  := 0;
+			player_move_time          <= '0';
+		elsif rising_edge(CLOCK) then
+			if(counter = counter'high) then
+				counter := 0;
+				player_move_time <= '1';
+			else
+				counter := counter+1;
+				player_move_time <= '0';			
+			end if;
+		end if;
+	end process;
+	
+	
+	player_movement_handler : process(CLOCK, RESET_N)
+	begin
+	
+		if (RESET_N = '0') then
+		
+			PLAYER_MOVEMENT <= DIR_NONE;
+			
+		elsif rising_edge(CLOCK) then
+			PLAYER_MOVEMENT <= DIR_NONE;
+			
+			if (player_move_time = '1') then
+			
+				if (BUTTON_LEFT = '1') then
+					PLAYER_MOVEMENT <= DIR_LEFT;
+				elsif (BUTTON_RIGHT = '1') then
+					PLAYER_MOVEMENT <= DIR_RIGHT;
+				end if;
+			
+			end if;
+		
+		end if;
+		
 	end process;
 
 end architecture;
