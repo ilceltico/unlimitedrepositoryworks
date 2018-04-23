@@ -1,4 +1,11 @@
 
+State Machine - |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|column_state
+Name column_state.WAITING column_state.FIRST_INDEX column_state.INCREMENTING_INDEX column_state.IDLE 
+column_state.IDLE 0 0 0 0 
+column_state.INCREMENTING_INDEX 0 0 1 1 
+column_state.FIRST_INDEX 0 1 0 1 
+column_state.WAITING 1 0 0 1 
+
 State Machine - |HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|ALIEN_GRID_MOVEMENT
 Name ALIEN_GRID_MOVEMENT.DIR_NONE~reg0 ALIEN_GRID_MOVEMENT.DIR_DOWN~reg0 ALIEN_GRID_MOVEMENT.DIR_UP~reg0 ALIEN_GRID_MOVEMENT.DIR_LEFT~reg0 ALIEN_GRID_MOVEMENT.DIR_RIGHT~reg0 
 ALIEN_GRID_MOVEMENT.DIR_RIGHT~reg0 0 0 0 0 0 

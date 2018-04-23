@@ -87,13 +87,16 @@ begin
 	end process;
 	
 	column_to_shoot_handling : process(CLOCK, RESET_N) is
-						
+		
+		variable reg_column_to_shoot : alien_grid_index_type := 0;
+		
 	begin
 	
 		if (RESET_N = '0') then
-			COLUMN_TO_SHOOT <= '0';
+			COLUMN_TO_SHOOT <= 0;
 			ALIEN_SHOOT <= '0';
-			column_state <= 'IDLE';
+			column_state <= IDLE;
+			reg_column_to_shoot := 0;
 			
 			
 		elsif (rising_edge(CLOCK)) then	
@@ -111,7 +114,8 @@ begin
 					
 				when FIRST_INDEX => 
 					
-					COLUMN_TO_SHOOT <= RAND_OUTPUT;
+					reg_column_to_shoot := RAND_OUTPUT;
+					COLUMN_TO_SHOOT <= reg_column_to_shoot;
 					column_state <= WAITING;
 					
 				when WAITING =>
@@ -121,7 +125,8 @@ begin
 				when INCREMENTING_INDEX => 
 						
 					if (COLUMN_CANNOT_SHOOT = '1') then
-						COLUMN_TO_SHOOT <= COLUMN_TO_SHOOT + 1;
+						reg_column_to_shoot := reg_column_to_shoot + 1;
+						COLUMN_TO_SHOOT <= reg_column_to_shoot; 
 						column_state <= WAITING;
 											
 					else column_state <= IDLE;
@@ -129,6 +134,8 @@ begin
 				
 			end case;
 			
+		end if;
+		
 	end process;
 
 end architecture;

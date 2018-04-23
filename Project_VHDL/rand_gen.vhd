@@ -30,13 +30,13 @@ begin
 			
 			seed1 := 0;
 			seed2:= 0;
-			range_of_rand := COLUMNS_PER_GRID; -- NON VA!!!!
+			range_of_rand := 0; -- NON VA!!!!
 			
 		elsif (rising_edge(CLOCK)) then
 		 
-		 srand(seed1, seed2, rand);   -- generate random number
-		 rand_num <= integer(rand*range_of_rand);  -- rescale to 0..1000, convert integer part 
-		 RAND_OUTPUT <= rand_num;
+		 -- srand(seed1, seed2, rand);   -- generate random number
+		 -- rand_num <= integer(rand*range_of_rand);  -- rescale to 0..1000, convert integer part 
+		 -- RAND_OUTPUT <= rand_num;
 		 --wait for 10 ns; --it generates random values every 10 ns
 		 
 		 end if;

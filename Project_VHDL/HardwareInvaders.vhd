@@ -61,6 +61,8 @@ architecture RTL of HardwareInvaders is
 	signal request_entity_sprite	: datapath_entity_index_type;
 	signal alien_grid_movement : direction_type;
 	signal border_reached	: direction_type;
+	signal alien_shoot			: std_logic;
+	signal column_cannot_shoot : std_logic;
 
 begin
 
@@ -204,10 +206,12 @@ begin
 			COLUMN_INDEX				=> 0,
 			ROW_INDEX					=> 0,
 			HIDE_ALIEN					=> '0',
+			ALIEN_SHOOT					=> alien_shoot,
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
-			BORDER_REACHED				=> border_reached
+			BORDER_REACHED				=> border_reached,
+			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
@@ -217,6 +221,8 @@ begin
 			RESET_N => RESET_N, 
 			BORDER_REACHED => border_reached,
 			GAME_TICK	=> game_tick,
+			RAND_OUTPUT	=> 0,
+			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			
 			ALIEN_GRID_MOVEMENT => alien_grid_movement
 		);
