@@ -11,20 +11,57 @@ entity Hi_Datapath_Control_Unit is
 		RESET_N							: in 	std_logic;
 		BORDER_REACHED					: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
+		RAND_OUTPUT						: in integer;
+		COLUMN_CANNOT_SHOOT			: in std_logic;
+				
 		
+		ALIEN_GRID_MOVEMENT			: out direction_type;
+		COLUMN_TO_SHOOT				: out alien_grid_index_type;
+		ALIEN_SHOOT						: out std_logic
+		
+<<<<<<< HEAD
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		PLAYER_MOVEMENT				: out direction_type;
 		
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic
+=======
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
+<<<<<<< HEAD
 
 	signal player_move_time			: std_logic;
 
+=======
+		
+		type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
+		signal column_state				: column_state_type;
+		signal bullet_tick				: std_logic;
+		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+	
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 begin
+	
+	bullet_tick_gen : process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			bullet_tick <= '0';
+			bullet_gen_time <= (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1); --non va qui!!
+		elsif (rising_edge(CLOCK)) then
+			if(counter = bullet_gen_time) then
+				counter := 0;
+				bullet_tick <= '1';
+			else
+				counter := counter+1;
+				bullet_tick <= '0';			
+			end if;
+		end if;
+	end process;
 	
 	alien_grid_movement_handling : process(CLOCK, RESET_N) is
 		
@@ -63,6 +100,7 @@ begin
 	
 	end process;
 	
+<<<<<<< HEAD
 	player_timed_move : process(CLOCK, RESET_N)
 		variable counter : integer range 0 to (PLAYER_MOVEMENT_TIME_50Mhz - 1);
 	begin
@@ -101,6 +139,56 @@ begin
 			
 			end if;
 		
+=======
+	column_to_shoot_handling : process(CLOCK, RESET_N) is
+		
+		variable reg_column_to_shoot : alien_grid_index_type := 0;
+		
+	begin
+	
+		if (RESET_N = '0') then
+			COLUMN_TO_SHOOT <= 0;
+			ALIEN_SHOOT <= '0';
+			column_state <= IDLE;
+			reg_column_to_shoot := 0;
+			
+			
+		elsif (rising_edge(CLOCK)) then	
+			ALIEN_SHOOT <= '1';
+			
+			case(column_state) is
+			
+				when IDLE => 
+					
+					ALIEN_SHOOT <= '0';
+						
+						if (bullet_tick = '1') then
+							column_state <= FIRST_INDEX;
+						end if;
+					
+				when FIRST_INDEX => 
+					
+					reg_column_to_shoot := RAND_OUTPUT;
+					COLUMN_TO_SHOOT <= reg_column_to_shoot;
+					column_state <= WAITING;
+					
+				when WAITING =>
+					
+					column_state <= INCREMENTING_INDEX;
+				
+				when INCREMENTING_INDEX => 
+						
+					if (COLUMN_CANNOT_SHOOT = '1') then
+						reg_column_to_shoot := reg_column_to_shoot + 1;
+						COLUMN_TO_SHOOT <= reg_column_to_shoot; 
+						column_state <= WAITING;
+											
+					else column_state <= IDLE;
+					end if;
+				
+			end case;
+			
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 		end if;
 		
 	end process;

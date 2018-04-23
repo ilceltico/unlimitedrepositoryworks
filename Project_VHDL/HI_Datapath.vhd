@@ -18,7 +18,7 @@ entity HI_Datapath is
 		PLAYER_MOVEMENT				: in 	direction_type;
 --		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
---		ALIEN_SHOOT						: in 	std_logic;
+		ALIEN_SHOOT						: in 	std_logic;
 --		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 --		SHOW_RAND_ALIEN				: in 	direction_type;
 --		DESTROY_ALIEN					: in 	std_logic;
@@ -33,9 +33,9 @@ entity HI_Datapath is
 --		LIVES								: out integer;
 --		LIVING_ALIEN_COUNT			: out integer;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
-		BORDER_REACHED					: out direction_type
+		BORDER_REACHED					: out direction_type;
 --		RAND_ALIEN_BORDER_REACHED	: out direction_type;
---		COLUMN_CANNOT_SHOOT			: out std_logic
+		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
 end entity;
 
@@ -48,7 +48,11 @@ architecture RTL of HI_Datapath is
 	signal last_column 	: alien_grid_index_type;
 	signal last_row 		: alien_column_index_type;
 	
+<<<<<<< HEAD
 	signal player			: player_type;
+=======
+	signal bullets			: bullet_array_type;
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 
 begin
 	
@@ -69,7 +73,16 @@ begin
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
-						
+			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET) then
+
+				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
+				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
+			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER) then
+			
+				SPRITE <= sprites()
+			
 			end if;
 			
 		end if;
@@ -237,6 +250,7 @@ begin
 		
 	end process;
 	
+<<<<<<< HEAD
 	player_movement_handler : process(RESET_N, PLAYER_MOVEMENT) is
 	begin
 	
@@ -265,8 +279,34 @@ begin
 						
 			end case;	
 		
+=======
+	can_column_shoot : process (CLOCK, RESET_N) is
+			
+			variable referenced_column : alien_grid_index_type;
+			
+	begin
+		if (RESET_N = '0') then
+			referenced_column := 0;
+			COLUMN_CANNOT_SHOOT <= '1';
+		
+		elsif (rising_edge(CLOCK)) then
+			referenced_column := COLUMN_INDEX;
+			COLUMN_CANNOT_SHOOT <= '1';
+		
+			for I in 0 to ALIENS_PER_COLUMN - 1 loop
+				
+				if( alien_grid(referenced_column)(I).visible = '1' ) then
+					COLUMN_CANNOT_SHOOT <= '0';
+				end if;
+			
+			end loop;
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 		end if;
 		
 	end process;
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 end architecture;

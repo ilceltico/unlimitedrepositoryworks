@@ -22,10 +22,12 @@ end entity;
 architecture RTL of Hi_View_Control_Unit is 
 
 type state_type is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
+type substate_type is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, RENDER_END);
 
 signal render_asap		: std_logic;
 signal state 				: state_type;
 signal next_state 		: state_type;
+signal substate			: substate_type;
 
 signal draw_delayed		: std_logic;
 
@@ -35,7 +37,7 @@ begin
 		
 		variable rendered_column 	: alien_grid_index_type := 0;
 		variable rendered_alien  	: alien_column_index_type := 0;
-		variable render_counter		: integer := 0;
+		variable rendered_bullet   : bullet_array_index_type := 0;
 	
 	begin
 		
@@ -47,11 +49,13 @@ begin
 			render_asap 		<= '0';
 			state 				<= WAITING;
 			next_state 			<= RENDER;
+			substate				<= ALIEN_QUERY;
 			draw_delayed 		<= '0';
+			REQUEST_ENTITY_SPRITE <= (0, 0, NONE);
 			
-			render_counter 	:= 0;
 			rendered_alien 	:= 0;
 			rendered_column 	:= 0;
+			rendered_bullet	:= 0;
 			
 		elsif rising_edge(CLOCK) then
 			
@@ -73,32 +77,52 @@ begin
 						state <= WAITING_2;
 					end if;
 					
-					REQ_NEXT_SPRITE 	<= '1';
+					REQ_NEXT_SPRITE 	<= '1'; -- CANCELLAMI PLS
 					next_state 			<= RENDER;
 					draw_delayed 		<= '1';
+					REQUEST_ENTITY_SPRITE <= (0, 0, NONE);
 					
-					if (render_counter < ALIENS_PER_COLUMN * COLUMNS_PER_GRID) then 
+					case (substate) is 
+					
+						when ALIEN_QUERY => 
 
-						REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ALIEN);
+							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ALIEN);
 					
-						rendered_column := rendered_column + 1;
+							rendered_column := rendered_column + 1;
 			
-						if (rendered_column > COLUMNS_PER_GRID - 1) then
-							rendered_column := 0;
-							rendered_alien := rendered_alien + 1;
-						end if;
+							if (rendered_column > COLUMNS_PER_GRID - 1) then
+								rendered_column := 0;
+								rendered_alien := rendered_alien + 1;
+							end if;
 				
-						if (rendered_alien > ALIENS_PER_COLUMN - 1) then
-							rendered_alien := 0;
-						end if;
-
-					else
+							if (rendered_alien > ALIENS_PER_COLUMN - 1) then
+								rendered_alien := 0;
+							end if;
+							
+							if (rendered_alien = ALIENS_PER_COLUMN - 1 and rendered_column = COLUMNS_PER_GRID - 1) then
+								substate <= ALIEN_BULLET_QUERY;
+							end if;
+				
+						when ALIEN_BULLET_QUERY =>
+							
+							REQUEST_ENTITY_SPRITE <= (rendered_bullet, 0, ALIEN_BULLET);
+							
+							rendered_bullet := rendered_bullet + 1;
+							
+							if (rendered_bullet = BULLET_COUNT - 1) then
+								substate <= PLAYER_QUERY;
+							end if;
 						
-						next_state <= SHOW_SPRITES;
+						when PLAYER_QUERY =>
+							
+							REQUEST_ENTITY_SPRITE <= (0,0,PLAYER);
+							substate <= RENDER_END;
+					
+						when RENDER_END =>
+						
+							next_state <= SHOW_SPRITES;
 						
 					end if;
-					
-					render_counter		:= render_counter + 1;
 					
 				when SHOW_SPRITES =>
 				
