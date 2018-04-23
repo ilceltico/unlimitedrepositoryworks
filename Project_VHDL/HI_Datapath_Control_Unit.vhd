@@ -17,32 +17,25 @@ entity Hi_Datapath_Control_Unit is
 		
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		COLUMN_TO_SHOOT				: out alien_grid_index_type;
-		ALIEN_SHOOT						: out std_logic
+		ALIEN_SHOOT						: out std_logic;
 		
-<<<<<<< HEAD
-		ALIEN_GRID_MOVEMENT			: out direction_type;
 		PLAYER_MOVEMENT				: out direction_type;
 		
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic
-=======
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
-<<<<<<< HEAD
 
 	signal player_move_time			: std_logic;
 
-=======
 		
 		type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
 		signal column_state				: column_state_type;
 		signal bullet_tick				: std_logic;
 		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
 	
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 begin
 	
 	bullet_tick_gen : process(CLOCK, RESET_N)
@@ -100,7 +93,6 @@ begin
 	
 	end process;
 	
-<<<<<<< HEAD
 	player_timed_move : process(CLOCK, RESET_N)
 		variable counter : integer range 0 to (PLAYER_MOVEMENT_TIME_50Mhz - 1);
 	begin
@@ -138,9 +130,10 @@ begin
 				end if;
 			
 			end if;
+		end if;
+	end process;
 		
-=======
-	column_to_shoot_handling : process(CLOCK, RESET_N) is
+	column_to_shoot_handling : process(CLOCK, RESET_N)
 		
 		variable reg_column_to_shoot : alien_grid_index_type := 0;
 		
@@ -188,7 +181,6 @@ begin
 				
 			end case;
 			
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 		end if;
 		
 	end process;

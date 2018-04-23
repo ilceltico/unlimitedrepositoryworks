@@ -48,11 +48,8 @@ architecture RTL of HI_Datapath is
 	signal last_column 	: alien_grid_index_type;
 	signal last_row 		: alien_column_index_type;
 	
-<<<<<<< HEAD
 	signal player			: player_type;
-=======
 	signal bullets			: bullet_array_type;
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 
 begin
 	
@@ -79,9 +76,10 @@ begin
 				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER) then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
 			
-				SPRITE <= sprites()
+				SPRITE <= sprites(player.current_index);
+				HITBOX <= player.hitbox;
 			
 			end if;
 			
@@ -250,7 +248,6 @@ begin
 		
 	end process;
 	
-<<<<<<< HEAD
 	player_movement_handler : process(RESET_N, PLAYER_MOVEMENT) is
 	begin
 	
@@ -279,7 +276,10 @@ begin
 						
 			end case;	
 		
-=======
+		end if;
+		
+	end process;
+		
 	can_column_shoot : process (CLOCK, RESET_N) is
 			
 			variable referenced_column : alien_grid_index_type;
@@ -300,13 +300,8 @@ begin
 				end if;
 			
 			end loop;
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 		end if;
 		
 	end process;
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> 05d40ab87a1af93d205e3bbd0ae7b68127dfddb0
 end architecture;

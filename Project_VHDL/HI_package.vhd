@@ -235,7 +235,7 @@ package HI_package is
 	--------------------------------------------------------------
 	
 	-- Datapath entity index type
-	type entity_type_type is (ALIEN, ALIEN_BULLET, PLAYER_BULLET, SHIELD, RANDOM_ALIEN, PLAYER, COLUMN);
+	type entity_type_type is (NONE, ALIEN, ALIEN_BULLET, PLAYER_BULLET, SHIELD, RANDOM_ALIEN, PLAYER_ENTITY, COLUMN);
 	subtype index_1_type is integer range 0 to INDEX_1_MAX - 1;
 	type datapath_entity_index_type is record
 		index_1		: index_1_type;

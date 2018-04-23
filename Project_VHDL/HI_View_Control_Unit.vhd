@@ -115,14 +115,16 @@ begin
 						
 						when PLAYER_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0,PLAYER);
+							REQUEST_ENTITY_SPRITE <= (0,0,PLAYER_ENTITY);
 							substate <= RENDER_END;
 					
 						when RENDER_END =>
 						
 							next_state <= SHOW_SPRITES;
+							
+						when others => --Unreachable
 						
-					end if;
+					end case;
 					
 				when SHOW_SPRITES =>
 				
@@ -136,7 +138,6 @@ begin
 						state 				<= WAITING;
 						next_state 			<= RENDER;
 						
-						render_counter 	:= 0;
 						rendered_alien 	:= 0;
 						rendered_column	:= 0;
 					
