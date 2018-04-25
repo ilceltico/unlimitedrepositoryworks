@@ -19,7 +19,7 @@ entity HI_Datapath is
 --		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 		ALIEN_SHOOT						: in 	std_logic;
---		RAND_ALIEN_MOVEMENT			: in 	direction_type;
+		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 --		SHOW_RAND_ALIEN				: in 	direction_type;
 --		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
@@ -50,7 +50,8 @@ architecture RTL of HI_Datapath is
 	
 	signal player			: player_type;
 	signal bullets			: bullet_array_type;
-
+	
+	signal rand_alien		: alien_type;
 begin
 	
 	render_entity_query : process(CLOCK, RESET_N) is 
@@ -278,6 +279,34 @@ begin
 		
 		end if;
 		
+	end process;
+	
+	rand_alien_movement_handler : process(RESET_N, RAND_ALIEN_MOVEMENT) is
+	begin
+	
+		if (RESET_N = '0') then
+			rand_alien.sprite_indexes <= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE); -- Utilizzando il tipo "alien_type", inserisco due volte lo stesso sprite. Creare un tipo separato?
+			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X;
+			rand_alien.hitbox.up_left_y 	<= FIRST_RAND_ALIEN_CELL_Y;
+			rand_alien.hitbox.size_x 		<= RAND_ALIEN_SIZE_X;
+			rand_alien.hitbox.size_y 		<= RAND_ALIEN_SIZE_Y;
+			rand_alien.current_index 		<= 0;
+			rand_alien.visible 				<= '0';
+			rand_alien.exploding 			<= '0';
+			
+		elsif (rising_edge(CLOCK)) then
+		
+			case (RAND_ALIEN_MOVEMENT) is
+						
+				when DIR_RIGHT => 
+					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x + RAND_ALIEN_SPEED;
+				when DIR_LEFT => -- Unreachable
+				when DIR_UP => -- Unreachable
+				when DIR_DOWN => -- Unreachable
+				when DIR_NONE => -- Unreachable
+						
+			end case;	
+		end if;
 	end process;
 		
 	can_column_shoot : process (CLOCK, RESET_N) is
