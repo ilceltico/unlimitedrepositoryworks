@@ -59,10 +59,11 @@ architecture RTL of HardwareInvaders is
 	signal fb_vsync			  : std_logic;
 	signal req_next_sprite 	  : std_logic;
 	signal request_entity_sprite	: datapath_entity_index_type;
-	signal rand_alien_movement : direction_type;
+	signal show_rand_alien : direction_type;
 	signal alien_grid_movement : direction_type;
 	signal player_movement		: direction_type;
 	signal border_reached	: direction_type;
+	signal rand_alien_border_reached	: direction_type;
 	signal alien_shoot			: std_logic;
 	signal column_cannot_shoot : std_logic;
 
@@ -195,7 +196,6 @@ begin
 			READY 			=> sr_ready
 		);		
 		
-		
 		datapath : entity work.HI_Datapath
 		port map 
 		(
@@ -205,7 +205,7 @@ begin
 			ADVANCE_ALIENS				=> game_tick,
 			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
 			PLAYER_MOVEMENT			=> player_movement,
-			RAND_ALIEN_MOVEMENT		=> rand_alien_movement,
+			SHOW_RAND_ALIEN			=> show_rand_alien,
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> 0,
 			ROW_INDEX					=> 0,
@@ -215,6 +215,7 @@ begin
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
 			BORDER_REACHED				=> border_reached,
+			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot
 		);	
 	
@@ -224,11 +225,13 @@ begin
 			CLOCK => clock_50MHz,
 			RESET_N => RESET_N, 
 			BORDER_REACHED => border_reached,
+			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			GAME_TICK	=> game_tick,
 			RAND_OUTPUT	=> 0,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			
 			ALIEN_GRID_MOVEMENT => alien_grid_movement,
+			SHOW_RAND_ALIEN		=> show_rand_alien,
 			PLAYER_MOVEMENT => player_movement,
 			
 			BUTTON_LEFT => not(KEY(3)),

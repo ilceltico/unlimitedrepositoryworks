@@ -7,3 +7,4 @@ Project_VHDL/db/
 Project_VHDL/output_files/
 Project_VHDL/incremental_db/
 Project_VHDL/simulation/
+*.logdb

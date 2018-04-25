@@ -107,14 +107,19 @@ begin
 							rendered_bullet := rendered_bullet + 1;
 							
 							if (rendered_bullet > BULLET_COUNT - 1) then
-								substate <= PLAYER_QUERY;
+								substate <= RAND_ALIEN_QUERY;
 							end if;
-						
+							
+						when RAND_ALIEN_QUERY =>
+							
+							REQUEST_ENTITY_SPRITE <= (0,0,RANDOM_ALIEN);
+							substate <= PLAYER_QUERY;
+							
 						when PLAYER_QUERY =>
 							
 							REQUEST_ENTITY_SPRITE <= (0,0,PLAYER_ENTITY);
 							substate <= RENDER_END;
-					
+							
 						when RENDER_END =>
 						
 							next_state <= SHOW_SPRITES;

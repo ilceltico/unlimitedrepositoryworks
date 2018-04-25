@@ -19,8 +19,7 @@ entity HI_Datapath is
 --		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 		ALIEN_SHOOT						: in 	std_logic;
-		RAND_ALIEN_MOVEMENT			: in 	direction_type;
---		SHOW_RAND_ALIEN				: in 	direction_type;
+		SHOW_RAND_ALIEN				: in 	direction_type;
 --		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
 --		DESTROY_PLAYER					: in 	std_logic;
@@ -34,7 +33,7 @@ entity HI_Datapath is
 --		LIVING_ALIEN_COUNT			: out integer;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
 		BORDER_REACHED					: out direction_type;
---		RAND_ALIEN_BORDER_REACHED	: out direction_type;
+		RAND_ALIEN_BORDER_REACHED	: out direction_type;
 		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
 end entity;
@@ -52,6 +51,7 @@ architecture RTL of HI_Datapath is
 	signal bullets			: bullet_array_type;
 	
 	signal rand_alien		: alien_type;
+	
 begin
 	
 	render_entity_query : process(CLOCK, RESET_N) is 
@@ -219,9 +219,11 @@ begin
 		if (RESET_N = '0') then 
 		
 			BORDER_REACHED <= DIR_NONE;
+			RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			
 		elsif (rising_edge(CLOCK)) then 
-		
+			
+			-- Alien grid
 			if (alien_grid(last_column)(0).hitbox.up_left_x + alien_grid(last_column)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
 				BORDER_REACHED <= DIR_RIGHT;
 			elsif (alien_grid(first_column)(0).hitbox.up_left_x < SIDE_MARGIN) then
@@ -233,7 +235,15 @@ begin
 			else
 				BORDER_REACHED <= DIR_NONE;
 			end if;
-		
+			
+			-- Random Alien
+			if (rand_alien.hitbox.up_left_x > H_DISP - SIDE_MARGIN) then
+				RAND_ALIEN_BORDER_REACHED <= DIR_RIGHT;
+			elsif (rand_alien.hitbox.up_left_x > SIDE_MARGIN) then
+				RAND_ALIEN_BORDER_REACHED <= DIR_LEFT;
+			else
+				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
+			end if;
 		end if;
 		
 	end process;
@@ -271,7 +281,7 @@ begin
 		
 	end process;
 	
-	rand_alien_movement_handler : process(RESET_N, RAND_ALIEN_MOVEMENT) is
+	rand_alien_movement_handler : process(RESET_N, SHOW_RAND_ALIEN) is
 	begin
 	
 		if (RESET_N = '0') then
@@ -286,11 +296,12 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then
 		
-			case (RAND_ALIEN_MOVEMENT) is
+			case (SHOW_RAND_ALIEN) is
 						
 				when DIR_RIGHT => 
 					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x + RAND_ALIEN_SPEED;
-				when DIR_LEFT => -- Unreachable
+				when DIR_LEFT => 
+					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x - RAND_ALIEN_SPEED;
 				when DIR_UP => -- Unreachable
 				when DIR_DOWN => -- Unreachable
 				when DIR_NONE => -- Unreachable

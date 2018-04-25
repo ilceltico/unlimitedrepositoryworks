@@ -10,6 +10,7 @@ entity Hi_Datapath_Control_Unit is
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
 		BORDER_REACHED					: in 	direction_type;
+		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
 		RAND_OUTPUT						: in integer;
 		COLUMN_CANNOT_SHOOT			: in std_logic;
@@ -18,6 +19,8 @@ entity Hi_Datapath_Control_Unit is
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		COLUMN_TO_SHOOT				: out alien_grid_index_type;
 		ALIEN_SHOOT						: out std_logic;
+		
+		SHOW_RAND_ALIEN				: out direction_type;
 		
 		PLAYER_MOVEMENT				: out direction_type;
 		
@@ -203,6 +206,40 @@ begin
 					end if;
 				
 			end case;
+			
+		end if;
+		
+	end process;
+	
+	rand_alien_movement_handler : process(CLOCK, RESET_N)
+	
+		variable random_alien_movement	: direction_type := DIR_RIGHT;
+		variable last_wall_reached 	: direction_type := DIR_NONE;
+		
+	begin
+	
+		if (RESET_N = '0') then
+	
+			random_alien_movement := DIR_RIGHT;
+			SHOW_RAND_ALIEN <= DIR_RIGHT;
+			
+		elsif rising_edge(CLOCK) then
+		
+			if (GAME_TICK = '1') then 
+				SHOW_RAND_ALIEN <= random_alien_movement;
+			end if;
+			
+			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then
+			
+				random_alien_movement := DIR_RIGHT;
+			
+			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then 
+				
+				random_alien_movement := DIR_LEFT;
+			
+			end if;
+			
+			last_wall_reached := RAND_ALIEN_BORDER_REACHED;
 			
 		end if;
 		
