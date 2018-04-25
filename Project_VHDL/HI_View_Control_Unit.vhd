@@ -77,7 +77,7 @@ begin
 						state <= WAITING_2;
 					end if;
 					
-					REQ_NEXT_SPRITE 	<= '1'; -- CANCELLAMI PLS
+					REQ_NEXT_SPRITE 	<= '1'; -- DELETE ME
 					next_state 			<= RENDER;
 					draw_delayed 		<= '1';
 					REQUEST_ENTITY_SPRITE <= (0, 0, NONE);
@@ -97,9 +97,6 @@ begin
 				
 							if (rendered_alien > ALIENS_PER_COLUMN - 1) then
 								rendered_alien := 0;
-							end if;
-							
-							if (rendered_alien = ALIENS_PER_COLUMN - 1 and rendered_column = COLUMNS_PER_GRID - 1) then
 								substate <= ALIEN_BULLET_QUERY;
 							end if;
 				
@@ -109,7 +106,7 @@ begin
 							
 							rendered_bullet := rendered_bullet + 1;
 							
-							if (rendered_bullet = BULLET_COUNT - 1) then
+							if (rendered_bullet > BULLET_COUNT - 1) then
 								substate <= PLAYER_QUERY;
 							end if;
 						
@@ -121,6 +118,7 @@ begin
 						when RENDER_END =>
 						
 							next_state <= SHOW_SPRITES;
+							substate <= ALIEN_QUERY;
 							
 						when others => --Unreachable
 						
