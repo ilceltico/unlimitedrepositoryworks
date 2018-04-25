@@ -39,21 +39,35 @@ architecture RTL of Hi_Datapath_Control_Unit is
 begin
 	
 	bullet_tick_gen : process(CLOCK, RESET_N)
+		
 		variable counter : integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+	
 	begin
+	
 		if (RESET_N = '0') then
-			counter := 0;
-			bullet_tick <= '0';
-			bullet_gen_time <= (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1); --non va qui!!
+		
+			counter 				:= 0;
+			bullet_tick 		<= '0';
+			bullet_gen_time 	<= (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1); --non va qui!!
+		
 		elsif (rising_edge(CLOCK)) then
+		
+			bullet_gen_time <= bullet_gen_time;
+		
 			if(counter = bullet_gen_time) then
-				counter := 0;
+			
+				counter 		:= 0;
 				bullet_tick <= '1';
+			
 			else
-				counter := counter+1;
+			
+				counter 		:= counter+1;
 				bullet_tick <= '0';			
+			
 			end if;
+		
 		end if;
+	
 	end process;
 	
 	alien_grid_movement_handling : process(CLOCK, RESET_N) is
@@ -119,6 +133,7 @@ begin
 			PLAYER_MOVEMENT <= DIR_NONE;
 			
 		elsif rising_edge(CLOCK) then
+		
 			PLAYER_MOVEMENT <= DIR_NONE;
 			
 			if (player_move_time = '1') then
@@ -130,7 +145,9 @@ begin
 				end if;
 			
 			end if;
+			
 		end if;
+		
 	end process;
 		
 	column_to_shoot_handling : process(CLOCK, RESET_N)
@@ -140,13 +157,15 @@ begin
 	begin
 	
 		if (RESET_N = '0') then
-			COLUMN_TO_SHOOT <= 0;
-			ALIEN_SHOOT <= '0';
-			column_state <= IDLE;
-			reg_column_to_shoot := 0;
+		
+			COLUMN_TO_SHOOT 		<= 0;
+			ALIEN_SHOOT 			<= '0';
+			column_state 			<= IDLE;
+			reg_column_to_shoot 	:= 0;
 			
 			
 		elsif (rising_edge(CLOCK)) then	
+		
 			ALIEN_SHOOT <= '1';
 			
 			case(column_state) is
@@ -154,16 +173,16 @@ begin
 				when IDLE => 
 					
 					ALIEN_SHOOT <= '0';
-						
-						if (bullet_tick = '1') then
-							column_state <= FIRST_INDEX;
-						end if;
+			
+					if (bullet_tick = '1') then
+						column_state <= FIRST_INDEX;
+					end if;
 					
 				when FIRST_INDEX => 
 					
-					reg_column_to_shoot := RAND_OUTPUT;
-					COLUMN_TO_SHOOT <= reg_column_to_shoot;
-					column_state <= WAITING;
+					reg_column_to_shoot 	:= RAND_OUTPUT;
+					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
+					column_state 			<= WAITING;
 					
 				when WAITING =>
 					
@@ -172,11 +191,15 @@ begin
 				when INCREMENTING_INDEX => 
 						
 					if (COLUMN_CANNOT_SHOOT = '1') then
-						reg_column_to_shoot := reg_column_to_shoot + 1;
-						COLUMN_TO_SHOOT <= reg_column_to_shoot; 
-						column_state <= WAITING;
+						
+						reg_column_to_shoot 	:= reg_column_to_shoot + 1;
+						COLUMN_TO_SHOOT 		<= reg_column_to_shoot; 
+						column_state 			<= WAITING;
 											
-					else column_state <= IDLE;
+					else 
+						
+						column_state <= IDLE;
+					
 					end if;
 				
 			end case;

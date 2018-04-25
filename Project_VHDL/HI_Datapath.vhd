@@ -79,7 +79,7 @@ begin
 			
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
 			
-				SPRITE <= sprites(player.current_index);
+				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
 			
 			end if;
@@ -135,6 +135,8 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then 
 		
+			alien_grid <= alien_grid;
+		
 			if (HIDE_ALIEN = '1') then 
 				
 				alien_grid(COLUMN_INDEX)(ROW_INDEX).visible <= '0';
@@ -146,8 +148,7 @@ begin
 				
 				for I in 0 to COLUMNS_PER_GRID - 1 loop 
 					for J in 0 to ALIENS_PER_COLUMN - 1 loop
-					
-					--Credo che debba essere:
+				
 						if ((I /= COLUMN_INDEX or J /= ROW_INDEX) and alien_grid(I)(J).visible = '1') then 
 						
 							if (I > var_last_column) then 
@@ -232,24 +233,12 @@ begin
 			else
 				BORDER_REACHED <= DIR_NONE;
 			end if;
-
---			if (alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.up_left_x + alien_grid(COLUMNS_PER_GRID - 1)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
---				BORDER_REACHED <= DIR_RIGHT;
---			elsif (alien_grid(0)(0).hitbox.up_left_x < SIDE_MARGIN) then
---				BORDER_REACHED <= DIR_LEFT;
---			elsif (alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.up_left_y + alien_grid(0)(ALIENS_PER_COLUMN - 1).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
---				BORDER_REACHED <= DIR_DOWN;
---			elsif (alien_grid(0)(0).hitbox.up_left_y < TOP_MARGIN) then
---				BORDER_REACHED <= DIR_UP;
---			else
---				BORDER_REACHED <= DIR_NONE;
---			end if;
 		
 		end if;
 		
 	end process;
 	
-	player_movement_handler : process(RESET_N, PLAYER_MOVEMENT) is
+	player_movement_handler : process(CLOCK, RESET_N) is
 	begin
 	
 		if (RESET_N = '0') then
@@ -265,15 +254,16 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then
 		
+			player <= player;
+		
 			case (PLAYER_MOVEMENT) is
 						
 				when DIR_RIGHT => 
 					player.hitbox.up_left_x <= player.hitbox.up_left_x + PLAYER_SPEED;
 				when DIR_LEFT =>
 					player.hitbox.up_left_x <= player.hitbox.up_left_x - PLAYER_SPEED;
-				when DIR_UP => -- Unreachable
-				when DIR_DOWN => -- Unreachable
-				when DIR_NONE => -- Unreachable
+				when others => 
+					player <= player;
 						
 			end case;	
 		
@@ -311,24 +301,35 @@ begin
 		
 	can_column_shoot : process (CLOCK, RESET_N) is
 			
-			variable referenced_column : alien_grid_index_type;
+	variable referenced_column : alien_grid_index_type;
 			
 	begin
+	
 		if (RESET_N = '0') then
+			
 			referenced_column := 0;
 			COLUMN_CANNOT_SHOOT <= '1';
 		
 		elsif (rising_edge(CLOCK)) then
-			referenced_column := COLUMN_INDEX;
-			COLUMN_CANNOT_SHOOT <= '1';
-		
-			for I in 0 to ALIENS_PER_COLUMN - 1 loop
-				
-				if( alien_grid(referenced_column)(I).visible = '1' ) then
-					COLUMN_CANNOT_SHOOT <= '0';
-				end if;
 			
-			end loop;
+			if (ALIEN_SHOOT = '1') then
+			
+				referenced_column := COLUMN_INDEX;
+				COLUMN_CANNOT_SHOOT <= '1';
+		
+				for I in 0 to ALIENS_PER_COLUMN - 1 loop
+				
+					if( alien_grid(referenced_column)(I).visible = '1' ) then
+						
+						COLUMN_CANNOT_SHOOT <= '0';
+						-- Add a bullet 
+						
+					end if;
+			
+				end loop;
+			
+			end if;
+			
 		end if;
 		
 	end process;
