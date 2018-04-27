@@ -3,6 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.HI_package.all;
 use work.vga_package.all;
+use work.rand_gen_package.all;
 
 entity Hi_Datapath_Control_Unit is 
 	port 
@@ -12,7 +13,7 @@ entity Hi_Datapath_Control_Unit is
 		BORDER_REACHED					: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
-		RAND_OUTPUT						: in integer;
+		RAND_OUTPUT						: in std_logic_vector (rand_gen_w-1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
 				
 		
@@ -155,6 +156,7 @@ begin
 		
 	column_to_shoot_handling : process(CLOCK, RESET_N)
 		
+		variable column : integer := 0;
 		variable reg_column_to_shoot : alien_grid_index_type := 0;
 		
 	begin
@@ -165,6 +167,7 @@ begin
 			ALIEN_SHOOT 			<= '0';
 			column_state 			<= IDLE;
 			reg_column_to_shoot 	:= 0;
+			column					:= 0;
 			
 			
 		elsif (rising_edge(CLOCK)) then	
@@ -183,7 +186,8 @@ begin
 					
 				when FIRST_INDEX => 
 					
-					reg_column_to_shoot 	:= RAND_OUTPUT;
+					column := to_integer(unsigned (RAND_OUTPUT));
+					reg_column_to_shoot := column;	
 					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
 					column_state 			<= WAITING;
 					

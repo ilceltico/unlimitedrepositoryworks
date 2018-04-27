@@ -1,47 +1,39 @@
 library ieee;
-use ieee.std_logic_1164.all;
-use ieee.math_real.all;
-
+  use ieee.std_logic_1164.all;
+  use work.rand_gen_package.all;
+  
 entity rand_gen is
-	port
-	(
-			CLOCK								: in std_logic;
-			RESET_N							: in std_logic;
-			RAND_OUTPUT						: out integer
-	);
-	
-end rand_gen;
+  port (
+    RESET_N  					: in  std_logic;
+    CLOCK   					: in  std_logic; 
+  --ENABLE 						: in  std_logic; 
+    RAND_OUTPUT				: out std_logic_vector (rand_gen_w-1 downto 0) 	  -- lfsr output
+  );
+end entity;
 
-architecture behavior of rand_gen is 
-
-	signal rand_num : integer := 0;
+architecture rtl of rand_gen is
+    signal counter		   	: std_logic_vector (rand_gen_w-1 downto 0);
+    signal feedback 				: std_logic;
 
 begin
 
-	process
-	
-		 variable seed1, seed2: positive;               -- seed values for random generator
-		 variable rand: real;   -- random real-number value in range 0 to 1.0  
-		 variable range_of_rand : integer;    -- the range of random values created will be 0 to +1000.
-		 
-	begin
-		
-		if (RESET_N = '0') then 
-			
-			seed1 := 0;
-			seed2:= 0;
-			range_of_rand := 0; -- NON VA!!!!
-			
-		elsif (rising_edge(CLOCK)) then
-		 
-		 -- srand(seed1, seed2, rand);   -- generate random number
-		 -- rand_num <= integer(rand*range_of_rand);  -- rescale to 0..1000, convert integer part 
-		 -- RAND_OUTPUT <= rand_num;
-		 --wait for 10 ns; --it generates random values every 10 ns
-		 
-		 end if;
-		 
-	end process;
+	-- option for LFSR size 4
+  feedback <= not(counter(rand_gen_w-1) xor counter(rand_gen_w-2));		
 
-end behavior;
+  shift_register : process (CLOCK, RESET_N) 
+    begin
+		if (RESET_N = '0') then
+			counter <= (others=>'0');
+      
+		elsif (rising_edge(CLOCK)) then
+         --elsif (en = '1') then
+          counter <= counter(rand_gen_w-2 downto 0) & feedback;
+      end if;  
+     
+    end process;
+	 
+  RAND_OUTPUT <= counter;
+  
+end architecture;
+
 
