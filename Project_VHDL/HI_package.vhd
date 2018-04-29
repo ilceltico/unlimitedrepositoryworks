@@ -94,6 +94,7 @@ package HI_package is
 	constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
 	constant RAND_ALIEN_SPEED 								: natural := 3;
 	constant RAND_ALIEN_FRAME_TIME_50MHz 				: natural := 833333;
+	constant RAND_ALIEN_TIME_INTERVAL					: natural := 500000000; -- Time interval of 10 seconds
 	
 	-- Sprites
 	constant ALIEN_1_1_SPRITE 								: natural := 0;

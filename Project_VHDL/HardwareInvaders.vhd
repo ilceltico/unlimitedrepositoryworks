@@ -59,7 +59,7 @@ architecture RTL of HardwareInvaders is
 	signal fb_vsync			  : std_logic;
 	signal req_next_sprite 	  : std_logic;
 	signal request_entity_sprite	: datapath_entity_index_type;
-	signal show_rand_alien : direction_type;
+	signal random_alien_movement : direction_type;
 	signal alien_grid_movement : direction_type;
 	signal player_movement		: direction_type;
 	signal border_reached	: direction_type;
@@ -205,7 +205,7 @@ begin
 			ADVANCE_ALIENS				=> game_tick,
 			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
 			PLAYER_MOVEMENT			=> player_movement,
-			SHOW_RAND_ALIEN			=> show_rand_alien,
+			RAND_ALIEN_MOVEMENT		=> random_alien_movement,
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> 0,
 			ROW_INDEX					=> 0,
@@ -227,11 +227,11 @@ begin
 			BORDER_REACHED => border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			GAME_TICK	=> game_tick,
-			RAND_OUTPUT	=> 0,
+			RAND_OUTPUT	=> (others => '0'), -- Controllare se effettivamente va bene, prima non compilava - Kevin
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			
 			ALIEN_GRID_MOVEMENT => alien_grid_movement,
-			SHOW_RAND_ALIEN		=> show_rand_alien,
+			RAND_ALIEN_MOVEMENT => random_alien_movement,
 			PLAYER_MOVEMENT => player_movement,
 			
 			BUTTON_LEFT => not(KEY(3)),

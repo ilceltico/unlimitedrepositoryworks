@@ -8,3 +8,9 @@ Project_VHDL/output_files/
 Project_VHDL/incremental_db/
 Project_VHDL/simulation/
 *.logdb
+*.ddb
+*.tdf
+*.ammdb
+*.sci
+*.kpt
+*.pin

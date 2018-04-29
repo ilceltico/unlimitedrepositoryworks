@@ -15,13 +15,12 @@ entity Hi_Datapath_Control_Unit is
 		GAME_TICK						: in 	std_logic;
 		RAND_OUTPUT						: in std_logic_vector (rand_gen_w-1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
-				
 		
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		COLUMN_TO_SHOOT				: out alien_grid_index_type;
 		ALIEN_SHOOT						: out std_logic;
 		
-		SHOW_RAND_ALIEN				: out direction_type;
+		RAND_ALIEN_MOVEMENT			: out direction_type;
 		
 		PLAYER_MOVEMENT				: out direction_type;
 		
@@ -33,12 +32,14 @@ end entity;
 architecture RTL of Hi_Datapath_Control_Unit is 
 
 	signal player_move_time			: std_logic;
-
 		
 		type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
 		signal column_state				: column_state_type;
 		signal bullet_tick				: std_logic;
 		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+		
+		signal show_rand_alien			: std_logic;
+
 	
 begin
 	
@@ -219,31 +220,55 @@ begin
 	
 		variable random_alien_movement	: direction_type := DIR_RIGHT;
 		variable last_wall_reached 	: direction_type := DIR_NONE;
+		variable counter : natural range 0 to (RAND_ALIEN_TIME_INTERVAL - 1);
 		
 	begin
 	
 		if (RESET_N = '0') then
 	
 			random_alien_movement := DIR_RIGHT;
-			SHOW_RAND_ALIEN <= DIR_RIGHT;
+			RAND_ALIEN_MOVEMENT <= DIR_NONE;
+			show_rand_alien  <= '0';
 			
 		elsif rising_edge(CLOCK) then
-		
-			if (GAME_TICK = '1') then 
-				SHOW_RAND_ALIEN <= random_alien_movement;
-			end if;
 			
-			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then
-			
-				random_alien_movement := DIR_RIGHT;
-			
-			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then 
+			-- Ho provato a dividere la funzione per gestire l'attivazione del random alien, tuttavia 
+			-- non si può gestire uno stesso segnale in due processi differenti.
+			-- Si tratta comunque di una implementazione temporanea.
+			-- TEMPORARY: Activates the Random Alien every 10 seconds
+			if (show_rand_alien /= '1') then
+				RAND_ALIEN_MOVEMENT <= DIR_NONE;
 				
-				random_alien_movement := DIR_LEFT;
-			
-			end if;
-			
-			last_wall_reached := RAND_ALIEN_BORDER_REACHED;
+				if(counter = counter'high) then
+					counter := 0;
+					show_rand_alien <= '1';
+				else
+					counter := counter+1;
+					show_rand_alien <= '0';			
+				end if;
+			-- END TEMPORARY
+			else 
+				-- the random alien is active
+				if (GAME_TICK = '1') then 
+					RAND_ALIEN_MOVEMENT <= random_alien_movement;
+				end if;
+				
+				if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then
+				
+					random_alien_movement := DIR_RIGHT;
+					show_rand_alien <=  '0';
+				
+				elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then 
+					
+					random_alien_movement := DIR_LEFT;
+					show_rand_alien <=  '0';
+				
+				end if;
+				
+				last_wall_reached := RAND_ALIEN_BORDER_REACHED;
+				
+						
+			end if; --  show_rand_alien
 			
 		end if;
 		

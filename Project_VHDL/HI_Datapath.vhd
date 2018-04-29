@@ -19,7 +19,7 @@ entity HI_Datapath is
 --		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 		ALIEN_SHOOT						: in 	std_logic;
-		SHOW_RAND_ALIEN				: in 	direction_type;
+		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 --		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
 --		DESTROY_PLAYER					: in 	std_logic;
@@ -81,6 +81,11 @@ begin
 			
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
+				
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN) then
+			
+				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
+				HITBOX <= rand_alien.hitbox;
 			
 			end if;
 			
@@ -239,8 +244,10 @@ begin
 			-- Random Alien
 			if (rand_alien.hitbox.up_left_x > H_DISP - SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_RIGHT;
+				rand_alien.visible <= '0';
 			elsif (rand_alien.hitbox.up_left_x > SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_LEFT;
+				rand_alien.visible <= '0';
 			else
 				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
@@ -281,7 +288,7 @@ begin
 		
 	end process;
 	
-	rand_alien_movement_handler : process(RESET_N, SHOW_RAND_ALIEN) is
+	rand_alien_movement_handler : process(RESET_N, RAND_ALIEN_MOVEMENT) is
 	begin
 	
 		if (RESET_N = '0') then
@@ -296,7 +303,7 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then
 		
-			case (SHOW_RAND_ALIEN) is
+			case (RAND_ALIEN_MOVEMENT) is
 						
 				when DIR_RIGHT => 
 					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x + RAND_ALIEN_SPEED;
