@@ -20,6 +20,7 @@ entity HI_Datapath is
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 		ALIEN_SHOOT						: in 	std_logic;
 		RAND_ALIEN_MOVEMENT			: in 	direction_type;
+		SHOW_RAND_ALIEN				: in 	std_logic;
 --		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
 --		DESTROY_PLAYER					: in 	std_logic;
@@ -67,25 +68,40 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then	
 			
-			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN) then
+			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET) then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '0') then 
+				
+				SPRITE <= sprite_empty;
+				HITBOX <= (1,1,1,1);
+			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 
 				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
+			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '0') then
+			
+				SPRITE <= sprite_empty;
+				HITBOX <= (1,1,1,1);
 			
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
 			
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN) then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
+				
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '0') then
+			
+				SPRITE <= sprite_empty;
+				HITBOX <= (1,1,1,1);
 			
 			end if;
 			
@@ -131,7 +147,7 @@ begin
 					alien_grid(I)(J).hitbox.size_x 		<= ALIEN_SIZE_X;
 					alien_grid(I)(J).hitbox.size_y 		<= ALIEN_SIZE_Y;
 					alien_grid(I)(J).current_index 		<= 0;
-					alien_grid(I)(J).visible 				<= '0';
+					alien_grid(I)(J).visible 				<= '1';
 					alien_grid(I)(J).exploding 			<= '0';
 		
 				end loop;	
@@ -242,12 +258,10 @@ begin
 			end if;
 			
 			-- Random Alien
-			if (rand_alien.hitbox.up_left_x > H_DISP - SIDE_MARGIN) then
+			if (rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x > H_DISP - SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_RIGHT;
-				rand_alien.visible <= '0';
-			elsif (rand_alien.hitbox.up_left_x > SIDE_MARGIN) then
+			elsif (rand_alien.hitbox.up_left_x < SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_LEFT;
-				rand_alien.visible <= '0';
 			else
 				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
@@ -288,7 +302,7 @@ begin
 		
 	end process;
 	
-	rand_alien_movement_handler : process(RESET_N, RAND_ALIEN_MOVEMENT) is
+	rand_alien_movement_handler : process(CLOCK, RESET_N) is
 	begin
 	
 		if (RESET_N = '0') then
@@ -303,17 +317,24 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then
 		
-			case (RAND_ALIEN_MOVEMENT) is
+			if (SHOW_RAND_ALIEN = '1') then
+			
+				rand_alien.visible <= '1';
+			
+				case (RAND_ALIEN_MOVEMENT) is
 						
-				when DIR_RIGHT => 
-					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x + RAND_ALIEN_SPEED;
-				when DIR_LEFT => 
-					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x - RAND_ALIEN_SPEED;
-				when DIR_UP => -- Unreachable
-				when DIR_DOWN => -- Unreachable
-				when DIR_NONE => -- Unreachable
+					when DIR_RIGHT => 
+						rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x + RAND_ALIEN_SPEED;
+					when DIR_LEFT => 
+						rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x - RAND_ALIEN_SPEED;
+					when DIR_UP => -- Unreachable
+					when DIR_DOWN => -- Unreachable
+					when DIR_NONE => -- Unreachable
 						
-			end case;	
+				end case;	
+			else 
+				rand_alien.visible <= '0';
+			end if;
 		end if;
 	end process;
 		
