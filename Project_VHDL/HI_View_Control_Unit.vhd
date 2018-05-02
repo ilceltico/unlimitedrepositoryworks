@@ -97,7 +97,7 @@ begin
 				
 							if (rendered_alien > ALIENS_PER_COLUMN - 1) then
 								rendered_alien := 0;
-								substate <= ALIEN_BULLET_QUERY;
+								substate <= RAND_ALIEN_QUERY;
 							end if;
 				
 						when ALIEN_BULLET_QUERY =>

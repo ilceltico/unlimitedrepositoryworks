@@ -5,9 +5,11 @@ library ieee;
 
   
 entity rand_gen is
+  
   generic(
-	RAND_GEN_W					: natural := 4;
+	RAND_GEN_W					: natural := 4
   );
+  
   port (
    RESET_N  					: in std_logic;
    CLOCK   						: in std_logic; 

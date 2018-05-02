@@ -332,7 +332,6 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE rand_gen_package.vhd
 set_global_assignment -name VHDL_FILE rand_gen.vhd
 set_global_assignment -name VHDL_FILE HI_Datapath_Control_Unit.vhd
 set_global_assignment -name VHDL_FILE HI_View_Control_Unit.vhd

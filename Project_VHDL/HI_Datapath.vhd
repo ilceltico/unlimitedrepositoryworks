@@ -9,7 +9,6 @@ entity HI_Datapath is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		ADVANCE_ALIENS 				: in  std_logic;
 		REQ_NEXT_SPRITE				: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
 		COLUMN_INDEX					: in 	alien_grid_index_type;
@@ -60,13 +59,13 @@ begin
 		
 		if (RESET_N = '0') then 
 			
-			SPRITE <= sprites(0);
-			HITBOX.up_left_x <= 0;
-			HITBOX.up_left_y <= 0;
-			HITBOX.size_x <= SPRITE_SIZE;
-			HITBOX.size_y <= SPRITE_SIZE;
+			SPRITE <= sprite_empty;
+			HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 			
 		elsif (rising_edge(CLOCK)) then	
+
+			SPRITE <= sprite_empty;
+			HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 			
 			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
@@ -76,7 +75,7 @@ begin
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '0') then 
 				
 				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,1,1);
+				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 			
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 
@@ -86,12 +85,7 @@ begin
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '0') then
 			
 				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,1,1);
-			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
-			
-				SPRITE <= sprites(player.sprite_indexes(player.current_index));
-				HITBOX <= player.hitbox;
+				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 				
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '1') then
 			
@@ -101,8 +95,13 @@ begin
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '0') then
 			
 				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,1,1);
+				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
+			
+				SPRITE <= sprites(player.sprite_indexes(player.current_index));
+				HITBOX <= player.hitbox;
+				
 			end if;
 			
 		end if;
@@ -199,36 +198,35 @@ begin
 				last_row 		<= var_last_row;
 				
 			end if;
-	
-			if (ADVANCE_ALIENS = '1') then 
 			
-				for I in 0 to COLUMNS_PER_GRID - 1 loop
-					for J in 0 to ALIENS_PER_COLUMN - 1 loop
-			
-						case (ALIEN_GRID_MOVEMENT) is
-						
-							when DIR_RIGHT => 
-								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
-							when DIR_LEFT =>
-								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
-							when DIR_UP =>
-								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
-							when DIR_DOWN =>
-								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
-							when DIR_NONE => -- Unreachable
-						
-						end case;	
-						
+			for I in 0 to COLUMNS_PER_GRID - 1 loop
+				for J in 0 to ALIENS_PER_COLUMN - 1 loop
+		
+					case (ALIEN_GRID_MOVEMENT) is
+					
+						when DIR_RIGHT => 
+							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
+						when DIR_LEFT =>
+							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
+						when DIR_UP =>
+							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
+						when DIR_DOWN =>
+							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
+						when DIR_NONE => -- Do nothing
+					
+					end case;	
+					
+					if (ALIEN_GRID_MOVEMENT /= DIR_NONE) then
 						if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
 							alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
 						else 
 							alien_grid(I)(J).current_index <= 0;
 						end if;
-					
-					end loop;
-				end loop;
+					end if;
 				
-			end if;
+				end loop;
+			end loop;
+				
 			
 		end if;
 		

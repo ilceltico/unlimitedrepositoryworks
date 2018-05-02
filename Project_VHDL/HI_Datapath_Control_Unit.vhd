@@ -3,7 +3,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.HI_package.all;
 use work.vga_package.all;
-use work.rand_gen_package.all;
 
 entity Hi_Datapath_Control_Unit is 
 	port 
@@ -13,7 +12,7 @@ entity Hi_Datapath_Control_Unit is
 		BORDER_REACHED					: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
-		RAND_OUTPUT						: in std_logic_vector (rand_gen_w-1 downto 0);
+		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
 		
 		BUTTON_LEFT						: in std_logic;
@@ -62,8 +61,6 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 		
-			bullet_gen_time <= bullet_gen_time;
-		
 			if(counter = bullet_gen_time) then
 			
 				counter 		:= 0;
@@ -93,8 +90,6 @@ begin
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_50MHz - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
-		
-			rand_alien_time <= rand_alien_time;
 		
 			if(counter = rand_alien_time) then
 			
@@ -151,28 +146,30 @@ begin
 		if (RESET_N = '0') then 
 		
 			grid_movement := DIR_RIGHT;
-			ALIEN_GRID_MOVEMENT <= DIR_RIGHT;
+			ALIEN_GRID_MOVEMENT <= DIR_NONE;
 		
 		elsif (rising_edge(CLOCK)) then 
 		
+			ALIEN_GRID_MOVEMENT <= DIR_NONE;
 		
 			if (GAME_TICK = '1') then 
 				ALIEN_GRID_MOVEMENT <= grid_movement;
-			end if;
-			
-			if (BORDER_REACHED = DIR_LEFT and BORDER_REACHED /= last_wall_reached) then
-			
-				grid_movement := DIR_RIGHT;
-				ALIEN_GRID_MOVEMENT <= DIR_DOWN;
-			
-			elsif (BORDER_REACHED = DIR_RIGHT and BORDER_REACHED /= last_wall_reached) then 
 				
-				grid_movement := DIR_LEFT;
-				ALIEN_GRID_MOVEMENT <= DIR_DOWN;
-			
+				if (BORDER_REACHED = DIR_LEFT and BORDER_REACHED /= last_wall_reached) then
+				
+					grid_movement := DIR_RIGHT;
+					ALIEN_GRID_MOVEMENT <= DIR_DOWN;
+				
+				elsif (BORDER_REACHED = DIR_RIGHT and BORDER_REACHED /= last_wall_reached) then 
+					
+					grid_movement := DIR_LEFT;
+					ALIEN_GRID_MOVEMENT <= DIR_DOWN;
+				
+				end if;
+				
+				last_wall_reached := BORDER_REACHED;
+				
 			end if;
-			
-			last_wall_reached := BORDER_REACHED;
 			
 		end if;
 	
@@ -285,7 +282,6 @@ begin
 	rand_alien_movement_handler : process(CLOCK, RESET_N)
 	
 		variable random_alien_movement	: direction_type := DIR_RIGHT;
-		variable last_wall_reached 		: direction_type := DIR_NONE;
 		
 	begin
 	
@@ -297,17 +293,19 @@ begin
 			SHOW_RAND_ALIEN <= '0';
 			
 		elsif rising_edge(CLOCK) then
+		
+			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 	
 			if (move_rand_alien = '1') then 
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
 			end if;
 			
-			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then
+			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT) then
 			
 				random_alien_movement := DIR_RIGHT;
 				--reg_show_rand_alien <=  '0';
 			
-			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and RAND_ALIEN_BORDER_REACHED /= last_wall_reached) then 
+			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT) then 
 				
 				random_alien_movement := DIR_LEFT;
 				--reg_show_rand_alien <=  '0';
@@ -316,10 +314,10 @@ begin
 				
 			if (spawn_rand_alien = '1') then
 				reg_show_rand_alien <= '1';
+			--	SHOW_RAND_ALIEN <= '1';
 			end if;
 			
-			SHOW_RAND_ALIEN <= reg_show_rand_alien;						
-			last_wall_reached := RAND_ALIEN_BORDER_REACHED;
+			SHOW_RAND_ALIEN <= reg_show_rand_alien;
 			
 		end if;
 		

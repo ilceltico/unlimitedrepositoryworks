@@ -203,7 +203,6 @@ begin
 			CLOCK							=> clock_50MHz,
 			RESET_N						=> RESET_N,
 			REQ_NEXT_SPRITE 			=> req_next_sprite,
-			ADVANCE_ALIENS				=> game_tick,
 			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
 			PLAYER_MOVEMENT			=> player_movement,
 			RAND_ALIEN_MOVEMENT		=> random_alien_movement,
