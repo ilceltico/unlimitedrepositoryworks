@@ -38,19 +38,19 @@ architecture RTL of HI_View is
 
 type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
 
-	signal state				: state_type;
-	signal next_state			: state_type;
-	signal row					: integer;
-	signal column				: integer;
-	signal show_asap			: std_logic;
+	signal state				: state_type := CLEARING;
+	signal next_state			: state_type := INIT;
+	signal row					: integer := 0;
+	signal column				: integer := 0;
+	signal show_asap			: std_logic := '0';
 
 begin
 	process(CLOCK, RESET_N)
 	
 		variable pixel_scale_factor_x : integer := 1;
 		variable pixel_scale_factor_y : integer := 1;
-		variable reg_sprite				: sprite_type;
-		variable reg_hitbox 				: hitbox_type;
+		variable reg_sprite				: sprite_type := sprite_empty;
+		variable reg_hitbox 				: hitbox_type := (0,0,1,1);
 		variable reg_fb_x0				: xy_coord_type := 0; 
 		variable reg_fb_x1				: xy_coord_type := 0;
 		variable reg_fb_y0				: xy_coord_type := 0;
@@ -74,7 +74,7 @@ begin
 			row 				<= 0;
 			column 			<= 0;
 			show_asap 		<= '0';
-			reg_sprite 		:= sprites(0);
+			reg_sprite 		:= sprite_empty;
 			reg_hitbox		:= (0,0,1,1);
 			state 			<= CLEARING;
 			reg_fb_x0 		:= 0;

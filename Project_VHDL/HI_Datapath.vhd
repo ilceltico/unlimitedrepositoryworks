@@ -26,8 +26,8 @@ entity HI_Datapath is
 --		ADVANCE_PLAYER_BULLETS		: in 	std_logic;
 --		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
-		SPRITE 							: out sprite_type;
-		HITBOX							: out hitbox_type;
+		SPRITE 							: out sprite_type := sprite_empty;
+		HITBOX							: out hitbox_type := (0,0,1,1);
 --		SCORE								: out integer;
 --		LIVES								: out integer;
 --		LIVING_ALIEN_COUNT			: out integer;
@@ -42,13 +42,13 @@ architecture RTL of HI_Datapath is
 
 	signal alien_grid 	: alien_grid_type;
 	
-	signal first_column 	: alien_grid_index_type;
-	signal first_row 		: alien_column_index_type;
-	signal last_column 	: alien_grid_index_type;
-	signal last_row 		: alien_column_index_type;
+	signal first_column 	: alien_grid_index_type := 0;
+	signal first_row 		: alien_column_index_type := 0;
+	signal last_column 	: alien_grid_index_type := COLUMNS_PER_GRID - 1;
+	signal last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
 	
 	signal player			: player_type;
-	signal bullets			: bullet_array_type;
+--	signal bullets			: bullet_array_type;
 	
 	signal rand_alien		: alien_type;
 	
@@ -60,42 +60,27 @@ begin
 		if (RESET_N = '0') then 
 			
 			SPRITE <= sprite_empty;
-			HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
+			HITBOX <= (0,0,1,1);
 			
 		elsif (rising_edge(CLOCK)) then	
 
 			SPRITE <= sprite_empty;
-			HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
+			HITBOX <= (0,0,1,1);
 			
 			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '0') then 
-				
-				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
-			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+--			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 
-				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
-				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
-			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '0') then
-			
-				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
+--				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
+--				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
-				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '0') then
-			
-				SPRITE <= sprite_empty;
-				HITBOX <= (1,1,SPRITE_SIZE,SPRITE_SIZE);
 			
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
 			
@@ -110,10 +95,10 @@ begin
 	
 	alien_grid_handling : process(CLOCK, RESET_N) is 
 	
-	variable var_first_column 	: alien_grid_index_type;
-	variable var_first_row 		: alien_column_index_type;
-	variable var_last_column 	: alien_grid_index_type;
-	variable var_last_row 		: alien_column_index_type;
+	variable var_first_column 	: alien_grid_index_type := 0;
+	variable var_first_row 		: alien_column_index_type := 0;
+	variable var_last_column 	: alien_grid_index_type := COLUMNS_PER_GRID - 1;
+	variable var_last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
 	
 	begin
 		
@@ -282,8 +267,6 @@ begin
 			player.exploding <= '0';
 			
 		elsif (rising_edge(CLOCK)) then
-		
-			player <= player;
 		
 			case (PLAYER_MOVEMENT) is
 						

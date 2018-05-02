@@ -65,9 +65,9 @@ architecture RTL of HardwareInvaders is
 	signal border_reached	: direction_type;
 	signal rand_alien_border_reached	: direction_type;
 	signal show_rand_alien 	: std_logic;
-	signal alien_shoot			: std_logic;
 	signal column_cannot_shoot : std_logic;
-
+	signal alien_shoot			: std_logic;
+	
 begin
 
 	LEDG(7) <= show;
