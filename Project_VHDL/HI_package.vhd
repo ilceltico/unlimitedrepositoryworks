@@ -11,6 +11,7 @@ package HI_package is
 	constant BULLET_SPRITE_COUNT							: natural 	:= 4;
 	constant SHIELD_SPRITE_COUNT							: natural 	:= 4;
 	constant SPRITE_SIZE										: natural 	:= 32;
+	constant MAX_HITBOX_SIZE								: natural 	:= 128;
 	
 	constant ALIENS_PER_COLUMN								: natural	:= 5;
 	constant COLUMNS_PER_GRID 								: natural  	:= 11;
@@ -132,11 +133,12 @@ package HI_package is
 	--------------------------------------------------------------
 	
 	-- Hitbox type declaration
+	subtype hitbox_size is integer range 0 to MAX_HITBOX_SIZE - 1;
 	type hitbox_type is record 
 		up_left_x         : integer;
 		up_left_y         : integer;
-		size_x				: integer;
-		size_y				: integer;
+		size_x				: hitbox_size;
+		size_y				: hitbox_size;
 	end record;
 	
 	--------------------------------------------------------------
@@ -146,10 +148,11 @@ package HI_package is
 	-- Sprite type declaration
 	type img_pixels_type is array(0 to SPRITE_SIZE - 1 , 0 to SPRITE_SIZE - 1) of std_logic;
 	subtype img_pixel_index_type is integer range 0 to SPRITE_SIZE - 1;
+	subtype sprite_logic_dim_type is integer range 1 to SPRITE_SIZE;
 	type sprite_type is record 
 		img_pixels				: img_pixels_type;
-		logic_dim_x				: integer;
-		logic_dim_y				: integer;
+		logic_dim_x				: sprite_logic_dim_type;
+		logic_dim_y				: sprite_logic_dim_type;
 		color 					: color_type;
 	end record;
 	

@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="HardwareInvaders">
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult0" CBX_FILE_NAME="mult_i1t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult2" CBX_FILE_NAME="mult_i1t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_nto.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult1" CBX_FILE_NAME="mult_i1t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult3" CBX_FILE_NAME="mult_i1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_jem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult0" CBX_FILE_NAME="mult_h1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult2" CBX_FILE_NAME="mult_h1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_jem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult1" CBX_FILE_NAME="mult_h1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult3" CBX_FILE_NAME="mult_h1t.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

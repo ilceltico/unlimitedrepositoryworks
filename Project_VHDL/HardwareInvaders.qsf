@@ -347,4 +347,7 @@ set_global_assignment -name VHDL_FILE VGA_RAMDAC.vhd
 set_global_assignment -name VHDL_FILE vga_package.vhd
 set_global_assignment -name VHDL_FILE VGA_FrameBuffer.vhd
 set_global_assignment -name VHDL_FILE HardwareInvaders.vhd
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
