@@ -174,8 +174,8 @@ begin
 						reg_fb_y0	 	:= reg_hitbox.up_left_y + (row * pixel_scale_factor_y) / UPSCALE_PRECISION;
 						reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) * pixel_scale_factor_y) / UPSCALE_PRECISION - 1;
 						
-						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
---						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
+--						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
+						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
 				
 							FB_FILL_RECT 	<= '1';
 							FB_COLOR 	 	<= reg_sprite.color;
