@@ -11,6 +11,7 @@ entity Hi_Datapath_Control_Unit is
 		RESET_N							: in 	std_logic;
 		ALIEN_BORDER_REACHED					: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
+		PLAYER_BORDER_REACHED		: in direction_type;
 		GAME_TICK						: in 	std_logic;
 		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
@@ -206,9 +207,9 @@ begin
 			
 			if (player_move_time = '1') then
 			
-				if (BUTTON_LEFT = '1') then
+				if (BUTTON_LEFT = '1' and PLAYER_BORDER_REACHED /= DIR_LEFT) then
 					PLAYER_MOVEMENT <= DIR_LEFT;
-				elsif (BUTTON_RIGHT = '1') then
+				elsif (BUTTON_RIGHT = '1' and PLAYER_BORDER_REACHED /= DIR_RIGHT) then
 					PLAYER_MOVEMENT <= DIR_RIGHT;
 				end if;
 			
