@@ -282,6 +282,7 @@ begin
 	rand_alien_movement_handler : process(CLOCK, RESET_N)
 	
 		variable random_alien_movement	: direction_type := DIR_RIGHT;
+		variable last_wall_reached 		: direction_type := DIR_LEFT;
 		
 	begin
 	
@@ -300,21 +301,22 @@ begin
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
 			end if;
 			
-			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT) then
+			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
 			
 				random_alien_movement := DIR_RIGHT;
-				--reg_show_rand_alien <=  '0';
+				reg_show_rand_alien <=  '0';
+				last_wall_reached := DIR_LEFT;
 			
-			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT) then 
+			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
 				
 				random_alien_movement := DIR_LEFT;
-				--reg_show_rand_alien <=  '0';
+				reg_show_rand_alien <=  '0';
+				last_wall_reached := DIR_RIGHT;
 			
 			end if;
 				
 			if (spawn_rand_alien = '1') then
 				reg_show_rand_alien <= '1';
-			--	SHOW_RAND_ALIEN <= '1';
 			end if;
 			
 			SHOW_RAND_ALIEN <= reg_show_rand_alien;

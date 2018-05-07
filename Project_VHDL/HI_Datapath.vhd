@@ -32,7 +32,7 @@ entity HI_Datapath is
 --		LIVES								: out integer;
 --		LIVING_ALIEN_COUNT			: out integer;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
-		ALIEN_BORDER_REACHED					: out direction_type;
+		ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
 		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
@@ -241,9 +241,9 @@ begin
 			end if;
 			
 			-- Random Alien
-			if (rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x > H_DISP - SIDE_MARGIN) then
+			if (rand_alien.hitbox.up_left_x > H_DISP - SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_RIGHT;
-			elsif (rand_alien.hitbox.up_left_x < SIDE_MARGIN) then
+			elsif (rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x < SIDE_MARGIN) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_LEFT;
 			else
 				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
