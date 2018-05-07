@@ -9,7 +9,7 @@ entity Hi_Datapath_Control_Unit is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		BORDER_REACHED					: in 	direction_type;
+		ALIEN_BORDER_REACHED					: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		GAME_TICK						: in 	std_logic;
 		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
@@ -155,19 +155,19 @@ begin
 			if (GAME_TICK = '1') then 
 				ALIEN_GRID_MOVEMENT <= grid_movement;
 				
-				if (BORDER_REACHED = DIR_LEFT and BORDER_REACHED /= last_wall_reached) then
+				if (ALIEN_BORDER_REACHED = DIR_LEFT and ALIEN_BORDER_REACHED /= last_wall_reached) then
 				
 					grid_movement := DIR_RIGHT;
 					ALIEN_GRID_MOVEMENT <= DIR_DOWN;
 				
-				elsif (BORDER_REACHED = DIR_RIGHT and BORDER_REACHED /= last_wall_reached) then 
+				elsif (ALIEN_BORDER_REACHED = DIR_RIGHT and ALIEN_BORDER_REACHED /= last_wall_reached) then 
 					
 					grid_movement := DIR_LEFT;
 					ALIEN_GRID_MOVEMENT <= DIR_DOWN;
 				
 				end if;
 				
-				last_wall_reached := BORDER_REACHED;
+				last_wall_reached := ALIEN_BORDER_REACHED;
 				
 			end if;
 			

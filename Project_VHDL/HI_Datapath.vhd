@@ -32,7 +32,7 @@ entity HI_Datapath is
 --		LIVES								: out integer;
 --		LIVING_ALIEN_COUNT			: out integer;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
-		BORDER_REACHED					: out direction_type;
+		ALIEN_BORDER_REACHED					: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
 		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
@@ -222,22 +222,22 @@ begin
 	
 		if (RESET_N = '0') then 
 		
-			BORDER_REACHED <= DIR_NONE;
+			ALIEN_BORDER_REACHED <= DIR_NONE;
 			RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			
 		elsif (rising_edge(CLOCK)) then 
 			
 			-- Alien grid
 			if (alien_grid(last_column)(0).hitbox.up_left_x + alien_grid(last_column)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
-				BORDER_REACHED <= DIR_RIGHT;
+				ALIEN_BORDER_REACHED <= DIR_RIGHT;
 			elsif (alien_grid(first_column)(0).hitbox.up_left_x < SIDE_MARGIN) then
-				BORDER_REACHED <= DIR_LEFT;
+				ALIEN_BORDER_REACHED <= DIR_LEFT;
 			elsif (alien_grid(0)(last_row).hitbox.up_left_y + alien_grid(0)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
-				BORDER_REACHED <= DIR_DOWN;
+				ALIEN_BORDER_REACHED <= DIR_DOWN;
 			elsif (alien_grid(0)(first_row).hitbox.up_left_y < TOP_MARGIN) then
-				BORDER_REACHED <= DIR_UP;
+				ALIEN_BORDER_REACHED <= DIR_UP;
 			else
-				BORDER_REACHED <= DIR_NONE;
+				ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
 			
 			-- Random Alien
