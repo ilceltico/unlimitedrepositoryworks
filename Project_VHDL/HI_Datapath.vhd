@@ -34,6 +34,7 @@ entity HI_Datapath is
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
 		ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
+		PLAYER_BORDER_REACHED		: out direction_type;
 		COLUMN_CANNOT_SHOOT			: out std_logic
 	);
 end entity;
@@ -248,6 +249,16 @@ begin
 			else
 				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
+			
+			-- Player
+			if (player.hitbox.up_left_x + player.hitbox.size_x > H_DISP - SIDE_MARGIN) then
+				PLAYER_BORDER_REACHED <= DIR_RIGHT;
+			elsif (player.hitbox.up_left_x < SIDE_MARGIN) then
+				PLAYER_BORDER_REACHED <= DIR_LEFT;
+			else
+				PLAYER_BORDER_REACHED <= DIR_NONE;
+			end if;
+				
 		end if;
 		
 	end process;
