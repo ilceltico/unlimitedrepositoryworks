@@ -51,7 +51,7 @@ begin
 			next_state 			<= RENDER;
 			substate				<= ALIEN_QUERY;
 			draw_delayed 		<= '0';
-			REQUEST_ENTITY_SPRITE <= (0, 0, NONE);
+			REQUEST_ENTITY_SPRITE <= (0, 0, REQ_NONE);
 			
 			rendered_alien 	:= 0;
 			rendered_column 	:= 0;
@@ -80,13 +80,13 @@ begin
 					REQ_NEXT_SPRITE 	<= '1'; -- DELETE ME
 					next_state 			<= RENDER;
 					draw_delayed 		<= '1';
-					REQUEST_ENTITY_SPRITE <= (0, 0, NONE);
+					REQUEST_ENTITY_SPRITE <= (0, 0, REQ_NONE);
 					
 					case (substate) is 
 					
 						when ALIEN_QUERY => 
 
-							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ALIEN);
+							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, REQ_ALIEN);
 					
 							rendered_column := rendered_column + 1;
 			
@@ -97,27 +97,32 @@ begin
 				
 							if (rendered_alien > ALIENS_PER_COLUMN - 1) then
 								rendered_alien := 0;
-								substate <= RAND_ALIEN_QUERY;
+								substate <= PLAYER_BULLET_QUERY;
 							end if;
 				
 						when ALIEN_BULLET_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (rendered_bullet, 0, ALIEN_BULLET);
+							REQUEST_ENTITY_SPRITE <= (rendered_bullet, 0, REQ_ALIEN_BULLET);
 							
 							rendered_bullet := rendered_bullet + 1;
 							
 							if (rendered_bullet > BULLET_COUNT - 1) then
-								substate <= RAND_ALIEN_QUERY;
+								substate <= PLAYER_BULLET_QUERY;
 							end if;
 							
+						when PLAYER_BULLET_QUERY =>
+							
+							REQUEST_ENTITY_SPRITE <= (0, 0, REQ_PLAYER_BULLET);
+							substate <= RAND_ALIEN_QUERY;
+									
 						when RAND_ALIEN_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0,RANDOM_ALIEN);
+							REQUEST_ENTITY_SPRITE <= (0,0, REQ_RANDOM_ALIEN);
 							substate <= PLAYER_QUERY;
 							
 						when PLAYER_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0,PLAYER_ENTITY);
+							REQUEST_ENTITY_SPRITE <= (0,0, REQ_PLAYER_ENTITY);
 							substate <= RENDER_END;
 							
 						when RENDER_END =>

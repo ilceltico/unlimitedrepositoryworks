@@ -68,6 +68,7 @@ architecture RTL of HardwareInvaders is
 	signal show_rand_alien 	: std_logic;
 	signal column_cannot_shoot : std_logic;
 	signal alien_shoot			: std_logic;
+	signal player_shoot			: std_logic;
 	
 begin
 
@@ -211,8 +212,11 @@ begin
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> 0,
 			ROW_INDEX					=> 0,
+			DESTROY_ALIEN				=> '0',
 			HIDE_ALIEN					=> '0',
+			ADVANCE_PLAYER_BULLET	=> game_tick,
 			ALIEN_SHOOT					=> alien_shoot,
+			PLAYER_SHOOT				=> player_shoot,
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
@@ -238,8 +242,10 @@ begin
 			RAND_ALIEN_MOVEMENT => random_alien_movement,
 			SHOW_RAND_ALIEN		=> show_rand_alien,
 			PLAYER_MOVEMENT => player_movement,
+			PLAYER_SHOOT => player_shoot,
 			
 			BUTTON_LEFT => not(KEY(3)),
-			BUTTON_RIGHT => not(KEY(2))
+			BUTTON_RIGHT => not(KEY(2)),
+			BUTTON_SHOOT => not(KEY(1))
 		);
 end architecture;

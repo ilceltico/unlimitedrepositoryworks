@@ -15,15 +15,15 @@ entity HI_Datapath is
 		ROW_INDEX						: in 	alien_column_index_type;
 --		NEW_LEVEL						: in 	std_logic;
 		PLAYER_MOVEMENT				: in 	direction_type;
---		PLAYER_SHOOT					: in 	std_logic;
+		PLAYER_SHOOT					: in 	std_logic;
 		ALIEN_GRID_MOVEMENT			: in 	direction_type;
 		ALIEN_SHOOT						: in 	std_logic;
 		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 		SHOW_RAND_ALIEN				: in 	std_logic;
---		DESTROY_ALIEN					: in 	std_logic;
+		DESTROY_ALIEN					: in 	std_logic;
 		HIDE_ALIEN						: in 	std_logic;
 --		DESTROY_PLAYER					: in 	std_logic;
---		ADVANCE_PLAYER_BULLETS		: in 	std_logic;
+		ADVANCE_PLAYER_BULLET		: in 	std_logic;
 --		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
 		SPRITE 							: out sprite_type := sprite_empty;
@@ -49,7 +49,8 @@ architecture RTL of HI_Datapath is
 	signal last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
 	
 	signal player			: player_type;
---	signal bullets			: bullet_array_type;
+--	signal alien_bullets	: bullet_array_type;
+	signal player_bullet : bullet_type;
 	
 	signal rand_alien		: alien_type;
 	
@@ -68,22 +69,27 @@ begin
 			SPRITE <= sprite_empty;
 			HITBOX <= (0,0,1,1);
 			
-			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
+			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
---			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
-
+--			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+--
 --				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 --				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = RANDOM_ALIEN and rand_alien.visible = '1') then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_PLAYER_BULLET and player_bullet.visible = '1') then
+
+				SPRITE <= sprites(player_bullet.sprite_indexes(player_bullet.current_index));
+				HITBOX <= player_bullet.hitbox;
+
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = PLAYER_ENTITY) then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_PLAYER_ENTITY) then
 			
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
@@ -218,6 +224,33 @@ begin
 		
 	end process;
 	
+	player_bullet_handling : process (CLOCK, RESET_N) is 
+	begin 
+		
+		if (RESET_N = '0') then 
+		
+			player_bullet <= ((PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_EXPLOSION_SPRITE), (0,0, PLAYER_BULLET_SIZE_X, PLAYER_BULLET_SIZE_Y), 0, '0', '0');
+		
+		elsif (rising_edge(CLOCK)) then 
+		
+			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0') then 
+			
+				player_bullet.hitbox.up_left_x <= player.hitbox.up_left_x + player.hitbox.size_x / 2 - player_bullet.hitbox.size_x / 2;
+				player_bullet.hitbox.up_left_y <= player.hitbox.up_left_y;
+				player_bullet.visible <= '1';
+				
+			end if;
+				
+			if (ADVANCE_PLAYER_BULLET = '1' and player_bullet.visible = '1' and player_bullet.exploding = '0') then
+			
+				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y + PLAYER_BULLET_SPEED;
+			
+			end if;
+		
+		end if;
+		
+	end process;
+	
 	border_collision_detection : process(CLOCK, RESET_N) is
 	begin
 	
@@ -259,6 +292,11 @@ begin
 				PLAYER_BORDER_REACHED <= DIR_NONE;
 			end if;
 				
+			-- Player bullet
+			if (player_bullet.hitbox.up_left_y > V_DISP) then 
+				--player_bullet.visible <= '0';
+			end if;
+			
 		end if;
 		
 	end process;

@@ -18,6 +18,7 @@ entity Hi_Datapath_Control_Unit is
 		
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic;
+		BUTTON_SHOOT					: in std_logic;
 		
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		COLUMN_TO_SHOOT				: out alien_grid_index_type;
@@ -26,7 +27,8 @@ entity Hi_Datapath_Control_Unit is
 		RAND_ALIEN_MOVEMENT			: out direction_type;
 		SHOW_RAND_ALIEN				: out std_logic;
 		
-		PLAYER_MOVEMENT				: out direction_type
+		PLAYER_MOVEMENT				: out direction_type;
+		PLAYER_SHOOT					: out std_logic
 	);
 end entity;
 
@@ -181,7 +183,7 @@ begin
 	begin
 		if (RESET_N = '0') then
 			counter  := 0;
-			player_move_time          <= '0';
+			player_move_time        <= '0';
 		elsif rising_edge(CLOCK) then
 			if(counter = counter'high) then
 				counter := 0;
@@ -192,7 +194,6 @@ begin
 			end if;
 		end if;
 	end process;
-	
 	
 	player_movement_handler : process(CLOCK, RESET_N)
 	begin
@@ -212,6 +213,12 @@ begin
 				elsif (BUTTON_RIGHT = '1' and PLAYER_BORDER_REACHED /= DIR_RIGHT) then
 					PLAYER_MOVEMENT <= DIR_RIGHT;
 				end if;
+			
+			end if;
+			
+			if (BUTTON_SHOOT = '1') then
+			
+				PLAYER_SHOOT <= '1';
 			
 			end if;
 			
