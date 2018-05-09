@@ -149,7 +149,7 @@ begin
 			counter := 0;
 			game_tick <= '0';
 		elsif (rising_edge(CLOCK)) then
-			if (time_1us = '1')
+			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
 					game_tick <= '1';
@@ -161,15 +161,14 @@ begin
 		end if;
 	end process;
 
-	advance_player_bullet_handling	: process(CLOCK, RESET_N) is
-	begin
+	advance_player_bullet_handling	: process(CLOCK, RESET_N)
 		variable counter : integer range 0 to (PLAYER_BULLET_TIME_1us - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
 			ADVANCE_PLAYER_BULLET <= '0';
 		elsif (rising_edge(CLOCK)) then
-			if (time_1us = '1')
+			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
 					ADVANCE_PLAYER_BULLET <= '1';

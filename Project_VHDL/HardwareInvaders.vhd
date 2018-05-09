@@ -69,7 +69,7 @@ architecture RTL of HardwareInvaders is
 	signal column_cannot_shoot : std_logic;
 	signal alien_shoot			: std_logic;
 	signal player_shoot			: std_logic;
-	signal advance_player_bullet : std_logic
+	signal advance_player_bullet : std_logic;
 	
 begin
 
@@ -92,7 +92,7 @@ begin
 	end process;
 
 	reference_time_gen : process(clock_50Mhz, RESET_N)
-		variable counter : integer range 0 to (REFERENCE_TIME_50Mhz - 1);
+		variable counter : integer range 0 to (REFERENCE_TIME_50MHz - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
@@ -109,13 +109,13 @@ begin
 	end process;
 
 	frame_time_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (FRAME_TIME_50MHz - 1);
+		variable counter : integer range 0 to (FRAME_TIME_1us - 1);
 	begin
 		if (RESET_N = '0') then
 			counter := 0;
 			frame_time <= '0';
 		elsif (rising_edge(clock_50MHz)) then
-			if (time_1us = '1')
+			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
 					frame_time <= '1';

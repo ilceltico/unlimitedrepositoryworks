@@ -6,6 +6,8 @@ use work.vga_package.all;
 package HI_package is
 
 	-- Common constants
+	constant REFERENCE_TIME_50MHz							: natural 	:= 50; -- Generates 1 microsecond, based on a 50MHz clock
+	
 	constant SPRITE_COUNT									: natural 	:= 26;
 	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
 	constant BULLET_SPRITE_COUNT							: natural 	:= 4;
