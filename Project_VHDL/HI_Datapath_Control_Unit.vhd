@@ -9,10 +9,10 @@ entity Hi_Datapath_Control_Unit is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
+		TIME_1US						: in std_logic;
 		ALIEN_BORDER_REACHED					: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		PLAYER_BORDER_REACHED		: in direction_type;
-		GAME_TICK						: in 	std_logic;
 		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
 		
@@ -28,23 +28,26 @@ entity Hi_Datapath_Control_Unit is
 		SHOW_RAND_ALIEN				: out std_logic;
 		
 		PLAYER_MOVEMENT				: out direction_type;
-		PLAYER_SHOOT					: out std_logic
+		PLAYER_SHOOT					: out std_logic;
+
+		ADVANCE_PLAYER_BULLET		: out std_logic
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
+	signal game_tick 				: std_logic;
 	signal player_move_time			: std_logic;
 		
 		type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
 		signal column_state				: column_state_type;
 		signal bullet_tick				: std_logic;
-		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
 		
 		signal reg_show_rand_alien		: std_logic;
 		signal spawn_rand_alien			: std_logic;
-		-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_50MHz + RAND_ALIEN_TIME_RANGE_50MHz - 1); -- Insert here randomizer output
-		signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_50MHz - 1); 
+		-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
+		signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
 		signal move_rand_alien			: std_logic;
 
 	
@@ -52,7 +55,7 @@ begin
 	
 	bullet_tick_gen : process(CLOCK, RESET_N)
 		
-		variable counter : integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1);
+		variable counter : integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
 	
 	begin
 	
@@ -60,7 +63,7 @@ begin
 		
 			counter 				:= 0;
 			bullet_tick 		<= '0';
-			bullet_gen_time 	<= (BASE_ALIEN_BULLET_GEN_TIME_50MHz - 1); --non va qui!!
+			bullet_gen_time 	<= (BASE_ALIEN_BULLET_GEN_TIME_1us - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
 		
@@ -82,15 +85,15 @@ begin
 	
 	rand_alien_tick_gen : process(CLOCK, RESET_N)
 		
-		-- variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_50MHz + RAND_ALIEN_TIME_RANGE_50MHz - 1);
-		variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_50MHz - 1);
+		-- variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
+		variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1);
 	begin
 	
 		if (RESET_N = '0') then
 		
 			counter 				:= 0;
 			spawn_rand_alien	<= '0';
-			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_50MHz - 1); --non va qui!!
+			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
 		
@@ -112,7 +115,7 @@ begin
 	
 	rand_alien_movement_tick_gen : process(CLOCK, RESET_N)
 		
-		variable counter : integer range 0 to (RAND_ALIEN_FRAME_TIME_50MHz - 1);
+		variable counter : integer range 0 to (RAND_ALIEN_FRAME_TIME_1us - 1);
 	
 	begin
 	
@@ -123,7 +126,7 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 		
-			if(counter = RAND_ALIEN_FRAME_TIME_50MHz - 1) then
+			if(counter = RAND_ALIEN_FRAME_TIME_1us - 1) then
 			
 				counter 				:= 0;
 				move_rand_alien 	<= '1';
@@ -137,6 +140,45 @@ begin
 		
 		end if;
 	
+	end process;
+
+	game_tick_gen : process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			game_tick <= '0';
+		elsif (rising_edge(CLOCK)) then
+			if (time_1us = '1')
+				if(counter = counter'high) then
+					counter := 0;
+					game_tick <= '1';
+				else
+					counter := counter+1;
+					game_tick <= '0';			
+				end if;
+			end if;
+		end if;
+	end process;
+
+	advance_player_bullet_handling	: process(CLOCK, RESET_N) is
+	begin
+		variable counter : integer range 0 to (PLAYER_BULLET_TIME_1us - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			ADVANCE_PLAYER_BULLET <= '0';
+		elsif (rising_edge(CLOCK)) then
+			if (time_1us = '1')
+				if(counter = counter'high) then
+					counter := 0;
+					ADVANCE_PLAYER_BULLET <= '1';
+				else
+					counter := counter+1;
+					ADVANCE_PLAYER_BULLET <= '0';			
+				end if;
+			end if;
+		end if;
 	end process;
 	
 	alien_grid_movement_handling : process(CLOCK, RESET_N) is
@@ -155,7 +197,7 @@ begin
 		
 			ALIEN_GRID_MOVEMENT <= DIR_NONE;
 		
-			if (GAME_TICK = '1') then 
+			if (game_tick = '1') then 
 				ALIEN_GRID_MOVEMENT <= grid_movement;
 				
 				if (ALIEN_BORDER_REACHED = DIR_LEFT and ALIEN_BORDER_REACHED /= last_wall_reached) then
@@ -179,7 +221,7 @@ begin
 	end process;
 	
 	player_timed_move : process(CLOCK, RESET_N)
-		variable counter : integer range 0 to (PLAYER_MOVEMENT_TIME_50Mhz - 1);
+		variable counter : integer range 0 to (PLAYER_MOVEMENT_TIME_1us - 1);
 	begin
 		if (RESET_N = '0') then
 			counter  := 0;

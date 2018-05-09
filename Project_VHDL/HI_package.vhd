@@ -29,16 +29,16 @@ package HI_package is
 	constant INDEX_1_MAX										: natural 	:= 16; 
 	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
 	
-	constant FRAME_TIME_50MHz 								: natural := 833333; --60fps
+	constant FRAME_TIME_1us 								: natural := 16666; --60fps
 	constant H_DISP											: natural := 640 - 128;
 	constant V_DISP											: natural := 480;
-	constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
-	constant RAND_ALIEN_EXPLOSION_TIME_50MHz 			: natural := 25000000;
+	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
+	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 			: natural := 25000000;
 	
 	constant RAND_GEN_W										: natural := 16;
 	
 	-- Player
-	constant PLAYER_MOVEMENT_TIME_50Mhz					: natural := 1666666; --30fps
+	constant PLAYER_MOVEMENT_TIME_1us						: natural := 33333; --30fps
 	constant PLAYER_SIZE_X 									: natural := 30;
 	constant PLAYER_SIZE_Y 									: natural := 18;
 	constant PLAYER_START_X 								: natural := (H_DISP - PLAYER_SIZE_X) / 2;
@@ -48,11 +48,11 @@ package HI_package is
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
 	
 	-- Bullets
-	constant ALIEN_BULLET_TIME_50MHz 					: natural := 2500000;
+	constant ALIEN_BULLET_TIME_1us	 					: natural := 33333; --30 fps
 	constant ALIEN_BULLET_SPEED 							: natural := 5;
 	constant ALIEN_BULLET_SIZE_X 							: natural := 3;
 	constant ALIEN_BULLET_SIZE_Y 							: natural := 10;
-	constant PLAYER_BULLET_TIME_50MHz					: natural := 833333;
+	constant PLAYER_BULLET_TIME_1us						: natural := 33333; --30 fps
 	constant PLAYER_BULLET_SPEED 							: natural := 15;
 	constant PLAYER_BULLET_SIZE_X 						: natural := 3;
 	constant PLAYER_BULLET_SIZE_Y 						: natural := 8;
@@ -87,18 +87,18 @@ package HI_package is
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 0;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
-	constant BASE_ALIEN_FRAME_TIME_50MHz 				: natural := 50000000;
-	constant ALIEN_FRAME_TIME_DECREASE_50MHz 			: natural := (BASE_ALIEN_FRAME_TIME_50MHz - FRAME_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); --Nanoseconds decrease each time an alien gets destroyed
-	constant BASE_ALIEN_BULLET_GEN_TIME_50MHz 		: natural := 100000000; --One bullet per 2 seconds
-	constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
-	constant ALIEN_BULLET_GEN_TIME_DECREASE_50MHz 	: natural := (BASE_ALIEN_BULLET_GEN_TIME_50MHz - MAX_ALIEN_BULLET_GEN_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
-	constant BASE_ALIEN_BULLET_TIME_50MHz 				: natural := 50000000; --One bullet per second
-	constant MAX_ALIEN_BULLET_TIME_50MHz 				: natural := 15000000; --More than 3 bullets per second
-	constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
+	constant BASE_ALIEN_FRAME_TIME_1us	 				: natural := 1000000; --1fps
+	constant ALIEN_FRAME_TIME_DECREASE_1us 			: natural := (BASE_ALIEN_FRAME_TIME_1us - FRAME_TIME_1us) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); -- Time decrease each time an alien gets destroyed
+	constant BASE_ALIEN_BULLET_GEN_TIME_1us 		: natural := 2000000; --One bullet per 2 seconds
+	--constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
+	--constant ALIEN_BULLET_GEN_TIME_DECREASE_50MHz 	: natural := (BASE_ALIEN_BULLET_GEN_TIME_50MHz - MAX_ALIEN_BULLET_GEN_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
+	--constant BASE_ALIEN_BULLET_TIME_50MHz 				: natural := 50000000; --One bullet per second
+	--constant MAX_ALIEN_BULLET_TIME_50MHz 				: natural := 15000000; --More than 3 bullets per second
+	--constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
 	constant RAND_ALIEN_SPEED 								: natural := 3;
-	constant RAND_ALIEN_FRAME_TIME_50MHz 				: natural := 8333333;
-	constant RAND_ALIEN_TIME_RANGE_50MHz				: natural := 2000000000; -- Time interval of 40 seconds
-	constant RAND_ALIEN_TIME_MIN_50MHz					: natural := 1000000000; -- Time interval of 20 seconds
+	constant RAND_ALIEN_FRAME_TIME_1us 				: natural := 16666; --60fps
+	constant RAND_ALIEN_TIME_RANGE_1us				: natural := 40000000; -- Time interval of 40 seconds
+	constant RAND_ALIEN_TIME_MIN_1us					: natural := 20000000; -- Time interval of 20 seconds
 	
 	-- Sprites
 	constant ALIEN_1_1_SPRITE 								: natural := 0;

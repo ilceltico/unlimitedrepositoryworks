@@ -35,6 +35,7 @@ architecture RTL of HardwareInvaders is
 	signal clock_debug		  : std_logic;
 	signal clock_100MHz       : std_logic;
 	signal RESET_N            : std_logic;
+	signal time_1us			  : std_logic;
 	signal show					  : std_logic;
 	signal draw_sprite		  : std_logic;
 	signal fb_ready           : std_logic;
@@ -55,7 +56,6 @@ architecture RTL of HardwareInvaders is
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
-	signal game_tick			  : std_logic;
 	signal fb_vsync			  : std_logic;
 	signal req_next_sprite 	  : std_logic;
 	signal request_entity_sprite	: datapath_entity_index_type;
@@ -69,6 +69,7 @@ architecture RTL of HardwareInvaders is
 	signal column_cannot_shoot : std_logic;
 	signal alien_shoot			: std_logic;
 	signal player_shoot			: std_logic;
+	signal advance_player_bullet : std_logic
 	
 begin
 
@@ -90,6 +91,23 @@ begin
 		end if;
 	end process;
 
+	reference_time_gen : process(clock_50Mhz, RESET_N)
+		variable counter : integer range 0 to (REFERENCE_TIME_50Mhz - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			time_1us <= '0';
+		elsif (rising_edge(clock_50MHz)) then
+			if(counter = counter'high) then
+				counter := 0;
+				time_1us <= '1';
+			else
+				counter := counter+1;
+				time_1us <= '0';			
+			end if;
+		end if;
+	end process;
+
 	frame_time_gen : process(clock_50MHz, RESET_N)
 		variable counter : integer range 0 to (FRAME_TIME_50MHz - 1);
 	begin
@@ -97,29 +115,14 @@ begin
 			counter := 0;
 			frame_time <= '0';
 		elsif (rising_edge(clock_50MHz)) then
-			if(counter = counter'high) then
-				counter := 0;
-				frame_time <= '1';
-			else
-				counter := counter+1;
-				frame_time <= '0';			
-			end if;
-		end if;
-	end process;
-	
-	game_tick_gen : process(clock_50MHz, RESET_N)
-		variable counter : integer range 0 to (BASE_ALIEN_FRAME_TIME_50MHz - 1);
-	begin
-		if (RESET_N = '0') then
-			counter := 0;
-			game_tick <= '0';
-		elsif (rising_edge(clock_50MHz)) then
-			if(counter = counter'high) then
-				counter := 0;
-				game_tick <= '1';
-			else
-				counter := counter+1;
-				game_tick <= '0';			
+			if (time_1us = '1')
+				if(counter = counter'high) then
+					counter := 0;
+					frame_time <= '1';
+				else
+					counter := counter+1;
+					frame_time <= '0';			
+				end if;
 			end if;
 		end if;
 	end process;
@@ -214,7 +217,7 @@ begin
 			ROW_INDEX					=> 0,
 			DESTROY_ALIEN				=> '0',
 			HIDE_ALIEN					=> '0',
-			ADVANCE_PLAYER_BULLET	=> game_tick,
+			ADVANCE_PLAYER_BULLET	=> advance_player_bullet,
 			ALIEN_SHOOT					=> alien_shoot,
 			PLAYER_SHOOT				=> player_shoot,
 			
@@ -231,10 +234,10 @@ begin
 		(
 			CLOCK => clock_50MHz,
 			RESET_N => RESET_N, 
+			TIME_1US => time_1us,
 			ALIEN_BORDER_REACHED => alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			PLAYER_BORDER_REACHED => player_border_reached,
-			GAME_TICK	=> game_tick,
 			RAND_OUTPUT	=> (others => '0'), -- Controllare se effettivamente va bene, prima non compilava - Kevin
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			
@@ -243,6 +246,7 @@ begin
 			SHOW_RAND_ALIEN		=> show_rand_alien,
 			PLAYER_MOVEMENT => player_movement,
 			PLAYER_SHOOT => player_shoot,
+			ADVANCE_PLAYER_BULLET => advance_player_bullet,
 			
 			BUTTON_LEFT => not(KEY(3)),
 			BUTTON_RIGHT => not(KEY(2)),
