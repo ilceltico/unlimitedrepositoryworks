@@ -243,7 +243,7 @@ begin
 				
 			if (ADVANCE_PLAYER_BULLET = '1' and player_bullet.visible = '1' and player_bullet.exploding = '0') then
 			
-				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y + PLAYER_BULLET_SPEED;
+				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y - PLAYER_BULLET_SPEED;
 			
 			end if;
 		

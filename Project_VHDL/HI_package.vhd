@@ -40,13 +40,13 @@ package HI_package is
 	constant RAND_GEN_W										: natural := 16;
 	
 	-- Player
-	constant PLAYER_MOVEMENT_TIME_1us						: natural := 33333; --30fps
+	constant PLAYER_MOVEMENT_TIME_1us					: natural := 16666; --30fps
 	constant PLAYER_SIZE_X 									: natural := 30;
 	constant PLAYER_SIZE_Y 									: natural := 18;
 	constant PLAYER_START_X 								: natural := (H_DISP - PLAYER_SIZE_X) / 2;
 	constant PLAYER_START_Y 								: natural := V_DISP - 4*PLAYER_SIZE_Y - BOTTOM_MARGIN;
 	constant PLAYER_LIVES 									: natural := 3;
-	constant PLAYER_SPEED 									: natural := 5;
+	constant PLAYER_SPEED 									: natural := 3;
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
 	
 	-- Bullets
@@ -97,7 +97,7 @@ package HI_package is
 	--constant BASE_ALIEN_BULLET_TIME_50MHz 				: natural := 50000000; --One bullet per second
 	--constant MAX_ALIEN_BULLET_TIME_50MHz 				: natural := 15000000; --More than 3 bullets per second
 	--constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
-	constant RAND_ALIEN_SPEED 								: natural := 3;
+	constant RAND_ALIEN_SPEED 								: natural := 1;
 	constant RAND_ALIEN_FRAME_TIME_1us 				: natural := 16666; --60fps
 	constant RAND_ALIEN_TIME_RANGE_1us				: natural := 40000000; -- Time interval of 40 seconds
 	constant RAND_ALIEN_TIME_MIN_1us					: natural := 20000000; -- Time interval of 20 seconds

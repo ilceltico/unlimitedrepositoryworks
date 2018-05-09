@@ -66,19 +66,20 @@ begin
 			bullet_gen_time 	<= (BASE_ALIEN_BULLET_GEN_TIME_1us - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
-		
-			if(counter = bullet_gen_time) then
-			
-				counter 		:= 0;
-				bullet_tick <= '1';
-			
-			else
-			
-				counter 		:= counter+1;
-				bullet_tick <= '0';			
-			
+			bullet_tick <= '0';
+			if (time_1us = '1') then
+				if(counter = bullet_gen_time) then
+				
+					counter 		:= 0;
+					bullet_tick <= '1';
+				
+				else
+				
+					counter 		:= counter+1;
+					bullet_tick <= '0';			
+				
+				end if;
 			end if;
-		
 		end if;
 	
 	end process;
@@ -96,19 +97,20 @@ begin
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
-		
-			if(counter = rand_alien_time) then
-			
-				counter 				:= 0;
-				spawn_rand_alien 	<= '1';
-			
-			else
-			
-				counter 				:= counter+1;
-				spawn_rand_alien 	<= '0';			
-			
+			spawn_rand_alien <= '0';
+			if (time_1us = '1') then
+				if(counter = rand_alien_time) then
+				
+					counter 				:= 0;
+					spawn_rand_alien 	<= '1';
+				
+				else
+				
+					counter 				:= counter+1;
+					spawn_rand_alien 	<= '0';			
+				
+				end if;
 			end if;
-		
 		end if;
 	
 	end process;
@@ -125,19 +127,20 @@ begin
 			move_rand_alien	<= '0';
 		
 		elsif (rising_edge(CLOCK)) then
-		
-			if(counter = RAND_ALIEN_FRAME_TIME_1us - 1) then
-			
-				counter 				:= 0;
-				move_rand_alien 	<= '1';
-			
-			else
-			
-				counter 				:= counter+1;
-				move_rand_alien 	<= '0';			
-			
+			move_rand_alien <= '0';
+			if (time_1us = '1') then
+				if(counter = RAND_ALIEN_FRAME_TIME_1us - 1) then
+				
+					counter 				:= 0;
+					move_rand_alien 	<= '1';
+				
+				else
+				
+					counter 				:= counter+1;
+					move_rand_alien 	<= '0';			
+				
+				end if;
 			end if;
-		
 		end if;
 	
 	end process;
@@ -149,6 +152,7 @@ begin
 			counter := 0;
 			game_tick <= '0';
 		elsif (rising_edge(CLOCK)) then
+			game_tick <= '0';
 			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
@@ -168,6 +172,7 @@ begin
 			counter := 0;
 			ADVANCE_PLAYER_BULLET <= '0';
 		elsif (rising_edge(CLOCK)) then
+			ADVANCE_PLAYER_BULLET <= '0';
 			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
@@ -226,12 +231,15 @@ begin
 			counter  := 0;
 			player_move_time        <= '0';
 		elsif rising_edge(CLOCK) then
-			if(counter = counter'high) then
-				counter := 0;
-				player_move_time <= '1';
-			else
-				counter := counter+1;
-				player_move_time <= '0';			
+			player_move_time <= '0';
+			if (time_1us = '1') then
+				if(counter = counter'high) then
+					counter := 0;
+					player_move_time <= '1';
+				else
+					counter := counter+1;
+					player_move_time <= '0';			
+				end if;
 			end if;
 		end if;
 	end process;

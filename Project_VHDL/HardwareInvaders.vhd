@@ -115,6 +115,7 @@ begin
 			counter := 0;
 			frame_time <= '0';
 		elsif (rising_edge(clock_50MHz)) then
+			frame_time <= '0';
 			if (time_1us = '1') then
 				if(counter = counter'high) then
 					counter := 0;
