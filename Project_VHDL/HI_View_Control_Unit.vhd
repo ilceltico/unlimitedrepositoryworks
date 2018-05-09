@@ -14,7 +14,7 @@ entity Hi_View_Control_Unit is
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
-		REQ_NEXT_SPRITE				: out std_logic;
+		ENTITY_NEXT_SPRITE				: out std_logic;
 		REQUEST_ENTITY_SPRITE		: out datapath_entity_index_type
 	);
 end entity;
@@ -45,13 +45,13 @@ begin
 		
 			DRAW_SPRITE 		<= '0';
 			SHOW 					<= '0';
-			REQ_NEXT_SPRITE 	<= '0';
+			ENTITY_NEXT_SPRITE 	<= '0';
 			render_asap 		<= '0';
 			state 				<= WAITING;
 			next_state 			<= RENDER;
 			substate				<= ALIEN_QUERY;
 			draw_delayed 		<= '0';
-			REQUEST_ENTITY_SPRITE <= (0, 0, REQ_NONE);
+			REQUEST_ENTITY_SPRITE <= (0, 0, ENTITY_NONE);
 			
 			rendered_alien 	:= 0;
 			rendered_column 	:= 0;
@@ -62,7 +62,7 @@ begin
 			DRAW_SPRITE			<= draw_delayed;
 			draw_delayed 		<= '0';
 			SHOW					<= '0';
-			REQ_NEXT_SPRITE 	<= '0';
+			ENTITY_NEXT_SPRITE 	<= '0';
 		
 			if (FRAME_TIME = '1') then
 				render_asap <= '1';
@@ -77,16 +77,16 @@ begin
 						state <= WAITING_2;
 					end if;
 					
-					REQ_NEXT_SPRITE 	<= '1'; -- DELETE ME
+					ENTITY_NEXT_SPRITE 	<= '1'; -- DELETE ME
 					next_state 			<= RENDER;
 					draw_delayed 		<= '1';
-					REQUEST_ENTITY_SPRITE <= (0, 0, REQ_NONE);
+					REQUEST_ENTITY_SPRITE <= (0, 0, ENTITY_NONE);
 					
 					case (substate) is 
 					
 						when ALIEN_QUERY => 
 
-							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, REQ_ALIEN);
+							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ENTITY_ALIEN);
 					
 							rendered_column := rendered_column + 1;
 			
@@ -102,7 +102,7 @@ begin
 				
 						when ALIEN_BULLET_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (rendered_bullet, 0, REQ_ALIEN_BULLET);
+							REQUEST_ENTITY_SPRITE <= (rendered_bullet, 0, ENTITY_ALIEN_BULLET);
 							
 							rendered_bullet := rendered_bullet + 1;
 							
@@ -112,17 +112,17 @@ begin
 							
 						when PLAYER_BULLET_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0, 0, REQ_PLAYER_BULLET);
+							REQUEST_ENTITY_SPRITE <= (0, 0, ENTITY_PLAYER_BULLET);
 							substate <= RAND_ALIEN_QUERY;
 									
 						when RAND_ALIEN_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0, REQ_RANDOM_ALIEN);
+							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_RANDOM_ALIEN);
 							substate <= PLAYER_QUERY;
 							
 						when PLAYER_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0, REQ_PLAYER_ENTITY);
+							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_PLAYER);
 							substate <= RENDER_END;
 							
 						when RENDER_END =>

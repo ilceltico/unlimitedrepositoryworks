@@ -9,10 +9,10 @@ entity HI_Datapath is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		REQ_NEXT_SPRITE				: in 	std_logic;
+		ENTITY_NEXT_SPRITE			: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
-		COLUMN_INDEX					: in 	alien_grid_index_type;
-		ROW_INDEX						: in 	alien_column_index_type;
+		DESTROY							: in 	datapath_entity_index_type;
+		HIDE								: in 	datapath_entity_index_type;
 --		NEW_LEVEL						: in 	std_logic;
 		PLAYER_MOVEMENT				: in 	direction_type;
 		PLAYER_SHOOT					: in 	std_logic;
@@ -20,9 +20,6 @@ entity HI_Datapath is
 		ALIEN_SHOOT						: in 	std_logic;
 		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 		SHOW_RAND_ALIEN				: in 	std_logic;
-		DESTROY_ALIEN					: in 	std_logic;
-		HIDE_ALIEN						: in 	std_logic;
---		DESTROY_PLAYER					: in 	std_logic;
 		ADVANCE_PLAYER_BULLET		: in 	std_logic;
 --		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
@@ -35,7 +32,8 @@ entity HI_Datapath is
 		ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
 		PLAYER_BORDER_REACHED		: out direction_type;
-		COLUMN_CANNOT_SHOOT			: out std_logic
+		COLUMN_CANNOT_SHOOT			: out std_logic;
+		COLLISION						: out collision_type
 	);
 end entity;
 
@@ -49,7 +47,7 @@ architecture RTL of HI_Datapath is
 	signal last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
 	
 	signal player			: player_type;
---	signal alien_bullets	: bullet_array_type;
+	signal alien_bullets	: bullet_array_type;
 	signal player_bullet : bullet_type;
 	
 	signal rand_alien		: alien_type;
@@ -69,27 +67,27 @@ begin
 			SPRITE <= sprite_empty;
 			HITBOX <= (0,0,1,1);
 			
-			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
+			if (ENTITY_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
---			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+--			elsif (ENTITY_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 --
 --				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 --				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_PLAYER_BULLET and player_bullet.visible = '1') then
+			elsif (ENTITY_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
 
 				SPRITE <= sprites(player_bullet.sprite_indexes(player_bullet.current_index));
 				HITBOX <= player_bullet.hitbox;
 
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_RANDOM_ALIEN and rand_alien.visible = '1') then
+			elsif (ENTITY_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = REQ_PLAYER_ENTITY) then
+			elsif (ENTITY_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
 			
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
@@ -148,10 +146,10 @@ begin
 		elsif (rising_edge(CLOCK)) then 
 		
 			alien_grid <= alien_grid;
-		
-			if (HIDE_ALIEN = '1') then 
+			
+			if (HIDE.entity_type = ENTITY_ALIEN) then 
 				
-				alien_grid(COLUMN_INDEX)(ROW_INDEX).visible <= '0';
+				alien_grid(HIDE.index_1)(HIDE.index_2).visible <= '0';
 				
 				var_last_column 	:= 0;
 				var_last_row 		:= 0;
@@ -161,7 +159,7 @@ begin
 				for I in 0 to COLUMNS_PER_GRID - 1 loop 
 					for J in 0 to ALIENS_PER_COLUMN - 1 loop
 				
-						if ((I /= COLUMN_INDEX or J /= ROW_INDEX) and alien_grid(I)(J).visible = '1') then 
+						if ((I /= HIDE.index_1 or J /= HIDE.index_2) and alien_grid(I)(J).visible = '1') then 
 						
 							if (I > var_last_column) then 
 								var_last_column := I;
@@ -246,7 +244,10 @@ begin
 				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y - PLAYER_BULLET_SPEED;
 			
 			end if;
-		
+			
+			if (HIDE.entity_type = ENTITY_PLAYER_BULLET) then
+				player_bullet.visible <= '0';
+			end if;
 		end if;
 		
 	end process;
@@ -299,6 +300,84 @@ begin
 			
 		end if;
 		
+	end process;
+	
+	bullet_collion_detection : process(CLOCK, RESET_N) is 
+		
+	variable target_xMin : xy_coord_type;
+	variable target_xMax : xy_coord_type;
+	variable target_yMin : xy_coord_type;
+	variable target_yMax : xy_coord_type;
+	
+	variable bullet_xMin : xy_coord_type;
+	variable bullet_xMax : xy_coord_type;
+	variable bullet_yMin : xy_coord_type;
+	variable bullet_yMax : xy_coord_type;
+		
+	begin
+		
+		if (RESET_N = '0') then 
+		
+			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
+		
+		elsif (rising_edge(CLOCK)) then 
+		
+			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
+			
+			-- Check if player_bullet is colliding (can collide with ALIEN_BULLET, RAND_ALIEN, ALIEN, TOP_BORDER)
+			if (player_bullet.hitbox.up_left_y > TOP_MARGIN) then
+				COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_BORDER));
+				
+			target_xMax := rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x;
+			target_xMin := rand_alien.hitbox.up_left_x;
+			target_yMax := rand_alien.hitbox.up_left_y + rand_alien.hitbox.size_y;
+			target_yMin := rand_alien.hitbox.up_left_y;
+			
+			bullet_xMax := player_bullet.hitbox.up_left_x + player_bullet.hitbox.size_x;
+			bullet_xMin := player_bullet.hitbox.up_left_x;
+			bullet_yMax := player_bullet.hitbox.up_left_y + player_bullet.hitbox.size_y;
+			bullet_yMin := player_bullet.hitbox.up_left_y;
+			
+			-- ((bullet.xMax in [alien.xMin, alien.xMax] or bullet.xMin in [alien.xMin, alien.xMax] ) and (bullet.yMax in [alien.yMin, alien.yMax] or bullet.yMin in [alien.yMin, alien.yMax] ))
+			elsif (((bullet_xMax < target_xMax and bullet_xMax > target_xMin) or (bullet_xMin < target_xMax and bullet_xMin > target_xMin)) and ((bullet_yMax < target_yMax and bullet_yMax > target_yMin) or (bullet_yMin < target_yMax and bullet_yMin > target_yMin))) then 
+				COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_RANDOM_ALIEN));
+			
+			else 
+			
+				for I in 0 to COLUMNS_PER_GRID - 1 loop
+					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+					
+						target_xMax := alien_grid(I)(J).hitbox.up_left_x + alien_grid(I)(J).hitbox.size_x;
+						target_xMin := alien_grid(I)(J).hitbox.up_left_x;
+						target_yMax := alien_grid(I)(J).hitbox.up_left_y + alien_grid(I)(J).hitbox.size_y;
+						target_yMin := alien_grid(I)(J).hitbox.up_left_y;
+						
+						if (((bullet_xMax < target_xMax and bullet_xMax > target_xMin) or (bullet_xMin < target_xMax and bullet_xMin > target_xMin)) and ((bullet_yMax < target_yMax and bullet_yMax > target_yMin) or (bullet_yMin < target_yMax and bullet_yMin > target_yMin))) then 
+							COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,J,ENTITY_ALIEN));
+						end if;
+						
+					end loop;
+				end loop;
+				
+				for I in 0 to BULLET_COUNT - 1 loop
+				
+					target_xMax := bullets(I).hitbox.up_left_x + bullets(I).hitbox.size_x;
+					target_xMin := bullets(I).hitbox.up_left_x;
+					target_yMax := bullets(I).hitbox.up_left_y + bullets(I).hitbox.size_y;
+					target_yMin := bullets(I).hitbox.up_left_y;
+				
+					if (((bullet_xMax < target_xMax and bullet_xMax > target_xMin) or (bullet_xMin < target_xMax and bullet_xMin > target_xMin)) and ((bullet_yMax < target_yMax and bullet_yMax > target_yMin) or (bullet_yMin < target_yMax and bullet_yMin > target_yMin))) then 
+						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,0,ENTITY_ALIEN_BULLET));
+					end if;
+				
+				end loop;
+			
+			end if;
+			
+			-- TODO alien_bullets
+			
+		end if;
+	
 	end process;
 	
 	player_movement_handler : process(CLOCK, RESET_N) is
