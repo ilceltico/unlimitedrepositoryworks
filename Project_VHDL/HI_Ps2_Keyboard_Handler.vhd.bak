@@ -1,0 +1,26 @@
+library ieee;
+  use ieee.std_logic_1164.all;
+  use ieee.numeric_std.all;
+  use work.hi_package.all;
+
+  
+entity ps2_keyboard_handler is
+ 
+  port (
+   CLOCK   						: in std_logic; 
+	RESET_N  					: in std_logic;
+   
+	MOVE_LEFT					: out std_logic;
+	MOVE_RIGHT					: out std_logic;
+	SHOOT							: out std_logic;
+	START							: out std_logic;
+	);
+end entity;
+
+architecture rtl of rand_gen is
+    signal counter		   	: std_logic_vector (RAND_GEN_W-1 downto 0);
+    signal feedback 				: std_logic;
+	 variable temp 				: integer;
+	 variable output				: integer;
+
+begin

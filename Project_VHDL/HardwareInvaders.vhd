@@ -26,7 +26,9 @@ entity HardwareInvaders is
 		SRAM_LB_N           : out   std_logic;
 		
 		LEDR					  : out 	 std_logic_vector(9 downto 0);
-		LEDG					  : out 	 std_logic_vector(7 downto 0)
+		LEDG					  : out 	 std_logic_vector(7 downto 0);
+		PS2_CLK				  : in std_logic;
+		PS2_DAT				  : in std_logic
 	);
 end entity;
 
@@ -71,9 +73,19 @@ architecture RTL of HardwareInvaders is
 	signal player_shoot			: std_logic;
 	signal advance_player_bullet : std_logic;
 	
+	signal ps2_code_new 				: std_logic;
+	signal ps2_code					: std_logic_vector(7 downto 0);
+	signal keyboard_move_left		: std_logic;
+	signal keyboard_move_right		: std_logic;
+	signal keyboard_shoot 			: std_logic;
+	signal keyboard_start 			: std_logic;
+	
+	signal move_left					: std_logic;
+	signal move_right 				: std_logic;
+	signal shoot						: std_logic;
+	signal start						: std_logic;
+	
 begin
-
-	LEDG(7) <= show;
 
 	pll : entity work.PLL
 		port map (
@@ -249,8 +261,99 @@ begin
 			PLAYER_SHOOT => player_shoot,
 			ADVANCE_PLAYER_BULLET => advance_player_bullet,
 			
-			BUTTON_LEFT => not(KEY(3)),
-			BUTTON_RIGHT => not(KEY(2)),
-			BUTTON_SHOOT => not(KEY(1))
+			BUTTON_LEFT => move_left,
+			BUTTON_RIGHT => move_right,
+			BUTTON_SHOOT => shoot
 		);
+		
+		ps2_keyboard : entity work.ps2_keyboard
+		port map
+		(
+			clk   			=> clock_50MHz,  
+			ps2_clk      	=> PS2_CLK,     
+			ps2_data     	=> PS2_DAT,     
+			ps2_code_new 	=> ps2_code_new,
+			ps2_code			=> ps2_code
+		);
+		
+		ps2_keyboard_handler : entity work.ps2_keyboard_handler
+		port map
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			PS2_CODE_NEW  	=> ps2_code_new,
+			PS2_CODE 		=> ps2_code,
+			
+			MOVE_LEFT		=> keyboard_move_left,
+			MOVE_RIGHT		=> keyboard_move_right,
+			SHOOT				=> keyboard_shoot,
+			START				=> keyboard_start
+		);
+		
+		led_keyboard : process(clock_50MHz, RESET_N) is
+		begin
+			if (RESET_N = '0') then
+				LEDG(7) <= '0';
+				LEDG(5) <= '0';
+				LEDG(3) <= '0';
+				LEDG(1) <= '0';
+			elsif (rising_edge(clock_50MHz)) then
+				LEDG(7) <= keyboard_move_left;
+				LEDG(5) <= keyboard_move_right;
+				LEDG(3) <= keyboard_shoot;
+				LEDG(1) <= keyboard_start;
+			end if;
+		end process;
+		
+		move_left <= keyboard_move_left or not(KEY(3));
+		move_right <= keyboard_move_right or not(KEY(2));
+		shoot <= keyboard_shoot or not(KEY(1));
+		start <= keyboard_start or not(KEY(0));
+
+--		led_ps2_code : process(clock_50MHz, RESET_N) is
+--			variable selectLed : std_logic := '0';
+--			variable codenew : std_logic := '0';
+--		begin
+--			if (RESET_N = '0') then
+--				selectLed := '0';
+--				codenew := '0';
+--				
+--				LEDG(0) <= '0';
+--				LEDG(1) <= '0';
+--				LEDG(2) <= '0';
+--				LEDG(3) <= '0';
+--				LEDG(4) <= '0';
+--				LEDG(5) <= '0';
+--				LEDG(6) <= '0';
+--				LEDG(7) <= '0';
+--				
+--				LEDR(0) <= '0';
+--				LEDR(1) <= '0';
+--				LEDR(2) <= '0';
+--				LEDR(3) <= '0';
+--				LEDR(4) <= '0';
+--				LEDR(5) <= '0';
+--				LEDR(6) <= '0';
+--				LEDR(7) <= '0';
+--			elsif (rising_edge (clock_50MHz)) then
+--				if (ps2_CODE_NEW = '1' and ps2_code_new /= codenew) then
+--					if (selectLed = '1') then
+--						LEDG <= PS2_code;
+--					else 
+--						LEDR(0) <= PS2_CODE(0);
+--						LEDR(1) <= PS2_CODE(1);
+--						LEDR(2) <= PS2_CODE(2);
+--						LEDR(3) <= PS2_CODE(3);
+--						LEDR(4) <= PS2_CODE(4);
+--						LEDR(5) <= PS2_CODE(5);
+--						LEDR(6) <= PS2_CODE(6);
+--						LEDR(7) <= PS2_CODE(7);
+--					end if;
+--					
+--					selectLed := not selectLed;
+--				end if;
+--				codenew := PS2_code_new;
+--			end if;
+--		end process;
+		
 end architecture;
