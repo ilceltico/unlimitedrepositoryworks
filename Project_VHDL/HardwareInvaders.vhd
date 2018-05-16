@@ -265,8 +265,8 @@ begin
 			PLAYER_MOVEMENT => player_movement,
 			PLAYER_SHOOT => player_shoot,
 			ADVANCE_PLAYER_BULLET => advance_player_bullet,
+			COLLISION => collision,
 			
-<<<<<<< HEAD
 			BUTTON_LEFT => move_left,
 			BUTTON_RIGHT => move_right,
 			BUTTON_SHOOT => shoot
@@ -280,13 +280,6 @@ begin
 			ps2_data     	=> PS2_DAT,     
 			ps2_code_new 	=> ps2_code_new,
 			ps2_code			=> ps2_code
-=======
-			COLLISION => collision,
-			
-			BUTTON_LEFT => not(KEY(3)),
-			BUTTON_RIGHT => not(KEY(2)),
-			BUTTON_SHOOT => not(KEY(1))
->>>>>>> origin/master
 		);
 		
 		ps2_keyboard_handler : entity work.ps2_keyboard_handler
