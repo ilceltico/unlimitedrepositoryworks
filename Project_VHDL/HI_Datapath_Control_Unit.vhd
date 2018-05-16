@@ -9,13 +9,13 @@ entity Hi_Datapath_Control_Unit is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		TIME_1US						: in std_logic;
-		ALIEN_BORDER_REACHED					: in 	direction_type;
+		TIME_1US							: in std_logic;
+		ALIEN_BORDER_REACHED			: in 	direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		PLAYER_BORDER_REACHED		: in direction_type;
+		COLLISION						: in collision_type;
 		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
-		
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic;
 		BUTTON_SHOOT					: in std_logic;
@@ -23,32 +23,32 @@ entity Hi_Datapath_Control_Unit is
 		ALIEN_GRID_MOVEMENT			: out direction_type;
 		COLUMN_TO_SHOOT				: out alien_grid_index_type;
 		ALIEN_SHOOT						: out std_logic;
-		
 		RAND_ALIEN_MOVEMENT			: out direction_type;
 		SHOW_RAND_ALIEN				: out std_logic;
-		
 		PLAYER_MOVEMENT				: out direction_type;
 		PLAYER_SHOOT					: out std_logic;
-
-		ADVANCE_PLAYER_BULLET		: out std_logic
+		ADVANCE_PLAYER_BULLET		: out std_logic;
+		DESTROY							: out datapath_entity_index_type;
+		HIDE								: out	datapath_entity_index_type
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
 	signal game_tick 				: std_logic;
-	signal player_move_time			: std_logic;
+	signal player_move_time		: std_logic;
 		
-		type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
-		signal column_state				: column_state_type;
-		signal bullet_tick				: std_logic;
-		signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
-		
-		signal reg_show_rand_alien		: std_logic;
-		signal spawn_rand_alien			: std_logic;
-		-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
-		signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
-		signal move_rand_alien			: std_logic;
+	type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
+	signal column_state				: column_state_type;
+	signal bullet_tick				: std_logic;
+	signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
+	
+	signal reg_show_rand_alien		: std_logic;
+	signal spawn_rand_alien			: std_logic;
+	-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
+	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
+	signal move_rand_alien			: std_logic;
+	signal hide_rand_alien_border_reached : std_logic;
 
 	
 begin
@@ -250,10 +250,12 @@ begin
 		if (RESET_N = '0') then
 		
 			PLAYER_MOVEMENT <= DIR_NONE;
+			PLAYER_SHOOT <= '0';
 			
 		elsif rising_edge(CLOCK) then
 		
 			PLAYER_MOVEMENT <= DIR_NONE;
+			PLAYER_SHOOT <= '0';
 			
 			if (player_move_time = '1') then
 			
@@ -346,13 +348,15 @@ begin
 		if (RESET_N = '0') then
 	
 			random_alien_movement := DIR_RIGHT;
-			reg_show_rand_alien <= '0';
+			last_wall_reached := DIR_LEFT;
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			SHOW_RAND_ALIEN <= '0';
+			hide_rand_alien_border_reached <= '0';
 			
 		elsif rising_edge(CLOCK) then
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
+			hide_rand_alien_border_reached <= '0';
 	
 			if (move_rand_alien = '1') then 
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
@@ -361,25 +365,63 @@ begin
 			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
 			
 				random_alien_movement := DIR_RIGHT;
-				reg_show_rand_alien <=  '0';
+				hide_rand_alien_border_reached <=  '1';
 				last_wall_reached := DIR_LEFT;
 			
 			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
 				
 				random_alien_movement := DIR_LEFT;
-				reg_show_rand_alien <=  '0';
+				hide_rand_alien_border_reached <=  '1';
 				last_wall_reached := DIR_RIGHT;
 			
 			end if;
-				
-			if (spawn_rand_alien = '1') then
-				reg_show_rand_alien <= '1';
-			end if;
 			
-			SHOW_RAND_ALIEN <= reg_show_rand_alien;
+			SHOW_RAND_ALIEN <= spawn_rand_alien;
 			
 		end if;
 		
+	end process;
+	
+	-- TODO
+	collision_handler : process(CLOCK, RESET_N) 
+	
+	type collision_handler_state_type is (HANDLING_FIRST_ENTITY, HANDLING_SECOND_ENTITY);
+	variable state : collision_handler_state_type;
+	variable second_entity : datapath_entity_index_type;
+	
+	begin
+	
+		if (RESET_N = '0') then 
+		
+			DESTROY <= (0,0,ENTITY_NONE);
+			HIDE <= (0,0,ENTITY_NONE);	
+			state := HANDLING_FIRST_ENTITY;
+				
+		elsif (rising_edge(CLOCK)) then 
+		
+			HIDE <= (0,0,ENTITY_NONE);
+	
+			case (state) is 
+			when HANDLING_FIRST_ENTITY =>
+				HIDE <= COLLISION.first_entity;
+--				case (COLLISION.first_entity.entity_type) is
+--				when ENTITY_PLAYER_BULLET =>
+--					HIDE <= (0,0,ENTITY_PLAYER_BULLET);
+--				when ENTITY_ALIEN_BULLET =>
+--					--TODO
+--				end if;
+				state := HANDLING_SECOND_ENTITY;
+				second_entity := COLLISION.second_entity;
+			when HANDLING_SECOND_ENTITY =>
+				HIDE <= second_entity;
+				if (hide_rand_alien_border_reached = '1') then
+					HIDE <= (0,0,ENTITY_RANDOM_ALIEN);
+				end if;
+				state := HANDLING_FIRST_ENTITY;
+			end case;
+			
+		end if;
+	
 	end process;
 
 end architecture;

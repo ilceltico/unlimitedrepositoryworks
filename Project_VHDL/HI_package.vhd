@@ -24,7 +24,7 @@ package HI_package is
 	constant ALIEN_SPACING_X								: natural 	:= 8;
 	constant ALIEN_SPACING_Y								: natural 	:= 15;
 	constant SIDE_MARGIN 									: natural 	:= 10;
-	constant TOP_MARGIN 										: natural 	:= 50;
+	constant TOP_MARGIN 										: natural 	:= 10;
 	constant BOTTOM_MARGIN 									: natural	:= 10;
 	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
 	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
@@ -50,12 +50,12 @@ package HI_package is
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
 	
 	-- Bullets
-	constant ALIEN_BULLET_TIME_1us	 					: natural := 33333; --30 fps
-	constant ALIEN_BULLET_SPEED 							: natural := 5;
+	constant ALIEN_BULLET_TIME_1us	 					: natural := 16666; --30 fps
+	constant ALIEN_BULLET_SPEED 							: natural := 3;
 	constant ALIEN_BULLET_SIZE_X 							: natural := 3;
 	constant ALIEN_BULLET_SIZE_Y 							: natural := 10;
-	constant PLAYER_BULLET_TIME_1us						: natural := 33333; --30 fps
-	constant PLAYER_BULLET_SPEED 							: natural := 15;
+	constant PLAYER_BULLET_TIME_1us						: natural := 16666; --30 fps
+	constant PLAYER_BULLET_SPEED 							: natural := 8;
 	constant PLAYER_BULLET_SIZE_X 						: natural := 3;
 	constant PLAYER_BULLET_SIZE_Y 						: natural := 8;
 	constant BULLET_EXPLOSION_SIZE_X 					: natural := 30;
@@ -86,7 +86,7 @@ package HI_package is
 	constant FIRST_ALIEN_CELL_Y 							: natural := TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
 	-- constant FIRST_RAND_ALIEN_CELL_X 					: natural := - RAND_ALIEN_SIZE_X;
 	constant FIRST_RAND_ALIEN_CELL_X 					: integer := SIDE_MARGIN - RAND_ALIEN_SIZE_X;
-	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 0;
+	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 40;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
 	constant BASE_ALIEN_FRAME_TIME_1us	 				: natural := 1000000; --1fps
@@ -273,7 +273,6 @@ package HI_package is
 		hitbox			: hitbox_type;
 		current_index	: shield_sprite_current_index_type;
 		visible			: std_logic;
-		exploding		: std_logic;
 	end record;
 	
 	-- Bullet array type declaration
@@ -285,7 +284,7 @@ package HI_package is
 	--------------------------------------------------------------
 	
 	-- Datapath entity index type
-	type entity_type_type is (REQ_NONE, REQ_ALIEN, REQ_ALIEN_BULLET, REQ_PLAYER_BULLET, REQ_SHIELD, REQ_RANDOM_ALIEN, REQ_PLAYER_ENTITY, REQ_COLUMN);
+	type entity_type_type is (ENTITY_NONE, ENTITY_ALIEN, ENTITY_ALIEN_BULLET, ENTITY_PLAYER_BULLET, ENTITY_SHIELD, ENTITY_RANDOM_ALIEN, ENTITY_PLAYER, ENTITY_COLUMN, ENTITY_BORDER);
 	subtype index_1_type is integer range 0 to INDEX_1_MAX - 1;
 	type datapath_entity_index_type is record
 		index_1		: index_1_type;
@@ -311,6 +310,15 @@ package HI_package is
 	end record;
 	
 	type direction_type is (DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_NONE);
+	
+	--------------------------------------------------------------
+	--					        DATAPATH INDEXES                     --
+	--------------------------------------------------------------
+	
+	type collision_type is record 
+		first_entity 			: datapath_entity_index_type;
+		second_entity 			: datapath_entity_index_type;
+	end record;
 	
 	--------------------------------------------------------------
 	--					     ARRAY OF ALL SPRITES	                  --

@@ -72,6 +72,9 @@ architecture RTL of HardwareInvaders is
 	signal alien_shoot			: std_logic;
 	signal player_shoot			: std_logic;
 	signal advance_player_bullet : std_logic;
+	signal destroy					: datapath_entity_index_type;
+	signal hide 					: datapath_entity_index_type;
+	signal collision 				: collision_type;
 	
 	signal ps2_code_new 				: std_logic;
 	signal ps2_code					: std_logic_vector(7 downto 0);
@@ -227,9 +230,8 @@ begin
 			SHOW_RAND_ALIEN			=> show_rand_alien,
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> 0,
-			ROW_INDEX					=> 0,
-			DESTROY_ALIEN				=> '0',
-			HIDE_ALIEN					=> '0',
+			DESTROY 						=> destroy,
+			HIDE							=> hide,
 			ADVANCE_PLAYER_BULLET	=> advance_player_bullet,
 			ALIEN_SHOOT					=> alien_shoot,
 			PLAYER_SHOOT				=> player_shoot,
@@ -239,7 +241,8 @@ begin
 			ALIEN_BORDER_REACHED		=> alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			PLAYER_BORDER_REACHED 	=> player_border_reached,
-			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot
+			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot,
+			COLLISION 					=> collision
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
@@ -253,6 +256,8 @@ begin
 			PLAYER_BORDER_REACHED => player_border_reached,
 			RAND_OUTPUT	=> (others => '0'), -- Controllare se effettivamente va bene, prima non compilava - Kevin
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
+			DESTROY => destroy,
+			HIDE => hide,
 			
 			ALIEN_GRID_MOVEMENT => alien_grid_movement,
 			RAND_ALIEN_MOVEMENT => random_alien_movement,
@@ -261,6 +266,7 @@ begin
 			PLAYER_SHOOT => player_shoot,
 			ADVANCE_PLAYER_BULLET => advance_player_bullet,
 			
+<<<<<<< HEAD
 			BUTTON_LEFT => move_left,
 			BUTTON_RIGHT => move_right,
 			BUTTON_SHOOT => shoot
@@ -274,6 +280,13 @@ begin
 			ps2_data     	=> PS2_DAT,     
 			ps2_code_new 	=> ps2_code_new,
 			ps2_code			=> ps2_code
+=======
+			COLLISION => collision,
+			
+			BUTTON_LEFT => not(KEY(3)),
+			BUTTON_RIGHT => not(KEY(2)),
+			BUTTON_SHOOT => not(KEY(1))
+>>>>>>> origin/master
 		);
 		
 		ps2_keyboard_handler : entity work.ps2_keyboard_handler
