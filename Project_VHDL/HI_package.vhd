@@ -50,10 +50,11 @@ package HI_package is
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
 	
 	-- Bullets
+	constant ALIEN_BULLET_SHAPE							: natural := 3; -- Number of alien bullets shapes
 	constant ALIEN_BULLET_TIME_1us	 					: natural := 16666; --30 fps
 	constant ALIEN_BULLET_SPEED 							: natural := 3;
-	constant ALIEN_BULLET_SIZE_X 							: natural := 3;
-	constant ALIEN_BULLET_SIZE_Y 							: natural := 10;
+	constant ALIEN_BULLET_SIZE_X 							: natural := 10;
+	constant ALIEN_BULLET_SIZE_Y 							: natural := 20;
 	constant PLAYER_BULLET_TIME_1us						: natural := 16666; --30 fps
 	constant PLAYER_BULLET_SPEED 							: natural := 8;
 	constant PLAYER_BULLET_SIZE_X 						: natural := 3;
@@ -260,6 +261,8 @@ package HI_package is
 	-- Bullet array type declaration
 	type bullet_array_type is array(0 to BULLET_COUNT - 1) of bullet_type;
 	subtype bullet_array_index_type is integer range 0 to BULLET_COUNT - 1;
+	
+	subtype bullet_shape_type is integer range 0 to ALIEN_BULLET_SHAPE - 1;
 	
 	--------------------------------------------------------------
 	--									SHIELD                           --
@@ -1069,8 +1072,8 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000"
 			),
-			10,
 			5,
+			10,
 			COLOR_WHITE
 		),
 		-- 18 -> AlienBullet3_4.png
@@ -1109,8 +1112,8 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000"
 			),
-			10,
 			5,
+			10,
 			COLOR_WHITE
 		),
 		-- 19 -> AlienBulletExplosion.png

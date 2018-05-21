@@ -28,6 +28,7 @@ entity Hi_Datapath_Control_Unit is
 		PLAYER_MOVEMENT				: out direction_type;
 		PLAYER_SHOOT					: out std_logic;
 		ADVANCE_PLAYER_BULLET		: out std_logic;
+		ADVANCE_ALIEN_BULLETS		: out std_logic;
 		DESTROY							: out datapath_entity_index_type;
 		HIDE								: out	datapath_entity_index_type
 	);
@@ -185,6 +186,26 @@ begin
 		end if;
 	end process;
 	
+	advance_alien_bullets_handling	: process(CLOCK, RESET_N)
+		variable counter : integer range 0 to (ALIEN_BULLET_TIME_1us - 1);
+	begin
+		if (RESET_N = '0') then
+			counter := 0;
+			ADVANCE_ALIEN_BULLETS <= '0';
+		elsif (rising_edge(CLOCK)) then
+			ADVANCE_ALIEN_BULLETS <= '0';
+			if (time_1us = '1') then
+				if(counter = counter'high) then
+					counter := 0;
+					ADVANCE_ALIEN_BULLETS <= '1';
+				else
+					counter := counter+1;
+					ADVANCE_ALIEN_BULLETS <= '0';			
+				end if;
+			end if;
+		end if;
+	end process;
+	
 	alien_grid_movement_handling : process(CLOCK, RESET_N) is
 		
 		variable grid_movement : direction_type := DIR_RIGHT;
@@ -309,7 +330,8 @@ begin
 					
 				when FIRST_INDEX => 
 					
-					column := to_integer(unsigned (RAND_OUTPUT));
+					--column := to_integer(unsigned (RAND_OUTPUT));
+					column := 0;
 					reg_column_to_shoot := column;	
 					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
 					column_state 			<= WAITING;

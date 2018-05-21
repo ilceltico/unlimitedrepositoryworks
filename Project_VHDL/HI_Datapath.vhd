@@ -22,7 +22,7 @@ entity HI_Datapath is
 		RAND_ALIEN_MOVEMENT			: in 	direction_type;
 		SHOW_RAND_ALIEN				: in 	std_logic;
 		ADVANCE_PLAYER_BULLET		: in 	std_logic;
---		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
+		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
 		
 		SPRITE 							: out sprite_type := sprite_empty;
 		HITBOX							: out hitbox_type := (0,0,1,1);
@@ -73,10 +73,10 @@ begin
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
---			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
---
---				SPRITE <= sprites(bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
---				HITBOX <= bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and alien_bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+
+				SPRITE <= sprites(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
+				HITBOX <= alien_bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
 
@@ -293,12 +293,7 @@ begin
 			else
 				PLAYER_BORDER_REACHED <= DIR_NONE;
 			end if;
-				
-			-- Player bullet
-			if (player_bullet.hitbox.up_left_y > V_DISP) then 
-				--player_bullet.visible <= '0';
-			end if;
-			
+							
 		end if;
 		
 	end process;
@@ -400,9 +395,18 @@ begin
 			end loop;
 			
 			-- TODO alien_bullets
+			for I in 0 to BULLET_COUNT - 1 loop
 			
-			-- TODO aliens
+				impacter_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
+				impacter_xMin := alien_bullets(I).hitbox.up_left_x;
+				impacter_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
+				impacter_yMin := alien_bullets(I).hitbox.up_left_y;
 			
+				if (alien_bullets(I).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
+					COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
+				end if;
+				
+			end loop;
 			
 		end if;
 	
@@ -482,6 +486,11 @@ begin
 	alien_bullet_handling : process (CLOCK, RESET_N) is
 			
 	variable referenced_column : alien_grid_index_type;
+	variable referenced_row	: alien_column_index_type;
+	variable bullet_index : bullet_array_index_type;
+	variable last_bullet_shape : bullet_shape_type;
+	variable available_bullet : std_logic;
+	variable available_column : std_logic;
 			
 	begin
 	
@@ -491,6 +500,11 @@ begin
 				alien_bullets(I) <= ((ALIEN_BULLET_1_1_SPRITE, ALIEN_BULLET_1_2_SPRITE, ALIEN_BULLET_1_3_SPRITE, ALIEN_BULLET_1_4_SPRITE), (0,0,ALIEN_BULLET_SIZE_X, ALIEN_BULLET_SIZE_Y), 0, '0', '0');
 			end loop;
 			referenced_column := 0;
+			referenced_row := 0;
+			bullet_index := 0;
+			last_bullet_shape := 0;
+			available_bullet := '0';
+			available_column := '0';
 			COLUMN_CANNOT_SHOOT <= '1';
 		
 		elsif (rising_edge(CLOCK)) then
@@ -500,16 +514,72 @@ begin
 				referenced_column := COLUMN_INDEX;
 				COLUMN_CANNOT_SHOOT <= '1';
 		
+				available_column := '0';
+				available_bullet := '0';
+		
 				for I in 0 to ALIENS_PER_COLUMN - 1 loop
 				
 					if( alien_grid(referenced_column)(I).visible = '1' ) then
 						
-						COLUMN_CANNOT_SHOOT <= '0';
-						-- Add a bullet 
+						available_column := '1';
+						referenced_row := I;
 						
 					end if;
-			
+					
 				end loop;
+					
+				if (available_column = '1') then	
+					
+				for J in 0 to BULLET_COUNT - 1 loop 
+							
+					if (alien_bullets(J).visible = '0') then
+						COLUMN_CANNOT_SHOOT <= '0';
+						bullet_index := J;
+						available_bullet := '1';
+					end if;
+							
+				end loop;
+				
+				end if;
+						
+				if (available_column = '1' and available_bullet = '1') then 
+					last_bullet_shape := last_bullet_shape + 1;
+					
+					alien_bullets(bullet_index).hitbox.up_left_x <= alien_grid(referenced_column)(referenced_row).hitbox.up_left_x + alien_grid(referenced_column)(referenced_row).hitbox.size_x / 2 - alien_bullets(bullet_index).hitbox.size_x / 2;
+					alien_bullets(bullet_index).hitbox.up_left_y <= alien_grid(referenced_column)(referenced_row).hitbox.up_left_y;
+						
+					case (last_bullet_shape) is
+						when 0 => 
+							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_1_1_SPRITE, ALIEN_BULLET_1_2_SPRITE, ALIEN_BULLET_1_3_SPRITE, ALIEN_BULLET_1_4_SPRITE);
+						when 1 =>
+							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_2_1_SPRITE, ALIEN_BULLET_2_2_SPRITE, ALIEN_BULLET_2_3_SPRITE, ALIEN_BULLET_2_4_SPRITE);
+						when 2 =>
+							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_3_1_SPRITE, ALIEN_BULLET_3_2_SPRITE, ALIEN_BULLET_3_3_SPRITE, ALIEN_BULLET_3_4_SPRITE);
+					end case;	
+								
+					alien_bullets(bullet_index).visible <= '1';
+					alien_bullets(bullet_index).exploding <= '0';
+								
+				end if;	
+					
+			end if;
+			
+			if (ADVANCE_ALIEN_BULLETS = '1') then
+			
+				for I in 0 to BULLET_COUNT - 1 loop
+				
+					if (alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0') then
+						alien_bullets(I).current_index <= alien_bullets(I).current_index + 1;
+						alien_bullets(I).hitbox.up_left_y <= alien_bullets(I).hitbox.up_left_y + ALIEN_BULLET_SPEED;
+					end if;
+				
+				end loop;
+			
+			end if;
+			
+			if (HIDE.entity_type = ENTITY_ALIEN_BULLET) then 
+				
+				alien_bullets(HIDE.index_1).visible <= '0';
 			
 			end if;
 			
