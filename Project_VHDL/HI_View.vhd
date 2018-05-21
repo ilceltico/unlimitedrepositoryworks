@@ -37,8 +37,10 @@ end entity;
 architecture RTL of HI_View is
 
 type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
+type substate_type is (COMPUTE_UPSCALE_FACTOR_X, COMPUTE_UPSCALE_FACTOR_Y, DRAWING_PIXELS);
 
 	signal state				: state_type := CLEARING;
+	signal substate			: substate_type := COMPUTE_UPSCALE_FACTOR_X;
 	signal next_state			: state_type := INIT;
 	signal row					: integer := 0;
 	signal column				: integer := 0;
@@ -77,6 +79,7 @@ begin
 			reg_sprite 		:= sprite_empty;
 			reg_hitbox		:= (0,0,1,1);
 			state 			<= CLEARING;
+			substate 		<= COMPUTE_UPSCALE_FACTOR_X;
 			reg_fb_x0 		:= 0;
 			reg_fb_x1		:= 0;
 			reg_fb_y0		:= 0;
@@ -129,8 +132,6 @@ begin
 						next_state 				<= DRAWING;
 						reg_sprite				:= SPRITE;
 						reg_hitbox 				:= HITBOX;
-						pixel_scale_factor_x := (HITBOX.size_x * UPSCALE_PRECISION) / SPRITE.logic_dim_x;
-						pixel_scale_factor_y := (HITBOX.size_y * UPSCALE_PRECISION) / SPRITE.logic_dim_y;
 					
 					end if;
 					
@@ -144,50 +145,67 @@ begin
 				
 				when DRAWING =>
 				
-					state 		<= WAITING;
-					next_state 	<= DRAWING;
+					case (substate) is 
 					
-					if (column >= reg_sprite.logic_dim_x - 1) then
-					
-						column <= 0;
-						if (row >= reg_sprite.logic_dim_y - 1) then
+						when COMPUTE_UPSCALE_FACTOR_X =>
+						
+							pixel_scale_factor_x := (reg_hitbox.size_x * UPSCALE_PRECISION) / reg_sprite.logic_dim_x;
+							substate <= COMPUTE_UPSCALE_FACTOR_Y;
+						
+						when COMPUTE_UPSCALE_FACTOR_Y =>
 							
-							row <= 0;
-							next_state <= IDLE;
+							pixel_scale_factor_y := (reg_hitbox.size_y * UPSCALE_PRECISION) / reg_sprite.logic_dim_y;
+							substate <= DRAWING_PIXELS;
 						
-						else
-						
-							row <= row + 1;
-						
-						end if;
-						
-					else
+						when DRAWING_PIXELS =>
 					
-						column <= column + 1;
-					
-					end if;
-					
-					if (reg_sprite.img_pixels(row, column) = '1') then
-					
-						reg_fb_x0 	 	:= reg_hitbox.up_left_x + (column * pixel_scale_factor_x) / UPSCALE_PRECISION;
-						reg_fb_x1	 	:= reg_hitbox.up_left_x + ((column + 1) * pixel_scale_factor_x) / UPSCALE_PRECISION - 1;
-						reg_fb_y0	 	:= reg_hitbox.up_left_y + (row * pixel_scale_factor_y) / UPSCALE_PRECISION;
-						reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) * pixel_scale_factor_y) / UPSCALE_PRECISION - 1;
+							state 		<= WAITING;
+							next_state 	<= DRAWING;
 						
---						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
-						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
+							if (column >= reg_sprite.logic_dim_x - 1) then
+							
+								column <= 0;
+								if (row >= reg_sprite.logic_dim_y - 1) then
+									
+									row <= 0;
+									next_state <= IDLE;
+									substate <= COMPUTE_UPSCALE_FACTOR_X;
+								
+								else
+								
+									row <= row + 1;
+								
+								end if;
+								
+							else
+							
+								column <= column + 1;
+							
+							end if;
+							
+							if (reg_sprite.img_pixels(row, column) = '1') then
+							
+								reg_fb_x0 	 	:= reg_hitbox.up_left_x + (column * pixel_scale_factor_x) / UPSCALE_PRECISION;
+								reg_fb_x1	 	:= reg_hitbox.up_left_x + ((column + 1) * pixel_scale_factor_x) / UPSCALE_PRECISION - 1;
+								reg_fb_y0	 	:= reg_hitbox.up_left_y + (row * pixel_scale_factor_y) / UPSCALE_PRECISION;
+								reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) * pixel_scale_factor_y) / UPSCALE_PRECISION - 1;
+								
+		--						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
+								if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
+						
+									FB_FILL_RECT 	<= '1';
+									FB_COLOR 	 	<= reg_sprite.color;
+									FB_X0 			<= reg_fb_x0;
+									FB_X1 			<= reg_fb_x1;
+									FB_Y0 			<= reg_fb_y0;
+									FB_Y1 			<= reg_fb_y1;
+								
+								end if;
+									
+							end if;
 				
-							FB_FILL_RECT 	<= '1';
-							FB_COLOR 	 	<= reg_sprite.color;
-							FB_X0 			<= reg_fb_x0;
-							FB_X1 			<= reg_fb_x1;
-							FB_Y0 			<= reg_fb_y0;
-							FB_Y1 			<= reg_fb_y1;
-						
-						end if;
-							
-					end if;
-			
+				end case;
+				
 				when SHOWING => 
 				
 					if (FB_VSYNC = '0') then
