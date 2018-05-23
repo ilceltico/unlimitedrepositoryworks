@@ -315,17 +315,14 @@ begin
 			
 			
 		elsif (rising_edge(CLOCK)) then	
-		
-			ALIEN_SHOOT <= '1';
 			
 			case(column_state) is
 			
 				when IDLE => 
-					
-					ALIEN_SHOOT <= '0';
 			
 					if (bullet_tick = '1') then
 						column_state <= FIRST_INDEX;
+						ALIEN_SHOOT <= '1';
 					end if;
 					
 				when FIRST_INDEX => 
@@ -335,6 +332,7 @@ begin
 					reg_column_to_shoot := column;	
 					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
 					column_state 			<= WAITING;
+					ALIEN_SHOOT <= '1';
 					
 				when WAITING =>
 					
@@ -347,10 +345,12 @@ begin
 						reg_column_to_shoot 	:= reg_column_to_shoot + 1;
 						COLUMN_TO_SHOOT 		<= reg_column_to_shoot; 
 						column_state 			<= WAITING;
+						ALIEN_SHOOT <= '1';
 											
 					else 
 						
 						column_state <= IDLE;
+						ALIEN_SHOOT <= '0';
 					
 					end if;
 				

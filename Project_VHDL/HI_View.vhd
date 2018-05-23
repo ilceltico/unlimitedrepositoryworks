@@ -130,6 +130,7 @@ begin
 						READY 					<= '0';
 						state 					<= WAITING;
 						next_state 				<= DRAWING;
+						substate 				<= COMPUTE_UPSCALE_FACTOR_X;
 						reg_sprite				:= SPRITE;
 						reg_hitbox 				:= HITBOX;
 					
@@ -158,7 +159,7 @@ begin
 							substate <= DRAWING_PIXELS;
 						
 						when DRAWING_PIXELS =>
-					
+				
 							state 		<= WAITING;
 							next_state 	<= DRAWING;
 						

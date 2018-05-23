@@ -107,6 +107,7 @@ begin
 							rendered_bullet := rendered_bullet + 1;
 							
 							if (rendered_bullet > BULLET_COUNT - 1) then
+								rendered_bullet := 0;
 								substate <= PLAYER_BULLET_QUERY;
 							end if;
 							

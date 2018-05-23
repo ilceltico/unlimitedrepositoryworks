@@ -561,18 +561,23 @@ begin
 				end if;
 						
 				if (available_column = '1' and available_bullet = '1') then 
-					last_bullet_shape := last_bullet_shape + 1;
 					
 					alien_bullets(bullet_index).hitbox.up_left_x <= alien_grid(referenced_column)(referenced_row).hitbox.up_left_x + alien_grid(referenced_column)(referenced_row).hitbox.size_x / 2 - alien_bullets(bullet_index).hitbox.size_x / 2;
 					alien_bullets(bullet_index).hitbox.up_left_y <= alien_grid(referenced_column)(referenced_row).hitbox.up_left_y;
-						
+					
+					alien_bullets(bullet_index).hitbox.size_x <= ALIEN_BULLET_SIZE_X;
+					alien_bullets(bullet_index).hitbox.size_y <= ALIEN_BULLET_SIZE_Y;
+					
 					case (last_bullet_shape) is
 						when 0 => 
-							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_1_1_SPRITE, ALIEN_BULLET_1_2_SPRITE, ALIEN_BULLET_1_3_SPRITE, ALIEN_BULLET_1_4_SPRITE);
+							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_1_1_SPRITE, ALIEN_BULLET_1_2_SPRITE, ALIEN_BULLET_1_3_SPRITE, ALIEN_BULLET_1_4_SPRITE);	
+							last_bullet_shape := last_bullet_shape + 1;
 						when 1 =>
 							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_2_1_SPRITE, ALIEN_BULLET_2_2_SPRITE, ALIEN_BULLET_2_3_SPRITE, ALIEN_BULLET_2_4_SPRITE);
+							last_bullet_shape := last_bullet_shape + 1;
 						when 2 =>
 							alien_bullets(bullet_index).sprite_indexes <= (ALIEN_BULLET_3_1_SPRITE, ALIEN_BULLET_3_2_SPRITE, ALIEN_BULLET_3_3_SPRITE, ALIEN_BULLET_3_4_SPRITE);
+							last_bullet_shape := 0;
 					end case;	
 								
 					alien_bullets(bullet_index).visible <= '1';
@@ -587,7 +592,12 @@ begin
 				for I in 0 to BULLET_COUNT - 1 loop
 				
 					if (alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0') then
-						alien_bullets(I).current_index <= alien_bullets(I).current_index + 1;
+						if (alien_bullets(I).current_index = 2) then
+							alien_bullets(I).current_index <= 0;
+						else	
+							alien_bullets(I).current_index <= alien_bullets(I).current_index + 1;
+						end if;
+						
 						alien_bullets(I).hitbox.up_left_y <= alien_bullets(I).hitbox.up_left_y + ALIEN_BULLET_SPEED;
 					end if;
 				
