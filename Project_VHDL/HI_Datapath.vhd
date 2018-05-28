@@ -13,7 +13,7 @@ entity HI_Datapath is
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
 		DESTROY							: in 	datapath_entity_index_type;
 		HIDE								: in 	datapath_entity_index_type;
-		COLUMN_INDEX					: in  alien_column_index_type;
+		COLUMN_INDEX					: in  alien_grid_index_type;
 --		NEW_LEVEL						: in 	std_logic;
 		PLAYER_MOVEMENT				: in 	direction_type;
 		PLAYER_SHOOT					: in 	std_logic;
@@ -302,133 +302,133 @@ begin
 		
 	end process;
 	
---	bullet_collion_detection : process(CLOCK, RESET_N) is 	
---		
---	variable target_xMin : xy_coord_type;
---	variable target_xMax : xy_coord_type;
---	variable target_yMin : xy_coord_type;
---	variable target_yMax : xy_coord_type;
---	
---	variable impacter_xMin : xy_coord_type;
---	variable impacter_xMax : xy_coord_type;
---	variable impacter_yMin : xy_coord_type;
---	variable impacter_yMax : xy_coord_type;
---		
---	begin
---		
---		if (RESET_N = '0') then 
---		
---			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
---			collision_state <= PLAYER_BULLET_COLLISIONS;
---		
---		elsif (rising_edge(CLOCK)) then 
---		
---			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
---			
---			case (collision_state) is 
---				when PLAYER_BULLET_COLLISIONS =>
---					-- Player bullet as impacter
---					target_xMax := rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x;
---					target_xMin := rand_alien.hitbox.up_left_x;
---					target_yMax := rand_alien.hitbox.up_left_y + rand_alien.hitbox.size_y;
---					target_yMin := rand_alien.hitbox.up_left_y;
---					
---					impacter_xMax := player_bullet.hitbox.up_left_x + player_bullet.hitbox.size_x;
---					impacter_xMin := player_bullet.hitbox.up_left_x;
---					impacter_yMax := player_bullet.hitbox.up_left_y + player_bullet.hitbox.size_y;
---					impacter_yMin := player_bullet.hitbox.up_left_y;
---					
---					-- (x1min < x2max and x1max > x2min and y1min < y2max and y1max > y2min)
---					if (player_bullet.hitbox.up_left_y < TOP_MARGIN and player_bullet.visible = '1') then
---						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_BORDER));
---					end if;
---					
---					if (player_bullet.visible = '1' and rand_alien.visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
---						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_RANDOM_ALIEN));
---					end if;
---			
---					for I in 0 to COLUMNS_PER_GRID - 1 loop
---						for J in 0 to ALIENS_PER_COLUMN - 1 loop
---						
---							target_xMax := alien_grid(I)(J).hitbox.up_left_x + alien_grid(I)(J).hitbox.size_x;
---							target_xMin := alien_grid(I)(J).hitbox.up_left_x;
---							target_yMax := alien_grid(I)(J).hitbox.up_left_y + alien_grid(I)(J).hitbox.size_y;
---							target_yMin := alien_grid(I)(J).hitbox.up_left_y;
---							
---							if (player_bullet.visible = '1' and alien_grid(I)(J).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
---								COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,J,ENTITY_ALIEN));
---							end if;
---							
---						end loop;
---					end loop;
---					
---					for I in 0 to BULLET_COUNT - 1 loop
---					
---						target_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
---						target_xMin := alien_bullets(I).hitbox.up_left_x;
---						target_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
---						target_yMin := alien_bullets(I).hitbox.up_left_y;
---					
---						if (player_bullet.visible = '1' and alien_bullets(I).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
---							COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,0,ENTITY_ALIEN_BULLET));
---						end if;
---						
---					end loop;
---					
---					collision_state <= ALIEN_COLLISIONS;
---				
---				when ALIEN_COLLISIONS =>
---				
---					-- Aliens as impacters
---					target_xMax := player.hitbox.up_left_x + player.hitbox.size_x;
---					target_xMin := player.hitbox.up_left_x;
---					target_yMax := player.hitbox.up_left_y + player.hitbox.size_y;
---					target_yMin := player.hitbox.up_left_y;
---					
---					for I in 0 to COLUMNS_PER_GRID - 1 loop
---						for J in 0 to ALIENS_PER_COLUMN - 1 loop
---							
---							impacter_xMax := alien_grid(I)(J).hitbox.up_left_x + alien_grid(I)(J).hitbox.size_x;
---							impacter_xMin := alien_grid(I)(J).hitbox.up_left_x;
---							impacter_yMax := alien_grid(I)(J).hitbox.up_left_y + alien_grid(I)(J).hitbox.size_y;
---							impacter_yMin := alien_grid(I)(J).hitbox.up_left_y;
---								
---							if (alien_grid(I)(J).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
---								COLLISION <= ((I,J,ENTITY_ALIEN), (0,0,ENTITY_PLAYER));
---							end if;
---							
---							if (alien_grid(I)(J).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then
---								COLLISION <= ((I,J,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
---							end if;
---								
---						end loop;
---					end loop;
---					
---					collision_state <= ALIEN_BULLET_COLLISIONS;
---					
---				when ALIEN_BULLET_COLLISIONS =>
---				
---					-- TODO alien_bullets
---					for I in 0 to BULLET_COUNT - 1 loop
---					
---						impacter_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
---						impacter_xMin := alien_bullets(I).hitbox.up_left_x;
---						impacter_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
---						impacter_yMin := alien_bullets(I).hitbox.up_left_y;
---					
---						if (alien_bullets(I).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
---							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
---						end if;
---						
---					end loop;
---					
---					collision_state <= PLAYER_BULLET_COLLISIONS;
---				
---			end case;
---			
---		end if;
---	
---	end process;
+	bullet_collion_detection : process(CLOCK, RESET_N) is 	
+		
+	variable target_xMin : xy_coord_type;
+	variable target_xMax : xy_coord_type;
+	variable target_yMin : xy_coord_type;
+	variable target_yMax : xy_coord_type;
+	
+	variable impacter_xMin : xy_coord_type;
+	variable impacter_xMax : xy_coord_type;
+	variable impacter_yMin : xy_coord_type;
+	variable impacter_yMax : xy_coord_type;
+		
+	begin
+		
+		if (RESET_N = '0') then 
+		
+			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
+			collision_state <= PLAYER_BULLET_COLLISIONS;
+		
+		elsif (rising_edge(CLOCK)) then 
+		
+			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
+			
+			case (collision_state) is 
+				when PLAYER_BULLET_COLLISIONS =>
+					-- Player bullet as impacter
+					target_xMax := rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x;
+					target_xMin := rand_alien.hitbox.up_left_x;
+					target_yMax := rand_alien.hitbox.up_left_y + rand_alien.hitbox.size_y;
+					target_yMin := rand_alien.hitbox.up_left_y;
+					
+					impacter_xMax := player_bullet.hitbox.up_left_x + player_bullet.hitbox.size_x;
+					impacter_xMin := player_bullet.hitbox.up_left_x;
+					impacter_yMax := player_bullet.hitbox.up_left_y + player_bullet.hitbox.size_y;
+					impacter_yMin := player_bullet.hitbox.up_left_y;
+					
+					-- (x1min < x2max and x1max > x2min and y1min < y2max and y1max > y2min)
+					if (player_bullet.hitbox.up_left_y < TOP_MARGIN and player_bullet.visible = '1') then
+						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_BORDER));
+					end if;
+					
+					if (player_bullet.visible = '1' and rand_alien.visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_RANDOM_ALIEN));
+					end if;
+			
+					for I in 0 to COLUMNS_PER_GRID - 1 loop
+						for J in 0 to ALIENS_PER_COLUMN - 1 loop
+						
+							target_xMax := alien_grid(I)(J).hitbox.up_left_x + alien_grid(I)(J).hitbox.size_x;
+							target_xMin := alien_grid(I)(J).hitbox.up_left_x;
+							target_yMax := alien_grid(I)(J).hitbox.up_left_y + alien_grid(I)(J).hitbox.size_y;
+							target_yMin := alien_grid(I)(J).hitbox.up_left_y;
+							
+							if (player_bullet.visible = '1' and alien_grid(I)(J).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+								COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,J,ENTITY_ALIEN));
+							end if;
+							
+						end loop;
+					end loop;
+					
+					for I in 0 to BULLET_COUNT - 1 loop
+					
+						target_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
+						target_xMin := alien_bullets(I).hitbox.up_left_x;
+						target_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
+						target_yMin := alien_bullets(I).hitbox.up_left_y;
+					
+						if (player_bullet.visible = '1' and alien_bullets(I).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+							COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (I,0,ENTITY_ALIEN_BULLET));
+						end if;
+						
+					end loop;
+					
+					collision_state <= ALIEN_COLLISIONS;
+				
+				when ALIEN_COLLISIONS =>
+				
+					-- Aliens as impacters
+					target_xMax := player.hitbox.up_left_x + player.hitbox.size_x;
+					target_xMin := player.hitbox.up_left_x;
+					target_yMax := player.hitbox.up_left_y + player.hitbox.size_y;
+					target_yMin := player.hitbox.up_left_y;
+					
+					for I in 0 to COLUMNS_PER_GRID - 1 loop
+						for J in 0 to ALIENS_PER_COLUMN - 1 loop
+							
+							impacter_xMax := alien_grid(I)(J).hitbox.up_left_x + alien_grid(I)(J).hitbox.size_x;
+							impacter_xMin := alien_grid(I)(J).hitbox.up_left_x;
+							impacter_yMax := alien_grid(I)(J).hitbox.up_left_y + alien_grid(I)(J).hitbox.size_y;
+							impacter_yMin := alien_grid(I)(J).hitbox.up_left_y;
+								
+							if (alien_grid(I)(J).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+								COLLISION <= ((I,J,ENTITY_ALIEN), (0,0,ENTITY_PLAYER));
+							end if;
+							
+							if (alien_grid(I)(J).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then
+								COLLISION <= ((I,J,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
+							end if;
+								
+						end loop;
+					end loop;
+					
+					collision_state <= ALIEN_BULLET_COLLISIONS;
+					
+				when ALIEN_BULLET_COLLISIONS =>
+				
+					-- TODO alien_bullets
+					for I in 0 to BULLET_COUNT - 1 loop
+					
+						impacter_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
+						impacter_xMin := alien_bullets(I).hitbox.up_left_x;
+						impacter_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
+						impacter_yMin := alien_bullets(I).hitbox.up_left_y;
+					
+						if (alien_bullets(I).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
+							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
+						end if;
+						
+					end loop;
+					
+					collision_state <= PLAYER_BULLET_COLLISIONS;
+				
+			end case;
+			
+		end if;
+	
+	end process;
 	
 	player_movement_handler : process(CLOCK, RESET_N) is
 	begin
@@ -527,10 +527,11 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 			
+			COLUMN_CANNOT_SHOOT <= '1';
+			
 			if (ALIEN_SHOOT = '1') then
 			
 				referenced_column := COLUMN_INDEX;
-				COLUMN_CANNOT_SHOOT <= '1';
 		
 				available_column := '0';
 				available_bullet := '0';
@@ -548,15 +549,15 @@ begin
 					
 				if (available_column = '1') then	
 					
-				for J in 0 to BULLET_COUNT - 1 loop 
+					for J in 0 to BULLET_COUNT - 1 loop 
+								
+						if (alien_bullets(J).visible = '0') then
+							COLUMN_CANNOT_SHOOT <= '0';
+							bullet_index := J;
+							available_bullet := '1';
+						end if;
 							
-					if (alien_bullets(J).visible = '0') then
-						COLUMN_CANNOT_SHOOT <= '0';
-						bullet_index := J;
-						available_bullet := '1';
-					end if;
-							
-				end loop;
+					end loop;
 				
 				end if;
 						

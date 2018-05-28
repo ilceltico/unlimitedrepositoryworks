@@ -320,9 +320,10 @@ begin
 			
 				when IDLE => 
 			
+					ALIEN_SHOOT <= '0';
+			
 					if (bullet_tick = '1') then
 						column_state <= FIRST_INDEX;
-						--ALIEN_SHOOT <= '1';
 					end if;
 					
 				when FIRST_INDEX => 
