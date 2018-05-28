@@ -8,6 +8,6 @@ DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,HI_View:view|lpm_mult:Mult0|mult_o1t:aut
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,HI_View:view|lpm_mult:Mult3|mult_o1t:auto_generated|mac_out4,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,HI_View:view|lpm_mult:Mult2|mult_o1t:auto_generated|mac_out4,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,HI_View:view|lpm_mult:Mult0|mult_o1t:auto_generated|mac_mult3,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,HI_View:view|lpm_mult:Mult1|mult_o1t:auto_generated|mac_mult3,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,HI_View:view|lpm_mult:Mult3|mult_o1t:auto_generated|mac_mult3,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,HI_View:view|lpm_mult:Mult2|mult_o1t:auto_generated|mac_mult3,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,HI_View:view|lpm_mult:Mult1|mult_o1t:auto_generated|mac_mult3,
