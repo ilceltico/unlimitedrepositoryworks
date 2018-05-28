@@ -322,7 +322,7 @@ begin
 			
 					if (bullet_tick = '1') then
 						column_state <= FIRST_INDEX;
-						ALIEN_SHOOT <= '1';
+						--ALIEN_SHOOT <= '1';
 					end if;
 					
 				when FIRST_INDEX => 
@@ -337,6 +337,7 @@ begin
 				when WAITING =>
 					
 					column_state <= INCREMENTING_INDEX;
+					ALIEN_SHOOT <= '0';
 				
 				when INCREMENTING_INDEX => 
 						

@@ -592,7 +592,7 @@ begin
 				for I in 0 to BULLET_COUNT - 1 loop
 				
 					if (alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0') then
-						if (alien_bullets(I).current_index = 2) then
+						if (alien_bullets(I).current_index = 3) then
 							alien_bullets(I).current_index <= 0;
 						else	
 							alien_bullets(I).current_index <= alien_bullets(I).current_index + 1;

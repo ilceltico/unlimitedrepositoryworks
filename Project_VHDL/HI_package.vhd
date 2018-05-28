@@ -6,7 +6,7 @@ use work.vga_package.all;
 package HI_package is
 
 	-- Common constants
-	constant REFERENCE_TIME_50MHz							: natural 	:= 50; -- Generates 1 microsecond, based on a 50MHz clock
+	constant REFERENCE_TIME_50MHz							: natural 	:= 500; -- Generates 1 microsecond, based on a 50MHz clock
 	
 	constant SPRITE_COUNT									: natural 	:= 26;
 	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
@@ -831,7 +831,7 @@ package HI_package is
 		-- 11 -> AlienBullet2_1.png
 		( 
 			(
-				"11110100000000000000000000000000",
+				"11110000000000000000000000000000",
 				"11111100000000000000000000000000",
 				"01111100000000000000000000000000",
 				"01111100000000000000000000000000",

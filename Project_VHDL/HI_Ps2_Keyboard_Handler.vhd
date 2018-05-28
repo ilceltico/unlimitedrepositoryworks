@@ -27,12 +27,12 @@ begin
 	input_handler : process(CLOCK, RESET_N)
 		variable prevPrevCode : std_logic_vector(7 downto 0) := "00000000";
 		variable prevCode : std_logic_vector(7 downto 0) := "00000000";
-		variable prev_ps2_code_new : std_logic := '0';
+		variable prev_ps2_code_new : std_logic := '1';
 	begin
 		if (RESET_N = '0') then
 			prevPrevCode := "00000000";
 			prevCode := "00000000";
-			prev_ps2_code_new := '0';
+			prev_ps2_code_new := '1';
 			
 			MOVE_LEFT 	<= '0';
 			MOVE_RIGHT 	<= '0';
