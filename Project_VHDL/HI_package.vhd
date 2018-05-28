@@ -51,11 +51,7 @@ package HI_package is
 	
 	-- Bullets
 	constant ALIEN_BULLET_SHAPE							: natural := 3; -- Number of alien bullets shapes
-<<<<<<< HEAD
-	constant ALIEN_BULLET_TIME_1us	 					: natural := 33333; --30 fps
-=======
-	constant ALIEN_BULLET_TIME_1us	 					: natural := 50000; --30 fps
->>>>>>> ccdb3ed76f1919347b3b4d3b949ca5dff9e3c8c8
+	constant ALIEN_BULLET_TIME_1us	 					: natural := 50000; --20 fps
 	constant ALIEN_BULLET_SPEED 							: natural := 3;
 	constant ALIEN_BULLET_SIZE_X 							: natural := 9;
 	constant ALIEN_BULLET_SIZE_Y 							: natural := 21;
