@@ -46,19 +46,33 @@ begin
 
 				case (PS2_CODE) is
 				when x"6B" => -- LEFT ARROW press is E0-6B, release is E0-F0-6B
-					if (prevCode = x"F0" and prevPrevCode = x"E0") then
+					if (prevPrevCode = x"E0" and prevCode = x"F0") then
 						MOVE_LEFT <= '0';	
 					elsif (prevCode = x"E0") then
 						MOVE_LEFT <= '1';
 					end if;
 					
 				when x"74" => -- RIGHT ARROW press is E0-74, release is E0-F0-74
-					if (prevCode = x"F0" and prevPrevCode = x"E0") then
+					if (prevPrevCode = x"E0" and prevCode = x"F0") then
 						MOVE_RIGHT <= '0';
 					elsif (prevCode = x"E0") then
 						MOVE_RIGHT <= '1';
 					end if;
+				
+				when x"1C" => -- A press is 1C, release is F0-1C
+					if (prevCode = x"F0") then
+						MOVE_LEFT <= '0';	
+					else
+						MOVE_LEFT <= '1';
+					end if;
 					
+				when x"23" => -- D press is 23, release is F0-23
+					if (prevCode = x"F0") then
+						MOVE_RIGHT <= '0';
+					else
+						MOVE_RIGHT <= '1';
+					end if;
+				
 				when x"29" => -- SPACEBAR press is 29, release is F0-29
 					if (prevCode = x"F0") then
 						SHOOT <= '0';
