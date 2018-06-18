@@ -35,7 +35,7 @@ package HI_package is
 	constant H_DISP											: natural := 640 - 128;
 	constant V_DISP											: natural := 480;
 	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
-	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 			: natural := 25000000;
+	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 		: natural := 25000000;
 	
 	constant RAND_GEN_W										: natural := 16;
 	
@@ -85,23 +85,23 @@ package HI_package is
 	constant ALIEN_3_ROWS									: natural := 1;
 	constant FIRST_ALIEN_CELL_X 							: natural := SIDE_MARGIN + 0;
 	constant FIRST_ALIEN_CELL_Y 							: natural := TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
-	-- constant FIRST_RAND_ALIEN_CELL_X 					: natural := - RAND_ALIEN_SIZE_X;
+	-- constant FIRST_RAND_ALIEN_CELL_X 				: natural := - RAND_ALIEN_SIZE_X;
 	constant FIRST_RAND_ALIEN_CELL_X 					: integer := SIDE_MARGIN - RAND_ALIEN_SIZE_X;
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 40;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
 	constant BASE_ALIEN_FRAME_TIME_1us	 				: natural := 1000000; --1fps
 	constant ALIEN_FRAME_TIME_DECREASE_1us 			: natural := (BASE_ALIEN_FRAME_TIME_1us - FRAME_TIME_1us) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); -- Time decrease each time an alien gets destroyed
-	constant BASE_ALIEN_BULLET_GEN_TIME_1us 		: natural := 2000000; --One bullet per 2 seconds
-	--constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
-	--constant ALIEN_BULLET_GEN_TIME_DECREASE_50MHz 	: natural := (BASE_ALIEN_BULLET_GEN_TIME_50MHz - MAX_ALIEN_BULLET_GEN_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
-	--constant BASE_ALIEN_BULLET_TIME_50MHz 				: natural := 50000000; --One bullet per second
-	--constant MAX_ALIEN_BULLET_TIME_50MHz 				: natural := 15000000; --More than 3 bullets per second
+	constant BASE_ALIEN_BULLET_GEN_TIME_1us 			: natural := 2000000; --One bullet per 2 seconds
+	--constant MAX_ALIEN_BULLET_GEN_TIME_50MHz 		: natural := 15000000; --More than 3 bullets per second
+	--constant ALIEN_BULLET_GEN_TIME_DECREASE_50MHz : natural := (BASE_ALIEN_BULLET_GEN_TIME_50MHz - MAX_ALIEN_BULLET_GEN_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
+	--constant BASE_ALIEN_BULLET_TIME_50MHz 			: natural := 50000000; --One bullet per second
+	--constant MAX_ALIEN_BULLET_TIME_50MHz 			: natural := 15000000; --More than 3 bullets per second
 	--constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
 	constant RAND_ALIEN_SPEED 								: natural := 1;
-	constant RAND_ALIEN_FRAME_TIME_1us 				: natural := 16666; --60fps
-	constant RAND_ALIEN_TIME_RANGE_1us				: natural := 40000000; -- Time interval of 40 seconds
-	constant RAND_ALIEN_TIME_MIN_1us					: natural := 20000000; -- Time interval of 20 seconds
+	constant RAND_ALIEN_FRAME_TIME_1us 					: natural := 16666; --60fps
+	constant RAND_ALIEN_TIME_RANGE_1us					: natural := 40000000; -- Time interval of 40 seconds
+	constant RAND_ALIEN_TIME_MIN_1us						: natural := 20000000; -- Time interval of 20 seconds
 	
 	-- Sprites
 	constant ALIEN_1_1_SPRITE 								: natural := 0;

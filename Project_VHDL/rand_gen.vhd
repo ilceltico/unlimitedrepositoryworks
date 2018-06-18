@@ -13,8 +13,8 @@ entity rand_gen is
   port (
    RESET_N  					: in std_logic;
    CLOCK   						: in std_logic; 
-	--RANDGEN_INPUT1				: in std_logic;
-	--RANDGEN_INPUT2				: in std_logic;
+	--RANDGEN_INPUT1			: in std_logic;
+	--RANDGEN_INPUT2			: in std_logic;
 	RAND_OUTPUT					: out integer 	  -- lfsr output
   );
 end entity;

@@ -48,6 +48,8 @@ type collision_state_type is (PLAYER_BULLET_COLLISIONS, ALIEN_COLLISIONS, ALIEN_
 	signal first_row 		: alien_column_index_type := 0;
 	signal last_column 	: alien_grid_index_type := COLUMNS_PER_GRID - 1;
 	signal last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
+	signal active_rows 	: std_logic_vector(ALIENS_PER_COLUMN - 1 downto 0);
+	signal active_columns: std_logic_vector(COLUMNS_PER_GRID  - 1 downto 0);
 	
 	signal player			: player_type;
 	signal alien_bullets	: bullet_array_type;
@@ -110,19 +112,26 @@ begin
 	variable var_last_column 	: alien_grid_index_type := COLUMNS_PER_GRID - 1;
 	variable var_last_row 		: alien_column_index_type := ALIENS_PER_COLUMN - 1;
 	
+	variable found 				: std_logic := '0';
+	
 	begin
 		
 		if (RESET_N = '0') then 
 			
 			var_first_column 	:= 0;
 			var_first_row 		:= 0;
-			var_last_column 	:= COLUMNS_PER_GRID - 1;
-			var_last_row 		:= ALIENS_PER_COLUMN - 1;
+			var_last_column	:= COLUMNS_PER_GRID - 1;
+			var_last_row		:= ALIENS_PER_COLUMN - 1;
 			
 			first_column 	<= var_first_column;
 			first_row 		<= var_first_row;
 			last_column 	<= var_last_column;
 			last_row 		<= var_last_row;
+			
+			found 				:= '0';
+			
+			active_columns <= (others => '1');
+			active_rows 	<= (others => '1');
 		
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				
@@ -156,16 +165,70 @@ begin
 				
 				alien_grid(HIDE.index_1)(HIDE.index_2).visible <= '0';
 				
-				var_last_column 	:= 0;
-				var_last_row 		:= 0;
-				var_first_column 	:= COLUMNS_PER_GRID - 1;
-				var_first_row		:= ALIENS_PER_COLUMN - 1;
+				var_last_column 	:= last_column;
+				var_last_row 		:= last_row;
+				var_first_column 	:= first_column;
+				var_first_row		:= first_row;
+				
+				-- Checking if a row went completely destroyed
+				found 				:= '0'; 
 				
 				for I in 0 to COLUMNS_PER_GRID - 1 loop 
-					for J in 0 to ALIENS_PER_COLUMN - 1 loop
 				
-						if ((I /= HIDE.index_1 or J /= HIDE.index_2) and alien_grid(I)(J).visible = '1') then 
+					if (alien_grid(I)(HIDE.index_2).visible = '1' and I /= HIDE.index_1) then
+						found := '1';
+					end if;
+				
+				end loop;
+				
+				if (found = '0') then
+				
+					active_rows(HIDE.index_2) <= '0';
+					
+					var_first_row := ALIENS_PER_COLUMN - 1;
+					var_last_row  := 0;
+					
+					-- Computing new first and last rows
+					for I in 0 to ALIENS_PER_COLUMN - 1 loop 
+								
+						if (active_rows(I) = '1' and I /= HIDE.index_2) then 
+							
+							if (I > var_last_row) then 
+								var_last_row := I;
+							end if;
 						
+							if (I < var_first_row) then 
+								var_first_row := I;
+							end if;
+				
+						end if;
+						
+					end loop;
+					
+				end if;
+				
+				-- Checking if a column went completely destroyed
+				found := '0';
+				
+				for I in 0 to ALIENS_PER_COLUMN - 1 loop 
+				
+					if (alien_grid(HIDE.index_1)(I).visible = '1' and I /= HIDE.index_2) then
+						found := '1';
+					end if;
+				
+				end loop;
+				
+				if (found = '0') then
+					active_columns(HIDE.index_1) <= '0';
+					
+					var_first_column := COLUMNS_PER_GRID - 1;
+					var_last_column  := 0;
+					
+					-- Computing new first and last columns
+					for I in 0 to COLUMNS_PER_GRID - 1 loop 
+								
+						if (active_columns(I) = '1' and I /= HIDE.index_1) then 
+							
 							if (I > var_last_column) then 
 								var_last_column := I;
 							end if;
@@ -173,19 +236,38 @@ begin
 							if (I < var_first_column) then 
 								var_first_column := I;
 							end if;
-							
-							if (J > var_last_row) then
-								var_last_row := J;
-							end if;
-							
-							if (J < var_first_row) then 
-								var_first_row := J;
-							end if;
-								
+				
 						end if;
-					
+						
 					end loop;
-				end loop;
+					
+				end if;
+				
+--				for I in 0 to COLUMNS_PER_GRID - 1 loop 
+--					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+--				
+--						if ((I /= HIDE.index_1 or J /= HIDE.index_2) and alien_grid(I)(J).visible = '1') then 
+--						
+--							if (I > var_last_column) then 
+--								var_last_column := I;
+--							end if;
+--						
+--							if (I < var_first_column) then 
+--								var_first_column := I;
+--							end if;
+--							
+--							if (J > var_last_row) then
+--								var_last_row := J;
+--							end if;
+--							
+--							if (J < var_first_row) then 
+--								var_first_row := J;
+--							end if;
+--								
+--						end if;
+--					
+--					end loop;
+--				end loop;
 				
 				first_column 	<= var_first_column;
 				first_row 		<= var_first_row;
