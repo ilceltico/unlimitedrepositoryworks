@@ -397,6 +397,7 @@ begin
 	variable impacter_yMax : xy_coord_type := 0;
 	
 	variable temp_column : alien_grid_index_type := 0;
+	variable x_match		: std_logic := '0';
 		
 	begin
 		
@@ -404,6 +405,19 @@ begin
 		
 			COLLISION <= ((0,0,ENTITY_NONE), (0,0,ENTITY_NONE));
 			collision_state <= PLAYER_BULLET_COLLISIONS;
+			
+			target_xMin := 0;
+			target_xMax := 0;
+			target_yMin := 0;
+			target_yMax := 0;
+	
+			impacter_xMin := 0;
+			impacter_xMax := 0;
+			impacter_yMin := 0;
+			impacter_yMax := 0;
+	
+			temp_column := 0;
+			x_match		:= '0';
 		
 		elsif (rising_edge(CLOCK)) then 
 		
@@ -431,6 +445,8 @@ begin
 						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_RANDOM_ALIEN));
 					end if;
 			
+					x_match := '0';
+			
 					for I in 0 to COLUMNS_PER_GRID - 1 loop
 						
 						target_xMax := alien_grid(I)(0).hitbox.up_left_x + alien_grid(I)(0).hitbox.size_x;
@@ -438,20 +454,25 @@ begin
 						
 						if (target_xMin <= impacter_xMax and target_xMax >= impacter_xMin) then
 							temp_column := I;
+							x_match := '1';
 						end if;
 						
 					end loop;
 					
-					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+					if (x_match = '1') then
+					
+						for J in 0 to ALIENS_PER_COLUMN - 1 loop
 						
-						target_yMax := alien_grid(temp_column)(J).hitbox.up_left_y + alien_grid(temp_column)(J).hitbox.size_y;
-						target_yMin := alien_grid(temp_column)(J).hitbox.up_left_y;
+							target_yMax := alien_grid(temp_column)(J).hitbox.up_left_y + alien_grid(temp_column)(J).hitbox.size_y;
+							target_yMin := alien_grid(temp_column)(J).hitbox.up_left_y;
 							
-						if (player_bullet.visible = '1' and alien_grid(temp_column)(J).visible = '1' and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
-							COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (temp_column,J,ENTITY_ALIEN));
-						end if;
-							
-					end loop;
+							if (player_bullet.visible = '1' and alien_grid(temp_column)(J).visible = '1' and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+								COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (temp_column,J,ENTITY_ALIEN));
+							end if;
+								
+						end loop;
+					
+					end if;
 					
 					for I in 0 to BULLET_COUNT - 1 loop
 					
