@@ -29,3 +29,18 @@ out	-> punteggio
 	-> randalien sta toccando a sinitra
 	-> randalien sta toccando a destra
 	-> colonna indicata (dal controller) può sparare o no
+
+
+
+
+
+25 giugno 2018:
+TODO
+- Punteggi/vite/numero livello (KEX fa la view e anche il model)
+- Collisioni alieni/giocatori
+- Scudi (visualizzazione, comportamento e collisioni)
+- Esplosioni (i proiettili rimangono sempre impegnati fino al termine dell'esplosione; una collisione con uno scudo non ha implicazioni; una collisione con il player ferma l'intero gioco, il player ha due sprite di esplosione che si alternano per un numero stabilito di volte, vedi Java; una collisione con l'alieno random non ha implicazioni; una collisione con gli altri alieni ferma per un certo tempo, vedi Java, tutti gli alieni ad eccezione del random, passato il quale si ricomincia a decrementare il contatore di tempo normale)
+- Random generator da collegare a: tempo di generazione del random_alien, numero di colonna che sparerà. (FSTELLA)
+- Master-controller: visualizzazione schermata di benvenuto, di vittoria, di gameover e di nuovolivello. 
+- Suoni (sia musica sia proprio i suonih)
+- Sistemare viewport: rendere generiche le dimensioni, tenersi un margine nero a dx e sx per il random alien. (FSTELLA)
