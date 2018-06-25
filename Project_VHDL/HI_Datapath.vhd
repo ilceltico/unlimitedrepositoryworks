@@ -526,6 +526,11 @@ begin
 					collision_state <= ALIEN_BULLET_COLLISIONS;
 					
 				when ALIEN_BULLET_COLLISIONS =>
+
+					target_xMax := player.hitbox.up_left_x + player.hitbox.size_x;
+					target_xMin := player.hitbox.up_left_x;
+					target_yMax := player.hitbox.up_left_y + player.hitbox.size_y;
+					target_yMin := player.hitbox.up_left_y;
 				
 					-- TODO alien_bullets
 					for I in 0 to BULLET_COUNT - 1 loop
@@ -535,11 +540,17 @@ begin
 						impacter_yMax := alien_bullets(I).hitbox.up_left_y + alien_bullets(I).hitbox.size_y;
 						impacter_yMin := alien_bullets(I).hitbox.up_left_y;
 					
+						if (alien_bullets(I).visible = '1' and target_xMin <= impacter_xMax and target_xMax >= impacter_xMin and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then
+							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_PLAYER));
+						end if;
+						
 						if (alien_bullets(I).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
 							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
 						end if;
 						
 					end loop;
+					
+					
 					
 					collision_state <= PLAYER_BULLET_COLLISIONS;
 				
