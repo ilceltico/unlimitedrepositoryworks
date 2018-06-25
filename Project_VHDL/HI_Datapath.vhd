@@ -506,7 +506,7 @@ begin
 							temp_column := I;
 						end if;
 						
-						if (alien_grid(I)(last_row).visible = '1' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then
+						if (alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
 							COLLISION <= ((I,last_row,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
 						end if;
 					
