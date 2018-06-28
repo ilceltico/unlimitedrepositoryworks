@@ -37,8 +37,6 @@ package HI_package is
 	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
 	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 		: natural := 25000000;
 	
-	constant RAND_GEN_W										: natural := 16;
-	
 	-- Player
 	constant PLAYER_MOVEMENT_TIME_1us					: natural := 16666; --60fps
 	constant PLAYER_SIZE_X 									: natural := 30;
@@ -100,7 +98,8 @@ package HI_package is
 	--constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
 	constant RAND_ALIEN_SPEED 								: natural := 1;
 	constant RAND_ALIEN_FRAME_TIME_1us 					: natural := 16666; --60fps
-	constant RAND_ALIEN_TIME_RANGE_1us					: natural := 40000000; -- Time interval of 40 seconds
+	constant RAND_ALIEN_GENERATION_TIME_BITS			: natural := 12;
+	constant RAND_ALIEN_TIME_RANGE_1us					: natural := (2**RAND_ALIEN_GENERATION_TIME_BITS)*10000; -- Time interval of around 42 seconds
 	constant RAND_ALIEN_TIME_MIN_1us						: natural := 20000000; -- Time interval of 20 seconds
 	
 	-- Sprites
