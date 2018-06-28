@@ -161,6 +161,13 @@ begin
 		
 			alien_grid <= alien_grid;
 			
+			if (DESTROY.entity_type = ENTITY_ALIEN) then 
+				
+				alien_grid(DESTROY.index_1)(DESTROY.index_2).exploding <= '1';
+				alien_grid(DESTROY.index_1)(DESTROY.index_2).current_index <= ALIEN_SPRITE_COUNT - 1;
+				
+			end if;
+			
 			if (HIDE.entity_type = ENTITY_ALIEN) then 
 				
 				alien_grid(HIDE.index_1)(HIDE.index_2).visible <= '0';
@@ -243,32 +250,6 @@ begin
 					
 				end if;
 				
---				for I in 0 to COLUMNS_PER_GRID - 1 loop 
---					for J in 0 to ALIENS_PER_COLUMN - 1 loop
---				
---						if ((I /= HIDE.index_1 or J /= HIDE.index_2) and alien_grid(I)(J).visible = '1') then 
---						
---							if (I > var_last_column) then 
---								var_last_column := I;
---							end if;
---						
---							if (I < var_first_column) then 
---								var_first_column := I;
---							end if;
---							
---							if (J > var_last_row) then
---								var_last_row := J;
---							end if;
---							
---							if (J < var_first_row) then 
---								var_first_row := J;
---							end if;
---								
---						end if;
---					
---					end loop;
---				end loop;
-				
 				first_column 	<= var_first_column;
 				first_row 		<= var_first_row;
 				last_column 	<= var_last_column;
@@ -293,7 +274,7 @@ begin
 					
 					end case;	
 					
-					if (ALIEN_GRID_MOVEMENT /= DIR_NONE) then
+					if (ALIEN_GRID_MOVEMENT /= DIR_NONE and alien_grid(I)(J).exploding = '0') then
 						if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
 							alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
 						else 
@@ -384,7 +365,7 @@ begin
 		
 	end process;
 	
-	bullet_collion_detection : process(CLOCK, RESET_N) is 	
+	collision_detection : process(CLOCK, RESET_N) is 	
 		
 	variable target_xMin : xy_coord_type := 0;
 	variable target_xMax : xy_coord_type := 0;

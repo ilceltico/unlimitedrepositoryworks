@@ -28,14 +28,14 @@ package HI_package is
 	constant BOTTOM_MARGIN 									: natural	:= 10;
 	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
 	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
-	constant INDEX_1_MAX										: natural 	:= 16; 
-	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
+	constant INDEX_1_MAX										: natural 	:= 16;  -- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
+	constant EXPLOSION_TIME_MAX_1us						: natural 	:= 10000000;
 	
 	constant FRAME_TIME_1us 								: natural := 16666; --60fps
 	constant H_DISP											: natural := 640 - 128;
 	constant V_DISP											: natural := 480;
-	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
-	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 		: natural := 25000000;
+	constant EXPLOSION_TIME_1us 							: natural := 300000;
+	constant RAND_ALIEN_EXPLOSION_TIME_1us 			: natural := 500000;
 	
 	constant RAND_GEN_W										: natural := 16;
 	
@@ -61,7 +61,7 @@ package HI_package is
 	constant PLAYER_BULLET_SIZE_Y 						: natural := 8;
 	constant BULLET_EXPLOSION_SIZE_X 					: natural := 30;
 	constant BULLET_EXPLOSION_SIZE_Y 					: natural := 35;
-	constant BULLET_EXPLOSION_TIME_50MHz 				: natural := 10000000;
+	constant BULLET_EXPLOSION_TIME_1us	 				: natural := 200000;
 	
 	-- Alien points 
 	constant ALIEN_1_POINTS 								: natural := 10;
@@ -322,6 +322,14 @@ package HI_package is
 		first_entity 			: datapath_entity_index_type;
 		second_entity 			: datapath_entity_index_type;
 	end record;
+	
+	--destruction timer signals
+	constant DESTRUCTION_SLOT_COUNT : natural = 4 + BULLET_COUNT;
+	type destruction_slot_type is record 
+		index : datapath_entity_index_type;
+		timer : integer range 0 to EXPLOSION_TIME_MAX_1us;
+	end record;
+	type destruction_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of destruction_slot_type;
 	
 	--------------------------------------------------------------
 	--					     ARRAY OF ALL SPRITES	                  --

@@ -7,11 +7,11 @@ use work.vga_package.all;
 entity Hi_Datapath_Control_Unit is 
 	port 
 	(
-		CLOCK								: in	std_logic;
-		RESET_N							: in 	std_logic;
+		CLOCK								: in std_logic;
+		RESET_N							: in std_logic;
 		TIME_1US							: in std_logic;
-		ALIEN_BORDER_REACHED			: in 	direction_type;
-		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
+		ALIEN_BORDER_REACHED			: in direction_type;
+		RAND_ALIEN_BORDER_REACHED 	: in direction_type;
 		PLAYER_BORDER_REACHED		: in direction_type;
 		COLLISION						: in collision_type;
 		RAND_OUTPUT						: in std_logic_vector (RAND_GEN_W - 1 downto 0);
@@ -50,7 +50,8 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
 	signal move_rand_alien			: std_logic;
 	signal hide_rand_alien_border_reached : std_logic;
-
+	
+	signal destruction_array 		: destruction_array_type;
 	
 begin
 	
@@ -406,7 +407,37 @@ begin
 		
 	end process;
 	
-	-- TODO
+	destruction_timer : process(CLOCK, RESET_N) 
+	begin
+	
+		if (RESET_N = '0') then 
+			
+			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+				destruction_array(I) <= ((0,0,ENTITY_NONE), 0);
+			end loop;
+			
+		elsif (rising_edge(CLOCK)) then
+	
+			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+			
+				if (destruction_array(I).index.entity_type /= ENTITY_NONE) then
+				
+					destruction_array(I).timer <= destruction_array(I).timer - 1;
+					if (destruction_array(I).timer = 0) then
+						
+					end if;
+				
+				end if;
+			
+			end loop;
+		
+		end if;
+	
+	end process;
+
+	-- Collision handler must use ONLY DESTROY port, not HIDE. Random alien does not get hidden after it crosses the side border, instead it simply stops and waits there.
+	-- If something needs to get hidden (like a shield when it impacts with an alien), it will get DESTROYED, but the DESTROY command will be implemented like HIDE command in
+	-- the datapath. HIDE port will be written only by destruction_timer process.
 	collision_handler : process(CLOCK, RESET_N) 
 	
 	type collision_handler_state_type is (HANDLING_FIRST_ENTITY, HANDLING_SECOND_ENTITY);
