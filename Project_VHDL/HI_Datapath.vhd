@@ -9,7 +9,7 @@ entity HI_Datapath is
 	(
 		CLOCK								: in	std_logic;
 		RESET_N							: in 	std_logic;
-		REQ_NEXT_SPRITE			: in 	std_logic;
+		REQ_NEXT_SPRITE				: in 	std_logic;
 		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
 		DESTROY							: in 	datapath_entity_index_type;
 		HIDE								: in 	datapath_entity_index_type;
