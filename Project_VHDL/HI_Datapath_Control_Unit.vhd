@@ -46,8 +46,8 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	
 	signal reg_show_rand_alien		: std_logic;
 	signal spawn_rand_alien			: std_logic;
-	-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
-	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
+	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
+	--signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
 	signal move_rand_alien			: std_logic;
 	signal hide_rand_alien_border_reached : std_logic;
 	signal rand_alien_alive			: std_logic;
@@ -88,8 +88,8 @@ begin
 	
 	rand_alien_tick_gen : process(CLOCK, RESET_N)
 		
-		-- variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
-		variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1);
+		variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
+		--variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1);
 	begin
 	
 		if (RESET_N = '0') then
@@ -407,7 +407,7 @@ begin
 			elsif (spawn_rand_alien = '1') then
 				rand_alien_alive <= '1';
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
-				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us + to_integer(unsigned(RAND_OUTPUT & "0000"));
+				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_OUTPUT & "0000"));
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;

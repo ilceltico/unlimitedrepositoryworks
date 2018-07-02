@@ -30,7 +30,7 @@ begin
   shift_register : process (CLOCK, RESET_N) 
     begin
 		if (RESET_N = '0') then
-			s_register <= (others=>'0');
+			s_register <= (others=>'1');
 			--temp := 0;
       
 		elsif (rising_edge(CLOCK)) then

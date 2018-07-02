@@ -100,7 +100,7 @@ package HI_package is
 	constant RAND_ALIEN_SPEED 								: natural := 1;
 	constant RAND_ALIEN_FRAME_TIME_1us 					: natural := 16666; --60fps
 	constant RAND_ALIEN_GENERATION_TIME_BITS			: natural := 12;
-	constant RAND_ALIEN_TIME_RANGE_1us					: natural := (2**RAND_ALIEN_GENERATION_TIME_BITS)*10000; -- Time interval of around 42 seconds
+	constant RAND_ALIEN_TIME_RANGE_1us					: natural := (2**RAND_ALIEN_GENERATION_TIME_BITS - 1)*10000; -- Time interval of around 42 seconds
 	constant RAND_ALIEN_TIME_MIN_1us						: natural := 20000000; -- Time interval of 20 seconds
 	
 	-- Sprites
