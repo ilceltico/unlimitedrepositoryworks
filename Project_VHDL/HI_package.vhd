@@ -84,7 +84,8 @@ package HI_package is
 	constant FIRST_ALIEN_CELL_X 							: natural := SIDE_MARGIN + 0;
 	constant FIRST_ALIEN_CELL_Y 							: natural := TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
 	-- constant FIRST_RAND_ALIEN_CELL_X 				: natural := - RAND_ALIEN_SIZE_X;
-	constant FIRST_RAND_ALIEN_CELL_X 					: integer := SIDE_MARGIN - RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_X_LEFT 				: integer := SIDE_MARGIN - RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_X_RIGHT 			: integer := H_DISP - SIDE_MARGIN + RAND_ALIEN_SIZE_X;
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 40;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels

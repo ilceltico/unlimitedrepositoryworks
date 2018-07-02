@@ -406,6 +406,7 @@ begin
 				end if;
 			elsif (spawn_rand_alien = '1') then
 				rand_alien_alive <= '1';
+				RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us + to_integer(unsigned(RAND_OUTPUT & "0000"));
 			end if;
 			

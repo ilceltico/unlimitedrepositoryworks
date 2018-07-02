@@ -26,7 +26,6 @@ architecture rtl of rand_gen is
 begin
 
 	
-  feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));		
 
   shift_register : process (CLOCK, RESET_N) 
     begin
@@ -36,8 +35,25 @@ begin
       
 		elsif (rising_edge(CLOCK)) then
 		
-          --s_register <= s_register(RAND_GEN_W-2 downto 0) & feedback;
-			 s_register <= feedback & s_register(RAND_GEN_W-2 downto 0);
+			case (RAND_GEN_W) is 
+				when 2 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when 3 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when 4 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when 5 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-3));
+				when 6 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when 7 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when 8 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-3) xor s_register(RAND_GEN_W-4) xor s_register(RAND_GEN_W-5));
+				when 9 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-5));
+				when 10 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-4));
+				when 11 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-3));
+				when 12 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-9));
+				when 13 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-6));
+				when 14 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-2) xor s_register(RAND_GEN_W-13));
+				when 15 => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+				when others => feedback <= not(s_register(RAND_GEN_W-1) xor s_register(RAND_GEN_W-2));
+			end case;
+		
+          s_register <= s_register(RAND_GEN_W-2 downto 0) & feedback;
 			 --temp := to_integer(unsigned(counter)); 
 			 
       end if;  

@@ -311,7 +311,7 @@ begin
 		)
 		port map
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> time_1us,
 			RESET_N			=> RESET_N,
 			RAND_OUTPUT		=> rand_output
 		);

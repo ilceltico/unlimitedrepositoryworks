@@ -596,7 +596,7 @@ begin
 	
 		if (RESET_N = '0') then
 			rand_alien.sprite_indexes <= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
-			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X;
+			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X_LEFT;
 			rand_alien.hitbox.up_left_y 	<= FIRST_RAND_ALIEN_CELL_Y;
 			rand_alien.hitbox.size_x 		<= RAND_ALIEN_SIZE_X;
 			rand_alien.hitbox.size_y 		<= RAND_ALIEN_SIZE_Y;
@@ -608,10 +608,13 @@ begin
 		
 			if (SHOW_RAND_ALIEN = '1') then
 				rand_alien.visible <= '1';
-				rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X;
-			end if;
-			
-			if (rand_alien.visible = '1') then
+				if (RAND_ALIEN_MOVEMENT = DIR_LEFT) then 
+					rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X_RIGHT;
+				else 
+					rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X_LEFT;
+				end if;
+				
+			elsif (rand_alien.visible = '1') then
 				case (RAND_ALIEN_MOVEMENT) is
 				
 				when DIR_RIGHT => 
