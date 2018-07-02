@@ -314,22 +314,15 @@ package HI_package is
 	
 	type direction_type is (DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_NONE);
 	
-	--------------------------------------------------------------
-	--					        DATAPATH INDEXES                     --
-	--------------------------------------------------------------
-	
 	type collision_type is record 
 		first_entity 			: datapath_entity_index_type;
 		second_entity 			: datapath_entity_index_type;
 	end record;
 	
 	--destruction timer signals
-	constant DESTRUCTION_SLOT_COUNT : natural = 4 + BULLET_COUNT;
-	type destruction_slot_type is record 
-		index : datapath_entity_index_type;
-		timer : integer range 0 to EXPLOSION_TIME_MAX_1us;
-	end record;
-	type destruction_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of destruction_slot_type;
+	constant DESTRUCTION_SLOT_COUNT : natural := 4 + BULLET_COUNT;
+	type destruction_timer_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of integer range 0 to EXPLOSION_TIME_MAX_1us;
+	type destruction_index_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of datapath_entity_index_type;
 	
 	--------------------------------------------------------------
 	--					     ARRAY OF ALL SPRITES	                  --

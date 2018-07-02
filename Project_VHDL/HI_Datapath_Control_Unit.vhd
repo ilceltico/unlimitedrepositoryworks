@@ -36,22 +36,26 @@ end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
-	signal game_tick 				: std_logic;
-	signal player_move_time		: std_logic;
+	signal game_tick 								: std_logic;
+	signal player_move_time						: std_logic;
 		
 	type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
-	signal column_state				: column_state_type;
-	signal bullet_tick				: std_logic;
-	signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
+	signal column_state							: column_state_type;
+	signal bullet_tick							: std_logic;
+	signal bullet_gen_time						: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
 	
-	signal reg_show_rand_alien		: std_logic;
-	signal spawn_rand_alien			: std_logic;
-	-- signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
-	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
-	signal move_rand_alien			: std_logic;
-	signal hide_rand_alien_border_reached : std_logic;
+	signal reg_show_rand_alien					: std_logic;
+	signal spawn_rand_alien						: std_logic;
+	-- signal rand_alien_time					: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
+	signal rand_alien_time						: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
+	signal move_rand_alien						: std_logic;
+	signal hide_rand_alien_border_reached 	: std_logic;
 	
-	signal destruction_array 		: destruction_array_type;
+	signal destruction_index_array			: destruction_index_array_type;
+	signal destruction_timer_array 			: destruction_timer_array_type;
+		
+	type collision_handler_state_type is (HANDLING_FIRST_ENTITY, HANDLING_SECOND_ENTITY);
+	signal collision_handler_state 			: collision_handler_state_type;
 	
 begin
 	
@@ -406,101 +410,151 @@ begin
 		end if;
 		
 	end process;
-	
-	destruction_timer : process(CLOCK, RESET_N) 
-	
-	variable found : std_logic := '0';
-	
-	begin
-	
-		if (RESET_N = '0') then 
-			
-			HIDE <= (0,0,ENTITY_NONE);
-			
-			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
-				destruction_array(I) <= ((0,0,ENTITY_NONE), 0);
-			end loop;
-			
-			found := '0';
-			
-		elsif (rising_edge(CLOCK)) then
-	
-			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
-			
-				if (destruction_array(I).index.entity_type /= ENTITY_NONE) then
-				
-					-- if multiple entities reach 0 at the same time only one of them will get destroyed causing a glitch. 
-					-- This check prevents that, but it may delay the destruction of some objects by AT MOST 7 clock intervals.
-					
-					if (destruction_array(I).timer /= 0 or found = '0') then
-						destruction_array(I).timer <= destruction_array(I).timer - 1;
-					end if;
-					
-					if (destruction_array(I).timer = 0) then
-						found := '1';
-						HIDE <= destruction_array(I).index;
-					end if;
-				
-				end if;
-			
-			end loop;
-		
-		end if;
-	
-	end process;
 
 	-- Collision handler must use ONLY DESTROY port, not HIDE. Random alien does not get hidden after it crosses the side border, instead it simply stops and waits there.
 	-- If something needs to get hidden (like a shield when it impacts with an alien), it will get DESTROYED, but the DESTROY command will be implemented like HIDE command in
 	-- the datapath. HIDE port will be written only by destruction_timer process.
-	collision_handler : process(CLOCK, RESET_N) 
 	
-	type collision_handler_state_type is (HANDLING_FIRST_ENTITY, HANDLING_SECOND_ENTITY);
-	variable state : collision_handler_state_type;
-	variable second_entity : datapath_entity_index_type;
+	collision_handler : process(CLOCK, RESET_N) 
+
+	variable reg_collision : collision_type;
+	variable found 		  : std_logic;
 	
 	begin
 	
 		if (RESET_N = '0') then 
 		
+			HIDE <= (0,0,ENTITY_NONE);
+			
+			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+				destruction_timer_array(I) <= 0;
+			end loop;
+			
+			found := '0';
+		
 			DESTROY <= (0,0,ENTITY_NONE);	
-			state := HANDLING_FIRST_ENTITY;
+			collision_handler_state <= HANDLING_FIRST_ENTITY;
+			reg_collision := ((0,0,ENTITY_NONE),(0,0,ENTITY_NONE));
+			
+			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+				destruction_index_array(I) <= (0,0,ENTITY_NONE);
+			end loop;
 				
 		elsif (rising_edge(CLOCK)) then 
 		
 			DESTROY <= (0,0,ENTITY_NONE);
+			
+			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+			
+				if (destruction_index_array(I).entity_type /= ENTITY_NONE) then
+				
+					-- if multiple entities reach 0 at the same time only one of them will get destroyed causing a glitch. 
+					-- This check prevents that, but it may delay the destruction of some objects by AT MOST 7 clock intervals.
+					
+					if (destruction_timer_array(I) > 0 or found = '0') then
+						destruction_timer_array(I) <= destruction_timer_array(I) - 1;
+					end if;
+					
+					if (destruction_timer_array(I) = 0) then
+						found := '1';
+						HIDE <= destruction_index_array(I);
+						destruction_index_array(I) <= (0,0,ENTITY_NONE);
+					end if;
+				
+				end if;
+			
+			end loop;
+			
+			case (collision_handler_state) is 
+			when HANDLING_FIRST_ENTITY =>
+			
+				collision_handler_state <= HANDLING_SECOND_ENTITY;
+				reg_collision := COLLISION;
+			
+			when HANDLING_SECOND_ENTITY =>
+		
+				collision_handler_state <= HANDLING_FIRST_ENTITY;
+				
+			end case;
 	
 			-- See for reference collision_table.xlsx, rightmost table.
 	
-			case (state) is 
-			when HANDLING_FIRST_ENTITY =>
-			
-				-- First entity (impacter) can only be: ALIEN, ALIEN_BULLET or PLAYER_BULLET
+			-- First entity (impacter) can only be: ALIEN, ALIEN_BULLET or PLAYER_BULLET
+			-- Second entity (target) can only be: ALIEN, ALIEN_BULLET, PLAYER, RANDOM_ALIEN, SHIELD, BORDER 
 				
---				HIDE <= COLLISION.first_entity;
-				case (COLLISION.first_entity.entity_type) is
-				when ENTITY_ALIEN =>
-					
-				when ENTITY_ALIEN_BULLET =>
-					
-				when PLAYER_BULLET => 
-				
+			case (reg_collision.first_entity.entity_type) is
+			when ENTITY_ALIEN =>
+				case (reg_collision.second_entity.entity_type) is 
+				when ENTITY_PLAYER => 
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_SHIELD =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_BORDER =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when others =>
 				end case;
-				
-				state := HANDLING_SECOND_ENTITY;
-				second_entity := COLLISION.second_entity;
-				
-			when HANDLING_SECOND_ENTITY =>
-			
-				-- Second entity (target) can only be: ALIEN, ALIEN_BULLET, PLAYER, RANDOM_ALIEN, SHIELD, TOP_BORDER, BOTTOM_BORDER
-				
-				HIDE <= second_entity;
-				
-				if (hide_rand_alien_border_reached = '1') then
-					HIDE <= (0,0,ENTITY_RANDOM_ALIEN);
-				end if;
-				
-				state := HANDLING_FIRST_ENTITY;
-				
+			when ENTITY_ALIEN_BULLET =>
+				case (reg_collision.second_entity.entity_type) is 
+				when ENTITY_PLAYER => 
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_SHIELD =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_BORDER =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when others =>
+				end case;
+			when ENTITY_PLAYER_BULLET =>
+				case (reg_collision.second_entity.entity_type) is 
+				when ENTITY_ALIEN => 
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+						destruction_index_array(0) <= (reg_collision.first_entity);
+						destruction_timer_array(0) <= (1000000);
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_ALIEN_BULLET =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_RANDOM_ALIEN =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_SHIELD =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when ENTITY_BORDER =>
+					case (collision_handler_state) is 
+					when HANDLING_FIRST_ENTITY =>
+						destruction_index_array(0) <= (reg_collision.first_entity);
+						destruction_timer_array(0) <= (1000000);
+					when HANDLING_SECOND_ENTITY =>
+					end case;
+				when others =>
+				end case;
+			when others =>
 			end case;
 			
 		end if;
