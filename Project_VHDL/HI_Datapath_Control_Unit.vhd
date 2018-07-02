@@ -425,20 +425,16 @@ begin
 		if (RESET_N = '0') then 
 		
 			HIDE <= (0,0,ENTITY_NONE);
+			DESTROY <= (0,0,ENTITY_NONE);	
 			
 			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
 				destruction_timer_array(I) <= 0;
+				destruction_index_array(I) <= (0,0,ENTITY_NONE);
 			end loop;
 			
 			found := '0';
-		
-			DESTROY <= (0,0,ENTITY_NONE);	
 			collision_handler_state <= HANDLING_FIRST_ENTITY;
 			reg_collision := ((0,0,ENTITY_NONE),(0,0,ENTITY_NONE));
-			
-			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
-				destruction_index_array(I) <= (0,0,ENTITY_NONE);
-			end loop;
 				
 		elsif (rising_edge(CLOCK)) then 
 		
@@ -455,7 +451,7 @@ begin
 						destruction_timer_array(I) <= destruction_timer_array(I) - 1;
 					end if;
 					
-					if (destruction_timer_array(I) = 0) then
+					if (destruction_timer_array(I) = 0 and found = '0') then
 						found := '1';
 						HIDE <= destruction_index_array(I);
 						destruction_index_array(I) <= (0,0,ENTITY_NONE);
@@ -526,8 +522,8 @@ begin
 				when ENTITY_ALIEN => 
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-						destruction_index_array(0) <= (reg_collision.first_entity);
-						destruction_timer_array(0) <= (1000000);
+--						destruction_index_array(0) <= (reg_collision.first_entity);
+--						destruction_timer_array(0) <= (1000000);
 					when HANDLING_SECOND_ENTITY =>
 					end case;
 				when ENTITY_ALIEN_BULLET =>
