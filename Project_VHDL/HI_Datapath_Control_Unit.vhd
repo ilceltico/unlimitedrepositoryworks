@@ -404,10 +404,15 @@ begin
 					rand_alien_alive <= '0';
 				
 				end if;
+				
+				if (COLLISION.second_entity = (0,0,ENTITY_RANDOM_ALIEN)) then
+					rand_alien_alive <= '0';
+				end if;
+				
 			elsif (spawn_rand_alien = '1') then
 				rand_alien_alive <= '1';
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
-				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_OUTPUT & "0000"));
+				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_OUTPUT))*10000;
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;
