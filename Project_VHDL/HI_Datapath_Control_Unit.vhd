@@ -410,10 +410,6 @@ begin
 		end if;
 		
 	end process;
-
-	-- Collision handler must use ONLY DESTROY port, not HIDE. Random alien does not get hidden after it crosses the side border, instead it simply stops and waits there.
-	-- If something needs to get hidden (like a shield when it impacts with an alien), it will get DESTROYED, but the DESTROY command will be implemented like HIDE command in
-	-- the datapath. HIDE port will be written only by destruction_timer process.
 	
 	collision_handler : process(CLOCK, RESET_N) 
 
@@ -438,28 +434,34 @@ begin
 				
 		elsif (rising_edge(CLOCK)) then 
 		
-			DESTROY <= (0,0,ENTITY_NONE);
+			--DESTROY <= (0,0,ENTITY_NONE);
 			
-			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+			found := '0';
 			
-				if (destruction_index_array(I).entity_type /= ENTITY_NONE) then
+			if (time_1us = '1') then
+			
+				for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
+			
+					if (destruction_index_array(I).entity_type /= ENTITY_NONE) then
 				
-					-- if multiple entities reach 0 at the same time only one of them will get destroyed causing a glitch. 
-					-- This check prevents that, but it may delay the destruction of some objects by AT MOST 7 clock intervals.
+						-- if multiple entities reach 0 at the same time only one of them will get destroyed causing a glitch. 
+						-- This check prevents that, but it may delay the destruction of some objects by AT MOST 7 clock intervals.
 					
-					if (destruction_timer_array(I) > 0 or found = '0') then
-						destruction_timer_array(I) <= destruction_timer_array(I) - 1;
-					end if;
+						if (destruction_timer_array(I) > 0) then
+							destruction_timer_array(I) <= destruction_timer_array(I) - 1;
+						end if;
 					
-					if (destruction_timer_array(I) = 0 and found = '0') then
-						found := '1';
-						HIDE <= destruction_index_array(I);
-						destruction_index_array(I) <= (0,0,ENTITY_NONE);
-					end if;
+						if (destruction_timer_array(I) = 0 and found = '0') then
+							found := '1';
+							HIDE <= destruction_index_array(I);
+							destruction_index_array(I) <= (0,0,ENTITY_NONE);
+						end if;
 				
-				end if;
+					end if;
 			
-			end loop;
+				end loop;
+			
+			end if;
 			
 			case (collision_handler_state) is 
 			when HANDLING_FIRST_ENTITY =>
@@ -544,8 +546,10 @@ begin
 				when ENTITY_BORDER =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-						destruction_index_array(0) <= (reg_collision.first_entity);
-						destruction_timer_array(0) <= (1000000);
+						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(0) <= (reg_collision.first_entity);
+							destruction_timer_array(0) <= (1000000);
+						end if;
 					when HANDLING_SECOND_ENTITY =>
 					end case;
 				when others =>
