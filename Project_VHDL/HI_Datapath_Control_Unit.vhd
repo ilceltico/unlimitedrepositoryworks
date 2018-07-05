@@ -434,7 +434,8 @@ begin
 				
 		elsif (rising_edge(CLOCK)) then 
 		
-			--DESTROY <= (0,0,ENTITY_NONE);
+			DESTROY 	<= (0,0,ENTITY_NONE);
+			HIDE 		<= (0,0,ENTITY_NONE);
 			
 			found := '0';
 			
@@ -548,7 +549,8 @@ begin
 					when HANDLING_FIRST_ENTITY =>
 						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(0) <= (reg_collision.first_entity);
-							destruction_timer_array(0) <= (1000000);
+							destruction_timer_array(0) <= (600000);
+							DESTROY <= reg_collision.first_entity;
 						end if;
 					when HANDLING_SECOND_ENTITY =>
 					end case;

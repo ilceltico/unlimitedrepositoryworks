@@ -10,7 +10,7 @@ package HI_package is
 	
 	constant SPRITE_COUNT									: natural 	:= 26;
 	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
-	constant BULLET_SPRITE_COUNT							: natural 	:= 4;
+	constant BULLET_SPRITE_COUNT							: natural 	:= 5;
 	constant SHIELD_SPRITE_COUNT							: natural 	:= 4;
 	constant SPRITE_SIZE										: natural 	:= 32;
 	constant MAX_HITBOX_SIZE								: natural 	:= 64;
@@ -59,8 +59,8 @@ package HI_package is
 	constant PLAYER_BULLET_SPEED 							: natural := 8;
 	constant PLAYER_BULLET_SIZE_X 						: natural := 3;
 	constant PLAYER_BULLET_SIZE_Y 						: natural := 8;
-	constant BULLET_EXPLOSION_SIZE_X 					: natural := 30;
-	constant BULLET_EXPLOSION_SIZE_Y 					: natural := 35;
+	constant BULLET_EXPLOSION_SIZE_X 					: natural := 27;
+	constant BULLET_EXPLOSION_SIZE_Y 					: natural := 24;
 	constant BULLET_EXPLOSION_TIME_1us	 				: natural := 200000;
 	
 	-- Alien points 
