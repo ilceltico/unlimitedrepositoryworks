@@ -506,17 +506,32 @@ begin
 				when ENTITY_PLAYER => 
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-					when HANDLING_SECOND_ENTITY =>
+						if (destruction_index_array(reg_collision.first_entity.index_1 + 1) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(reg_collision.first_entity.index_1 + 1) <= (reg_collision.first_entity);
+							destruction_timer_array(reg_collision.first_entity.index_1 + 1) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
+					when HANDLING_SECOND_ENTITY => -- HP - 1
 					end case;
 				when ENTITY_SHIELD =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-					when HANDLING_SECOND_ENTITY =>
+						if (destruction_index_array(reg_collision.first_entity.index_1 + 1) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(reg_collision.first_entity.index_1 + 1) <= (reg_collision.first_entity);
+							destruction_timer_array(reg_collision.first_entity.index_1 + 1) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
+					when HANDLING_SECOND_ENTITY => -- HP - 1
 					end case;
 				when ENTITY_BORDER =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-					when HANDLING_SECOND_ENTITY =>
+						if (destruction_index_array(reg_collision.first_entity.index_1 + 1) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(reg_collision.first_entity.index_1 + 1) <= (reg_collision.first_entity);
+							destruction_timer_array(reg_collision.first_entity.index_1 + 1) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
+					when HANDLING_SECOND_ENTITY => -- do nothing
 					end case;
 				when others =>
 				end case;
@@ -525,23 +540,46 @@ begin
 				when ENTITY_ALIEN => 
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
---						destruction_index_array(0) <= (reg_collision.first_entity);
---						destruction_timer_array(0) <= (1000000);
-					when HANDLING_SECOND_ENTITY =>
+						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(0) <= (reg_collision.first_entity);
+							destruction_timer_array(0) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
+					when HANDLING_SECOND_ENTITY => 
+						if (destruction_index_array(5) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(5) <= (reg_collision.second_entity);
+							destruction_timer_array(5) <= (EXPLOSION_TIME_MAX_1us);
+							DESTROY <= reg_collision.second_entity;
+						end if;
 					end case;
 				when ENTITY_ALIEN_BULLET =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
+						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(0) <= (reg_collision.first_entity);
+							destruction_timer_array(0) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
 					when HANDLING_SECOND_ENTITY =>
 					end case;
 				when ENTITY_RANDOM_ALIEN =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
+						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(0) <= (reg_collision.first_entity);
+							destruction_timer_array(0) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
 					when HANDLING_SECOND_ENTITY =>
 					end case;
 				when ENTITY_SHIELD =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
+						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(0) <= (reg_collision.first_entity);
+							destruction_timer_array(0) <= (BULLET_EXPLOSION_TIME_1us);
+							DESTROY <= reg_collision.first_entity;
+						end if;
 					when HANDLING_SECOND_ENTITY =>
 					end case;
 				when ENTITY_BORDER =>
@@ -549,10 +587,10 @@ begin
 					when HANDLING_FIRST_ENTITY =>
 						if (destruction_index_array(0) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(0) <= (reg_collision.first_entity);
-							destruction_timer_array(0) <= (600000);
+							destruction_timer_array(0) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
 						end if;
-					when HANDLING_SECOND_ENTITY =>
+					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 				when others =>
 				end case;

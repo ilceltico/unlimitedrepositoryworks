@@ -114,6 +114,8 @@ begin
 	
 	variable found 				: std_logic := '0';
 	
+	variable pause					: std_logic := '0';
+	
 	begin
 		
 		if (RESET_N = '0') then 
@@ -129,6 +131,7 @@ begin
 			last_row 		<= var_last_row;
 			
 			found 				:= '0';
+			pause 				:= '0';
 			
 			active_columns <= (others => '1');
 			active_rows 	<= (others => '1');
@@ -163,12 +166,15 @@ begin
 			
 			if (DESTROY.entity_type = ENTITY_ALIEN) then 
 				
+				pause := '1';
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).exploding <= '1';
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).current_index <= ALIEN_SPRITE_COUNT - 1;
 				
 			end if;
 			
 			if (HIDE.entity_type = ENTITY_ALIEN) then 
+				
+				pause := '0';
 				
 				alien_grid(HIDE.index_1)(HIDE.index_2).visible <= '0';
 				
@@ -257,34 +263,35 @@ begin
 				
 			end if;
 			
-			for I in 0 to COLUMNS_PER_GRID - 1 loop
-				for J in 0 to ALIENS_PER_COLUMN - 1 loop
-		
-					case (ALIEN_GRID_MOVEMENT) is
-					
-						when DIR_RIGHT => 
-							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
-						when DIR_LEFT =>
-							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
-						when DIR_UP =>
-							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
-						when DIR_DOWN =>
-							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
-						when DIR_NONE => -- Do nothing
-					
-					end case;	
-					
-					if (ALIEN_GRID_MOVEMENT /= DIR_NONE and alien_grid(I)(J).exploding = '0') then
-						if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
-							alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
-						else 
-							alien_grid(I)(J).current_index <= 0;
+			if (pause = '0') then
+				for I in 0 to COLUMNS_PER_GRID - 1 loop
+					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+			
+						case (ALIEN_GRID_MOVEMENT) is
+						
+							when DIR_RIGHT => 
+								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
+							when DIR_LEFT =>
+								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
+							when DIR_UP =>
+								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
+							when DIR_DOWN =>
+								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
+							when DIR_NONE => -- Do nothing
+						
+						end case;	
+						
+						if (ALIEN_GRID_MOVEMENT /= DIR_NONE and alien_grid(I)(J).exploding = '0') then
+							if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
+								alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
+							else 
+								alien_grid(I)(J).current_index <= 0;
+							end if;
 						end if;
-					end if;
-				
+					
+					end loop;
 				end loop;
-			end loop;
-				
+			end if;
 			
 		end if;
 		
@@ -535,7 +542,7 @@ begin
 					target_yMax := player.hitbox.up_left_y + player.hitbox.size_y;
 					target_yMin := player.hitbox.up_left_y;
 				
-					-- TODO alien_bullets
+					-- TODO SHIELDS
 					for I in 0 to BULLET_COUNT - 1 loop
 					
 						impacter_xMax := alien_bullets(I).hitbox.up_left_x + alien_bullets(I).hitbox.size_x;
@@ -671,7 +678,7 @@ begin
 		
 				for I in 0 to ALIENS_PER_COLUMN - 1 loop
 				
-					if( alien_grid(referenced_column)(I).visible = '1' ) then
+					if(alien_grid(referenced_column)(I).visible = '1') then
 						
 						available_column := '1';
 						referenced_row := I;
@@ -738,10 +745,25 @@ begin
 				end loop;
 			
 			end if;
+	
+			if (DESTROY.entity_type = ENTITY_ALIEN_BULLET) then
 			
+				alien_bullets(DESTROY.index_1).exploding <= '1';
+				alien_bullets(DESTROY.index_1).current_index <= BULLET_SPRITE_COUNT - 1;
+				alien_bullets(DESTROY.index_1).hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
+				alien_bullets(DESTROY.index_1).hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
+				alien_bullets(DESTROY.index_1).hitbox.up_left_x <= alien_bullets(DESTROY.index_1).hitbox.up_left_x + alien_bullets(DESTROY.index_1).hitbox.size_x / 2 - BULLET_EXPLOSION_SIZE_X / 2;
+				alien_bullets(DESTROY.index_1).hitbox.up_left_y <= alien_bullets(DESTROY.index_1).hitbox.up_left_y + alien_bullets(DESTROY.index_1).hitbox.size_y / 2 - BULLET_EXPLOSION_SIZE_Y / 2;
+			
+			end if;
+	
 			if (HIDE.entity_type = ENTITY_ALIEN_BULLET) then 
 				
 				alien_bullets(HIDE.index_1).visible <= '0';
+				alien_bullets(HIDE.index_1).exploding <= '0';
+				alien_bullets(HIDE.index_1).current_index <= 0;
+				alien_bullets(HIDE.index_1).hitbox.size_x <= ALIEN_BULLET_SIZE_X;
+				alien_bullets(HIDE.index_1).hitbox.size_y <= ALIEN_BULLET_SIZE_Y;
 			
 			end if;
 			
