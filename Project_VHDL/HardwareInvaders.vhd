@@ -150,6 +150,10 @@ begin
 	VGA_VS <= fb_vsync;
 	
 	vga : entity work.VGA_Framebuffer
+		generic map (
+			SCREEN_WIDTH        => REAL_WIDTH,
+			SCREEN_HEIGHT       => REAL_HEIGHT
+		)
 		port map (
 			CLOCK     => clock_100MHz,
 			RESET_N   => RESET_N,

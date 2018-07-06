@@ -193,13 +193,31 @@ begin
 								
 		--						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
 								if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
-						
+									
 									FB_FILL_RECT 	<= '1';
 									FB_COLOR 	 	<= reg_sprite.color;
 									FB_X0 			<= reg_fb_x0;
 									FB_X1 			<= reg_fb_x1;
 									FB_Y0 			<= reg_fb_y0;
 									FB_Y1 			<= reg_fb_y1;
+								
+									-- If the square to draw is completely out of the frame, don't draw it.
+									if (reg_fb_x0 >= FRAME_RIGHT_X or reg_fb_x1 <= FRAME_LEFT_X or reg_fb_y0 >= FRAME_DOWN_Y or reg_fb_y1 <= FRAME_UP_Y) then
+										FB_FILL_RECT <= '0';
+									else -- If the square is partially in the frame draw only the part that is in it.
+										if (reg_fb_x1 >= FRAME_RIGHT_X) then
+											FB_X1 <= FRAME_RIGHT_X-1;
+										end if;
+										if (reg_fb_x0 <= FRAME_LEFT_X) then
+											FB_X0 <= FRAME_LEFT_X+1;
+										end if;
+										if (reg_fb_y1 >= FRAME_DOWN_Y) then
+											FB_Y1 <= FRAME_DOWN_Y-1;
+										end if;
+										if (reg_fb_y0 <= FRAME_UP_Y) then
+											FB_Y0 <= FRAME_UP_Y+1;
+										end if;
+									end if;
 								
 								end if;
 									
@@ -226,10 +244,10 @@ begin
 				when INIT =>
 					
 					FB_DRAW_RECT 	<= '1';
-					FB_X0 			<= 0;
-					FB_X1 			<= 511;
-					FB_Y0 			<= 0;
-					FB_Y1 			<= 479;
+					FB_X0 			<= FRAME_LEFT_X;
+					FB_X1 			<= FRAME_RIGHT_X;
+					FB_Y0 			<= FRAME_UP_Y;
+					FB_Y1 			<= FRAME_DOWN_Y;
 					FB_COLOR 		<= COLOR_RED;
 					state 			<= WAITING;
 					next_state 		<= IDLE;

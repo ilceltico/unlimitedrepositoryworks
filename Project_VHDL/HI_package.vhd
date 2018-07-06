@@ -23,8 +23,8 @@ package HI_package is
 	constant ALIEN_SIZE_y									: natural 	:= 26;
 	constant ALIEN_SPACING_X								: natural 	:= 8;
 	constant ALIEN_SPACING_Y								: natural 	:= 15;
-	constant SIDE_MARGIN 									: natural 	:= 10;
-	constant TOP_MARGIN 										: natural 	:= 10;
+	constant SIDE_MARGIN 									: natural 	:= 8;
+	constant TOP_MARGIN 										: natural 	:= 8;
 	constant BOTTOM_MARGIN 									: natural	:= 10;
 	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
 	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
@@ -32,8 +32,14 @@ package HI_package is
 	-- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
 	
 	constant FRAME_TIME_1us 								: natural := 16666; --60fps
-	constant H_DISP											: natural := 640 - 128;
-	constant V_DISP											: natural := 480;
+	constant FRAME_WIDTH										: natural := 512;
+	constant FRAME_HEIGHT									: natural := 480;
+	constant REAL_WIDTH										: natural := FRAME_WIDTH;
+	constant REAL_HEIGHT										: natural := FRAME_HEIGHT;
+	constant FRAME_LEFT_X									: natural := 0;
+	constant FRAME_RIGHT_X									: natural := REAL_WIDTH - 0;
+	constant FRAME_UP_Y										: natural := 0;
+	constant FRAME_DOWN_Y									: natural := REAL_HEIGHT;
 	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
 	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 		: natural := 25000000;
 	
@@ -41,8 +47,8 @@ package HI_package is
 	constant PLAYER_MOVEMENT_TIME_1us					: natural := 16666; --60fps
 	constant PLAYER_SIZE_X 									: natural := 30;
 	constant PLAYER_SIZE_Y 									: natural := 18;
-	constant PLAYER_START_X 								: natural := (H_DISP - PLAYER_SIZE_X) / 2;
-	constant PLAYER_START_Y 								: natural := V_DISP - 4*PLAYER_SIZE_Y - BOTTOM_MARGIN;
+	constant PLAYER_START_X 								: natural := FRAME_LEFT_X + (FRAME_WIDTH - PLAYER_SIZE_X) / 2;
+	constant PLAYER_START_Y 								: natural := FRAME_DOWN_Y - 4*PLAYER_SIZE_Y - BOTTOM_MARGIN;
 	constant PLAYER_LIVES 									: natural := 3;
 	constant PLAYER_SPEED 									: natural := 3;
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
@@ -73,20 +79,20 @@ package HI_package is
 	constant SHIELD_SPACING 								: natural := 55;
 	constant SHIELD_H_OVERLAP 								: natural := 7;
 	constant SHIELD_V_OVERLAP 								: natural := 7;
-	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
-	constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
+	--constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
+	--constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
 	
 	-- Level
 	constant LEVEL_NUMBER 									: natural := 3;
 	constant ALIEN_1_ROWS									: natural := 2;
 	constant ALIEN_2_ROWS									: natural := 2;
 	constant ALIEN_3_ROWS									: natural := 1;
-	constant FIRST_ALIEN_CELL_X 							: natural := SIDE_MARGIN + 0;
-	constant FIRST_ALIEN_CELL_Y 							: natural := TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
+	constant FIRST_ALIEN_CELL_X 							: natural := FRAME_LEFT_X + SIDE_MARGIN + 0;
+	constant FIRST_ALIEN_CELL_Y 							: natural := FRAME_UP_Y + TOP_MARGIN + RAND_ALIEN_SIZE_Y + 10;
 	-- constant FIRST_RAND_ALIEN_CELL_X 				: natural := - RAND_ALIEN_SIZE_X;
-	constant FIRST_RAND_ALIEN_CELL_X_LEFT 				: integer := SIDE_MARGIN - RAND_ALIEN_SIZE_X;
-	constant FIRST_RAND_ALIEN_CELL_X_RIGHT 			: integer := H_DISP - SIDE_MARGIN + RAND_ALIEN_SIZE_X;
-	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := TOP_MARGIN + 40;
+	constant FIRST_RAND_ALIEN_CELL_X_LEFT 				: integer := FRAME_LEFT_X - RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_X_RIGHT 			: integer := FRAME_RIGHT_X + RAND_ALIEN_SIZE_X;
+	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := FRAME_UP_Y + TOP_MARGIN + 10;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
 	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
 	constant BASE_ALIEN_FRAME_TIME_1us	 				: natural := 1000000; --1fps
@@ -138,8 +144,8 @@ package HI_package is
 	-- Hitbox type declaration
 	subtype hitbox_size is integer range 0 to MAX_HITBOX_SIZE - 1;
 	type hitbox_type is record 
-		up_left_x         : integer;
-		up_left_y         : integer;
+		up_left_x         : integer range FRAME_LEFT_X - RAND_ALIEN_SIZE_X to FRAME_RIGHT_X + RAND_ALIEN_SIZE_X;
+		up_left_y         : integer range FRAME_UP_Y to FRAME_DOWN_Y;
 		size_x				: hitbox_size;
 		size_y				: hitbox_size;
 	end record;
