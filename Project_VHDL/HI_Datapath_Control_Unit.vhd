@@ -14,7 +14,7 @@ entity Hi_Datapath_Control_Unit is
 		RAND_ALIEN_BORDER_REACHED 	: in 	direction_type;
 		PLAYER_BORDER_REACHED		: in direction_type;
 		COLLISION						: in collision_type;
-		RAND_OUTPUT						: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
+		RAND_GEN						: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic;
@@ -52,6 +52,7 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal hide_rand_alien_border_reached : std_logic;
 	signal rand_alien_alive			: std_logic;
 
+	signal rand_col					: integer range 0 to (COLUMNS_PER_GRID - 1);
 	
 begin
 	
@@ -161,6 +162,21 @@ begin
 				else
 					counter := counter+1;
 					game_tick <= '0';			
+				end if;
+			end if;
+		end if;
+	end process;
+	
+	rand_col_gen : process(CLOCK, RESET_N)
+	begin
+		if (RESET_N = '0') then
+			rand_col <= 0;
+		elsif (rising_edge(CLOCK)) then
+			if (time_1us = '1' and RAND_GEN(0) = '1') then -- The rand_col gets incremented every 1us only if the first random bit is 1
+				if(rand_col = rand_col'high) then
+					rand_col <= 0;
+				else
+					rand_col <= rand_col+1;
 				end if;
 			end if;
 		end if;
@@ -328,8 +344,8 @@ begin
 					
 				when FIRST_INDEX => 
 					
-					--column := to_integer(unsigned (RAND_OUTPUT));
-					column := 0; -- for debugging purposes
+					column := rand_col;
+					--column := 0; -- for debugging purposes
 					reg_column_to_shoot := column;	
 					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
 					column_state 			<= WAITING;
@@ -412,7 +428,7 @@ begin
 			elsif (spawn_rand_alien = '1') then
 				rand_alien_alive <= '1';
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
-				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_OUTPUT))*10000;
+				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;

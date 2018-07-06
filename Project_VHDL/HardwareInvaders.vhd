@@ -259,7 +259,7 @@ begin
 			ALIEN_BORDER_REACHED => alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			PLAYER_BORDER_REACHED => player_border_reached,
-			RAND_OUTPUT	=> rand_output,
+			RAND_GEN	=> rand_output,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			DESTROY => destroy,
 			HIDE => hide,
