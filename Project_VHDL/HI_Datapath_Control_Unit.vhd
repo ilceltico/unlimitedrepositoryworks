@@ -12,9 +12,10 @@ entity Hi_Datapath_Control_Unit is
 		TIME_1US							: in std_logic;
 		ALIEN_BORDER_REACHED			: in direction_type;
 		RAND_ALIEN_BORDER_REACHED 	: in direction_type;
+		RAND_ALIEN_VISIBLE			: in std_logic;
 		PLAYER_BORDER_REACHED		: in direction_type;
 		COLLISION						: in collision_type;
-		RAND_GEN						: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
+		RAND_GEN						   : in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
 		COLUMN_CANNOT_SHOOT			: in std_logic;
 		BUTTON_LEFT						: in std_logic;
 		BUTTON_RIGHT					: in std_logic;
@@ -104,7 +105,7 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 			spawn_rand_alien <= '0';
-			if (time_1us = '1' and rand_alien_alive = '0') then
+			if (time_1us = '1' and RAND_ALIEN_VISIBLE = '0') then
 				if(counter = rand_alien_time) then
 				
 					counter 				:= 0;
@@ -397,14 +398,13 @@ begin
 			SHOW_RAND_ALIEN <= '0';
 			hide_rand_alien_border_reached <= '0';
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1);
-			rand_alien_alive <= '0';
 			
 		elsif rising_edge(CLOCK) then
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			hide_rand_alien_border_reached <= '0';
 			
-			if (rand_alien_alive = '1') then
+			if (RAND_ALIEN_VISIBLE = '1') then
 				if (move_rand_alien = '1') then 
 					RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				end if;
@@ -414,23 +414,16 @@ begin
 					random_alien_movement := DIR_RIGHT;
 					hide_rand_alien_border_reached <=  '1';
 					last_wall_reached := DIR_LEFT;
-					rand_alien_alive <= '0';
 				
 				elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
 					
 					random_alien_movement := DIR_LEFT;
 					hide_rand_alien_border_reached <=  '1';
 					last_wall_reached := DIR_RIGHT;
-					rand_alien_alive <= '0';
 				
-				end if;
-				
-				if (COLLISION.second_entity = (0,0,ENTITY_RANDOM_ALIEN)) then
-					rand_alien_alive <= '0';
 				end if;
 				
 			elsif (spawn_rand_alien = '1') then
-				rand_alien_alive <= '1';
 				RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
 			end if;
@@ -578,7 +571,7 @@ begin
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(5) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(5) <= (reg_collision.second_entity);
-							destruction_timer_array(5) <= (EXPLOSION_TIME_MAX_1us);
+							destruction_timer_array(5) <= (EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.second_entity;
 						end if;
 					end case;

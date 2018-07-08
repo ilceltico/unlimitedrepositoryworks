@@ -66,6 +66,7 @@ architecture RTL of HardwareInvaders is
 	signal player_movement		: direction_type;
 	signal alien_border_reached	: direction_type;
 	signal rand_alien_border_reached	: direction_type;
+	signal rand_alien_visible			: std_logic;
 	signal player_border_reached 	: direction_type;
 	signal show_rand_alien 	: std_logic;
 	signal column_cannot_shoot : std_logic;
@@ -249,6 +250,7 @@ begin
 			HITBOX						=> hitbox_to_render,
 			ALIEN_BORDER_REACHED		=> alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
+			RAND_ALIEN_VISIBLE		=> rand_alien_visible,
 			PLAYER_BORDER_REACHED 	=> player_border_reached,
 			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot,
 			COLLISION 					=> collision
@@ -262,6 +264,7 @@ begin
 			TIME_1US => time_1us,
 			ALIEN_BORDER_REACHED => alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
+			RAND_ALIEN_VISIBLE => rand_alien_visible,
 			PLAYER_BORDER_REACHED => player_border_reached,
 			RAND_GEN	=> rand_output,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,

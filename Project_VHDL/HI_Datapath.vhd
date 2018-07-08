@@ -32,6 +32,7 @@ entity HI_Datapath is
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
 		ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
+		RAND_ALIEN_VISIBLE			: out std_logic;
 		PLAYER_BORDER_REACHED		: out direction_type;
 		COLUMN_CANNOT_SHOOT			: out std_logic;
 		COLLISION						: out collision_type
@@ -332,7 +333,8 @@ begin
 				player_bullet.hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				player_bullet.hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
 				player_bullet.hitbox.up_left_x <= player_bullet.hitbox.up_left_x + player_bullet.hitbox.size_x / 2 - BULLET_EXPLOSION_SIZE_X / 2;
-				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y + player_bullet.hitbox.size_y / 2 - BULLET_EXPLOSION_SIZE_Y / 2;
+				--player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y - player_bullet.hitbox.size_y / 2 + BULLET_EXPLOSION_SIZE_Y / 2;
+				player_bullet.hitbox.up_left_y <= player_bullet.hitbox.up_left_y;
 			end if;
 			
 		end if;
@@ -603,6 +605,8 @@ begin
 	
 	rand_alien_movement_handler : process(CLOCK, RESET_N) is
 	begin
+		
+		RAND_ALIEN_VISIBLE <= rand_alien.visible;
 	
 		if (RESET_N = '0') then
 			rand_alien.sprite_indexes <= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
@@ -641,6 +645,7 @@ begin
 			if (HIDE.entity_type = ENTITY_RANDOM_ALIEN) then
 				rand_alien.visible <= '0';
 			end if;
+			
 		end if;
 	end process;
 		
@@ -756,7 +761,7 @@ begin
 				alien_bullets(DESTROY.index_1).hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				alien_bullets(DESTROY.index_1).hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
 				alien_bullets(DESTROY.index_1).hitbox.up_left_x <= alien_bullets(DESTROY.index_1).hitbox.up_left_x + alien_bullets(DESTROY.index_1).hitbox.size_x / 2 - BULLET_EXPLOSION_SIZE_X / 2;
-				alien_bullets(DESTROY.index_1).hitbox.up_left_y <= alien_bullets(DESTROY.index_1).hitbox.up_left_y + alien_bullets(DESTROY.index_1).hitbox.size_y / 2 - BULLET_EXPLOSION_SIZE_Y / 2;
+				alien_bullets(DESTROY.index_1).hitbox.up_left_y <= alien_bullets(DESTROY.index_1).hitbox.up_left_y + alien_bullets(DESTROY.index_1).hitbox.size_y - BULLET_EXPLOSION_SIZE_Y;
 			
 			end if;
 	
