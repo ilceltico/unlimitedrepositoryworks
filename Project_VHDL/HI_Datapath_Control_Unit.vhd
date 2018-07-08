@@ -40,38 +40,24 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal player_move_time						: std_logic;
 		
 	type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
-<<<<<<< HEAD
 	signal column_state							: column_state_type;
 	signal bullet_tick							: std_logic;
 	signal bullet_gen_time						: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
 	
 	signal reg_show_rand_alien					: std_logic;
 	signal spawn_rand_alien						: std_logic;
-	-- signal rand_alien_time					: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1); -- Insert here randomizer output
-	signal rand_alien_time						: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
+	signal rand_alien_time						: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
 	signal move_rand_alien						: std_logic;
 	signal hide_rand_alien_border_reached 	: std_logic;
+	signal rand_alien_alive						: std_logic;
+	
+	signal rand_col								: integer range 0 to (COLUMNS_PER_GRID - 1);
 	
 	signal destruction_index_array			: destruction_index_array_type;
 	signal destruction_timer_array 			: destruction_timer_array_type;
 		
 	type collision_handler_state_type is (HANDLING_FIRST_ENTITY, HANDLING_SECOND_ENTITY);
 	signal collision_handler_state 			: collision_handler_state_type;
-=======
-	signal column_state				: column_state_type;
-	signal bullet_tick				: std_logic;
-	signal bullet_gen_time			: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
-	
-	signal reg_show_rand_alien		: std_logic;
-	signal spawn_rand_alien			: std_logic;
-	signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
-	--signal rand_alien_time			: integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1); 
-	signal move_rand_alien			: std_logic;
-	signal hide_rand_alien_border_reached : std_logic;
-	signal rand_alien_alive			: std_logic;
-
-	signal rand_col					: integer range 0 to (COLUMNS_PER_GRID - 1);
->>>>>>> RandomGenerator
 	
 begin
 	
@@ -109,7 +95,6 @@ begin
 	rand_alien_tick_gen : process(CLOCK, RESET_N)
 		
 		variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
-		--variable counter : integer range 0 to (RAND_ALIEN_TIME_MIN_1us - 1);
 	begin
 	
 		if (RESET_N = '0') then

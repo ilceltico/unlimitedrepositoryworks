@@ -32,12 +32,6 @@ package HI_package is
 	constant EXPLOSION_TIME_MAX_1us						: natural 	:= 10000000;
 	
 	constant FRAME_TIME_1us 								: natural := 16666; --60fps
-<<<<<<< HEAD
-	constant H_DISP											: natural := 640 - 128;
-	constant V_DISP											: natural := 480;
-	constant EXPLOSION_TIME_1us 							: natural := 300000;
-	constant RAND_ALIEN_EXPLOSION_TIME_1us 			: natural := 500000;
-=======
 	constant FRAME_WIDTH										: natural := 512;
 	constant FRAME_HEIGHT									: natural := 480;
 	constant REAL_WIDTH										: natural := FRAME_WIDTH;
@@ -46,9 +40,8 @@ package HI_package is
 	constant FRAME_RIGHT_X									: natural := REAL_WIDTH - 0;
 	constant FRAME_UP_Y										: natural := 0;
 	constant FRAME_DOWN_Y									: natural := REAL_HEIGHT;
-	--constant EXPLOSION_TIME_50MHz 						: natural := 15000000;
-	--constant RAND_ALIEN_EXPLOSION_TIME_50MHz 		: natural := 25000000;
->>>>>>> RandomGenerator
+	constant EXPLOSION_TIME_1us 							: natural := 300000;
+	constant RAND_ALIEN_EXPLOSION_TIME_1us 			: natural := 500000;
 	
 	-- Player
 	constant PLAYER_MOVEMENT_TIME_1us					: natural := 16666; --60fps

@@ -441,11 +441,7 @@ begin
 					impacter_yMin := player_bullet.hitbox.up_left_y;
 					
 					-- (x1min < x2max and x1max > x2min and y1min < y2max and y1max > y2min)
-<<<<<<< HEAD
-					if (collision_detected = '0' and player_bullet.hitbox.up_left_y < TOP_MARGIN and player_bullet.visible = '1' and player_bullet.exploding = '0') then
-=======
-					if (player_bullet.hitbox.up_left_y < FRAME_UP_Y + TOP_MARGIN and player_bullet.visible = '1') then
->>>>>>> RandomGenerator
+					if (collision_detected = '0' and player_bullet.hitbox.up_left_y < FRAME_UP_Y + TOP_MARGIN and player_bullet.visible = '1' and player_bullet.exploding = '0') then
 						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_BORDER));
 						collision_detected := '1';
 					end if;
@@ -518,11 +514,7 @@ begin
 							temp_column := I;
 						end if;
 						
-<<<<<<< HEAD
-						if (collision_detected = '0' and alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).exploding = '0' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
-=======
-						if (alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > FRAME_DOWN_Y - BOTTOM_MARGIN) then
->>>>>>> RandomGenerator
+						if (collision_detected = '0' and alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).exploding = '0' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > FRAME_DOWN_Y - BOTTOM_MARGIN) then
 							COLLISION <= ((I,last_row,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
 							collision_detected := '1';
 						end if;
@@ -563,11 +555,7 @@ begin
 							collision_detected := '1';
 						end if;
 						
-<<<<<<< HEAD
-						if (collision_detected = '0' and alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
-=======
-						if (alien_bullets(I).visible = '1' and impacter_yMax > FRAME_DOWN_Y - BOTTOM_MARGIN) then 
->>>>>>> RandomGenerator
+						if (collision_detected = '0' and alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0' and impacter_yMax > FRAME_DOWN_Y - BOTTOM_MARGIN) then 
 							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
 							collision_detected := '1';
 						end if;
