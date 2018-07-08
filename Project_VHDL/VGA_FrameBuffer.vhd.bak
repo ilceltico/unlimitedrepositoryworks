@@ -89,10 +89,6 @@ architecture RTL of VGA_Framebuffer is
 begin
 	
 	vga_timing : entity work.VGA_Timing
-		generic map(
-			H_DISP          => SCREEN_WIDTH,
-			V_DISP          => SCREEN_HEIGHT
-		)
 		port map(
 			CLOCK        => CLOCK,
 			RESET_N      => RESET_N,
@@ -102,13 +98,9 @@ begin
 			PIXEL_STROBE => vga_strobe,
 			PIXEL_X      => vga_x,
 			PIXEL_Y      => vga_y
-		);
+			);
 			
 	vga_fb : entity work.VGA_RAMDAC
-		generic map(
-			FB_WIDTH    => SCREEN_WIDTH,
-			FB_HEIGHT   => SCREEN_HEIGHT
-		)
 		port map(
 			CLOCK        => CLOCK,
 			RESET_N      => RESET_N,

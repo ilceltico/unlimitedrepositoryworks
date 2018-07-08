@@ -350,31 +350,31 @@ begin
 		elsif (rising_edge(CLOCK)) then 
 			
 			-- Alien grid
-			if (alien_grid(last_column)(0).hitbox.up_left_x + alien_grid(last_column)(0).hitbox.size_x > H_DISP - SIDE_MARGIN) then
+			if (alien_grid(last_column)(0).hitbox.up_left_x + alien_grid(last_column)(0).hitbox.size_x >= FRAME_RIGHT_X - SIDE_MARGIN) then
 				ALIEN_BORDER_REACHED <= DIR_RIGHT;
-			elsif (alien_grid(first_column)(0).hitbox.up_left_x < SIDE_MARGIN) then
+			elsif (alien_grid(first_column)(0).hitbox.up_left_x <= FRAME_LEFT_X + SIDE_MARGIN) then
 				ALIEN_BORDER_REACHED <= DIR_LEFT;
-			elsif (alien_grid(0)(last_row).hitbox.up_left_y + alien_grid(0)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
+			elsif (alien_grid(0)(last_row).hitbox.up_left_y + alien_grid(0)(last_row).hitbox.size_y >= FRAME_DOWN_Y - BOTTOM_MARGIN) then
 				ALIEN_BORDER_REACHED <= DIR_DOWN;
-			elsif (alien_grid(0)(first_row).hitbox.up_left_y < TOP_MARGIN) then
+			elsif (alien_grid(0)(first_row).hitbox.up_left_y <= FRAME_UP_Y + TOP_MARGIN) then
 				ALIEN_BORDER_REACHED <= DIR_UP;
 			else
 				ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
 			
 			-- Random Alien
-			if (rand_alien.hitbox.up_left_x > H_DISP - SIDE_MARGIN) then
+			if (rand_alien.hitbox.up_left_x >= FRAME_RIGHT_X) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_RIGHT;
-			elsif (rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x < SIDE_MARGIN) then
+			elsif (rand_alien.hitbox.up_left_x + rand_alien.hitbox.size_x <= FRAME_LEFT_X) then
 				RAND_ALIEN_BORDER_REACHED <= DIR_LEFT;
 			else
 				RAND_ALIEN_BORDER_REACHED <= DIR_NONE;
 			end if;
 			
 			-- Player
-			if (player.hitbox.up_left_x + player.hitbox.size_x > H_DISP - SIDE_MARGIN) then
+			if (player.hitbox.up_left_x + player.hitbox.size_x > FRAME_RIGHT_X - SIDE_MARGIN) then
 				PLAYER_BORDER_REACHED <= DIR_RIGHT;
-			elsif (player.hitbox.up_left_x < SIDE_MARGIN) then
+			elsif (player.hitbox.up_left_x < FRAME_LEFT_X + SIDE_MARGIN) then
 				PLAYER_BORDER_REACHED <= DIR_LEFT;
 			else
 				PLAYER_BORDER_REACHED <= DIR_NONE;
@@ -441,7 +441,11 @@ begin
 					impacter_yMin := player_bullet.hitbox.up_left_y;
 					
 					-- (x1min < x2max and x1max > x2min and y1min < y2max and y1max > y2min)
+<<<<<<< HEAD
 					if (collision_detected = '0' and player_bullet.hitbox.up_left_y < TOP_MARGIN and player_bullet.visible = '1' and player_bullet.exploding = '0') then
+=======
+					if (player_bullet.hitbox.up_left_y < FRAME_UP_Y + TOP_MARGIN and player_bullet.visible = '1') then
+>>>>>>> RandomGenerator
 						COLLISION <= ((0,0,ENTITY_PLAYER_BULLET), (0,0,ENTITY_BORDER));
 						collision_detected := '1';
 					end if;
@@ -514,7 +518,11 @@ begin
 							temp_column := I;
 						end if;
 						
+<<<<<<< HEAD
 						if (collision_detected = '0' and alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).exploding = '0' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > V_DISP - BOTTOM_MARGIN) then
+=======
+						if (alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > FRAME_DOWN_Y - BOTTOM_MARGIN) then
+>>>>>>> RandomGenerator
 							COLLISION <= ((I,last_row,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
 							collision_detected := '1';
 						end if;
@@ -555,7 +563,11 @@ begin
 							collision_detected := '1';
 						end if;
 						
+<<<<<<< HEAD
 						if (collision_detected = '0' and alien_bullets(I).visible = '1' and alien_bullets(I).exploding = '0' and impacter_yMax > V_DISP - BOTTOM_MARGIN) then 
+=======
+						if (alien_bullets(I).visible = '1' and impacter_yMax > FRAME_DOWN_Y - BOTTOM_MARGIN) then 
+>>>>>>> RandomGenerator
 							COLLISION <= ((I,0,ENTITY_ALIEN_BULLET), (0,0,ENTITY_BORDER));
 							collision_detected := '1';
 						end if;
@@ -606,7 +618,7 @@ begin
 	
 		if (RESET_N = '0') then
 			rand_alien.sprite_indexes <= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
-			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X;
+			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X_LEFT;
 			rand_alien.hitbox.up_left_y 	<= FIRST_RAND_ALIEN_CELL_Y;
 			rand_alien.hitbox.size_x 		<= RAND_ALIEN_SIZE_X;
 			rand_alien.hitbox.size_y 		<= RAND_ALIEN_SIZE_Y;
@@ -618,10 +630,13 @@ begin
 		
 			if (SHOW_RAND_ALIEN = '1') then
 				rand_alien.visible <= '1';
-				rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X;
-			end if;
-			
-			if (rand_alien.visible = '1') then
+				if (RAND_ALIEN_MOVEMENT = DIR_LEFT) then 
+					rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X_RIGHT;
+				else 
+					rand_alien.hitbox.up_left_x <= FIRST_RAND_ALIEN_CELL_X_LEFT;
+				end if;
+				
+			elsif (rand_alien.visible = '1') then
 				case (RAND_ALIEN_MOVEMENT) is
 				
 				when DIR_RIGHT => 

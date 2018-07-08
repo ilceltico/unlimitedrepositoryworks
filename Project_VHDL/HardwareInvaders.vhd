@@ -90,6 +90,8 @@ architecture RTL of HardwareInvaders is
 	signal shoot						: std_logic;
 	signal start						: std_logic;
 	
+	signal rand_output				: std_logic_vector(RAND_ALIEN_GENERATION_TIME_BITS-1 downto 0);
+	
 begin
 
 	pll : entity work.PLL
@@ -148,6 +150,10 @@ begin
 	VGA_VS <= fb_vsync;
 	
 	vga : entity work.VGA_Framebuffer
+		generic map (
+			SCREEN_WIDTH        => REAL_WIDTH,
+			SCREEN_HEIGHT       => REAL_HEIGHT
+		)
 		port map (
 			CLOCK     => clock_100MHz,
 			RESET_N   => RESET_N,
@@ -257,7 +263,7 @@ begin
 			ALIEN_BORDER_REACHED => alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			PLAYER_BORDER_REACHED => player_border_reached,
-			RAND_OUTPUT	=> (others => '0'), -- Controllare se effettivamente va bene, prima non compilava - Kevin
+			RAND_GEN	=> rand_output,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
 			DESTROY => destroy,
 			HIDE => hide,
@@ -302,6 +308,18 @@ begin
 			START				=> keyboard_start
 		);
 		
+		rand_gen : entity work.rand_gen
+		generic map
+		(
+			RAND_GEN_W		=> RAND_ALIEN_GENERATION_TIME_BITS
+		)
+		port map
+		(
+			CLOCK				=> time_1us,
+			RESET_N			=> RESET_N,
+			RAND_OUTPUT		=> rand_output
+		);
+				
 		led_keyboard : process(clock_50MHz, RESET_N) is
 		begin
 			if (RESET_N = '0') then
