@@ -109,6 +109,15 @@ package HI_package is
 	constant RAND_ALIEN_TIME_RANGE_1us					: natural := (2**RAND_ALIEN_GENERATION_TIME_BITS - 1)*10000; -- Time interval of around 42 seconds
 	constant RAND_ALIEN_TIME_MIN_1us						: natural := 20000000; -- Time interval of 20 seconds
 	
+	-- Destruction array indexes
+	constant PLAYER_BULLET_DESTRUCTION_INDEX			: natural := 0;
+	constant ALIEN_BULLET_BASE_DESTRUCTION_INDEX		: natural := PLAYER_BULLET_DESTRUCTION_INDEX + 1;
+	constant RAND_ALIEN_DESTRUCTION_INDEX				: natural := ALIEN_BULLET_BASE_DESTRUCTION_INDEX + BULLET_COUNT;
+	constant ALIEN_DESTRUCTION_INDEX						: natural := RAND_ALIEN_DESTRUCTION_INDEX + 1;
+	constant PLAYER_DESTRUCTION_INDEX						: natural := ALIEN_DESTRUCTION_INDEX + 1;
+	
+	constant DESTRUCTION_SLOT_COUNT 						: natural := PLAYER_DESTRUCTION_INDEX + 1;
+	
 	-- Sprites
 	constant ALIEN_1_1_SPRITE 								: natural := 0;
 	constant ALIEN_1_2_SPRITE 								: natural := 1;	 
@@ -325,8 +334,7 @@ package HI_package is
 		second_entity 			: datapath_entity_index_type;
 	end record;
 	
-	--destruction timer signals
-	constant DESTRUCTION_SLOT_COUNT : natural := 4 + BULLET_COUNT;
+	-- Destruction timer signals
 	type destruction_timer_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of integer range 0 to EXPLOSION_TIME_MAX_1us;
 	type destruction_index_array_type is array (0 to DESTRUCTION_SLOT_COUNT - 1) of datapath_entity_index_type;
 	
