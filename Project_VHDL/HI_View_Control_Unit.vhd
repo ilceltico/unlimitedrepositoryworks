@@ -121,7 +121,7 @@ begin
 							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_RANDOM_ALIEN);
 							substate <= SHIELD_QUERY;
 							
-						when SHIELD_QUERY_QUERY =>
+						when SHIELD_QUERY =>
 							
 							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_SHIELD);
 							substate <= PLAYER_QUERY;

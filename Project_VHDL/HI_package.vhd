@@ -78,8 +78,8 @@ package HI_package is
 	constant SHIELD_SIZE_X 									: natural := 33;
 	constant SHIELD_SIZE_Y 									: natural := 33;
 	constant SHIELD_SPACING 								: natural := 55;
-	--constant SHIELD_H_OVERLAP 								: natural := 7;
-	--constant SHIELD_V_OVERLAP 								: natural := 7;
+	constant SHIELD_H_OVERLAP 								: natural := 7;
+	constant SHIELD_V_OVERLAP 								: natural := 7;
 	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
 	constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
 	
@@ -310,9 +310,12 @@ package HI_package is
 		visible			: std_logic;
 	end record;
 	
-	-- Bullet array type declaration
-	type shield_array_type is array(0 to SHIELD_COUNT - 1) of shield_type;
-	subtype shield_array_index_type is integer range 0 to SHIELD_COUNT - 1;
+	-- Shield array type declaration
+	type shield_part_type is array(0 to SHIELD_PARTS - 1) of shield_type;
+	subtype shield_part_index_type is integer range 0 to SHIELD_PARTS - 1;
+	
+	type shield_grid_type is array(0 to SHIELD_COUNT - 1) of shield_part_type;
+	subtype shield_grid_index_type is integer range 0 to SHIELD_COUNT -1;
 	
 	--------------------------------------------------------------
 	--					        DATAPATH INDEXES                     --
@@ -336,8 +339,8 @@ package HI_package is
 		bullet_index				: bullet_array_index_type;
 		bullet_exploding			: std_logic;
 		
-		shield_index				: shield_array_index_type;
-		shield_exploding			: std_logic;
+		--shield_index					: shield_part_index_type;
+		--shield_exploding			: std_logic;
 		
 		player_bullet_exploding : std_logic;
 		player_exploding			: std_logic;
@@ -2115,5 +2118,6 @@ package HI_package is
 			7,
 			7,
 			COLOR_WHITE
+		)
 	);
 end package;

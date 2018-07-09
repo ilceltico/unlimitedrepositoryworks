@@ -58,7 +58,11 @@ architecture RTL of HI_Datapath is
 	
 	signal rand_alien		: alien_type;
 	
-	signal shield:			: shield_type;
+	signal shield			: shield_grid_type;
+	--signal shield_part	: shield_part_type;
+	
+	--signal first_shield_index :	shield_grid_index_type := 0;
+	--signal first_shield_part :		shield_part_index_type := 0;
 	
 	signal collision_state : collision_state_type;
 	
@@ -353,9 +357,9 @@ begin
 	
 		if(RESET_N = '0') then
 		
-			for J in 0 to SHIELD COUNT -1 loop -- number of shields : 4
+			for J in 0 to SHIELD_COUNT - 1 loop -- number of shields : 4
 				for I in 0 to SHIELD_PARTS - 1 loop -- parts composing a shield: 4, for a total of 16 pieces 
-					shield(J)(I).sprite_indexes <= (SHIELD_(I)_1_SPRITE, SHIELD_(I)_2_SPRITE, SHIELD_(I)_3_SPRITE, SHIELD_(I)_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
+					--shield(J)(I).sprite_indexes <= (SHIELD_(I)_1_SPRITE, SHIELD_(I)_2_SPRITE, SHIELD_(I)_3_SPRITE, SHIELD_(I)_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
 				
 					shield(J)(I).current_index 		<= 0;
 					shield(J)(I).visible 				<= '1';
@@ -382,6 +386,8 @@ begin
 		
 			if (HIDE.entity_type = ENTITY_SHIELD) then 
 				shield(HIDE.index_1)(HIDE.index_2).visible <= '0';
+			end if;
+		end if;
 					
 	end process;
 	
