@@ -78,6 +78,7 @@ architecture RTL of HardwareInvaders is
 	signal hide 					: datapath_entity_index_type;
 	signal collision 				: collision_type;
 	signal column_index 			: alien_grid_index_type;
+	signal shield					: shield_type;
 	
 	signal ps2_code_new 				: std_logic;
 	signal ps2_code					: std_logic_vector(7 downto 0);

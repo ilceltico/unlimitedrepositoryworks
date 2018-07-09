@@ -58,6 +58,8 @@ architecture RTL of HI_Datapath is
 	
 	signal rand_alien		: alien_type;
 	
+	signal shield:			: shield_type;
+	
 	signal collision_state : collision_state_type;
 	
 begin
@@ -95,6 +97,11 @@ begin
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1).visible = '1' ) then
+				
+				SPRITE <= sprites(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
+				HITBOX <= shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
+				
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
 			
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
@@ -339,6 +346,43 @@ begin
 			
 		end if;
 		
+	end process;
+	
+	shields_handler : process(CLOCK, RESET_N) is
+	begin
+	
+		if(RESET_N = '0') then
+		
+			for J in 0 to SHIELD COUNT -1 loop -- number of shields : 4
+				for I in 0 to SHIELD_PARTS - 1 loop -- parts composing a shield: 4, for a total of 16 pieces 
+					shield(J)(I).sprite_indexes <= (SHIELD_(I)_1_SPRITE, SHIELD_(I)_2_SPRITE, SHIELD_(I)_3_SPRITE, SHIELD_(I)_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
+				
+					shield(J)(I).current_index 		<= 0;
+					shield(J)(I).visible 				<= '1';
+					shield(J)(I).hitbox.size_x 		<= SHIELD_SIZE_X;
+					shield(J)(I).hitbox.size_y 		<= SHIELD_SIZE_Y;
+					
+						if (I > 1 ) then -- I = 2,3
+							shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_2_Y;
+						else  shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_1_Y; -- I= 0,1
+						end if;
+						
+						if( I = 1  or I = 3 ) then -- I= 1,3 
+							shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + (I + 1) * ( SHIELD_SIZE_X + SHIELD_SPACING); 
+						else shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + SHIELD_SPACING + I * ( SHIELD_SIZE_X + SHIELD_SPACING);
+						end if;
+							
+				end loop;	
+				
+			end loop;
+					
+		elsif (rising_edge(CLOCK)) then
+		
+		-- no movement. If hit by player/aliens bullets they just hide.
+		
+			if (HIDE.entity_type = ENTITY_SHIELD) then 
+				shield(HIDE.index_1)(HIDE.index_2).visible <= '0';
+					
 	end process;
 	
 	border_collision_detection : process(CLOCK, RESET_N) is

@@ -119,6 +119,11 @@ begin
 						when RAND_ALIEN_QUERY =>
 							
 							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_RANDOM_ALIEN);
+							substate <= SHIELD_QUERY;
+							
+						when SHIELD_QUERY_QUERY =>
+							
+							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_SHIELD);
 							substate <= PLAYER_QUERY;
 							
 						when PLAYER_QUERY =>
