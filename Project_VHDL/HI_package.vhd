@@ -8,7 +8,7 @@ package HI_package is
 	-- Common constants
 	constant REFERENCE_TIME_50MHz							: natural 	:= 50; -- Generates 1 microsecond, based on a 50MHz clock
 	
-	constant SPRITE_COUNT									: natural 	:= 26;
+	constant SPRITE_COUNT									: natural 	:= 42;
 	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
 	constant BULLET_SPRITE_COUNT							: natural 	:= 5;
 	constant SHIELD_SPRITE_COUNT							: natural 	:= 4;
@@ -442,6 +442,8 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000"
+				
+				-- SCACCHIERA PER DEBUG
 --				"10101010101010101010101010101010",
 --				"01010101010101010101010101010101",
 --				"10101010101010101010101010101010",

@@ -101,7 +101,7 @@ begin
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1).visible = '1' ) then
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1' ) then
 				
 				SPRITE <= sprites(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
@@ -359,8 +359,17 @@ begin
 		
 			for J in 0 to SHIELD_COUNT - 1 loop -- number of shields : 4
 				for I in 0 to SHIELD_PARTS - 1 loop -- parts composing a shield: 4, for a total of 16 pieces 
-					--shield(J)(I).sprite_indexes <= (SHIELD_(I)_1_SPRITE, SHIELD_(I)_2_SPRITE, SHIELD_(I)_3_SPRITE, SHIELD_(I)_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
-				
+					case (I) is
+						when 1 => 
+							shield(J)(I).sprite_indexes <= (SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
+						when 2 =>
+							shield(J)(I).sprite_indexes <= (SHIELD_2_1_SPRITE, SHIELD_2_2_SPRITE, SHIELD_2_3_SPRITE, SHIELD_2_4_SPRITE);
+						when 3 =>
+							shield(J)(I).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
+						when others =>
+							shield(J)(I).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
+					end case;
+					
 					shield(J)(I).current_index 		<= 0;
 					shield(J)(I).visible 				<= '1';
 					shield(J)(I).hitbox.size_x 		<= SHIELD_SIZE_X;
