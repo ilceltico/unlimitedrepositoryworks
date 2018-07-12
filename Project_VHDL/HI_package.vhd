@@ -75,9 +75,11 @@ package HI_package is
 	constant ALIEN_4_POINTS 								: natural := 300;
 		
 	-- Shields
-	constant SHIELD_SIZE_X 									: natural := 33;
-	constant SHIELD_SIZE_Y 									: natural := 33;
-	constant SHIELD_SPACING 								: natural := 55;
+	constant FIRST_SHIELD_X									: natural := 80;
+	constant FIRST_SHIELD_Y									: natural := FRAME_DOWN_Y - 150;
+	constant SHIELD_SIZE_X 									: natural := 25;
+	constant SHIELD_SIZE_Y 									: natural := 25;
+	constant SHIELD_SPACING 								: natural := 100;
 	constant SHIELD_H_OVERLAP 								: natural := 7;
 	constant SHIELD_V_OVERLAP 								: natural := 7;
 	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
@@ -303,19 +305,21 @@ package HI_package is
 	-- Shield type declaration
 	type shield_sprite_indexes_type is array(0 to SHIELD_SPRITE_COUNT - 1) of sprite_array_index_type;
 	subtype shield_sprite_current_index_type is integer range 0 to SHIELD_SPRITE_COUNT - 1;
-	type shield_type is record 
+	type shield_part_type is record 
 		sprite_indexes : shield_sprite_indexes_type;
 		hitbox			: hitbox_type;
 		current_index	: shield_sprite_current_index_type;
 		visible			: std_logic;
 	end record;
 	
-	-- Shield array type declaration
-	type shield_part_type is array(0 to SHIELD_PARTS - 1) of shield_type;
-	subtype shield_part_index_type is integer range 0 to SHIELD_PARTS - 1;
+	constant default_shield_part : shield_part_type := ((SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE), (0,0,SHIELD_SIZE_X,SHIELD_SIZE_Y), 0, '1');
 	
-	type shield_grid_type is array(0 to SHIELD_COUNT - 1) of shield_part_type;
-	subtype shield_grid_index_type is integer range 0 to SHIELD_COUNT -1;
+	-- Shield array type declaration
+	type shield_type is array(0 to SHIELD_PARTS - 1) of shield_part_type;
+	subtype shield_part_index_type is integer range 0 to SHIELD_PARTS - 1 + 3;
+	
+	type shield_grid_type is array(0 to SHIELD_COUNT - 1) of shield_type;
+	subtype shield_grid_index_type is integer range 0 to SHIELD_COUNT -1 + 3;
 	
 	--------------------------------------------------------------
 	--					        DATAPATH INDEXES                     --

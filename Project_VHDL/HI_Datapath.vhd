@@ -357,35 +357,53 @@ begin
 	
 		if(RESET_N = '0') then
 		
-			for J in 0 to SHIELD_COUNT - 1 loop -- number of shields : 4
-				for I in 0 to SHIELD_PARTS - 1 loop -- parts composing a shield: 4, for a total of 16 pieces 
-					case (I) is
-						when 1 => 
-							shield(J)(I).sprite_indexes <= (SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
-						when 2 =>
-							shield(J)(I).sprite_indexes <= (SHIELD_2_1_SPRITE, SHIELD_2_2_SPRITE, SHIELD_2_3_SPRITE, SHIELD_2_4_SPRITE);
-						when 3 =>
-							shield(J)(I).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
-						when others =>
-							shield(J)(I).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
-					end case;
-					
-					shield(J)(I).current_index 		<= 0;
-					shield(J)(I).visible 				<= '1';
-					shield(J)(I).hitbox.size_x 		<= SHIELD_SIZE_X;
-					shield(J)(I).hitbox.size_y 		<= SHIELD_SIZE_Y;
-					
-						if (I > 1 ) then -- I = 2,3
-							shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_2_Y;
-						else  shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_1_Y; -- I= 0,1
-						end if;
-						
-						if( I = 1  or I = 3 ) then -- I= 1,3 
-							shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + (I + 1) * ( SHIELD_SIZE_X + SHIELD_SPACING); 
-						else shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + SHIELD_SPACING + I * ( SHIELD_SIZE_X + SHIELD_SPACING);
-						end if;
-							
-				end loop;	
+--			for J in 0 to SHIELD_COUNT - 1 loop -- number of shields : 4
+--				for I in 0 to SHIELD_PARTS - 1 loop -- parts composing a shield: 4, for a total of 16 pieces 
+--					case (I) is
+--						when 1 => 
+--							shield(J)(I).sprite_indexes <= (SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE); -- sprite per ciascuna delle 16 parti degli scudi
+--						when 2 =>
+--							shield(J)(I).sprite_indexes <= (SHIELD_2_1_SPRITE, SHIELD_2_2_SPRITE, SHIELD_2_3_SPRITE, SHIELD_2_4_SPRITE);
+--						when 3 =>
+--							shield(J)(I).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
+--						when others =>
+--							shield(J)(I).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
+--					end case;
+--					
+--					shield(J)(I).current_index 		<= 0;
+--					shield(J)(I).visible 				<= '1';
+--					shield(J)(I).hitbox.size_x 		<= SHIELD_SIZE_X;
+--					shield(J)(I).hitbox.size_y 		<= SHIELD_SIZE_Y;
+--					
+--					if (I > 1 ) then -- I = 2,3
+--						shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_2_Y;
+--					else
+--						shield(J)(I).hitbox.up_left_y 	<= BOTTOM_MARGIN + SHIELD_1_Y; -- I= 0,1
+--					end if;
+--						
+--					if( I = 1  or I = 3 ) then -- I= 1,3 
+--						shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + (I + 1) * ( SHIELD_SIZE_X + SHIELD_SPACING); 
+--					else 
+--						shield(J)(I).hitbox.up_left_x 	<= SIDE_MARGIN + SHIELD_SPACING + I * ( SHIELD_SIZE_X + SHIELD_SPACING);
+--					end if;
+--							
+--				end loop;	
+--				
+--			end loop;
+			
+			for I in 0 to SHIELD_COUNT - 1 loop 
+				
+				shield(I) <= (others => default_shield_part);
+				
+				shield(I)(0).sprite_indexes <= (SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE);
+				shield(I)(1).sprite_indexes <= (SHIELD_2_1_SPRITE, SHIELD_2_2_SPRITE, SHIELD_2_3_SPRITE, SHIELD_2_4_SPRITE);
+				shield(I)(2).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
+				shield(I)(3).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
+				
+				shield(I)(0).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  FIRST_SHIELD_Y, 					 SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(1).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X, FIRST_SHIELD_Y, 					 SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(2).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  FIRST_SHIELD_Y + SHIELD_SIZE_Y, SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(3).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X, FIRST_SHIELD_Y + SHIELD_SIZE_Y, SHIELD_SIZE_X, SHIELD_SIZE_Y);
 				
 			end loop;
 					

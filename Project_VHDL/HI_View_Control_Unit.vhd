@@ -35,9 +35,13 @@ begin
 	
 	datapath_entity_query : process(CLOCK, RESET_N)
 		
-		variable rendered_column 	: alien_grid_index_type := 0;
-		variable rendered_alien  	: alien_column_index_type := 0;
-		variable rendered_bullet   : bullet_array_index_type := 0;
+		variable rendered_column 	: alien_grid_index_type 	:= 0;
+		variable rendered_alien  	: alien_column_index_type 	:= 0;
+		
+		variable rendered_bullet   : bullet_array_index_type 	:= 0;
+		
+		variable rendered_shield 	: shield_grid_index_type 	:= 0;
+		variable rendered_part		: shield_part_index_type 	:= 0;
 	
 	begin
 		
@@ -55,7 +59,11 @@ begin
 			
 			rendered_alien 	:= 0;
 			rendered_column 	:= 0;
+			
 			rendered_bullet	:= 0;
+			
+			rendered_part 		:= 0;
+			rendered_shield	:= 0;
 			
 		elsif rising_edge(CLOCK) then
 			
@@ -123,8 +131,19 @@ begin
 							
 						when SHIELD_QUERY =>
 							
-							REQUEST_ENTITY_SPRITE <= (0,0, ENTITY_SHIELD);
-							substate <= PLAYER_QUERY;
+							REQUEST_ENTITY_SPRITE <= (rendered_shield, rendered_part, ENTITY_SHIELD);
+					
+							rendered_part := rendered_part + 1;
+			
+							if (rendered_part > SHIELD_PARTS - 1) then
+								rendered_part := 0;
+								rendered_shield := rendered_shield + 1;
+							end if;
+				
+							if (rendered_shield > SHIELD_COUNT - 1) then
+								rendered_shield := 0;
+								substate <= PLAYER_QUERY;
+							end if;
 							
 						when PLAYER_QUERY =>
 							
