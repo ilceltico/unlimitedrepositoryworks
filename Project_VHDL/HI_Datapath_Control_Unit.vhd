@@ -49,7 +49,6 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal spawn_rand_alien						: std_logic;
 	signal rand_alien_time						: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
 	signal move_rand_alien						: std_logic;
-	signal hide_rand_alien_border_reached 	: std_logic;
 	signal rand_alien_alive						: std_logic;
 	
 	signal rand_col								: integer range 0 to (COLUMNS_PER_GRID - 1);
@@ -177,7 +176,7 @@ begin
 		if (RESET_N = '0') then
 			rand_col <= 0;
 		elsif (rising_edge(CLOCK)) then
-			if (time_1us = '1' and RAND_GEN(0) = '1') then -- The rand_col gets incremented every 1us only if the first random bit is 1
+			if (time_1us = '1' and RAND_GEN(0) = '1' and RAND_GEN(1) = '1') then -- The rand_col gets incremented every 1us only if the first 2 random bits are 1
 				if(rand_col = rand_col'high) then
 					rand_col <= 0;
 				else
@@ -385,24 +384,24 @@ begin
 	
 	rand_alien_movement_handler : process(CLOCK, RESET_N)
 	
-		variable random_alien_movement	: direction_type := DIR_RIGHT;
-		variable last_wall_reached 		: direction_type := DIR_LEFT;
+		variable random_alien_movement		: direction_type := DIR_RIGHT;
+		variable next_random_alien_movement	: direction_type := DIR_LEFT;
+		variable last_wall_reached 			: direction_type := DIR_LEFT;
 		
 	begin
 	
 		if (RESET_N = '0') then
 	
 			random_alien_movement := DIR_RIGHT;
+			next_random_alien_movement := DIR_LEFT;
 			last_wall_reached := DIR_LEFT;
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			SHOW_RAND_ALIEN <= '0';
-			hide_rand_alien_border_reached <= '0';
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1);
 			
 		elsif rising_edge(CLOCK) then
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
-			hide_rand_alien_border_reached <= '0';
 			
 			if (RAND_ALIEN_VISIBLE = '1') then
 				if (move_rand_alien = '1') then 
@@ -411,20 +410,21 @@ begin
 				
 				if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
 				
-					random_alien_movement := DIR_RIGHT;
-					hide_rand_alien_border_reached <=  '1';
+					random_alien_movement := DIR_NONE;
+					next_random_alien_movement := DIR_RIGHT;
 					last_wall_reached := DIR_LEFT;
 				
 				elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
 					
-					random_alien_movement := DIR_LEFT;
-					hide_rand_alien_border_reached <=  '1';
+					random_alien_movement := DIR_NONE;
+					next_random_alien_movement := DIR_LEFT;
 					last_wall_reached := DIR_RIGHT;
 				
 				end if;
 				
 			elsif (spawn_rand_alien = '1') then
-				RAND_ALIEN_MOVEMENT <= random_alien_movement;
+				RAND_ALIEN_MOVEMENT <= next_random_alien_movement; --This is needed for the datapath to know where to put the random alien
+				random_alien_movement := next_random_alien_movement;
 				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
 			end if;
 			
