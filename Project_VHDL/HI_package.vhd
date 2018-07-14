@@ -80,8 +80,8 @@ package HI_package is
 	constant SHIELD_SIZE_X 									: natural := 25;
 	constant SHIELD_SIZE_Y 									: natural := 25;
 	constant SHIELD_SPACING 								: natural := 100;
-	constant SHIELD_H_OVERLAP 								: natural := 7;
-	constant SHIELD_V_OVERLAP 								: natural := 7;
+	constant SHIELD_H_OVERLAP 								: natural := 2;
+	constant SHIELD_V_OVERLAP 								: natural := 2;
 	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
 	constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
 	
