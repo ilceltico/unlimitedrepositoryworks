@@ -108,9 +108,9 @@ package HI_package is
 	--constant ALIEN_BULLET_TIME_DECREASE_50MHz 		: natural := (BASE_ALIEN_BULLET_TIME_50MHz - MAX_ALIEN_BULLET_TIME_50MHz) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1);
 	constant RAND_ALIEN_SPEED 								: natural := 1;
 	constant RAND_ALIEN_FRAME_TIME_1us 					: natural := 16666; --60fps
-	constant RAND_ALIEN_GENERATION_TIME_BITS			: natural := 10;--12;
+	constant RAND_ALIEN_GENERATION_TIME_BITS			: natural := 12;
 	constant RAND_ALIEN_TIME_RANGE_1us					: natural := (2**RAND_ALIEN_GENERATION_TIME_BITS - 1)*10000; -- Time interval of around 42 seconds
-	constant RAND_ALIEN_TIME_MIN_1us						: natural := 10000000;--20000000; -- Time interval of 20 seconds
+	constant RAND_ALIEN_TIME_MIN_1us						: natural := 20000000; -- Time interval of 20 seconds
 	
 	-- Destruction array indexes
 	constant PLAYER_BULLET_DESTRUCTION_INDEX			: natural := 0;
