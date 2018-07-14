@@ -713,18 +713,17 @@ begin
 							end loop;
 						
 						end if;
-						
-						collision_substate_shield_part_index := collision_substate_shield_part_index + 1;
-				
-						if (collision_substate_shield_part_index > SHIELD_PARTS - 1) then
+
+						if (collision_substate_shield_part_index = SHIELD_PARTS - 1) then 
 							collision_substate_shield_part_index := 0;
-							collision_substate_shield_index := collision_substate_shield_index + 1;
-						end if;
-					
-						if (collision_substate_shield_index > SHIELD_COUNT - 1) then
-							collision_substate_shield_index := 0;
-							collision_state <= ALIEN_BULLET_COLLISIONS;
-							collision_substate_alien_bullet := 0;
+							if (collision_substate_shield_index = SHIELD_COUNT - 1) then
+								collision_substate_shield_index := 0;
+								collision_state <= ALIEN_BULLET_COLLISIONS;
+							else
+								collision_substate_shield_index := collision_substate_shield_index + 1;
+							end if;
+						else
+							collision_substate_shield_part_index := collision_substate_shield_part_index + 1;
 						end if;
 						
 					when ALIEN_BULLET_COLLISIONS =>

@@ -316,10 +316,10 @@ package HI_package is
 	
 	-- Shield array type declaration
 	type shield_type is array(0 to SHIELD_PARTS - 1) of shield_part_type;
-	subtype shield_part_index_type is integer range 0 to SHIELD_PARTS - 1 + 3;
+	subtype shield_part_index_type is integer range 0 to SHIELD_PARTS - 1;
 	
 	type shield_grid_type is array(0 to SHIELD_COUNT - 1) of shield_type;
-	subtype shield_grid_index_type is integer range 0 to SHIELD_COUNT -1 + 3;
+	subtype shield_grid_index_type is integer range 0 to SHIELD_COUNT -1;
 	
 	--------------------------------------------------------------
 	--					        DATAPATH INDEXES                     --

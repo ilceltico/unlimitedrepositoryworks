@@ -95,17 +95,17 @@ begin
 						when ALIEN_QUERY => 
 
 							REQUEST_ENTITY_SPRITE <= (rendered_column, rendered_alien, ENTITY_ALIEN);
-					
-							rendered_column := rendered_column + 1;
-			
-							if (rendered_column > COLUMNS_PER_GRID - 1) then
+
+							if (rendered_column = COLUMNS_PER_GRID - 1) then 
 								rendered_column := 0;
-								rendered_alien := rendered_alien + 1;
-							end if;
-				
-							if (rendered_alien > ALIENS_PER_COLUMN - 1) then
-								rendered_alien := 0;
-								substate <= ALIEN_BULLET_QUERY;
+								if (rendered_alien = ALIENS_PER_COLUMN - 1) then
+									rendered_alien := 0;
+									substate <= ALIEN_BULLET_QUERY;
+								else
+									rendered_alien := rendered_alien + 1;
+								end if;
+							else
+								rendered_column := rendered_column + 1;
 							end if;
 				
 						when ALIEN_BULLET_QUERY =>
@@ -132,17 +132,17 @@ begin
 						when SHIELD_QUERY =>
 							
 							REQUEST_ENTITY_SPRITE <= (rendered_shield, rendered_part, ENTITY_SHIELD);
-					
-							rendered_part := rendered_part + 1;
-			
-							if (rendered_part > SHIELD_PARTS - 1) then
+							
+							if (rendered_part = SHIELD_PARTS - 1) then 
 								rendered_part := 0;
-								rendered_shield := rendered_shield + 1;
-							end if;
-				
-							if (rendered_shield > SHIELD_COUNT - 1) then
-								rendered_shield := 0;
-								substate <= PLAYER_QUERY;
+								if (rendered_shield = SHIELD_COUNT - 1) then
+									rendered_shield := 0;
+									substate <= PLAYER_QUERY;
+								else
+									rendered_shield := rendered_shield + 1;
+								end if;
+							else
+								rendered_part := rendered_part + 1;
 							end if;
 							
 						when PLAYER_QUERY =>
