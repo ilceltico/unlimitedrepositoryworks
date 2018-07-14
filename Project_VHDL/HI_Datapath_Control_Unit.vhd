@@ -402,23 +402,28 @@ begin
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			
-				if (move_rand_alien = '1') then 
-					RAND_ALIEN_MOVEMENT <= random_alien_movement;
-				end if;
+			if (RAND_ALIEN_VISIBLE = '1') then
+				random_alien_movement <= DIR_NONE;
+				next_random_alien_movement <= DIR_RIGHT;
+			end if;
+			
+			if (move_rand_alien = '1') then 
+				RAND_ALIEN_MOVEMENT <= random_alien_movement;
+			end if;
+			
+			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
+			
+				random_alien_movement <= DIR_NONE;
+				next_random_alien_movement <= DIR_RIGHT;
+				last_wall_reached := DIR_LEFT;
+			
+			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
 				
-				if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
-				
-					random_alien_movement <= DIR_NONE;
-					next_random_alien_movement <= DIR_RIGHT;
-					last_wall_reached := DIR_LEFT;
-				
-				elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
-					
-					random_alien_movement <= DIR_NONE;
-					next_random_alien_movement <= DIR_LEFT;
-					last_wall_reached := DIR_RIGHT;
-				
-				end if;
+				random_alien_movement <= DIR_NONE;
+				next_random_alien_movement <= DIR_LEFT;
+				last_wall_reached := DIR_RIGHT;
+			
+			end if;
 				
 			if (spawn_rand_alien = '1') then
 				RAND_ALIEN_MOVEMENT <= next_random_alien_movement; --This is needed for the datapath to know where to put the random alien
