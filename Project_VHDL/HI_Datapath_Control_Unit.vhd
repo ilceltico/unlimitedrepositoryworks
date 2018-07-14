@@ -402,7 +402,7 @@ begin
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			
-			if (RAND_ALIEN_VISIBLE = '1') then
+			if (RAND_ALIEN_VISIBLE = '0') then
 				random_alien_movement <= DIR_NONE;
 				next_random_alien_movement <= DIR_RIGHT;
 			end if;
