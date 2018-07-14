@@ -28,7 +28,7 @@ entity HI_Datapath is
 		HITBOX							: out hitbox_type := (0,0,1,1);
 --		SCORE								: out integer;
 --		LIVES								: out integer;
---		LIVING_ALIEN_COUNT			: out integer;
+--		ALIVE_ALIEN_COUNT				: out integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 --		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
 		ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_BORDER_REACHED	: out direction_type;
@@ -124,7 +124,7 @@ begin
 	variable pause					: std_logic := '0';
 	
 	begin
-		
+			
 		if (RESET_N = '0') then 
 			
 			var_first_column 	:= 0;

@@ -37,6 +37,7 @@ end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
+	signal alien_frame_time 					: integer range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
 	signal game_tick 								: std_logic;
 	signal player_move_time						: std_logic;
 		
@@ -161,7 +162,7 @@ begin
 		elsif (rising_edge(CLOCK)) then
 			game_tick <= '0';
 			if (time_1us = '1') then
-				if(counter = counter'high) then
+				if(counter = alien_frame_time) then
 					counter := 0;
 					game_tick <= '1';
 				else
@@ -444,7 +445,9 @@ begin
 	
 	begin
 	
-		if (RESET_N = '0') then 
+		if (RESET_N = '0') then
+		
+			alien_frame_time <= BASE_ALIEN_FRAME_TIME_1us - 1;
 		
 			HIDE <= (0,0,ENTITY_NONE);
 			DESTROY <= (0,0,ENTITY_NONE);	
@@ -585,6 +588,8 @@ begin
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.second_entity;
+							--Aliens now get quicker
+							alien_frame_time <= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
 						end if;
 					end case;
 				when ENTITY_ALIEN_BULLET =>
