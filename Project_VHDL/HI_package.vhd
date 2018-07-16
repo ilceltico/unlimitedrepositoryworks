@@ -41,7 +41,7 @@ package HI_package is
 	constant FRAME_RIGHT_X									: natural := REAL_WIDTH - 0;
 	constant FRAME_UP_Y										: natural := 0;
 	constant FRAME_DOWN_Y									: natural := REAL_HEIGHT;
-	constant EXPLOSION_TIME_1us 							: natural := 300000;
+	constant EXPLOSION_TIME_1us 							: natural := 200000;
 	constant RAND_ALIEN_EXPLOSION_TIME_1us 			: natural := 500000;
 	
 	-- Player
