@@ -7,36 +7,39 @@ use work.vga_package.all;
 entity Hi_Datapath_Control_Unit is 
 	port 
 	(
-		CLOCK								: in std_logic;
-		RESET_N							: in std_logic;
-		TIME_1US							: in std_logic;
-		ALIEN_BORDER_REACHED			: in direction_type;
-		RAND_ALIEN_BORDER_REACHED 	: in direction_type;
-		RAND_ALIEN_VISIBLE			: in std_logic;
-		PLAYER_BORDER_REACHED		: in direction_type;
-		COLLISION						: in collision_type;
-		RAND_GEN						   : in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
-		COLUMN_CANNOT_SHOOT			: in std_logic;
-		BUTTON_LEFT						: in std_logic;
-		BUTTON_RIGHT					: in std_logic;
-		BUTTON_SHOOT					: in std_logic;
+		CLOCK										: in std_logic;
+		RESET_N									: in std_logic;
+		TIME_1US									: in std_logic;
+		ALIEN_BORDER_REACHED					: in direction_type;
+		RAND_ALIEN_BORDER_REACHED 			: in direction_type;
+		RAND_ALIEN_VISIBLE					: in std_logic;
+		PLAYER_BORDER_REACHED				: in direction_type;
+		COLLISION								: in collision_type;
+		RAND_GEN						   		: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
+		COLUMN_CANNOT_SHOOT					: in std_logic;
+		BUTTON_LEFT								: in std_logic;
+		BUTTON_RIGHT							: in std_logic;
+		BUTTON_SHOOT							: in std_logic;
 		
-		ALIEN_GRID_MOVEMENT			: out direction_type;
-		COLUMN_TO_SHOOT				: out alien_grid_index_type;
-		ALIEN_SHOOT						: out std_logic;
-		RAND_ALIEN_MOVEMENT			: out direction_type;
-		SHOW_RAND_ALIEN				: out std_logic;
-		PLAYER_MOVEMENT				: out direction_type;
-		PLAYER_SHOOT					: out std_logic;
-		ADVANCE_PLAYER_BULLET		: out std_logic;
-		ADVANCE_ALIEN_BULLETS		: out std_logic;
-		DESTROY							: out datapath_entity_index_type;
-		HIDE								: out	datapath_entity_index_type
+		ALIEN_GRID_MOVEMENT					: out direction_type;
+		COLUMN_TO_SHOOT						: out alien_grid_index_type;
+		ALIEN_SHOOT								: out std_logic;
+		RAND_ALIEN_MOVEMENT					: out direction_type;
+		SHOW_RAND_ALIEN						: out std_logic;
+		PLAYER_MOVEMENT						: out direction_type;
+		PLAYER_SHOOT							: out std_logic;
+		ADVANCE_PLAYER_BULLET				: out std_logic;
+		ADVANCE_ALIEN_BULLETS				: out std_logic;
+		DESTROY									: out datapath_entity_index_type;
+		DESTROY_SILENT_EXPLOSION			: out std_logic;
+		HIDE									 	: out	datapath_entity_index_type;
+		CHANGE_PLAYER_EXPLOSION_SPRITE 	: out std_logic
 	);
 end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
+	signal alien_frame_time 					: integer range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
 	signal game_tick 								: std_logic;
 	signal player_move_time						: std_logic;
 		
@@ -49,8 +52,8 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal spawn_rand_alien						: std_logic;
 	signal rand_alien_time						: integer range 0 to (RAND_ALIEN_TIME_MIN_1us + RAND_ALIEN_TIME_RANGE_1us - 1);
 	signal move_rand_alien						: std_logic;
-	signal hide_rand_alien_border_reached 	: std_logic;
-	signal rand_alien_alive						: std_logic;
+	signal random_alien_movement				: direction_type;
+	signal next_random_alien_movement		: direction_type;
 	
 	signal rand_col								: integer range 0 to (COLUMNS_PER_GRID - 1);
 	
@@ -105,7 +108,7 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 			spawn_rand_alien <= '0';
-			if (time_1us = '1' and RAND_ALIEN_VISIBLE = '0') then
+			if (time_1us = '1' and random_alien_movement = DIR_NONE) then
 				if(counter = rand_alien_time) then
 				
 					counter 				:= 0;
@@ -161,7 +164,7 @@ begin
 		elsif (rising_edge(CLOCK)) then
 			game_tick <= '0';
 			if (time_1us = '1') then
-				if(counter = counter'high) then
+				if(counter = alien_frame_time) then
 					counter := 0;
 					game_tick <= '1';
 				else
@@ -177,7 +180,7 @@ begin
 		if (RESET_N = '0') then
 			rand_col <= 0;
 		elsif (rising_edge(CLOCK)) then
-			if (time_1us = '1' and RAND_GEN(0) = '1') then -- The rand_col gets incremented every 1us only if the first random bit is 1
+			if (time_1us = '1' and RAND_GEN(0) = '1' and RAND_GEN(1) = '1') then -- The rand_col gets incremented every 1us only if the first 2 random bits are 1
 				if(rand_col = rand_col'high) then
 					rand_col <= 0;
 				else
@@ -195,7 +198,7 @@ begin
 			ADVANCE_PLAYER_BULLET <= '0';
 		elsif (rising_edge(CLOCK)) then
 			ADVANCE_PLAYER_BULLET <= '0';
-			if (time_1us = '1') then
+			if (time_1us = '1' and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 				if(counter = counter'high) then
 					counter := 0;
 					ADVANCE_PLAYER_BULLET <= '1';
@@ -215,7 +218,7 @@ begin
 			ADVANCE_ALIEN_BULLETS <= '0';
 		elsif (rising_edge(CLOCK)) then
 			ADVANCE_ALIEN_BULLETS <= '0';
-			if (time_1us = '1') then
+			if (time_1us = '1' and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 				if(counter = counter'high) then
 					counter := 0;
 					ADVANCE_ALIEN_BULLETS <= '1';
@@ -243,7 +246,7 @@ begin
 		
 			ALIEN_GRID_MOVEMENT <= DIR_NONE;
 		
-			if (game_tick = '1') then 
+			if (game_tick = '1' and destruction_index_array(ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then 
 				ALIEN_GRID_MOVEMENT <= grid_movement;
 				
 				if (ALIEN_BORDER_REACHED = DIR_LEFT and ALIEN_BORDER_REACHED /= last_wall_reached) then
@@ -287,19 +290,26 @@ begin
 	end process;
 	
 	player_movement_handler : process(CLOCK, RESET_N)
+	
+	variable player_explosion_timer : integer range 0 to (PLAYER_EXPLOSION_FRAME_TIME_1us - 1) := 0;
+	
 	begin
 	
 		if (RESET_N = '0') then
 		
 			PLAYER_MOVEMENT <= DIR_NONE;
 			PLAYER_SHOOT <= '0';
+			CHANGE_PLAYER_EXPLOSION_SPRITE <= '0';
+			player_explosion_timer := PLAYER_EXPLOSION_FRAME_TIME_1us - 1;
 			
 		elsif rising_edge(CLOCK) then
 		
 			PLAYER_MOVEMENT <= DIR_NONE;
 			PLAYER_SHOOT <= '0';
 			
-			if (player_move_time = '1') then
+			CHANGE_PLAYER_EXPLOSION_SPRITE <= '0';
+			
+			if (player_move_time = '1' and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 			
 				if (BUTTON_LEFT = '1' and PLAYER_BORDER_REACHED /= DIR_LEFT) then
 					PLAYER_MOVEMENT <= DIR_LEFT;
@@ -309,10 +319,21 @@ begin
 			
 			end if;
 			
-			if (BUTTON_SHOOT = '1') then
+			if (BUTTON_SHOOT = '1' and destruction_index_array(ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 			
 				PLAYER_SHOOT <= '1';
 			
+			end if;
+			
+			if (time_1us = '1' and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_PLAYER) then 
+			
+				if (player_explosion_timer = 0) then 
+					CHANGE_PLAYER_EXPLOSION_SPRITE <= '1';
+					player_explosion_timer := PLAYER_EXPLOSION_FRAME_TIME_1us - 1;
+				else
+					player_explosion_timer := player_explosion_timer - 1;
+				end if;
+				
 			end if;
 			
 		end if;
@@ -337,47 +358,51 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then	
 			
-			case(column_state) is
+			if (destruction_index_array(ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 			
-				when IDLE => 
-			
-					ALIEN_SHOOT <= '0';
-			
-					if (bullet_tick = '1') then
-						column_state <= FIRST_INDEX;
-					end if;
-					
-				when FIRST_INDEX => 
-					
-					column := rand_col;
-					--column := 0; -- for debugging purposes
-					reg_column_to_shoot := column;	
-					COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
-					column_state 			<= WAITING;
-					ALIEN_SHOOT <= '1';
-					
-				when WAITING =>
-					
-					column_state <= INCREMENTING_INDEX;
-					ALIEN_SHOOT <= '0';
+				case(column_state) is
 				
-				when INCREMENTING_INDEX => 
+					when IDLE => 
+				
+						ALIEN_SHOOT <= '0';
+				
+						if (bullet_tick = '1') then
+							column_state <= FIRST_INDEX;
+						end if;
 						
-					if (COLUMN_CANNOT_SHOOT = '1') then
+					when FIRST_INDEX => 
 						
-						reg_column_to_shoot 	:= reg_column_to_shoot + 1;
-						COLUMN_TO_SHOOT 		<= reg_column_to_shoot; 
+						column := rand_col;
+						--column := 0; -- for debugging purposes
+						reg_column_to_shoot := column;	
+						COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
 						column_state 			<= WAITING;
 						ALIEN_SHOOT <= '1';
-											
-					else 
 						
-						column_state <= IDLE;
+					when WAITING =>
+						
+						column_state <= INCREMENTING_INDEX;
 						ALIEN_SHOOT <= '0';
 					
-					end if;
+					when INCREMENTING_INDEX => 
+							
+						if (COLUMN_CANNOT_SHOOT = '1') then
+							
+							reg_column_to_shoot 	:= reg_column_to_shoot + 1;
+							COLUMN_TO_SHOOT 		<= reg_column_to_shoot; 
+							column_state 			<= WAITING;
+							ALIEN_SHOOT <= '1';
+												
+						else 
+							
+							column_state <= IDLE;
+							ALIEN_SHOOT <= '0';
+						
+						end if;
+					
+				end case;
 				
-			end case;
+			end if;
 			
 		end if;
 		
@@ -385,47 +410,58 @@ begin
 	
 	rand_alien_movement_handler : process(CLOCK, RESET_N)
 	
-		variable random_alien_movement	: direction_type := DIR_RIGHT;
-		variable last_wall_reached 		: direction_type := DIR_LEFT;
+		variable last_wall_reached 			: direction_type := DIR_LEFT;
+		variable rand_alien_visible_inhibit	: std_logic := '0';
 		
 	begin
 	
 		if (RESET_N = '0') then
 	
-			random_alien_movement := DIR_RIGHT;
+			random_alien_movement <= DIR_NONE;
+			next_random_alien_movement <= DIR_RIGHT;
 			last_wall_reached := DIR_LEFT;
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			SHOW_RAND_ALIEN <= '0';
-			hide_rand_alien_border_reached <= '0';
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1);
+			
+			rand_alien_visible_inhibit := '0';
 			
 		elsif rising_edge(CLOCK) then
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
-			hide_rand_alien_border_reached <= '0';
 			
-			if (RAND_ALIEN_VISIBLE = '1') then
-				if (move_rand_alien = '1') then 
+			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
+			
+				random_alien_movement <= DIR_NONE;
+				next_random_alien_movement <= DIR_RIGHT;
+				last_wall_reached := DIR_LEFT;
+			
+			elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
+				
+				random_alien_movement <= DIR_NONE;
+				next_random_alien_movement <= DIR_LEFT;
+				last_wall_reached := DIR_RIGHT;
+			
+			end if;
+				
+			if (spawn_rand_alien = '1') then
+				RAND_ALIEN_MOVEMENT <= next_random_alien_movement; --This is needed for the datapath to know where to put the random alien
+				random_alien_movement <= next_random_alien_movement;
+				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
+				rand_alien_visible_inhibit := '1';
+			else
+				if (RAND_ALIEN_VISIBLE = '0' and rand_alien_visible_inhibit = '0') then
+					random_alien_movement <= DIR_NONE;
+					next_random_alien_movement <= DIR_RIGHT;
+				end if;
+			
+				if (move_rand_alien = '1' and destruction_index_array(RAND_ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then 
+				--if (move_rand_alien = '1') then 
 					RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				end if;
 				
-				if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
+				rand_alien_visible_inhibit := '0';
 				
-					random_alien_movement := DIR_RIGHT;
-					hide_rand_alien_border_reached <=  '1';
-					last_wall_reached := DIR_LEFT;
-				
-				elsif (RAND_ALIEN_BORDER_REACHED = DIR_RIGHT and last_wall_reached /= DIR_RIGHT) then 
-					
-					random_alien_movement := DIR_LEFT;
-					hide_rand_alien_border_reached <=  '1';
-					last_wall_reached := DIR_RIGHT;
-				
-				end if;
-				
-			elsif (spawn_rand_alien = '1') then
-				RAND_ALIEN_MOVEMENT <= random_alien_movement;
-				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;
@@ -441,10 +477,13 @@ begin
 	
 	begin
 	
-		if (RESET_N = '0') then 
+		if (RESET_N = '0') then
+		
+			alien_frame_time <= BASE_ALIEN_FRAME_TIME_1us - 1;
 		
 			HIDE <= (0,0,ENTITY_NONE);
 			DESTROY <= (0,0,ENTITY_NONE);	
+			DESTROY_SILENT_EXPLOSION <= '0';
 			
 			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
 				destruction_timer_array(I) <= 0;
@@ -458,6 +497,7 @@ begin
 		elsif (rising_edge(CLOCK)) then 
 		
 			DESTROY 	<= (0,0,ENTITY_NONE);
+			DESTROY_SILENT_EXPLOSION <= '0';
 			HIDE 		<= (0,0,ENTITY_NONE);
 			
 			found := '0';
@@ -466,7 +506,7 @@ begin
 			
 				for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
 			
-					if (destruction_index_array(I).entity_type /= ENTITY_NONE) then
+					if (destruction_index_array(I).entity_type /= ENTITY_NONE and (destruction_index_array(PLAYER_DESTRUCTION_INDEX).entity_type = ENTITY_NONE or I = PLAYER_DESTRUCTION_INDEX)) then
 				
 						-- if multiple entities reach 0 at the same time only one of them will get destroyed causing a glitch. 
 						-- This check prevents that, but it may delay the destruction of some objects by AT MOST 7 clock intervals.
@@ -510,7 +550,7 @@ begin
 				when ENTITY_PLAYER => 
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY => 
-						-- GAMEOVER
+						DESTROY <= reg_collision.second_entity;
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 				when ENTITY_SHIELD =>
@@ -522,7 +562,7 @@ begin
 				when ENTITY_BORDER =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-						-- GAMEOVER
+						DESTROY <= (0,0,ENTITY_PLAYER);
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 				when others =>
@@ -536,11 +576,12 @@ begin
 							destruction_index_array(reg_collision.first_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(reg_collision.first_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(PLAYER_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(PLAYER_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
-							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us); -- TODO still wip af.
+							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (PLAYER_EXPLOSION_TIME_1us); -- TODO still wip af.
 							DESTROY <= reg_collision.second_entity;
 						end if;
 					end case;
@@ -576,12 +617,15 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(ALIEN_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.second_entity;
+							--Aliens now get quicker
+							alien_frame_time <= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
 						end if;
 					end case;
 				when ENTITY_ALIEN_BULLET =>
@@ -591,6 +635,7 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(reg_collision.second_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
@@ -606,6 +651,7 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY =>
 						if (destruction_index_array(RAND_ALIEN_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
@@ -643,5 +689,5 @@ begin
 		end if;
 	
 	end process;
-
+	
 end architecture;

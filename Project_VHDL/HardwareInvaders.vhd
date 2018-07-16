@@ -79,10 +79,12 @@ architecture RTL of HardwareInvaders is
 	signal advance_player_bullet : std_logic;
 	signal advance_alien_bullets : std_logic;
 	signal destroy					: datapath_entity_index_type;
+	signal destroy_silent_explosion	: std_logic;
 	signal hide 					: datapath_entity_index_type;
 	signal collision 				: collision_type;
 	signal column_index 			: alien_grid_index_type;
 	signal shield					: shield_type;
+	signal change_player_explosion_sprite : std_logic;
 	
 	signal ps2_code_new 				: std_logic;
 	signal ps2_code					: std_logic_vector(7 downto 0);
@@ -251,11 +253,13 @@ begin
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> column_index,
 			DESTROY 						=> destroy,
+			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
 			HIDE							=> hide,
 			ADVANCE_PLAYER_BULLET	=> advance_player_bullet,
 			ADVANCE_ALIEN_BULLETS	=> advance_alien_bullets,
 			ALIEN_SHOOT					=> alien_shoot,
 			PLAYER_SHOOT				=> player_shoot,
+			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
@@ -280,9 +284,10 @@ begin
 			PLAYER_BORDER_REACHED => player_border_reached,
 			RAND_GEN	=> rand_output,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
-			DESTROY => destroy,
-			HIDE => hide,
 			
+			DESTROY => destroy,
+			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
+			HIDE => hide,
 			ALIEN_GRID_MOVEMENT => alien_grid_movement,
 			RAND_ALIEN_MOVEMENT => random_alien_movement,
 			SHOW_RAND_ALIEN		=> show_rand_alien,
@@ -293,6 +298,7 @@ begin
 			ADVANCE_PLAYER_BULLET => advance_player_bullet,
 			ADVANCE_ALIEN_BULLETS => advance_alien_bullets,
 			COLLISION => collision,
+			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
 			
 			BUTTON_LEFT => move_left,
 			BUTTON_RIGHT => move_right,

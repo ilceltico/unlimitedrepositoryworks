@@ -53,6 +53,8 @@ package HI_package is
 	constant PLAYER_LIVES 									: natural := 3;
 	constant PLAYER_SPEED 									: natural := 3;
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
+	constant PLAYER_EXPLOSION_TIME_1us					: natural := 2000000;
+	constant PLAYER_EXPLOSION_FRAME_TIME_1us			: natural := 400000;
 	
 	-- Bullets
 	constant ALIEN_BULLET_SHAPE							: natural := 3; -- Number of alien bullets shapes
@@ -80,8 +82,8 @@ package HI_package is
 	constant SHIELD_SIZE_X 									: natural := 25;
 	constant SHIELD_SIZE_Y 									: natural := 25;
 	constant SHIELD_SPACING 								: natural := 100;
-	constant SHIELD_H_OVERLAP 								: natural := 7;
-	constant SHIELD_V_OVERLAP 								: natural := 7;
+	constant SHIELD_H_OVERLAP 								: natural := 2;
+	constant SHIELD_V_OVERLAP 								: natural := 2;
 	constant SHIELD_1_Y 										: natural := PLAYER_START_Y - SHIELD_SIZE_Y * 2 - 20;
 	constant SHIELD_2_Y 										: natural := SHIELD_1_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP;
 	
@@ -117,7 +119,7 @@ package HI_package is
 	constant ALIEN_BULLET_BASE_DESTRUCTION_INDEX		: natural := PLAYER_BULLET_DESTRUCTION_INDEX + 1;
 	constant RAND_ALIEN_DESTRUCTION_INDEX				: natural := ALIEN_BULLET_BASE_DESTRUCTION_INDEX + BULLET_COUNT;
 	constant ALIEN_DESTRUCTION_INDEX						: natural := RAND_ALIEN_DESTRUCTION_INDEX + 1;
-	constant PLAYER_DESTRUCTION_INDEX						: natural := ALIEN_DESTRUCTION_INDEX + 1;
+	constant PLAYER_DESTRUCTION_INDEX					: natural := ALIEN_DESTRUCTION_INDEX + 1;
 	
 	constant DESTRUCTION_SLOT_COUNT 						: natural := PLAYER_DESTRUCTION_INDEX + 1;
 	
@@ -1327,7 +1329,7 @@ package HI_package is
 			),
 			13,
 			8,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 22 -> PlayerBullet.png
 		( 
@@ -1447,7 +1449,7 @@ package HI_package is
 			),
 			15,
 			8,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 25 -> PlayerExplosion2.png
 		( 
@@ -1487,7 +1489,7 @@ package HI_package is
 			),
 			16,
 			8,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 26 -> Shield1_1.png
 		( 
@@ -1527,7 +1529,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 27 -> Shield1_2.png
 		( 
@@ -1567,7 +1569,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 28 -> Shield1_3.png
 		( 
@@ -1607,7 +1609,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 29 -> Shield1_4.png
 		( 
@@ -1647,7 +1649,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 30 -> Shield2_1.png
 		( 
@@ -1687,7 +1689,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 31 -> Shield2_2.png
 		( 
@@ -1727,7 +1729,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 32 -> Shield2_3.png
 		( 
@@ -1767,7 +1769,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 33 -> Shield2_4.png
 		( 
@@ -1807,7 +1809,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 34 -> Shield3_1.png
 		( 
@@ -1847,7 +1849,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 35 -> Shield3_2.png
 		( 
@@ -1887,7 +1889,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 36 -> Shield3_3.png
 		( 
@@ -1927,7 +1929,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 37 -> Shield3_4.png
 		( 
@@ -1967,7 +1969,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 38 -> Shield4_1.png
 		( 
@@ -2007,7 +2009,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 39 -> Shield4_2.png
 		( 
@@ -2047,7 +2049,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 40 -> Shield4_3.png
 		( 
@@ -2087,7 +2089,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		),
 		-- 41 -> Shield4_4.png
 		( 
@@ -2127,7 +2129,7 @@ package HI_package is
 			),
 			7,
 			7,
-			COLOR_WHITE
+			COLOR_GREEN
 		)
 	);
 

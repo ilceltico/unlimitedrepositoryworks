@@ -7,35 +7,36 @@ use work.vga_package.all;
 entity HI_Datapath is 
 	port 
 	(
-		CLOCK								: in	std_logic;
-		RESET_N							: in 	std_logic;
-		REQ_NEXT_SPRITE				: in 	std_logic;
-		REQUEST_ENTITY_SPRITE		: in 	datapath_entity_index_type;
-		DESTROY							: in 	datapath_entity_index_type;
-		HIDE								: in 	datapath_entity_index_type;
-		COLUMN_INDEX					: in  alien_grid_index_type;
---		NEW_LEVEL						: in 	std_logic;
-		PLAYER_MOVEMENT				: in 	direction_type;
-		PLAYER_SHOOT					: in 	std_logic;
-		ALIEN_GRID_MOVEMENT			: in 	direction_type;
-		ALIEN_SHOOT						: in 	std_logic;
-		RAND_ALIEN_MOVEMENT			: in 	direction_type;
-		SHOW_RAND_ALIEN				: in 	std_logic;
-		ADVANCE_PLAYER_BULLET		: in 	std_logic;
-		ADVANCE_ALIEN_BULLETS		: in 	std_logic;
-		
-		SPRITE 							: out sprite_type := sprite_empty;
-		HITBOX							: out hitbox_type := (0,0,1,1);
---		SCORE								: out integer;
---		LIVES								: out integer;
---		LIVING_ALIEN_COUNT			: out integer;
---		ENTITY_EXPLOSION_INDEX		: out entity_explosion_index_type;
-		ALIEN_BORDER_REACHED			: out direction_type;
-		RAND_ALIEN_BORDER_REACHED	: out direction_type;
-		RAND_ALIEN_VISIBLE			: out std_logic;
-		PLAYER_BORDER_REACHED		: out direction_type;
-		COLUMN_CANNOT_SHOOT			: out std_logic;
-		COLLISION						: out collision_type
+		CLOCK										: in	std_logic;
+		RESET_N									: in 	std_logic;
+		REQ_NEXT_SPRITE						: in 	std_logic;
+		REQUEST_ENTITY_SPRITE				: in 	datapath_entity_index_type;
+		DESTROY									: in 	datapath_entity_index_type;
+		DESTROY_SILENT_EXPLOSION			: in 	std_logic;
+		HIDE										: in 	datapath_entity_index_type;
+		COLUMN_INDEX							: in  alien_grid_index_type;
+--		NEW_LEVEL								: in 	std_logic;
+		PLAYER_MOVEMENT						: in 	direction_type;
+		PLAYER_SHOOT							: in 	std_logic;
+		ALIEN_GRID_MOVEMENT					: in 	direction_type;
+		ALIEN_SHOOT								: in 	std_logic;
+		RAND_ALIEN_MOVEMENT					: in 	direction_type;
+		SHOW_RAND_ALIEN						: in 	std_logic;
+		ADVANCE_PLAYER_BULLET				: in 	std_logic;
+		ADVANCE_ALIEN_BULLETS				: in 	std_logic;
+		CHANGE_PLAYER_EXPLOSION_SPRITE 	: in 	std_logic;
+			
+		SPRITE 									: out sprite_type := sprite_empty;
+		HITBOX									: out hitbox_type := (0,0,1,1);
+--		SCORE										: out integer;
+--		LIVES										: out integer;
+--		ALIVE_ALIEN_COUNT						: out integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
+		ALIEN_BORDER_REACHED					: out direction_type;
+		RAND_ALIEN_BORDER_REACHED			: out direction_type;
+		RAND_ALIEN_VISIBLE					: out std_logic;
+		PLAYER_BORDER_REACHED				: out direction_type;
+		COLUMN_CANNOT_SHOOT					: out std_logic;
+		COLLISION								: out collision_type
 	);
 end entity;
 
@@ -124,7 +125,7 @@ begin
 	variable pause					: std_logic := '0';
 	
 	begin
-		
+			
 		if (RESET_N = '0') then 
 			
 			var_first_column 	:= 0;
@@ -173,15 +174,12 @@ begin
 			
 			if (DESTROY.entity_type = ENTITY_ALIEN) then 
 				
-				pause := '1';
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).exploding <= '1';
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).current_index <= ALIEN_SPRITE_COUNT - 1;
 				
 			end if;
 			
 			if (HIDE.entity_type = ENTITY_ALIEN) then 
-				
-				pause := '0';
 				
 				alien_grid(HIDE.index_1)(HIDE.index_2).visible <= '0';
 				
@@ -269,36 +267,34 @@ begin
 				last_row 		<= var_last_row;
 				
 			end if;
+
+			for I in 0 to COLUMNS_PER_GRID - 1 loop
+				for J in 0 to ALIENS_PER_COLUMN - 1 loop
 			
-			if (pause = '0') then
-				for I in 0 to COLUMNS_PER_GRID - 1 loop
-					for J in 0 to ALIENS_PER_COLUMN - 1 loop
-			
-						case (ALIEN_GRID_MOVEMENT) is
-						
-							when DIR_RIGHT => 
-								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
-							when DIR_LEFT =>
-								alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
-							when DIR_UP =>
-								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
-							when DIR_DOWN =>
-								alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
-							when DIR_NONE => -- Do nothing
-						
-						end case;	
-						
-						if (ALIEN_GRID_MOVEMENT /= DIR_NONE and alien_grid(I)(J).exploding = '0') then
-							if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
-								alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
-							else 
-								alien_grid(I)(J).current_index <= 0;
-							end if;
-						end if;
+					case (ALIEN_GRID_MOVEMENT) is
 					
-					end loop;
+						when DIR_RIGHT => 
+							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x + ALIEN_SPEED;
+						when DIR_LEFT =>
+							alien_grid(I)(J).hitbox.up_left_x <= alien_grid(I)(J).hitbox.up_left_x - ALIEN_SPEED;
+						when DIR_UP =>
+							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y - ALIEN_DOWN_SPEED;	
+						when DIR_DOWN =>
+							alien_grid(I)(J).hitbox.up_left_y <= alien_grid(I)(J).hitbox.up_left_y + ALIEN_DOWN_SPEED;
+						when DIR_NONE => -- Do nothing
+					
+					end case;	
+						
+					if (ALIEN_GRID_MOVEMENT /= DIR_NONE and alien_grid(I)(J).exploding = '0') then
+						if (alien_grid(I)(J).current_index < ALIEN_SPRITE_COUNT - 2) then
+							alien_grid(I)(J).current_index <= alien_grid(I)(J).current_index + 1;
+						else 
+							alien_grid(I)(J).current_index <= 0;
+						end if;
+					end if;
+					
 				end loop;
-			end if;
+			end loop;
 			
 		end if;
 		
@@ -313,7 +309,7 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then 
 		
-			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0') then 
+			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0' and player_bullet.exploding = '0') then 
 			
 				player_bullet.hitbox.up_left_x <= player.hitbox.up_left_x + player.hitbox.size_x / 2 - PLAYER_BULLET_SIZE_X / 2;
 				player_bullet.hitbox.up_left_y <= player.hitbox.up_left_y;
@@ -335,6 +331,7 @@ begin
 			
 			if (DESTROY.entity_type = ENTITY_PLAYER_BULLET) then 
 				player_bullet.exploding <= '1';
+				player_bullet.visible <= not(DESTROY_SILENT_EXPLOSION);
 				player_bullet.current_index <= BULLET_SPRITE_COUNT - 1;
 				player_bullet.hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				player_bullet.hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
@@ -361,10 +358,10 @@ begin
 				shield(I)(2).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
 				shield(I)(3).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
 				
-				shield(I)(0).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  FIRST_SHIELD_Y, 					 SHIELD_SIZE_X, SHIELD_SIZE_Y);
-				shield(I)(1).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X, FIRST_SHIELD_Y, 					 SHIELD_SIZE_X, SHIELD_SIZE_Y);
-				shield(I)(2).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  FIRST_SHIELD_Y + SHIELD_SIZE_Y, SHIELD_SIZE_X, SHIELD_SIZE_Y);
-				shield(I)(3).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X, FIRST_SHIELD_Y + SHIELD_SIZE_Y, SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(0).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  						   FIRST_SHIELD_Y, 					 							SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(1).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X - SHIELD_H_OVERLAP, FIRST_SHIELD_Y, 					 						   SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(2).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  							FIRST_SHIELD_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP, SHIELD_SIZE_X, SHIELD_SIZE_Y);
+				shield(I)(3).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X - SHIELD_H_OVERLAP, FIRST_SHIELD_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP, SHIELD_SIZE_X, SHIELD_SIZE_Y);
 				
 			end loop;
 					
@@ -857,13 +854,37 @@ begin
 						
 			end case;	
 		
+			if (DESTROY.entity_type = ENTITY_PLAYER) then 
+			
+				player.exploding <= '1';
+				player.current_index <= 1;
+				
+			end if;
+			
+			if (CHANGE_PLAYER_EXPLOSION_SPRITE = '1') then 
+			
+				if (player.current_index = 1) then 
+					player.current_index <= 2;
+				else
+					player.current_index <= 1;
+				end if;
+			
+			end if;
+			
+			if (HIDE.entity_type = ENTITY_PLAYER) then 
+			
+				player.exploding <= '0';
+				player.current_index <= 0;
+				
+			end if;
+			
 		end if;
 		
 	end process;
 	
 	rand_alien_movement_handler : process(CLOCK, RESET_N) is
 	begin
-		
+	
 		RAND_ALIEN_VISIBLE <= rand_alien.visible;
 	
 		if (RESET_N = '0') then
@@ -900,8 +921,15 @@ begin
 				end case;	
 			end if;
 			
+			if (DESTROY.entity_type = ENTITY_RANDOM_ALIEN) then
+				rand_alien.exploding <= '1';
+				rand_alien.current_index <= 2;
+			end if;
+			
 			if (HIDE.entity_type = ENTITY_RANDOM_ALIEN) then
 				rand_alien.visible <= '0';
+				rand_alien.exploding <= '0';
+				rand_alien.current_index <= 0;
 			end if;
 			
 		end if;
@@ -957,7 +985,7 @@ begin
 					
 					for J in 0 to BULLET_COUNT - 1 loop 
 								
-						if (alien_bullets(J).visible = '0') then
+						if (alien_bullets(J).visible = '0' and alien_bullets(J).exploding = '0') then
 							COLUMN_CANNOT_SHOOT <= '0';
 							bullet_index := J;
 							available_bullet := '1';
@@ -1015,6 +1043,7 @@ begin
 			if (DESTROY.entity_type = ENTITY_ALIEN_BULLET) then
 			
 				alien_bullets(DESTROY.index_1).exploding <= '1';
+				alien_bullets(DESTROY.index_1).visible <= not(DESTROY_SILENT_EXPLOSION);
 				alien_bullets(DESTROY.index_1).current_index <= BULLET_SPRITE_COUNT - 1;
 				alien_bullets(DESTROY.index_1).hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				alien_bullets(DESTROY.index_1).hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
