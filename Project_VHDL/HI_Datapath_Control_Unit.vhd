@@ -403,15 +403,6 @@ begin
 		
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			
-			if (RAND_ALIEN_VISIBLE = '0') then
-				random_alien_movement <= DIR_NONE;
-				next_random_alien_movement <= DIR_RIGHT;
-			end if;
-			
-			if (move_rand_alien = '1') then 
-				RAND_ALIEN_MOVEMENT <= random_alien_movement;
-			end if;
-			
 			if (RAND_ALIEN_BORDER_REACHED = DIR_LEFT and last_wall_reached /= DIR_LEFT) then
 			
 				random_alien_movement <= DIR_NONE;
@@ -430,6 +421,15 @@ begin
 				RAND_ALIEN_MOVEMENT <= next_random_alien_movement; --This is needed for the datapath to know where to put the random alien
 				random_alien_movement <= next_random_alien_movement;
 				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
+			else
+				if (RAND_ALIEN_VISIBLE = '0') then
+					random_alien_movement <= DIR_NONE;
+					next_random_alien_movement <= DIR_RIGHT;
+				end if;
+			
+				if (move_rand_alien = '1') then 
+					RAND_ALIEN_MOVEMENT <= random_alien_movement;
+				end if;
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;
