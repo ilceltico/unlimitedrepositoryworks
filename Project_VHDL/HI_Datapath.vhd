@@ -864,6 +864,8 @@ begin
 	rand_alien_movement_handler : process(CLOCK, RESET_N) is
 	begin
 	
+		RAND_ALIEN_VISIBLE <= rand_alien.visible;
+	
 		if (RESET_N = '0') then
 			rand_alien.sprite_indexes <= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
 			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X_LEFT;
@@ -875,8 +877,6 @@ begin
 			rand_alien.exploding 			<= '0';
 			
 		elsif (rising_edge(CLOCK)) then
-		
-			RAND_ALIEN_VISIBLE <= rand_alien.visible;
 		
 			if (SHOW_RAND_ALIEN = '1') then
 				rand_alien.visible <= '1';
