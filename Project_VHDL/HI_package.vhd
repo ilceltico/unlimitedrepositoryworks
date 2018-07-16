@@ -53,6 +53,8 @@ package HI_package is
 	constant PLAYER_LIVES 									: natural := 3;
 	constant PLAYER_SPEED 									: natural := 3;
 	constant PLAYER_SPRITE_COUNT							: natural := 3;
+	constant PLAYER_EXPLOSION_TIME_1us					: natural := 2000000;
+	constant PLAYER_EXPLOSION_FRAME_TIME_1us			: natural := 400000;
 	
 	-- Bullets
 	constant ALIEN_BULLET_SHAPE							: natural := 3; -- Number of alien bullets shapes

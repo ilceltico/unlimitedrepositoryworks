@@ -79,6 +79,7 @@ architecture RTL of HardwareInvaders is
 	signal collision 				: collision_type;
 	signal column_index 			: alien_grid_index_type;
 	signal shield					: shield_type;
+	signal change_player_explosion_sprite : std_logic;
 	
 	signal ps2_code_new 				: std_logic;
 	signal ps2_code					: std_logic_vector(7 downto 0);
@@ -246,6 +247,7 @@ begin
 			ADVANCE_ALIEN_BULLETS	=> advance_alien_bullets,
 			ALIEN_SHOOT					=> alien_shoot,
 			PLAYER_SHOOT				=> player_shoot,
+			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
@@ -282,6 +284,7 @@ begin
 			ADVANCE_PLAYER_BULLET => advance_player_bullet,
 			ADVANCE_ALIEN_BULLETS => advance_alien_bullets,
 			COLLISION => collision,
+			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
 			
 			BUTTON_LEFT => move_left,
 			BUTTON_RIGHT => move_right,
