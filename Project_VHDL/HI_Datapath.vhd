@@ -900,8 +900,15 @@ begin
 				end case;	
 			end if;
 			
+			if (DESTROY.entity_type = ENTITY_RANDOM_ALIEN) then
+				rand_alien.exploding <= '1';
+				rand_alien.current_index <= 2;
+			end if;
+			
 			if (HIDE.entity_type = ENTITY_RANDOM_ALIEN) then
 				rand_alien.visible <= '0';
+				rand_alien.exploding <= '0';
+				rand_alien.current_index <= 0;
 			end if;
 			
 		end if;

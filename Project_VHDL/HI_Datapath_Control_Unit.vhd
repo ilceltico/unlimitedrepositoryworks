@@ -310,7 +310,7 @@ begin
 			
 			end if;
 			
-			if (BUTTON_SHOOT = '1') then
+			if (BUTTON_SHOOT = '1' and destruction_index_array(ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE and destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then
 			
 				PLAYER_SHOOT <= '1';
 			
@@ -431,7 +431,8 @@ begin
 					next_random_alien_movement <= DIR_RIGHT;
 				end if;
 			
-				if (move_rand_alien = '1') then 
+				if (move_rand_alien = '1' and destruction_index_array(RAND_ALIEN_DESTRUCTION_INDEX).entity_type = ENTITY_NONE) then 
+				--if (move_rand_alien = '1') then 
 					RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				end if;
 				
@@ -523,7 +524,7 @@ begin
 				when ENTITY_PLAYER => 
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY => 
-						-- GAMEOVER
+						DESTROY <= reg_collision.second_entity;
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 				when ENTITY_SHIELD =>
@@ -535,7 +536,7 @@ begin
 				when ENTITY_BORDER =>
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-						-- GAMEOVER
+						DESTROY <= (0,0,ENTITY_PLAYER);
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 				when others =>
