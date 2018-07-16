@@ -387,6 +387,7 @@ begin
 	rand_alien_movement_handler : process(CLOCK, RESET_N)
 	
 		variable last_wall_reached 			: direction_type := DIR_LEFT;
+		variable rand_alien_visible_inhibit	: std_logic := '0';
 		
 	begin
 	
@@ -398,6 +399,8 @@ begin
 			RAND_ALIEN_MOVEMENT <= DIR_NONE;
 			SHOW_RAND_ALIEN <= '0';
 			rand_alien_time 	<= (RAND_ALIEN_TIME_MIN_1us - 1);
+			
+			rand_alien_visible_inhibit := '0';
 			
 		elsif rising_edge(CLOCK) then
 		
@@ -421,8 +424,9 @@ begin
 				RAND_ALIEN_MOVEMENT <= next_random_alien_movement; --This is needed for the datapath to know where to put the random alien
 				random_alien_movement <= next_random_alien_movement;
 				rand_alien_time <= RAND_ALIEN_TIME_MIN_1us - 1 + to_integer(unsigned(RAND_GEN))*10000;
+				rand_alien_visible_inhibit := '1';
 			else
-				if (RAND_ALIEN_VISIBLE = '0') then
+				if (RAND_ALIEN_VISIBLE = '0' and rand_alien_visible_inhibit = '0') then
 					random_alien_movement <= DIR_NONE;
 					next_random_alien_movement <= DIR_RIGHT;
 				end if;
@@ -430,6 +434,9 @@ begin
 				if (move_rand_alien = '1') then 
 					RAND_ALIEN_MOVEMENT <= random_alien_movement;
 				end if;
+				
+				rand_alien_visible_inhibit := '0';
+				
 			end if;
 			
 			SHOW_RAND_ALIEN <= spawn_rand_alien;
