@@ -165,6 +165,10 @@ package HI_package is
 	constant SHIELD_4_3_SPRITE								: natural := 40;
 	constant SHIELD_4_4_SPRITE								: natural := 41;
 	
+	-- Points
+	constant BINARY_INPUT_WIDTH							: natural := 15;
+	constant DECIMAL_DIGITS_7SEGMENT						: natural := 4;
+	
 	--------------------------------------------------------------
 	--					            HITBOX				               --
 	--------------------------------------------------------------

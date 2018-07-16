@@ -28,7 +28,10 @@ entity HardwareInvaders is
 		LEDR					  : out 	 std_logic_vector(9 downto 0);
 		LEDG					  : out 	 std_logic_vector(7 downto 0);
 		PS2_CLK				  : in std_logic;
-		PS2_DAT				  : in std_logic
+		PS2_DAT				  : in std_logic;
+		
+		-- 7 segment display
+		HEX0					  : out std_logic_vector(6 downto 0)
 	);
 end entity;
 
@@ -55,6 +58,7 @@ architecture RTL of HardwareInvaders is
 	signal fb_color           : color_type;
 	signal sprite_to_render	  : sprite_type;
 	signal hitbox_to_render	  : hitbox_type;
+	--signal score_counter		  : integer;
 	signal sr_ready			  : std_logic;
 	signal reset_sync_reg     : std_logic;
 	signal frame_time			  : std_logic;
@@ -93,6 +97,12 @@ architecture RTL of HardwareInvaders is
 	signal start						: std_logic;
 	
 	signal rand_output				: std_logic_vector(RAND_ALIEN_GENERATION_TIME_BITS-1 downto 0);
+	
+		-- binary to bcd --
+	signal binary_to_bcd_start 	: std_logic;
+	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH-1 downto 0);
+	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4-1 downto 0);
+	signal b2b_data_available		: std_logic;
 	
 begin
 
@@ -249,6 +259,7 @@ begin
 			
 			SPRITE 						=> sprite_to_render,
 			HITBOX						=> hitbox_to_render,
+			--SCORE							=> score_counter,
 			ALIEN_BORDER_REACHED		=> alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
 			RAND_ALIEN_VISIBLE		=> rand_alien_visible,
@@ -389,5 +400,26 @@ begin
 --				codenew := PS2_code_new;
 --			end if;
 --		end process;
-		
+
+--		Binary_to_BCD : entity work.Binary_to_BCD
+--		port map
+--		(
+--			CLOCK				=> clock_50MHz,
+--			START				=> binary_to_bcd_start,
+--			BINARY			=> binary_value,
+--			
+--			o_BCD				=> bcd_value,
+--			o_DV				=> b2b_data_available
+--		);
+--		
+--		bcd_to_7segment : entity work.bcd_to_7segment
+--		port map 
+--		(
+--			CLOCK			=> clock_50MHz,
+--			RESET_N			=> RESET_N,
+--			BCD_NUMBER		=> bcd_value(3 DOWNTO 0),
+--			
+--			DISPLAY			=> HEX0( 6 downto 0)
+--		);
+--		
 end architecture;

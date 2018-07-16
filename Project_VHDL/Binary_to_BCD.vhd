@@ -43,6 +43,7 @@ begin
     variable v_Upper     : natural;
     variable v_Lower     : natural;
     variable v_BCD_Digit : unsigned(3 downto 0);
+	 -- variable mask_BCD : unsigned(g_INPUT_WIDTH downto 0);
   begin
     if rising_edge(CLOCK) then
  
