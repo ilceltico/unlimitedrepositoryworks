@@ -31,6 +31,7 @@ entity Hi_Datapath_Control_Unit is
 		ADVANCE_PLAYER_BULLET				: out std_logic;
 		ADVANCE_ALIEN_BULLETS				: out std_logic;
 		DESTROY									: out datapath_entity_index_type;
+		DESTROY_SILENT_EXPLOSION			: out std_logic;
 		HIDE									 	: out	datapath_entity_index_type;
 		CHANGE_PLAYER_EXPLOSION_SPRITE 	: out std_logic
 	);
@@ -482,6 +483,7 @@ begin
 		
 			HIDE <= (0,0,ENTITY_NONE);
 			DESTROY <= (0,0,ENTITY_NONE);	
+			DESTROY_SILENT_EXPLOSION <= '0';
 			
 			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
 				destruction_timer_array(I) <= 0;
@@ -495,6 +497,7 @@ begin
 		elsif (rising_edge(CLOCK)) then 
 		
 			DESTROY 	<= (0,0,ENTITY_NONE);
+			DESTROY_SILENT_EXPLOSION <= '0';
 			HIDE 		<= (0,0,ENTITY_NONE);
 			
 			found := '0';
@@ -573,6 +576,7 @@ begin
 							destruction_index_array(reg_collision.first_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(reg_collision.first_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(PLAYER_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
@@ -613,6 +617,7 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(ALIEN_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
@@ -630,6 +635,7 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(reg_collision.second_entity.index_1 + ALIEN_BULLET_BASE_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
@@ -645,6 +651,7 @@ begin
 							destruction_index_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (reg_collision.first_entity);
 							destruction_timer_array(PLAYER_BULLET_DESTRUCTION_INDEX) <= (BULLET_EXPLOSION_TIME_1us);
 							DESTROY <= reg_collision.first_entity;
+							DESTROY_SILENT_EXPLOSION <= '1';
 						end if;
 					when HANDLING_SECOND_ENTITY =>
 						if (destruction_index_array(RAND_ALIEN_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then

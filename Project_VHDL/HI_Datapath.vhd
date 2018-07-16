@@ -12,6 +12,7 @@ entity HI_Datapath is
 		REQ_NEXT_SPRITE						: in 	std_logic;
 		REQUEST_ENTITY_SPRITE				: in 	datapath_entity_index_type;
 		DESTROY									: in 	datapath_entity_index_type;
+		DESTROY_SILENT_EXPLOSION			: in 	std_logic;
 		HIDE										: in 	datapath_entity_index_type;
 		COLUMN_INDEX							: in  alien_grid_index_type;
 --		NEW_LEVEL								: in 	std_logic;
@@ -308,7 +309,7 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then 
 		
-			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0') then 
+			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0' and player_bullet.exploding = '0') then 
 			
 				player_bullet.hitbox.up_left_x <= player.hitbox.up_left_x + player.hitbox.size_x / 2 - PLAYER_BULLET_SIZE_X / 2;
 				player_bullet.hitbox.up_left_y <= player.hitbox.up_left_y;
@@ -330,6 +331,7 @@ begin
 			
 			if (DESTROY.entity_type = ENTITY_PLAYER_BULLET) then 
 				player_bullet.exploding <= '1';
+				player_bullet.visible <= not(DESTROY_SILENT_EXPLOSION);
 				player_bullet.current_index <= BULLET_SPRITE_COUNT - 1;
 				player_bullet.hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				player_bullet.hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;
@@ -983,7 +985,7 @@ begin
 					
 					for J in 0 to BULLET_COUNT - 1 loop 
 								
-						if (alien_bullets(J).visible = '0') then
+						if (alien_bullets(J).visible = '0' and alien_bullets(J).exploding = '0') then
 							COLUMN_CANNOT_SHOOT <= '0';
 							bullet_index := J;
 							available_bullet := '1';
@@ -1041,6 +1043,7 @@ begin
 			if (DESTROY.entity_type = ENTITY_ALIEN_BULLET) then
 			
 				alien_bullets(DESTROY.index_1).exploding <= '1';
+				alien_bullets(DESTROY.index_1).visible <= not(DESTROY_SILENT_EXPLOSION);
 				alien_bullets(DESTROY.index_1).current_index <= BULLET_SPRITE_COUNT - 1;
 				alien_bullets(DESTROY.index_1).hitbox.size_x <= BULLET_EXPLOSION_SIZE_X;
 				alien_bullets(DESTROY.index_1).hitbox.size_y <= BULLET_EXPLOSION_SIZE_Y;

@@ -75,6 +75,7 @@ architecture RTL of HardwareInvaders is
 	signal advance_player_bullet : std_logic;
 	signal advance_alien_bullets : std_logic;
 	signal destroy					: datapath_entity_index_type;
+	signal destroy_silent_explosion	: std_logic;
 	signal hide 					: datapath_entity_index_type;
 	signal collision 				: collision_type;
 	signal column_index 			: alien_grid_index_type;
@@ -242,6 +243,7 @@ begin
 			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
 			COLUMN_INDEX				=> column_index,
 			DESTROY 						=> destroy,
+			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
 			HIDE							=> hide,
 			ADVANCE_PLAYER_BULLET	=> advance_player_bullet,
 			ADVANCE_ALIEN_BULLETS	=> advance_alien_bullets,
@@ -271,9 +273,10 @@ begin
 			PLAYER_BORDER_REACHED => player_border_reached,
 			RAND_GEN	=> rand_output,
 			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
-			DESTROY => destroy,
-			HIDE => hide,
 			
+			DESTROY => destroy,
+			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
+			HIDE => hide,
 			ALIEN_GRID_MOVEMENT => alien_grid_movement,
 			RAND_ALIEN_MOVEMENT => random_alien_movement,
 			SHOW_RAND_ALIEN		=> show_rand_alien,
