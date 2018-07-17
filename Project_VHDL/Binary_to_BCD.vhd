@@ -76,19 +76,18 @@ begin
           end if;
  
         -- Break down each BCD Digit individually.  Check them one-by-one to
-        -- see if they are greater than 4.  If they are, increment by 3.
+        -- see if they are greater than 4. If they are, increment by 3.
         -- Put the result back into r_BCD Vector.  Note that v_BCD_Digit is
         -- unsigned.  Numeric_std does not perform math on std_logic_vector.
         when s_ADD =>
-          v_Upper     := r_Digit_Index*4 + 3;
-          v_Lower     := r_Digit_Index*4;
-          v_BCD_Digit := unsigned(r_BCD(v_Upper downto v_Lower));
+          v_BCD_Digit := unsigned(r_BCD(3 downto 0));
            
           if v_BCD_Digit > 4 then
             v_BCD_Digit := v_BCD_Digit + 3;
           end if;
  
-          r_BCD(v_Upper downto v_Lower) <= std_logic_vector(v_BCD_Digit);
+          r_BCD(3 downto 0) <= std_logic_vector(v_BCD_Digit);
+			 r_BCD <= std_logic_vector(shift_left(unsigned(r_BCD), 4));
           r_SM_Main <= s_CHECK_DIGIT_INDEX;
  
         -- Check if we are done incrementing all of the BCD Digits

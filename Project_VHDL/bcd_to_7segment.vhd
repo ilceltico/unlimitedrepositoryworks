@@ -24,27 +24,27 @@ begin
 		
 			case BCD_NUMBER is
 			when "0000" =>			-- 0
-				DISPLAY <= X"7E";
+				DISPLAY <= "1111110";
 			when "0001" =>			-- 1	
-				DISPLAY <= X"30";
+				DISPLAY <= "0110000";
 			when "0010" =>			-- 2
-				DISPLAY <= X"6D";
+				DISPLAY <= "1101101";
 			when "0011" =>			-- 3
-				DISPLAY <= X"79";
+				DISPLAY <= "1111001";
 			when "0100" => 		-- 4
-				DISPLAY <= X"33";          
+				DISPLAY <= "0110011";          
 			when "0101" =>			-- 5
-				DISPLAY <= X"5B";
+				DISPLAY <= "1011011";
 			when "0110" =>			-- 6
-				DISPLAY <= X"5F";
+				DISPLAY <= "1011111";
 			when "0111" =>			-- 7
-				DISPLAY <= X"70";
+				DISPLAY <= "1110000";
 			when "1000" =>			-- 8
-				DISPLAY <= X"7F";
+				DISPLAY <= "1111111";
 			when "1001" =>			-- 9
-				DISPLAY <= X"7B";
+				DISPLAY <= "1111011";
 			when others =>
-				DISPLAY <= X"47";	-- F
+				DISPLAY <= "1000111";	-- F
 				
       end case;
     end if;

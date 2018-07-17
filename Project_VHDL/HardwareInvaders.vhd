@@ -27,7 +27,10 @@ entity HardwareInvaders is
 		LEDR					  : out 	 	std_logic_vector(9 downto 0);
 		LEDG					  : out 	 	std_logic_vector(7 downto 0);
 		PS2_CLK				  : in 		std_logic;
-		PS2_DAT				  : in 		std_logic
+		PS2_DAT				  : in 		std_logic;
+		
+		-- 7 segment display
+		HEX0					  : out std_logic_vector(6 downto 0)
 	);
 end entity;
 
@@ -116,6 +119,14 @@ architecture RTL of HardwareInvaders is
 	signal shoot									: std_logic;
 	signal start									: std_logic;
 	
+	-- Score
+	--signal score_counter		  : integer;
+	
+	-- binary to bcd --
+	signal binary_to_bcd_start 	: std_logic;
+	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH-1 downto 0);
+	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4-1 downto 0);
+	signal b2b_data_available		: std_logic;
 	
 begin
 
@@ -325,7 +336,8 @@ begin
 			BUTTON_LEFT 							=> move_left,
 			BUTTON_RIGHT 							=> move_right,
 			BUTTON_SHOOT 							=> shoot,
-			
+		
+			--SCORE										=> score_counter,	
 			ALIEN_GRID_MOVEMENT 					=> alien_grid_movement,
 			COLUMN_TO_SHOOT 						=> column_index,
 			ALIEN_SHOOT 							=> alien_shoot,
@@ -450,5 +462,41 @@ begin
 --				codenew := PS2_code_new;
 --			end if;
 --		end process;
+
+		Binary_to_BCD : entity work.Binary_to_BCD
+		port map
+		(
+			CLOCK				=> clock_50MHz,
+			START				=> binary_to_bcd_start,
+			BINARY			=> binary_value,
+			
+			--o_BCD				=> bcd_value,
+			o_DV				=> b2b_data_available
+		);
+		
+		bcd_to_7segment : entity work.bcd_to_7segment
+		port map 
+		(
+			CLOCK			=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			BCD_NUMBER		=> bcd_value(3 DOWNTO 0),
+			
+			DISPLAY			=> HEX0( 6 downto 0)
+		);
+		
+		test_7segment : process(clock_50MHz, RESET_N) is
+		begin
+		
+			if (RESET_N = '0') then
+			
+				bcd_value <= X"0000";
+			
+			elsif (rising_edge(clock_50MHz)) then
+			
+				bcd_value <= X"1111";
+				
+			end if;
+		
+		end process;
 		
 end architecture;
