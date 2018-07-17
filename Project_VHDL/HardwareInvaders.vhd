@@ -5,96 +5,117 @@ use work.vga_package.all;
 use work.hi_package.all;
 
 entity HardwareInvaders is
-	port
-	(
-		CLOCK_50            : in  std_logic;
-		KEY                 : in  std_logic_vector(3 downto 0);
-		SW                  : in  std_logic_vector(9 downto 0);
+	port (
+		CLOCK_50            : in  		std_logic;
+		KEY                 : in  		std_logic_vector(3 downto 0);
+		SW                  : in  		std_logic_vector(9 downto 0);
 		
-		VGA_R               : out std_logic_vector(3 downto 0);
-		VGA_G               : out std_logic_vector(3 downto 0);
-		VGA_B               : out std_logic_vector(3 downto 0);
-		VGA_HS              : out std_logic;
-		VGA_VS              : out std_logic;
+		VGA_R               : out 		std_logic_vector(3 downto 0);
+		VGA_G               : out 		std_logic_vector(3 downto 0);
+		VGA_B               : out 		std_logic_vector(3 downto 0);
+		VGA_HS              : out 		std_logic;
+		VGA_VS              : out	 	std_logic;
 		
-		SRAM_ADDR           : out   std_logic_vector(17 downto 0);
-		SRAM_DQ             : inout std_logic_vector(15 downto 0);
-		SRAM_CE_N           : out   std_logic;
-		SRAM_OE_N           : out   std_logic;
-		SRAM_WE_N           : out   std_logic;
-		SRAM_UB_N           : out   std_logic;
-		SRAM_LB_N           : out   std_logic;
+		SRAM_ADDR           : out  	std_logic_vector(17 downto 0);
+		SRAM_DQ             : inout	std_logic_vector(15 downto 0);
+		SRAM_CE_N           : out   	std_logic;
+		SRAM_OE_N           : out   	std_logic;
+		SRAM_WE_N           : out   	std_logic;
+		SRAM_UB_N           : out   	std_logic;
+		SRAM_LB_N           : out   	std_logic;
 		
-		LEDR					  : out 	 std_logic_vector(9 downto 0);
-		LEDG					  : out 	 std_logic_vector(7 downto 0);
-		PS2_CLK				  : in std_logic;
-		PS2_DAT				  : in std_logic
+		LEDR					  : out 	 	std_logic_vector(9 downto 0);
+		LEDG					  : out 	 	std_logic_vector(7 downto 0);
+		PS2_CLK				  : in 		std_logic;
+		PS2_DAT				  : in 		std_logic
 	);
 end entity;
 
 architecture RTL of HardwareInvaders is
-	signal clock_50MHz        : std_logic;
-	signal clock_debug		  : std_logic;
-	signal clock_100MHz       : std_logic;
-	signal RESET_N            : std_logic;
-	signal time_1us			  : std_logic;
-	signal show					  : std_logic;
-	signal draw_sprite		  : std_logic;
-	signal fb_ready           : std_logic;
-	signal fb_clear           : std_logic;
-	signal fb_flip            : std_logic;
-	signal fb_draw_rect       : std_logic;
-	signal fb_draw_line       : std_logic;
-	signal fb_fill_rect       : std_logic;
-	signal sprite_x           : xy_coord_type;
-	signal sprite_y           : xy_coord_type;
-	signal fb_x0              : xy_coord_type;
-	signal fb_y0              : xy_coord_type;
-	signal fb_x1              : xy_coord_type;
-	signal fb_y1              : xy_coord_type;
-	signal fb_color           : color_type;
-	signal sprite_to_render	  : sprite_type;
-	signal hitbox_to_render	  : hitbox_type;
-	signal sr_ready			  : std_logic;
-	signal reset_sync_reg     : std_logic;
-	signal frame_time			  : std_logic;
-	signal fb_vsync			  : std_logic;
-	signal req_next_sprite 	  : std_logic;
-	signal request_entity_sprite	: datapath_entity_index_type;
-	signal random_alien_movement : direction_type;
-	signal alien_grid_movement : direction_type;
-	signal player_movement		: direction_type;
-	signal alien_border_reached	: direction_type;
-	signal rand_alien_border_reached	: direction_type;
-	signal rand_alien_visible			: std_logic;
-	signal player_border_reached 	: direction_type;
-	signal show_rand_alien 	: std_logic;
-	signal column_cannot_shoot : std_logic;
-	signal alien_shoot			: std_logic;
-	signal player_shoot			: std_logic;
-	signal advance_player_bullet : std_logic;
-	signal advance_alien_bullets : std_logic;
-	signal destroy					: datapath_entity_index_type;
-	signal destroy_silent_explosion	: std_logic;
-	signal hide 					: datapath_entity_index_type;
-	signal collision 				: collision_type;
-	signal column_index 			: alien_grid_index_type;
-	signal shield					: shield_type;
-	signal change_player_explosion_sprite : std_logic;
+
+	-- VGA_Framebuffer outputs
+	signal fb_vsync			  					: std_logic;
+	signal fb_ready           					: std_logic;
+
+	-- HI_View_Control_Unit outputs
+	signal draw_sprite		  					: std_logic;
+	signal show					  					: std_logic;
+	signal req_next_sprite 	  					: std_logic;
+	signal request_entity_sprite				: datapath_entity_index_type;
 	
-	signal ps2_code_new 				: std_logic;
-	signal ps2_code					: std_logic_vector(7 downto 0);
-	signal keyboard_move_left		: std_logic;
-	signal keyboard_move_right		: std_logic;
-	signal keyboard_shoot 			: std_logic;
-	signal keyboard_start 			: std_logic;
+	-- HI_View outputs
+	signal fb_flip            					: std_logic;
+	signal fb_draw_rect       					: std_logic;
+	signal fb_draw_line       					: std_logic;
+	signal fb_fill_rect       					: std_logic;
+	signal fb_clear           					: std_logic;
+	signal fb_color          	 				: color_type;
+	signal fb_x0              					: xy_coord_type;
+	signal fb_y0             	 				: xy_coord_type;
+	signal fb_x1             	 				: xy_coord_type;
+	signal fb_y1             	 				: xy_coord_type;
+	signal sr_ready			  					: std_logic;
 	
-	signal move_left					: std_logic;
-	signal move_right 				: std_logic;
-	signal shoot						: std_logic;
-	signal start						: std_logic;
+	-- HI_Datapath outputs
+	signal sprite_to_render		  				: sprite_type;
+	signal hitbox_to_render	  					: hitbox_type;
+	signal alien_border_reached				: direction_type;
+	signal rand_alien_border_reached			: direction_type;
+	signal rand_alien_visible					: std_logic;
+	signal player_border_reached 				: direction_type;
+	signal column_cannot_shoot 				: std_logic;
+	signal collision 								: collision_type;
 	
-	signal rand_output				: std_logic_vector(RAND_ALIEN_GENERATION_TIME_BITS-1 downto 0);
+	-- HI_Datapath_Control_Unit outputs
+	signal alien_grid_movement 				: direction_type;
+	signal column_index 							: alien_grid_index_type;
+	signal alien_shoot							: std_logic;
+	signal random_alien_movement 				: direction_type;
+	signal show_rand_alien 						: std_logic;
+	signal player_movement						: direction_type;
+	signal player_shoot							: std_logic;
+	signal advance_player_bullet 				: std_logic;
+	signal advance_alien_bullets 				: std_logic;
+	signal destroy									: datapath_entity_index_type;
+	signal destroy_silent_explosion			: std_logic;
+	signal hide 									: datapath_entity_index_type;
+	signal change_player_explosion_sprite 	: std_logic;
+	
+	-- ps2_keyboard outputs
+	signal ps2_code_new 							: std_logic;
+	signal ps2_code								: std_logic_vector(7 downto 0);
+	
+	-- ps2_keyboard_handler outputs
+	signal keyboard_move_left					: std_logic;
+	signal keyboard_move_right					: std_logic;
+	signal keyboard_shoot 						: std_logic;
+	signal keyboard_start 						: std_logic;
+	
+	-- rand_gen ouptuts
+	signal rand_output							: std_logic_vector(RAND_ALIEN_GENERATION_TIME_BITS-1 downto 0);
+	
+	-- Clocks
+	signal clock_50MHz        					: std_logic;
+	signal clock_debug		  					: std_logic;
+	signal clock_100MHz       					: std_logic;
+	signal time_1us			  					: std_logic;
+	signal frame_time			 					: std_logic;
+	
+	-- Resets
+	signal RESET_N            					: std_logic;
+	signal reset_sync_reg     					: std_logic;
+	
+	-- ??? wat_lady.jpg
+	signal sprite_x           					: xy_coord_type;
+	signal sprite_y           					: xy_coord_type;
+	signal shield									: shield_type;
+	
+	-- Keyboard inputs
+	signal move_left								: std_logic;
+	signal move_right 							: std_logic;
+	signal shoot									: std_logic;
+	signal start									: std_logic;
+	
 	
 begin
 
@@ -108,47 +129,75 @@ begin
 					
 	reset_sync : process(CLOCK_50)
 	begin
+		
 		if (rising_edge(CLOCK_50)) then
+			
 			reset_sync_reg <= SW(9);
-			RESET_N <= reset_sync_reg;
+			RESET_N 			<= reset_sync_reg;
+		
 		end if;
+	
 	end process;
 
 	reference_time_gen : process(clock_50Mhz, RESET_N)
+		
 		variable counter : integer range 0 to (REFERENCE_TIME_50MHz - 1);
+	
 	begin
+		
 		if (RESET_N = '0') then
-			counter := 0;
+		
+			counter 	:= 0;
 			time_1us <= '0';
+		
 		elsif (rising_edge(clock_50MHz)) then
+		
 			if(counter = counter'high) then
+				
 				counter := 0;
 				time_1us <= '1';
+		
 			else
-				counter := counter+1;
+			
+				counter := counter + 1;
 				time_1us <= '0';			
+			
 			end if;
 		end if;
+		
 	end process;
 
 	frame_time_gen : process(clock_50MHz, RESET_N)
+		
 		variable counter : integer range 0 to (FRAME_TIME_1us - 1);
+	
 	begin
+	
 		if (RESET_N = '0') then
-			counter := 0;
-			frame_time <= '0';
+		
+			counter 		:= 0;
+			frame_time 	<= '0';
+		
 		elsif (rising_edge(clock_50MHz)) then
-			frame_time <= '0';
+		
+			frame_time 	<= '0';
+			
 			if (time_1us = '1') then
+			
 				if(counter = counter'high) then
-					counter := 0;
-					frame_time <= '1';
+				
+					counter 		:= 0;
+					frame_time 	<= '1';
+			
 				else
-					counter := counter+1;
-					frame_time <= '0';			
+				
+					counter 		:= counter+1;
+					frame_time 	<= '0';			
+			
 				end if;
 			end if;
 		end if;
+		
 	end process;
 	
 	VGA_VS <= fb_vsync;
@@ -161,7 +210,6 @@ begin
 		port map (
 			CLOCK     => clock_100MHz,
 			RESET_N   => RESET_N,
-			READY     => fb_ready,
 			COLOR     => fb_color,
 			CLEAR     => fb_clear,
 			DRAW_RECT => fb_draw_rect,
@@ -173,12 +221,12 @@ begin
 			X1        => fb_x1,
 			Y1        => fb_y1,
 				
+			READY     => fb_ready,
 			VGA_R     => VGA_R,
 			VGA_G     => VGA_G,
 			VGA_B     => VGA_B,
 			VGA_HS    => VGA_HS,
 			VGA_VS    => fb_vsync,
-		
 			SRAM_ADDR => SRAM_ADDR,
 			SRAM_DQ   => SRAM_DQ,			
 			SRAM_CE_N => SRAM_CE_N,
@@ -191,15 +239,15 @@ begin
 	view_control_unit : entity work.HI_View_Control_Unit
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
-			FRAME_TIME 		=> frame_time,
-			RESET_N			=> RESET_N,
-			READY 			=> sr_ready,
+			CLOCK							=> clock_50MHz,
+			FRAME_TIME 					=> frame_time,
+			RESET_N						=> RESET_N,
+			READY 						=> sr_ready,
 			
-			DRAW_SPRITE		=> draw_sprite,
-			SHOW				=> show,
-			REQ_NEXT_SPRITE => req_next_sprite,
-			REQUEST_ENTITY_SPRITE => request_entity_sprite
+			DRAW_SPRITE					=> draw_sprite,
+			SHOW							=> show,
+			REQ_NEXT_SPRITE 			=> req_next_sprite,
+			REQUEST_ENTITY_SPRITE 	=> request_entity_sprite
 		);
 		
 	view : entity work.HI_View
@@ -233,65 +281,64 @@ begin
 		datapath : entity work.HI_Datapath
 		port map 
 		(
-			CLOCK							=> clock_50MHz,
-			RESET_N						=> RESET_N,
-			REQ_NEXT_SPRITE 			=> req_next_sprite,
-			REQUEST_ENTITY_SPRITE	=> request_entity_sprite,
-			PLAYER_MOVEMENT			=> player_movement,
-			RAND_ALIEN_MOVEMENT		=> random_alien_movement,
-			SHOW_RAND_ALIEN			=> show_rand_alien,
-			ALIEN_GRID_MOVEMENT		=> alien_grid_movement,
-			COLUMN_INDEX				=> column_index,
-			DESTROY 						=> destroy,
-			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
-			HIDE							=> hide,
-			ADVANCE_PLAYER_BULLET	=> advance_player_bullet,
-			ADVANCE_ALIEN_BULLETS	=> advance_alien_bullets,
-			ALIEN_SHOOT					=> alien_shoot,
-			PLAYER_SHOOT				=> player_shoot,
-			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
+			CLOCK										=> clock_50MHz,
+			RESET_N									=> RESET_N,
+			REQ_NEXT_SPRITE 						=> req_next_sprite,
+			REQUEST_ENTITY_SPRITE				=> request_entity_sprite,
+			PLAYER_MOVEMENT						=> player_movement,
+			RAND_ALIEN_MOVEMENT					=> random_alien_movement,
+			SHOW_RAND_ALIEN						=> show_rand_alien,
+			ALIEN_GRID_MOVEMENT					=> alien_grid_movement,
+			COLUMN_INDEX							=> column_index,
+			DESTROY 									=> destroy,
+			DESTROY_SILENT_EXPLOSION 			=> destroy_silent_explosion,
+			HIDE										=> hide,
+			ADVANCE_PLAYER_BULLET				=> advance_player_bullet,
+			ADVANCE_ALIEN_BULLETS				=> advance_alien_bullets,
+			ALIEN_SHOOT								=> alien_shoot,
+			PLAYER_SHOOT							=> player_shoot,
+			CHANGE_PLAYER_EXPLOSION_SPRITE 	=> change_player_explosion_sprite,
 			
-			SPRITE 						=> sprite_to_render,
-			HITBOX						=> hitbox_to_render,
-			ALIEN_BORDER_REACHED		=> alien_border_reached,
-			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
-			RAND_ALIEN_VISIBLE		=> rand_alien_visible,
-			PLAYER_BORDER_REACHED 	=> player_border_reached,
-			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot,
-			COLLISION 					=> collision
+			SPRITE 									=> sprite_to_render,
+			HITBOX									=> hitbox_to_render,
+			ALIEN_BORDER_REACHED					=> alien_border_reached,
+			RAND_ALIEN_BORDER_REACHED 			=> rand_alien_border_reached,
+			RAND_ALIEN_VISIBLE					=> rand_alien_visible,
+			PLAYER_BORDER_REACHED 				=> player_border_reached,
+			COLUMN_CANNOT_SHOOT					=> column_cannot_shoot,
+			COLLISION 								=> collision
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
 		port map
 		(
-			CLOCK => clock_50MHz,
-			RESET_N => RESET_N, 
-			TIME_1US => time_1us,
-			ALIEN_BORDER_REACHED => alien_border_reached,
-			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
-			RAND_ALIEN_VISIBLE => rand_alien_visible,
-			PLAYER_BORDER_REACHED => player_border_reached,
-			RAND_GEN	=> rand_output,
-			COLUMN_CANNOT_SHOOT => column_cannot_shoot,
+			CLOCK 									=> clock_50MHz,
+			RESET_N 									=> RESET_N, 
+			TIME_1US 								=> time_1us,
+			ALIEN_BORDER_REACHED 				=> alien_border_reached,
+			RAND_ALIEN_BORDER_REACHED 			=> rand_alien_border_reached,
+			RAND_ALIEN_VISIBLE 					=> rand_alien_visible,
+			PLAYER_BORDER_REACHED 				=> player_border_reached,
+			RAND_GEN									=> rand_output,
+			COLUMN_CANNOT_SHOOT 					=> column_cannot_shoot,
+			COLLISION 								=> collision,
+			BUTTON_LEFT 							=> move_left,
+			BUTTON_RIGHT 							=> move_right,
+			BUTTON_SHOOT 							=> shoot,
 			
-			DESTROY => destroy,
-			DESTROY_SILENT_EXPLOSION => destroy_silent_explosion,
-			HIDE => hide,
-			ALIEN_GRID_MOVEMENT => alien_grid_movement,
-			RAND_ALIEN_MOVEMENT => random_alien_movement,
-			SHOW_RAND_ALIEN		=> show_rand_alien,
-			PLAYER_MOVEMENT => player_movement,
-			PLAYER_SHOOT => player_shoot,
-			ALIEN_SHOOT => alien_shoot,
-			COLUMN_TO_SHOOT => column_index,
-			ADVANCE_PLAYER_BULLET => advance_player_bullet,
-			ADVANCE_ALIEN_BULLETS => advance_alien_bullets,
-			COLLISION => collision,
-			CHANGE_PLAYER_EXPLOSION_SPRITE => change_player_explosion_sprite,
-			
-			BUTTON_LEFT => move_left,
-			BUTTON_RIGHT => move_right,
-			BUTTON_SHOOT => shoot
+			ALIEN_GRID_MOVEMENT 					=> alien_grid_movement,
+			COLUMN_TO_SHOOT 						=> column_index,
+			ALIEN_SHOOT 							=> alien_shoot,
+			RAND_ALIEN_MOVEMENT 					=> random_alien_movement,
+			SHOW_RAND_ALIEN						=> show_rand_alien,
+			PLAYER_MOVEMENT 						=> player_movement,
+			PLAYER_SHOOT 							=> player_shoot,
+			ADVANCE_PLAYER_BULLET 				=> advance_player_bullet,
+			ADVANCE_ALIEN_BULLETS 				=> advance_alien_bullets,
+			DESTROY 									=> destroy,
+			DESTROY_SILENT_EXPLOSION 			=> destroy_silent_explosion,
+			HIDE 										=> hide,
+			CHANGE_PLAYER_EXPLOSION_SPRITE 	=> change_player_explosion_sprite
 		);
 		
 		ps2_keyboard : entity work.ps2_keyboard
@@ -299,7 +346,8 @@ begin
 		(
 			clk   			=> clock_50MHz,  
 			ps2_clk      	=> PS2_CLK,     
-			ps2_data     	=> PS2_DAT,     
+			ps2_data     	=> PS2_DAT,    
+			
 			ps2_code_new 	=> ps2_code_new,
 			ps2_code			=> ps2_code
 		);
@@ -327,28 +375,35 @@ begin
 		(
 			CLOCK				=> time_1us,
 			RESET_N			=> RESET_N,
+			
 			RAND_OUTPUT		=> rand_output
 		);
 				
 		led_keyboard : process(clock_50MHz, RESET_N) is
 		begin
+		
 			if (RESET_N = '0') then
+		
 				LEDG(7) <= '0';
 				LEDG(5) <= '0';
 				LEDG(3) <= '0';
 				LEDG(1) <= '0';
+			
 			elsif (rising_edge(clock_50MHz)) then
+			
 				LEDG(7) <= keyboard_move_left;
 				LEDG(5) <= keyboard_move_right;
 				LEDG(3) <= keyboard_shoot;
 				LEDG(1) <= keyboard_start;
+			
 			end if;
+		
 		end process;
 		
-		move_left <= keyboard_move_left or not(KEY(3));
-		move_right <= keyboard_move_right or not(KEY(2));
-		shoot <= keyboard_shoot or not(KEY(1));
-		start <= keyboard_start or not(KEY(0));
+		move_left 	<= keyboard_move_left or not(KEY(3));
+		move_right 	<= keyboard_move_right or not(KEY(2));
+		shoot 		<= keyboard_shoot or not(KEY(1));
+		start 		<= keyboard_start or not(KEY(0));
 
 --		led_ps2_code : process(clock_50MHz, RESET_N) is
 --			variable selectLed : std_logic := '0';

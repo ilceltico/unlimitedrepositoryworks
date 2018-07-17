@@ -3,7 +3,8 @@
 --use ieee.std_logic_1164.all;
 
 --entity seven_segment_displays_handler is
---	generic ( 
+--	generic
+--	( 
 --		DISPLAYS_NUMBER	: in positive;
 --		DECIMAL_DIGITS		: in positive
 --	)

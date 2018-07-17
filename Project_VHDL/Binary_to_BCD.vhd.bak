@@ -58,12 +58,14 @@ begin
             r_SM_Main <= s_IDLE;
           end if;
  
+ 
         -- Always shift the BCD Vector until we have shifted all bits through
         -- Shift the most significant bit of r_Binary into r_BCD lowest bit.
         when s_SHIFT =>
           r_BCD     <= r_BCD(r_BCD'left-1 downto 0) & r_Binary(r_Binary'left);
           r_Binary  <= r_Binary(r_Binary'left-1 downto 0) & '0';
           r_SM_Main <= s_CHECK_SHIFT_INDEX;
+ 
  
         -- Check if we are done with shifting in r_Binary vector
         when s_CHECK_SHIFT_INDEX => 
@@ -74,6 +76,7 @@ begin
             r_Loop_Count <= r_Loop_Count + 1;
             r_SM_Main    <= s_ADD;
           end if;
+ 
  
         -- Break down each BCD Digit individually.  Check them one-by-one to
         -- see if they are greater than 4.  If they are, increment by 3.
@@ -91,6 +94,7 @@ begin
           r_BCD(v_Upper downto v_Lower) <= std_logic_vector(v_BCD_Digit);
           r_SM_Main <= s_CHECK_DIGIT_INDEX;
  
+ 
         -- Check if we are done incrementing all of the BCD Digits
         when s_CHECK_DIGIT_INDEX =>
           if r_Digit_Index = g_DECIMAL_DIGITS-1 then
@@ -101,14 +105,16 @@ begin
             r_SM_Main     <= s_ADD;
           end if;
  
+ 
         when s_BCD_DONE =>
           r_SM_Main <= s_IDLE;
-       
+ 
+           
         when others =>
           r_SM_Main <= s_IDLE;
            
       end case;
-    end if;            
+    end if;                             -- rising_edge(i_Clock)
   end process Double_Dabble;
  
   o_DV  <= '1' when r_SM_Main = s_BCD_DONE else '0';

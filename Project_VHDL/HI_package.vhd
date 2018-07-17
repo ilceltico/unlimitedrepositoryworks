@@ -6,31 +6,31 @@ use work.vga_package.all;
 package HI_package is
 
 	-- Common constants
-	constant REFERENCE_TIME_50MHz							: natural 	:= 50; -- Generates 1 microsecond, based on a 50MHz clock
+	constant REFERENCE_TIME_50MHz							: natural := 50; -- Generates 1 microsecond, based on a 50MHz clock
 	
-	constant SPRITE_COUNT									: natural 	:= 42;
-	constant ALIEN_SPRITE_COUNT							: natural	:= 3;
-	constant BULLET_SPRITE_COUNT							: natural 	:= 5;
-	constant SHIELD_SPRITE_COUNT							: natural 	:= 4;
-	constant SPRITE_SIZE										: natural 	:= 32;
-	constant MAX_HITBOX_SIZE								: natural 	:= 64;
+	constant SPRITE_COUNT									: natural := 42;
+	constant ALIEN_SPRITE_COUNT							: natural := 3;
+	constant BULLET_SPRITE_COUNT							: natural := 5;
+	constant SHIELD_SPRITE_COUNT							: natural := 4;
+	constant SPRITE_SIZE										: natural := 32;
+	constant MAX_HITBOX_SIZE								: natural := 64;
 	
-	constant ALIENS_PER_COLUMN								: natural	:= 5;
-	constant COLUMNS_PER_GRID 								: natural  	:= 11;
-	constant SHIELD_COUNT									: natural  	:= 4;
-	constant SHIELD_PARTS									: natural	:= 4;
-	constant BULLET_COUNT									: natural 	:= 3;
-	constant ALIEN_SIZE_X									: natural 	:= 26;
-	constant ALIEN_SIZE_y									: natural 	:= 26;
-	constant ALIEN_SPACING_X								: natural 	:= 8;
-	constant ALIEN_SPACING_Y								: natural 	:= 15;
-	constant SIDE_MARGIN 									: natural 	:= 8;
-	constant TOP_MARGIN 										: natural 	:= 8;
-	constant BOTTOM_MARGIN 									: natural	:= 10;
-	constant RAND_ALIEN_SIZE_X 							: natural 	:= 46;
-	constant RAND_ALIEN_SIZE_Y								: natural	:= 26;
-	constant INDEX_1_MAX										: natural 	:= 16;  -- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
-	constant EXPLOSION_TIME_MAX_1us						: natural 	:= 10000000;
+	constant ALIENS_PER_COLUMN								: natural := 5;
+	constant COLUMNS_PER_GRID 								: natural := 11;
+	constant SHIELD_COUNT									: natural := 4;
+	constant SHIELD_PARTS									: natural := 4;
+	constant BULLET_COUNT									: natural := 3;
+	constant ALIEN_SIZE_X									: natural := 26;
+	constant ALIEN_SIZE_y									: natural := 26;
+	constant ALIEN_SPACING_X								: natural := 8;
+	constant ALIEN_SPACING_Y								: natural := 15;
+	constant SIDE_MARGIN 									: natural := 8;
+	constant TOP_MARGIN 										: natural := 8;
+	constant BOTTOM_MARGIN 									: natural := 10;
+	constant RAND_ALIEN_SIZE_X 							: natural := 46;
+	constant RAND_ALIEN_SIZE_Y								: natural := 26;
+	constant INDEX_1_MAX										: natural := 16;  -- Set this last one to the maximum value between SHIELDS_COUNT, BULLET_COUNT and COLUMNS_PER_GRID
+	constant EXPLOSION_TIME_MAX_1us						: natural := 10000000;
 	
 	constant FRAME_TIME_1us 								: natural := 16666; --60fps
 	constant FRAME_WIDTH										: natural := 512;

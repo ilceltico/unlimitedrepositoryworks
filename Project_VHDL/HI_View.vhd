@@ -5,12 +5,12 @@ use work.hi_package.all;
 use work.vga_package.all;
 
 entity HI_View is 
-	generic
-	(
+
+	generic (
 		UPSCALE_PRECISION : integer
 	);
-	port 
-	(
+
+	port (
 		CLOCK				: in	std_logic;
 		RESET_N			: in 	std_logic;
 		DRAW_SPRITE		: in 	std_logic;
@@ -36,27 +36,28 @@ end entity;
 
 architecture RTL of HI_View is
 
-type state_type is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
-type substate_type is (COMPUTE_UPSCALE_FACTOR_X, COMPUTE_UPSCALE_FACTOR_Y, DRAWING_PIXELS);
+	type state_type 		is (IDLE, WAITING, DRAWING, SHOWING, CLEARING, INIT);
+	type substate_type 	is (COMPUTE_UPSCALE_FACTOR_X, COMPUTE_UPSCALE_FACTOR_Y, DRAWING_PIXELS);
 
-	signal state				: state_type := CLEARING;
-	signal substate			: substate_type := COMPUTE_UPSCALE_FACTOR_X;
-	signal next_state			: state_type := INIT;
-	signal row					: integer := 0;
-	signal column				: integer := 0;
-	signal show_asap			: std_logic := '0';
+	signal state				: state_type 		:= CLEARING;
+	signal substate			: substate_type 	:= COMPUTE_UPSCALE_FACTOR_X;
+	signal next_state			: state_type 		:= INIT;
+	signal row					: integer 			:= 0;
+	signal column				: integer 			:= 0;
+	signal show_asap			: std_logic 		:= '0';
 
 begin
+
 	process(CLOCK, RESET_N)
 	
-		variable pixel_scale_factor_x : integer := 1;
-		variable pixel_scale_factor_y : integer := 1;
-		variable reg_sprite				: sprite_type := sprite_empty;
-		variable reg_hitbox 				: hitbox_type := (0,0,1,1);
-		variable reg_fb_x0				: xy_coord_type := 0; 
-		variable reg_fb_x1				: xy_coord_type := 0;
-		variable reg_fb_y0				: xy_coord_type := 0;
-		variable reg_fb_y1				: xy_coord_type := 0;
+		variable pixel_scale_factor_x : integer 			:= 1;
+		variable pixel_scale_factor_y : integer 			:= 1;
+		variable reg_sprite				: sprite_type 		:= sprite_empty;
+		variable reg_hitbox 				: hitbox_type 		:= (0,0,1,1);
+		variable reg_fb_x0				: xy_coord_type 	:= 0; 
+		variable reg_fb_x1				: xy_coord_type 	:= 0;
+		variable reg_fb_y0				: xy_coord_type 	:= 0;
+		variable reg_fb_y1				: xy_coord_type 	:= 0;
 	
 	begin
 	
@@ -76,10 +77,11 @@ begin
 			row 				<= 0;
 			column 			<= 0;
 			show_asap 		<= '0';
-			reg_sprite 		:= sprite_empty;
-			reg_hitbox		:= (0,0,1,1);
 			state 			<= CLEARING;
 			substate 		<= COMPUTE_UPSCALE_FACTOR_X;
+			
+			reg_sprite 		:= sprite_empty;
+			reg_hitbox		:= (0,0,1,1);
 			reg_fb_x0 		:= 0;
 			reg_fb_x1		:= 0;
 			reg_fb_y0		:= 0;
@@ -96,11 +98,12 @@ begin
 			FB_X1 			<= 0;
 			FB_Y0 			<= 0;
 			FB_Y1 			<= 0;
+			FB_COLOR 		<= COLOR_BLACK;
+			
 			reg_fb_x0 		:= 0;
 			reg_fb_x1		:= 0;
 			reg_fb_y0		:= 0;
 			reg_fb_y1		:= 0;
-			FB_COLOR 		<= COLOR_BLACK;
 			
 			if (SHOW = '1') then
 			
@@ -110,152 +113,162 @@ begin
 		
 			case (state) is 
 			
-				when IDLE => 
+			when IDLE => 
 	
-					READY 		<= '1';
-					row 			<= 0;
-					column		<= 0;
+				READY 		<= '1';
 					
-					if (show_asap = '1' and DRAW_SPRITE = '0') then
+				row 			<= 0;
+				column		<= 0;
 					
-						READY 		<= '0';
-						state 		<= WAITING;
-						next_state 	<= SHOWING;
-						show_asap 	<= '0';
+				if (show_asap = '1' and DRAW_SPRITE = '0') then
 					
-					end if;
+					READY 		<= '0';
 					
-					if (DRAW_SPRITE = '1') then
+					state 		<= WAITING;
+					next_state 	<= SHOWING;
+					show_asap 	<= '0';
 					
-						READY 					<= '0';
-						state 					<= WAITING;
-						next_state 				<= DRAWING;
-						substate 				<= COMPUTE_UPSCALE_FACTOR_X;
-						reg_sprite				:= SPRITE;
-						reg_hitbox 				:= HITBOX;
+				end if;
 					
-					end if;
+				if (DRAW_SPRITE = '1') then
 					
-				when WAITING =>
-					
-					if (FB_READY = '1') then
-					
-						state <= next_state;
-					
-					end if;
+					READY 		<= '0';
 				
-				when DRAWING =>
-				
-					case (substate) is 
+					state 		<= WAITING;
+					next_state 	<= DRAWING;
+					substate 	<= COMPUTE_UPSCALE_FACTOR_X;
 					
-						when COMPUTE_UPSCALE_FACTOR_X =>
-						
-							pixel_scale_factor_x := (reg_hitbox.size_x * UPSCALE_PRECISION) / reg_sprite.logic_dim_x;
-							substate <= COMPUTE_UPSCALE_FACTOR_Y;
-						
-						when COMPUTE_UPSCALE_FACTOR_Y =>
+					reg_sprite	:= SPRITE;
+					reg_hitbox 	:= HITBOX;
+					
+				end if;	
+					
+			when WAITING =>
+					
+				if (FB_READY = '1') then
+				
+					state <= next_state;
+				
+				end if;
+			
+			when DRAWING =>
+			
+				case (substate) is 
+				
+				when COMPUTE_UPSCALE_FACTOR_X =>
+					
+					substate 				<= COMPUTE_UPSCALE_FACTOR_Y;
+					pixel_scale_factor_x := (reg_hitbox.size_x * UPSCALE_PRECISION) / reg_sprite.logic_dim_x;
+				
+				when COMPUTE_UPSCALE_FACTOR_Y =>
+			
+					substate 				<= DRAWING_PIXELS;
+					pixel_scale_factor_y := (reg_hitbox.size_y * UPSCALE_PRECISION) / reg_sprite.logic_dim_y;
+				
+				when DRAWING_PIXELS =>
+			
+					state 		<= WAITING;
+					next_state 	<= DRAWING;
+				
+					if (column >= reg_sprite.logic_dim_x - 1) then
+					
+						column <= 0;
 							
-							pixel_scale_factor_y := (reg_hitbox.size_y * UPSCALE_PRECISION) / reg_sprite.logic_dim_y;
-							substate <= DRAWING_PIXELS;
+						if (row >= reg_sprite.logic_dim_y - 1) then
 						
-						when DRAWING_PIXELS =>
-				
-							state 		<= WAITING;
-							next_state 	<= DRAWING;
+							row 			<= 0;
+							next_state 	<= IDLE;
+							substate 	<= COMPUTE_UPSCALE_FACTOR_X;
 						
-							if (column >= reg_sprite.logic_dim_x - 1) then
+						else
+						
+							row 			<= row + 1;
+						
+						end if;
+						
+					else
+					
+						column <= column + 1;
+					
+					end if;
+					
+					if (reg_sprite.img_pixels(row, column) = '1') then
+					
+						reg_fb_x0 	 	:= reg_hitbox.up_left_x + (column 			* pixel_scale_factor_x) / UPSCALE_PRECISION;
+						reg_fb_x1	 	:= reg_hitbox.up_left_x + ((column + 1) 	* pixel_scale_factor_x) / UPSCALE_PRECISION - 1;
+						reg_fb_y0	 	:= reg_hitbox.up_left_y + (row 				* pixel_scale_factor_y) / UPSCALE_PRECISION;
+						reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) 		* pixel_scale_factor_y) / UPSCALE_PRECISION - 1;
+						
+--						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
+									-- Overflow handling
+						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
 							
-								column <= 0;
-								if (row >= reg_sprite.logic_dim_y - 1) then
-									
-									row <= 0;
-									next_state <= IDLE;
-									substate <= COMPUTE_UPSCALE_FACTOR_X;
+							FB_FILL_RECT 	<= '1';
+							FB_COLOR 	 	<= reg_sprite.color;
+							FB_X0 			<= reg_fb_x0;
+							FB_X1 			<= reg_fb_x1;
+							FB_Y0 			<= reg_fb_y0;
+							FB_Y1 			<= reg_fb_y1;
+						
+							-- If the square to draw is completely out of the frame, don't draw it.
+							if (reg_fb_x0 >= FRAME_RIGHT_X or reg_fb_x1 <= FRAME_LEFT_X or reg_fb_y0 >= FRAME_DOWN_Y or reg_fb_y1 <= FRAME_UP_Y) then
+								FB_FILL_RECT <= '0';
 								
-								else
+							else -- If the square is partially in the frame draw only the part that is in it.
 								
-									row <= row + 1;
-								
+								if (reg_fb_x1 >= FRAME_RIGHT_X) then
+									FB_X1 <= FRAME_RIGHT_X-1;
 								end if;
 								
-							else
-							
-								column <= column + 1;
-							
-							end if;
-							
-							if (reg_sprite.img_pixels(row, column) = '1') then
-							
-								reg_fb_x0 	 	:= reg_hitbox.up_left_x + (column * pixel_scale_factor_x) / UPSCALE_PRECISION;
-								reg_fb_x1	 	:= reg_hitbox.up_left_x + ((column + 1) * pixel_scale_factor_x) / UPSCALE_PRECISION - 1;
-								reg_fb_y0	 	:= reg_hitbox.up_left_y + (row * pixel_scale_factor_y) / UPSCALE_PRECISION;
-								reg_fb_y1	 	:= reg_hitbox.up_left_y + ((row + 1) * pixel_scale_factor_y) / UPSCALE_PRECISION - 1;
-								
-		--						if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1) then 
-		
-								-- Overflow handling
-								if (reg_fb_x0 <= reg_fb_x1 and reg_fb_y0 <= reg_fb_y1 and reg_fb_x1 - reg_fb_x0 <= reg_hitbox.size_x and reg_fb_y1 - reg_fb_y0 <= reg_hitbox.size_y) then 
-									
-									FB_FILL_RECT 	<= '1';
-									FB_COLOR 	 	<= reg_sprite.color;
-									FB_X0 			<= reg_fb_x0;
-									FB_X1 			<= reg_fb_x1;
-									FB_Y0 			<= reg_fb_y0;
-									FB_Y1 			<= reg_fb_y1;
-								
-									-- If the square to draw is completely out of the frame, don't draw it.
-									if (reg_fb_x0 >= FRAME_RIGHT_X or reg_fb_x1 <= FRAME_LEFT_X or reg_fb_y0 >= FRAME_DOWN_Y or reg_fb_y1 <= FRAME_UP_Y) then
-										FB_FILL_RECT <= '0';
-									else -- If the square is partially in the frame draw only the part that is in it.
-										if (reg_fb_x1 >= FRAME_RIGHT_X) then
-											FB_X1 <= FRAME_RIGHT_X-1;
-										end if;
-										if (reg_fb_x0 <= FRAME_LEFT_X) then
-											FB_X0 <= FRAME_LEFT_X+1;
-										end if;
-										if (reg_fb_y1 >= FRAME_DOWN_Y) then
-											FB_Y1 <= FRAME_DOWN_Y-1;
-										end if;
-										if (reg_fb_y0 <= FRAME_UP_Y) then
-											FB_Y0 <= FRAME_UP_Y+1;
-										end if;
-									end if;
-								
+								if (reg_fb_x0 <= FRAME_LEFT_X) then
+									FB_X0 <= FRAME_LEFT_X+1;
 								end if;
-									
+								
+								if (reg_fb_y1 >= FRAME_DOWN_Y) then
+									FB_Y1 <= FRAME_DOWN_Y-1;
+								end if;
+								
+								if (reg_fb_y0 <= FRAME_UP_Y) then
+									FB_Y0 <= FRAME_UP_Y+1;
+								end if;
+							
 							end if;
-				
+						end if;
+					end if;
+			
 				end case;
 				
-				when SHOWING => 
+			when SHOWING => 
 				
-					if (FB_VSYNC = '0') then
-					
-						FB_FLIP 	  	<= '1';
-						state 	  	<= WAITING;
-						next_state 	<= CLEARING;
-					
-					end if;
-					
-				when CLEARING =>
+				if (FB_VSYNC = '0') then
 				
-					FB_CLEAR 	<= '1';
-					state 		<= WAITING;
-					next_state  <= INIT;
-				
-				when INIT =>
+					FB_FLIP 	  	<= '1';
+					state 	  	<= WAITING;
+					next_state 	<= CLEARING;
 					
-					FB_DRAW_RECT 	<= '1';
-					FB_X0 			<= FRAME_LEFT_X;
-					FB_X1 			<= FRAME_RIGHT_X;
-					FB_Y0 			<= FRAME_UP_Y;
-					FB_Y1 			<= FRAME_DOWN_Y;
-					FB_COLOR 		<= COLOR_RED;
-					state 			<= WAITING;
-					next_state 		<= IDLE;
+				end if;
+					
+			when CLEARING =>
+				
+				FB_CLEAR 	<= '1';
+				state 		<= WAITING;
+				next_state  <= INIT;
+				
+			when INIT =>
+					
+				FB_DRAW_RECT 	<= '1';
+				FB_X0 			<= FRAME_LEFT_X;
+				FB_X1 			<= FRAME_RIGHT_X;
+				FB_Y0 			<= FRAME_UP_Y;
+				FB_Y1 			<= FRAME_DOWN_Y;
+				FB_COLOR 		<= COLOR_RED;
+				state 			<= WAITING;
+				next_state 		<= IDLE;
 				
 			end case;
+			
 		end if;
+		
 	end process;
 	
 end architecture;
