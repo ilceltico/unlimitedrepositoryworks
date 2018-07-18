@@ -24,14 +24,25 @@ entity HardwareInvaders is
 		SRAM_UB_N           : out   	std_logic;
 		SRAM_LB_N           : out   	std_logic;
 		
+<<<<<<< HEAD
 		LEDR					  : out 	 	std_logic_vector(9 downto 0);
 		LEDG					  : out 	 	std_logic_vector(7 downto 0);
 		PS2_CLK				  : in 		std_logic;
 		PS2_DAT				  : in 		std_logic
+=======
+		LEDR					  : out 	 std_logic_vector(9 downto 0);
+		LEDG					  : out 	 std_logic_vector(7 downto 0);
+		PS2_CLK				  : in std_logic;
+		PS2_DAT				  : in std_logic;
+		
+		-- 7 segment display
+		HEX0					  : out std_logic_vector(6 downto 0)
+>>>>>>> 8ff8cd28a9a8a10cdb69116e54ee045e2e3eede9
 	);
 end entity;
 
 architecture RTL of HardwareInvaders is
+<<<<<<< HEAD
 
 	-- VGA_Framebuffer outputs
 	signal fb_vsync			  					: std_logic;
@@ -93,6 +104,57 @@ architecture RTL of HardwareInvaders is
 	
 	-- rand_gen ouptuts
 	signal rand_output							: std_logic_vector(RAND_ALIEN_GENERATION_TIME_BITS-1 downto 0);
+=======
+	signal clock_50MHz        : std_logic;
+	signal clock_debug		  : std_logic;
+	signal clock_100MHz       : std_logic;
+	signal RESET_N            : std_logic;
+	signal time_1us			  : std_logic;
+	signal show					  : std_logic;
+	signal draw_sprite		  : std_logic;
+	signal fb_ready           : std_logic;
+	signal fb_clear           : std_logic;
+	signal fb_flip            : std_logic;
+	signal fb_draw_rect       : std_logic;
+	signal fb_draw_line       : std_logic;
+	signal fb_fill_rect       : std_logic;
+	signal sprite_x           : xy_coord_type;
+	signal sprite_y           : xy_coord_type;
+	signal fb_x0              : xy_coord_type;
+	signal fb_y0              : xy_coord_type;
+	signal fb_x1              : xy_coord_type;
+	signal fb_y1              : xy_coord_type;
+	signal fb_color           : color_type;
+	signal sprite_to_render	  : sprite_type;
+	signal hitbox_to_render	  : hitbox_type;
+	--signal score_counter		  : integer;
+	signal sr_ready			  : std_logic;
+	signal reset_sync_reg     : std_logic;
+	signal frame_time			  : std_logic;
+	signal fb_vsync			  : std_logic;
+	signal req_next_sprite 	  : std_logic;
+	signal request_entity_sprite	: datapath_entity_index_type;
+	signal random_alien_movement : direction_type;
+	signal alien_grid_movement : direction_type;
+	signal player_movement		: direction_type;
+	signal alien_border_reached	: direction_type;
+	signal rand_alien_border_reached	: direction_type;
+	signal rand_alien_visible			: std_logic;
+	signal player_border_reached 	: direction_type;
+	signal show_rand_alien 	: std_logic;
+	signal column_cannot_shoot : std_logic;
+	signal alien_shoot			: std_logic;
+	signal player_shoot			: std_logic;
+	signal advance_player_bullet : std_logic;
+	signal advance_alien_bullets : std_logic;
+	signal destroy					: datapath_entity_index_type;
+	signal destroy_silent_explosion	: std_logic;
+	signal hide 					: datapath_entity_index_type;
+	signal collision 				: collision_type;
+	signal column_index 			: alien_grid_index_type;
+	signal shield					: shield_type;
+	signal change_player_explosion_sprite : std_logic;
+>>>>>>> 8ff8cd28a9a8a10cdb69116e54ee045e2e3eede9
 	
 	-- Clocks
 	signal clock_50MHz        					: std_logic;
@@ -116,6 +178,12 @@ architecture RTL of HardwareInvaders is
 	signal shoot									: std_logic;
 	signal start									: std_logic;
 	
+	
+		-- binary to bcd --
+	signal binary_to_bcd_start 	: std_logic;
+	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH-1 downto 0);
+	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4-1 downto 0);
+	signal b2b_data_available		: std_logic;
 	
 begin
 
@@ -299,6 +367,7 @@ begin
 			PLAYER_SHOOT							=> player_shoot,
 			CHANGE_PLAYER_EXPLOSION_SPRITE 	=> change_player_explosion_sprite,
 			
+<<<<<<< HEAD
 			SPRITE 									=> sprite_to_render,
 			HITBOX									=> hitbox_to_render,
 			ALIEN_BORDER_REACHED					=> alien_border_reached,
@@ -307,6 +376,17 @@ begin
 			PLAYER_BORDER_REACHED 				=> player_border_reached,
 			COLUMN_CANNOT_SHOOT					=> column_cannot_shoot,
 			COLLISION 								=> collision
+=======
+			SPRITE 						=> sprite_to_render,
+			HITBOX						=> hitbox_to_render,
+			--SCORE							=> score_counter,
+			ALIEN_BORDER_REACHED		=> alien_border_reached,
+			RAND_ALIEN_BORDER_REACHED => rand_alien_border_reached,
+			RAND_ALIEN_VISIBLE		=> rand_alien_visible,
+			PLAYER_BORDER_REACHED 	=> player_border_reached,
+			COLUMN_CANNOT_SHOOT		=> column_cannot_shoot,
+			COLLISION 					=> collision
+>>>>>>> 8ff8cd28a9a8a10cdb69116e54ee045e2e3eede9
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
@@ -450,5 +530,26 @@ begin
 --				codenew := PS2_code_new;
 --			end if;
 --		end process;
-		
+
+--		Binary_to_BCD : entity work.Binary_to_BCD
+--		port map
+--		(
+--			CLOCK				=> clock_50MHz,
+--			START				=> binary_to_bcd_start,
+--			BINARY			=> binary_value,
+--			
+--			o_BCD				=> bcd_value,
+--			o_DV				=> b2b_data_available
+--		);
+--		
+--		bcd_to_7segment : entity work.bcd_to_7segment
+--		port map 
+--		(
+--			CLOCK			=> clock_50MHz,
+--			RESET_N			=> RESET_N,
+--			BCD_NUMBER		=> bcd_value(3 DOWNTO 0),
+--			
+--			DISPLAY			=> HEX0( 6 downto 0)
+--		);
+--		
 end architecture;
