@@ -38,7 +38,6 @@ architecture rtl of Binary_to_BCD is
    
 begin
  
-<<<<<<< HEAD
 	Double_Dabble : process (CLOCK)
 		variable v_Upper     : natural;
 		variable v_Lower     : natural;
@@ -92,79 +91,6 @@ begin
 				mask 			:= std_logic_vector(shift_right(unsigned(mask), v_Lower));
 				
 				v_BCD_Digit := unsigned(mask(3 downto 0));
-=======
-  Double_Dabble : process (CLOCK)
-    variable v_Upper     : natural;
-    variable v_Lower     : natural;
-    variable v_BCD_Digit : unsigned(3 downto 0);
-	 -- variable mask_BCD : unsigned(g_INPUT_WIDTH downto 0);
-  begin
-    if rising_edge(CLOCK) then
- 
-      case r_SM_Main is
- 
-        -- Stay in this state until i_Start comes along
-        when s_IDLE =>
-          if START = '1' then
-            r_BCD     <= (others => '0');
-            r_Binary  <= BINARY;
-            r_SM_Main <= s_SHIFT;
-          else
-            r_SM_Main <= s_IDLE;
-          end if;
- 
- 
-        -- Always shift the BCD Vector until we have shifted all bits through
-        -- Shift the most significant bit of r_Binary into r_BCD lowest bit.
-        when s_SHIFT =>
-          r_BCD     <= r_BCD(r_BCD'left-1 downto 0) & r_Binary(r_Binary'left);
-          r_Binary  <= r_Binary(r_Binary'left-1 downto 0) & '0';
-          r_SM_Main <= s_CHECK_SHIFT_INDEX;
- 
- 
-        -- Check if we are done with shifting in r_Binary vector
-        when s_CHECK_SHIFT_INDEX => 
-          if r_Loop_Count = g_INPUT_WIDTH-1 then
-            r_Loop_Count <= 0;
-            r_SM_Main    <= s_BCD_DONE;
-          else
-            r_Loop_Count <= r_Loop_Count + 1;
-            r_SM_Main    <= s_ADD;
-          end if;
- 
- 
-        -- Break down each BCD Digit individually.  Check them one-by-one to
-        -- see if they are greater than 4.  If they are, increment by 3.
-        -- Put the result back into r_BCD Vector.  Note that v_BCD_Digit is
-        -- unsigned.  Numeric_std does not perform math on std_logic_vector.
-        when s_ADD =>
-          v_Upper     := r_Digit_Index*4 + 3;
-          v_Lower     := r_Digit_Index*4;
-          v_BCD_Digit := unsigned(r_BCD(v_Upper downto v_Lower));
-           
-          if v_BCD_Digit > 4 then
-            v_BCD_Digit := v_BCD_Digit + 3;
-          end if;
- 
-          r_BCD(v_Upper downto v_Lower) <= std_logic_vector(v_BCD_Digit);
-          r_SM_Main <= s_CHECK_DIGIT_INDEX;
- 
- 
-        -- Check if we are done incrementing all of the BCD Digits
-        when s_CHECK_DIGIT_INDEX =>
-          if r_Digit_Index = g_DECIMAL_DIGITS-1 then
-            r_Digit_Index <= 0;
-            r_SM_Main     <= s_SHIFT;
-          else
-            r_Digit_Index <= r_Digit_Index + 1;
-            r_SM_Main     <= s_ADD;
-          end if;
- 
- 
-        when s_BCD_DONE =>
-          r_SM_Main <= s_IDLE;
- 
->>>>>>> origin/master
            
 				if v_BCD_Digit > 4 then
 					v_BCD_Digit := v_BCD_Digit + 3;
