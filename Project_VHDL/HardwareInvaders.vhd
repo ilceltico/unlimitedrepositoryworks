@@ -30,7 +30,10 @@ entity HardwareInvaders is
 		PS2_DAT				  : in 		std_logic;
 		
 		-- 7 segment display
-		HEX0					  : out std_logic_vector(6 downto 0)
+		HEX0					  : out std_logic_vector(6 downto 0);
+		HEX1					  : out std_logic_vector(6 downto 0);
+		HEX2					  : out std_logic_vector(6 downto 0);
+		HEX3					  : out std_logic_vector(6 downto 0)
 	);
 end entity;
 
@@ -124,8 +127,9 @@ architecture RTL of HardwareInvaders is
 	
 	-- binary to bcd --
 	signal binary_to_bcd_start 	: std_logic;
-	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH-1 downto 0);
-	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4-1 downto 0);
+	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH - 1 downto 0);
+	signal bcd_value_temp			: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
+	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
 	signal b2b_data_available		: std_logic;
 	
 begin
@@ -464,37 +468,103 @@ begin
 --		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
+		generic map (
+			g_INPUT_WIDTH 		=> BINARY_INPUT_WIDTH,
+			g_DECIMAL_DIGITS 	=>	DECIMAL_DIGITS_7SEGMENT
+		)
 		port map
 		(
-			CLOCK				=> clock_50MHz,
-			START				=> binary_to_bcd_start,
-			BINARY			=> binary_value,
+			CLOCK					=> clock_50MHz,
+			START					=> binary_to_bcd_start,
+			BINARY				=> binary_value,
 			
-			--o_BCD				=> bcd_value,
-			o_DV				=> b2b_data_available
+			o_BCD					=> bcd_value_temp,
+			o_DV					=> b2b_data_available
 		);
 		
-		bcd_to_7segment : entity work.bcd_to_7segment
+		bcd_value_filter : process(clock_50MHz, RESET_N)
+		begin
+		
+			if (RESET_N = '0') then
+				bcd_value <= (others => '0');
+			elsif (rising_edge(clock_50MHz)) then 
+				if (b2b_data_available = '1') then
+					bcd_value <= bcd_value_temp;
+				end if;
+			end if;
+			
+		end process;
+		
+		bcd_to_7segment_0 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK			=> clock_50MHz,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
-			BCD_NUMBER		=> bcd_value(3 DOWNTO 0),
+			BCD_NUMBER		=> bcd_value(3 downto 0),
 			
 			DISPLAY			=> HEX0( 6 downto 0)
 		);
 		
+		bcd_to_7segment_1 : entity work.bcd_to_7segment
+		port map 
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			BCD_NUMBER		=> bcd_value(7 downto 4),
+			
+			DISPLAY			=> HEX1( 6 downto 0)
+		);
+		
+		bcd_to_7segment_2 : entity work.bcd_to_7segment
+		port map 
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			BCD_NUMBER		=> bcd_value(11 downto 8),
+			
+			DISPLAY			=> HEX2( 6 downto 0)
+		);
+		
+		bcd_to_7segment_3 : entity work.bcd_to_7segment
+		port map 
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			BCD_NUMBER		=> bcd_value(15 downto 12),
+			
+			DISPLAY			=> HEX3(6 downto 0)
+		);
+		
+		-- DEBUG 
 		test_7segment : process(clock_50MHz, RESET_N) is
+		
+			variable count 	: integer range 0 to 32677 := 0;
+			variable counter 	: integer						:= 0;
+		
 		begin
 		
 			if (RESET_N = '0') then
-			
-				bcd_value <= X"0000";
+		
+				count := 0;
+				counter := 0;
+				binary_to_bcd_start <= '0';
 			
 			elsif (rising_edge(clock_50MHz)) then
+					
+				counter := counter + 1;
+				binary_to_bcd_start <= '1';
+					
+				if (counter = 10000000) then
+	
+					count := count + 1;
+					binary_value <= std_logic_vector(to_unsigned(count, 15));
+					counter := 0;
+					
+					if (count = 9999) then 
+						count := 0;
+					end if;
 			
-				bcd_value <= X"1111";
-				
+				end if;
 			end if;
 		
 		end process;

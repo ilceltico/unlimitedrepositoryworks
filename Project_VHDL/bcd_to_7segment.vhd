@@ -22,29 +22,35 @@ begin
 			
 		elsif rising_edge(CLOCK) then
 		
+		-- 	7
+		-- 2		6
+		-- 	1
+		-- 3		5
+		-- 	4
+		
 			case BCD_NUMBER is
 			when "0000" =>			-- 0
-				DISPLAY <= "1111110";
+				DISPLAY <= "1000000";
 			when "0001" =>			-- 1	
-				DISPLAY <= "0110000";
-			when "0010" =>			-- 2
-				DISPLAY <= "1101101";
-			when "0011" =>			-- 3
 				DISPLAY <= "1111001";
+			when "0010" =>			-- 2
+				DISPLAY <= "0100100";
+			when "0011" =>			-- 3
+				DISPLAY <= "0110000";
 			when "0100" => 		-- 4
-				DISPLAY <= "0110011";          
+				DISPLAY <= "0011001";          
 			when "0101" =>			-- 5
-				DISPLAY <= "1011011";
+				DISPLAY <= "0010010";
 			when "0110" =>			-- 6
-				DISPLAY <= "1011111";
+				DISPLAY <= "0000010";
 			when "0111" =>			-- 7
-				DISPLAY <= "1110000";
+				DISPLAY <= "1111000";
 			when "1000" =>			-- 8
-				DISPLAY <= "1111111";
+				DISPLAY <= "0000000";
 			when "1001" =>			-- 9
-				DISPLAY <= "1111011";
+				DISPLAY <= "0010000";
 			when others =>
-				DISPLAY <= "1000111";	-- F
+				DISPLAY <= "1111111";	-- F
 				
       end case;
     end if;
