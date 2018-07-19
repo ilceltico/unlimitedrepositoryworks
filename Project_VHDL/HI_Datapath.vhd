@@ -15,7 +15,8 @@ entity HI_Datapath is
 		DESTROY_SILENT_EXPLOSION			: in 	std_logic;
 		HIDE										: in 	datapath_entity_index_type;
 		COLUMN_INDEX							: in  alien_grid_index_type;
---		NEW_LEVEL								: in 	std_logic;
+		NEW_LEVEL								: in 	std_logic;
+		LEVEL										: in  integer;
 		PLAYER_MOVEMENT						: in 	direction_type;
 		PLAYER_SHOOT							: in 	std_logic;
 		ALIEN_GRID_MOVEMENT					: in 	direction_type;
@@ -28,9 +29,9 @@ entity HI_Datapath is
 			
 		SPRITE 									: out sprite_type := sprite_empty;
 		HITBOX									: out hitbox_type := (0,0,1,1);
---		SCORE										: out integer;
---		LIVES										: out integer;
---		ALIVE_ALIEN_COUNT						: out integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
+		SCORE										: out integer;
+		LIVES										: out integer range 0 to PLAYER_LIVES;
+		ALIVE_ALIEN_COUNT						: out integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 		ALIEN_BORDER_REACHED					: out direction_type;
 		RAND_ALIEN_BORDER_REACHED			: out direction_type;
 		RAND_ALIEN_VISIBLE					: out std_logic;
@@ -42,25 +43,33 @@ end entity;
 
 architecture RTL of HI_Datapath is 
 
-	signal alien_grid 	: alien_grid_type;
+	signal alien_grid 			: alien_grid_type;
 	
-	signal first_column 	: alien_grid_index_type 	:= 0;
-	signal first_row 		: alien_column_index_type 	:= 0;
-	signal last_column 	: alien_grid_index_type 	:= COLUMNS_PER_GRID - 1;
-	signal last_row 		: alien_column_index_type 	:= ALIENS_PER_COLUMN - 1;
-	signal active_rows 	: std_logic_vector(ALIENS_PER_COLUMN - 1 downto 0);
-	signal active_columns: std_logic_vector(COLUMNS_PER_GRID  - 1 downto 0);
+	signal first_column 			: alien_grid_index_type 	:= 0;
+	signal first_row 				: alien_column_index_type 	:= 0;
+	signal last_column 			: alien_grid_index_type 	:= COLUMNS_PER_GRID - 1;
+	signal last_row 				: alien_column_index_type 	:= ALIENS_PER_COLUMN - 1;
+	signal active_rows 			: std_logic_vector(ALIENS_PER_COLUMN - 1 downto 0);
+	signal active_columns		: std_logic_vector(COLUMNS_PER_GRID  - 1 downto 0);
 	
-	signal player			: player_type;
-	signal alien_bullets	: bullet_array_type;
-	signal player_bullet : bullet_type;
+	signal player					: player_type;
+	signal alien_bullets			: bullet_array_type;
+	signal player_bullet 		: bullet_type;
 	
-	signal rand_alien		: alien_type;
+	signal rand_alien				: alien_type;
 	
-	signal shield			: shield_grid_type;
+	signal shield					: shield_grid_type;
 	
 	type collision_state_type is (PLAYER_BULLET_COLLISIONS, ALIEN_COLLISIONS, ALIEN_BULLET_COLLISIONS);
-	signal collision_state : collision_state_type;
+	signal collision_state 		: collision_state_type;
+	
+	signal reg_score				: integer range 0 to 32677;
+	signal reg_alive_aliens		: integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
+	
+	constant screens 				: screen_array_type := (
+		((GAMEOVER_1_SPRITE, (150,200,60,20)), (GAMEOVER_2_SPRITE, (210,200,60,20)), (GAMEOVER_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
+		((VICTORY_1_SPRITE, (150,200,60,20)), (VICTORY_2_SPRITE, (210,200,60,20)), (VICTORY_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
+	);
 	
 begin
 	
@@ -103,9 +112,14 @@ begin
 				HITBOX <= shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 				
 			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
-			
+		
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
+				
+			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SCREEN) then 
+				
+				SPRITE <= sprites(screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite);
+				HITBOX <= screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 				
 			end if;
 			
@@ -141,17 +155,28 @@ begin
 			
 			active_columns 	<= (others => '1');
 			active_rows 		<= (others => '1');
-		
+			
+			reg_alive_aliens 	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
+			
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				
 				for J in 0 to ALIENS_PER_COLUMN - 1 loop
 				
 					if (J < ALIEN_3_ROWS) then 
-						alien_grid(I)(J).sprite_indexes <= (ALIEN_3_1_SPRITE, ALIEN_3_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						
+						alien_grid(I)(J).sprite_indexes 	<= (ALIEN_3_1_SPRITE, ALIEN_3_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						alien_grid(I)(J).points				<= ALIEN_3_POINTS;
+						
 					elsif (J >= ALIEN_3_ROWS and J < ALIEN_3_ROWS + ALIEN_2_ROWS) then
-						alien_grid(I)(J).sprite_indexes <= (ALIEN_2_1_SPRITE, ALIEN_2_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						
+						alien_grid(I)(J).sprite_indexes 	<= (ALIEN_2_1_SPRITE, ALIEN_2_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						alien_grid(I)(J).points				<= ALIEN_2_POINTS;
+					      
 					elsif (J >= ALIEN_3_ROWS + ALIEN_2_ROWS and J < ALIEN_3_ROWS + ALIEN_2_ROWS + ALIEN_1_ROWS) then
-						alien_grid(I)(J).sprite_indexes <= (ALIEN_1_1_SPRITE, ALIEN_1_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						
+						alien_grid(I)(J).sprite_indexes 	<= (ALIEN_1_1_SPRITE, ALIEN_1_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+						alien_grid(I)(J).points				<= ALIEN_1_POINTS;
+					
 					end if;
 					
 					alien_grid(I)(J).hitbox.up_left_x 	<= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
@@ -168,12 +193,15 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then 
 		
-			alien_grid <= alien_grid;
+			alien_grid 			<= alien_grid;
+			ALIVE_ALIEN_COUNT <= reg_alive_aliens;
 			
 			if (DESTROY.entity_type = ENTITY_ALIEN) then 
 				
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).exploding 		<= '1';
 				alien_grid(DESTROY.index_1)(DESTROY.index_2).current_index 	<= ALIEN_SPRITE_COUNT - 1;
+				
+				reg_alive_aliens <= reg_alive_aliens - 1;
 				
 			end if;
 			
@@ -294,6 +322,61 @@ begin
 				end loop;
 			end loop;
 			
+			if (NEW_LEVEL = '1') then 
+				
+				var_first_column 	:= 0;
+				var_first_row 		:= 0;
+				var_last_column	:= COLUMNS_PER_GRID - 1;
+				var_last_row		:= ALIENS_PER_COLUMN - 1;
+				
+				first_column 		<= var_first_column;
+				first_row 			<= var_first_row;
+				last_column 		<= var_last_column;
+				last_row 			<= var_last_row;
+				
+				found 				:= '0';
+				pause 				:= '0';
+				
+				active_columns 	<= (others => '1');
+				active_rows 		<= (others => '1');
+				
+				reg_alive_aliens 	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
+				
+				for I in 0 to COLUMNS_PER_GRID - 1 loop
+					
+					for J in 0 to ALIENS_PER_COLUMN - 1 loop
+					
+						if (J < ALIEN_3_ROWS) then 
+							
+							alien_grid(I)(J).sprite_indexes 	<= (ALIEN_3_1_SPRITE, ALIEN_3_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+							alien_grid(I)(J).points				<= ALIEN_3_POINTS;
+							
+						elsif (J >= ALIEN_3_ROWS and J < ALIEN_3_ROWS + ALIEN_2_ROWS) then
+							
+							alien_grid(I)(J).sprite_indexes 	<= (ALIEN_2_1_SPRITE, ALIEN_2_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+							alien_grid(I)(J).points				<= ALIEN_2_POINTS;
+								
+						elsif (J >= ALIEN_3_ROWS + ALIEN_2_ROWS and J < ALIEN_3_ROWS + ALIEN_2_ROWS + ALIEN_1_ROWS) then
+							
+							alien_grid(I)(J).sprite_indexes 	<= (ALIEN_1_1_SPRITE, ALIEN_1_2_SPRITE, ALIEN_EXPLOSION_SPRITE);
+							alien_grid(I)(J).points				<= ALIEN_1_POINTS;
+						
+						end if;
+						
+						alien_grid(I)(J).hitbox.up_left_x 	<= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
+						alien_grid(I)(J).hitbox.up_left_y 	<= FIRST_ALIEN_CELL_Y + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);
+						alien_grid(I)(J).hitbox.size_x 		<= ALIEN_SIZE_X;
+						alien_grid(I)(J).hitbox.size_y 		<= ALIEN_SIZE_Y;
+						alien_grid(I)(J).current_index 		<= 0;
+						alien_grid(I)(J).visible 				<= '1';
+						alien_grid(I)(J).exploding 			<= '0';
+			
+					end loop;	
+					
+				end loop;
+				
+			end if;
+			
 		end if;
 		
 	end process;
@@ -338,6 +421,12 @@ begin
 				player_bullet.hitbox.up_left_y 	<= player_bullet.hitbox.up_left_y;
 			end if;
 			
+			if (NEW_LEVEL = '1') then 
+			
+				player_bullet <= ((PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_EXPLOSION_SPRITE), (0,0, PLAYER_BULLET_SIZE_X, PLAYER_BULLET_SIZE_Y), 0, '0', '0');
+			
+			end if;
+			
 		end if;
 		
 	end process;
@@ -377,6 +466,27 @@ begin
 			if (HIDE.entity_type = ENTITY_SHIELD) then 
 				shield(HIDE.index_1)(HIDE.index_2).visible <= '0';
 			end if;
+			
+			if (NEW_LEVEL = '1') then 
+			
+				for I in 0 to SHIELD_COUNT - 1 loop 
+					
+					shield(I) <= (others => default_shield_part);
+					
+					shield(I)(0).sprite_indexes <= (SHIELD_1_1_SPRITE, SHIELD_1_2_SPRITE, SHIELD_1_3_SPRITE, SHIELD_1_4_SPRITE);
+					shield(I)(1).sprite_indexes <= (SHIELD_2_1_SPRITE, SHIELD_2_2_SPRITE, SHIELD_2_3_SPRITE, SHIELD_2_4_SPRITE);
+					shield(I)(2).sprite_indexes <= (SHIELD_3_1_SPRITE, SHIELD_3_2_SPRITE, SHIELD_3_3_SPRITE, SHIELD_3_4_SPRITE);
+					shield(I)(3).sprite_indexes <= (SHIELD_4_1_SPRITE, SHIELD_4_2_SPRITE, SHIELD_4_3_SPRITE, SHIELD_4_4_SPRITE);
+					
+					shield(I)(0).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  						   FIRST_SHIELD_Y, 					 							SHIELD_SIZE_X, SHIELD_SIZE_Y);
+					shield(I)(1).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X - SHIELD_H_OVERLAP, FIRST_SHIELD_Y, 					 						   SHIELD_SIZE_X, SHIELD_SIZE_Y);
+					shield(I)(2).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING, 					  							FIRST_SHIELD_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP, SHIELD_SIZE_X, SHIELD_SIZE_Y);
+					shield(I)(3).hitbox <= (FIRST_SHIELD_X + I * SHIELD_SPACING + SHIELD_SIZE_X - SHIELD_H_OVERLAP, FIRST_SHIELD_Y + SHIELD_SIZE_Y - SHIELD_V_OVERLAP, SHIELD_SIZE_X, SHIELD_SIZE_Y);
+					
+				end loop;
+			
+			end if;
+			
 		end if;
 					
 	end process;
@@ -420,6 +530,13 @@ begin
 				PLAYER_BORDER_REACHED <= DIR_LEFT;
 			else
 				PLAYER_BORDER_REACHED <= DIR_NONE;
+			end if;
+							
+			if (NEW_LEVEL = '1') then 				
+			
+				ALIEN_BORDER_REACHED 		<= DIR_NONE;
+				RAND_ALIEN_BORDER_REACHED 	<= DIR_NONE;
+			
 			end if;
 							
 		end if;
@@ -874,6 +991,25 @@ begin
 				player.exploding 		<= '0';
 				player.current_index <= 0;
 				
+				if (player.lives > 0) then
+					player.lives 		<= player.lives - 1;
+				end if;
+				
+			end if;
+			
+			LIVES <= player.lives;
+			
+			if (NEW_LEVEL = '1') then
+			
+				player.sprite_indexes 	<= (PLAYER_SPRITE, PLAYER_EXPLOSION_1_SPRITE, PLAYER_EXPLOSION_2_SPRITE);
+				player.hitbox.up_left_x <= PLAYER_START_X;
+				player.hitbox.up_left_y <= PLAYER_START_Y;
+				player.hitbox.size_x 	<= PLAYER_SIZE_X;
+				player.hitbox.size_y 	<= PLAYER_SIZE_Y;
+				player.current_index 	<= 0;
+				player.lives 				<= PLAYER_LIVES;
+				player.exploding 			<= '0';
+			
 			end if;
 			
 		end if;
@@ -886,12 +1022,14 @@ begin
 		RAND_ALIEN_VISIBLE <= rand_alien.visible;
 	
 		if (RESET_N = '0') then
+			
 			rand_alien.sprite_indexes 		<= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
 			rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X_LEFT;
 			rand_alien.hitbox.up_left_y 	<= FIRST_RAND_ALIEN_CELL_Y;
 			rand_alien.hitbox.size_x 		<= RAND_ALIEN_SIZE_X;
 			rand_alien.hitbox.size_y 		<= RAND_ALIEN_SIZE_Y;
 			rand_alien.current_index 		<= 0;
+			rand_alien.points 				<= ALIEN_4_POINTS;
 			rand_alien.visible 				<= '0';
 			rand_alien.exploding 			<= '0';
 			
@@ -930,7 +1068,21 @@ begin
 				rand_alien.current_index 	<= 0;
 			end if;
 			
+			if (NEW_LEVEL = '1') then 
+			
+				rand_alien.sprite_indexes 		<= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
+				rand_alien.hitbox.up_left_x 	<= FIRST_RAND_ALIEN_CELL_X_LEFT;
+				rand_alien.hitbox.up_left_y 	<= FIRST_RAND_ALIEN_CELL_Y;
+				rand_alien.hitbox.size_x 		<= RAND_ALIEN_SIZE_X;
+				rand_alien.hitbox.size_y 		<= RAND_ALIEN_SIZE_Y;
+				rand_alien.current_index 		<= 0;
+				rand_alien.points 				<= ALIEN_4_POINTS;
+				rand_alien.visible 				<= '0';
+				rand_alien.exploding 			<= '0';
+			
+			end if;
 		end if;
+		
 	end process;
 		
 	alien_bullet_handling : process (CLOCK, RESET_N) is
@@ -1060,8 +1212,48 @@ begin
 			
 			end if;
 			
+			if (NEW_LEVEL = '1') then 
+			
+				for I in 0 to BULLET_COUNT - 1 loop
+					alien_bullets(I) <= ((ALIEN_BULLET_1_1_SPRITE, ALIEN_BULLET_1_2_SPRITE, ALIEN_BULLET_1_3_SPRITE, ALIEN_BULLET_1_4_SPRITE, ALIEN_BULLET_EXPLOSION_SPRITE), (0,0,ALIEN_BULLET_SIZE_X, ALIEN_BULLET_SIZE_Y), 0, '0', '0');
+				end loop;
+				
+				referenced_column 	:= 0;
+				referenced_row 		:= 0;
+				bullet_index 			:= 0;
+				last_bullet_shape 	:= 0;
+				available_bullet 		:= '0';
+				available_column 		:= '0';
+				COLUMN_CANNOT_SHOOT 	<= '1';
+			
+			end if;
+			
 		end if;
 		
+	end process;
+	
+	score_handler : process (CLOCK, RESET_N) is
+	
+		variable reg_score : integer range 0 to 32677 := 0;
+	
+	begin
+	
+		if (RESET_N = '0') then 
+			
+			reg_score := 0;
+			
+		elsif (rising_edge(CLOCK)) then
+			
+			if (DESTROY.entity_type = ENTITY_ALIEN) then
+				reg_score := reg_score + alien_grid(DESTROY.index_1)(DESTROY.index_2).points;
+			elsif (DESTROY.entity_type = ENTITY_RANDOM_ALIEN) then
+				reg_score := reg_score + rand_alien.points;
+			end if;
+			
+			SCORE <= reg_score;
+			
+		end if;
+	
 	end process;
 	
 end architecture;

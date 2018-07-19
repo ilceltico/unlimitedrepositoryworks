@@ -10,6 +10,8 @@ entity Hi_View_Control_Unit is
 		FRAME_TIME						: in  std_logic;
 		RESET_N							: in 	std_logic;
 		READY 							: in  std_logic;
+		GAMEOVER							: in 	std_logic;
+		VICTORY							: in 	std_logic;
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
@@ -21,7 +23,7 @@ end entity;
 architecture RTL of Hi_View_Control_Unit is 
 
 type state_type 		is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
-type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, RENDER_END);
+type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, GAMEOVER_QUERY, VICTORY_QUERY, RENDER_END);
 
 signal render_asap		: std_logic;
 signal state 				: state_type;
@@ -34,13 +36,15 @@ begin
 	
 	datapath_entity_query : process(CLOCK, RESET_N)
 		
-		variable rendered_column 	: alien_grid_index_type 	:= 0;
-		variable rendered_alien  	: alien_column_index_type 	:= 0;
+		variable rendered_column 		: alien_grid_index_type 	:= 0;
+		variable rendered_alien  		: alien_column_index_type 	:= 0;
 		
-		variable rendered_bullet   : bullet_array_index_type 	:= 0;
+		variable rendered_bullet   	: bullet_array_index_type 	:= 0;
 		
-		variable rendered_shield 	: shield_grid_index_type 	:= 0;
-		variable rendered_part		: shield_part_index_type 	:= 0;
+		variable rendered_shield 		: shield_grid_index_type 	:= 0;
+		variable rendered_part			: shield_part_index_type 	:= 0;
+		
+		variable rendered_screen_part	: screen_part_index_type	:= 0;
 	
 	begin
 		
@@ -64,6 +68,8 @@ begin
 			
 			rendered_part 				:= 0;
 			rendered_shield			:= 0;
+			
+			rendered_screen_part		:= 0;
 			
 		elsif rising_edge(CLOCK) then
 			
@@ -92,7 +98,7 @@ begin
 				
 				next_state 					<= RENDER;
 				draw_delayed 				<= '1';
-					
+			
 				case (substate) is 
 					
 				when ALIEN_QUERY => 
@@ -133,7 +139,7 @@ begin
 							
 				when PLAYER_BULLET_QUERY =>
 							
-					REQUEST_ENTITY_SPRITE 	<= (0, 0, ENTITY_PLAYER_BULLET);
+					REQUEST_ENTITY_SPRITE 	<= (0,0,ENTITY_PLAYER_BULLET);
 					substate 					<= RAND_ALIEN_QUERY;
 									
 				when RAND_ALIEN_QUERY =>
@@ -169,10 +175,44 @@ begin
 					REQUEST_ENTITY_SPRITE 	<= (0,0, ENTITY_PLAYER);
 					substate 					<= RENDER_END;
 							
+				when GAMEOVER_QUERY =>
+					
+					REQUEST_ENTITY_SPRITE 	<= (GAMEOVER_SCREEN_INDEX,rendered_screen_part, ENTITY_SCREEN);
+							
+					rendered_screen_part 	:= rendered_screen_part + 1;
+							
+					if (rendered_screen_part > GAMEOVER_SCREEN_PART_COUNT - 1) then
+						
+						rendered_screen_part 	:= 0;
+						substate 					<= RENDER_END;
+					
+					end if;
+	
+				when VICTORY_QUERY =>
+				
+					REQUEST_ENTITY_SPRITE 	<= (VICTORY_SCREEN_INDEX, rendered_screen_part, ENTITY_SCREEN);
+							
+					rendered_screen_part 	:= rendered_screen_part + 1;
+							
+					if (rendered_screen_part > VICTORY_SCREEN_PART_COUNT - 1) then
+						
+						rendered_screen_part 	:= 0;
+						substate 					<= RENDER_END;
+					
+					end if;
+							
 				when RENDER_END =>
 						
 					next_state 	<= SHOW_SPRITES;
 					substate 	<= ALIEN_QUERY;
+					
+					if (GAMEOVER = '1') then 
+						substate <= GAMEOVER_QUERY;
+						
+					elsif (VICTORY = '1') then
+						substate <= VICTORY_QUERY;
+					
+					end if;
 							
 				when others => --Unreachable		
 				end case;

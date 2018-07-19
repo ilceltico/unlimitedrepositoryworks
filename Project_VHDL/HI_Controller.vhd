@@ -13,78 +13,77 @@ entity HI_Controller is
 	(
 		CLOCK           	: in std_logic;
 		RESET_N				: in std_logic;
+		LIVES					: in integer range 0 to PLAYER_LIVES;
+		ALIEN_COUNT		 	: in integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 		
-		NEW_GAME				: in std_logic;
-		HAS_LIVES 			: in std_logic;
-		HAS_ALIENS			: in std_logic;
-		
-		RESET_ALIEN 		: out std_logic;
-		RESET_PLAYER 		: out std_logic;
-		RESET_BULLETS 		: out std_logic
+		LEVEL 				: out integer range 1 to LEVEL_NUMBER;
+		NEW_LEVEL			: out std_logic;
+		GAMEOVER				: out std_logic;
+		VICTORY 				: out std_logic
 	);
 end entity;
 
 architecture RTL of HI_Controller is
-	type game_state_type is (RESET_ALL, IN_GAME, NEXT_LEVEL, GAMEOVER, GAME_WON);
+	type game_state_type is (IN_GAME_STATE, VICTORY_STATE, GAMEOVER_STATE);
 	
 	signal state		: game_state_type;
 	signal level_no	: integer;
 
 begin
-		Controller_RTL : process (CLOCK, RESET_N)
-		begin
+
+	Controller_RTL : process (CLOCK, RESET_N)
+	
+		variable counter : integer := 0;
+	
+	begin
+		
 		if(RESET_N = '0') then
-			-- All parameters to default
+		
 			level_no <= 1;
-			state <= RESET_ALL;
+			state <= IN_GAME_STATE;
+			GAMEOVER <= '0';
+			VICTORY	<= '0';
+			counter := 0;
 			
-		elsif rising_edge(CLOCK) then
+		elsif rising_edge(CLOCK) then		
 			
-			case (state) is 
+			GAMEOVER <= '0';
+			VICTORY	<= '0';
+			NEW_LEVEL <= '0';
+			
+			case(state) is 
+			when IN_GAME_STATE => 
 				
-				when RESET_ALL => 
-					if (NEW_GAME = '1') then
-						state <= IN_GAME;
-					end if;
-				
-				when IN_GAME => 
-					if (HAS_LIVES = '0') then
-						state <= GAMEOVER;
-					elsif (HAS_ALIENS = '0') then
-						state <= NEXT_LEVEL;
-					end if;
-					
-				when GAMEOVER => 
-					if (NEW_GAME = '1') then
-						state <= IN_GAME;
-					else
-						-- Mostra schermata Game Over
-					end if;
-					
-				when NEXT_LEVEL => 
-					
-					RESET_ALIEN <= '1';
-					RESET_PLAYER <= '1';
-					RESET_BULLETS <= '1';
-					level_no <= level_no + 1;
-					
-					if (level_no = MAX_LEVEL) then	
-						state <= GAME_WON;
-					else 
-						-- Mostra to_level
-						-- wait...
-						state <= IN_GAME;
-					end if;	
-					
-				when GAME_WON => 
-					if (NEW_GAME = '1') then
-						state <= IN_GAME;
-					else
-						-- Mostra schermata Game Won
-					end if;	
-				end case;
+				if (LIVES = 0) then 
+					state <= GAMEOVER_STATE;
 				end if;
-				end process;
+				
+				if (ALIEN_COUNT = 0) then
+					state <= VICTORY_STATE;
+				end if;
+				
+			when VICTORY_STATE =>
+				
+				VICTORY <= '1';
+				counter := counter + 1;
+				
+				if (counter = 40000000) then 
+					counter := 0;
+					level_no <= level_no + 1;
+					if (level_no <= LEVEL_NUMBER) then
+						state <= IN_GAME_STATE;
+						NEW_LEVEL <= '1';
+					end if;
+				end if;
+			
+			when GAMEOVER_STATE =>
+			
+				GAMEOVER <= '1';
+			
+			end case;
+		
+		end if;
+		
+	end process;
+
 end architecture;
-	
-	

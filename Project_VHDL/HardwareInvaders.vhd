@@ -71,6 +71,9 @@ architecture RTL of HardwareInvaders is
 	signal player_border_reached 				: direction_type;
 	signal column_cannot_shoot 				: std_logic;
 	signal collision 								: collision_type;
+	signal score									: integer;
+	signal lives									: integer range 0 to PLAYER_LIVES;
+	signal alive_alien_count					: integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 	
 	-- HI_Datapath_Control_Unit outputs
 	signal alien_grid_movement 				: direction_type;
@@ -122,15 +125,17 @@ architecture RTL of HardwareInvaders is
 	signal shoot									: std_logic;
 	signal start									: std_logic;
 	
-	-- Score
-	--signal score_counter		  : integer;
+	-- Binary to bcd
+	signal binary_to_bcd_start 				: std_logic;
+	signal bcd_value_temp						: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
+	signal bcd_value								: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
+	signal b2b_data_available					: std_logic;
 	
-	-- binary to bcd --
-	signal binary_to_bcd_start 	: std_logic;
-	signal binary_value				: std_logic_vector(BINARY_INPUT_WIDTH - 1 downto 0);
-	signal bcd_value_temp			: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
-	signal bcd_value					: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
-	signal b2b_data_available		: std_logic;
+	-- Controller outputs
+	signal gameover 								: std_logic;
+	signal victory 								: std_logic;
+	signal new_level								: std_logic;
+	signal level									: integer;
 	
 begin
 
@@ -250,6 +255,21 @@ begin
 			SRAM_UB_N => SRAM_UB_N,
 			SRAM_LB_N => SRAM_LB_N
 		);
+		
+	controller : entity work.HI_Controller
+		port map 
+		(
+			CLOCK				=> clock_50MHz,
+			RESET_N			=> RESET_N,
+			LIVES				=> lives,
+			ALIEN_COUNT		=> alive_alien_count,
+		
+			LEVEL 			=> level,
+			NEW_LEVEL		=> new_level,
+			GAMEOVER			=> gameover,
+			VICTORY 			=> victory
+		);
+		
 
 	view_control_unit : entity work.HI_View_Control_Unit
 		port map 
@@ -258,6 +278,8 @@ begin
 			FRAME_TIME 					=> frame_time,
 			RESET_N						=> RESET_N,
 			READY 						=> sr_ready,
+			GAMEOVER						=> gameover,
+			VICTORY						=> victory,
 			
 			DRAW_SPRITE					=> draw_sprite,
 			SHOW							=> show,
@@ -321,7 +343,12 @@ begin
 			RAND_ALIEN_VISIBLE					=> rand_alien_visible,
 			PLAYER_BORDER_REACHED 				=> player_border_reached,
 			COLUMN_CANNOT_SHOOT					=> column_cannot_shoot,
-			COLLISION 								=> collision
+			COLLISION 								=> collision,
+			SCORE										=> score,
+			LIVES										=> lives,
+			ALIVE_ALIEN_COUNT						=> alive_alien_count,
+			NEW_LEVEL								=> new_level,
+			LEVEL										=> level
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
@@ -476,7 +503,7 @@ begin
 		(
 			CLOCK					=> clock_50MHz,
 			START					=> binary_to_bcd_start,
-			BINARY				=> binary_value,
+			BINARY				=> std_logic_vector(to_unsigned(score, 15)),
 			
 			o_BCD					=> bcd_value_temp,
 			o_DV					=> b2b_data_available
@@ -486,8 +513,14 @@ begin
 		begin
 		
 			if (RESET_N = '0') then
-				bcd_value <= (others => '0');
+			
+				bcd_value 				<= (others => '0');
+				binary_to_bcd_start 	<= '0';
+			
 			elsif (rising_edge(clock_50MHz)) then 
+			
+				binary_to_bcd_start 	<= '1';
+			
 				if (b2b_data_available = '1') then
 					bcd_value <= bcd_value_temp;
 				end if;
@@ -535,38 +568,46 @@ begin
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
-		-- DEBUG 
-		test_7segment : process(clock_50MHz, RESET_N) is
+		led_handler : process(clock_50MHz, RESET_N) is 
 		
-			variable count 	: integer range 0 to 32677 := 0;
-			variable counter 	: integer						:= 0;
+		begin 
 		
-		begin
-		
-			if (RESET_N = '0') then
-		
-				count := 0;
-				counter := 0;
-				binary_to_bcd_start <= '0';
-			
-			elsif (rising_edge(clock_50MHz)) then
-					
-				counter := counter + 1;
-				binary_to_bcd_start <= '1';
-					
-				if (counter = 10000000) then
-	
-					count := count + 1;
-					binary_value <= std_logic_vector(to_unsigned(count, 15));
-					counter := 0;
-					
-					if (count = 9999) then 
-						count := 0;
-					end if;
-			
-				end if;
+			if (RESET_N = '0') then 
+				LEDR <= (others => '0');
+				
+			elsif (rising_edge(clock_50MHz)) then 
+				LEDR <= std_logic_vector(to_unsigned(lives, 10));
+				
 			end if;
-		
+			
 		end process;
+		
+--		-- DEBUG 
+--		test_7segment : process(clock_50MHz, RESET_N) is
+--		
+--			variable count 	: integer range 0 to 32677 := 0;
+--			variable counter 	: integer						:= 0;
+--		
+--		begin
+--		
+--			if (RESET_N = '0') then
+--		
+--				count := 0;
+--				counter := 0;
+--				gameover <= '0';
+--				
+--			elsif (rising_edge(clock_50MHz)) then
+--					
+--				counter := counter + 1;
+--					
+--				if (counter = 40000000) then
+--		
+--					gameover <= not(gameover);	
+--					counter := 0;
+--			
+--				end if;
+--			end if;
+--		
+--		end process;
 		
 end architecture;

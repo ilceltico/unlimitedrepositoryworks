@@ -641,7 +641,7 @@ begin
 				
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY => 
-						DESTROY <= reg_collision.second_entity;
+						HIDE <= reg_collision.second_entity;
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 					
@@ -657,7 +657,7 @@ begin
 					
 					case (collision_handler_state) is 
 					when HANDLING_FIRST_ENTITY =>
-						DESTROY <= (0,0,ENTITY_PLAYER);
+						HIDE <= (0,0,ENTITY_PLAYER);
 					when HANDLING_SECOND_ENTITY => -- Do nothing
 					end case;
 					
@@ -681,7 +681,7 @@ begin
 					when HANDLING_SECOND_ENTITY => 
 						if (destruction_index_array(PLAYER_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
 							destruction_index_array(PLAYER_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
-							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (PLAYER_EXPLOSION_TIME_1us); -- TODO still wip af.
+							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (PLAYER_EXPLOSION_TIME_1us); 
 							DESTROY <= reg_collision.second_entity;
 						end if;
 					end case;
