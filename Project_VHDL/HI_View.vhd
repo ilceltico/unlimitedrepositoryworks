@@ -63,29 +63,32 @@ begin
 	
 		if(RESET_N = '0') then
 		
-			FB_CLEAR       <= '0';
-			FB_DRAW_RECT 	<= '0';
-			FB_FILL_RECT   <= '0';
-			FB_FLIP        <= '0';
-			READY 			<= '0';
-			FB_COLOR 		<= COLOR_BLACK;
-			FB_X0 			<= 0;
-			FB_X1 			<= 0;
-			FB_Y0 			<= 0;
-			FB_Y1 			<= 0;
+			FB_CLEAR      	 		<= '0';
+			FB_DRAW_RECT 			<= '0';
+			FB_FILL_RECT  		 	<= '0';
+			FB_FLIP        		<= '0';
+			READY 					<= '0';
+			FB_COLOR 				<= COLOR_BLACK;
+			FB_X0 					<= 0;
+			FB_X1 					<= 0;
+			FB_Y0 					<= 0;
+			FB_Y1 					<= 0;
 	
-			row 				<= 0;
-			column 			<= 0;
-			show_asap 		<= '0';
-			state 			<= CLEARING;
-			substate 		<= COMPUTE_UPSCALE_FACTOR_X;
+			row 						<= 0;
+			column 					<= 0;
+			show_asap 				<= '0';
+			next_state				<= IDLE;
+			state 					<= CLEARING;
+			substate 				<= COMPUTE_UPSCALE_FACTOR_X;
 			
-			reg_sprite 		:= sprite_empty;
-			reg_hitbox		:= (0,0,1,1);
-			reg_fb_x0 		:= 0;
-			reg_fb_x1		:= 0;
-			reg_fb_y0		:= 0;
-			reg_fb_y1		:= 0;
+			pixel_scale_factor_x := 1;
+			pixel_scale_factor_y := 1;
+			reg_sprite 				:= sprite_empty;
+			reg_hitbox				:= (0,0,1,1);
+			reg_fb_x0 				:= 0;
+			reg_fb_x1				:= 0;
+			reg_fb_y0				:= 0;
+			reg_fb_y1				:= 0;
 	
 		elsif(rising_edge(CLOCK)) then
 			
@@ -258,9 +261,9 @@ begin
 					
 				FB_DRAW_RECT 	<= '1';
 				FB_X0 			<= FRAME_LEFT_X;
-				FB_X1 			<= FRAME_RIGHT_X;
+				FB_X1 			<= FRAME_RIGHT_X - 1;
 				FB_Y0 			<= FRAME_UP_Y;
-				FB_Y1 			<= FRAME_DOWN_Y;
+				FB_Y1 			<= FRAME_DOWN_Y - 1;
 				FB_COLOR 		<= COLOR_RED;
 				state 			<= WAITING;
 				next_state 		<= IDLE;

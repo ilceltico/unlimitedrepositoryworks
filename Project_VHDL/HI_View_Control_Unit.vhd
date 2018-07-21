@@ -191,7 +191,7 @@ begin
 					
 				when GAMEOVER_QUERY =>
 					
-					REQUEST_ENTITY_SPRITE 	<= (GAMEOVER_SCREEN_INDEX,rendered_screen_part, ENTITY_SCREEN);
+					REQUEST_ENTITY_SPRITE 	<= (GAMEOVER_SCREEN_INDEX, rendered_screen_part, ENTITY_SCREEN);
 							
 					rendered_screen_part 	:= rendered_screen_part + 1;
 							

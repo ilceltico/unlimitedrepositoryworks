@@ -115,9 +115,9 @@ architecture RTL of HardwareInvaders is
 	signal reset_sync_reg     					: std_logic;
 	
 	-- ??? wat_lady.jpg
-	signal sprite_x           					: xy_coord_type;
-	signal sprite_y           					: xy_coord_type;
-	signal shield									: shield_type;
+--	signal sprite_x           					: xy_coord_type;
+--	signal sprite_y           					: xy_coord_type;
+--	signal shield									: shield_type;
 	
 	-- Keyboard inputs
 	signal move_left								: std_logic;
@@ -133,10 +133,10 @@ architecture RTL of HardwareInvaders is
 	
 	-- Controller outputs
 	signal gameover 								: std_logic;
-	signal victory 								: std_logic;
 	signal new_level								: std_logic;
 	signal level									: integer;
---	signal youwin									: std_logic;
+	signal youwin									: std_logic;
+	signal show_next_level						: std_logic;
 	
 begin
 
@@ -260,15 +260,16 @@ begin
 	controller : entity work.HI_Controller
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
-			RESET_N			=> RESET_N,
-			LIVES				=> lives,
-			ALIEN_COUNT		=> alive_alien_count,
+			CLOCK					=> clock_50MHz,
+			RESET_N				=> RESET_N,
+			LIVES					=> lives,
+			ALIEN_COUNT			=> alive_alien_count,
 		
-			LEVEL 			=> level,
-			NEW_LEVEL		=> new_level,
-			GAMEOVER			=> gameover,
-			YOUWIN			=> youwin
+			LEVEL 				=> level,
+			NEW_LEVEL			=> new_level,
+			GAMEOVER				=> gameover,
+			YOUWIN				=> youwin,
+			SHOW_NEXT_LEVEL 	=> show_next_level
 		);
 		
 
@@ -280,7 +281,7 @@ begin
 			RESET_N						=> RESET_N,
 			READY 						=> sr_ready,
 			GAMEOVER						=> gameover,
-			NEW_LEVEL					=> new_level,
+			NEW_LEVEL					=> show_next_level,
 			YOUWIN						=> youwin,		
 			
 			DRAW_SPRITE					=> draw_sprite,
@@ -337,6 +338,8 @@ begin
 			ALIEN_SHOOT								=> alien_shoot,
 			PLAYER_SHOOT							=> player_shoot,
 			CHANGE_PLAYER_EXPLOSION_SPRITE 	=> change_player_explosion_sprite,
+			NEW_LEVEL								=> new_level,
+			LEVEL										=> level,
 			
 			SPRITE 									=> sprite_to_render,
 			HITBOX									=> hitbox_to_render,
@@ -348,16 +351,14 @@ begin
 			COLLISION 								=> collision,
 			SCORE										=> score,
 			LIVES										=> lives,
-			ALIVE_ALIEN_COUNT						=> alive_alien_count,
-			NEW_LEVEL								=> new_level,
-			LEVEL										=> level
+			ALIVE_ALIEN_COUNT						=> alive_alien_count
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
 		port map
 		(
 			CLOCK 									=> clock_50MHz,
-			RESET_N 									=> RESET_N, 
+			RESET_N 									=> RESET_N and not(new_level), 
 			TIME_1US 								=> time_1us,
 			ALIEN_BORDER_REACHED 				=> alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED 			=> rand_alien_border_reached,
@@ -369,8 +370,7 @@ begin
 			BUTTON_LEFT 							=> move_left,
 			BUTTON_RIGHT 							=> move_right,
 			BUTTON_SHOOT 							=> shoot,
-		
-			--SCORE										=> score_counter,	
+			
 			ALIEN_GRID_MOVEMENT 					=> alien_grid_movement,
 			COLUMN_TO_SHOOT 						=> column_index,
 			ALIEN_SHOOT 							=> alien_shoot,
@@ -424,77 +424,46 @@ begin
 			RAND_OUTPUT		=> rand_output
 		);
 				
-		led_keyboard : process(clock_50MHz, RESET_N) is
+--		led_keyboard : process(clock_50MHz, RESET_N) is
+--		begin
+--		
+--			if (RESET_N = '0') then
+--		
+--				LEDG(7) <= '0';
+--				LEDG(5) <= '0';
+--				LEDG(3) <= '0';
+--				LEDG(1) <= '0';
+--			
+--			elsif (rising_edge(clock_50MHz)) then
+--			
+--				LEDG(7) <= keyboard_move_left;
+--				LEDG(5) <= keyboard_move_right;
+--				LEDG(3) <= keyboard_shoot;
+--				LEDG(1) <= keyboard_start;
+--			
+--			end if;
+--		
+--		end process;
+
+		move_left 	<= (keyboard_move_left and not(gameover) and not(youwin)) or not(KEY(3));
+		move_right 	<= (keyboard_move_right and not(gameover) and not(youwin)) or not(KEY(2));
+		shoot 		<= (keyboard_shoot and not(gameover) and not(youwin)) or not(KEY(1));
+		start 		<= (keyboard_start and not(gameover) and not(youwin)) or not(KEY(0));
+
+		led_levels : process(clock_50MHz, RESET_N) is 
 		begin
-		
+			
 			if (RESET_N = '0') then
 		
-				LEDG(7) <= '0';
-				LEDG(5) <= '0';
-				LEDG(3) <= '0';
-				LEDG(1) <= '0';
+				LEDG <= (others => '0');
 			
 			elsif (rising_edge(clock_50MHz)) then
 			
-				LEDG(7) <= keyboard_move_left;
-				LEDG(5) <= keyboard_move_right;
-				LEDG(3) <= keyboard_shoot;
-				LEDG(1) <= keyboard_start;
+				LEDG <= std_logic_vector(to_unsigned(level, 8));
 			
 			end if;
 		
 		end process;
-		
-		move_left 	<= keyboard_move_left or not(KEY(3));
-		move_right 	<= keyboard_move_right or not(KEY(2));
-		shoot 		<= keyboard_shoot or not(KEY(1));
-		start 		<= keyboard_start or not(KEY(0));
-
---		led_ps2_code : process(clock_50MHz, RESET_N) is
---			variable selectLed : std_logic := '0';
---			variable codenew : std_logic := '0';
---		begin
---			if (RESET_N = '0') then
---				selectLed := '0';
---				codenew := '0';
---				
---				LEDG(0) <= '0';
---				LEDG(1) <= '0';
---				LEDG(2) <= '0';
---				LEDG(3) <= '0';
---				LEDG(4) <= '0';
---				LEDG(5) <= '0';
---				LEDG(6) <= '0';
---				LEDG(7) <= '0';
---				
---				LEDR(0) <= '0';
---				LEDR(1) <= '0';
---				LEDR(2) <= '0';
---				LEDR(3) <= '0';
---				LEDR(4) <= '0';
---				LEDR(5) <= '0';
---				LEDR(6) <= '0';
---				LEDR(7) <= '0';
---			elsif (rising_edge (clock_50MHz)) then
---				if (ps2_CODE_NEW = '1' and ps2_code_new /= codenew) then
---					if (selectLed = '1') then
---						LEDG <= PS2_code;
---					else 
---						LEDR(0) <= PS2_CODE(0);
---						LEDR(1) <= PS2_CODE(1);
---						LEDR(2) <= PS2_CODE(2);
---						LEDR(3) <= PS2_CODE(3);
---						LEDR(4) <= PS2_CODE(4);
---						LEDR(5) <= PS2_CODE(5);
---						LEDR(6) <= PS2_CODE(6);
---						LEDR(7) <= PS2_CODE(7);
---					end if;
---					
---					selectLed := not selectLed;
---				end if;
---				codenew := PS2_code_new;
---			end if;
---		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
 		generic map (
@@ -583,33 +552,5 @@ begin
 			end if;
 			
 		end process;
-		
---		-- DEBUG 
---		test_7segment : process(clock_50MHz, RESET_N) is
---		
---			variable count 	: integer range 0 to 32677 := 0;
---			variable counter 	: integer						:= 0;
---		
---		begin
---		
---			if (RESET_N = '0') then
---		
---				count := 0;
---				counter := 0;
---				gameover <= '0';
---				
---			elsif (rising_edge(clock_50MHz)) then
---					
---				counter := counter + 1;
---					
---				if (counter = 40000000) then
---		
---					gameover <= not(gameover);	
---					counter := 0;
---			
---				end if;
---			end if;
---		
---		end process;
 		
 end architecture;

@@ -67,9 +67,9 @@ architecture RTL of HI_Datapath is
 	signal reg_alive_aliens		: integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 	
 	constant screens 				: screen_array_type := (
-		((GAMEOVER_1_SPRITE, (150,200,60,20)), (GAMEOVER_2_SPRITE, (210,200,60,20)), (GAMEOVER_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
-		((YOUWIN_1_SPRITE, (150,200,60,20)), (YOUWIN_2_SPRITE, (210,200,60,20)), (YOUWIN_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
-		((NEW_LEVEL_1_SPRITE, (150,200,60,20)), (NEW_LEVEL_2_SPRITE, (210,200,60,20)), (NEW_LEVEL_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
+		((GAMEOVER_1_SPRITE, (165,200,60,20)), 	(GAMEOVER_2_SPRITE, (225,200,60,20)), 	(GAMEOVER_3_SPRITE, (285,200,60,20)), 	others => (0,(0,0,0,0))),
+		((YOUWIN_1_SPRITE, (165,200,60,20)), 		(YOUWIN_2_SPRITE, (225,200,60,20)), 	(YOUWIN_3_SPRITE, (285,200,60,20)), 	others => (0,(0,0,0,0))),
+		((NEW_LEVEL_1_SPRITE, (165,200,60,20)), 	(NEW_LEVEL_2_SPRITE, (225,200,60,20)), (NEW_LEVEL_3_SPRITE, (285,200,60,20)), others => (0,(0,0,0,0)))
 	);
 	
 begin
@@ -158,6 +158,7 @@ begin
 			active_rows 		<= (others => '1');
 			
 			reg_alive_aliens 	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
+			ALIVE_ALIEN_COUNT	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
 			
 			for I in 0 to COLUMNS_PER_GRID - 1 loop
 				
@@ -342,6 +343,7 @@ begin
 				active_rows 		<= (others => '1');
 				
 				reg_alive_aliens 	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
+				ALIVE_ALIEN_COUNT	<= COLUMNS_PER_GRID * ALIENS_PER_COLUMN;
 				
 				for I in 0 to COLUMNS_PER_GRID - 1 loop
 					
@@ -363,14 +365,9 @@ begin
 							alien_grid(I)(J).points				<= ALIEN_1_POINTS;
 						
 						end if;
-
---					if( LEVEL = '0') then
---					elsif (LEVEL = '1') then
---					else
---					end if;
 						
 						alien_grid(I)(J).hitbox.up_left_x 	<= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
-						alien_grid(I)(J).hitbox.up_left_y 	<= FIRST_ALIEN_CELL_Y + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);
+						alien_grid(I)(J).hitbox.up_left_y 	<= FIRST_ALIEN_CELL_Y + (LEVEL - 1) * FIRST_ALIEN_CELL_Y_INCREASE + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);
 						alien_grid(I)(J).hitbox.size_x 		<= ALIEN_SIZE_X;
 						alien_grid(I)(J).hitbox.size_y 		<= ALIEN_SIZE_Y;
 						alien_grid(I)(J).current_index 		<= 0;
@@ -961,6 +958,8 @@ begin
 			player.current_index 	<= 0;
 			player.lives 				<= PLAYER_LIVES;
 			player.exploding 			<= '0';
+			
+			LIVES 						<= PLAYER_LIVES;
 			
 		elsif (rising_edge(CLOCK)) then
 		

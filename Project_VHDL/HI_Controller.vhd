@@ -18,6 +18,7 @@ entity HI_Controller is
 		
 		LEVEL 				: out integer range 1 to LEVEL_NUMBER;
 		NEW_LEVEL			: out std_logic;
+		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
 		YOUWIN 				: out std_logic
 		
@@ -28,34 +29,35 @@ architecture RTL of HI_Controller is
 	type game_state_type is (IN_GAME_STATE, YOUWIN_STATE, NEW_LEVEL_STATE, GAMEOVER_STATE);
 	
 	signal state		: game_state_type;
-	signal level_no	: integer;
 
 begin
 
 	Controller_RTL : process (CLOCK, RESET_N)
 	
-		variable counter : integer := 0;
+		variable counter 	: integer := 0;
+		variable level_no	: integer := 1;
 	
 	begin
 		
 		if(RESET_N = '0') then
 		
-			level_no <= 1;
-			counter := 0;
-			state <= IN_GAME_STATE;
+			NEW_LEVEL 			<= '0';
+			LEVEL					<= 1;
+			GAMEOVER 			<= '0';
+			YOUWIN 				<= '0';
+			SHOW_NEXT_LEVEL 	<= '0';
+		
+			state 				<= IN_GAME_STATE;
 			
-			NEW_LEVEL <= '0';
-			LEVEL	:= 0;
-			GAMEOVER <= '0';
-			YOUWIN <= '0';
-			
-			
+			counter 				:= 0;
+			level_no 			:= 1;
 			
 		elsif rising_edge(CLOCK) then		
 			
-			GAMEOVER <= '0';
-			YOUWIN	<= '0';
-			NEW_LEVEL <= '0';
+			GAMEOVER 			<= '0';
+			YOUWIN				<= '0';
+			NEW_LEVEL 			<= '0';
+			SHOW_NEXT_LEVEL 	<= '0';
 			
 			case(state) is 
 			when IN_GAME_STATE => 
@@ -65,27 +67,32 @@ begin
 				end if;
 				
 				if (ALIEN_COUNT = 0) then
-					state <= NEW_LEVEL_STATE;
+					
+					if (level_no < LEVEL_NUMBER) then 	
+						state <= NEW_LEVEL_STATE;
+					
+					else   --check if you won even the third set -> lvl 4 -> you won the game
+						state <= YOUWIN_STATE;						
+					
+					end if;
 				end if;
 				
 			when NEW_LEVEL_STATE =>
 			
-				counter := counter + 1;
+				counter 				:= counter + 1;
+				SHOW_NEXT_LEVEL 	<= '1';
 				
-				if (counter = 40000000) then 
-					counter := 0;
-					level_no <= level_no + 1;
+				if (counter = 100000000) then 
 					
-					
-					if (level_no <= LEVEL_NUMBER) then 
-						state <= IN_GAME_STATE;
---						LEVEL <= level_no;
-						NEW_LEVEL <= '1';
-					
-					else   --check if you won even the third set -> lvl 4 -> you won the game
-						state <= YOUWIN_STATE;						
-					end if;
+					level_no 	:= level_no + 1;
+					LEVEL 		<= level_no;
+					NEW_LEVEL	<= '1';
 				
+				elsif (counter = 100000001) then 
+				
+					state	 		<= IN_GAME_STATE;
+					counter 		:= 0;
+					
 				end if;
 			
 			when YOUWIN_STATE =>

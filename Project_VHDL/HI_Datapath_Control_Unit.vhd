@@ -19,6 +19,7 @@ entity Hi_Datapath_Control_Unit is
 		BUTTON_LEFT								: in std_logic;
 		BUTTON_RIGHT							: in std_logic;
 		BUTTON_SHOOT							: in std_logic;
+--		NEW_LEVEL								: in std_logic;
 		
 		ALIEN_GRID_MOVEMENT					: out direction_type;
 		COLUMN_TO_SHOOT						: out alien_grid_index_type;
@@ -295,7 +296,8 @@ begin
 		if (RESET_N = '0') then 
 		
 			grid_movement 			:= DIR_RIGHT;
-			ALIEN_GRID_MOVEMENT 	<= DIR_NONE;
+			last_wall_reached		:= DIR_NONE;
+			ALIEN_GRID_MOVEMENT 	<= DIR_RIGHT;
 		
 		elsif (rising_edge(CLOCK)) then 
 		
