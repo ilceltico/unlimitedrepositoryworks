@@ -45,7 +45,7 @@ begin
 			state <= IN_GAME_STATE;
 			
 			NEW_LEVEL <= '0';
-			LEVEL	<= '0';
+			LEVEL	:= 0;
 			GAMEOVER <= '0';
 			YOUWIN <= '0';
 			

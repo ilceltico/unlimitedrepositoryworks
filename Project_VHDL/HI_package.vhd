@@ -125,12 +125,12 @@ package HI_package is
 	
 	-- Screen entities
 	constant GAMEOVER_SCREEN_INDEX						: natural := 0;
-	constant VICTORY_SCREEN_INDEX							: natural := 1;
+	constant YOUWIN_SCREEN_INDEX							: natural := 1;
 	constant NEW_LEVEL_SCREEN_INDEX						: natural := 2;
 	
 	constant GAMEOVER_SCREEN_PART_COUNT					: natural := 3;
-	constant VICTORY_SCREEN_PART_COUNT					: natural := 3;
--- constant NEXTLEVEL_SCREEN_PART_COUNT				: natural := 3;
+	constant YOUWIN_SCREEN_PART_COUNT					: natural := 3;
+	constant NEW_LEVEL_SCREEN_PART_COUNT				: natural := 3;
 	
 	constant MAX_SCREEN_PART_COUNT 						: natural := 64;
 	constant MAX_SCREENS										: natural := 2;
@@ -184,9 +184,9 @@ package HI_package is
 	constant YOUWIN_1_SPRITE								: natural := 45;
 	constant YOUWIN_2_SPRITE								: natural := 46;
 	constant YOUWIN_3_SPRITE								: natural := 47;
-	constant NEWLEVEL_1_SPRITE							: natural := 48;
-	constant NEWLEVEL_2_SPRITE							: natural := 49;
-	constant NEWLEVEL_3_SPRITE							: natural := 50;
+	constant NEW_LEVEL_1_SPRITE							: natural := 48;
+	constant NEW_LEVEL_2_SPRITE							: natural := 49;
+	constant NEW_LEVEL_3_SPRITE							: natural := 50;
 	
 	-- Points
 	constant BINARY_INPUT_WIDTH							: natural := 15;
@@ -2452,7 +2452,7 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
-				"00000000000000000000000000000000";
+				"00000000000000000000000000000000"
 				),
 			32,
 			10,
@@ -2493,7 +2493,7 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
-				"00000000000000000000000000000000";
+				"00000000000000000000000000000000"
 				),
 			32,
 			10,
@@ -2534,7 +2534,7 @@ package HI_package is
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
 				"00000000000000000000000000000000",
-				"00000000000000000000000000000000";
+				"00000000000000000000000000000000"
 				),
 			32,
 			10,

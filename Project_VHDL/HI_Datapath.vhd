@@ -69,7 +69,7 @@ architecture RTL of HI_Datapath is
 	constant screens 				: screen_array_type := (
 		((GAMEOVER_1_SPRITE, (150,200,60,20)), (GAMEOVER_2_SPRITE, (210,200,60,20)), (GAMEOVER_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
 		((YOUWIN_1_SPRITE, (150,200,60,20)), (YOUWIN_2_SPRITE, (210,200,60,20)), (YOUWIN_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
-		((NEWLEVEL_1_SPRITE, (150,200,60,20)), (NEWLEVEL_1_SPRITE_2_SPRITE, (210,200,60,20)), (NEWLEVEL_1_SPRITE_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
+		((NEW_LEVEL_1_SPRITE, (150,200,60,20)), (NEW_LEVEL_2_SPRITE, (210,200,60,20)), (NEW_LEVEL_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
 	);
 	
 begin
