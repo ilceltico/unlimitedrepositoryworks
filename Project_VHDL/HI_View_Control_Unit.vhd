@@ -11,7 +11,8 @@ entity Hi_View_Control_Unit is
 		RESET_N							: in 	std_logic;
 		READY 							: in  std_logic;
 		GAMEOVER							: in 	std_logic;
-		VICTORY							: in 	std_logic;
+		NEW_LEVEL						: in 	std_logic;
+		YOUWIN							: in  std_logic;
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
@@ -23,7 +24,7 @@ end entity;
 architecture RTL of Hi_View_Control_Unit is 
 
 type state_type 		is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
-type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, GAMEOVER_QUERY, VICTORY_QUERY, RENDER_END);
+type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, GAMEOVER_QUERY, YOUWIN_QUERY, NEW_LEVEL_QUERY, RENDER_END);
 
 signal render_asap		: std_logic;
 signal state 				: state_type;
@@ -174,7 +175,20 @@ begin
 							
 					REQUEST_ENTITY_SPRITE 	<= (0,0, ENTITY_PLAYER);
 					substate 					<= RENDER_END;
+				
+				when NEW_LEVEL_QUERY =>
+					
+					REQUEST_ENTITY_SPRITE 	<= (NEW_LEVEL_SCREEN_INDEX,rendered_screen_part, ENTITY_SCREEN);
 							
+					rendered_screen_part 	:= rendered_screen_part + 1;
+							
+					if (rendered_screen_part > NEW_LEVEL_SCREEN_PART_COUNT - 1) then
+						
+						rendered_screen_part 	:= 0;
+						substate 					<= RENDER_END;
+					
+					end if;
+					
 				when GAMEOVER_QUERY =>
 					
 					REQUEST_ENTITY_SPRITE 	<= (GAMEOVER_SCREEN_INDEX,rendered_screen_part, ENTITY_SCREEN);
@@ -188,19 +202,19 @@ begin
 					
 					end if;
 	
-				when VICTORY_QUERY =>
+				when YOUWIN_QUERY =>
 				
-					REQUEST_ENTITY_SPRITE 	<= (VICTORY_SCREEN_INDEX, rendered_screen_part, ENTITY_SCREEN);
+					REQUEST_ENTITY_SPRITE 	<= (YOUWIN_SCREEN_INDEX, rendered_screen_part, ENTITY_SCREEN);
 							
 					rendered_screen_part 	:= rendered_screen_part + 1;
 							
-					if (rendered_screen_part > VICTORY_SCREEN_PART_COUNT - 1) then
+					if (rendered_screen_part > YOUWIN_SCREEN_PART_COUNT - 1) then
 						
 						rendered_screen_part 	:= 0;
 						substate 					<= RENDER_END;
 					
 					end if;
-							
+					
 				when RENDER_END =>
 						
 					next_state 	<= SHOW_SPRITES;
@@ -209,8 +223,11 @@ begin
 					if (GAMEOVER = '1') then 
 						substate <= GAMEOVER_QUERY;
 						
-					elsif (VICTORY = '1') then
-						substate <= VICTORY_QUERY;
+					elsif (YOUWIN = '1') then 
+						substate <= YOUWIN_QUERY;
+					
+					elsif (NEW_LEVEL = '1') then
+						substate <= NEW_LEVEL_QUERY;
 					
 					end if;
 							

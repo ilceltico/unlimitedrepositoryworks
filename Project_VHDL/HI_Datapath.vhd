@@ -68,7 +68,8 @@ architecture RTL of HI_Datapath is
 	
 	constant screens 				: screen_array_type := (
 		((GAMEOVER_1_SPRITE, (150,200,60,20)), (GAMEOVER_2_SPRITE, (210,200,60,20)), (GAMEOVER_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
-		((VICTORY_1_SPRITE, (150,200,60,20)), (VICTORY_2_SPRITE, (210,200,60,20)), (VICTORY_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
+		((YOUWIN_1_SPRITE, (150,200,60,20)), (YOUWIN_2_SPRITE, (210,200,60,20)), (YOUWIN_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0))),
+		((NEWLEVEL_1_SPRITE, (150,200,60,20)), (NEWLEVEL_1_SPRITE_2_SPRITE, (210,200,60,20)), (NEWLEVEL_1_SPRITE_3_SPRITE, (270,200,60,20)), others => (0,(0,0,0,0)))
 	);
 	
 begin
@@ -362,6 +363,11 @@ begin
 							alien_grid(I)(J).points				<= ALIEN_1_POINTS;
 						
 						end if;
+
+--					if( LEVEL = '0') then
+--					elsif (LEVEL = '1') then
+--					else
+--					end if;
 						
 						alien_grid(I)(J).hitbox.up_left_x 	<= FIRST_ALIEN_CELL_X + I * (ALIEN_SIZE_X + ALIEN_SPACING_X);
 						alien_grid(I)(J).hitbox.up_left_y 	<= FIRST_ALIEN_CELL_Y + J * (ALIEN_SIZE_Y + ALIEN_SPACING_Y);

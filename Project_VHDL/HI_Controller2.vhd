@@ -25,7 +25,7 @@ entity HI_Controller is
 end entity;
 
 architecture RTL of HI_Controller is
-	type game_state_type is (IN_GAME_STATE, YOUWIN_STATE, NEW_LEVEL_STATE, GAMEOVER_STATE);
+	type game_state_type is (IN_GAME_STATE, YOUWIN_STATE, NEWLEVEL_STATE, GAMEOVER_STATE);
 	
 	signal state		: game_state_type;
 	signal level_no	: integer;
@@ -41,15 +41,10 @@ begin
 		if(RESET_N = '0') then
 		
 			level_no <= 1;
-			counter := 0;
 			state <= IN_GAME_STATE;
-			
-			NEW_LEVEL <= '0';
-			LEVEL	<= '0';
 			GAMEOVER <= '0';
 			YOUWIN <= '0';
-			
-			
+			counter := 0;
 			
 		elsif rising_edge(CLOCK) then		
 			
@@ -65,33 +60,25 @@ begin
 				end if;
 				
 				if (ALIEN_COUNT = 0) then
-					state <= NEW_LEVEL_STATE;
+					state <= NEXTLEVEL_STATE;
 				end if;
 				
-			when NEW_LEVEL_STATE =>
-			
+			when YOUWIN_STATE =>
+				
+				YOUWIN <= '1';
 				counter := counter + 1;
 				
 				if (counter = 40000000) then 
 					counter := 0;
 					level_no <= level_no + 1;
-					
-					
 					if (level_no <= LEVEL_NUMBER) then 
 						state <= IN_GAME_STATE;
---						LEVEL <= level_no;
 						NEW_LEVEL <= '1';
-					
-					else   --check if you won even the third set -> lvl 4 -> you won the game
-						state <= YOUWIN_STATE;						
+--					elsif (level_no = level_no + 2) then    check if you won even the third set -> lvl 4 -> you won the game
+--						YOUWIN <= '1';
 					end if;
-				
 				end if;
 			
-			when YOUWIN_STATE =>
-			
-				YOUWIN <= '1';
-				
 			when GAMEOVER_STATE =>
 			
 				GAMEOVER <= '1';
