@@ -55,7 +55,7 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal random_alien_movement				: direction_type;
 	signal next_random_alien_movement		: direction_type;
 	
-	signal rand_col								: integer range 0 to (COLUMNS_PER_GRID - 1);
+	signal rand_col								: alien_grid_index_type;
 	
 	signal destruction_index_array			: destruction_index_array_type;
 	signal destruction_timer_array 			: destruction_timer_array_type;
@@ -206,13 +206,13 @@ begin
 		
 		elsif (rising_edge(CLOCK)) then
 		
-			if (time_1us = '1' and RAND_GEN(0) = '1' and RAND_GEN(1) = '1') then -- The rand_col gets incremented every 1us only if the first 2 random bits are 1
+			if (time_1us = '1' and RAND_GEN(0) = '1' and RAND_GEN(2) = '1') then -- The rand_col gets incremented every 1us only if the first and third random bits are 1
 			
 				if(rand_col = rand_col'high) then
 					rand_col <= 0;
 				
 				else
-					rand_col <= rand_col+1;
+					rand_col <= rand_col + 1;
 				
 				end if;
 			end if;
@@ -414,8 +414,7 @@ begin
 		
 	column_to_shoot_handling : process(CLOCK, RESET_N)
 		
-		variable column 				  	: integer 					:= 0;
-		variable reg_column_to_shoot 	: alien_grid_index_type := 0;
+		variable column 				  	: alien_grid_index_type	:= 0;
 		
 	begin
 	
@@ -426,7 +425,6 @@ begin
 			
 			column_state 			<= IDLE;
 			
-			reg_column_to_shoot 	:= 0;
 			column					:= 0;
 			
 		elsif (rising_edge(CLOCK)) then	
@@ -446,10 +444,10 @@ begin
 					when FIRST_INDEX => 
 						
 						column 					:= rand_col;
---						column 					:= 0; -- for debugging purposes
-						reg_column_to_shoot 	:= column;	
+					--	column 					:= 0; -- for debugging purposes
 						
-						COLUMN_TO_SHOOT 		<= reg_column_to_shoot;
+						COLUMN_TO_SHOOT 		<= column;
+						ALIEN_SHOOT 			<= '1';
 						column_state 			<= WAITING;
 						
 						
@@ -462,8 +460,12 @@ begin
 							
 						if (COLUMN_CANNOT_SHOOT = '1') then
 							
-							reg_column_to_shoot 	:= reg_column_to_shoot + 1;
-							COLUMN_TO_SHOOT 		<= reg_column_to_shoot; 
+							if (column = column'high) then
+								column := 0;
+							else 
+								column := column + 1;
+							end if;
+							COLUMN_TO_SHOOT 		<= column; 
 							column_state 			<= WAITING;
 							ALIEN_SHOOT 			<= '1';
 												
