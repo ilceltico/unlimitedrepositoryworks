@@ -135,7 +135,6 @@ begin
 	variable var_last_column 	: alien_grid_index_type 	:= COLUMNS_PER_GRID - 1;
 	variable var_last_row 		: alien_column_index_type 	:= ALIENS_PER_COLUMN - 1;
 	variable found 				: std_logic 					:= '0';
-	variable pause					: std_logic 					:= '0';
 	
 	begin
 			
@@ -152,7 +151,6 @@ begin
 			last_row 			<= var_last_row;
 			
 			found 				:= '0';
-			pause 				:= '0';
 			
 			active_columns 	<= (others => '1');
 			active_rows 		<= (others => '1');
@@ -337,7 +335,6 @@ begin
 				last_row 			<= var_last_row;
 				
 				found 				:= '0';
-				pause 				:= '0';
 				
 				active_columns 	<= (others => '1');
 				active_rows 		<= (others => '1');
@@ -1024,9 +1021,7 @@ begin
 	
 	rand_alien_movement_handler : process(CLOCK, RESET_N) is
 	begin
-	
-		RAND_ALIEN_VISIBLE <= rand_alien.visible;
-	
+		
 		if (RESET_N = '0') then
 			
 			rand_alien.sprite_indexes 		<= (ALIEN_4_SPRITE, ALIEN_4_SPRITE, ALIEN_EXPLOSION_SPRITE);
@@ -1038,8 +1033,11 @@ begin
 			rand_alien.points 				<= ALIEN_4_POINTS;
 			rand_alien.visible 				<= '0';
 			rand_alien.exploding 			<= '0';
-			
+			RAND_ALIEN_VISIBLE <= rand_alien.visible;
+
 		elsif (rising_edge(CLOCK)) then
+		
+			RAND_ALIEN_VISIBLE <= rand_alien.visible;
 		
 			if (SHOW_RAND_ALIEN = '1') then
 				rand_alien.visible <= '1';

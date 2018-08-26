@@ -125,6 +125,9 @@ architecture RTL of HardwareInvaders is
 	signal shoot									: std_logic;
 	signal start									: std_logic;
 	
+	-- Options
+	signal geek_binary_leds						: std_logic;
+	
 	-- Binary to bcd
 	signal binary_to_bcd_start 				: std_logic;
 	signal bcd_value_temp						: std_logic_vector(DECIMAL_DIGITS_7SEGMENT*4 - 1 downto 0);
@@ -450,6 +453,8 @@ begin
 		move_right 	<= (keyboard_move_right and not(gameover) and not(youwin)) or not(KEY(2));
 		shoot 		<= (keyboard_shoot and not(gameover) and not(youwin)) or not(KEY(1));
 		start 		<= (keyboard_start and not(gameover) and not(youwin)) or not(KEY(0));
+		
+		geek_binary_leds <= SW(1);
 
 		led_levels : process(clock_50MHz, RESET_N) is 
 		begin
@@ -460,7 +465,22 @@ begin
 			
 			elsif (rising_edge(clock_50MHz)) then
 			
-				LEDG <= std_logic_vector(to_unsigned(level, 8));
+				if (geek_binary_leds = '1') then 
+					LEDG <= std_logic_vector(to_unsigned(level, 8));
+				else 
+					case (level) is
+						when 0 => LEDG <= "00000000";
+						when 1 => LEDG <= "00000001";
+						when 2 => LEDG <= "00000011";
+						when 3 => LEDG <= "00000111";
+						when 4 => LEDG <= "00001111";
+						when 5 => LEDG <= "00011111";
+						when 6 => LEDG <= "00111111";
+						when 7 => LEDG <= "01111111";
+						when 8 => LEDG <= "11111111";
+						when others => LEDG <= "11111111";
+					end case;
+				end if;
 			
 			end if;
 		
@@ -540,7 +560,7 @@ begin
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
-		led_handler : process(clock_50MHz, RESET_N) is 
+		led_lives : process(clock_50MHz, RESET_N) is 
 		
 		begin 
 		
@@ -548,7 +568,24 @@ begin
 				LEDR <= (others => '0');
 				
 			elsif (rising_edge(clock_50MHz)) then 
-				LEDR <= std_logic_vector(to_unsigned(lives, 10));
+				if (geek_binary_leds = '1') then
+					LEDR <= std_logic_vector(to_unsigned(lives, 10));
+				else
+					case (lives) is
+						when 0 => LEDR <= "0000000000";
+						when 1 => LEDR <= "0000000001";
+						when 2 => LEDR <= "0000000011";
+						when 3 => LEDR <= "0000000111";
+--						when 4 => LEDR <= "0000001111";
+--						when 5 => LEDR <= "0000011111";
+--						when 6 => LEDR <= "0000111111";
+--						when 7 => LEDR <= "0001111111";
+--						when 8 => LEDR <= "0011111111";
+--						when 9 => LEDR <= "0111111111";
+--						when 10 => LEDR <= "1111111111";
+						when others => LEDR <= "1111111111";
+					end case;
+				end if;
 				
 			end if;
 			
