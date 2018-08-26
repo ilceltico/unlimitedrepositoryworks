@@ -364,6 +364,7 @@ begin
 			RAND_ALIEN_BORDER_REACHED 			=> rand_alien_border_reached,
 			RAND_ALIEN_VISIBLE 					=> rand_alien_visible,
 			PLAYER_BORDER_REACHED 				=> player_border_reached,
+			LIVES										=> lives,
 			RAND_GEN									=> rand_output,
 			COLUMN_CANNOT_SHOOT 					=> column_cannot_shoot,
 			COLLISION 								=> collision,

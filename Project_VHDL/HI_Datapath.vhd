@@ -944,10 +944,10 @@ begin
 		end if;
 	
 	end process;
-	
+		
 	player_movement_handler : process(CLOCK, RESET_N) is
 	begin
-	
+
 		if (RESET_N = '0') then
 		
 			player.sprite_indexes 	<= (PLAYER_SPRITE, PLAYER_EXPLOSION_1_SPRITE, PLAYER_EXPLOSION_2_SPRITE);
@@ -963,6 +963,8 @@ begin
 			
 		elsif (rising_edge(CLOCK)) then
 		
+			LIVES <= player.lives;
+			
 			case (PLAYER_MOVEMENT) is
 						
 				when DIR_RIGHT => 
@@ -998,11 +1000,10 @@ begin
 				
 				if (player.lives > 0) then
 					player.lives 		<= player.lives - 1;
+					LIVES 				<= player.lives - 1;
 				end if;
 				
 			end if;
-			
-			LIVES <= player.lives;
 			
 			if (NEW_LEVEL = '1') then
 			

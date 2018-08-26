@@ -13,6 +13,7 @@ entity Hi_Datapath_Control_Unit is
 		RAND_ALIEN_BORDER_REACHED 			: in direction_type;
 		RAND_ALIEN_VISIBLE					: in std_logic;
 		PLAYER_BORDER_REACHED				: in direction_type;
+		LIVES										: in integer range 0 to PLAYER_LIVES;
 		COLLISION								: in collision_type;
 		RAND_GEN						   		: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
 		COLUMN_CANNOT_SHOOT					: in std_logic;
@@ -644,9 +645,15 @@ begin
 				when ENTITY_PLAYER => 
 				
 					case (collision_handler_state) is 
-					when HANDLING_FIRST_ENTITY => 
-						HIDE <= reg_collision.second_entity;
-					when HANDLING_SECOND_ENTITY => -- Do nothing
+					when HANDLING_FIRST_ENTITY => -- Do nothing
+					when HANDLING_SECOND_ENTITY =>
+						if (LIVES > 1) then
+							HIDE <= reg_collision.second_entity;
+						elsif (destruction_index_array(PLAYER_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(PLAYER_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
+							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (PLAYER_EXPLOSION_TIME_1us); 
+							DESTROY <= reg_collision.second_entity;
+						end if;
 					end case;
 					
 				when ENTITY_SHIELD =>
@@ -660,9 +667,15 @@ begin
 				when ENTITY_BORDER =>
 					
 					case (collision_handler_state) is 
-					when HANDLING_FIRST_ENTITY =>
-						HIDE <= (0,0,ENTITY_PLAYER);
-					when HANDLING_SECOND_ENTITY => -- Do nothing
+					when HANDLING_FIRST_ENTITY => -- Do nothing
+					when HANDLING_SECOND_ENTITY =>
+						if (LIVES > 1) then
+							HIDE <= (0,0,ENTITY_PLAYER);
+						elsif (destruction_index_array(PLAYER_DESTRUCTION_INDEX) = (0,0,ENTITY_NONE)) then
+							destruction_index_array(PLAYER_DESTRUCTION_INDEX) <= (0,0,ENTITY_PLAYER);
+							destruction_timer_array(PLAYER_DESTRUCTION_INDEX) <= (PLAYER_EXPLOSION_TIME_1us); 
+							DESTROY <= (0,0,ENTITY_PLAYER);
+						end if;
 					end case;
 					
 				when others =>
