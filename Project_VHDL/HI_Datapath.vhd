@@ -560,7 +560,8 @@ begin
 	variable temp_shield 			: shield_grid_index_type 	:= 0;
 	variable temp_shield_column 	: std_logic 					:= '0';
 	
-	variable x_match	: std_logic := '0';
+	variable x_match			: std_logic := '0';
+	variable double_match 	: std_logic := '0';
 	
 	variable collision_detected : std_logic := '0';
 	
@@ -592,7 +593,8 @@ begin
 			temp_shield				:= 0;
 			temp_shield_column 	:= '0';
 			
-			x_match := '0';
+			x_match 			:= '0';
+			double_match 	:= '0';
 			
 			collision_detected := '0';
 			
@@ -671,6 +673,7 @@ begin
 						
 						-- SHIELDS
 						x_match := '0';
+						double_match := '0';
 				
 						for I in 0 to SHIELD_COUNT - 1 loop
 							
@@ -687,6 +690,9 @@ begin
 							target_xMin := shield(I)(1).hitbox.up_left_x;
 							
 							if (target_xMin <= impacter_xMax and target_xMax >= impacter_xMin) then
+								if (x_match = '1') then
+									double_match := '1';
+								end if;
 								temp_shield 			:= I;
 								temp_shield_column 	:= '1';
 								x_match 					:= '1';
@@ -696,7 +702,7 @@ begin
 						
 						if (x_match = '1') then
 							
-							if (temp_shield_column = '0') then
+							if (temp_shield_column = '0' or double_match = '1') then
 							
 								target_yMax := shield(temp_shield)(0).hitbox.up_left_y + shield(temp_shield)(0).hitbox.size_y;
 								target_yMin := shield(temp_shield)(0).hitbox.up_left_y;
@@ -714,7 +720,7 @@ begin
 									collision_detected 	:= '1';
 								end if;
 							
-							elsif (temp_shield_column = '1') then
+							elsif (temp_shield_column = '1' or double_match = '1') then
 							
 								target_yMax := shield(temp_shield)(1).hitbox.up_left_y + shield(temp_shield)(1).hitbox.size_y;
 								target_yMin := shield(temp_shield)(1).hitbox.up_left_y;
