@@ -769,6 +769,8 @@ begin
 						target_yMax := player.hitbox.up_left_y + player.hitbox.size_y;
 						target_yMin := player.hitbox.up_left_y;
 						
+						x_match := '0';
+						
 						for I in 0 to COLUMNS_PER_GRID - 1 loop
 						
 							impacter_xMax := alien_grid(I)(0).hitbox.up_left_x + alien_grid(I)(0).hitbox.size_x;
@@ -781,6 +783,7 @@ begin
 							if (collision_detected = '0' and alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).exploding = '0' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > FRAME_DOWN_Y - BOTTOM_MARGIN) then
 								COLLISION 				<= ((I,last_row,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
 								collision_detected 	:= '1';
+								x_match := '1';
 							end if;
 						
 						end loop;
@@ -790,7 +793,7 @@ begin
 							impacter_yMax := alien_grid(temp_column)(J).hitbox.up_left_y + alien_grid(temp_column)(J).hitbox.size_y;
 							impacter_yMin := alien_grid(temp_column)(J).hitbox.up_left_y;
 									
-							if (collision_detected = '0' and alien_grid(temp_column)(J).visible = '1' and alien_grid(temp_column)(J).exploding = '0' and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+							if (collision_detected = '0' and x_match = '1' and alien_grid(temp_column)(J).visible = '1' and alien_grid(temp_column)(J).exploding = '0' and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
 								COLLISION 				<= ((temp_column,J,ENTITY_ALIEN), (0,0,ENTITY_PLAYER));
 								collision_detected 	:= '1';
 							end if;
