@@ -76,7 +76,6 @@ begin
 		
 			counter 				:= 0;
 			bullet_tick 		<= '0';
-			bullet_gen_time 	<= (BASE_ALIEN_BULLET_GEN_TIME_1us - 1); --non va qui!!
 		
 		elsif (rising_edge(CLOCK)) then
 		
@@ -571,6 +570,7 @@ begin
 			DESTROY_SILENT_EXPLOSION 	<= '0';
 			
 			alien_frame_time 				<= BASE_ALIEN_FRAME_TIME_1us - 1;
+			bullet_gen_time 				<= BASE_ALIEN_BULLET_GEN_TIME_1us - 1;
 			
 			for I in 0 to DESTRUCTION_SLOT_COUNT - 1 loop 
 			
@@ -750,8 +750,9 @@ begin
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY 				<= reg_collision.second_entity;
-							--Aliens now get quicker
+							--Aliens now get quicker, alien bullets generation is quicker, too
 							alien_frame_time 	<= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
+							bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
 						end if;
 					end case;
 					
