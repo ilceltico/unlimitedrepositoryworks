@@ -1010,7 +1010,7 @@ begin
 				player.hitbox.size_x 	<= PLAYER_SIZE_X;
 				player.hitbox.size_y 	<= PLAYER_SIZE_Y;
 				player.current_index 	<= 0;
-				player.lives 				<= PLAYER_LIVES;
+			-- player.lives 				<= PLAYER_LIVES; --To reset player lives on new level
 				player.exploding 			<= '0';
 			
 			end if;
