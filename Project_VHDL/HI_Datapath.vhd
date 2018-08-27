@@ -778,12 +778,12 @@ begin
 							
 							if (target_xMin <= impacter_xMax and target_xMax >= impacter_xMin) then 
 								temp_column := I;
+								x_match := '1';
 							end if;
 							
 							if (collision_detected = '0' and alien_grid(I)(last_row).visible = '1' and alien_grid(I)(last_row).exploding = '0' and alien_grid(I)(last_row).hitbox.up_left_y + alien_grid(I)(last_row).hitbox.size_y > FRAME_DOWN_Y - BOTTOM_MARGIN) then
 								COLLISION 				<= ((I,last_row,ENTITY_ALIEN),(0,0,ENTITY_BORDER));
 								collision_detected 	:= '1';
-								x_match := '1';
 							end if;
 						
 						end loop;

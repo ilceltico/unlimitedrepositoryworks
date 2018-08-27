@@ -22,9 +22,9 @@ package HI_package is
 	constant BULLET_COUNT									: natural := 3;
 	constant ALIEN_SIZE_X									: natural := 26;
 	constant ALIEN_SIZE_y									: natural := 26;
-	constant ALIEN_SPACING_X								: natural := 8;
+	constant ALIEN_SPACING_X								: natural := 7;
 	constant ALIEN_SPACING_Y								: natural := 15;
-	constant SIDE_MARGIN 									: natural := 8;
+	constant SIDE_MARGIN 									: natural := 6;
 	constant TOP_MARGIN 										: natural := 8;
 	constant BOTTOM_MARGIN 									: natural := 10;
 	constant RAND_ALIEN_SIZE_X 							: natural := 46;
@@ -39,9 +39,9 @@ package HI_package is
 	constant REAL_WIDTH										: natural := FRAME_WIDTH;
 	constant REAL_HEIGHT										: natural := FRAME_HEIGHT;
 	constant FRAME_LEFT_X									: natural := 1;
-	constant FRAME_RIGHT_X									: natural := REAL_WIDTH - 0;
+	constant FRAME_RIGHT_X									: natural := REAL_WIDTH - 1;
 	constant FRAME_UP_Y										: natural := 0;
-	constant FRAME_DOWN_Y									: natural := REAL_HEIGHT;
+	constant FRAME_DOWN_Y									: natural := REAL_HEIGHT - 0;
 	constant EXPLOSION_TIME_1us 							: natural := 300000;
 	constant RAND_ALIEN_EXPLOSION_TIME_1us 			: natural := 500000;
 	
@@ -101,7 +101,7 @@ package HI_package is
 	constant FIRST_RAND_ALIEN_CELL_X_RIGHT 			: integer := FRAME_RIGHT_X + RAND_ALIEN_SIZE_X;
 	constant FIRST_RAND_ALIEN_CELL_Y 					: natural := FRAME_UP_Y + TOP_MARGIN + 10;
 	constant ALIEN_DOWN_SPEED 								: natural := 20;
-	constant ALIEN_SPEED 									: natural := 10; --Aliens will be horizontally moved by this amount of pixels
+	constant ALIEN_SPEED 									: natural := 11; --Aliens will be horizontally moved by this amount of pixels
 	constant BASE_ALIEN_FRAME_TIME_1us	 				: natural := 1000000; --1fps
 	constant ALIEN_FRAME_TIME_DECREASE_1us 			: natural := (BASE_ALIEN_FRAME_TIME_1us - FRAME_TIME_1us) / (ALIENS_PER_COLUMN * COLUMNS_PER_GRID - 1); -- Time decrease each time an alien gets destroyed
 	constant BASE_ALIEN_BULLET_GEN_TIME_1us 			: natural := 2000000; --One bullet per 2 seconds
