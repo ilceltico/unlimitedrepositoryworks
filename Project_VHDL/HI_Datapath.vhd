@@ -887,7 +887,7 @@ begin
 							
 							if (target_xMin <= impacter_xMax and target_xMax >= impacter_xMin) then
 								if (x_match = '1') then
-									double_match := '0';
+									double_match := '1';
 								end if;
 								temp_shield 			:= I;
 								temp_shield_column 	:= '1';
