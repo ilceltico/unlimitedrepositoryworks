@@ -720,7 +720,8 @@ begin
 									collision_detected 	:= '1';
 								end if;
 							
-							elsif (temp_shield_column = '1' or double_match = '1') then
+							end if;
+							if (temp_shield_column = '1' or double_match = '1') then
 							
 								target_yMax := shield(temp_shield)(1).hitbox.up_left_y + shield(temp_shield)(1).hitbox.size_y;
 								target_yMin := shield(temp_shield)(1).hitbox.up_left_y;
@@ -1039,7 +1040,7 @@ begin
 			rand_alien.points 				<= ALIEN_4_POINTS;
 			rand_alien.visible 				<= '0';
 			rand_alien.exploding 			<= '0';
-			RAND_ALIEN_VISIBLE <= rand_alien.visible;
+			RAND_ALIEN_VISIBLE 				<= '0';
 
 		elsif (rising_edge(CLOCK)) then
 		
