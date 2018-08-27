@@ -797,6 +797,13 @@ begin
 								COLLISION 				<= ((temp_column,J,ENTITY_ALIEN), (0,0,ENTITY_PLAYER));
 								collision_detected 	:= '1';
 							end if;
+							
+							if (temp_column /= 0) then
+								if (collision_detected = '0' and x_match = '1' and alien_grid(temp_column-1)(J).visible = '1' and alien_grid(temp_column-1)(J).exploding = '0' and target_yMin <= impacter_yMax and target_yMax >= impacter_yMin) then 
+									COLLISION 				<= ((temp_column-1,J,ENTITY_ALIEN), (0,0,ENTITY_PLAYER));
+									collision_detected 	:= '1';
+								end if;
+							end if;
 									
 						end loop;
 						
