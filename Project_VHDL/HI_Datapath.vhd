@@ -869,6 +869,7 @@ begin
 						
 						-- Shields 
 						x_match := '0';
+						double_match := '0';
 				
 						for I in 0 to SHIELD_COUNT - 1 loop
 							
@@ -885,6 +886,9 @@ begin
 							target_xMin := shield(I)(1).hitbox.up_left_x;
 							
 							if (target_xMin <= impacter_xMax and target_xMax >= impacter_xMin) then
+								if (x_match = '1') then
+									double_match := '0';
+								end if;
 								temp_shield 			:= I;
 								temp_shield_column 	:= '1';
 								x_match 					:= '1';
@@ -894,7 +898,7 @@ begin
 						
 						if (x_match = '1') then
 							
-							if (temp_shield_column = '0') then
+							if (temp_shield_column = '0' or double_match = '1') then
 							
 								target_yMax := shield(temp_shield)(0).hitbox.up_left_y + shield(temp_shield)(0).hitbox.size_y;
 								target_yMin := shield(temp_shield)(0).hitbox.up_left_y;
@@ -912,7 +916,9 @@ begin
 									collision_detected 	:= '1';
 								end if;
 							
-							elsif (temp_shield_column = '1') then
+							end if;
+							
+							if (temp_shield_column = '1' or double_match = '1') then
 							
 								target_yMax := shield(temp_shield)(1).hitbox.up_left_y + shield(temp_shield)(1).hitbox.size_y;
 								target_yMin := shield(temp_shield)(1).hitbox.up_left_y;
