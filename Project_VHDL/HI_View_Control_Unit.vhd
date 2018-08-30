@@ -24,7 +24,7 @@ end entity;
 architecture RTL of Hi_View_Control_Unit is 
 
 type state_type 		is (RENDER, SHOW_SPRITES, WAITING, WAITING_2);
-type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, GAMEOVER_QUERY, YOUWIN_QUERY, NEW_LEVEL_QUERY, RENDER_END);
+type substate_type 	is (ALIEN_QUERY, ALIEN_BULLET_QUERY, PLAYER_BULLET_QUERY, PLAYER_QUERY, RAND_ALIEN_QUERY, SHIELD_QUERY, GAMEOVER_QUERY, YOUWIN_QUERY, NEW_LEVEL_QUERY, INTRO_QUERY, RENDER_END);
 
 signal render_asap		: std_logic;
 signal state 				: state_type;
@@ -59,7 +59,7 @@ begin
 			render_asap 				<= '0';
 			state 						<= WAITING;
 			next_state 					<= RENDER;
-			substate						<= ALIEN_QUERY;
+			substate						<= INTRO_QUERY; -- before, there was ALIEN_QUERY
 			draw_delayed 				<= '0';
 			
 			rendered_alien 			:= 0;
@@ -198,7 +198,7 @@ begin
 					if (rendered_screen_part > GAMEOVER_SCREEN_PART_COUNT - 1) then
 						
 						rendered_screen_part 	:= 0;
-						substate 					<= RENDER_END;
+						substate 					<= ALIEN_QUERY;
 					
 					end if;
 	
@@ -212,6 +212,19 @@ begin
 						
 						rendered_screen_part 	:= 0;
 						substate 					<= RENDER_END;
+					
+					end if;
+				
+				when INTRO_QUERY =>
+				
+					REQUEST_ENTITY_SPRITE <= (INTRO_SCREEN_INDEX, rendered_screen_part, ENTITY_SCREEN);
+					
+					rendered_screen_part 	:= rendered_screen_part + 1;
+							
+					if (rendered_screen_part > INTRO_SCREEN_PART_COUNT - 1) then
+						
+						rendered_screen_part 	:= 0;
+						substate 					<= ALIEN_QUERY;
 					
 					end if;
 					

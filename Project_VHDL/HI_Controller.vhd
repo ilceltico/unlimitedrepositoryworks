@@ -21,12 +21,13 @@ entity HI_Controller is
 		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
 		YOUWIN 				: out std_logic
+
 		
 	);
 end entity;
 
 architecture RTL of HI_Controller is
-	type game_state_type is (IN_GAME_STATE, YOUWIN_STATE, NEW_LEVEL_STATE, GAMEOVER_STATE);
+	type game_state_type is (INTRO_STATE, IN_GAME_STATE, YOUWIN_STATE, NEW_LEVEL_STATE, GAMEOVER_STATE);
 	
 	signal state		: game_state_type;
 
@@ -47,7 +48,7 @@ begin
 			YOUWIN 				<= '0';
 			SHOW_NEXT_LEVEL 	<= '0';
 		
-			state 				<= IN_GAME_STATE;
+			state 				<= INTRO_STATE;
 			
 			counter 				:= 0;
 			level_no 			:= 1;
@@ -102,6 +103,17 @@ begin
 			when GAMEOVER_STATE =>
 			
 				GAMEOVER <= '1';
+				
+			when INTRO_STATE =>
+			
+				counter 	:= counter + 1;
+				
+				if (counter = 100000000) then
+				
+					state <= IN_GAME_STATE;
+					counter := 0; -- probably unneeded
+				
+				end if;
 			
 			end case;
 		

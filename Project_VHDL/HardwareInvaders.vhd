@@ -140,6 +140,7 @@ architecture RTL of HardwareInvaders is
 	signal level									: integer;
 	signal youwin									: std_logic;
 	signal show_next_level						: std_logic;
+
 	
 begin
 
@@ -273,6 +274,7 @@ begin
 			GAMEOVER				=> gameover,
 			YOUWIN				=> youwin,
 			SHOW_NEXT_LEVEL 	=> show_next_level
+			
 		);
 		
 
@@ -285,7 +287,7 @@ begin
 			READY 						=> sr_ready,
 			GAMEOVER						=> gameover,
 			NEW_LEVEL					=> show_next_level,
-			YOUWIN						=> youwin,		
+			YOUWIN						=> youwin,
 			
 			DRAW_SPRITE					=> draw_sprite,
 			SHOW							=> show,
