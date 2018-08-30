@@ -13,6 +13,7 @@ entity Hi_View_Control_Unit is
 		GAMEOVER							: in 	std_logic;
 		NEW_LEVEL						: in 	std_logic;
 		YOUWIN							: in  std_logic;
+		INTRO								: in std_logic;
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
@@ -198,7 +199,7 @@ begin
 					if (rendered_screen_part > GAMEOVER_SCREEN_PART_COUNT - 1) then
 						
 						rendered_screen_part 	:= 0;
-						substate 					<= ALIEN_QUERY;
+						substate 					<= RENDER_END;
 					
 					end if;
 	
@@ -224,7 +225,7 @@ begin
 					if (rendered_screen_part > INTRO_SCREEN_PART_COUNT - 1) then
 						
 						rendered_screen_part 	:= 0;
-						substate 					<= ALIEN_QUERY;
+						substate 					<= RENDER_END;
 					
 					end if;
 					
@@ -241,6 +242,9 @@ begin
 					
 					elsif (NEW_LEVEL = '1') then
 						substate <= NEW_LEVEL_QUERY;
+						
+					elsif (INTRO = '1') then
+						substate <= INTRO_QUERY;
 					
 					end if;
 							

@@ -21,7 +21,14 @@ entity HI_Controller is
 		NEW_LEVEL			: out std_logic;
 		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
+<<<<<<< HEAD
 		YOUWIN 				: out std_logic
+=======
+		YOUWIN 				: out std_logic;
+		SHOW_INTRO			: out std_logic
+
+		
+>>>>>>> f92873cce014db760392b7a39e20049f9fba554d
 	);
 end entity;
 
@@ -46,6 +53,7 @@ begin
 			GAMEOVER 			<= '0';
 			YOUWIN 				<= '0';
 			SHOW_NEXT_LEVEL 	<= '0';
+			SHOW_INTRO			<= '0';
 		
 			state 				<= INTRO_STATE;
 			
@@ -58,6 +66,7 @@ begin
 			YOUWIN				<= '0';
 			NEW_LEVEL 			<= '0';
 			SHOW_NEXT_LEVEL 	<= '0';
+			SHOW_INTRO			<= '0';
 			
 			case(state) is 
 			when IN_GAME_STATE => 
@@ -104,8 +113,17 @@ begin
 				GAMEOVER <= '1';
 				
 			when INTRO_STATE =>
+<<<<<<< HEAD
 			
 				if (BUTTON_START = '1') then 
+=======
+				
+				counter 	:= counter + 1;
+				SHOW_INTRO			<= '1';
+				
+				if (counter = 100000000) then
+				
+>>>>>>> f92873cce014db760392b7a39e20049f9fba554d
 					state <= IN_GAME_STATE;
 				end if;
 			
