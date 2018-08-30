@@ -21,14 +21,9 @@ entity HI_Controller is
 		NEW_LEVEL			: out std_logic;
 		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
-<<<<<<< HEAD
-		YOUWIN 				: out std_logic
-=======
 		YOUWIN 				: out std_logic;
-		SHOW_INTRO			: out std_logic
-
-		
->>>>>>> f92873cce014db760392b7a39e20049f9fba554d
+		SHOW_INTRO			: out std_logic;
+		RESTART_GAME		: out std_logic
 	);
 end entity;
 
@@ -54,6 +49,7 @@ begin
 			YOUWIN 				<= '0';
 			SHOW_NEXT_LEVEL 	<= '0';
 			SHOW_INTRO			<= '0';
+			RESTART_GAME 		<= '0';
 		
 			state 				<= INTRO_STATE;
 			
@@ -67,6 +63,8 @@ begin
 			NEW_LEVEL 			<= '0';
 			SHOW_NEXT_LEVEL 	<= '0';
 			SHOW_INTRO			<= '0';
+			RESTART_GAME 		<= '0';
+			LEVEL					<= level_no;
 			
 			case(state) is 
 			when IN_GAME_STATE => 
@@ -91,10 +89,9 @@ begin
 				counter 				:= counter + 1;
 				SHOW_NEXT_LEVEL 	<= '1';
 				
-				if (counter = 100000000) then 
+				if (counter = 100000000) then -- 2 Seconds
 					
 					level_no 	:= level_no + 1;
-					LEVEL 		<= level_no;
 					NEW_LEVEL	<= '1';
 				
 				elsif (counter = 100000001) then 
@@ -107,26 +104,61 @@ begin
 			when YOUWIN_STATE =>
 			
 				YOUWIN <= '1';
+				counter := counter + 1;
+				
+				if (counter = 500000000) then -- 10 Seconds
+					level_no 	:= 1;
+					RESTART_GAME <= '1';
+				elsif (counter = 500000001) then
+					state <= INTRO_STATE;
+					counter := 0;
+				elsif (counter = 500000002) then
+					state <= IN_GAME_STATE;
+					counter := 0;
+				end if;
+				
+				if (BUTTON_START = '1') then 
+					level_no 	:= 1;
+					RESTART_GAME <= '1';
+					counter := 500000001; --Will become 500000002 on the next CLOCK
+				end if;
 				
 			when GAMEOVER_STATE =>
 			
 				GAMEOVER <= '1';
+				counter := counter + 1;
+				
+				if (counter = 500000000) then -- 10 Seconds
+					level_no 	:= 1;
+					RESTART_GAME <= '1';
+				elsif (counter = 500000001) then
+					state <= INTRO_STATE;
+					counter := 0;
+				elsif (counter = 500000002) then
+					state <= IN_GAME_STATE;
+					counter := 0;
+				end if;
+				
+				if (BUTTON_START = '1') then 
+					level_no 	:= 1;
+					RESTART_GAME <= '1';
+					counter := 500000001; --Will become 500000002 on the next CLOCK
+				end if;
 				
 			when INTRO_STATE =>
-<<<<<<< HEAD
 			
-				if (BUTTON_START = '1') then 
-=======
-				
-				counter 	:= counter + 1;
 				SHOW_INTRO			<= '1';
 				
-				if (counter = 100000000) then
-				
->>>>>>> f92873cce014db760392b7a39e20049f9fba554d
+				if (counter = 1) then 
 					state <= IN_GAME_STATE;
+					counter := 0;
 				end if;
-			
+				
+				if (BUTTON_START = '1') then 
+					RESTART_GAME <= '1';
+					counter := 1;
+				end if;
+				
 			end case;
 		
 		end if;

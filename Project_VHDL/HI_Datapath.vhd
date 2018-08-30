@@ -70,7 +70,7 @@ architecture RTL of HI_Datapath is
 		((GAMEOVER_1_SPRITE, (165,200,60,20)), 	(GAMEOVER_2_SPRITE, (225,200,60,20)), 	(GAMEOVER_3_SPRITE, (285,200,60,20)), 	others => (0,(0,0,0,0))),
 		((YOUWIN_1_SPRITE, (165,200,60,20)), 		(YOUWIN_2_SPRITE, (225,200,60,20)), 	(YOUWIN_3_SPRITE, (285,200,60,20)), 	others => (0,(0,0,0,0))),
 		((NEW_LEVEL_1_SPRITE, (165,200,60,20)), 	(NEW_LEVEL_2_SPRITE, (225,200,60,20)), (NEW_LEVEL_3_SPRITE, (285,200,60,20)), others => (0,(0,0,0,0))),
-		((INTRO_1_SPRITE, (180,200,60,20)),			(INTRO_2_SPRITE, (240,200,60,20)),		(INTRO_3_SPRITE, (300,200,60,20)),		others => (0,(0,0,0,0)))
+		((INTRO_1_SPRITE, (180,200,60,60)),			(INTRO_2_SPRITE, (240,200,60,60)),		(INTRO_3_SPRITE, (300,200,60,60)),		others => (0,(0,0,0,0)))
 	);
 	
 begin

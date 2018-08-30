@@ -13,7 +13,7 @@ entity Hi_View_Control_Unit is
 		GAMEOVER							: in 	std_logic;
 		NEW_LEVEL						: in 	std_logic;
 		YOUWIN							: in  std_logic;
-		INTRO								: in std_logic;
+		INTRO								: in  std_logic;
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;

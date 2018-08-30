@@ -141,6 +141,7 @@ architecture RTL of HardwareInvaders is
 	signal youwin									: std_logic;
 	signal show_next_level						: std_logic;
 	signal show_intro								: std_logic;
+	signal restart_game							: std_logic;
 
 	
 begin
@@ -275,9 +276,9 @@ begin
 			NEW_LEVEL			=> new_level,
 			GAMEOVER				=> gameover,
 			YOUWIN				=> youwin,
-			SHOW_NEXT_LEVEL 	=> show_next_level
-			SHOW_INTRO			=> show_intro
-			
+			SHOW_NEXT_LEVEL 	=> show_next_level,
+			SHOW_INTRO			=> show_intro,
+			RESTART_GAME 		=> restart_game
 		);
 		
 
@@ -331,7 +332,7 @@ begin
 		port map 
 		(
 			CLOCK										=> clock_50MHz,
-			RESET_N									=> RESET_N,
+			RESET_N									=> RESET_N and not(restart_game),
 			REQ_NEXT_SPRITE 						=> req_next_sprite,
 			REQUEST_ENTITY_SPRITE				=> request_entity_sprite,
 			PLAYER_MOVEMENT						=> player_movement,
@@ -367,7 +368,7 @@ begin
 		port map
 		(
 			CLOCK 									=> clock_50MHz,
-			RESET_N 									=> RESET_N and not(new_level), 
+			RESET_N 									=> RESET_N and not(new_level) and not(restart_game), 
 			TIME_1US 								=> time_1us,
 			ALIEN_BORDER_REACHED 				=> alien_border_reached,
 			RAND_ALIEN_BORDER_REACHED 			=> rand_alien_border_reached,
@@ -455,11 +456,11 @@ begin
 --		
 --		end process;
 
-		move_left 	<= (keyboard_move_left or not(KEY(3)) and not(gameover) and not(youwin));
-		move_right 	<= (keyboard_move_right or not(KEY(2)) and not(gameover) and not(youwin));
-		shoot 		<= (keyboard_shoot or not(KEY(1)) and not(gameover) and not(youwin));
-		start 		<= (keyboard_start or not(KEY(0)) and not(gameover) and not(youwin));
-		
+		move_left 	<= (keyboard_move_left or not(KEY(3))) and not(gameover) and not(youwin);
+		move_right 	<= (keyboard_move_right or not(KEY(2))) and not(gameover) and not(youwin);
+		shoot 		<= (keyboard_shoot or not(KEY(1))) and not(gameover) and not(youwin);
+		start 		<= (keyboard_start or not(KEY(0)));
+	
 		geek_binary_leds <= SW(1);
 
 		led_levels : process(clock_50MHz, RESET_N) is 
