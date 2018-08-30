@@ -15,14 +15,13 @@ entity HI_Controller is
 		RESET_N				: in std_logic;
 		LIVES					: in integer range 0 to PLAYER_LIVES;
 		ALIEN_COUNT		 	: in integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
+		BUTTON_START		: in std_logic;
 		
 		LEVEL 				: out integer range 1 to LEVEL_NUMBER;
 		NEW_LEVEL			: out std_logic;
 		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
 		YOUWIN 				: out std_logic
-
-		
 	);
 end entity;
 
@@ -106,13 +105,8 @@ begin
 				
 			when INTRO_STATE =>
 			
-				counter 	:= counter + 1;
-				
-				if (counter = 100000000) then
-				
+				if (BUTTON_START = '1') then 
 					state <= IN_GAME_STATE;
-					counter := 0; -- probably unneeded
-				
 				end if;
 			
 			end case;

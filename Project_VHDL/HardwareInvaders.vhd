@@ -268,6 +268,7 @@ begin
 			RESET_N				=> RESET_N,
 			LIVES					=> lives,
 			ALIEN_COUNT			=> alive_alien_count,
+			BUTTON_START		=> start,
 		
 			LEVEL 				=> level,
 			NEW_LEVEL			=> new_level,
@@ -451,10 +452,10 @@ begin
 --		
 --		end process;
 
-		move_left 	<= (keyboard_move_left and not(gameover) and not(youwin)) or not(KEY(3));
-		move_right 	<= (keyboard_move_right and not(gameover) and not(youwin)) or not(KEY(2));
-		shoot 		<= (keyboard_shoot and not(gameover) and not(youwin)) or not(KEY(1));
-		start 		<= (keyboard_start and not(gameover) and not(youwin)) or not(KEY(0));
+		move_left 	<= (keyboard_move_left or not(KEY(3)) and not(gameover) and not(youwin));
+		move_right 	<= (keyboard_move_right or not(KEY(2)) and not(gameover) and not(youwin));
+		shoot 		<= (keyboard_shoot or not(KEY(1)) and not(gameover) and not(youwin));
+		start 		<= (keyboard_start or not(KEY(0)) and not(gameover) and not(youwin));
 		
 		geek_binary_leds <= SW(1);
 
