@@ -15,3 +15,6 @@ Project_VHDL/simulation/
 *.kpt
 *.pin
 Project_VHDL/HardwareInvaders.qws
+Project_VHDL/HardwareInvaders.qsf
+Project_VHDL/db/HardwareInvaders.cbx.xml
+Project_VHDL/db/HardwareInvaders.cbx.xml
