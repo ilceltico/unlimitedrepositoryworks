@@ -185,8 +185,8 @@ begin
 		port map (
 			inclk0  => CLOCK_50,
 			c0      => clock_100MHz,
-			c1      => clock_50MHz
-		-- c2		  => clock_12MHz
+			c1      => clock_50MHz,
+		   c2		  => clock_12MHz
 		); 
 	
 					
@@ -604,36 +604,36 @@ begin
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
-		led_lives : process(clock_50MHz, RESET_N) is 
-		
-		begin 
-		
-			if (RESET_N = '0') then 
-				LEDR <= (others => '0');
-				
-			elsif (rising_edge(clock_50MHz)) then 
-				if (geek_binary_leds = '1') then
-					LEDR <= std_logic_vector(to_unsigned(lives, 10));
-				else
-					case (lives) is
-						when 0 => LEDR <= "0000000000";
-						when 1 => LEDR <= "0000000001";
-						when 2 => LEDR <= "0000000011";
-						when 3 => LEDR <= "0000000111";
---						when 4 => LEDR <= "0000001111";
---						when 5 => LEDR <= "0000011111";
---						when 6 => LEDR <= "0000111111";
---						when 7 => LEDR <= "0001111111";
---						when 8 => LEDR <= "0011111111";
---						when 9 => LEDR <= "0111111111";
---						when 10 => LEDR <= "1111111111";
-						when others => LEDR <= "1111111111";
-					end case;
-				end if;
-				
-			end if;
-			
-		end process;
+--		led_lives : process(clock_50MHz, RESET_N) is 
+--		
+--		begin 
+--		
+--			if (RESET_N = '0') then 
+--				LEDR <= (others => '0');
+--				
+--			elsif (rising_edge(clock_50MHz)) then 
+--				if (geek_binary_leds = '1') then
+--					LEDR <= std_logic_vector(to_unsigned(lives, 10));
+--				else
+--					case (lives) is
+--						when 0 => LEDR <= "0000000000";
+--						when 1 => LEDR <= "0000000001";
+--						when 2 => LEDR <= "0000000011";
+--						when 3 => LEDR <= "0000000111";
+----						when 4 => LEDR <= "0000001111";
+----						when 5 => LEDR <= "0000011111";
+----						when 6 => LEDR <= "0000111111";
+----						when 7 => LEDR <= "0001111111";
+----						when 8 => LEDR <= "0011111111";
+----						when 9 => LEDR <= "0111111111";
+----						when 10 => LEDR <= "1111111111";
+--						when others => LEDR <= "1111111111";
+--					end case;
+--				end if;
+--				
+--			end if;
+--			
+--		end process;
 		
 	-- AUDIO
 	sound : entity work.aud_gen 
