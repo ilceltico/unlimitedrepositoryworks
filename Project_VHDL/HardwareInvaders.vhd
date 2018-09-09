@@ -185,7 +185,7 @@ begin
 		port map (
 			inclk0  => CLOCK_50,
 			c0      => clock_100MHz,
-			c1      => clock_50MHz,
+			c1      => clock_50MHz
 		-- c2		  => clock_12MHz
 		); 
 	

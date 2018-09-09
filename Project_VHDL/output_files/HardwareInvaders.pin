@@ -63,17 +63,17 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "HardwareInvaders"  ASSIGNED TO AN: EP2C20F484C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
 VCCIO3                       : A2        : power  :                   : 3.3V    : 3         :                
-GND*                         : A3        :        :                   :         : 3         :                
-GND*                         : A4        :        :                   :         : 3         :                
-GND*                         : A5        :        :                   :         : 3         :                
-GND*                         : A6        :        :                   :         : 3         :                
+onchip_memory2_0_s1_write    : A3        : input  : 3.3-V LVTTL       :         : 3         : N              
+AUD_BCLK                     : A4        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_DACLRCK                  : A5        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_ADCLRCK                  : A6        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_R[2]                     : A7        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_G[3]                     : A8        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_B[0]                     : A9        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -82,12 +82,12 @@ VGA_HS                       : A11       : output : 3.3-V LVTTL       :         
 GND+                         : A12       :        :                   :         : 4         :                
 GND*                         : A13       :        :                   :         : 4         :                
 GND*                         : A14       :        :                   :         : 4         :                
-GND*                         : A15       :        :                   :         : 4         :                
-GND*                         : A16       :        :                   :         : 4         :                
+onchip_memory2_0_s1_readdata[11] : A15       : output : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_address[4] : A16       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : A17       :        :                   :         : 4         :                
 GND*                         : A18       :        :                   :         : 4         :                
 GND*                         : A19       :        :                   :         : 4         :                
-GND*                         : A20       :        :                   :         : 4         :                
+onchip_memory2_0_s1_writedata[12] : A20       : input  : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A21       : power  :                   : 3.3V    : 4         :                
 GND                          : A22       : gnd    :                   :         :           :                
 VCCIO1                       : AA1       : power  :                   : 3.3V    : 1         :                
@@ -126,20 +126,20 @@ SRAM_ADDR[7]                 : AB11      : output : 3.3-V LVTTL       :         
 GND*                         : AB12      :        :                   :         : 7         :                
 GND*                         : AB13      :        :                   :         : 7         :                
 GND*                         : AB14      :        :                   :         : 7         :                
-GND*                         : AB15      :        :                   :         : 7         :                
-GND*                         : AB16      :        :                   :         : 7         :                
+onchip_memory2_0_s1_address[15] : AB15      : input  : 3.3-V LVTTL       :         : 7         : N              
+onchip_memory2_0_s1_writedata[9] : AB16      : input  : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : AB17      :        :                   :         : 7         :                
-GND*                         : AB18      :        :                   :         : 7         :                
+onchip_memory2_0_s1_address[10] : AB18      : input  : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : AB19      :        :                   :         : 7         :                
-GND*                         : AB20      :        :                   :         : 7         :                
+onchip_memory2_0_s1_address[11] : AB20      : input  : 3.3-V LVTTL       :         : 7         : N              
 VCCIO7                       : AB21      : power  :                   : 3.3V    : 7         :                
 GND                          : AB22      : gnd    :                   :         :           :                
 VCCIO2                       : B1        : power  :                   : 3.3V    : 2         :                
 GND                          : B2        : gnd    :                   :         :           :                
-GND*                         : B3        :        :                   :         : 3         :                
-GND*                         : B4        :        :                   :         : 3         :                
-GND*                         : B5        :        :                   :         : 3         :                
-GND*                         : B6        :        :                   :         : 3         :                
+onchip_memory2_0_s1_writedata[14] : B3        : input  : 3.3-V LVTTL       :         : 3         : N              
+AUD_XCK                      : B4        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_DACDAT                   : B5        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_ADCDAT                   : B6        : input  : 3.3-V LVTTL       :         : 3         : Y              
 VGA_R[3]                     : B7        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_G[0]                     : B8        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_G[2]                     : B9        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -147,13 +147,13 @@ VGA_B[3]                     : B10       : output : 3.3-V LVTTL       :         
 VGA_VS                       : B11       : output : 3.3-V LVTTL       :         : 3         : Y              
 GND+                         : B12       :        :                   :         : 4         :                
 GND*                         : B13       :        :                   :         : 4         :                
-GND*                         : B14       :        :                   :         : 4         :                
-GND*                         : B15       :        :                   :         : 4         :                
-GND*                         : B16       :        :                   :         : 4         :                
+onchip_memory2_0_s1_byteenable[1] : B14       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_address[16] : B15       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_writedata[3] : B16       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : B17       :        :                   :         : 4         :                
-GND*                         : B18       :        :                   :         : 4         :                
+onchip_memory2_0_s1_address[3] : B18       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : B19       :        :                   :         : 4         :                
-GND*                         : B20       :        :                   :         : 4         :                
+onchip_memory2_0_s1_readdata[7] : B20       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : B21       : gnd    :                   :         :           :                
 VCCIO5                       : B22       : power  :                   : 3.3V    : 5         :                
 HEX2[3]                      : C1        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -171,8 +171,8 @@ VCCIO4                       : C12       : power  :                   : 3.3V    
 GND*                         : C13       :        :                   :         : 4         :                
 GND*                         : C14       :        :                   :         : 4         :                
 GND                          : C15       : gnd    :                   :         :           :                
-GND*                         : C16       :        :                   :         : 4         :                
-GND*                         : C17       :        :                   :         : 4         :                
+onchip_memory2_0_s1_writedata[11] : C16       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_readdata[2] : C17       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : C18       :        :                   :         : 4         :                
 GND*                         : C19       :        :                   :         : 5         :                
 GND*                         : C20       :        :                   :         : 5         :                
@@ -189,16 +189,16 @@ GND*                         : D8        :        :                   :         
 VGA_R[0]                     : D9        : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : D10       : gnd    :                   :         :           :                
 VGA_B[1]                     : D11       : output : 3.3-V LVTTL       :         : 3         : Y              
-GND+                         : D12       :        :                   :         : 3         :                
+onchip_memory2_0_s1_address[0] : D12       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND                          : D13       : gnd    :                   :         :           :                
 GND*                         : D14       :        :                   :         : 4         :                
 GND*                         : D15       :        :                   :         : 4         :                
 GND*                         : D16       :        :                   :         : 4         :                
 VCCIO4                       : D17       : power  :                   : 3.3V    : 4         :                
 GND                          : D18       : gnd    :                   :         :           :                
-GND*                         : D19       :        :                   :         : 5         :                
-GND*                         : D20       :        :                   :         : 5         :                
-GND*                         : D21       :        :                   :         : 5         :                
+onchip_memory2_0_s1_address[7] : D19       : input  : 3.3-V LVTTL       :         : 5         : N              
+onchip_memory2_0_s1_readdata[4] : D20       : output : 3.3-V LVTTL       :         : 5         : N              
+onchip_memory2_0_s1_writedata[10] : D21       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : D22       :        :                   :         : 5         :                
 HEX1[0]                      : E1        : output : 3.3-V LVTTL       :         : 2         : Y              
 HEX0[6]                      : E2        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -206,21 +206,21 @@ HEX2[4]                      : E3        : output : 3.3-V LVTTL       :         
 HEX2[5]                      : E4        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCD_PLL3                    : E5        : power  :                   : 1.2V    :           :                
 VCCA_PLL3                    : E6        : power  :                   : 1.2V    :           :                
-GND*                         : E7        :        :                   :         : 3         :                
+onchip_memory2_0_s1_readdata[0] : E7        : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : E8        :        :                   :         : 3         :                
-GND*                         : E9        :        :                   :         : 3         :                
+onchip_memory2_0_s1_writedata[2] : E9        : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : E10       : power  :                   : 3.3V    : 3         :                
 GND*                         : E11       :        :                   :         : 3         :                
-GND+                         : E12       :        :                   :         : 3         :                
+onchip_memory2_0_s1_address[1] : E12       : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO4                       : E13       : power  :                   : 3.3V    : 4         :                
 GND*                         : E14       :        :                   :         : 4         :                
-GND*                         : E15       :        :                   :         : 4         :                
+FPGA_I2C_SCLK                : E15       : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL2                    : E16       : gnd    :                   :         :           :                
 GND_PLL2                     : E17       : gnd    :                   :         :           :                
-GND*                         : E18       :        :                   :         : 5         :                
-GND*                         : E19       :        :                   :         : 5         :                
-GND*                         : E20       :        :                   :         : 5         :                
-GND*                         : E21       :        :                   :         : 5         :                
+onchip_memory2_0_s1_debugaccess : E18       : input  : 3.3-V LVTTL       :         : 5         : N              
+FPGA_I2C_SDAT                : E19       : bidir  : 3.3-V LVTTL       :         : 5         : N              
+onchip_memory2_0_s1_writedata[7] : E20       : input  : 3.3-V LVTTL       :         : 5         : N              
+onchip_memory2_0_s1_writedata[1] : E21       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : E22       :        :                   :         : 5         :                
 HEX0[5]                      : F1        : output : 3.3-V LVTTL       :         : 2         : Y              
 HEX0[4]                      : F2        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -234,7 +234,7 @@ GND*                         : F9        :        :                   :         
 GND*                         : F10       :        :                   :         : 3         :                
 GND*                         : F11       :        :                   :         : 3         :                
 GND*                         : F12       :        :                   :         : 4         :                
-GND*                         : F13       :        :                   :         : 4         :                
+onchip_memory2_0_s1_writedata[8] : F13       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : F14       :        :                   :         : 4         :                
 GND*                         : F15       :        :                   :         : 4         :                
 VCCA_PLL2                    : F16       : power  :                   : 1.2V    :           :                
@@ -250,18 +250,18 @@ HEX1[4]                      : G3        : output : 3.3-V LVTTL       :         
 GND                          : G4        : gnd    :                   :         :           :                
 HEX2[0]                      : G5        : output : 3.3-V LVTTL       :         : 2         : Y              
 HEX2[1]                      : G6        : output : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : G7        :        :                   :         : 3         :                
-GND*                         : G8        :        :                   :         : 3         :                
+onchip_memory2_0_s1_writedata[6] : G7        : input  : 3.3-V LVTTL       :         : 3         : N              
+onchip_memory2_0_s1_readdata[9] : G8        : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : G9        : power  :                   : 3.3V    : 3         :                
 GND                          : G10       : gnd    :                   :         :           :                
 GND*                         : G11       :        :                   :         : 3         :                
-GND*                         : G12       :        :                   :         : 4         :                
+onchip_memory2_0_s1_byteenable[0] : G12       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO4                       : G14       : power  :                   : 3.3V    : 4         :                
-GND*                         : G15       :        :                   :         : 4         :                
-GND*                         : G16       :        :                   :         : 4         :                
-GND*                         : G17       :        :                   :         : 5         :                
-GND*                         : G18       :        :                   :         : 5         :                
+onchip_memory2_0_s1_address[6] : G15       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_address[12] : G16       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_writedata[13] : G17       : input  : 3.3-V LVTTL       :         : 5         : N              
+onchip_memory2_0_s1_readdata[13] : G18       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : G19       : power  :                   : 3.3V    : 5         :                
 GND*                         : G20       :        :                   :         : 5         :                
 GND*                         : G21       :        :                   :         : 5         :                
@@ -272,17 +272,17 @@ GND*                         : H3        :        :                   :         
 HEX1[3]                      : H4        : output : 3.3-V LVTTL       :         : 2         : Y              
 HEX1[2]                      : H5        : output : 3.3-V LVTTL       :         : 2         : Y              
 HEX1[1]                      : H6        : output : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : H7        :        :                   :         : 3         :                
-GND*                         : H8        :        :                   :         : 3         :                
+onchip_memory2_0_s1_address[8] : H7        : input  : 3.3-V LVTTL       :         : 3         : N              
+onchip_memory2_0_s1_clken    : H8        : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : H9        :        :                   :         : 3         :                
-GND*                         : H10       :        :                   :         : 3         :                
+onchip_memory2_0_s1_writedata[4] : H10       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : H11       :        :                   :         : 3         :                
-GND*                         : H12       :        :                   :         : 4         :                
-GND*                         : H13       :        :                   :         : 4         :                
+onchip_memory2_0_s1_address[5] : H12       : input  : 3.3-V LVTTL       :         : 4         : N              
+onchip_memory2_0_s1_chipselect : H13       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : H14       :        :                   :         : 4         :                
 PS2_CLK                      : H15       : input  : 3.3-V LVTTL       :         : 4         : Y              
 GND*                         : H16       :        :                   :         : 5         :                
-GND*                         : H17       :        :                   :         : 5         :                
+onchip_memory2_0_reset1_reset : H17       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : H18       :        :                   :         : 5         :                
 GND*                         : H19       :        :                   :         : 5         :                
 GND                          : H20       : gnd    :                   :         :           :                
@@ -305,7 +305,7 @@ PS2_DAT                      : J14       : input  : 3.3-V LVTTL       :         
 GND*                         : J15       :        :                   :         : 5         :                
 VCCIO5                       : J16       : power  :                   : 3.3V    : 5         :                
 GND*                         : J17       :        :                   :         : 5         :                
-GND*                         : J18       :        :                   :         : 5         :                
+onchip_memory2_0_s1_readdata[5] : J18       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : J19       :        :                   :         : 5         :                
 GND*                         : J20       :        :                   :         : 5         :                
 GND*                         : J21       :        :                   :         : 5         :                
@@ -359,7 +359,7 @@ SW[7]                        : M2        : input  : 3.3-V LVTTL       :         
 VCCIO1                       : M3        : power  :                   : 3.3V    : 1         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GND*                         : M5        :        :                   :         : 1         :                
-GND*                         : M6        :        :                   :         : 1         :                
+onchip_memory2_0_s1_readdata[15] : M6        : output : 3.3-V LVTTL       :         : 1         : N              
 NC                           : M7        :        :                   :         :           :                
 NC                           : M8        :        :                   :         :           :                
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
@@ -371,7 +371,7 @@ VCCINT                       : M14       : power  :                   : 1.2V    
 NC                           : M15       :        :                   :         :           :                
 NC                           : M16       :        :                   :         :           :                
 MSEL0                        : M17       :        :                   :         : 6         :                
-GND*                         : M18       :        :                   :         : 6         :                
+onchip_memory2_0_s1_address[17] : M18       : input  : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : M19       :        :                   :         : 6         :                
 VCCIO6                       : M20       : power  :                   : 3.3V    : 6         :                
 GND+                         : M21       :        :                   :         : 6         :                
@@ -390,20 +390,20 @@ GND                          : N11       : gnd    :                   :         
 GND                          : N12       : gnd    :                   :         :           :                
 GND                          : N13       : gnd    :                   :         :           :                
 VCCINT                       : N14       : power  :                   : 1.2V    :           :                
-GND*                         : N15       :        :                   :         : 6         :                
+onchip_memory2_0_s1_address[2] : N15       : input  : 3.3-V LVTTL       :         : 6         : N              
 GND                          : N16       : gnd    :                   :         :           :                
 MSEL1                        : N17       :        :                   :         : 6         :                
 CONF_DONE                    : N18       :        :                   :         : 6         :                
 GND                          : N19       : gnd    :                   :         :           :                
 nSTATUS                      : N20       :        :                   :         : 6         :                
-GND*                         : N21       :        :                   :         : 6         :                
+onchip_memory2_0_s1_writedata[0] : N21       : input  : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : N22       :        :                   :         : 6         :                
 GND*                         : P1        :        :                   :         : 1         :                
 GND*                         : P2        :        :                   :         : 1         :                
 GND*                         : P3        :        :                   :         : 1         :                
 NC                           : P4        :        :                   :         :           :                
 GND*                         : P5        :        :                   :         : 1         :                
-GND*                         : P6        :        :                   :         : 1         :                
+onchip_memory2_0_s1_writedata[5] : P6        : input  : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : P7        : power  :                   : 3.3V    : 1         :                
 GND*                         : P8        :        :                   :         : 8         :                
 GND*                         : P9        :        :                   :         : 8         :                
@@ -420,21 +420,21 @@ NC                           : P19       :        :                   :         
 NC                           : P20       :        :                   :         :           :                
 NC                           : P21       :        :                   :         :           :                
 NC                           : P22       :        :                   :         :           :                
-GND*                         : R1        :        :                   :         : 1         :                
+onchip_memory2_0_s1_address[14] : R1        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : R2        :        :                   :         : 1         :                
 GND                          : R3        : gnd    :                   :         :           :                
 NC                           : R4        :        :                   :         :           :                
 GND*                         : R5        :        :                   :         : 1         :                
 GND*                         : R6        :        :                   :         : 1         :                
-GND*                         : R7        :        :                   :         : 1         :                
+onchip_memory2_0_s1_readdata[3] : R7        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : R8        :        :                   :         : 1         :                
 SRAM_DQ[12]                  : R9        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_ADDR[14]                : R10       : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_ADDR[10]                : R11       : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : R12       :        :                   :         : 7         :                
+onchip_memory2_0_s1_address[9] : R12       : input  : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : R13       :        :                   :         : 7         :                
-GND*                         : R14       :        :                   :         : 7         :                
-GND*                         : R15       :        :                   :         : 7         :                
+onchip_memory2_0_s1_readdata[14] : R14       : output : 3.3-V LVTTL       :         : 7         : N              
+onchip_memory2_0_s1_readdata[12] : R15       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : R16       :        :                   :         : 7         :                
 LEDR[9]                      : R17       : output : 3.3-V LVTTL       :         : 6         : Y              
 LEDR[8]                      : R18       : output : 3.3-V LVTTL       :         : 6         : Y              
@@ -453,7 +453,7 @@ SRAM_OE_N                    : T8        : output : 3.3-V LVTTL       :         
 VCCIO8                       : T9        : power  :                   : 3.3V    : 8         :                
 GND                          : T10       : gnd    :                   :         :           :                
 SRAM_ADDR[11]                : T11       : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : T12       :        :                   :         : 7         :                
+onchip_memory2_0_s1_writedata[15] : T12       : input  : 3.3-V LVTTL       :         : 7         : N              
 GND                          : T13       : gnd    :                   :         :           :                
 VCCIO7                       : T14       : power  :                   : 3.3V    : 7         :                
 GND*                         : T15       :        :                   :         : 7         :                
@@ -476,7 +476,7 @@ SRAM_DQ[11]                  : U9        : bidir  : 3.3-V LVTTL       :         
 SRAM_ADDR[13]                : U10       : output : 3.3-V LVTTL       :         : 8         : Y              
 SW[6]                        : U11       : input  : 3.3-V LVTTL       :         : 8         : Y              
 SW[5]                        : U12       : input  : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : U13       :        :                   :         : 7         :                
+onchip_memory2_0_s1_address[13] : U13       : input  : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : U14       :        :                   :         : 7         :                
 GND*                         : U15       :        :                   :         : 7         :                
 VCCA_PLL4                    : U16       : power  :                   : 1.2V    :           :                
@@ -505,14 +505,14 @@ GNDA_PLL4                    : V16       : gnd    :                   :         
 GND                          : V17       : gnd    :                   :         :           :                
 GND_PLL4                     : V18       : gnd    :                   :         :           :                
 LEDR[5]                      : V19       : output : 3.3-V LVTTL       :         : 6         : Y              
-GND*                         : V20       :        :                   :         : 6         :                
+onchip_memory2_0_s1_readdata[1] : V20       : output : 3.3-V LVTTL       :         : 6         : N              
 LEDG[3]                      : V21       : output : 3.3-V LVTTL       :         : 6         : Y              
 LEDG[2]                      : V22       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : W1        :        :                   :         : 1         :                
-GND*                         : W2        :        :                   :         : 1         :                
+onchip_memory2_0_s1_readdata[8] : W2        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : W3        :        :                   :         : 1         :                
 GND*                         : W4        :        :                   :         : 1         :                
-GND*                         : W5        :        :                   :         : 1         :                
+onchip_memory2_0_s1_readdata[10] : W5        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO8                       : W6        : power  :                   : 3.3V    : 8         :                
 SRAM_UB_N                    : W7        : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[13]                  : W8        : bidir  : 3.3-V LVTTL       :         : 8         : Y              
@@ -542,7 +542,7 @@ SRAM_DQ[8]                   : Y9        : bidir  : 3.3-V LVTTL       :         
 SRAM_ADDR[12]                : Y10       : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : Y11       : power  :                   : 3.3V    : 8         :                
 VCCIO7                       : Y12       : power  :                   : 3.3V    : 7         :                
-GND*                         : Y13       :        :                   :         : 7         :                
+onchip_memory2_0_s1_readdata[6] : Y13       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : Y14       :        :                   :         : 7         :                
 GND                          : Y15       : gnd    :                   :         :           :                
 GND*                         : Y16       :        :                   :         : 7         :                
