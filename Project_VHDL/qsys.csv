@@ -1,0 +1,18 @@
+# system info qsys on 2018.09.10.20:35:15
+system_info:
+name,value
+DEVICE,EP2C20F484C7
+DEVICE_FAMILY,Cyclone II
+GENERATION_ID,1536604513
+#
+#
+# Files generated for qsys on 2018.09.10.20:35:15
+files:
+filepath,kind,attributes,module,is_top
+qsys/simulation/qsys.vhd,VHDL,,qsys,true
+qsys/simulation/submodules/qsys_onchip_memory2_0.vhd,VHDL,,qsys_onchip_memory2_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+qsys.onchip_memory2_0,qsys_onchip_memory2_0

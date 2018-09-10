@@ -1,0 +1,80 @@
+Info: Starting: Create simulation model
+Info: ip-generate --project-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/ --output-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/ --file-set=SIM_VHDL --report-file=sopcinfo:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.sopcinfo --report-file=html:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.html --report-file=sip:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/qsys.sip --report-file=csv:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.csv --report-file=spd:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.spd --report-file=cmp:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.cmp --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C20F484C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.qsys
+Progress: Loading Project_VHDL/qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys: Generating qsys "qsys" for SIM_VHDL
+Info: pipeline_bridge_swap_transform: After transform: 1 modules, 0 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 1 modules, 0 connections
+Info: onchip_memory2_0: Starting RTL generation for module 'qsys_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec C:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I C:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.0sp1/quartus/sopc_builder/bin -I C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=qsys_onchip_memory2_0 --dir=C:/Users/kevin/AppData/Local/Temp/alt7784_5006275563150466293.dir/0002_onchip_memory2_0_gen/ --quartus_dir=C:/altera/13.0sp1/quartus --vhdl --config=C:/Users/kevin/AppData/Local/Temp/alt7784_5006275563150466293.dir/0002_onchip_memory2_0_gen//qsys_onchip_memory2_0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kevin/AppData/Local/Temp/alt7784_5006275563150466293.dir/0002_onchip_memory2_0_gen/  ]
+Info: onchip_memory2_0: Done RTL generation for module 'qsys_onchip_memory2_0'
+Info: onchip_memory2_0: "qsys" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: qsys: Done qsys" with 2 modules, 2 files, 7686 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.spd --output-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/
+Info: Doing: ip-make-simscript --spd=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.spd --output-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERAPRO simulator in C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/ --output-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/ --report-file=bsf:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.bsf --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C20F484C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.qsys
+Progress: Loading Project_VHDL/qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/ --output-directory=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.sopcinfo --report-file=html:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.html --report-file=qip:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys/synthesis/qsys.qip --report-file=cmp:C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.cmp --report-file=svd --system-info=DEVICE_FAMILY="Cyclone II" --system-info=DEVICE=EP2C20F484C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:/Users/kevin/Documents/GitHub/unlimitedrepositoryworks/Project_VHDL/qsys.qsys --language=VHDL
+Progress: Loading Project_VHDL/qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys: Generating qsys "qsys" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 1 modules, 0 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 1 modules, 0 connections
+Info: onchip_memory2_0: Starting RTL generation for module 'qsys_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec C:/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/13.0sp1/quartus/sopc_builder/bin/europa -I C:/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.0sp1/quartus/sopc_builder/bin -I C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=qsys_onchip_memory2_0 --dir=C:/Users/kevin/AppData/Local/Temp/alt7784_5006275563150466293.dir/0004_onchip_memory2_0_gen/ --quartus_dir=C:/altera/13.0sp1/quartus --verilog --config=C:/Users/kevin/AppData/Local/Temp/alt7784_5006275563150466293.dir/0004_onchip_memory2_0_gen//qsys_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0: Done RTL generation for module 'qsys_onchip_memory2_0'
+Info: onchip_memory2_0: "qsys" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: qsys: Done qsys" with 2 modules, 2 files, 6716 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

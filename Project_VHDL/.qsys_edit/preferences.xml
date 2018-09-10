@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="47" />
+   <connections preferredWidth="30" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,7 +14,9 @@
    <frequency preferredWidth="252" />
   </columns>
  </clocktable>
- <library expandedCategories="Library,Project" />
+ <library
+   expandedCategories="Library/Memories and Memory Controllers/On-Chip,Library/Memories and Memory Controllers,Project,Library" />
  <window width="1100" height="728" x="0" y="0" />
  <hdlexample language="VHDL" />
+ <generation simulation="VHDL" synthesis="VHDL" />
 </preferences>

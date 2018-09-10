@@ -337,6 +337,7 @@ set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
 set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
 set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA ON
 set_global_assignment -name PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA ON
+set_global_assignment -name QIP_FILE qsys/synthesis/qsys.qip
 set_global_assignment -name VHDL_FILE i2c.vhd
 set_global_assignment -name VHDL_FILE aud_gen.vhd
 set_global_assignment -name VHDL_FILE seven_segment_displays_handler.vhd

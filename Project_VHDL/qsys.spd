@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="qsys/simulation/submodules/qsys_onchip_memory2_0.vhd"
+   type="VHDL"
+   library="onchip_memory2_0" />
+ <file path="qsys/simulation/qsys.vhd" type="VHDL" />
+ <topLevel name="qsys" />
+ <deviceFamily name="cycloneii" />
+ <modelMap
+   controllerPath="qsys.onchip_memory2_0"
+   modelPath="qsys.onchip_memory2_0" />
+</simPackage>

@@ -1,0 +1,134 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 496 312)
+	(text "qsys" (rect 235 -1 255 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 296 20 308)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "onchip_memory2_0_s1_address[19..0]" (rect 0 0 156 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_address[19..0]" (rect 4 61 208 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 208 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "onchip_memory2_0_s1_debugaccess" (rect 0 0 153 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_debugaccess" (rect 4 77 190 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 208 88)(line_width 1))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "onchip_memory2_0_s1_clken" (rect 0 0 121 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_clken" (rect 4 93 154 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 208 104)(line_width 1))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "onchip_memory2_0_s1_chipselect" (rect 0 0 139 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_chipselect" (rect 4 109 184 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 208 120)(line_width 1))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "onchip_memory2_0_s1_write" (rect 0 0 119 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_write" (rect 4 125 154 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 208 136)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "onchip_memory2_0_s1_writedata[15..0]" (rect 0 0 159 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_writedata[15..0]" (rect 4 157 220 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 208 168)(line_width 3))
+	)
+	(port
+		(pt 0 184)
+		(input)
+		(text "onchip_memory2_0_s1_byteenable[1..0]" (rect 0 0 162 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_byteenable[1..0]" (rect 4 173 220 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 208 184)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "onchip_memory2_0_reset1_reset" (rect 0 0 136 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_reset1_reset" (rect 4 213 178 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 208 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "onchip_memory2_0_reset1_reset_req" (rect 0 0 155 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_reset1_reset_req" (rect 4 229 202 240)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 208 240)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "onchip_memory2_0_clk1_clk" (rect 0 0 118 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_clk1_clk" (rect 4 269 154 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 208 280)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "onchip_memory2_0_s1_readdata[15..0]" (rect 0 0 159 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_readdata[15..0]" (rect 4 141 214 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 208 152)(line_width 3))
+	)
+	(drawing
+		(text "onchip_memory2_0_s1" (rect 75 43 264 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 213 67 468 144)(font "Arial" (color 0 0 0)))
+		(text "debugaccess" (rect 213 83 492 176)(font "Arial" (color 0 0 0)))
+		(text "clken" (rect 213 99 456 208)(font "Arial" (color 0 0 0)))
+		(text "chipselect" (rect 213 115 486 240)(font "Arial" (color 0 0 0)))
+		(text "write" (rect 213 131 456 272)(font "Arial" (color 0 0 0)))
+		(text "readdata" (rect 213 147 474 304)(font "Arial" (color 0 0 0)))
+		(text "writedata" (rect 213 163 480 336)(font "Arial" (color 0 0 0)))
+		(text "byteenable" (rect 213 179 486 368)(font "Arial" (color 0 0 0)))
+		(text "onchip_memory2_0_reset1" (rect 52 195 242 403)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 213 219 456 448)(font "Arial" (color 0 0 0)))
+		(text "reset_req" (rect 213 235 480 480)(font "Arial" (color 0 0 0)))
+		(text "onchip_memory2_0_clk1" (rect 66 251 258 515)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 213 275 444 560)(font "Arial" (color 0 0 0)))
+		(text " qsys " (rect 472 296 980 602)(font "Arial" ))
+		(line (pt 209 52)(pt 209 188)(line_width 1))
+		(line (pt 210 52)(pt 210 188)(line_width 1))
+		(line (pt 209 204)(pt 209 244)(line_width 1))
+		(line (pt 210 204)(pt 210 244)(line_width 1))
+		(line (pt 209 260)(pt 209 284)(line_width 1))
+		(line (pt 210 260)(pt 210 284)(line_width 1))
+		(line (pt 208 32)(pt 288 32)(line_width 1))
+		(line (pt 288 32)(pt 288 296)(line_width 1))
+		(line (pt 208 296)(pt 288 296)(line_width 1))
+		(line (pt 208 32)(pt 208 296)(line_width 1))
+		(line (pt 0 0)(pt 496 0)(line_width 1))
+		(line (pt 496 0)(pt 496 312)(line_width 1))
+		(line (pt 0 312)(pt 496 312)(line_width 1))
+		(line (pt 0 0)(pt 0 312)(line_width 1))
+	)
+)
