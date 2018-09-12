@@ -28,11 +28,11 @@ use ieee.std_logic_unsigned.all;
 
 entity qsys_onchip_memory2_0 is 
         generic (
-                 INIT_FILE : STRING := "C:SERSKEVINDOCUMENTSGITHUBNLIMITEDREPOSITORYWORKSPROJECT_VHDLUDIO_FILESSOUNDTRACK2-CUT.HEX"
+                 INIT_FILE : STRING := "C:SERSKEVINDESKTOPILE.HEX"
                  );
         port (
               -- inputs:
-                 signal address : IN STD_LOGIC_VECTOR (19 DOWNTO 0);
+                 signal address : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
                  signal byteenable : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
                  signal chipselect : IN STD_LOGIC;
                  signal clk : IN STD_LOGIC;
@@ -70,7 +70,7 @@ GENERIC (
         signal wren_a : IN STD_LOGIC;
         signal byteena_a : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
         signal clock0 : IN STD_LOGIC;
-        signal address_a : IN STD_LOGIC_VECTOR (19 DOWNTO 0);
+        signal address_a : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
         signal clocken0 : IN STD_LOGIC;
         signal data_a : IN STD_LOGIC_VECTOR (15 DOWNTO 0)
       );
@@ -88,15 +88,15 @@ begin
       byte_size => 8,
       init_file => INIT_FILE,
       lpm_type => "altsyncram",
-      maximum_depth => 732636,
-      numwords_a => 732636,
+      maximum_depth => 8000,
+      numwords_a => 8000,
       operation_mode => "SINGLE_PORT",
       outdata_reg_a => "UNREGISTERED",
       ram_block_type => "AUTO",
       read_during_write_mode_mixed_ports => "DONT_CARE",
       width_a => 16,
       width_byteena_a => 2,
-      widthad_a => 20
+      widthad_a => 13
     )
     port map(
             address_a => address,

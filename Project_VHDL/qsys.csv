@@ -1,12 +1,12 @@
-# system info qsys on 2018.09.10.20:35:15
+# system info qsys on 2018.09.12.19:59:50
 system_info:
 name,value
 DEVICE,EP2C20F484C7
 DEVICE_FAMILY,Cyclone II
-GENERATION_ID,1536604513
+GENERATION_ID,1536775189
 #
 #
-# Files generated for qsys on 2018.09.10.20:35:15
+# Files generated for qsys on 2018.09.12.19:59:50
 files:
 filepath,kind,attributes,module,is_top
 qsys/simulation/qsys.vhd,VHDL,,qsys,true

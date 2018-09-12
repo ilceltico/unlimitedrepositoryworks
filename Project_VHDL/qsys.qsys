@@ -43,7 +43,7 @@
  <parameter name="projectName">HardwareInvaders.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1536599091653" />
+ <parameter name="timeStamp" value="1536775068226" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" />
@@ -80,9 +80,9 @@
   <parameter name="dataWidth" value="16" />
   <parameter name="dualPort" value="false" />
   <parameter name="initMemContent" value="true" />
-  <parameter name="initializationFileName">C:\Users\kevin\Documents\GitHub\unlimitedrepositoryworks\Project_VHDL\audio_files\soundtrack2-cut.hex</parameter>
+  <parameter name="initializationFileName">C:\Users\kevin\Desktop\file.hex</parameter>
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="1465272" />
+  <parameter name="memorySize" value="16000" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
   <parameter name="simMemInitOnlyFilename" value="0" />

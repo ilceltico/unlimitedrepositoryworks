@@ -1,6 +1,6 @@
 	component qsys is
 		port (
-			onchip_memory2_0_s1_address       : in  std_logic_vector(19 downto 0) := (others => 'X'); -- address
+			onchip_memory2_0_s1_address       : in  std_logic_vector(12 downto 0) := (others => 'X'); -- address
 			onchip_memory2_0_s1_debugaccess   : in  std_logic                     := 'X';             -- debugaccess
 			onchip_memory2_0_s1_clken         : in  std_logic                     := 'X';             -- clken
 			onchip_memory2_0_s1_chipselect    : in  std_logic                     := 'X';             -- chipselect

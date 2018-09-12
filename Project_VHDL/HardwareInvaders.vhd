@@ -160,7 +160,7 @@ architecture RTL of HardwareInvaders is
 	signal bitprsc									: integer range 0 to 4:=0;
 	signal aud_mono								: std_logic_vector(31 downto 0):=(others=>'0');
 	signal read_addr								: integer range 0 to 240254:=0;	-- !!!!
-	signal ROM_ADDR								: std_logic_vector(19 downto 0);
+	signal ROM_ADDR								: std_logic_vector(12 downto 0);
 	signal ROM_OUT									: std_logic_vector(15 downto 0);
 	signal WM_i2c_busy							: std_logic;
 	signal WM_i2c_done							: std_logic;
@@ -170,7 +170,7 @@ architecture RTL of HardwareInvaders is
 	
 	component qsys is
         port (
-            onchip_memory2_0_s1_address       : in  std_logic_vector(19 downto 0) := (others => 'X'); -- address
+            onchip_memory2_0_s1_address       : in  std_logic_vector(12 downto 0) := (others => 'X'); -- address
             onchip_memory2_0_s1_debugaccess   : in  std_logic                     := 'X';             -- debugaccess
             onchip_memory2_0_s1_clken         : in  std_logic                     := 'X';             -- clken
             onchip_memory2_0_s1_chipselect    : in  std_logic                     := 'X';             -- chipselect
@@ -681,7 +681,7 @@ begin
 	AUD_XCK			<=	clock_12MHz;
 	AUD_DACLRCK		<=	DA_CLR;
 		
-	ROM_ADDR			<=	std_logic_vector(to_unsigned(read_addr,20));
+	ROM_ADDR			<=	std_logic_vector(to_unsigned(read_addr,13));
 	
 	handle_audio : process (clock_12MHz)
 	begin

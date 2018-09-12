@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 72)
 		(input)
-		(text "onchip_memory2_0_s1_address[19..0]" (rect 0 0 156 12)(font "Arial" (font_size 8)))
-		(text "onchip_memory2_0_s1_address[19..0]" (rect 4 61 208 72)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_address[12..0]" (rect 0 0 156 12)(font "Arial" (font_size 8)))
+		(text "onchip_memory2_0_s1_address[12..0]" (rect 4 61 208 72)(font "Arial" (font_size 8)))
 		(line (pt 0 72)(pt 208 72)(line_width 3))
 	)
 	(port
