@@ -168,7 +168,7 @@ begin
 
 	game_tick_gen : process(CLOCK, RESET_N)
 	
-		variable counter : integer range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
+		variable counter 				: integer range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
 	
 	begin
 		
@@ -183,7 +183,7 @@ begin
 			
 			if (time_1us = '1') then
 			
-				if(counter = alien_frame_time) then
+				if(counter >= alien_frame_time) then
 				
 					counter 		:= 0;
 					game_tick 	<= '1';
@@ -621,6 +621,11 @@ begin
 							HIDE 								<= destruction_index_array(I);
 							destruction_index_array(I) <= (0,0,ENTITY_NONE);
 							found 							:= '1';
+							
+							-- If an alien has finished its explosion, alien frame time is brought back to normal.
+							if (I = ALIEN_DESTRUCTION_INDEX) then
+								alien_frame_time <= alien_frame_time - EXPLOSION_TIME_1us;
+							end if;
 					
 						end if;
 				
@@ -761,6 +766,9 @@ begin
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY 				<= reg_collision.second_entity;
+							--Temporarily increase the alien frame time
+							alien_frame_time <= alien_frame_time + EXPLOSION_TIME_1us;
+							
 							--Aliens now get quicker, alien bullets generation is quicker, too
 							alien_frame_time 	<= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
 							bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
