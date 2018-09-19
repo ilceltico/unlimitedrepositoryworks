@@ -41,7 +41,7 @@ end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
-	signal alien_frame_time 					: integer range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
+	signal alien_frame_time 					: integer; --range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
 	signal game_tick 								: std_logic;
 	signal player_move_time						: std_logic;
 		
@@ -168,7 +168,7 @@ begin
 
 	game_tick_gen : process(CLOCK, RESET_N)
 	
-		variable counter 				: integer range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
+		variable counter 				: integer; --range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
 	
 	begin
 		
