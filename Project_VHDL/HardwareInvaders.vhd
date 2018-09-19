@@ -70,6 +70,7 @@ architecture RTL of HardwareInvaders is
 	signal rand_alien_visible					: std_logic;
 	signal player_border_reached 				: direction_type;
 	signal column_cannot_shoot 				: std_logic;
+	signal no_bullets_to_shoot					: std_logic;
 	signal collision 								: collision_type;
 	signal score									: integer;
 	signal lives									: integer range 0 to PLAYER_LIVES;
@@ -358,6 +359,7 @@ begin
 			RAND_ALIEN_VISIBLE					=> rand_alien_visible,
 			PLAYER_BORDER_REACHED 				=> player_border_reached,
 			COLUMN_CANNOT_SHOOT					=> column_cannot_shoot,
+			NO_BULLETS_TO_SHOOT					=> no_bullets_to_shoot,
 			COLLISION 								=> collision,
 			SCORE										=> score,
 			LIVES										=> lives,
@@ -377,6 +379,7 @@ begin
 			LIVES										=> lives,
 			RAND_GEN									=> rand_output,
 			COLUMN_CANNOT_SHOOT 					=> column_cannot_shoot,
+			NO_BULLETS_TO_SHOOT					=> no_bullets_to_shoot,
 			COLLISION 								=> collision,
 			BUTTON_LEFT 							=> move_left,
 			BUTTON_RIGHT 							=> move_right,

@@ -37,6 +37,7 @@ entity HI_Datapath is
 		RAND_ALIEN_VISIBLE					: out std_logic;
 		PLAYER_BORDER_REACHED				: out direction_type;
 		COLUMN_CANNOT_SHOOT					: out std_logic;
+		NO_BULLETS_TO_SHOOT					: out std_logic;
 		COLLISION								: out collision_type
 	);
 end entity;
@@ -1143,10 +1144,12 @@ begin
 			available_bullet 		:= '0';
 			available_column 		:= '0';
 			COLUMN_CANNOT_SHOOT 	<= '1';
+			NO_BULLETS_TO_SHOOT 	<= '1';
 		
 		elsif (rising_edge(CLOCK)) then
 			
 			COLUMN_CANNOT_SHOOT <= '1';
+			NO_BULLETS_TO_SHOOT 	<= '1';
 			
 			if (ALIEN_SHOOT = '1') then
 			
@@ -1166,14 +1169,16 @@ begin
 					
 				end loop;
 					
-				if (available_column = '1') then	
+				if (available_column = '1') then	-- Column CAN shoot
+					
+					COLUMN_CANNOT_SHOOT 	<= '0';
 					
 					for J in 0 to BULLET_COUNT - 1 loop 
 								
 						if (alien_bullets(J).visible = '0' and alien_bullets(J).exploding = '0') then
-							COLUMN_CANNOT_SHOOT 	<= '0';
 							bullet_index 			:= J;
 							available_bullet 		:= '1';
+							NO_BULLETS_TO_SHOOT 	<= '0'; -- There is at least one shootable bullet
 						end if;
 							
 					end loop;
@@ -1260,6 +1265,7 @@ begin
 				available_bullet 		:= '0';
 				available_column 		:= '0';
 				COLUMN_CANNOT_SHOOT 	<= '1';
+				NO_BULLETS_TO_SHOOT 	<= '1';
 			
 			end if;
 			

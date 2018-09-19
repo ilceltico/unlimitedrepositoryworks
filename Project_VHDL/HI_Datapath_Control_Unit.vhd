@@ -17,6 +17,7 @@ entity Hi_Datapath_Control_Unit is
 		COLLISION								: in collision_type;
 		RAND_GEN						   		: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
 		COLUMN_CANNOT_SHOOT					: in std_logic;
+		NO_BULLETS_TO_SHOOT					: in std_logic;
 		BUTTON_LEFT								: in std_logic;
 		BUTTON_RIGHT							: in std_logic;
 		BUTTON_SHOOT							: in std_logic;
@@ -44,7 +45,7 @@ architecture RTL of Hi_Datapath_Control_Unit is
 	signal game_tick 								: std_logic;
 	signal player_move_time						: std_logic;
 		
-	type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
+	type column_state_type is (IDLE, CHECKING_RESPONSE, FIRST_INDEX, WAITING);
 	signal column_state							: column_state_type;
 	signal bullet_tick							: std_logic;
 	signal bullet_gen_time						: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
@@ -453,12 +454,12 @@ begin
 						
 					when WAITING =>
 						
-						column_state 	<= INCREMENTING_INDEX;
+						column_state 	<= CHECKING_RESPONSE;
 						ALIEN_SHOOT 	<= '0';
 					
-					when INCREMENTING_INDEX => 
+					when CHECKING_RESPONSE => 
 							
-						if (COLUMN_CANNOT_SHOOT = '1') then
+						if (COLUMN_CANNOT_SHOOT = '1') then -- Can't shoot from this column, add 1
 							
 							if (column = column'high) then
 								column := 0;
@@ -469,7 +470,17 @@ begin
 							column_state 			<= WAITING;
 							ALIEN_SHOOT 			<= '1';
 												
-						else 
+						elsif (NO_BULLETS_TO_SHOOT = '1') then -- Can't shoot because no bullets available, discard. 
+																			-- This signal acts as a support for different behaviours from this one.
+																			-- For example you can keep trying to shoot until a bullet becomes available:
+																				--	COLUMN_TO_SHOOT 		<= column; 
+																				--	column_state 			<= WAITING;
+																				--	ALIEN_SHOOT 			<= '1';
+						
+							column_state 	<= IDLE;
+							ALIEN_SHOOT 	<= '0';
+							
+						else -- Shot complete, IDLE
 							
 							column_state 	<= IDLE;
 							ALIEN_SHOOT 	<= '0';
