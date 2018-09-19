@@ -623,8 +623,10 @@ begin
 							found 							:= '1';
 							
 							-- If an alien has finished its explosion, alien frame time is brought back to normal.
+							-- Also: aliens now get quicker, alien bullets generation is quicker, too
 							if (I = ALIEN_DESTRUCTION_INDEX) then
-								alien_frame_time <= alien_frame_time - EXPLOSION_TIME_1us;
+								alien_frame_time <= alien_frame_time - EXPLOSION_TIME_1us - ALIEN_FRAME_TIME_DECREASE_1us;
+								bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
 							end if;
 					
 						end if;
@@ -766,12 +768,9 @@ begin
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY 				<= reg_collision.second_entity;
+							
 							--Temporarily increase the alien frame time
 							alien_frame_time <= alien_frame_time + EXPLOSION_TIME_1us;
-							
-							--Aliens now get quicker, alien bullets generation is quicker, too
-							alien_frame_time 	<= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
-							bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
 						end if;
 					end case;
 					
