@@ -9,7 +9,6 @@ entity HI_Datapath is
 	(
 		CLOCK										: in	std_logic;
 		RESET_N									: in 	std_logic;
-		REQ_NEXT_SPRITE						: in 	std_logic;
 		REQUEST_ENTITY_SPRITE				: in 	datapath_entity_index_type;
 		DESTROY									: in 	datapath_entity_index_type;
 		DESTROY_SILENT_EXPLOSION			: in 	std_logic;
@@ -90,37 +89,37 @@ begin
 			SPRITE <= sprite_empty;
 			HITBOX <= (0,0,1,1);
 			
-			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
+			if (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and alien_bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and alien_bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 
 				SPRITE <= sprites(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 				HITBOX <= alien_bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
 
 				SPRITE <= sprites(player_bullet.sprite_indexes(player_bullet.current_index));
 				HITBOX <= player_bullet.hitbox;
 
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_RANDOM_ALIEN and rand_alien.visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1' ) then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1' ) then
 				
 				SPRITE <= sprites(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
 		
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SCREEN) then 
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SCREEN) then 
 				
 				SPRITE <= sprites(screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite);
 				HITBOX <= screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;

@@ -46,7 +46,6 @@ architecture RTL of HardwareInvaders is
 	-- HI_View_Control_Unit outputs
 	signal draw_sprite		  					: std_logic;
 	signal show					  					: std_logic;
-	signal req_next_sprite 	  					: std_logic;
 	signal request_entity_sprite				: datapath_entity_index_type;
 	
 	-- HI_View outputs
@@ -297,7 +296,6 @@ begin
 			
 			DRAW_SPRITE					=> draw_sprite,
 			SHOW							=> show,
-			REQ_NEXT_SPRITE 			=> req_next_sprite,
 			REQUEST_ENTITY_SPRITE 	=> request_entity_sprite
 		);
 		
@@ -334,7 +332,6 @@ begin
 		(
 			CLOCK										=> clock_50MHz,
 			RESET_N									=> RESET_N and not(restart_game),
-			REQ_NEXT_SPRITE 						=> req_next_sprite,
 			REQUEST_ENTITY_SPRITE				=> request_entity_sprite,
 			PLAYER_MOVEMENT						=> player_movement,
 			RAND_ALIEN_MOVEMENT					=> random_alien_movement,

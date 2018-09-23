@@ -17,7 +17,6 @@ entity Hi_View_Control_Unit is
 		
 		DRAW_SPRITE						: out std_logic;
 		SHOW								: out std_logic;
-		REQ_NEXT_SPRITE				: out std_logic;
 		REQUEST_ENTITY_SPRITE		: out datapath_entity_index_type
 	);
 end entity;
@@ -54,7 +53,6 @@ begin
 		
 			DRAW_SPRITE 				<= '0';
 			SHOW 							<= '0';
-			REQ_NEXT_SPRITE 			<= '0';
 			REQUEST_ENTITY_SPRITE 	<= (0, 0, ENTITY_NONE);
 			
 			render_asap 				<= '0';
@@ -77,7 +75,7 @@ begin
 			
 			DRAW_SPRITE			<= draw_delayed;
 			SHOW					<= '0';
-			REQ_NEXT_SPRITE 	<= '0';
+			REQUEST_ENTITY_SPRITE 	<= (0, 0, ENTITY_NONE);
 			
 			draw_delayed 		<= '0';
 		
@@ -95,7 +93,6 @@ begin
 					state <= WAITING_2;
 				end if;
 					
-				REQ_NEXT_SPRITE 			<= '1'; -- DELETE ME
 				REQUEST_ENTITY_SPRITE 	<= (0,0,ENTITY_NONE);
 				
 				next_state 					<= RENDER;
