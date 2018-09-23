@@ -1087,7 +1087,7 @@ begin
 					rand_alien.hitbox.up_left_x <= rand_alien.hitbox.up_left_x - RAND_ALIEN_SPEED;
 				when DIR_UP => -- Unreachable
 				when DIR_DOWN => -- Unreachable
-				when DIR_NONE => -- Unreachable
+				when DIR_NONE => -- No movement
 						
 				end case;	
 			end if;
