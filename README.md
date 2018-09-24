@@ -1,6 +1,12 @@
-# unlimitedrepositoryworks
-Allllimite facciamo un progetto Java
+# Hardware Invaders repository
 
-Link a gameplay originale di Space Invaders 1978:
+## Hardware Invaders: a VHDL implementation of Space Invaders.
+Tools: Quartus II v13, FPGA Altera Cyclone II DE1
+
+## JSpaceInvaders: a Java implementation of Space Invaders.
+Tools: Eclipse Oxygen
+
+
+Original Space Invaders 1978 gameplay:
 https://www.youtube.com/watch?v=MU4psw3ccUI
 https://www.youtube.com/watch?v=EqZY2CB_t2A
