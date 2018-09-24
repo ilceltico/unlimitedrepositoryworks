@@ -12,7 +12,7 @@ Tools:
 
 **Executable game can be found [here](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders/JSpaceInvaders.zip)**, just download it, unzip it and open the JAR file.
 
-We know it's a _really_ bad implementation, but it's just a prototype for the VHDL project. It's fun to play anyway, though!
+We know it's a _really_ bad implementation, but it's just a prototype for the VHDL project. It's fun to play, though!
 
 Tools: 
 * Eclipse Oxygen
