@@ -1,16 +1,16 @@
 # Hardware Invaders repository
 
 ## Hardware Invaders: a VHDL implementation of Space Invaders.
-**Path: /Project_VHDL**
+**Path: [/Project_VHDL](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/Project_VHDL)**
 
 Tools: 
 * Quartus II v13
 * FPGA Altera Cyclone II DE1
 
 ## JSpaceInvaders: a Java implementation of Space Invaders.
-**Path: /JSpaceInvaders**
+**Path: [/JSpaceInvaders](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders)**
 
-**Executable game can be found in /JSpaceInvaders/JSpaceInvaders.jar**
+**Executable game can be found in [here](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders/JSpaceInvaders.zip)**, just unzip it and open the JAR file.
 
 Tools: 
 * Eclipse Oxygen
