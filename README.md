@@ -10,7 +10,7 @@ Tools:
 ## JSpaceInvaders: a Java implementation of Space Invaders.
 **Path: [/JSpaceInvaders](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders)**
 
-**Executable game can be found in [here](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders/JSpaceInvaders.zip)**, just unzip it and open the JAR file.
+**Executable game can be found [here](https://github.com/ilceltico/unlimitedrepositoryworks/blob/master/JSpaceInvaders/JSpaceInvaders.zip)**, just download it, unzip it and open the JAR file.
 
 Tools: 
 * Eclipse Oxygen
