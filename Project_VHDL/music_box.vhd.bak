@@ -90,12 +90,12 @@ begin
 			end if;
 			
 			if (rand_alien = '1') then
-				play_rand_alien_sound := true;
-					if (wait_time < 5000000) then
+					if (wait_time /= 5000000) then
 						wait_time := wait_time + 1;
 					end if;
+					play_rand_alien_sound := true;
 			else 
-					if (wait_time >= 5000000) then
+					if (wait_time = 5000000) then
 						play_rand_alien_sound := false;
 						wait_time := 0;
 					end if;

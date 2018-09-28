@@ -3,12 +3,14 @@
 	<PROJECT NAME="HardwareInvaders">
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_iem.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult0" CBX_FILE_NAME="mult_o1t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|qsys:u0|qsys_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_hnc1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_iem.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult1" CBX_FILE_NAME="mult_o1t.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult3" CBX_FILE_NAME="mult_o1t.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_9ch.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|Hi_Datapath_Control_Unit:datapath_control_unit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_4ch.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult2" CBX_FILE_NAME="mult_o1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

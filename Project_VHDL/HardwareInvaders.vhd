@@ -499,35 +499,35 @@ begin
 	
 		geek_binary_leds <= SW(1);
 
---		led_levels : process(clock_50MHz, RESET_N) is 
---		begin
---			
---			if (RESET_N = '0' or show_intro = '1') then
---		
---				LEDG <= (others => '0');
---			
---			elsif (rising_edge(clock_50MHz)) then
---			
---				if (geek_binary_leds = '1') then 
---					LEDG <= std_logic_vector(to_unsigned(level, 8));
---				else 
---					case (level) is
---						when 0 => LEDG <= "00000000";
---						when 1 => LEDG <= "00000001";
---						when 2 => LEDG <= "00000011";
---						when 3 => LEDG <= "00000111";
---						when 4 => LEDG <= "00001111";
---						when 5 => LEDG <= "00011111";
---						when 6 => LEDG <= "00111111";
---						when 7 => LEDG <= "01111111";
---						when 8 => LEDG <= "11111111";
---						when others => LEDG <= "11111111";
---					end case;
---				end if;
---			
---			end if;
---		
---		end process;
+		led_levels : process(clock_50MHz, RESET_N) is 
+		begin
+			
+			if (RESET_N = '0' or show_intro = '1') then
+		
+				LEDG <= (others => '0');
+			
+			elsif (rising_edge(clock_50MHz)) then
+			
+				if (geek_binary_leds = '1') then 
+					LEDG <= std_logic_vector(to_unsigned(level, 8));
+				else 
+					case (level) is
+						when 0 => LEDG <= "00000000";
+						when 1 => LEDG <= "00000001";
+						when 2 => LEDG <= "00000011";
+						when 3 => LEDG <= "00000111";
+						when 4 => LEDG <= "00001111";
+						when 5 => LEDG <= "00011111";
+						when 6 => LEDG <= "00111111";
+						when 7 => LEDG <= "01111111";
+						when 8 => LEDG <= "11111111";
+						when others => LEDG <= "11111111";
+					end case;
+				end if;
+			
+			end if;
+		
+		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
 		generic map (
@@ -603,36 +603,36 @@ begin
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
---		led_lives : process(clock_50MHz, RESET_N) is 
---		
---		begin 
---		
---			if (RESET_N = '0' or show_intro = '1') then 
---				LEDR <= (others => '0');
---				
---			elsif (rising_edge(clock_50MHz)) then 
---				if (geek_binary_leds = '1') then
---					LEDR <= std_logic_vector(to_unsigned(lives, 10));
---				else
---					case (lives) is
---						when 0 => LEDR <= "0000000000";
---						when 1 => LEDR <= "0000000001";
---						when 2 => LEDR <= "0000000011";
---						when 3 => LEDR <= "0000000111";
-----						when 4 => LEDR <= "0000001111";
-----						when 5 => LEDR <= "0000011111";
-----						when 6 => LEDR <= "0000111111";
-----						when 7 => LEDR <= "0001111111";
-----						when 8 => LEDR <= "0011111111";
-----						when 9 => LEDR <= "0111111111";
-----						when 10 => LEDR <= "1111111111";
---						when others => LEDR <= "1111111111";
---					end case;
---				end if;
---				
---			end if;
---			
---		end process;
+		led_lives : process(clock_50MHz, RESET_N) is 
+		
+		begin 
+		
+			if (RESET_N = '0' or show_intro = '1') then 
+				LEDR <= (others => '0');
+				
+			elsif (rising_edge(clock_50MHz)) then 
+				if (geek_binary_leds = '1') then
+					LEDR <= std_logic_vector(to_unsigned(lives, 10));
+				else
+					case (lives) is
+						when 0 => LEDR <= "0000000000";
+						when 1 => LEDR <= "0000000001";
+						when 2 => LEDR <= "0000000011";
+						when 3 => LEDR <= "0000000111";
+--						when 4 => LEDR <= "0000001111";
+--						when 5 => LEDR <= "0000011111";
+--						when 6 => LEDR <= "0000111111";
+--						when 7 => LEDR <= "0001111111";
+--						when 8 => LEDR <= "0011111111";
+--						when 9 => LEDR <= "0111111111";
+--						when 10 => LEDR <= "1111111111";
+						when others => LEDR <= "1111111111";
+					end case;
+				end if;
+				
+			end if;
+			
+		end process;
 
 		-- signal sampler
 		signal_sampler : entity work.signal_sampler
@@ -708,15 +708,15 @@ begin
 						sound_number <= "010";
 					end if;
 					
---					if (rand_alien_mov_out = '1') then
---						sound_number <= "011";
---						LEDG(6)		<= '1';
---					end if;
---					
---					if (stop_rand_alien_mov_out = '1') then
---						sound_number <= "100";
---						LEDG(6)		<= '1';
---					end if;
+					if (rand_alien_mov_out = '1') then
+						sound_number <= "011";
+					--	LEDG(6)		<= '1';
+					end if;
+					
+					if (stop_rand_alien_mov_out = '1') then
+						sound_number <= "100";
+					--	LEDG(6)		<= '1';
+					end if;
 					
 					if (SW(2) = '1') then
 						sound_number <= "001";
@@ -726,8 +726,8 @@ begin
 					if (count = 100) then  
 						count := 0;
 						sound_number <= "111";
-						LEDG(7)		<= '0';
-						LEDR(9)		<= '0';
+					--	LEDG(7)		<= '0';
+					--	LEDR(9)		<= '0';
 					end if;
 					count := count + 1;
 					
@@ -735,7 +735,7 @@ begin
 					aud_mono(31 downto 16)	<= aud_out(31 downto 16);
 									
 					--sound_number <= "111";
-					LEDR(1)		<= aud_ready;
+					--LEDR(1)		<= aud_ready;
 				end if;
 			end if;
 		end process;	
@@ -773,7 +773,7 @@ begin
 						WM_i2c_data(15 downto 9)<="0001001";
 						WM_i2c_data(8 downto 0)<="111111111";
 						WM_i2c_send_flag<='1';
-						LEDR(4)		<= '1';
+					--	LEDR(4)		<= '1';
 					elsif (KEY(2)='0'AND SW(0)='1') then--- Enable DAC to LINOUT
 						WM_i2c_data(15 downto 9)<="0000100";
 						WM_i2c_data(8 downto 0)<="000010010";
