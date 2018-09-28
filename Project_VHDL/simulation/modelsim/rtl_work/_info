@@ -2,280 +2,355 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\Luca\Documents\unlimitedrepositoryworks\Project_VHDL\simulation\modelsim
-Ehardwareinvaders
-Z1 w1521453034
-Z2 DPx4 work 10 hi_package 0 22 j9eHNOdco6IMTW84Y;h9]3
-Z3 DPx4 work 11 vga_package 0 22 VB3f68JVUEHlbOz7JPOP>1
-Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z7 dC:\Users\Luca\Documents\unlimitedrepositoryworks\Project_VHDL\simulation\modelsim
-Z8 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HardwareInvaders.vhd
-Z9 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HardwareInvaders.vhd
+Z0 dC:\Users\Luca\Documents\unlimitedrepositoryworks_master\Project_VHDL\simulation\modelsim
+Eaud_gen
+Z1 w1538128045
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Luca\Documents\unlimitedrepositoryworks_master\Project_VHDL\simulation\modelsim
+Z6 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/aud_gen.vhd
+Z7 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/aud_gen.vhd
 l0
-L7
-VleO^<TQD3RQHk0c?ea?4Q2
-!s100 B`4d[6zo>ck8`mBn?iiAA2
-Z10 OV;C;10.1d;51
+L6
+V3Y>2j?kTQHfPT_^?@mKc_3
+Z8 OV;C;10.1d;51
 31
+Z9 !s108 1538139209.193000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/aud_gen.vhd|
+Z11 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/aud_gen.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 c5RJGORi^DZn;::R:JGgW0
 !i10b 1
-Z11 !s108 1521454965.017000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HardwareInvaders.vhd|
-Z13 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HardwareInvaders.vhd|
-Z14 o-93 -work work -O0
-Z15 tExplicit 1
-Artl
-Z16 DEx4 work 15 sprite_renderer 0 22 Zf0b8SmI2VHiW5nK5hh8K1
-Z17 DEx4 work 15 vga_framebuffer 0 22 9hcT8h2N6kZM1CM;RXnn;0
-Z18 DEx4 work 3 pll 0 22 b054BV[k`<km6GWJhSTii3
+Amain
 R2
 R3
 R4
-R5
-R6
-DEx4 work 16 hardwareinvaders 0 22 leO^<TQD3RQHk0c?ea?4Q2
-l50
-L30
-VFiXPCb84A7B9OeQfPo2Q[1
-!s100 ;ln`40i7==Q^QgF5<MH]`3
-R10
+DEx4 work 7 aud_gen 0 22 3Y>2j?kTQHfPT_^?@mKc_3
+l25
+L17
+VmI:S7SOzPSRYA2_ng?g7I1
+R8
 31
-!i10b 1
+R9
+R10
 R11
 R12
 R13
-R14
-R15
-Phi_package
-R3
-R6
-R5
+!s100 nl<X;gBmLo`NbNfhJ5TRj2
+!i10b 1
+Ebcd_to_7segment
+Z14 w1531952137
 R4
-w1521369173
-R7
-8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HI_package.vhd
-FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HI_package.vhd
-l0
-L6
-Vj9eHNOdco6IMTW84Y;h9]3
-R10
-31
-R14
-R15
-!s100 X]kJ57FAAGf_d9[6V2B4i0
-!i10b 1
-!s108 1521454964.782000
-!s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HI_package.vhd|
-!s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HI_package.vhd|
-Epll
-Z19 w1493119814
-R5
-R6
-R7
-Z20 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/PLL.vhd
-Z21 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/PLL.vhd
-l0
-L42
-Vb054BV[k`<km6GWJhSTii3
-R10
-31
-Z22 !s108 1521454964.157000
-Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/PLL.vhd|
-Z24 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/PLL.vhd|
-R14
-R15
-!s100 g8MmJ<O7S?_Q9`NcdjPan1
-!i10b 1
-Asyn
-R5
-R6
-R18
-l128
-L52
-ViZ_;KzdR[_bRG@F[>XQzI1
-R10
-31
-R22
-R23
-R24
-R14
-R15
-!s100 G:lbGdGmn7G=GRP7=L2Gz3
-!i10b 1
-Esprite_renderer
-Z25 w1521367098
 R3
 R2
-R4
 R5
-R6
-R7
-Z26 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/sprite_renderer.vhd
-Z27 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/sprite_renderer.vhd
-l0
-L128
-VZf0b8SmI2VHiW5nK5hh8K1
-R10
-31
-Z28 !s108 1521454964.892000
-Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/sprite_renderer.vhd|
-Z30 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/sprite_renderer.vhd|
-R14
-R15
-!s100 o9:g:NkM1J;kGoCmj_5QB0
-!i10b 1
-Artl
-R3
-R2
-R4
-R5
-R6
-R16
-l162
-L152
-V=N7_8=?hVRjKH7e4WTWho2
-R10
-31
-R28
-R29
-R30
-R14
-R15
-!s100 K8ET87;lQQKdIZ:FeX0CE0
-!i10b 1
-Evga_framebuffer
-R19
-R3
-R4
-R5
-R6
-R7
-Z31 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_FrameBuffer.vhd
-Z32 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_FrameBuffer.vhd
-l0
-L8
-V9hcT8h2N6kZM1CM;RXnn;0
-R10
-31
-Z33 !s108 1521454964.642000
-Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_FrameBuffer.vhd|
-Z35 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_FrameBuffer.vhd|
-R14
-R15
-!s100 AR@K39_[nASQ>WO;9JV7X2
-!i10b 1
-Artl
-Z36 DEx4 work 10 vga_ramdac 0 22 cA9UgK:nUW;38`hS:foTL2
-Z37 DEx4 work 10 vga_timing 0 22 [HCkW_`O396^@Oi@O4D_90
-R3
-R4
-R5
-R6
-R17
-l89
-L55
-ViBE9i_?CW;7IO^j8?VcLA2
-R10
-31
-R33
-R34
-R35
-R14
-R15
-!s100 8k[6@Y`RT^<K4JPVbN3oG3
-!i10b 1
-Pvga_package
-R6
-R5
-R4
-w1520889651
-R7
-8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/vga_package.vhd
-FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/vga_package.vhd
+Z15 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/bcd_to_7segment.vhd
+Z16 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/bcd_to_7segment.vhd
 l0
 L5
-VVB3f68JVUEHlbOz7JPOP>1
-R10
+VCbQ`be;B6:7`IBj`>Sc@]0
+R8
 31
-R14
-R15
-!s100 YnW<SHQ]h7cV@_AFJ7cSQ1
+Z17 !s108 1538139209.426000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/bcd_to_7segment.vhd|
+Z19 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/bcd_to_7segment.vhd|
+R12
+R13
+!s100 Tg;bf2YECinZniAK56INl2
 !i10b 1
-!s108 1521454964.532000
-!s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/vga_package.vhd|
-!s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/vga_package.vhd|
-Evga_ramdac
+Artl
+R4
+R3
+R2
+DEx4 work 15 bcd_to_7segment 0 22 CbQ`be;B6:7`IBj`>Sc@]0
+l16
+L15
+VjO1F@mLLFC5gAN773PkP?2
+R8
+31
+R17
+R18
 R19
+R12
+R13
+!s100 Y`hKl=[Sg2>7LQDYlh?Fd3
+!i10b 1
+Ebinary_to_bcd
+Z20 w1531952239
+R2
+R3
 R4
 R5
-R6
-R7
-Z38 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_RAMDAC.vhd
-Z39 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_RAMDAC.vhd
+Z21 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/Binary_to_BCD.vhd
+Z22 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/Binary_to_BCD.vhd
+l0
+L6
+Vd5lj2AYM3Hzb68i<^K`g71
+R8
+31
+Z23 !s108 1538139209.312000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/Binary_to_BCD.vhd|
+Z25 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/Binary_to_BCD.vhd|
+R12
+R13
+!s100 U7EVKV^WJ];6TR=jk^dYf3
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 13 binary_to_bcd 0 22 d5lj2AYM3Hzb68i<^K`g71
+l39
+L21
+V=Mif<m51PKdJloi@<a9R<0
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 W<QlXO9oa[mJ>1n`9fEM92
+!i10b 1
+Edebounce
+Z26 w1526471716
+Z27 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z28 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R3
+R4
+R5
+Z29 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/debounce.vhd
+Z30 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/debounce.vhd
+l0
+L27
+VZ>kf;67HnS]Q9C]imVP?B3
+R8
+31
+Z31 !s108 1538139209.697000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/debounce.vhd|
+Z33 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/debounce.vhd|
+R12
+R13
+!s100 k[<YmWB1i47K3_WmU<`SI2
+!i10b 1
+Alogic
+R27
+R28
+R3
+R4
+DEx4 work 8 debounce 0 22 Z>kf;67HnS]Q9C]imVP?B3
+l40
+L36
+V2[9e4@5d4mR^SZJgMJok=0
+R8
+31
+R31
+R32
+R33
+R12
+R13
+!s100 ERH7g2eJX4W1RHGWB_WcH2
+!i10b 1
+Ei2c
+R1
+R2
+R3
+R4
+R5
+Z34 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/i2c.vhd
+Z35 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/i2c.vhd
+l0
+L6
+Vmd^K_[@mJaAzH;?[3XVKQ0
+R8
+31
+Z36 !s108 1538139209.058000
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/i2c.vhd|
+Z38 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/i2c.vhd|
+R12
+R13
+!s100 ]8[_72SYTg35jdUl4?@E02
+!i10b 1
+Amain
+R2
+R3
+R4
+DEx4 work 3 i2c 0 22 md^K_[@mJaAzH;?[3XVKQ0
+l31
+L20
+VC9NoX8ezHR2jOaRhNe2UO2
+R8
+31
+R36
+R37
+R38
+R12
+R13
+!s100 _zdIlaNICJOl[E8KU@jnd2
+!i10b 1
+Epll
+R1
+R3
+R4
+R5
+Z39 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/PLL.vhd
+Z40 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/PLL.vhd
+l0
+L42
+VIO`=kZShlR^oQKiL?=Kc[1
+R8
+31
+Z41 !s108 1538139209.823000
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/PLL.vhd|
+Z43 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/PLL.vhd|
+R12
+R13
+!s100 9Yoi=UUT0i4]7kY^T05c40
+!i10b 1
+Asyn
+R3
+R4
+DEx4 work 3 pll 0 22 IO`=kZShlR^oQKiL?=Kc[1
+l134
+L53
+V3T`WI4VU_I:T_V3b7?ij03
+R8
+31
+R41
+R42
+R43
+R12
+R13
+!s100 bom?jdz3``Wo7BRehD[j>1
+!i10b 1
+Eps2_keyboard
+Z44 w1531850339
+R3
+R4
+R5
+Z45 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/ps2_keyboard.vhd
+Z46 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/ps2_keyboard.vhd
+l0
+L26
+VSfK0CmXCb_?6Y>`zAH9W<0
+R8
+31
+Z47 !s108 1538139209.589000
+Z48 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/ps2_keyboard.vhd|
+Z49 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/ps2_keyboard.vhd|
+R12
+R13
+!s100 9k4=jgk`CFTfljU9acT_k3
+!i10b 1
+Alogic
+R3
+R4
+DEx4 work 12 ps2_keyboard 0 22 SfK0CmXCb_?6Y>`zAH9W<0
+l56
+L39
+VgV_MPEL_ifiLEJbki[nlI2
+R8
+31
+R47
+R48
+R49
+R12
+R13
+!s100 PL@;YdC[iYRYczMK9VkTe1
+!i10b 1
+Pvga_package
+R4
+R3
+R2
+Z50 w1531057091
+R5
+8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/vga_package.vhd
+FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/vga_package.vhd
+l0
+L5
+VSI968^Bn>INX4LICFWXSB2
+!s100 0V_mh_0;49=Y?Tb=N:D:H0
+R8
+31
+!i10b 1
+!s108 1538139210.188000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/vga_package.vhd|
+!s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/vga_package.vhd|
+R12
+R13
+Evga_ramdac
+Z51 w1521643317
+R2
+R3
+R4
+R5
+Z52 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_RAMDAC.vhd
+Z53 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_RAMDAC.vhd
 l0
 L5
 VcA9UgK:nUW;38`hS:foTL2
-R10
+R8
 31
-Z40 !s108 1521454964.407000
-Z41 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_RAMDAC.vhd|
-Z42 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_RAMDAC.vhd|
-R14
-R15
+Z54 !s108 1538139210.074000
+Z55 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_RAMDAC.vhd|
+Z56 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_RAMDAC.vhd|
+R12
+R13
 !s100 @JThJHh^zYWIhSNPVCenA2
 !i10b 1
 Artl
+R2
+R3
 R4
-R5
-R6
-R36
+DEx4 work 10 vga_ramdac 0 22 cA9UgK:nUW;38`hS:foTL2
 l111
 L43
 Vfhz@9E5bFgFh5h54>TdTI0
-R10
+R8
 31
-R40
-R41
-R42
-R14
-R15
+R54
+R55
+R56
+R12
+R13
 !s100 S1XUMaT7hk`Jle@TWG>FA1
 !i10b 1
 Evga_timing
-R19
+R50
+R2
+R3
 R4
 R5
-R6
-R7
-Z43 8C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_Timing.vhd
-Z44 FC:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_Timing.vhd
+Z57 8C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_Timing.vhd
+Z58 FC:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_Timing.vhd
 l0
 L5
-V[HCkW_`O396^@Oi@O4D_90
-R10
+V:6Sg^bjQYOS9SEg?]b[K<0
+R8
 31
-Z45 !s108 1521454964.282000
-Z46 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_Timing.vhd|
-Z47 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_Timing.vhd|
-R14
-R15
-!s100 KXfVCjgb@[`SUzDic[6gK2
+Z59 !s108 1538139209.953000
+Z60 !s90 -reportprogress|300|-93|-work|work|C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_Timing.vhd|
+Z61 !s107 C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_Timing.vhd|
+R12
+R13
+!s100 YfnSNj5WV;@XeF7d5^lc51
 !i10b 1
 Artl
+R2
+R3
 R4
-R5
-R6
-R37
+DEx4 work 10 vga_timing 0 22 :6Sg^bjQYOS9SEg?]b[K<0
 l50
 L33
 VH14e^P>>FoVfG0Y6FjenW2
-R10
+R8
 31
-R45
-R46
-R47
-R14
-R15
+R59
+R60
+R61
+R12
+R13
 !s100 HX6g=DIQ6_V98?lYHjazc3
 !i10b 1

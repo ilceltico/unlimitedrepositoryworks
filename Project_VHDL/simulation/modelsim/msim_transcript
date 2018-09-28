@@ -10,14 +10,62 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/PLL.vhd}
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/i2c.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity i2c
+# -- Compiling architecture main of i2c
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/aud_gen.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity aud_gen
+# -- Compiling architecture main of aud_gen
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/Binary_to_BCD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Binary_to_BCD
+# -- Compiling architecture rtl of Binary_to_BCD
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/bcd_to_7segment.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bcd_to_7segment
+# -- Compiling architecture RTL of bcd_to_7segment
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/ps2_keyboard.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ps2_keyboard
+# -- Compiling architecture logic of ps2_keyboard
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/debounce.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity debounce
+# -- Compiling architecture logic of debounce
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/PLL.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity PLL
 # -- Compiling architecture SYN of pll
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_Timing.vhd}
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_Timing.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -25,7 +73,7 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity VGA_Timing
 # -- Compiling architecture RTL of VGA_Timing
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_RAMDAC.vhd}
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/VGA_RAMDAC.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -33,25 +81,14 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity VGA_RAMDAC
 # -- Compiling architecture RTL of VGA_RAMDAC
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/vga_package.vhd}
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/vga_package.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling package vga_package
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/VGA_FrameBuffer.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package vga_package
-# -- Compiling entity VGA_Framebuffer
-# -- Compiling architecture RTL of VGA_Framebuffer
-# -- Loading entity VGA_Timing
-# -- Loading entity VGA_RAMDAC
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HI_package.vhd}
+# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -59,71 +96,15 @@
 # -- Loading package NUMERIC_STD
 # -- Loading package vga_package
 # -- Compiling package HI_package
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/sprite_renderer.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package vga_package
-# -- Loading package HI_package
-# -- Compiling entity sprite_renderer
-# -- Compiling architecture RTL of sprite_renderer
-# vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks/Project_VHDL/HardwareInvaders.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package vga_package
-# -- Loading package HI_package
-# -- Compiling entity HardwareInvaders
-# -- Compiling architecture RTL of HardwareInvaders
-# -- Loading entity PLL
-# -- Loading entity VGA_Framebuffer
-# -- Loading entity sprite_renderer
+# ** Error: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd(1805): (vcom-1273) At index #2, length of record element "img_pixels" is 32; length of array is 31.
 # 
-vsim rtl_work.hardwareinvaders
-# vsim rtl_work.hardwareinvaders 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading rtl_work.vga_package
-# Loading rtl_work.hi_package
-# Loading rtl_work.hardwareinvaders(rtl)
-# Loading rtl_work.pll(syn)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.mf_pllpack(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading altera_mf.altpll(behavior)
-# Loading altera_mf.mf_stratixii_pll(vital_pll)
-# Loading altera_mf.arm_m_cntr(behave)
-# Loading altera_mf.arm_n_cntr(behave)
-# Loading altera_mf.arm_scale_cntr(behave)
-# Loading rtl_work.vga_framebuffer(rtl)
-# Loading rtl_work.vga_timing(rtl)
-# Loading rtl_work.vga_ramdac(rtl)
-# Loading rtl_work.sprite_renderer(rtl)
-# ** Warning: Design size of 14 instances exceeds ModelSim ALTERA recommended capacity.
-# This may because you are loading cell libraries which are not recommended with
-# the ModelSim Altera version. Expect performance to be adversely affected.
-vsim rtl_work.sprite_renderer
-# vsim rtl_work.sprite_renderer 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading rtl_work.vga_package
-# Loading rtl_work.hi_package
-# Loading rtl_work.sprite_renderer(rtl)
-wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0us -endtime 1000us sim:/sprite_renderer/CLOCK
-# hardwareinvaders
-wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/sprite_renderer/RESET_N
-# hardwareinvaders
-wave modify -driver freeze -pattern constant -value 1 -starttime 0us -endtime 1000us Edit:/sprite_renderer/RESET_N
-# hardwareinvaders
-wave create -driver freeze -pattern constant -value 0 -starttime 0us -endtime 1000us sim:/sprite_renderer/DRAW_SPRITE
-# hardwareinvaders
-wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0us -endtime 1000us sim:/sprite_renderer/SHOW
+# ** Error: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd(1843): (vcom-1273) At index #2, length of record element "img_pixels" is 32; length of array is 31.
+# 
+# ** Error: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd(1845): (vcom-1273) At index #2, length of record element "img_pixels" is 32; length of array is 31.
+# 
+# ** Error: C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd(2850): VHDL Compiler exiting
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./HardwareInvaders_run_msim_rtl_vhdl.do line 18
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Users/Luca/Documents/unlimitedrepositoryworks_master/Project_VHDL/hi_package.vhd}"

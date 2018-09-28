@@ -11,5 +11,6 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|HI_View:view|lpm_mult:Mult2" CBX_FILE_NAME="mult_o1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|HardwareInvaders|music_box:music_box|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_08m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

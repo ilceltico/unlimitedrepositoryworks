@@ -12,7 +12,7 @@ entity signal_sampler is
 		PLAYER_SHOT_IN			: in std_logic;
 		ALIEN_MOVEMENT_IN		: in direction_type;
 		RAND_ALIEN_IN			: in std_logic;
-		STOP_RAND_ALIEN_IN	: in std_logic;
+		STOP_RAND_ALIEN_IN	: in direction_type;
 		
 		EXPLOSION_OUT			: out std_logic;
 		PLAYER_SHOT_OUT		: out std_logic;

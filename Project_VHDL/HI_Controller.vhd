@@ -17,7 +17,7 @@ entity HI_Controller is
 		ALIEN_COUNT		 	: in integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
 		BUTTON_START		: in std_logic;
 		
-		LEVEL 				: out integer range 1 to LEVEL_NUMBER;
+		LEVEL 				: out integer range 1 to MAX_LEVEL;
 		NEW_LEVEL			: out std_logic;
 		SHOW_NEXT_LEVEL	: out std_logic;
 		GAMEOVER				: out std_logic;
@@ -75,7 +75,7 @@ begin
 				
 				if (ALIEN_COUNT = 0) then
 					
-					if (level_no < LEVEL_NUMBER) then 	
+					if (level_no < MAX_LEVEL) then 	
 						state <= NEW_LEVEL_STATE;
 					
 					else   --check if you won even the third set -> lvl 4 -> you won the game
@@ -89,9 +89,10 @@ begin
 				counter 				:= counter + 1;
 				SHOW_NEXT_LEVEL 	<= '1';
 				
-				if (counter = 100000000) then -- 2 Seconds
-					
+				if (counter = 50000000) then -- 1 Second
 					level_no 	:= level_no + 1;
+					
+				elsif (counter = 100000000) then -- 2 Seconds
 					NEW_LEVEL	<= '1';
 				
 				elsif (counter = 100000001) then 

@@ -201,7 +201,7 @@ begin
 	
 	end process;
 
-	reference_time_gen : process(clock_50Mhz, RESET_N)
+	reference_time_gen : process(CLOCK_50, RESET_N)
 		
 		variable counter : integer range 0 to (REFERENCE_TIME_50MHz - 1);
 	
@@ -212,7 +212,7 @@ begin
 			counter 	:= 0;
 			time_1us <= '0';
 		
-		elsif (rising_edge(clock_50MHz)) then
+		elsif (rising_edge(CLOCK_50)) then
 		
 			if(counter = counter'high) then
 				
@@ -229,7 +229,7 @@ begin
 		
 	end process;
 
-	frame_time_gen : process(clock_50MHz, RESET_N)
+	frame_time_gen : process(CLOCK_50, RESET_N)
 		
 		variable counter : integer range 0 to (FRAME_TIME_1us - 1);
 	
@@ -240,7 +240,7 @@ begin
 			counter 		:= 0;
 			frame_time 	<= '0';
 		
-		elsif (rising_edge(clock_50MHz)) then
+		elsif (rising_edge(CLOCK_50)) then
 		
 			frame_time 	<= '0';
 			
@@ -298,7 +298,10 @@ begin
 			SRAM_LB_N => SRAM_LB_N
 		);
 		
-	controller : entity work.HI_Controller
+	controller : entity work.HI_Controller		
+		generic map (
+			MAX_LEVEL        => LEVEL_NUMBER
+		)
 		port map 
 		(
 			CLOCK					=> clock_50MHz,
@@ -436,7 +439,7 @@ begin
 		ps2_keyboard : entity work.ps2_keyboard
 		port map
 		(
-			clk   			=> clock_50MHz,  
+			clk   			=> CLOCK_50,  
 			ps2_clk      	=> PS2_CLK,     
 			ps2_data     	=> PS2_DAT,    
 			
@@ -447,7 +450,7 @@ begin
 		ps2_keyboard_handler : entity work.ps2_keyboard_handler
 		port map
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> CLOCK_50,
 			RESET_N			=> RESET_N,
 			PS2_CODE_NEW  	=> ps2_code_new,
 			PS2_CODE 		=> ps2_code,
@@ -499,35 +502,35 @@ begin
 	
 		geek_binary_leds <= SW(1);
 
-		led_levels : process(clock_50MHz, RESET_N) is 
-		begin
-			
-			if (RESET_N = '0' or show_intro = '1') then
-		
-				LEDG <= (others => '0');
-			
-			elsif (rising_edge(clock_50MHz)) then
-			
-				if (geek_binary_leds = '1') then 
-					LEDG <= std_logic_vector(to_unsigned(level, 8));
-				else 
-					case (level) is
-						when 0 => LEDG <= "00000000";
-						when 1 => LEDG <= "00000001";
-						when 2 => LEDG <= "00000011";
-						when 3 => LEDG <= "00000111";
-						when 4 => LEDG <= "00001111";
-						when 5 => LEDG <= "00011111";
-						when 6 => LEDG <= "00111111";
-						when 7 => LEDG <= "01111111";
-						when 8 => LEDG <= "11111111";
-						when others => LEDG <= "11111111";
-					end case;
-				end if;
-			
-			end if;
-		
-		end process;
+--		led_levels : process(clock_50MHz, RESET_N) is 
+--		begin
+--			
+--			if (RESET_N = '0' or show_intro = '1') then
+--		
+--				LEDG <= (others => '0');
+--			
+--			elsif (rising_edge(clock_50MHz)) then
+--			
+--				if (geek_binary_leds = '1') then 
+--					LEDG <= std_logic_vector(to_unsigned(level, 8));
+--				else 
+--					case (level) is
+--						when 0 => LEDG <= "00000000";
+--						when 1 => LEDG <= "00000001";
+--						when 2 => LEDG <= "00000011";
+--						when 3 => LEDG <= "00000111";
+--						when 4 => LEDG <= "00001111";
+--						when 5 => LEDG <= "00011111";
+--						when 6 => LEDG <= "00111111";
+--						when 7 => LEDG <= "01111111";
+--						when 8 => LEDG <= "11111111";
+--						when others => LEDG <= "11111111";
+--					end case;
+--				end if;
+--			
+--			end if;
+--		
+--		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
 		generic map (
@@ -536,7 +539,7 @@ begin
 		)
 		port map
 		(
-			CLOCK					=> clock_50MHz,
+			CLOCK					=> CLOCK_50,
 			START					=> binary_to_bcd_start,
 			BINARY				=> std_logic_vector(to_unsigned(score, 15)),
 			
@@ -544,7 +547,7 @@ begin
 			o_DV					=> b2b_data_available
 		);
 		
-		bcd_value_filter : process(clock_50MHz, RESET_N)
+		bcd_value_filter : process(CLOCK_50, RESET_N)
 		begin
 		
 			if (RESET_N = '0') then
@@ -552,7 +555,7 @@ begin
 				bcd_value 				<= (others => '0');
 				binary_to_bcd_start 	<= '0';
 			
-			elsif (rising_edge(clock_50MHz)) then 
+			elsif (rising_edge(CLOCK_50)) then 
 			
 				binary_to_bcd_start 	<= '1';
 			
@@ -566,7 +569,7 @@ begin
 		bcd_to_7segment_0 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> CLOCK_50,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(3 downto 0),
 			
@@ -576,7 +579,7 @@ begin
 		bcd_to_7segment_1 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> CLOCK_50,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(7 downto 4),
 			
@@ -586,7 +589,7 @@ begin
 		bcd_to_7segment_2 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> CLOCK_50,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(11 downto 8),
 			
@@ -596,21 +599,21 @@ begin
 		bcd_to_7segment_3 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> clock_50MHz,
+			CLOCK				=> CLOCK_50,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(15 downto 12),
 			
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
-		led_lives : process(clock_50MHz, RESET_N) is 
+		led_lives : process(CLOCK_50, RESET_N) is 
 		
 		begin 
 		
 			if (RESET_N = '0' or show_intro = '1') then 
 				LEDR <= (others => '0');
 				
-			elsif (rising_edge(clock_50MHz)) then 
+			elsif (rising_edge(CLOCK_50)) then 
 				if (geek_binary_leds = '1') then
 					LEDR <= std_logic_vector(to_unsigned(lives, 10));
 				else
@@ -638,14 +641,14 @@ begin
 		signal_sampler : entity work.signal_sampler
 		port map
 		(
-			CLOCK 					=> clock_50MHz,
+			CLOCK 					=> CLOCK_50,
  			RESET_N					=> RESET_N and not ( NEW_LEVEL or SHOW_NEXT_LEVEL or GAMEOVER or YOUWIN or SHOW_INTRO or RESTART_GAME),
 			
 			EXPLOSION_IN			=> DESTROY.entity_type,
 			PLAYER_SHOT_IN			=> player_has_shot,
 			ALIEN_MOVEMENT_IN		=> ALIEN_GRID_MOVEMENT,
-			RAND_ALIEN_IN			=> '0', --SHOW_RAND_ALIEN,
-			STOP_RAND_ALIEN_IN	=> '0', --RAND_ALIEN_BORDER_REACHED,
+			RAND_ALIEN_IN			=> SHOW_RAND_ALIEN,
+			STOP_RAND_ALIEN_IN	=> RAND_ALIEN_BORDER_REACHED,
 			
 			EXPLOSION_OUT			=> alien_shot_out,
 			PLAYER_SHOT_OUT		=> player_shot_out,
@@ -659,6 +662,7 @@ begin
 		port map
 		(
 			CLOCK 					=> clock_12MHz,
+			--RESET_N					=> RESET_N,
 			
 			SOUND_SELECT			=> sound_number,
 			AUDIO_READY				=> aud_ready,
@@ -690,9 +694,30 @@ begin
 		AUD_XCK			<=	clock_12MHz;
 		AUD_DACLRCK		<=	DA_CLR;
 		
+		roba : process (CLOCK_50)
+			variable spawn : std_logic := '0';
+		begin
+		
+			if (SW(4) = '1') then
+				LEDG(7) <= '0';
+				spawn := '0';
+			end if;
+		
+			if (show_rand_alien = '1') then
+				spawn := '1';
+			end if;
+			
+			if (spawn = '1') then
+				LEDG(7) <= '1';
+			end if;
+		
+		end process;
+		
 		handle_audio : process (clock_12MHz)
 			variable count : natural := 0;
 		begin
+--			if (RESET_N = '0') then 
+--				LEDG(6)		<= '0';
 			if rising_edge (clock_12MHz) then
 				if ( SW(8) = '1' ) then		-------- mute
 					aud_mono		<= (others=>'0');
@@ -711,17 +736,23 @@ begin
 					
 					if (rand_alien_mov_out = '1') then
 						sound_number <= "011";
-					--	LEDG(6)		<= '1';
+						--LEDG(6) <= '1';
 					end if;
+--					
+--					-- Solo per debug
+--					if (SW(6) = '1') then
+--						LEDG(6)		<= '0';
+--					end if;
+--					if (stop_rand_alien_mov_out = '1') then
+--						sound_number <= "100";
+--					--	LEDG(6)		<= '1';
+--					end if;
 					
-					if (stop_rand_alien_mov_out = '1') then
-						sound_number <= "100";
-					--	LEDG(6)		<= '1';
-					end if;
-					
-					if (SW(2) = '1') then
-						sound_number <= "001";
-					end if;
+--					if (KEY(0) = '1') then
+--						sound_number <= "011";
+--					else 
+--						sound_number <= "100";
+--					end if;
 					
 					
 					if (count = 100) then  
@@ -742,6 +773,7 @@ begin
 		end process;	
 
 		handle_i2c : process (CLOCK_50)
+			variable counter 		: natural := 0;
 		begin
 
 			if rising_edge (CLOCK_50)then
@@ -750,45 +782,95 @@ begin
 				end if;
 			end if;
 			 if rising_edge(CLOCK_50) and WM_i2c_busy='0' then
-			 
 				
-					if (KEY(0)='0') then ----Digital Interface: DSP, 16 bit, slave mode
+					--if (SW(7)='1') then ----Digital Interface: DSP, 16 bit, slave mode
 						WM_i2c_data(15 downto 9)<="0000111";
 						WM_i2c_data(8 downto 0)<="000010011";	
 						WM_i2c_send_flag<='1';
-						
-					elsif (KEY(0)='0'AND SW(0)='1' ) then --- HEADPHONE VOLUME
-						WM_i2c_data(15 downto 9)<="0000111";
-						WM_i2c_data(8 downto 0)<="000011111";
-						WM_i2c_send_flag<='1';
+--						
+--					elsif (KEY(0)='0'AND SW(0)='1' ) then --- HEADPHONE VOLUME
+--						WM_i2c_data(15 downto 9)<="0000111";
+--						WM_i2c_data(8 downto 0)<="000011111";
+--						WM_i2c_send_flag<='1';
+--					
+--					elsif (KEY(1)='0'AND SW(0)='0' ) then ---ADC of, DAC on, Linout ON, Power ON
+--						WM_i2c_data(15 downto 9)<="0000110";
+--						WM_i2c_data(8 downto 0)<="000000111";
+--						WM_i2c_send_flag<='1';
+--						
+--					elsif (KEY(1)='0'AND SW(0)='1' ) then --- USB mode
+--						WM_i2c_data(15 downto 9)<="0001000";
+--						WM_i2c_data(8 downto 0)<="000000001";
+--						WM_i2c_send_flag<='1';
+--						
+--					elsif (KEY(2)='0'AND SW(0)='0') then --- activ interface
+--						WM_i2c_data(15 downto 9)<="0001001";
+--						WM_i2c_data(8 downto 0)<="111111111";
+--						WM_i2c_send_flag<='1';
+--					--	LEDR(4)		<= '1';
+--					
+--					elsif (KEY(2)='0'AND SW(0)='1') then--- Enable DAC to LINOUT
+--						WM_i2c_data(15 downto 9)<="0000100";
+--						WM_i2c_data(8 downto 0)<="000010010";
+--						WM_i2c_send_flag<='1';
+--						
+--					elsif (KEY(3)='0' AND SW(0)='0') then ---remove mute DAC
+--						WM_i2c_data(15 downto 9)<="0000101";
+--						WM_i2c_data(8 downto 0)<="000000000";
+--						WM_i2c_send_flag<='1';
+--						
+--					elsif (KEY(3)='0' AND SW(0)='1') then---reset
+--						WM_i2c_data(15 downto 9)<="0001111";
+--						WM_i2c_data(8 downto 0)<="000000000";
+--						WM_i2c_send_flag<='1';
+--
+--					end if;
 					
-					elsif (KEY(1)='0'AND SW(0)='0' ) then ---ADC of, DAC on, Linout ON, Power ON
-						WM_i2c_data(15 downto 9)<="0000110";
-						WM_i2c_data(8 downto 0)<="000000111";
-						WM_i2c_send_flag<='1';
-					elsif (KEY(1)='0'AND SW(0)='1' ) then --- USB mode
-						WM_i2c_data(15 downto 9)<="0001000";
-						WM_i2c_data(8 downto 0)<="000000001";
-						WM_i2c_send_flag<='1';
-					elsif (KEY(2)='0'AND SW(0)='0') then --- activ interface
-						WM_i2c_data(15 downto 9)<="0001001";
-						WM_i2c_data(8 downto 0)<="111111111";
-						WM_i2c_send_flag<='1';
-					--	LEDR(4)		<= '1';
-					elsif (KEY(2)='0'AND SW(0)='1') then--- Enable DAC to LINOUT
-						WM_i2c_data(15 downto 9)<="0000100";
-						WM_i2c_data(8 downto 0)<="000010010";
-						WM_i2c_send_flag<='1';
-					elsif (KEY(3)='0' AND SW(0)='0') then ---remove mute DAC
-						WM_i2c_data(15 downto 9)<="0000101";
-						WM_i2c_data(8 downto 0)<="000000000";
-						WM_i2c_send_flag<='1';
-					elsif (KEY(3)='0' AND SW(0)='1') then---reset
-						WM_i2c_data(15 downto 9)<="0001111";
-						WM_i2c_data(8 downto 0)<="000000000";
-						WM_i2c_send_flag<='1';
-					end if;
-					
+--					
+--					if ( counter /= 8 ) then
+--						if (counter = 0) then---reset
+--							WM_i2c_data(15 downto 9)<="0001111";
+--							WM_i2c_data(8 downto 0)<="000000000";
+--							WM_i2c_send_flag<='1';
+--							
+--						elsif (counter = 1) then --- activ interface
+--							WM_i2c_data(15 downto 9)<="0001001";
+--							WM_i2c_data(8 downto 0)<="111111111";
+--							WM_i2c_send_flag<='1';
+--							
+--						elsif (counter = 2) then ---ADC of, DAC on, Linout ON, Power ON
+--							WM_i2c_data(15 downto 9)<="0000110";
+--							WM_i2c_data(8 downto 0)<="000000111";
+--							WM_i2c_send_flag<='1';
+--							
+--						elsif (counter = 3) then ---remove mute DAC
+--							WM_i2c_data(15 downto 9)<="0000101";
+--							WM_i2c_data(8 downto 0)<="000000000";
+--							WM_i2c_send_flag<='1';
+--
+--						elsif (counter = 4) then --- HEADPHONE VOLUME
+--							WM_i2c_data(15 downto 9)<="0000111";
+--							WM_i2c_data(8 downto 0)<="000011111";
+--							WM_i2c_send_flag<='1';
+--							
+--						elsif (counter = 5) then --- USB mode
+--							WM_i2c_data(15 downto 9)<="0001000";
+--							WM_i2c_data(8 downto 0)<="000000001";
+--							WM_i2c_send_flag<='1';
+--
+--						elsif (counter = 6) then--- Enable DAC to LINOUT
+--							WM_i2c_data(15 downto 9)<="0000100";
+--							WM_i2c_data(8 downto 0)<="000010010";
+--							WM_i2c_send_flag<='1';
+--						
+--						elsif (counter = 7) then ----Digital Interface: DSP, 16 bit, slave mode
+--							WM_i2c_data(15 downto 9)<="0000111";
+--							WM_i2c_data(8 downto 0)<="000010011";	
+--							WM_i2c_send_flag<='1';
+--						end if;
+--						
+--						counter := counter + 1;
+--					end if;
 
 			 end if;
 		end process;
