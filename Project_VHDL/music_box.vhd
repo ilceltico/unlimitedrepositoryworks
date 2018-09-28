@@ -6,6 +6,7 @@ use work.HI_package.all;
 entity music_box is
 	port (
 		CLOCK 					: in std_logic;
+		RESET_N					: in std_logic;
 		
 		SOUND_SELECT			: in std_logic_vector(2 downto 0);
 		AUDIO_READY				: out std_logic;
@@ -38,7 +39,6 @@ begin
 				explosion <= '0';
 				shot <= '0';
 				movement <= '0';
-				rand_alien <= '0';
 --				
       end case;
     end if;
@@ -76,7 +76,15 @@ begin
 		variable sound_variation 				: natural 		:= 0;
 		variable frequency_1hz					: natural		:= 31;
 	begin
-		if rising_edge(CLOCK) then
+		if (RESET_N = '0') then
+			AUDIO_READY	<= '0';
+			AUDIO_OUT <= others=>'0';
+			
+			explosion <= '0';
+			shot <= '0';
+			movement <= '0';
+			rand_alien <= '0';
+		elsif rising_edge(CLOCK) then
 			if (explosion = '1') then
 					play_explosion_sound := true;
 			end if;
@@ -98,6 +106,57 @@ begin
 					if (wait_time >= 5000000) then
 						play_rand_alien_sound := false;
 						wait_time := 0;
+					end if;
+			end if;
+			
+				if (play_movement_sound) then
+					AUDIO_READY <= '1';
+					if (count_movement = frequency_155hz + sound_variation ) then
+						count_movement := 0;
+						movement_signal := -movement_signal ;
+					end if;
+					AUDIO_OUT(15 downto 0) <= std_logic_vector(to_unsigned(movement_signal, 16));
+					
+					mov_sound_time_counter := mov_sound_time_counter + 1;				
+					count_movement := count_movement + 1;
+
+					if (mov_sound_time_counter = 1000000 ) then
+						mov_sound_time_counter := 0;
+						play_movement_sound := false;
+						count_movement := 0;
+						AUDIO_READY <= '0';
+						
+						sound_variation := sound_variation + 2386;
+						current_sound := current_sound + 1;
+						if (current_sound = 4) then
+							sound_variation := 2386;
+							current_sound := 0;
+						end if;
+					end if;
+					
+			end if;
+
+			if (play_shot_sound) then
+					AUDIO_READY <= '1';
+					if (count_shot = frequency_440hz + hz_count) then
+						count_shot := 0;
+						shot_signal := -shot_signal ;
+					end if;
+					AUDIO_OUT(15 downto 0) <= std_logic_vector(to_unsigned(shot_signal, 16));
+					
+					shot_sound_time_counter := shot_sound_time_counter + 1;				
+					count_shot := count_shot + 1;
+
+					if (shot_sound_time_counter = BASE_SOUND_TIME ) then
+						shot_sound_time_counter := 0;
+						play_shot_sound := false;
+						hz_count := 0;
+						count_shot := 0;
+						AUDIO_READY <= '0';
+					end if;
+					
+					if (shot_sound_time_counter mod 2000 = 0 ) then
+						hz_count := hz_count + frequency_1hz;
 					end if;
 			end if;
 			
@@ -127,57 +186,6 @@ begin
 					
 			end if;
 			
-			if (play_shot_sound) then
-					AUDIO_READY <= '1';
-					if (count_shot = frequency_440hz + hz_count) then
-						count_shot := 0;
-						shot_signal := -shot_signal ;
-					end if;
-					AUDIO_OUT(15 downto 0) <= std_logic_vector(to_unsigned(shot_signal, 16));
-					
-					shot_sound_time_counter := shot_sound_time_counter + 1;				
-					count_shot := count_shot + 1;
-
-					if (shot_sound_time_counter = BASE_SOUND_TIME ) then
-						shot_sound_time_counter := 0;
-						play_shot_sound := false;
-						hz_count := 0;
-						count_shot := 0;
-						AUDIO_READY <= '0';
-					end if;
-					
-					if (shot_sound_time_counter mod 2000 = 0 ) then
-						hz_count := hz_count + frequency_1hz;
-					end if;
-			end if;
-			
-			if (play_movement_sound) then
-					AUDIO_READY <= '1';
-					if (count_movement = frequency_155hz + sound_variation ) then
-						count_movement := 0;
-						movement_signal := -movement_signal ;
-					end if;
-					AUDIO_OUT(15 downto 0) <= std_logic_vector(to_unsigned(movement_signal, 16));
-					
-					mov_sound_time_counter := mov_sound_time_counter + 1;				
-					count_movement := count_movement + 1;
-
-					if (mov_sound_time_counter = 5000000 ) then
-						mov_sound_time_counter := 0;
-						play_movement_sound := false;
-						count_movement := 0;
-						AUDIO_READY <= '0';
-						
-						sound_variation := sound_variation + 2386;
-						current_sound := current_sound + 1;
-						if (current_sound = 4) then
-							sound_variation := 2386;
-							current_sound := 0;
-						end if;
-					end if;
-					
-			end if;
-
 			if (play_rand_alien_sound) then
 					AUDIO_READY <= '1';
 					if (count_rand_alien = frequency_440hz - wave_hz_count) then

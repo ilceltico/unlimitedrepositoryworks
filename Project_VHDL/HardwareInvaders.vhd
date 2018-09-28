@@ -698,14 +698,15 @@ begin
 					aud_mono		<= (others=>'0');
 				else
 					
+					if (alien_mov_out = '1') then
+						sound_number <= "010";
+					end if;
+					
 					if (alien_shot_out = '1') then
 						sound_number <= "000";
 					end if;
 					if (player_shot_out = '1') then
 						sound_number <= "001";
-					end if;
-					if (alien_mov_out = '1') then
-						sound_number <= "010";
 					end if;
 					
 					if (rand_alien_mov_out = '1') then
