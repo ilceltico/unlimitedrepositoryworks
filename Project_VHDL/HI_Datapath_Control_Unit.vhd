@@ -17,6 +17,7 @@ entity Hi_Datapath_Control_Unit is
 		COLLISION								: in collision_type;
 		RAND_GEN						   		: in std_logic_vector (RAND_ALIEN_GENERATION_TIME_BITS - 1 downto 0);
 		COLUMN_CANNOT_SHOOT					: in std_logic;
+		NO_BULLETS_TO_SHOOT					: in std_logic;
 		BUTTON_LEFT								: in std_logic;
 		BUTTON_RIGHT							: in std_logic;
 		BUTTON_SHOOT							: in std_logic;
@@ -40,11 +41,11 @@ end entity;
 
 architecture RTL of Hi_Datapath_Control_Unit is 
 
-	signal alien_frame_time 					: integer range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
+	signal alien_frame_time 					: integer; --range 0 to BASE_ALIEN_FRAME_TIME_1us-1;
 	signal game_tick 								: std_logic;
 	signal player_move_time						: std_logic;
 		
-	type column_state_type is (IDLE, INCREMENTING_INDEX, FIRST_INDEX, WAITING);
+	type column_state_type is (IDLE, CHECKING_RESPONSE, FIRST_INDEX, WAITING);
 	signal column_state							: column_state_type;
 	signal bullet_tick							: std_logic;
 	signal bullet_gen_time						: integer range 0 to (BASE_ALIEN_BULLET_GEN_TIME_1us - 1);
@@ -167,7 +168,7 @@ begin
 
 	game_tick_gen : process(CLOCK, RESET_N)
 	
-		variable counter : integer range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
+		variable counter 				: integer; --range 0 to (BASE_ALIEN_FRAME_TIME_1us - 1);
 	
 	begin
 		
@@ -182,7 +183,7 @@ begin
 			
 			if (time_1us = '1') then
 			
-				if(counter = alien_frame_time) then
+				if(counter >= alien_frame_time) then
 				
 					counter 		:= 0;
 					game_tick 	<= '1';
@@ -453,12 +454,12 @@ begin
 						
 					when WAITING =>
 						
-						column_state 	<= INCREMENTING_INDEX;
+						column_state 	<= CHECKING_RESPONSE;
 						ALIEN_SHOOT 	<= '0';
 					
-					when INCREMENTING_INDEX => 
+					when CHECKING_RESPONSE => 
 							
-						if (COLUMN_CANNOT_SHOOT = '1') then
+						if (COLUMN_CANNOT_SHOOT = '1') then -- Can't shoot from this column, add 1
 							
 							if (column = column'high) then
 								column := 0;
@@ -469,7 +470,17 @@ begin
 							column_state 			<= WAITING;
 							ALIEN_SHOOT 			<= '1';
 												
-						else 
+						elsif (NO_BULLETS_TO_SHOOT = '1') then -- Can't shoot because no bullets available, discard. 
+																			-- This signal acts as a support for different behaviours from this one.
+																			-- For example you can keep trying to shoot until a bullet becomes available:
+																				--	COLUMN_TO_SHOOT 		<= column; 
+																				--	column_state 			<= WAITING;
+																				--	ALIEN_SHOOT 			<= '1';
+						
+							column_state 	<= IDLE;
+							ALIEN_SHOOT 	<= '0';
+							
+						else -- Shot complete, IDLE
 							
 							column_state 	<= IDLE;
 							ALIEN_SHOOT 	<= '0';
@@ -610,6 +621,13 @@ begin
 							HIDE 								<= destruction_index_array(I);
 							destruction_index_array(I) <= (0,0,ENTITY_NONE);
 							found 							:= '1';
+							
+							-- If an alien has finished its explosion, alien frame time is brought back to normal.
+							-- Also: aliens now get quicker, alien bullets generation is quicker, too
+							if (I = ALIEN_DESTRUCTION_INDEX) then
+								alien_frame_time <= alien_frame_time - EXPLOSION_TIME_1us - ALIEN_FRAME_TIME_DECREASE_1us;
+								bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
+							end if;
 					
 						end if;
 				
@@ -750,9 +768,9 @@ begin
 							destruction_index_array(ALIEN_DESTRUCTION_INDEX) <= (reg_collision.second_entity);
 							destruction_timer_array(ALIEN_DESTRUCTION_INDEX) <= (EXPLOSION_TIME_1us);
 							DESTROY 				<= reg_collision.second_entity;
-							--Aliens now get quicker, alien bullets generation is quicker, too
-							alien_frame_time 	<= alien_frame_time - ALIEN_FRAME_TIME_DECREASE_1us;
-							bullet_gen_time 	<= bullet_gen_time - ALIEN_BULLET_GEN_TIME_DECREASE_1us;
+							
+							--Temporarily increase the alien frame time
+							alien_frame_time <= alien_frame_time + EXPLOSION_TIME_1us;
 						end if;
 					end case;
 					

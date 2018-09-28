@@ -115,9 +115,7 @@ begin
 				elsif (counter = 500000002) then
 					state <= IN_GAME_STATE;
 					counter := 0;
-				end if;
-				
-				if (BUTTON_START = '1') then 
+				elsif (BUTTON_START = '1') then 
 					level_no 	:= 1;
 					RESTART_GAME <= '1';
 					counter := 500000001; --Will become 500000002 on the next CLOCK
@@ -137,9 +135,7 @@ begin
 				elsif (counter = 500000002) then
 					state <= IN_GAME_STATE;
 					counter := 0;
-				end if;
-				
-				if (BUTTON_START = '1') then 
+				elsif (BUTTON_START = '1') then
 					level_no 	:= 1;
 					RESTART_GAME <= '1';
 					counter := 500000001; --Will become 500000002 on the next CLOCK
@@ -152,9 +148,7 @@ begin
 				if (counter = 1) then 
 					state <= IN_GAME_STATE;
 					counter := 0;
-				end if;
-				
-				if (BUTTON_START = '1') then 
+				elsif (BUTTON_START = '1') then 
 					RESTART_GAME <= '1';
 					counter := 1;
 				end if;

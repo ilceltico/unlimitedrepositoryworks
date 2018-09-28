@@ -4,16 +4,16 @@ use ieee.numeric_std.all;
 
 
 entity i2c is
-port(
-i2c_busy: out std_logic;
-i2c_scl: out std_logic;
-i2c_send_flag: in std_logic;
-i2c_sda: inout std_logic;
-i2c_addr: in std_logic_vector(7 downto 0);
-i2c_done: out std_logic;
-i2c_data: in std_logic_vector(15 downto 0);
-i2c_clock_50: in std_logic
-);
+	port(
+		i2c_busy: out std_logic;
+		i2c_scl: out std_logic;
+		i2c_send_flag: in std_logic;
+		i2c_sda: inout std_logic;
+		i2c_addr: in std_logic_vector(7 downto 0);
+		i2c_done: out std_logic;
+		i2c_data: in std_logic_vector(15 downto 0);
+		i2c_clock_50: in std_logic
+	);
 end i2c;
 
 

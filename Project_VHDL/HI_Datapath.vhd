@@ -9,7 +9,6 @@ entity HI_Datapath is
 	(
 		CLOCK										: in	std_logic;
 		RESET_N									: in 	std_logic;
-		REQ_NEXT_SPRITE						: in 	std_logic;
 		REQUEST_ENTITY_SPRITE				: in 	datapath_entity_index_type;
 		DESTROY									: in 	datapath_entity_index_type;
 		DESTROY_SILENT_EXPLOSION			: in 	std_logic;
@@ -37,7 +36,9 @@ entity HI_Datapath is
 		RAND_ALIEN_VISIBLE					: out std_logic;
 		PLAYER_BORDER_REACHED				: out direction_type;
 		COLUMN_CANNOT_SHOOT					: out std_logic;
-		COLLISION								: out collision_type
+		NO_BULLETS_TO_SHOOT					: out std_logic;
+		COLLISION								: out collision_type;
+		PLAYER_HAS_SHOT						: out std_logic
 	);
 end entity;
 
@@ -89,37 +90,37 @@ begin
 			SPRITE <= sprite_empty;
 			HITBOX <= (0,0,1,1);
 			
-			if (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
+			if (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN and alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1') then
 				
 				SPRITE <= sprites(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= alien_grid(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and alien_bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_ALIEN_BULLET and alien_bullets(REQUEST_ENTITY_SPRITE.index_1).visible = '1') then
 
 				SPRITE <= sprites(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).sprite_indexes(alien_bullets(REQUEST_ENTITY_SPRITE.index_1).current_index));
 				HITBOX <= alien_bullets(REQUEST_ENTITY_SPRITE.index_1).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER_BULLET and player_bullet.visible = '1') then
 
 				SPRITE <= sprites(player_bullet.sprite_indexes(player_bullet.current_index));
 				HITBOX <= player_bullet.hitbox;
 
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_RANDOM_ALIEN and rand_alien.visible = '1') then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_RANDOM_ALIEN and rand_alien.visible = '1') then
 			
 				SPRITE <= sprites(rand_alien.sprite_indexes(rand_alien.current_index));
 				HITBOX <= rand_alien.hitbox;
 			
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1' ) then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SHIELD and shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).visible = '1' ) then
 				
 				SPRITE <= sprites(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite_indexes(shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).current_index));
 				HITBOX <= shield(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_PLAYER) then
 		
 				SPRITE <= sprites(player.sprite_indexes(player.current_index));
 				HITBOX <= player.hitbox;
 				
-			elsif (REQ_NEXT_SPRITE = '1' and REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SCREEN) then 
+			elsif (REQUEST_ENTITY_SPRITE.entity_type = ENTITY_SCREEN) then 
 				
 				SPRITE <= sprites(screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).sprite);
 				HITBOX <= screens(REQUEST_ENTITY_SPRITE.index_1)(REQUEST_ENTITY_SPRITE.index_2).hitbox;
@@ -389,9 +390,10 @@ begin
 		if (RESET_N = '0') then 
 		
 			player_bullet <= ((PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_SPRITE, PLAYER_BULLET_EXPLOSION_SPRITE), (0,0, PLAYER_BULLET_SIZE_X, PLAYER_BULLET_SIZE_Y), 0, '0', '0');
-		
+			PLAYER_HAS_SHOT 						<= '1';
+			
 		elsif (rising_edge(CLOCK)) then 
-		
+			PLAYER_HAS_SHOT 						<= '0';
 			if (PLAYER_SHOOT = '1' and player_bullet.visible = '0' and player_bullet.exploding = '0') then 
 			
 				player_bullet.hitbox.up_left_x 	<= player.hitbox.up_left_x + player.hitbox.size_x / 2 - PLAYER_BULLET_SIZE_X / 2;
@@ -400,6 +402,7 @@ begin
 				player_bullet.hitbox.size_x 		<= PLAYER_BULLET_SIZE_X;
 				player_bullet.hitbox.size_y 		<= PLAYER_BULLET_SIZE_Y;
 				player_bullet.visible 				<= '1';
+				PLAYER_HAS_SHOT 						<= '1';
 				
 			end if;
 				
@@ -1143,10 +1146,12 @@ begin
 			available_bullet 		:= '0';
 			available_column 		:= '0';
 			COLUMN_CANNOT_SHOOT 	<= '1';
+			NO_BULLETS_TO_SHOOT 	<= '1';
 		
 		elsif (rising_edge(CLOCK)) then
 			
 			COLUMN_CANNOT_SHOOT <= '1';
+			NO_BULLETS_TO_SHOOT 	<= '1';
 			
 			if (ALIEN_SHOOT = '1') then
 			
@@ -1166,14 +1171,16 @@ begin
 					
 				end loop;
 					
-				if (available_column = '1') then	
+				if (available_column = '1') then	-- Column CAN shoot
+					
+					COLUMN_CANNOT_SHOOT 	<= '0';
 					
 					for J in 0 to BULLET_COUNT - 1 loop 
 								
 						if (alien_bullets(J).visible = '0' and alien_bullets(J).exploding = '0') then
-							COLUMN_CANNOT_SHOOT 	<= '0';
 							bullet_index 			:= J;
 							available_bullet 		:= '1';
+							NO_BULLETS_TO_SHOOT 	<= '0'; -- There is at least one shootable bullet
 						end if;
 							
 					end loop;
@@ -1260,6 +1267,7 @@ begin
 				available_bullet 		:= '0';
 				available_column 		:= '0';
 				COLUMN_CANNOT_SHOOT 	<= '1';
+				NO_BULLETS_TO_SHOOT 	<= '1';
 			
 			end if;
 			

@@ -44,8 +44,9 @@ entity HardwareInvaders is
 		AUD_DACDAT			  : out std_logic;
 		
 		-- i2c
-		FPGA_I2C_SCLK		  : out std_logic;
-		FPGA_I2C_SDAT		  : inout std_logic
+		I2C_SCLK				  : out std_logic;
+		I2C_SDAT				  : inout std_logic
+		
 	);
 end entity;
 
@@ -58,7 +59,6 @@ architecture RTL of HardwareInvaders is
 	-- HI_View_Control_Unit outputs
 	signal draw_sprite		  					: std_logic;
 	signal show					  					: std_logic;
-	signal req_next_sprite 	  					: std_logic;
 	signal request_entity_sprite				: datapath_entity_index_type;
 	
 	-- HI_View outputs
@@ -82,10 +82,12 @@ architecture RTL of HardwareInvaders is
 	signal rand_alien_visible					: std_logic;
 	signal player_border_reached 				: direction_type;
 	signal column_cannot_shoot 				: std_logic;
+	signal no_bullets_to_shoot					: std_logic;
 	signal collision 								: collision_type;
 	signal score									: integer;
 	signal lives									: integer range 0 to PLAYER_LIVES;
 	signal alive_alien_count					: integer range 0 to ALIENS_PER_COLUMN * COLUMNS_PER_GRID;
+	signal player_has_shot						: std_logic;
 	
 	-- HI_Datapath_Control_Unit outputs
 	signal alien_grid_movement 				: direction_type;
@@ -157,32 +159,23 @@ architecture RTL of HardwareInvaders is
 	signal restart_game							: std_logic;
 	
 	-- audio signals
-	signal bitprsc									: integer range 0 to 4:=0;
 	signal aud_mono								: std_logic_vector(31 downto 0):=(others=>'0');
-	signal read_addr								: integer range 0 to 240254:=0;	-- !!!!
-	signal ROM_ADDR								: std_logic_vector(12 downto 0);
-	signal ROM_OUT									: std_logic_vector(15 downto 0);
 	signal WM_i2c_busy							: std_logic;
 	signal WM_i2c_done							: std_logic;
 	signal WM_i2c_send_flag						: std_logic;
 	signal WM_i2c_data							: std_logic_vector(15 downto 0);
 	signal DA_CLR									: std_logic:='0';
 	
-	component qsys is
-        port (
-            onchip_memory2_0_s1_address       : in  std_logic_vector(12 downto 0) := (others => 'X'); -- address
-            onchip_memory2_0_s1_debugaccess   : in  std_logic                     := 'X';             -- debugaccess
-            onchip_memory2_0_s1_clken         : in  std_logic                     := 'X';             -- clken
-            onchip_memory2_0_s1_chipselect    : in  std_logic                     := 'X';             -- chipselect
-            onchip_memory2_0_s1_write         : in  std_logic                     := 'X';             -- write
-            onchip_memory2_0_s1_readdata      : out std_logic_vector(15 downto 0);                    -- readdata
-            onchip_memory2_0_s1_writedata     : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
-            onchip_memory2_0_s1_byteenable    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- byteenable
-            onchip_memory2_0_reset1_reset     : in  std_logic                     := 'X';             -- reset
-            --onchip_memory2_0_reset1_reset_req : in  std_logic                     := 'X';             -- reset_req
-            onchip_memory2_0_clk1_clk         : in  std_logic                     := 'X'              -- clk
-        );
-    end component qsys;
+	signal sound_number							: std_logic_vector(2 downto 0);
+	signal aud_ready								: std_logic;
+	signal aud_out									: std_logic_vector(31 downto 0);
+	
+	-- signal sampling 50mhz -> 12mhz
+	signal player_shot_out						: std_logic;
+	signal alien_shot_out						: std_logic;
+	signal alien_mov_out							: std_logic;
+	signal rand_alien_mov_out					: std_logic;
+	signal stop_rand_alien_mov_out			: std_logic;
 
 	
 begin
@@ -192,7 +185,7 @@ begin
 			inclk0  => CLOCK_50,
 			c0      => clock_100MHz,
 			c1      => clock_50MHz,
-		   c2		  => clock_12MHz
+			c2 	  => clock_12MHz      
 		); 
 	
 					
@@ -271,7 +264,6 @@ begin
 	
 	VGA_VS <= fb_vsync;
 	
-	
 	vga : entity work.VGA_Framebuffer
 		generic map (
 			SCREEN_WIDTH        => REAL_WIDTH,
@@ -339,7 +331,6 @@ begin
 			
 			DRAW_SPRITE					=> draw_sprite,
 			SHOW							=> show,
-			REQ_NEXT_SPRITE 			=> req_next_sprite,
 			REQUEST_ENTITY_SPRITE 	=> request_entity_sprite
 		);
 		
@@ -376,7 +367,6 @@ begin
 		(
 			CLOCK										=> clock_50MHz,
 			RESET_N									=> RESET_N and not(restart_game),
-			REQ_NEXT_SPRITE 						=> req_next_sprite,
 			REQUEST_ENTITY_SPRITE				=> request_entity_sprite,
 			PLAYER_MOVEMENT						=> player_movement,
 			RAND_ALIEN_MOVEMENT					=> random_alien_movement,
@@ -401,10 +391,12 @@ begin
 			RAND_ALIEN_VISIBLE					=> rand_alien_visible,
 			PLAYER_BORDER_REACHED 				=> player_border_reached,
 			COLUMN_CANNOT_SHOOT					=> column_cannot_shoot,
+			NO_BULLETS_TO_SHOOT					=> no_bullets_to_shoot,
 			COLLISION 								=> collision,
 			SCORE										=> score,
 			LIVES										=> lives,
-			ALIVE_ALIEN_COUNT						=> alive_alien_count
+			ALIVE_ALIEN_COUNT						=> alive_alien_count,
+			PLAYER_HAS_SHOT 						=> player_has_shot
 		);	
 	
 		datapath_control_unit : entity work.HI_Datapath_Control_Unit
@@ -420,6 +412,7 @@ begin
 			LIVES										=> lives,
 			RAND_GEN									=> rand_output,
 			COLUMN_CANNOT_SHOOT 					=> column_cannot_shoot,
+			NO_BULLETS_TO_SHOOT					=> no_bullets_to_shoot,
 			COLLISION 								=> collision,
 			BUTTON_LEFT 							=> move_left,
 			BUTTON_RIGHT 							=> move_right,
@@ -499,42 +492,42 @@ begin
 --		
 --		end process;
 
-		move_left 	<= (keyboard_move_left or not(KEY(3))) and not(gameover) and not(youwin);
-		move_right 	<= (keyboard_move_right or not(KEY(2))) and not(gameover) and not(youwin);
-		shoot 		<= (keyboard_shoot or not(KEY(1))) and not(gameover) and not(youwin);
+		move_left 	<= (keyboard_move_left or not(KEY(3))) and not(gameover) and not(youwin) and not (show_intro);
+		move_right 	<= (keyboard_move_right or not(KEY(2))) and not(gameover) and not(youwin) and not (show_intro);
+		shoot 		<= (keyboard_shoot or not(KEY(1))) and not(gameover) and not(youwin) and not (show_intro);
 		start 		<= (keyboard_start or not(KEY(0)));
 	
 		geek_binary_leds <= SW(1);
 
-		led_levels : process(clock_50MHz, RESET_N) is 
-		begin
-			
-			if (RESET_N = '0') then
-		
-				LEDG <= (others => '0');
-			
-			elsif (rising_edge(clock_50MHz)) then
-			
-				if (geek_binary_leds = '1') then 
-					LEDG <= std_logic_vector(to_unsigned(level, 8));
-				else 
-					case (level) is
-						when 0 => LEDG <= "00000000";
-						when 1 => LEDG <= "00000001";
-						when 2 => LEDG <= "00000011";
-						when 3 => LEDG <= "00000111";
-						when 4 => LEDG <= "00001111";
-						when 5 => LEDG <= "00011111";
-						when 6 => LEDG <= "00111111";
-						when 7 => LEDG <= "01111111";
-						when 8 => LEDG <= "11111111";
-						when others => LEDG <= "11111111";
-					end case;
-				end if;
-			
-			end if;
-		
-		end process;
+--		led_levels : process(clock_50MHz, RESET_N) is 
+--		begin
+--			
+--			if (RESET_N = '0' or show_intro = '1') then
+--		
+--				LEDG <= (others => '0');
+--			
+--			elsif (rising_edge(clock_50MHz)) then
+--			
+--				if (geek_binary_leds = '1') then 
+--					LEDG <= std_logic_vector(to_unsigned(level, 8));
+--				else 
+--					case (level) is
+--						when 0 => LEDG <= "00000000";
+--						when 1 => LEDG <= "00000001";
+--						when 2 => LEDG <= "00000011";
+--						when 3 => LEDG <= "00000111";
+--						when 4 => LEDG <= "00001111";
+--						when 5 => LEDG <= "00011111";
+--						when 6 => LEDG <= "00111111";
+--						when 7 => LEDG <= "01111111";
+--						when 8 => LEDG <= "11111111";
+--						when others => LEDG <= "11111111";
+--					end case;
+--				end if;
+--			
+--			end if;
+--		
+--		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
 		generic map (
@@ -614,7 +607,7 @@ begin
 --		
 --		begin 
 --		
---			if (RESET_N = '0') then 
+--			if (RESET_N = '0' or show_intro = '1') then 
 --				LEDR <= (others => '0');
 --				
 --			elsif (rising_edge(clock_50MHz)) then 
@@ -640,135 +633,164 @@ begin
 --			end if;
 --			
 --		end process;
-		
-	-- AUDIO
-    u0 : component qsys
-        port map (
-            onchip_memory2_0_s1_address       => ROM_ADDR,        --     onchip_memory2_0_s1.address
-            onchip_memory2_0_s1_debugaccess   => '0',   				--                        .debugaccess
-            onchip_memory2_0_s1_clken         => '1',         		--                        .clken
-            onchip_memory2_0_s1_chipselect    => '1',    			--                        .chipselect
-            onchip_memory2_0_s1_write         => '0',         		--                        .write
-            onchip_memory2_0_s1_readdata      => ROM_OUT,      	--                        .readdata
-            onchip_memory2_0_s1_writedata     => (others=>'0'),   --                        .writedata
-            onchip_memory2_0_s1_byteenable    => "11",    			--                        .byteenable
-            onchip_memory2_0_reset1_reset     => '0',     			-- 	 onchip_memory2_0_reset1.reset
-            --onchip_memory2_0_reset1_reset_req => ???, 				--                        .reset_req
-            onchip_memory2_0_clk1_clk         => CLOCK_50MHz	   --   onchip_memory2_0_clk1.clk
-        );
-		
-	sound : entity work.aud_gen 
-		port map(
-			aud_clock_12	=>	clock_12MHz,
-			aud_bk			=>	AUD_BCLK,
-			aud_dalr			=>	DA_CLR,
-			aud_dadat		=>	AUD_DACDAT,	
-			aud_data_in		=>	aud_mono
-		);
 
-	WM8731: entity work.i2c 
-		port map(
-			i2c_busy			=>	WM_i2c_busy,
-			i2c_scl			=>	FPGA_I2C_SCLK,
-			i2c_send_flag	=>	WM_i2c_send_flag,
-			i2c_sda			=>	FPGA_I2C_SDAT,
-			i2c_addr			=>	"00110100",
-			i2c_done			=>	WM_i2c_done,
-			i2c_data			=>	WM_i2c_data,
-			i2c_clock_50	=>	clock_50	
-		);
-		
-	AUD_XCK			<=	clock_12MHz;
-	AUD_DACLRCK		<=	DA_CLR;
-		
-	ROM_ADDR			<=	std_logic_vector(to_unsigned(read_addr,13));
-	
-	handle_audio : process (clock_12MHz)
-	begin
-
-		if rising_edge (clock_12MHz) then
-
-			if(SW(8)='1')then--------reset
-				read_addr	<= 0;
-				bitprsc		<= 0;
-				aud_mono		<= (others=>'0');
-			else
-			LEDR(1)		<= SW(7);
-			aud_mono(15 downto 0) <= ROM_OUT; ----mono sound
-			aud_mono(31 downto 16) <= ROM_OUT;
-			  if (DA_CLR='1') then
-					if (bitprsc<5) then ----8ksps
-						bitprsc	<= bitprsc+1;
-					else
-						bitprsc<=0;
-						if (read_addr<240254) then
-							read_addr <= read_addr+1;
-						else
-							read_addr <= 0;
-						end if;
-					end if;
-				end if;
-			end if;
-
-		end if;
-
-	end process;	
-
-	handle_i2c : process (CLOCK_50)
-	begin
-
-		if rising_edge (CLOCK_50)then
-			if(KEY="1111")then
-			WM_i2c_send_flag<='0';
-			end if;
-		end if;
-		 if rising_edge(CLOCK_50) and WM_i2c_busy='0' then
-		 
+		-- signal sampler
+		signal_sampler : entity work.signal_sampler
+		port map
+		(
+			CLOCK 					=> clock_50MHz,
+ 			RESET_N					=> RESET_N and not ( NEW_LEVEL or SHOW_NEXT_LEVEL or GAMEOVER or YOUWIN or SHOW_INTRO or RESTART_GAME),
 			
-				if (KEY(0)='0') then ----Digital Interface: DSP, 16 bit, slave mode
-				WM_i2c_data(15 downto 9)<="0000111";
-				WM_i2c_data(8 downto 0)<="000010011";	
-				WM_i2c_send_flag<='1';
+			EXPLOSION_IN			=> DESTROY.entity_type,
+			PLAYER_SHOT_IN			=> player_has_shot,
+			ALIEN_MOVEMENT_IN		=> ALIEN_GRID_MOVEMENT,
+			RAND_ALIEN_IN			=> '0', --SHOW_RAND_ALIEN,
+			STOP_RAND_ALIEN_IN	=> '0', --RAND_ALIEN_BORDER_REACHED,
+			
+			EXPLOSION_OUT			=> alien_shot_out,
+			PLAYER_SHOT_OUT		=> player_shot_out,
+			ALIEN_MOVEMENT_OUT	=> alien_mov_out,
+			RAND_ALIEN_OUT			=> rand_alien_mov_out,
+			STOP_RAND_ALIEN_OUT  => stop_rand_alien_mov_out
+		);
+		
+		-- Audio
+		music_box : entity work.music_box
+		port map
+		(
+			CLOCK 					=> clock_12MHz,
+			
+			SOUND_SELECT			=> sound_number,
+			AUDIO_READY				=> aud_ready,
+			AUDIO_OUT				=> aud_out
+		);
+			
+		sound : entity work.aud_gen 
+			port map(
+				aud_clock_12	=>	clock_12MHz,
+				aud_bk			=>	AUD_BCLK,
+				aud_dalr			=>	DA_CLR,
+				aud_dadat		=>	AUD_DACDAT,	
+				aud_data_in		=>	aud_mono
+			);
+
+		WM8731: entity work.i2c 
+			port map(
+				i2c_busy			=>	WM_i2c_busy,
+				i2c_scl			=>	I2C_SCLK,
+				i2c_send_flag	=>	WM_i2c_send_flag,
+				i2c_sda			=>	I2C_SDAT,
+				i2c_addr			=>	"00110100",
+				i2c_done			=>	WM_i2c_done,
+				i2c_data			=>	WM_i2c_data,
+				i2c_clock_50	=>	clock_50	
+			);
+
+			
+		AUD_XCK			<=	clock_12MHz;
+		AUD_DACLRCK		<=	DA_CLR;
+		
+		handle_audio : process (clock_12MHz)
+			variable count : natural := 0;
+		begin
+			if rising_edge (clock_12MHz) then
+				if ( SW(8) = '1' ) then		-------- mute
+					aud_mono		<= (others=>'0');
+				else
 					
-				elsif (KEY(0)='0'AND SW(0)='1' ) then---HEADPHONE VOLUME
-				WM_i2c_data(15 downto 9)<="0000010";
-				WM_i2c_data(8 downto 0)<="101111001";
-				WM_i2c_send_flag<='1';
-				
-				elsif (KEY(1)='0'AND SW(0)='0' ) then---ADC of, DAC on, Linout ON, Power ON
-				WM_i2c_data(15 downto 9)<="0000110";
-				WM_i2c_data(8 downto 0)<="000000111";
-			
-				WM_i2c_send_flag<='1';
-				elsif (KEY(1)='0'AND SW(0)='1' ) then---USB mode
-				WM_i2c_data(15 downto 9)<="0001000";
-				WM_i2c_data(8 downto 0)<="000000001";
-				
-				WM_i2c_send_flag<='1';
-				elsif (KEY(2)='0'AND SW(0)='0') then---activ interface
-				WM_i2c_data(15 downto 9)<="0001001";
-				WM_i2c_data(8 downto 0)<="111111111";
-				
-				WM_i2c_send_flag<='1';
-				elsif (KEY(2)='0'AND SW(0)='1') then---Enable DAC to LINOUT
-				WM_i2c_data(15 downto 9)<="0000100";
-				WM_i2c_data(8 downto 0)<="000010010";
-				
-				WM_i2c_send_flag<='1';
-				elsif (KEY(3)='0' AND SW(0)='0') then---remove mute DAC
-				WM_i2c_data(15 downto 9)<="0000101";
-				WM_i2c_data(8 downto 0)<="000000000";
-				
-				WM_i2c_send_flag<='1';
-				elsif (KEY(3)='0' AND SW(0)='1') then---reset
-				WM_i2c_data(15 downto 9)<="0001111";
-				WM_i2c_data(8 downto 0)<="000000000";
-				
-				WM_i2c_send_flag<='1';
+					if (alien_shot_out = '1') then
+						sound_number <= "000";
+					end if;
+					if (player_shot_out = '1') then
+						sound_number <= "001";
+					end if;
+					if (alien_mov_out = '1') then
+						sound_number <= "010";
+					end if;
+					
+--					if (rand_alien_mov_out = '1') then
+--						sound_number <= "011";
+--						LEDG(6)		<= '1';
+--					end if;
+--					
+--					if (stop_rand_alien_mov_out = '1') then
+--						sound_number <= "100";
+--						LEDG(6)		<= '1';
+--					end if;
+					
+					if (SW(2) = '1') then
+						sound_number <= "001";
+					end if;
+					
+					
+					if (count = 100) then  
+						count := 0;
+						sound_number <= "111";
+						LEDG(7)		<= '0';
+						LEDR(9)		<= '0';
+					end if;
+					count := count + 1;
+					
+					aud_mono(15 downto 0)	<= aud_out(15 downto 0);
+					aud_mono(31 downto 16)	<= aud_out(31 downto 16);
+									
+					--sound_number <= "111";
+					LEDR(1)		<= aud_ready;
 				end if;
+			end if;
+		end process;	
 
-		 end if;
-	end process;
+		handle_i2c : process (CLOCK_50)
+		begin
+
+			if rising_edge (CLOCK_50)then
+				if(KEY="1111")then
+				WM_i2c_send_flag<='0';
+				end if;
+			end if;
+			 if rising_edge(CLOCK_50) and WM_i2c_busy='0' then
+			 
+				
+					if (KEY(0)='0') then ----Digital Interface: DSP, 16 bit, slave mode
+						WM_i2c_data(15 downto 9)<="0000111";
+						WM_i2c_data(8 downto 0)<="000010011";	
+						WM_i2c_send_flag<='1';
+						
+					elsif (KEY(0)='0'AND SW(0)='1' ) then --- HEADPHONE VOLUME
+						WM_i2c_data(15 downto 9)<="0000111";
+						WM_i2c_data(8 downto 0)<="000011111";
+						WM_i2c_send_flag<='1';
+					
+					elsif (KEY(1)='0'AND SW(0)='0' ) then ---ADC of, DAC on, Linout ON, Power ON
+						WM_i2c_data(15 downto 9)<="0000110";
+						WM_i2c_data(8 downto 0)<="000000111";
+						WM_i2c_send_flag<='1';
+					elsif (KEY(1)='0'AND SW(0)='1' ) then --- USB mode
+						WM_i2c_data(15 downto 9)<="0001000";
+						WM_i2c_data(8 downto 0)<="000000001";
+						WM_i2c_send_flag<='1';
+					elsif (KEY(2)='0'AND SW(0)='0') then --- activ interface
+						WM_i2c_data(15 downto 9)<="0001001";
+						WM_i2c_data(8 downto 0)<="111111111";
+						WM_i2c_send_flag<='1';
+						LEDR(4)		<= '1';
+					elsif (KEY(2)='0'AND SW(0)='1') then--- Enable DAC to LINOUT
+						WM_i2c_data(15 downto 9)<="0000100";
+						WM_i2c_data(8 downto 0)<="000010010";
+						WM_i2c_send_flag<='1';
+					elsif (KEY(3)='0' AND SW(0)='0') then ---remove mute DAC
+						WM_i2c_data(15 downto 9)<="0000101";
+						WM_i2c_data(8 downto 0)<="000000000";
+						WM_i2c_send_flag<='1';
+					elsif (KEY(3)='0' AND SW(0)='1') then---reset
+						WM_i2c_data(15 downto 9)<="0001111";
+						WM_i2c_data(8 downto 0)<="000000000";
+						WM_i2c_send_flag<='1';
+					end if;
+					
+
+			 end if;
+		end process;
 
 		
 end architecture;

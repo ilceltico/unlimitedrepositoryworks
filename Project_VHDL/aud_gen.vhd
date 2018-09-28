@@ -24,7 +24,7 @@ signal aud_prscl: integer range 0 to 300:=0;
 signal clk_en: std_logic:='0';
 begin
 
-aud_bk<=aud_clock_12;
+aud_bk <= aud_clock_12;
 
 process(aud_clock_12)
 begin
