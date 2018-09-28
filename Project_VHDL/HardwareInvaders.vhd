@@ -174,8 +174,8 @@ architecture RTL of HardwareInvaders is
 	signal player_shot_out						: std_logic;
 	signal alien_shot_out						: std_logic;
 	signal alien_mov_out							: std_logic;
-	signal rand_alien_mov_out					: std_logic;
-	signal stop_rand_alien_mov_out			: std_logic;
+	--signal rand_alien_mov_out					: std_logic;
+	--signal stop_rand_alien_mov_out			: std_logic;
 
 	
 begin
@@ -201,7 +201,7 @@ begin
 	
 	end process;
 
-	reference_time_gen : process(CLOCK_50, RESET_N)
+	reference_time_gen : process(clock_50MHz, RESET_N)
 		
 		variable counter : integer range 0 to (REFERENCE_TIME_50MHz - 1);
 	
@@ -212,7 +212,7 @@ begin
 			counter 	:= 0;
 			time_1us <= '0';
 		
-		elsif (rising_edge(CLOCK_50)) then
+		elsif (rising_edge(clock_50MHz)) then
 		
 			if(counter = counter'high) then
 				
@@ -229,7 +229,7 @@ begin
 		
 	end process;
 
-	frame_time_gen : process(CLOCK_50, RESET_N)
+	frame_time_gen : process(clock_50MHz, RESET_N)
 		
 		variable counter : integer range 0 to (FRAME_TIME_1us - 1);
 	
@@ -240,7 +240,7 @@ begin
 			counter 		:= 0;
 			frame_time 	<= '0';
 		
-		elsif (rising_edge(CLOCK_50)) then
+		elsif (rising_edge(clock_50MHz)) then
 		
 			frame_time 	<= '0';
 			
@@ -439,7 +439,7 @@ begin
 		ps2_keyboard : entity work.ps2_keyboard
 		port map
 		(
-			clk   			=> CLOCK_50,  
+			clk   			=> clock_50MHz,  
 			ps2_clk      	=> PS2_CLK,     
 			ps2_data     	=> PS2_DAT,    
 			
@@ -450,7 +450,7 @@ begin
 		ps2_keyboard_handler : entity work.ps2_keyboard_handler
 		port map
 		(
-			CLOCK				=> CLOCK_50,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			PS2_CODE_NEW  	=> ps2_code_new,
 			PS2_CODE 		=> ps2_code,
@@ -502,35 +502,35 @@ begin
 	
 		geek_binary_leds <= SW(1);
 
---		led_levels : process(clock_50MHz, RESET_N) is 
---		begin
---			
---			if (RESET_N = '0' or show_intro = '1') then
---		
---				LEDG <= (others => '0');
---			
---			elsif (rising_edge(clock_50MHz)) then
---			
---				if (geek_binary_leds = '1') then 
---					LEDG <= std_logic_vector(to_unsigned(level, 8));
---				else 
---					case (level) is
---						when 0 => LEDG <= "00000000";
---						when 1 => LEDG <= "00000001";
---						when 2 => LEDG <= "00000011";
---						when 3 => LEDG <= "00000111";
---						when 4 => LEDG <= "00001111";
---						when 5 => LEDG <= "00011111";
---						when 6 => LEDG <= "00111111";
---						when 7 => LEDG <= "01111111";
---						when 8 => LEDG <= "11111111";
---						when others => LEDG <= "11111111";
---					end case;
---				end if;
---			
---			end if;
---		
---		end process;
+		led_levels : process(clock_50MHz, RESET_N) is 
+		begin
+			
+			if (RESET_N = '0' or show_intro = '1') then
+		
+				LEDG <= (others => '0');
+			
+			elsif (rising_edge(clock_50MHz)) then
+			
+				if (geek_binary_leds = '1') then 
+					LEDG <= std_logic_vector(to_unsigned(level, 8));
+				else 
+					case (level) is
+						when 0 => LEDG <= "00000000";
+						when 1 => LEDG <= "00000001";
+						when 2 => LEDG <= "00000011";
+						when 3 => LEDG <= "00000111";
+						when 4 => LEDG <= "00001111";
+						when 5 => LEDG <= "00011111";
+						when 6 => LEDG <= "00111111";
+						when 7 => LEDG <= "01111111";
+						when 8 => LEDG <= "11111111";
+						when others => LEDG <= "11111111";
+					end case;
+				end if;
+			
+			end if;
+		
+		end process;
 
 		Binary_to_BCD : entity work.Binary_to_BCD
 		generic map (
@@ -539,7 +539,7 @@ begin
 		)
 		port map
 		(
-			CLOCK					=> CLOCK_50,
+			CLOCK					=> clock_50MHz,
 			START					=> binary_to_bcd_start,
 			BINARY				=> std_logic_vector(to_unsigned(score, 15)),
 			
@@ -547,7 +547,7 @@ begin
 			o_DV					=> b2b_data_available
 		);
 		
-		bcd_value_filter : process(CLOCK_50, RESET_N)
+		bcd_value_filter : process(clock_50MHz, RESET_N)
 		begin
 		
 			if (RESET_N = '0') then
@@ -555,7 +555,7 @@ begin
 				bcd_value 				<= (others => '0');
 				binary_to_bcd_start 	<= '0';
 			
-			elsif (rising_edge(CLOCK_50)) then 
+			elsif (rising_edge(clock_50MHz)) then 
 			
 				binary_to_bcd_start 	<= '1';
 			
@@ -569,7 +569,7 @@ begin
 		bcd_to_7segment_0 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> CLOCK_50,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(3 downto 0),
 			
@@ -579,7 +579,7 @@ begin
 		bcd_to_7segment_1 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> CLOCK_50,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(7 downto 4),
 			
@@ -589,7 +589,7 @@ begin
 		bcd_to_7segment_2 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> CLOCK_50,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(11 downto 8),
 			
@@ -599,21 +599,21 @@ begin
 		bcd_to_7segment_3 : entity work.bcd_to_7segment
 		port map 
 		(
-			CLOCK				=> CLOCK_50,
+			CLOCK				=> clock_50MHz,
 			RESET_N			=> RESET_N,
 			BCD_NUMBER		=> bcd_value(15 downto 12),
 			
 			DISPLAY			=> HEX3(6 downto 0)
 		);
 		
-		led_lives : process(CLOCK_50, RESET_N) is 
+		led_lives : process(clock_50MHz, RESET_N) is 
 		
 		begin 
 		
 			if (RESET_N = '0' or show_intro = '1') then 
 				LEDR <= (others => '0');
 				
-			elsif (rising_edge(CLOCK_50)) then 
+			elsif (rising_edge(clock_50MHz)) then 
 				if (geek_binary_leds = '1') then
 					LEDR <= std_logic_vector(to_unsigned(lives, 10));
 				else
@@ -641,20 +641,20 @@ begin
 		signal_sampler : entity work.signal_sampler
 		port map
 		(
-			CLOCK 					=> CLOCK_50,
+			CLOCK 					=> clock_50MHz,
  			RESET_N					=> RESET_N and not ( NEW_LEVEL or SHOW_NEXT_LEVEL or GAMEOVER or YOUWIN or SHOW_INTRO or RESTART_GAME),
 			
 			EXPLOSION_IN			=> DESTROY.entity_type,
 			PLAYER_SHOT_IN			=> player_has_shot,
 			ALIEN_MOVEMENT_IN		=> ALIEN_GRID_MOVEMENT,
-			RAND_ALIEN_IN			=> SHOW_RAND_ALIEN,
-			STOP_RAND_ALIEN_IN	=> RAND_ALIEN_BORDER_REACHED,
+			--RAND_ALIEN_IN			=> SHOW_RAND_ALIEN,
+			--STOP_RAND_ALIEN_IN	=> RAND_ALIEN_BORDER_REACHED,
 			
 			EXPLOSION_OUT			=> alien_shot_out,
 			PLAYER_SHOT_OUT		=> player_shot_out,
-			ALIEN_MOVEMENT_OUT	=> alien_mov_out,
-			RAND_ALIEN_OUT			=> rand_alien_mov_out,
-			STOP_RAND_ALIEN_OUT  => stop_rand_alien_mov_out
+			ALIEN_MOVEMENT_OUT	=> alien_mov_out
+			--RAND_ALIEN_OUT			=> rand_alien_mov_out,
+			--STOP_RAND_ALIEN_OUT  => stop_rand_alien_mov_out
 		);
 		
 		-- Audio
@@ -694,24 +694,24 @@ begin
 		AUD_XCK			<=	clock_12MHz;
 		AUD_DACLRCK		<=	DA_CLR;
 		
-		roba : process (CLOCK_50)
-			variable spawn : std_logic := '0';
-		begin
-		
-			if (SW(4) = '1') then
-				LEDG(7) <= '0';
-				spawn := '0';
-			end if;
-		
-			if (show_rand_alien = '1') then
-				spawn := '1';
-			end if;
-			
-			if (spawn = '1') then
-				LEDG(7) <= '1';
-			end if;
-		
-		end process;
+--		roba : process (CLOCK_50)
+--			variable spawn : std_logic := '0';
+--		begin
+--		
+--			if (SW(4) = '1') then
+--				LEDG(7) <= '0';
+--				spawn := '0';
+--			end if;
+--		
+--			if (show_rand_alien = '1') then
+--				spawn := '1';
+--			end if;
+--			
+--			if (spawn = '1') then
+--				LEDG(7) <= '1';
+--			end if;
+--		
+--		end process;
 		
 		handle_audio : process (clock_12MHz)
 			variable count : natural := 0;
@@ -734,10 +734,10 @@ begin
 						sound_number <= "001";
 					end if;
 					
-					if (rand_alien_mov_out = '1') then
-						sound_number <= "011";
-						--LEDG(6) <= '1';
-					end if;
+--					if (rand_alien_mov_out = '1') then
+--						sound_number <= "011";
+--						--LEDG(6) <= '1';
+--					end if;
 --					
 --					-- Solo per debug
 --					if (SW(6) = '1') then

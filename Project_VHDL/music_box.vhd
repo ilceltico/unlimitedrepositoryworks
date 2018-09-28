@@ -93,19 +93,19 @@ begin
 					play_movement_sound := true;
 			end if;
 			
-			if (rand_alien = '1') then
-				play_rand_alien_sound := true;
-					if (wait_time < 5000000) then
-						wait_time := wait_time + 1;
-					end if;
-			else 
-					if (wait_time >= 5000000) then
-						play_rand_alien_sound := false;
-						wait_time := 0;
-					end if;
-			end if;
+--			if (rand_alien = '1') then
+--				play_rand_alien_sound := true;
+--					if (wait_time < 5000000) then
+--						wait_time := wait_time + 1;
+--					end if;
+--			else 
+--					if (wait_time >= 5000000) then
+--						play_rand_alien_sound := false;
+--						wait_time := 0;
+--					end if;
+--			end if;
 			
-				if (play_movement_sound) then
+			if (play_movement_sound) then
 					AUDIO_READY <= '1';
 					if (count_movement = frequency_155hz + sound_variation ) then
 						count_movement := 0;
@@ -182,29 +182,29 @@ begin
 					
 			end if;
 			
-			if (play_rand_alien_sound) then
-					AUDIO_READY <= '1';
-					if (count_rand_alien = frequency_440hz - wave_hz_count) then
-						count_rand_alien := 0;
-						rand_alien_signal := -rand_alien_signal ;
-					end if;
-					AUDIO_OUT(31 downto 16) <= std_logic_vector(to_unsigned(rand_alien_signal, 16));
-					
-					randal_sound_time_counter := randal_sound_time_counter + 1;				
-					count_rand_alien := count_rand_alien + 1;
-
-					if (randal_sound_time_counter = BASE_SOUND_TIME ) then
-						randal_sound_time_counter := 0;
-						--play_rand_alien_sound := false;
-						wave_hz_count := 0;
-						count_rand_alien := 0;
-						AUDIO_READY <= '0';
-					end if;
-					
-					if (randal_sound_time_counter mod 1000 = 0 ) then
-						wave_hz_count := wave_hz_count + frequency_1hz;
-					end if;
-			end if;
+--			if (play_rand_alien_sound) then
+--					AUDIO_READY <= '1';
+--					if (count_rand_alien = frequency_440hz - wave_hz_count) then
+--						count_rand_alien := 0;
+--						rand_alien_signal := -rand_alien_signal ;
+--					end if;
+--					AUDIO_OUT(31 downto 16) <= std_logic_vector(to_unsigned(rand_alien_signal, 16));
+--					
+--					randal_sound_time_counter := randal_sound_time_counter + 1;				
+--					count_rand_alien := count_rand_alien + 1;
+--
+--					if (randal_sound_time_counter = BASE_SOUND_TIME ) then
+--						randal_sound_time_counter := 0;
+--						--play_rand_alien_sound := false;
+--						wave_hz_count := 0;
+--						count_rand_alien := 0;
+--						AUDIO_READY <= '0';
+--					end if;
+--					
+--					if (randal_sound_time_counter mod 1000 = 0 ) then
+--						wave_hz_count := wave_hz_count + frequency_1hz;
+--					end if;
+--			end if;
 			
 --			if (play_rand_alien_sound) then
 --					AUDIO_READY <= '1';
